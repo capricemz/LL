@@ -109,6 +109,7 @@
             <Project Name="NodeGrid.csd" Type="Node" />
             <Project Name="LayerLevels.csd" Type="Layer" />
             <Project Name="LayerBattleResult.csd" Type="Layer" />
+            <Project Name="LayerSkills.csd" Type="Layer" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />
