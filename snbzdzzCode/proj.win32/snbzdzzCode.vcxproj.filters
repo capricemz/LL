@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\common">
+      <UniqueIdentifier>{609a0aaa-40a0-46a6-ba09-cd9bfbf0a7bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\data">
+      <UniqueIdentifier>{26d15ecf-2f5c-4063-9a9f-3b6a2e1c8b17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core">
+      <UniqueIdentifier>{3ba0c24c-c439-48b4-93a8-8673e7ea1f71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui">
+      <UniqueIdentifier>{b1acd076-068d-45f4-9cb9-1b2d42f1e43d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\common">
+      <UniqueIdentifier>{ef3faa76-912c-4df9-8530-6b8316a84fcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\welcome">
+      <UniqueIdentifier>{c974564a-15b8-4aad-be61-8a3eba6be334}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\main">
+      <UniqueIdentifier>{05c2d2aa-0a99-4913-b9c3-1fe937c620d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core\timer">
+      <UniqueIdentifier>{9cab1537-94a9-49a9-b0a7-5ccc7bdc6952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core\entity">
+      <UniqueIdentifier>{1304d21e-beaa-4548-af46-c3b47afe4dfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core\grid">
+      <UniqueIdentifier>{4371bc50-86c3-406c-bcb6-a259f763c6df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\data\data">
+      <UniqueIdentifier>{9fe1b3d5-d166-4b66-8412-46c73210f628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\data\config">
+      <UniqueIdentifier>{76d695b1-f933-4962-968b-8e349f99afb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\common\util">
+      <UniqueIdentifier>{86eb5966-8129-43ea-b447-365595d1a3cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\common\observer">
+      <UniqueIdentifier>{52a2cdae-7320-4bf2-88eb-bb9b1847ee48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\data\define">
+      <UniqueIdentifier>{5c0b651c-b3a1-4bc2-bd56-fc1a8ddb1bc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core\entity\subs">
+      <UniqueIdentifier>{5490d27e-c6c7-498b-ac61-ff4642dce23e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\common\shake">
+      <UniqueIdentifier>{32f14231-4341-4fb0-af0c-055fbfa76164}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\main\battle">
+      <UniqueIdentifier>{f80d426f-0983-44ef-bedb-9d22d757545d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\main\levels">
+      <UniqueIdentifier>{742dacdf-ab61-47ea-aed4-2d5db7253d99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\plot">
+      <UniqueIdentifier>{79e75c91-9bcc-40e9-af6d-8c169e832ec4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\main\battle\gridShow">
+      <UniqueIdentifier>{3ca71e63-ae88-441f-be57-849853003c47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\main\battle\result">
+      <UniqueIdentifier>{c405081c-22b6-4ce8-b2c9-8cc8c31b57e7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\common\observer\Observer.cpp">
+      <Filter>src\common\observer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\common\util\UtilDate.cpp">
+      <Filter>src\common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\common\util\UtilHelper.cpp">
+      <Filter>src\common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\common\util\UtilRandom.cpp">
+      <Filter>src\common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\common\util\UtilString.cpp">
+      <Filter>src\common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\data\config\ManagerCfg.cpp">
+      <Filter>src\data\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\welcome\SceneWelcome.cpp">
+      <Filter>src\ui\welcome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\data\data\ManagerData.cpp">
+      <Filter>src\data\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\core\timer\ManagerTimer.cpp">
+      <Filter>src\core\timer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\core\entity\ManagerEntity.cpp">
+      <Filter>src\core\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\core\entity\subs\Entity.cpp">
+      <Filter>src\core\entity\subs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\core\entity\subs\Maid.cpp">
+      <Filter>src\core\entity\subs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\core\entity\subs\Monster.cpp">
+      <Filter>src\core\entity\subs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\core\grid\ManagerGrid.cpp">
+      <Filter>src\core\grid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\ManagerUI.cpp">
+      <Filter>src\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\common\shake\Shake.cpp">
+      <Filter>src\common\shake</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\SceneMain.cpp">
+      <Filter>src\ui\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\common\UIConfirm.cpp">
+      <Filter>src\ui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\common\UIGuide.cpp">
+      <Filter>src\ui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\common\UIThingGet.cpp">
+      <Filter>src\ui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\common\UITips.cpp">
+      <Filter>src\ui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\common\UIWordsDrift.cpp">
+      <Filter>src\ui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\HandleEntity.cpp">
+      <Filter>src\ui\main\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\levels\LayerLevels.cpp">
+      <Filter>src\ui\main\levels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\welcome\HandleImageLoad.cpp">
+      <Filter>src\ui\welcome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\plot\ScenePlot.cpp">
+      <Filter>src\ui\plot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\data\data\HandleDataTime.cpp">
+      <Filter>src\data\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\data\data\HandleDataGrid.cpp">
+      <Filter>src\data\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\core\grid\Grid.cpp">
+      <Filter>src\core\grid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\LayerBattle.cpp">
+      <Filter>src\ui\main\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\HandleHeadIcon.cpp">
+      <Filter>src\ui\main\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\HandleGridSelected.cpp">
+      <Filter>src\ui\main\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\HandleGridSelect.cpp">
+      <Filter>src\ui\main\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\NodeCircleLine.cpp">
+      <Filter>src\ui\main\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\data\data\HandleDataEntity.cpp">
+      <Filter>src\data\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\gridShow\LayerGridShow.cpp">
+      <Filter>src\ui\main\battle\gridShow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\result\LayerBattleResult.cpp">
+      <Filter>src\ui\main\battle\result</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\data\data\HandleDataLevels.cpp">
+      <Filter>src\data\data</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\common\observer\Observer.h">
+      <Filter>src\common\observer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\common\util\UtilDate.h">
+      <Filter>src\common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\common\util\UtilHelper.h">
+      <Filter>src\common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\common\util\UtilRandom.h">
+      <Filter>src\common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\common\util\UtilString.h">
+      <Filter>src\common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\data\config\ManagerCfg.h">
+      <Filter>src\data\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\data\config\ManagerCfgDefines.h">
+      <Filter>src\data\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\data\define\DefinesRes.h">
+      <Filter>src\data\define</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\data\define\DefinesString.h">
+      <Filter>src\data\define</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\data\define\DefinesValue.h">
+      <Filter>src\data\define</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\welcome\SceneWelcome.h">
+      <Filter>src\ui\welcome</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\data\data\ManagerData.h">
+      <Filter>src\data\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\core\timer\ManagerTimer.h">
+      <Filter>src\core\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\core\entity\ManagerEntity.h">
+      <Filter>src\core\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\core\entity\subs\Entity.h">
+      <Filter>src\core\entity\subs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\core\entity\subs\Maid.h">
+      <Filter>src\core\entity\subs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\core\entity\subs\Monster.h">
+      <Filter>src\core\entity\subs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\core\grid\ManagerGrid.h">
+      <Filter>src\core\grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\ManagerUI.h">
+      <Filter>src\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\common\shake\Shake.h">
+      <Filter>src\common\shake</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\SceneMain.h">
+      <Filter>src\ui\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\common\UIConfirm.h">
+      <Filter>src\ui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\common\UIGuide.h">
+      <Filter>src\ui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\common\UIThingGet.h">
+      <Filter>src\ui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\common\UITips.h">
+      <Filter>src\ui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\common\UIWordsDrift.h">
+      <Filter>src\ui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\HandleEntity.h">
+      <Filter>src\ui\main\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\levels\LayerLevels.h">
+      <Filter>src\ui\main\levels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\welcome\HandleImageLoad.h">
+      <Filter>src\ui\welcome</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\plot\ScenePlot.h">
+      <Filter>src\ui\plot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\core\grid\Grid.h">
+      <Filter>src\core\grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\LayerBattle.h">
+      <Filter>src\ui\main\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\HandleHeadIcon.h">
+      <Filter>src\ui\main\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\HandleGridSelected.h">
+      <Filter>src\ui\main\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\HandleGridSelect.h">
+      <Filter>src\ui\main\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\NodeCircleLine.h">
+      <Filter>src\ui\main\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\gridShow\LayerGridShow.h">
+      <Filter>src\ui\main\battle\gridShow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\result\LayerBattleResult.h">
+      <Filter>src\ui\main\battle\result</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\common\ILayerAppearDisappear.h">
+      <Filter>src\ui\common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
