@@ -329,7 +329,7 @@ class HandleDataEntity
 
 	private:
 		DataEntity * createDataEntity(const int &idEntity);
-		void createDataEntityMaid();
+		void createDataEntityMaid(const vector<string> &vecIdEntity);
 		
 	private:
 		const string USER_DEFAULT_KEY_DE = "dataEntity";//实体数据

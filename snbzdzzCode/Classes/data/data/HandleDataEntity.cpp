@@ -278,16 +278,19 @@ HandleDataEntity::~HandleDataEntity()
 void HandleDataEntity::dataFileInit()
 {
 	auto userDefault = UserDefault::getInstance();
-	userDefault->setStringForKey(USER_DEFAULT_KEY_DE.c_str(), "");//写入初始数据
+	userDefault->setStringForKey(USER_DEFAULT_KEY_DE.c_str(), DATA_ENTITY_INIT);//写入初始数据
 	userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io
+
+	dataFileGet();
 }
 
 void HandleDataEntity::dataFileGet()
 {
 	auto userDefault = UserDefault::getInstance();
 	auto strDataTimeData = userDefault->getStringForKey(USER_DEFAULT_KEY_DE.c_str());
-	
-	createDataEntityMaid();
+	auto vecInfo = UtilString::split(strDataTimeData, "|");
+	auto vecIdEntity = UtilString::split(vecInfo[0], ":");
+	createDataEntityMaid(vecIdEntity);
 }
 
 void HandleDataEntity::dataFileSet()
@@ -473,12 +476,11 @@ DataEntity * HandleDataEntity::createDataEntity(const int &idEntity)
 	return dataEntity;
 }
 
-void HandleDataEntity::createDataEntityMaid()
+void HandleDataEntity::createDataEntityMaid(const vector<string> &vecIdEntity)
 {
-	auto dataEntity = createDataEntity(1000);
-	_vecDataEntityMaid.pushBack(dataEntity);
-	dataEntity = createDataEntity(1001);
-	_vecDataEntityMaid.pushBack(dataEntity);
-	dataEntity = createDataEntity(1002);
-	_vecDataEntityMaid.pushBack(dataEntity);
+	for (auto idEntity : vecIdEntity)
+	{
+		auto dataEntity = createDataEntity(Value(idEntity).asInt());
+		_vecDataEntityMaid.pushBack(dataEntity);
+	}
 }

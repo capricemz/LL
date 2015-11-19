@@ -16,6 +16,8 @@ static const int GRID_SELECT_MAX = 9;
 static const int GRID_SELECTED_MAX = 4;
 static const int ENTITY_BATTLE_MAX = 3;
 
+static const string DATA_ENTITY_INIT = "1000";
+
 static const vector<Vec2> vecPostionGridSelect =
 {
 	Vec2(60.0f, 396.0f), Vec2(187.0f, 396.0f), Vec2(314.0f, 396.0f),
