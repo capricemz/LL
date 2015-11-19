@@ -5,3 +5,7 @@
 *.opensdf
 *.sdf
 *.suo
+snbzdzzStudio.udf
+/.svn
+/art
+/doc
