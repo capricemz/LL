@@ -201,6 +201,9 @@
     <ClCompile Include="..\Classes\data\data\HandleDataLevels.cpp">
       <Filter>src\data\data</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ui\common\SpriteBlur.cpp">
+      <Filter>src\ui\common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -327,6 +330,9 @@
       <Filter>src\ui\main\battle\result</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ui\common\ILayerAppearDisappear.h">
+      <Filter>src\ui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\common\SpriteBlur.h">
       <Filter>src\ui\common</Filter>
     </ClInclude>
   </ItemGroup>
