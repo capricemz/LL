@@ -10,9 +10,22 @@ LOCAL_MODULE := cocos2dcpp_shared
 
 LOCAL_MODULE_FILENAME := libcocos2dcpp
 
-LOCAL_SRC_FILES := hellocpp/main.cpp \
-                   ../../Classes/AppDelegate.cpp \
-                   ../../Classes/HelloWorldScene.cpp
+MY_FILES_PATH  :=  $(LOCAL_PATH) \
+                   $(LOCAL_PATH)/../../Classes\
+
+MY_FILES_SUFFIX := %.cpp %.c %.cc
+
+# Make does not offer a recursive wildcard function, so here's one:
+rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
+
+# Retrieve all source files in each dir recursively.
+MY_ALL_FILES := $(foreach src_path,$(MY_FILES_PATH), $(call rwildcard,$(src_path),*.*) ) 
+MY_ALL_FILES := $(MY_ALL_FILES:$(MY_CPP_PATH)/./%=$(MY_CPP_PATH)%)
+MY_SRC_LIST  := $(filter $(MY_FILES_SUFFIX),$(MY_ALL_FILES)) 
+MY_SRC_LIST  := $(MY_SRC_LIST:$(LOCAL_PATH)/%=%)
+
+LOCAL_SRC_FILES  := $(MY_SRC_LIST)
+
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 
