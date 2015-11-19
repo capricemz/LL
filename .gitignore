@@ -9,3 +9,16 @@ snbzdzzStudio.udf
 /.svn
 /art
 /doc
+/snbzdzzCode/cocos2d/cocos/2d/Debug.win32
+/snbzdzzCode/cocos2d/cocos/editor-support/spine/proj.win32/Debug.win32
+/snbzdzzCode/cocos2d/cocos/platform/android/java/local.properties
+/snbzdzzCode/proj.android/obj
+/snbzdzzCode/proj.android/libs
+/snbzdzzCode/proj.android/local.properties
+/snbzdzzCode/cocos2d/external/Box2D/proj.win32/Debug.win32
+/snbzdzzCode/cocos2d/external/bullet/proj.win32/Debug.win32
+*.a
+*.so
+Debug.win32
+*.pch
+*.user
