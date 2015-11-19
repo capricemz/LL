@@ -1,6 +1,7 @@
 #pragma execution_character_set("utf-8")
 
 #include "ManagerData.h"
+#include "common/util/UtilString.h"
 
 DataLevels::DataLevels()
 {
@@ -38,12 +39,15 @@ void HandleDataLevels::dataFileInit()
 void HandleDataLevels::dataFileGet()
 {
 	auto userDefault = UserDefault::getInstance();
-	auto strDataTimeData = userDefault->getStringForKey(USER_DEFAULT_KEY_DL.c_str());
+	auto strDatalevels = userDefault->getStringForKey(USER_DEFAULT_KEY_DL.c_str());
+	auto vecDataLevels = UtilString::split(strDatalevels, "|");
+	_levelCurrent = Value(vecDataLevels[0]).asInt();
 }
 
 void HandleDataLevels::dataFileSet()
 {
 	auto userDefault = UserDefault::getInstance();
-	userDefault->setStringForKey(USER_DEFAULT_KEY_DL.c_str(), "");//�޸Ĵ浵//TODO
+	auto strDatalevels = Value(_levelCurrent).asString();
+	userDefault->setStringForKey(USER_DEFAULT_KEY_DL.c_str(), strDatalevels);//�޸Ĵ浵//TODO
 	userDefault->flush();
 }

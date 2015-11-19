@@ -13,7 +13,7 @@ struct CfgLevels//关卡
 {
 	int id;//标志
 	string name;//名称
-	string urlPic;//图片路径
+	string urlPics;//图片路径
 	string msts;//怪物配置
 };
 typedef map<int32_t, CfgLevels> DicCfgLevels;
@@ -29,7 +29,7 @@ typedef map<int32_t, CfgAttribute> DicCfgAttribute;
 struct CfgSkill//指令
 {
 	int id;//标志
-	int sort;//排序
+	int index;//排序
 	string name;//名称
 	TypeSkill type;//类型
 	string effect;//效果
@@ -58,7 +58,6 @@ struct CfgEntity
 	int xPic;//图片x
 	int yPic;//图片y
 	string attribute;//属性 101生命上限103能量上限104物理攻击105魔法攻击106金币收益
-	string skills;//技能
 	int skillGroup;//技能组
 };
 typedef map<int32_t, CfgEntity> DicCfgEntity;

@@ -4,6 +4,7 @@
 #include "ui/ManagerUI.h"
 #include "battle/LayerBattle.h"
 #include "levels/LayerLevels.h"
+#include "skills/LayerSkills.h"
 
 using namespace ui;
 
@@ -59,6 +60,12 @@ void SceneMain::updateBySubject(va_list values)
 		auto layerLevels = LayerLevels::create();
 		addChild(layerLevels);
 		layer = layerLevels;
+	}
+	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS)
+	{
+		auto layerSkills = LayerSkills::create();
+		addChild(layerSkills);
+		layer = layerSkills;
 	}
 	managerUI->runLayerAppearDisappear(layer);
 }

@@ -245,7 +245,7 @@ void Entity::stopSkinAllActions()
 	_skin->stopAllActions();
 }
 
-void Entity::switchEntity(const int &indexSwitchTo, const function<void()> &func /*= nullptr*/)
+void Entity::switchEntity(const int &indexSwitchTo, bool &isSwitchSuccess, const function<void()> &func /*= nullptr*/)
 {
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
 	auto isAllMstDead = handleDataEntity->isAllMstDead();
@@ -253,10 +253,10 @@ void Entity::switchEntity(const int &indexSwitchTo, const function<void()> &func
 	if (isAllMstDead || isAllMaidDead)
 	{
 		ManagerEntity::getInstance()->dealBattleOver();
+		isSwitchSuccess = true;//战斗结束时，不用在外部调用func()
 		return;
 	}
 	//
-	bool isSwitchSuccess = false;
 	switchDataEntity(indexSwitchTo, isSwitchSuccess);
 	if (!isSwitchSuccess)
 	{
@@ -334,8 +334,14 @@ void Entity::dealDeadEffect(const float &duration)
 
 void Entity::dealDead()
 {
-	switchEntity(ENTITY_BATTLE_MAX, []()//Entity内部调用switchEntity时需要手动调用DealRoundOver已切换下一轮
+	auto func = []()
 	{
 		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::DEAL_ROUND_OVER, true);//处理回合结束
-	});
+	};
+	auto isSwitchSuccess = false;
+	switchEntity(ENTITY_BATTLE_MAX, isSwitchSuccess, func);//Entity内部调用switchEntity时需要手动调用DealRoundOver已切换下一轮
+	if (!isSwitchSuccess)
+	{
+		func();
+	}
 }

@@ -259,11 +259,12 @@ void HandleEntity::dealTurnOver()
 	auto isTurnAll = ManagerEntity::getInstance()->isTurnOverAll();
 	if (isTurnAll)
 	{
+		auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+		handleDataEntity->resetDataEntityAttributeTemp();
+		handleDataEntity->dealVecSkillActiveInUse2UseOverMaid();
 		auto isRoundOver = ManagerData::getInstance()->getHandleDataGrid()->isRoundOver();
 		if (!isRoundOver)
 		{
-			ManagerData::getInstance()->getHandleDataEntity()->dealTurnOver();
-			ManagerEntity::getInstance()->resetEntityAttributeTemp();
 			runGridMoveAndThrow();
 		}
 		else//Èô»ØºÏ½áÊø
@@ -281,16 +282,23 @@ void HandleEntity::dealRoundOver(const bool &isForce /*= false*/)
 		managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::RESET_SKIN);
 		managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_GRID_SHOW);
 	};
+
 	ManagerData::getInstance()->getHandleDataGrid()->resetIndexGridBattle();
-	ManagerEntity::getInstance()->resetEntityAttributeTemp();
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	handleDataEntity->dealRoundOver(isForce);
+	handleDataEntity->addRound();
+	handleDataEntity->dealDataEntitySkillSort(isForce);
+
 	auto indexTo = 0;
 	auto isSkillNeedSwitchEntity = handleDataEntity->getIsSkillNeedSwitchEntity(indexTo);
 	if (isSkillNeedSwitchEntity)
 	{
+		auto isSwitchSuccess = false;
 		auto monster = ManagerEntity::getInstance()->getMonster();
-		monster->switchEntity(indexTo, func);
+		monster->switchEntity(indexTo, isSwitchSuccess, func);
+		if (!isSwitchSuccess)
+		{
+			func();
+		}
 	}
 	else
 	{

@@ -29,7 +29,7 @@ public:
 	/*切换角色
 	indexSwitchTo 要切换到的index 当为ENTITY_BATTLE_MAX时，切换到下一个
 	func 切换完成回调*/
-	void switchEntity(const int &indexSwitchTo, const function<void()> &func = nullptr);
+	void switchEntity(const int &indexSwitchTo, bool &isSwitchSuccess, const function<void()> &func = nullptr);
 
 public:
 	DataEntity *getDataEntity()

@@ -145,13 +145,13 @@ void ManagerCfg::assignCfgSkill(const VectorString &vecItem)
 {
 	CfgSkill cfg;
 	cfg.id = Value(vecItem[0]).asInt();
-	cfg.sort = Value(vecItem[1]).asInt();
+	cfg.index = Value(vecItem[1]).asInt();
 	cfg.name = vecItem[2];
 	cfg.type = (TypeSkill)Value(vecItem[3]).asInt();
 	cfg.effect = vecItem[4];
 	cfg.unlock = vecItem[5];
 	cfg.desc = vecItem[6];
-	_dicDicCfgSkill[cfg.id][cfg.sort] = cfg;
+	_dicDicCfgSkill[cfg.id][cfg.index] = cfg;
 }
 
 void ManagerCfg::assignCfgSkillGroup(const VectorString &vecItem)
@@ -244,7 +244,7 @@ void ManagerCfg::assignCfgLevels(const VectorString &vecItem)
 	auto nameTemp = vecItem[1];
 	auto isFind = nameTemp.find("//") != string::npos;
 	cfg.name = isFind ? UtilString::split(nameTemp, "//")[0] : nameTemp;
-	cfg.urlPic = vecItem[2];
+	cfg.urlPics = vecItem[2];
 	cfg.msts = vecItem[3];
 	_dicCfgLevels[cfg.id] = cfg;
 }

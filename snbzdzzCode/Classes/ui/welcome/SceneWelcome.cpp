@@ -112,6 +112,7 @@ void SceneWelcome::handleLoading(Sprite *spriteLoading)
 		log("```````````````LayerWelcome::handleLoading loaded time:%s", Value(time).asString().c_str());
 		//
 		ManagerData::getInstance()->dataFileGet();
+		ManagerData::getInstance()->getHandleDataEntity()->createDataEntityMaid();
 		time = UtilDate::getSecond();
 		log("```````````````LayerWelcome::handleLoading loaded time:%s", Value(time).asString().c_str());
 		//

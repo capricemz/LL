@@ -20,8 +20,6 @@ public:
 
 	void stopAllActions();
 
-	void resetEntityAttributeTemp();//重置实体战斗结果临时属性
-	
 	bool isRunAppearOverAll();
 	bool isDoActoinOverAll();
 	bool isTurnOverAll();

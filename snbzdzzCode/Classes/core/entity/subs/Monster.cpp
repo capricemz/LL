@@ -63,11 +63,17 @@ void Monster::switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess)
 	}
 	else
 	{
-		auto isAlive = handleDataEntity->getVecDataEntityMst().at(indexSwitchTo)->getIsAlive();
-		if (isAlive)
+		auto vecDataEntityMst = handleDataEntity->getVecDataEntityMst();
+		if (vecDataEntityMst.size() <= indexSwitchTo)
 		{
-			handleDataEntity->setIndexMst(indexSwitchTo);
-			isSwitchSuccess = true;
+			return;
 		}
+		auto isAlive = vecDataEntityMst.at(indexSwitchTo)->getIsAlive();
+		if (!isAlive)
+		{
+			return;
+		}
+		handleDataEntity->setIndexMst(indexSwitchTo);
+		isSwitchSuccess = true;
 	}
 }

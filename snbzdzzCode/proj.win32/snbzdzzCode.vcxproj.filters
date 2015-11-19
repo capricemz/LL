@@ -76,6 +76,9 @@
     <Filter Include="src\ui\main\battle\result">
       <UniqueIdentifier>{c405081c-22b6-4ce8-b2c9-8cc8c31b57e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ui\main\skills">
+      <UniqueIdentifier>{4159eb82-21f0-453a-9a81-363589a77827}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -203,6 +206,12 @@
     </ClCompile>
     <ClCompile Include="..\Classes\ui\common\SpriteBlur.cpp">
       <Filter>src\ui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\skills\LayerSkills.cpp">
+      <Filter>src\ui\main\skills</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\data\data\HandleDataUnlock.cpp">
+      <Filter>src\data\data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -334,6 +343,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ui\common\SpriteBlur.h">
       <Filter>src\ui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\skills\LayerSkills.h">
+      <Filter>src\ui\main\skills</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

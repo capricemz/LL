@@ -16,7 +16,7 @@ static const int GRID_SELECT_MAX = 9;
 static const int GRID_SELECTED_MAX = 4;
 static const int ENTITY_BATTLE_MAX = 3;
 
-static const string DATA_ENTITY_INIT = "1000";
+static const int DATA_UNLOCK_INIT_MAID = 1000;//初始化时默认解锁的女仆
 
 static const vector<Vec2> vecPostionGridSelect =
 {
@@ -188,6 +188,11 @@ enum class TypeSkillGroup
 	ROUND,//回合
 };
 
+enum class TypeUnlock
+{
+	LAST_NEXT
+};
+
 enum class TypeConfirms
 {
 	MAP_TRANSFER,
@@ -227,7 +232,8 @@ enum class ID_OBSERVER
 enum class TYPE_OBSERVER_SCENE_MAIN
 {
 	SHOW_BATTLE,
-	SHOW_LEVELS
+	SHOW_LEVELS,
+	SHOW_SKILLS
 };
 
 enum class TYPE_OBSERVER_LAYER_BATTLE

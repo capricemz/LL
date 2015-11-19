@@ -34,13 +34,35 @@ void HandleImageLoad::loadImages()
 	imageAsyncLoad(RES_MODULES_COMMON_PLIST_COMMON_PLIST);
 	imageAsyncLoad(RES_MODULES_MAIN_PLIST_MAIN_PLIST);
 	//¼ÓÔØ±³¾°Í¼Æ¬
-	imageAsyncLoad(RES_IMAGES_MAIN_BG_BATTLE_BG1_PNG);
+	auto dicCfgLevels = ManagerCfg::getInstance()->getDicCfgLevels();
+	for (auto var : dicCfgLevels)
+	{
+		auto cfgLevels = var.second;
+		auto urlPics = cfgLevels.urlPics;
+		if (urlPics == "")
+		{
+			continue;
+		}
+		auto vecUrlPic = UtilString::split(urlPics, "|");
+		for (auto urlPic : vecUrlPic)
+		{
+			if (_dicUrlLoaded.find(urlPic) == _dicUrlLoaded.end())
+			{
+				_dicUrlLoaded[urlPic] = true;
+				imageAsyncLoad(urlPic);
+			}
+		}
+	}
 	//¼ÓÔØÊµÌåÍ¼Æ¬
 	auto dicCfgEntity = ManagerCfg::getInstance()->getDicCfgEntity();
 	for (auto var : dicCfgEntity)
 	{
 		auto cfgEntity = var.second;
 		auto urlPic = cfgEntity.urlPic;
+		if (urlPic == "")
+		{
+			continue;
+		}
 		if (_dicUrlLoaded.find(urlPic) == _dicUrlLoaded.end())
 		{
 			_dicUrlLoaded[urlPic] = true;

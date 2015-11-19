@@ -244,18 +244,21 @@ class HandleDataEntity
 		HandleDataEntity();
 		~HandleDataEntity();
 
-		void dataFileInit();
-		void dataFileGet();
-		void dataFileSet();
+		void dataFileInit();//备用
+		void dataFileGet();//备用
+		void dataFileSet();//备用
 		
 		void setDataEntityMaidHpFull();//开始关卡是将女仆血量补满
+		void createDataEntityMaid();
 		void createDataEntityMst();//根据当前关卡构建怪物DataEntity
 		void vecSkillActiveSortMaid();//女仆洗牌
 
 		void dealSkillRandom(const function<void()> &func = nullptr);
 
-		void dealTurnOver();//处理行动结束数据
-		void dealRoundOver(const bool &isForce = false);//处理回合结束数据
+		void resetDataEntityAttributeTemp();//重置实体战斗结果临时属性
+
+		void dealVecSkillActiveInUse2UseOverMaid();//处理行动结束数据
+		void dealDataEntitySkillSort(const bool &isForce = false);//处理回合结束数据
 		void dealBattleOver();//处理战斗结束数据
 		
 	public:
@@ -312,24 +315,13 @@ class HandleDataEntity
 		{
 			return _roundTotal;
 		}
-		void setRoundTotal(int val)//设置当前总回合数
-		{
-			_roundTotal = val;
-		}
-		void addRoundTotal()
-		{
-			_roundTotal++;
-		}
-		void resetRoundTotal()
-		{
-			_roundTotal = 0;
-		}
+		void addRound();
+		void resetRound();
 
 		bool getIsSkillNeedSwitchEntity(int &indexTo);
 
 	private:
 		DataEntity * createDataEntity(const int &idEntity);
-		void createDataEntityMaid(const vector<string> &vecIdEntity);
 		
 	private:
 		const string USER_DEFAULT_KEY_DE = "dataEntity";//实体数据
@@ -384,6 +376,32 @@ class HandleDataLevels
 		int _levelCurrent;//当前关卡
 		
 };
+//处理解锁数据类
+class HandleDataUnlock
+{
+public:
+	HandleDataUnlock();
+	~HandleDataUnlock();
+
+	void dataFileInit();
+	void dataFileGet();
+	void dataFileSet();
+	void createTypeUnlockOther();
+	
+	bool getIsUnlockMaid(int idEntity);
+	void setIsUnlockMaid(int idEntity);
+	bool getIsUnlockSkill(int idSkill, int indexSkill);
+	void setIsUnlockSkillPassive(int idSkill, int indexSkill);
+	bool getIsUnlock(int index);
+	void setIsUnlock(int index);
+	
+private:
+	const string USER_DEFAULT_KEY_DU = "dataUnlock";//解锁数据
+	map<int, int> _dicTypeUnlockMaid;
+	map<int, map<int, int>> _dicDicTypeUnlockSkill;
+	vector<int> _vecDataUnlock;
+	
+};
 //数据类
 class ManagerData
 {
@@ -404,6 +422,7 @@ class ManagerData
 
 	public:
 		HandleDataTime * getHandleDataTime() { return _handleDataTime; }
+		HandleDataUnlock * getHandleDataUnlock() { return _handleDataUnlock; }
 		HandleDataGrid * getHandleDataGrid() { return _handleDataGrid; }
 		HandleDataEntity * getHandleDataEntity() { return _handleDataEntity; }
 		HandleDataLevels * getHandleDataLevels() { return _handleDataLevels; }
@@ -413,6 +432,7 @@ class ManagerData
 
 	private:
 		HandleDataTime *_handleDataTime;//时间数据处理
+		HandleDataUnlock *_handleDataUnlock;
 		HandleDataGrid *_handleDataGrid;//格子数据处理
 		HandleDataEntity *_handleDataEntity;//实体数据处理
 		HandleDataLevels *_handleDataLevels;//关卡数据处理

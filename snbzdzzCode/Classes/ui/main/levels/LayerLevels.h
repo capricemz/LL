@@ -4,9 +4,12 @@
 #define __UI_MAIN_LEVELS_LAYER_LEVELS_H__
 
 #include "cocos2d.h"
+#include "cocostudio/CocoStudio.h"
+#include "ui/CocosGUI.h"
 #include "ui/common/ILayerAppearDisappear.h"
 
 USING_NS_CC;
+using namespace ui;
 
 class LayerLevels : public Layer, public ILayerAppearDisappear
 {
@@ -26,6 +29,7 @@ public:
 
 private:
 	void createSkin();
+	void onTouchBtnLv(Ref *ref, Widget::TouchEventType type);
 
 private:
 	Layer *_skin;

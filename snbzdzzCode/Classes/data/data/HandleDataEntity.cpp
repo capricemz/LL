@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 
 #include "ManagerData.h"
 #include "../config/ManagerCfg.h"
@@ -139,7 +139,7 @@ int DataEntity::getAttribute(IdAttribute idAttribute)
 
 void DataEntity::setAttribute(IdAttribute idAttribute, int value)
 {
-	if (_dicAttribute.find(idAttribute) == _dicAttribute.end())//ÈôÎÞ¸ÃÖµ
+	if (_dicAttribute.find(idAttribute) == _dicAttribute.end())//è‹¥æ— è¯¥å€¼
 	{
 		if (value != 0)
 		{
@@ -232,9 +232,19 @@ void DataEntity::setSkill(const string &skillInfo)
 	auto num = Value(vecSkillStr[2]).asInt();
 	auto odds = Value(vecSkillStr[3]).asInt();
 	vector<int> vecSkillInfo = { idSkill, indexSkill, num, odds};
-	auto cfgSkill = ManagerCfg::getInstance()->getDicDicCfgSkill()[idSkill][indexSkill];
+	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
+	auto dicCfgSkill = ManagerCfg::getInstance()->getDicDicCfgSkill()[idSkill];
+	auto cfgSkill = dicCfgSkill[indexSkill];
 	if (cfgSkill.type == TypeSkill::ACTIVE)
 	{
+		if (getCfgEntity().type == TypeEntity::MAID && cfgSkill.unlock != "")//è‹¥æŠ€èƒ½éœ€è¦è§£é”
+		{
+			auto isUnlockSkill = handleDataUnlock->getIsUnlockSkill(idSkill, indexSkill);
+			if (!isUnlockSkill)//è‹¥æœªè§£é”
+			{
+				return;
+			}
+		}
 		auto numTemp = num;
 		while (numTemp--)
 		{
@@ -243,6 +253,24 @@ void DataEntity::setSkill(const string &skillInfo)
 	}
 	else if (cfgSkill.type == TypeSkill::PASSIVE)
 	{
+		if (getCfgEntity().type == TypeEntity::MAID && cfgSkill.unlock != "")//è‹¥æŠ€èƒ½éœ€è¦è§£é”
+		{
+			auto indexSkillUnlockMax = -1;
+			for (auto var : dicCfgSkill)
+			{
+				auto indexSkillCurrent = var.first;
+				auto isUnlockSkill = handleDataUnlock->getIsUnlockSkill(idSkill, indexSkillCurrent);
+				if (isUnlockSkill && (indexSkillUnlockMax < indexSkillCurrent))//è‹¥è§£é”ä¸”æœ€å¤§å°äºŽå½“å‰
+				{
+					indexSkillUnlockMax = indexSkillCurrent;
+				}
+			}
+			if (indexSkillUnlockMax == -1)
+			{
+				return;
+			}
+			vecSkillInfo[1] = indexSkillUnlockMax;
+		}
 		_vecSkillPassive.push_back(vecSkillInfo);
 	}
 	else if (cfgSkill.type == TypeSkill::RANDOM)
@@ -278,10 +306,8 @@ HandleDataEntity::~HandleDataEntity()
 void HandleDataEntity::dataFileInit()
 {
 	auto userDefault = UserDefault::getInstance();
-	userDefault->setStringForKey(USER_DEFAULT_KEY_DE.c_str(), DATA_ENTITY_INIT);//Ð´Èë³õÊ¼Êý¾Ý
-	userDefault->flush();//ÉèÖÃÍêÒ»¶¨Òªµ÷ÓÃflush£¬²ÅÄÜ´Ó»º³åÐ´Èëio
-
-	dataFileGet();
+	userDefault->setStringForKey(USER_DEFAULT_KEY_DE.c_str(), "");//å†™å…¥åˆå§‹æ•°æ®
+	userDefault->flush();//è®¾ç½®å®Œä¸€å®šè¦è°ƒç”¨flushï¼Œæ‰èƒ½ä»Žç¼“å†²å†™å…¥io
 }
 
 void HandleDataEntity::dataFileGet()
@@ -290,13 +316,14 @@ void HandleDataEntity::dataFileGet()
 	auto strDataTimeData = userDefault->getStringForKey(USER_DEFAULT_KEY_DE.c_str());
 	auto vecInfo = UtilString::split(strDataTimeData, "|");
 	auto vecIdEntity = UtilString::split(vecInfo[0], ":");
-	createDataEntityMaid(vecIdEntity);
+	createDataEntityMaid();
 }
 
 void HandleDataEntity::dataFileSet()
 {
 	auto userDefault = UserDefault::getInstance();
-	userDefault->setStringForKey(USER_DEFAULT_KEY_DE.c_str(), "");//ÐÞ¸Ä´æµµ//TODO
+	string strDataTimeData = "";
+	userDefault->setStringForKey(USER_DEFAULT_KEY_DE.c_str(), strDataTimeData);//ä¿®æ”¹å­˜æ¡£
 	userDefault->flush();
 }
 
@@ -310,10 +337,26 @@ void HandleDataEntity::setDataEntityMaidHpFull()
 	}
 }
 
+void HandleDataEntity::createDataEntityMaid()
+{
+	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
+	auto dicCfgEntity = ManagerCfg::getInstance()->getDicCfgEntity();
+	for (auto var : dicCfgEntity)
+	{
+		auto cfgEntity = var.second;
+		auto idEntity = cfgEntity.id;
+		if (cfgEntity.type == TypeEntity::MAID && handleDataUnlock->getIsUnlockMaid(idEntity))
+		{
+			auto dataEntity = createDataEntity(Value(idEntity).asInt());
+			_vecDataEntityMaid.pushBack(dataEntity);
+		}
+	}
+}
+
 void HandleDataEntity::createDataEntityMst()
 {
 	_vecDataEntityMst.clear();
-	auto levelCurrent = ManagerData::getInstance()->getHandleDataLevels()->getLevelCurrent();//»ñÈ¡¹Ø¿¨id
+	auto levelCurrent = ManagerData::getInstance()->getHandleDataLevels()->getLevelCurrent();//èŽ·å–å…³å¡id
 	auto cfgLevels = ManagerCfg::getInstance()->getDicCfgLevels()[levelCurrent];
 	auto vecIdDataEntity = UtilString::split(cfgLevels.msts, ":");
 	for (auto idDataEntity : vecIdDataEntity)
@@ -383,25 +426,49 @@ void HandleDataEntity::dealSkillRandom(const function<void()> &func /*= nullptr*
 	}
 }
 
-void HandleDataEntity::dealTurnOver()
+void HandleDataEntity::resetDataEntityAttributeTemp()
 {
-	getDataEntityMst()->vecSkillActiveInUse2UseOver();
+	auto dataEntity = getDataEntityMst();
+	dataEntity->setAttribute(IdAttribute::ENTITY_QUICK, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_HP, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_COST_HP, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_ENERGY, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_COST_ENERGY, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_HP_ALL, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_COST_HP_ALL, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE_EXTRA, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES_EXTRA, 0);
+	dataEntity =getDataEntityMst();
+	dataEntity->setAttribute(IdAttribute::ENTITY_QUICK, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_HP, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_COST_HP, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_ENERGY, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_COST_ENERGY, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_HP_ALL, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_COST_HP_ALL, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE_EXTRA, 0);
+	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES_EXTRA, 0);
 }
 
-void HandleDataEntity::dealRoundOver(const bool &isForce /*= false*/)
+void HandleDataEntity::dealVecSkillActiveInUse2UseOverMaid()
 {
-	addRoundTotal();
+	getDataEntityMaid()->vecSkillActiveInUse2UseOver();
+}
 
+void HandleDataEntity::dealDataEntitySkillSort(const bool &isForce /*= false*/)
+{
 	auto dataEntityMst = getDataEntityMst();
-	dataEntityMst->addRound();
-	dataEntityMst->updateSkillGroup();//Ï´¹ÖÎïÅÆ
+	dataEntityMst->updateSkillGroup();//æ´—æ€ªç‰©ç‰Œ
 
 	auto dataEntityMaid = getDataEntityMaid();
-	dataEntityMaid->addRound();
-	auto isAllUse = dataEntityMaid->vecSkillActiveIsAllUse();//ÊÇ·ñÒªÏ´Íæ¼ÒÅÆ
+	auto isAllUse = dataEntityMaid->vecSkillActiveIsAllUse();//æ˜¯å¦è¦æ´—çŽ©å®¶ç‰Œ
 	if (isForce || isAllUse)
 	{
-		dataEntityMaid->vecSkillActiveSort(isForce);//Ï´Íæ¼ÒÅÆ, ÔÚÄ³·½ËÀÍöÊ±²Å»áµ÷ÓÃÇ¿ÖÆË¢ÐÂ£¬Í¬Ê±ÐèÒªË¢ÐÂÈ«²¿
+		dataEntityMaid->vecSkillActiveSort(isForce);//æ´—çŽ©å®¶ç‰Œ, åœ¨æŸæ–¹æ­»äº¡æ—¶æ‰ä¼šè°ƒç”¨å¼ºåˆ¶åˆ·æ–°ï¼ŒåŒæ—¶éœ€è¦åˆ·æ–°å…¨éƒ¨
 	}
 }
 
@@ -409,7 +476,7 @@ void HandleDataEntity::dealBattleOver()
 {
 	resetIndexMst();
 	resetIndexMaid();
-	resetRoundTotal();
+	resetRound();
 }
 
 bool HandleDataEntity::isAllMstDead()
@@ -440,6 +507,24 @@ bool HandleDataEntity::isAllMaidDead()
 		}
 	}
 	return isAllDead;
+}
+
+void HandleDataEntity::addRound()
+{
+	_roundTotal++;
+	auto dataEntityMst = getDataEntityMst();
+	dataEntityMst->addRound();
+	auto dataEntityMaid = getDataEntityMaid();
+	dataEntityMaid->addRound();
+}
+
+void HandleDataEntity::resetRound()
+{
+	_roundTotal = 0;
+	auto dataEntityMst = getDataEntityMst();
+	dataEntityMst->resetRound();
+	auto dataEntityMaid = getDataEntityMaid();
+	dataEntityMaid->resetRound();
 }
 
 bool HandleDataEntity::getIsSkillNeedSwitchEntity(int &indexTo)
@@ -474,13 +559,4 @@ DataEntity * HandleDataEntity::createDataEntity(const int &idEntity)
 	dataEntity->updateAttribute();
 	dataEntity->updateSkillGroup();
 	return dataEntity;
-}
-
-void HandleDataEntity::createDataEntityMaid(const vector<string> &vecIdEntity)
-{
-	for (auto idEntity : vecIdEntity)
-	{
-		auto dataEntity = createDataEntity(Value(idEntity).asInt());
-		_vecDataEntityMaid.pushBack(dataEntity);
-	}
 }
