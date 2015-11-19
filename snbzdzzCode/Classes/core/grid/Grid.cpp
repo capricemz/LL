@@ -101,12 +101,31 @@ void Grid::updateSkinAttribute()
 				auto nodeHeight = node->getContentSize().height;
 				auto nodeWidth = node->getContentSize().width;
 				auto countLineBeforeLast = line > 0 ? countLineBefores[line - 1] : 0;
-				(int)countLineBefores.size() < line + 1 ? countLineBefores.push_back(1 + countLineBeforeLast) : countLineBefores[line]++;
+				if ((int)countLineBefores.size() < line + 1)
+				{
+					countLineBefores.push_back(1 + countLineBeforeLast);
+				}
+				else
+				{
+					countLineBefores[line]++;
+				}
 				auto lineTopLast = line > 0 ? lineBottom[line - 1] : 0.0f;
-				(int)lineBottom.size() < line + 1 ?
-					lineBottom.push_back(nodeHeight + lineTopLast) :
-					lineBottom[line] < nodeHeight + lineTopLast ? lineBottom[line] = nodeHeight : 0.0f;
-				(int)lineWidths.size() < line + 1 ? lineWidths.push_back(nodeWidth) : lineWidths[line] += nodeWidth;
+				if ((int)lineBottom.size() < line + 1)
+				{
+					lineBottom.push_back(nodeHeight + lineTopLast);
+				}
+				else if(lineBottom[line] < nodeHeight + lineTopLast)
+				{
+					lineBottom[line] = nodeHeight;
+				}
+				if ((int)lineWidths.size() < line + 1)
+				{
+					lineWidths.push_back(nodeWidth);
+				}
+				else
+				{
+					lineWidths[line] += nodeWidth;
+				}
 				count++;
 			}
 		}
@@ -126,12 +145,31 @@ void Grid::updateSkinAttribute()
 		auto nodeHeight = node->getContentSize().height;
 		auto nodeWidth = node->getContentSize().width;
 		auto countLineBeforeLast = line > 0 ? countLineBefores[line - 1] : 0;
-		(int)countLineBefores.size() < line + 1 ? countLineBefores.push_back(1 + countLineBeforeLast) : countLineBefores[line]++;
+		if ((int)countLineBefores.size() < line + 1)
+		{
+			countLineBefores.push_back(1 + countLineBeforeLast);
+		}
+		else
+		{
+			countLineBefores[line]++;
+		}
 		auto lineTopLast = line > 0 ? lineBottom[line - 1] : 0.0f;
-		(int)lineBottom.size() < line + 1 ?
-			lineBottom.push_back(nodeHeight + lineTopLast) :
-			lineBottom[line] < nodeHeight + lineTopLast ? lineBottom[line] = nodeHeight : 0.0f;
-		(int)lineWidths.size() < line + 1 ? lineWidths.push_back(nodeWidth) : lineWidths[line] += nodeWidth;
+		if ((int)lineBottom.size() < line + 1)
+		{
+			lineBottom.push_back(nodeHeight + lineTopLast);
+		}
+		else if (lineBottom[line] < nodeHeight + lineTopLast)
+		{
+			lineBottom[line] = nodeHeight;
+		}
+		if ((int)lineWidths.size() < line + 1)
+		{
+			lineWidths.push_back(nodeWidth);
+		}
+		else
+		{
+			lineWidths[line] += nodeWidth;
+		}
 		count++;
 	}
 	//

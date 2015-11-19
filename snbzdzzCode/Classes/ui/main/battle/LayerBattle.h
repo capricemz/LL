@@ -27,7 +27,7 @@ public:
 
 	virtual bool init();
 
-	void LayerBattle::updateBySubject(va_list values);
+	virtual void updateBySubject(va_list values);
 	
 	virtual Layer *getThis();
 	virtual void afterRunAppear();

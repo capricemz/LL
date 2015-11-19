@@ -25,7 +25,7 @@ public:
 
 	void setSkin(Layout *skin);
 
-	void updateBySubject(va_list values);
+	virtual void updateBySubject(va_list values);
 	/*postion 起始位置
 	funcOneOver 一个格子动作完成时调用
 	funcAllOver 动作全部完成时回调*/
