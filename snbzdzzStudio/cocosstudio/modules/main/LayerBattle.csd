@@ -95,7 +95,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutBg" CanEdit="False" ActionTag="1182398313" Tag="157" IconVisible="False" LeftMargin="0.0000" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutBg" CanEdit="False" ActionTag="1182398313" Tag="157" IconVisible="False" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="640.0000" Y="960.0000" />
             <Children>
               <AbstractNodeData Name="imageBgMaid" ActionTag="53636026" Tag="132" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" TopMargin="209.0000" LeftEage="10" RightEage="10" TopEage="10" BottomEage="10" Scale9OriginX="10" Scale9OriginY="10" Scale9Width="620" Scale9Height="268" ctype="ImageViewObjectData">
@@ -208,17 +208,17 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="0.0000" />
+            <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0000" />
+            <PrePosition />
             <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutHead" CanEdit="False" ActionTag="1116761913" Tag="160" IconVisible="False" LeftMargin="0.0000" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutHead" CanEdit="False" ActionTag="1116761913" Tag="160" IconVisible="False" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="640.0000" Y="960.0000" />
             <Children>
               <AbstractNodeData Name="layoutMaid2" ActionTag="548288124" Tag="150" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="348.0001" RightMargin="169.9999" TopMargin="752.0000" BottomMargin="3.0000" TouchEnable="True" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
@@ -248,14 +248,14 @@
                   <AbstractNodeData Name="spriteHpBg" ActionTag="-400962338" Tag="153" IconVisible="False" LeftMargin="21.0000" RightMargin="9.0000" TopMargin="158.0000" BottomMargin="25.0000" ctype="SpriteObjectData">
                     <Size X="92.0000" Y="22.0000" />
                     <Children>
-                      <AbstractNodeData Name="barHp" CanEdit="False" ActionTag="1921937748" Tag="154" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="7.0000" BottomMargin="7.0000" ProgressInfo="50" ctype="LoadingBarObjectData">
-                        <Size X="78.0000" Y="8.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="46.0000" Y="11.0000" />
+                      <AbstractNodeData Name="barHp" CanEdit="False" ActionTag="1921937748" Tag="154" IconVisible="False" LeftMargin="31.0000" RightMargin="7.0000" TopMargin="7.0000" BottomMargin="7.0000" ProgressInfo="100" ctype="LoadingBarObjectData">
+                        <Size X="54.0000" Y="8.0000" />
+                        <AnchorPoint ScaleY="0.5000" />
+                        <Position X="31.0000" Y="11.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5000" Y="0.5000" />
-                        <PreSize X="0.8387" Y="0.0563" />
+                        <PrePosition X="0.3370" Y="0.5000" />
+                        <PreSize X="0.5870" Y="0.3636" />
                         <ImageFileData Type="Normal" Path="images/battle/card_bar.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -318,14 +318,14 @@
                   <AbstractNodeData Name="spriteHpBg" ActionTag="-1476801958" Tag="147" IconVisible="False" LeftMargin="21.0000" RightMargin="9.0000" TopMargin="158.0000" BottomMargin="25.0000" ctype="SpriteObjectData">
                     <Size X="92.0000" Y="22.0000" />
                     <Children>
-                      <AbstractNodeData Name="barHp" CanEdit="False" ActionTag="-505030515" Tag="148" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="7.0000" BottomMargin="7.0000" ProgressInfo="50" ctype="LoadingBarObjectData">
-                        <Size X="78.0000" Y="8.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="46.0000" Y="11.0000" />
+                      <AbstractNodeData Name="barHp" CanEdit="False" ActionTag="-505030515" Tag="148" IconVisible="False" LeftMargin="31.0000" RightMargin="7.0000" TopMargin="7.0000" BottomMargin="7.0000" ProgressInfo="100" ctype="LoadingBarObjectData">
+                        <Size X="54.0000" Y="8.0000" />
+                        <AnchorPoint ScaleY="0.5000" />
+                        <Position X="31.0000" Y="11.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5000" Y="0.5000" />
-                        <PreSize X="0.8387" Y="0.0563" />
+                        <PrePosition X="0.3370" Y="0.5000" />
+                        <PreSize X="0.5870" Y="0.3636" />
                         <ImageFileData Type="Normal" Path="images/battle/card_bar.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -388,14 +388,14 @@
                   <AbstractNodeData Name="spriteHpBg" ActionTag="2113609258" Tag="136" IconVisible="False" LeftMargin="21.0000" RightMargin="9.0000" TopMargin="158.0000" BottomMargin="25.0000" ctype="SpriteObjectData">
                     <Size X="92.0000" Y="22.0000" />
                     <Children>
-                      <AbstractNodeData Name="barHp" ActionTag="983667381" Tag="74" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="7.0000" BottomMargin="7.0000" ProgressInfo="50" ctype="LoadingBarObjectData">
-                        <Size X="78.0000" Y="8.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="46.0000" Y="11.0000" />
+                      <AbstractNodeData Name="barHp" ActionTag="983667381" Tag="74" IconVisible="False" LeftMargin="31.0000" RightMargin="7.0000" TopMargin="7.4373" BottomMargin="6.5627" ProgressInfo="100" ctype="LoadingBarObjectData">
+                        <Size X="54.0000" Y="8.0000" />
+                        <AnchorPoint ScaleY="0.5000" />
+                        <Position X="31.0000" Y="10.5627" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5000" Y="0.5000" />
-                        <PreSize X="0.8387" Y="0.0563" />
+                        <PrePosition X="0.3370" Y="0.4801" />
+                        <PreSize X="0.5870" Y="0.3636" />
                         <ImageFileData Type="Normal" Path="images/battle/card_bar.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -434,7 +434,7 @@
               <AbstractNodeData Name="layoutEnergyMaid" ActionTag="1136608063" Tag="156" IconVisible="False" LeftMargin="374.0836" RightMargin="124.9164" TopMargin="793.3898" BottomMargin="118.6102" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="141.0000" Y="48.0000" />
                 <Children>
-                  <AbstractNodeData Name="barEnergy" ActionTag="1377480472" Tag="158" IconVisible="False" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="3.9999" BottomMargin="8.0001" ctype="LoadingBarObjectData">
+                  <AbstractNodeData Name="barEnergy" ActionTag="1377480472" Tag="158" IconVisible="False" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="3.9999" BottomMargin="8.0001" ProgressInfo="100" ctype="LoadingBarObjectData">
                     <Size X="131.0000" Y="36.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="70.5000" Y="26.0001" />
@@ -494,14 +494,14 @@
                   <AbstractNodeData Name="spriteHpBg" ActionTag="-1879701836" Tag="169" IconVisible="False" LeftMargin="21.0000" RightMargin="9.0000" TopMargin="158.0000" BottomMargin="25.0000" ctype="SpriteObjectData">
                     <Size X="92.0000" Y="22.0000" />
                     <Children>
-                      <AbstractNodeData Name="barHp" CanEdit="False" ActionTag="-115496650" Tag="170" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="7.0000" BottomMargin="7.0000" ProgressInfo="50" ctype="LoadingBarObjectData">
-                        <Size X="78.0000" Y="8.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="46.0000" Y="11.0000" />
+                      <AbstractNodeData Name="barHp" CanEdit="False" ActionTag="-115496650" Tag="170" IconVisible="False" LeftMargin="31.0000" RightMargin="7.0000" TopMargin="7.0000" BottomMargin="7.0000" ProgressInfo="100" ctype="LoadingBarObjectData">
+                        <Size X="54.0000" Y="8.0000" />
+                        <AnchorPoint ScaleY="0.5000" />
+                        <Position X="31.0000" Y="11.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5000" Y="0.5000" />
-                        <PreSize X="0.8387" Y="0.0563" />
+                        <PrePosition X="0.3370" Y="0.5000" />
+                        <PreSize X="0.5870" Y="0.3636" />
                         <ImageFileData Type="Normal" Path="images/battle/card_bar.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -564,14 +564,14 @@
                   <AbstractNodeData Name="spriteHpBg" CanEdit="False" ActionTag="672987058" Tag="175" IconVisible="False" LeftMargin="21.0000" RightMargin="9.0000" TopMargin="158.0000" BottomMargin="25.0000" ctype="SpriteObjectData">
                     <Size X="92.0000" Y="22.0000" />
                     <Children>
-                      <AbstractNodeData Name="barHp" CanEdit="False" ActionTag="-110268830" Tag="176" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="7.0000" BottomMargin="7.0000" ProgressInfo="50" ctype="LoadingBarObjectData">
-                        <Size X="78.0000" Y="8.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="46.0000" Y="11.0000" />
+                      <AbstractNodeData Name="barHp" CanEdit="False" ActionTag="-110268830" Tag="176" IconVisible="False" LeftMargin="31.0000" RightMargin="7.0000" TopMargin="7.0000" BottomMargin="7.0000" ProgressInfo="100" ctype="LoadingBarObjectData">
+                        <Size X="54.0000" Y="8.0000" />
+                        <AnchorPoint ScaleY="0.5000" />
+                        <Position X="31.0000" Y="11.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5000" Y="0.5000" />
-                        <PreSize X="0.8387" Y="0.0563" />
+                        <PrePosition X="0.3370" Y="0.5000" />
+                        <PreSize X="0.5870" Y="0.3636" />
                         <ImageFileData Type="Normal" Path="images/battle/card_bar.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -634,14 +634,14 @@
                   <AbstractNodeData Name="spriteHpBg" CanEdit="False" ActionTag="1014599061" Tag="181" IconVisible="False" LeftMargin="21.0000" RightMargin="9.0000" TopMargin="158.0000" BottomMargin="25.0000" ctype="SpriteObjectData">
                     <Size X="92.0000" Y="22.0000" />
                     <Children>
-                      <AbstractNodeData Name="barHp" CanEdit="False" ActionTag="-1759520081" Tag="182" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="7.0000" BottomMargin="7.0000" ProgressInfo="50" ctype="LoadingBarObjectData">
-                        <Size X="78.0000" Y="8.0000" />
-                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="46.0000" Y="11.0000" />
+                      <AbstractNodeData Name="barHp" CanEdit="False" ActionTag="-1759520081" Tag="182" IconVisible="False" LeftMargin="31.0000" RightMargin="7.0000" TopMargin="7.0000" BottomMargin="7.0000" ProgressInfo="100" ctype="LoadingBarObjectData">
+                        <Size X="54.0000" Y="8.0000" />
+                        <AnchorPoint ScaleY="0.5000" />
+                        <Position X="31.0000" Y="11.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5000" Y="0.5000" />
-                        <PreSize X="0.8387" Y="0.0563" />
+                        <PrePosition X="0.3370" Y="0.5000" />
+                        <PreSize X="0.5870" Y="0.3636" />
                         <ImageFileData Type="Normal" Path="images/battle/card_bar.png" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -680,7 +680,7 @@
               <AbstractNodeData Name="layoutEnergyMst" ActionTag="561136449" Tag="184" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="TopEdge" LeftMargin="125.0000" RightMargin="374.0000" TopMargin="118.0000" BottomMargin="794.0000" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="141.0000" Y="48.0000" />
                 <Children>
-                  <AbstractNodeData Name="barEnergy" ActionTag="1295506750" Tag="185" IconVisible="False" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="3.9999" BottomMargin="8.0001" ctype="LoadingBarObjectData">
+                  <AbstractNodeData Name="barEnergy" ActionTag="1295506750" Tag="185" IconVisible="False" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="3.9999" BottomMargin="8.0001" ProgressInfo="100" ctype="LoadingBarObjectData">
                     <Size X="131.0000" Y="36.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="70.5000" Y="26.0001" />
@@ -715,23 +715,23 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="0.0000" />
+            <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0000" />
+            <PrePosition />
             <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutGrid" Visible="False" ActionTag="207144131" Tag="161" IconVisible="False" LeftMargin="0.0000" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutGrid" Visible="False" ActionTag="207144131" Tag="161" IconVisible="False" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="640.0000" Y="960.0000" />
             <AnchorPoint />
-            <Position X="0.0000" />
+            <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0000" />
+            <PrePosition />
             <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />

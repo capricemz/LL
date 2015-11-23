@@ -314,12 +314,12 @@ void Entity::dealResultValueChange(const IdAttribute &idAttributeGet, const bool
 	if (idAttributeChange == IdAttribute::ENTITY_HP)
 	{
 		words = STR_HP + words;
-		managerUI->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::UPDATE_HP);//界面刷新
+		updateHp();//界面刷新
 	}
 	else if (idAttributeChange == IdAttribute::ENTITY_ENERGY)
 	{
 		words = STR_EP + words;
-		managerUI->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::UPDATE_ENERGY);//界面刷新
+		updateEnergy();//界面刷新
 	}
 	managerUI->showWordsDrift(getParent(), getPosition() + Vec2(0.0f, 250.0f), words, color, duration);
 }

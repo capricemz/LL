@@ -88,11 +88,11 @@ void HandleEntity::updateBySubject(va_list values)
 	}
 	else if (type == TYPE_OBSERVER_HANDLE_ENTITY::UPDATE_HP)
 	{
-		updateTxtHpOrEnergy(true);
+		/*updateTxtHpOrEnergy(true);*/
 	}
 	else if (type == TYPE_OBSERVER_HANDLE_ENTITY::UPDATE_ENERGY)
 	{
-		updateTxtHpOrEnergy(false);
+		/*updateTxtHpOrEnergy(false);*/
 	}
 }
 
@@ -268,7 +268,7 @@ void HandleEntity::updateTxtHpOrEnergy(const bool &isHp)
 		auto entity = isMst ? (Entity *)managerEntity->getMonster() : (Entity *)managerEntity->getMaid();
 		auto value = entity->getDataEntity()->getAttribute(idAttribute);
 		auto text = isMst ? Value(value).asString() + "X" : "X" + Value(value).asString();
-		/*auto txt = (Text *)_skin->getChildByName(isMst ? "layoutMstBar" : "layoutMaidBar")->getChildByName(name);
-		txt->setString(text);*/
+		auto txt = (Text *)_skin->getChildByName(isMst ? "layoutMstBar" : "layoutMaidBar")->getChildByName(name);
+		txt->setString(text);
 	}
 }

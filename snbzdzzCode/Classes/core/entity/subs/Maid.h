@@ -18,6 +18,8 @@ protected:
 	virtual void setDataEntity();
 	virtual Vec2 getPostionAppearDisAppear();
 	virtual Vec2 getPostionEndAttack();
+	virtual void updateHp();
+	virtual void updateEnergy();
 	virtual void switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess);
 	
 private:

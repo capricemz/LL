@@ -1,6 +1,7 @@
 #include "Maid.h"
 #include "cocostudio/CocoStudio.h"
 #include "../ManagerEntity.h"
+#include "ui/ManagerUI.h"
 
 Maid::Maid()
 {
@@ -38,6 +39,16 @@ cocos2d::Vec2 Maid::getPostionEndAttack()
 {
 	auto size = _skin->getContentSize();
 	return Vec2(-size.width * 2.0f, 0.0f);
+}
+
+void Maid::updateHp()
+{
+	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::UPDATE_HP, false);//界面刷新
+}
+
+void Maid::updateEnergy()
+{
+	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::UPDATE_ENERGY, false);//界面刷新
 }
 
 void Maid::switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess)

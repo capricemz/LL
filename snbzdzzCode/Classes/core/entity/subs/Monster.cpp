@@ -1,5 +1,6 @@
 #include "Monster.h"
 #include "..\ManagerEntity.h"
+#include "ui\ManagerUI.h"
 
 Monster::Monster()
 {
@@ -36,6 +37,16 @@ cocos2d::Vec2 Monster::getPostionEndAttack()
 {
 	auto size = _skin->getContentSize();
 	return Vec2(size.width * 2.0f, 0.0f);
+}
+
+void Monster::updateHp()
+{
+	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::UPDATE_HP, true);//界面刷新
+}
+
+void Monster::updateEnergy()
+{
+	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::UPDATE_ENERGY, true);//界面刷新
 }
 
 void Monster::switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess)

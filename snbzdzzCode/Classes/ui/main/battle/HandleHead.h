@@ -5,11 +5,13 @@
 
 #include "cocos2d.h"
 #include "ui/UILayout.h"
+#include "common/observer/Observer.h"
+#include "data/data/ManagerData.h"
 
 USING_NS_CC;
 using namespace ui;
 
-class HandleHead : public Ref
+class HandleHead : public Ref, public Observer
 {
 public:
 	CREATE_FUNC(HandleHead);
@@ -20,6 +22,8 @@ public:
 
 	virtual bool init();
 
+	virtual void updateBySubject(va_list values);
+
 	void setSkin(Layout *skin);
 	/*type 0女仆，1怪物
 	index 第几个*/
@@ -27,6 +31,10 @@ public:
 	
 	void resetSkin();
 
+private:
+	void updateBarHp(const std::string &name, DataEntity *dataEntity);
+	void updateBarEnergy(const std::string &name, DataEntity *dataEntity);
+	
 private:
 	Layout *_skin;
 
