@@ -494,7 +494,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/main/card_head/baattle_fs.png" Plist="" />
+            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="spriteBgn" CanEdit="False" ActionTag="1596804542" Tag="73" IconVisible="False" LeftMargin="-60.0000" RightMargin="-64.0000" TopMargin="-74.5000" BottomMargin="-80.5000" ctype="SpriteObjectData">

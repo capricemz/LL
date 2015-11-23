@@ -6,17 +6,22 @@
         <Folder Name="images">
           <Folder Name="common">
             <Image Name="loading.png" />
+            <Image Name="element_ct.png" />
+            <Image Name="element_ff.png" />
+            <Image Name="element_kg.png" />
+            <Image Name="element_mf.png" />
+            <Image Name="element_qf.png" />
+            <Image Name="element_sm.png" />
+            <Image Name="element_wf.png" />
+            <Image Name="element_wg.png" />
+            <Image Name="op_cike.png" />
+            <Image Name="op_fs.png" />
+            <Image Name="op_pz.png" />
+            <Image Name="op_ss.png" />
+            <Image Name="op_tk.png" />
+            <Image Name="op_zs.png" />
           </Folder>
           <Folder Name="main">
-            <Folder Name="bg">
-              <Image Name="battle_bg1.png" />
-            </Folder>
-            <Folder Name="big_head">
-              <Image Name="big_head_2.png" />
-              <Image Name="big_head_3.png" />
-              <Image Name="big_head_31.png" />
-              <Image Name="big_head_32.png" />
-            </Folder>
             <Folder Name="icon">
               <Image Name="mb.png" />
               <Image Name="md.png" />
@@ -47,9 +52,6 @@
               <Image Name="lianxian_dian.png" />
               <Image Name="lianxian_quan.png" />
               <Image Name="lianxian_xian.png" />
-            </Folder>
-            <Folder Name="card_head">
-              <Image Name="baattle_fs.png" />
             </Folder>
             <Folder Name="hero_head">
               <Image Name="hero_head_1003.png" />
@@ -92,6 +94,31 @@
               <Image Name="vs.png" />
               <Image Name="jieshuzhandou.png" />
             </Folder>
+          </Folder>
+          <Folder Name="battle">
+            <Image Name="card_bar.png" />
+            <Image Name="card_bar_bg.png" />
+            <Image Name="card_box.png" />
+            <Image Name="gold_card_bg.png" />
+            <Image Name="nl_bar.png" />
+            <Image Name="nl_bg.png" />
+            <Image Name="ordinary_card_bg.png" />
+            <Image Name="role_bg.png" />
+            <Image Name="skill_card_bg.png" />
+            <Image Name="line.png" />
+            <Image Name="vs.png" />
+          </Folder>
+          <Folder Name="role_card">
+            <Image Name="role_card_4.png" />
+          </Folder>
+          <Folder Name="bg">
+            <Image Name="battle_bg1.png" />
+          </Folder>
+          <Folder Name="big_head">
+            <Image Name="big_head_2.png" />
+            <Image Name="big_head_3.png" />
+            <Image Name="big_head_31.png" />
+            <Image Name="big_head_32.png" />
           </Folder>
         </Folder>
         <Folder Name="fonts">
