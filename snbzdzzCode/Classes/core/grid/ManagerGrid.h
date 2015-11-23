@@ -31,13 +31,13 @@ public:
 	Map<int, Grid *> getDicGridMaidSelect() const { return _dicGridMaidSelect; }
 	void insertGridMaidSelect(const int &idGrid, Grid *grid) { _dicGridMaidSelect.insert(idGrid, grid); }
 
-	Map<int, Grid *> getDicGridMstShow() const { return _dicGridMstShow; }
+	/*Map<int, Grid *> getDicGridMstShow() const { return _dicGridMstShow; }
 	void insertGridMstShow(const int &idGrid, Grid *grid) { _dicGridMstShow.insert(idGrid, grid); }
 	void clearDicGridMstShow() { _dicGridMstShow.clear(); };
 
 	Map<int, Grid *> getDicGridMaidShow() const { return _dicGridMaidShow; }
 	void insertGridMaidShow(const int &idGrid, Grid *grid) { _dicGridMaidShow.insert(idGrid, grid); }
-	void clearDicGridMaidShow() { _dicGridMaidShow.clear(); };
+	void clearDicGridMaidShow() { _dicGridMaidShow.clear(); };*/
 
 	Map<int, Grid *> getDicGridMstSelected() const { return _dicGridMstSelected; }
 	void insertGridMstSelected(const int &idGrid, Grid *grid) { _dicGridMstSelected.insert(idGrid, grid); }
@@ -79,8 +79,8 @@ private:
 	
 private:
 	Map<int, Grid *> _dicGridMaidSelect;
-	Map<int, Grid *> _dicGridMstShow;
-	Map<int, Grid *> _dicGridMaidShow;
+	/*Map<int, Grid *> _dicGridMstShow;
+	Map<int, Grid *> _dicGridMaidShow;*/
 	Map<int, Grid *> _dicGridMstSelected;
 	Map<int, Grid *> _dicGridMaidSelected;
 	Map<int, Grid *> _dicGridBattle;

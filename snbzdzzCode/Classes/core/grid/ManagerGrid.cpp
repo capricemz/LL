@@ -51,24 +51,12 @@ void ManagerGrid::setAroundGridCanMoveOver(const int &indexGrid)
 		}
 		else
 		{
-			auto postoinBasicDelta = vecPostionGridSelect[4] - vecPostionGridSelect[0];
-			auto psotionDelta = vecPostionGridSelect[indexGridTemp] - vecPostionGridSelect[indexGrid];
+			auto postoinBasicDelta = _dicGridMaidSelect.at(4)->getPosition() - _dicGridMaidSelect.at(0)->getPosition();
+			auto psotionDelta = _dicGridMaidSelect.at(indexGridTemp)->getPosition() - _dicGridMaidSelect.at(indexGrid)->getPosition();
 			auto xCount = psotionDelta.x / postoinBasicDelta.x;
 			auto yCount = psotionDelta.y / postoinBasicDelta.y;
 			grid->setIsCanMoveOver((xCount <= 1 && xCount >= -1) && (yCount <= 1 && yCount >= -1));
 		}
-		/*if (indexGridTemp == indexGrid)
-		{
-			grid->setIsCanMoveOver(false);
-		}
-		else
-		{
-			auto postoinBasicDelta = vecPostionGridSelect[4] - vecPostionGridSelect[0];
-			auto psotionDelta = vecPostionGridSelect[indexGridTemp] - vecPostionGridSelect[indexGrid];
-			auto xCount = psotionDelta.x / postoinBasicDelta.x;
-			auto yCount = psotionDelta.y / postoinBasicDelta.y;
-			grid->setIsCanMoveOver((xCount <= 1 && xCount >= -1) && (yCount <= 1 && yCount >= -1));
-		}*/
 	}
 }
 
@@ -147,7 +135,7 @@ void ManagerGrid::linkDataGridSelected()
 {
 	DataGrid *dataGridMst = nullptr;
 	DataGrid *dataGridMaid = nullptr;
-	for (auto i = 0; i < 4; i++)
+	for (auto i = 0; i < GRID_SELECTED_MAX; i++)
 	{
 		auto grid = (Grid *)_dicGridMstSelected.at(i);
 		auto dataGridTemp = grid->getDataGrid();
@@ -507,7 +495,7 @@ void ManagerGrid::dealEffective(DataGrid *dataGrid, const vector<string> &args)
 	{
 		auto value = Value(args[1]).asInt();
 		dataGrid->addAttribute(idAttribute, value);
-		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_GRID_SELECTED, TYPE_OBSERVER_HANDLE_SELECTED::UPDATE_GRID, dataGrid->getId());
+		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_GRID, TYPE_OBSERVER_HANDLE_GRID::UPDATE_GRID, dataGrid->getId());
 	}
 	else
 	{

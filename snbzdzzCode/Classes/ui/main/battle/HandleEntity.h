@@ -32,11 +32,7 @@ public:
 private:
 	void setTxtHpOrEnergy(Entity *entity, const bool &isMst, const bool &isHp);
 
-	void runGridMoveAndThrow();//ÂÖ¿ªÊ¼Ö´ÐÐ
-	void gridMoveFrom(const int &indexGrid);
-	void gridMoveFromOver(Grid *grid, const bool &isMst);
 	void runBackgroundEffect();
-	void gridThrowToOrPlayOver(Grid *grid, const bool &isMst);
 
 	void runEntityAction();
 	

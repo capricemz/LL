@@ -11,10 +11,11 @@
 LayerBattle::LayerBattle() : 
 	_skin(nullptr),
 	_handleEntity(nullptr),
-	_handleGridSelected(nullptr),
-	_handleHeadIcon(nullptr),
-	_handleGridSelect(nullptr),
-	_layerGridShow(nullptr),
+	_handleBg(nullptr),
+	_handleHead(nullptr),
+	_handleGrid(nullptr),
+	_layerGridSelect(nullptr),
+	/*_layerGridShow(nullptr),*/
 	_layerBattleResult(nullptr)
 {
 }
@@ -24,11 +25,12 @@ LayerBattle::~LayerBattle()
 	ManagerUI::getInstance()->detach(this);
 	_skin = nullptr;
 	CC_SAFE_RELEASE_NULL(_handleEntity);
-	CC_SAFE_RELEASE_NULL(_handleGridSelected);
-	CC_SAFE_RELEASE_NULL(_handleHeadIcon);
-	CC_SAFE_RELEASE_NULL(_handleGridSelect);
+	CC_SAFE_RELEASE_NULL(_handleBg);
+	CC_SAFE_RELEASE_NULL(_handleHead);
+	CC_SAFE_RELEASE_NULL(_handleGrid);
 
-	_layerGridShow = nullptr;
+	_layerGridSelect = nullptr;
+	/*_layerGridShow = nullptr;*/
 	_layerBattleResult = nullptr;
 }
 
@@ -54,22 +56,29 @@ bool LayerBattle::init()
 void LayerBattle::updateBySubject(va_list values)
 {
 	auto type = va_arg(values, TYPE_OBSERVER_LAYER_BATTLE);
-	if(type == TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_GRID_SHOW)
+	if (type == TYPE_OBSERVER_LAYER_BATTLE::SHOW_APPEAR_GRID_SELECTED_MST)
 	{
-		_layerGridShow = LayerGridShow::create();
-		auto layoutGridSelect = (Layout *)_skin->getChildByName("layoutGridSelect");
-		layoutGridSelect->addChild(_layerGridShow);
-		_layerGridShow->runSkillRandom([this]()
-		{
-			_layerGridShow->runAppearAction(CC_CALLBACK_0(LayerBattle::funcAfterLayerGridShowRunAppearAction, this));
-		});
+		showAppearGridSelectedMst();
 	}
-	else if (type == TYPE_OBSERVER_LAYER_BATTLE::CLOSE_LAYER_GRID_SHOW)
+	else if (type == TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_GRID_SELECT)
 	{
-		if (_layerGridShow != nullptr && _layerGridShow->getParent())
+		if (_layerGridSelect == nullptr)
 		{
-			_layerGridShow->removeFromParent();
-			_layerGridShow = nullptr;
+			_layerGridSelect = LayerGridSelect::create();
+			auto layoutGrid = (Layout *)_skin->getChildByName("layoutGrid");
+			layoutGrid->addChild(_layerGridSelect);
+		}
+		_layerGridSelect->runAppearAction();
+	}
+	else if (type == TYPE_OBSERVER_LAYER_BATTLE::SHOW_APPEAR_GRID_SELECT_MAID)
+	{
+		showAppearGridSelectMaid();
+	}
+	else if (type == TYPE_OBSERVER_LAYER_BATTLE::HIDE_LAYER_GRID_SELECT)
+	{
+		if (_layerGridSelect != nullptr && _layerGridSelect->getParent())
+		{
+			_layerGridSelect->runDisappearAction();
 		}
 	}
 	else if (type == TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_BATTLE_RESULT)
@@ -107,53 +116,27 @@ void LayerBattle::dealRemoveFromParent()
 	}
 }
 
-void LayerBattle::funcAfterLayerGridShowRunAppearAction()
+void LayerBattle::showAppearGridSelectedMst()
 {
-	if (_layerGridShow == nullptr)
+	auto indexMst = ManagerData::getInstance()->getHandleDataEntity()->getIndexMst();
+	auto postion = getPostionHeadIcon(1, indexMst);
+	_handleGrid->showAppearGridSelectedMst(postion);
+}
+
+void LayerBattle::showAppearGridSelectMaid()
+{
+	if (_layerGridSelect == nullptr)
 	{
 		return;
 	}
-	auto actionCallFunc = CallFunc::create([this]()
-	{
-		auto indexMst = ManagerData::getInstance()->getHandleDataEntity()->getIndexMst();
-		auto postion = getPostionHeadIcon(1, indexMst);
-		_layerGridShow->runMstGridMoveFromAction(postion, nullptr, CC_CALLBACK_0(LayerBattle::funcAfterRunMstGridMoveFromAction, this));
-	});
-	runAction(Sequence::create(Shake::create(0.4f, 1.5f), actionCallFunc, nullptr));
-}
-
-void LayerBattle::funcAfterRunMstGridMoveFromAction()
-{
-	if (_layerGridShow == nullptr)
-	{
-		return;
-	}
-	auto actionCallFunc = CallFunc::create([this]()
-	{
-		_layerGridShow->runMstGridTurnAction(nullptr, CC_CALLBACK_0(LayerBattle::funcAfterRunMstGridTurnAction, this));
-	});
-	runAction(actionCallFunc);
-}
-
-void LayerBattle::funcAfterRunMstGridTurnAction()
-{
-	auto actionCallFunc = CallFunc::create([this]()
-	{
-		auto indexMaid = ManagerData::getInstance()->getHandleDataEntity()->getIndexMaid();
-		runMaidGridMoveFromAction(indexMaid, nullptr, CC_CALLBACK_0(HandleGridSelect::runMaidGridTurnAction, _handleGridSelect, nullptr, nullptr));
-	});
-	runAction(actionCallFunc);
-}
-
-void LayerBattle::runMaidGridMoveFromAction(const int &indexMaid, const function<void()> &funcOneOver /*= nullptr*/, const function<void()> &funcAllOver /*= nullptr*/)
-{
+	auto indexMaid = ManagerData::getInstance()->getHandleDataEntity()->getIndexMaid();
 	auto postion = getPostionHeadIcon(0, indexMaid);
-	_handleGridSelect->runMaidGridMoveFromAction(postion, funcOneOver, funcAllOver);
+	_layerGridSelect->showAppearGridSelectMaid(postion);
 }
 
 Vec2 LayerBattle::getPostionHeadIcon(const int &type, const int &index)
 {
-	return _handleHeadIcon->getPostionHeadIcon(type, index);
+	return _handleHead->getPostionHeadIcon(type, index);
 }
 
 void LayerBattle::createData()
@@ -174,26 +157,26 @@ void LayerBattle::createSkin()
 	_handleEntity->retain();
 	_handleEntity->setSkin(layoutEntity);
 
-	auto layoutGridSelected = (Layout *)_skin->getChildByName("layoutGridSelected");
-	_handleGridSelected = HandleGridSelected::create();
-	_handleGridSelected->retain();
-	_handleGridSelected->setSkin(layoutGridSelected);
+	auto layoutBg = (Layout *)_skin->getChildByName("layoutBg");
+	_handleBg = HandleBg::create();
+	_handleBg->retain();
+	_handleBg->setSkin(layoutBg);
 
-	auto layoutHeadIcon = (Layout *)_skin->getChildByName("layoutHeadIcon");
-	_handleHeadIcon = HandleHeadIcon::create();
-	_handleHeadIcon->retain();
-	_handleHeadIcon->setSkin(layoutHeadIcon);
+	auto layoutHead = (Layout *)_skin->getChildByName("layoutHead");
+	_handleHead = HandleHead::create();
+	_handleHead->retain();
+	_handleHead->setSkin(layoutHead);
 
-	auto layoutGridSelect = (Layout *)_skin->getChildByName("layoutGridSelect");
-	_handleGridSelect = HandleGridSelect::create();
-	_handleGridSelect->retain();
-	_handleGridSelect->setSkin(layoutGridSelect);
+	auto layoutGrid = (Layout *)_skin->getChildByName("layoutGrid");
+	_handleGrid = HandleGrid::create();
+	_handleGrid->retain();
+	_handleGrid->setSkin(layoutGrid);
 }
 
 void LayerBattle::resetSkin()
 {
 	_handleEntity->resetSkin();
-	_handleGridSelected->resetSkin();
-	_handleHeadIcon->resetSkin();
-	/*_handleGridSelect->resetSkin();*///不用统一清理
+	_handleHead->resetSkin();
+	_handleGrid->resetSkin();
+	/*_layerGridSelect->resetSkin();*///不用统一清理
 }

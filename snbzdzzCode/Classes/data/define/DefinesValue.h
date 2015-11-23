@@ -13,11 +13,12 @@ static const int TIME_LAST_SAVE_INTERVAL = 300;
 static const int TIME_OFF_LINE_MAX = 172800;
 
 static const int GRID_SELECT_MAX = 9;
-static const int GRID_SELECTED_MAX = 4;
+static const int GRID_SELECTED_MAX = 3;
 static const int ENTITY_BATTLE_MAX = 3;
 
 static const int DATA_UNLOCK_INIT_MAID = 1000;//初始化时默认解锁的女仆
 
+/*
 static const vector<Vec2> vecPostionGridSelect =
 {
 	Vec2(60.0f, 396.0f), Vec2(187.0f, 396.0f), Vec2(314.0f, 396.0f),
@@ -43,11 +44,11 @@ static const vector<Vec2> vecPostionGridSelectedMaid =
 static const vector<Vec2> vecPostionGridSelectedMst =
 {
 	Vec2(422.0f, 40.0f), Vec2(483.0f, 40.0f), Vec2(544.0f, 40.0f), Vec2(605.0f, 40.0f)
-};
+};*/
 
 static const vector<Vec2> vecPostionGridBattle =
 {
-	Vec2(480.0f, 260.0f), Vec2(160.0f, 260.0f), Vec2(320.0f, 260.0f)
+	Vec2(160.0f, 620.0f), Vec2(480.0f, 340.0f), Vec2(320.0f, 480.0f)
 };
 
 enum class TypeLoadState
@@ -223,9 +224,8 @@ enum class ID_OBSERVER
 {
 	SCENE_MAIN,
 	LAYER_BATTLE,
-	LAYER_GRID_SHOW,
-	HANDLE_GRID_SELECT,
-	HANDLE_GRID_SELECTED,
+	LAYER_GRID_SELECT,
+	HANDLE_GRID,
 	HANDLE_ENTITY
 };
 
@@ -238,8 +238,10 @@ enum class TYPE_OBSERVER_SCENE_MAIN
 
 enum class TYPE_OBSERVER_LAYER_BATTLE
 {
-	SHOW_LAYER_GRID_SHOW,//运行显示格子出现动作
-	CLOSE_LAYER_GRID_SHOW,
+	SHOW_APPEAR_GRID_SELECTED_MST,//显示怪物选中格子出现动画
+	SHOW_LAYER_GRID_SELECT,//添加格子选择层，显示出现动画
+	SHOW_APPEAR_GRID_SELECT_MAID,//显示女仆选择格子出现动画
+	HIDE_LAYER_GRID_SELECT,//移除格子选择层，显示消失动画
 	SHOW_LAYER_BATTLE_RESULT,
 	RESET_SKIN
 };
@@ -251,7 +253,7 @@ enum class TYPE_OBSERVER_LAYER_GRID_SHOW
 	CLOSE
 };
 
-enum class TYPE_OBSERVER_HANDLE_GRID_SELECT
+enum class TYPE_OBSERVER_LAYER_GRID_SELECT
 {
 	RUN_MAID_GRID_MOVE_FROM_ACTION_ONE_BACK,
 	RUN_MAID_GRID_MOVE_FROM_ACTION_ALL_BACK,
@@ -261,17 +263,18 @@ enum class TYPE_OBSERVER_HANDLE_GRID_SELECT
 	RUN_MAID_GRID_SCALE_SMALL
 };
 
-enum class TYPE_OBSERVER_HANDLE_SELECTED
+enum class TYPE_OBSERVER_HANDLE_GRID
 {
-	RUN_GRID_MOVE_ACTION,
+	RUN_ACTION_GRID_SELECTED_MOVE_FROM_SELECT,//显示女仆格子从选择格子移动到选中格子的动画
+	RUN_GRID_MOVE_AND_THROW,//轮开始执行
 	UPDATE_GRID
 };
 
 enum class TYPE_OBSERVER_HANDLE_ENTITY
 {
 	RUN_ENTITY_APPEAR,
-	RUN_GRID_MOVE_AND_THROW,//轮开始执行
 	RUN_ENTITY_ACTION,
+	RUN_BACKGROUND_EFFECT,
 	DEAL_ROUND_OVER,
 	UPDATE_HP,
 	UPDATE_ENERGY

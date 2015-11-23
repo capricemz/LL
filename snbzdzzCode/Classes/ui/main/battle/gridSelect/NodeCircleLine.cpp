@@ -39,7 +39,7 @@ void NodeCircleLine::onTouchBegan(const int &indexGrid, const Vec2 &postionLayou
 	spriteLine->setRotation(postionDelta.getAngle() * -180.0f / acos(-1.0));
 	spriteLine->setScaleX(postionDelta.getLength() / _imageLineWidth);
 
-	/*ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_GRID_SELECT, TYPE_OBSERVER_HANDLE_GRID_SELECT::RUN_MAID_GRID_SCALE_BIG, indexGrid, nullptr);*/
+	/*ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_GRID_SELECT, TYPE_OBSERVER_LAYER_GRID_SELECT::RUN_MAID_GRID_SCALE_BIG, indexGrid, nullptr);*/
 }
 
 void NodeCircleLine::onTouchMoved(const Vec2 &postionTouchMove)
@@ -56,7 +56,7 @@ void NodeCircleLine::onTouchMoved(const Vec2 &postionTouchMove)
 	Vec2 postionLayoutWorldMoveOver;
 	if (_indexCurrent != -1)//当前格子内
 	{
-		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_GRID_SELECT, TYPE_OBSERVER_HANDLE_GRID_SELECT::RUN_MAID_GRID_SCALE_SMALL, _indexCurrent, nullptr);
+		ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_GRID_SELECT, TYPE_OBSERVER_LAYER_GRID_SELECT::RUN_MAID_GRID_SCALE_SMALL, _indexCurrent, nullptr);
 
 		auto isGridMoveOut = ManagerGrid::getInstance()->getIsGridMoveOut(_indexCurrent, postionTouchMove, postionLayoutWorldMoveOver);
 		if (isGridMoveOut)
@@ -84,13 +84,13 @@ void NodeCircleLine::onTouchMoved(const Vec2 &postionTouchMove)
 				auto dataGrid = gridMaidSelect->getDataGrid();
 				managerGrid->pushDataGridMaidSelected(dataGrid);
 
-				auto index = managerGrid->getVecDataGridMaidSelected().size() - 1;
-				auto gridMaidShow = (Grid *)managerGrid->getDicGridMaidShow().at(index);
-				gridMaidShow->setDataGrid(dataGrid);
+				auto indexGridSelected = managerGrid->getVecDataGridMaidSelected().size() - 1;
+				auto gridMaidSelected = (Grid *)managerGrid->getDicGridMaidSelected().at(indexGridSelected);
+				gridMaidSelected->setDataGrid(dataGrid);
 
 				managerGrid->setAroundGridCanMoveOver(_indexLast);
 
-				ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_GRID_SHOW, TYPE_OBSERVER_LAYER_GRID_SHOW::RUN_MAID_GRID_MOVE_FROM_ACTION, index, postionLayoutWorldMoveOver);//调用格子飞行特效
+				ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_GRID, TYPE_OBSERVER_HANDLE_GRID::RUN_ACTION_GRID_SELECTED_MOVE_FROM_SELECT, indexGridSelected, _indexLast);//调用格子飞行特效
 			}
 		}
 	}
@@ -112,7 +112,7 @@ void NodeCircleLine::onTouchMoved(const Vec2 &postionTouchMove)
 			}
 			else//若划入当前选中格子
 			{
-				ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_GRID_SELECT, TYPE_OBSERVER_HANDLE_GRID_SELECT::RUN_MAID_GRID_MOVE_FROM_ACTION_ONE_BACK, indexGridMoveOver, nullptr);//调用格子飞行特效
+				ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_GRID_SELECT, TYPE_OBSERVER_LAYER_GRID_SELECT::RUN_MAID_GRID_MOVE_FROM_ACTION_ONE_BACK, indexGridMoveOver);//调用格子飞行特效
 				ManagerGrid::getInstance()->popDataGridMaidSelected();
 				_indexLast = getIndexLast();
 				_indexCurrent = indexGridMoveOver;
@@ -125,17 +125,20 @@ void NodeCircleLine::onTouchEndedCanceled()
 {
 	if (_indexCurrent != -1)
 	{
-		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_GRID_SELECT, TYPE_OBSERVER_HANDLE_GRID_SELECT::RUN_MAID_GRID_SCALE_SMALL, _indexCurrent, nullptr);
+		ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_GRID_SELECT, TYPE_OBSERVER_LAYER_GRID_SELECT::RUN_MAID_GRID_SCALE_SMALL, _indexCurrent, nullptr);
 	}
 	auto isVecDataGridMaidSelectedFull = ManagerGrid::getInstance()->getIsVecDataGridMaidSelectedFull();
 	if (isVecDataGridMaidSelectedFull && _indexCurrent == -1)
 	{
-		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_GRID_SELECTED, TYPE_OBSERVER_HANDLE_SELECTED::RUN_GRID_MOVE_ACTION);
-		ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_GRID_SHOW, TYPE_OBSERVER_LAYER_GRID_SHOW::HIDE_BG);
+		auto managerGrid = ManagerGrid::getInstance();
+		managerGrid->clearVecDataGridMaidSelected();
+		managerGrid->linkDataGridSelected();
+		auto managerUI = ManagerUI::getInstance();
+		managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::HIDE_LAYER_GRID_SELECT);
 	}
 	else
 	{
-		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_GRID_SELECT, TYPE_OBSERVER_HANDLE_GRID_SELECT::RUN_MAID_GRID_MOVE_FROM_ACTION_ALL_BACK);//调用格子飞行特效
+		ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_GRID_SELECT, TYPE_OBSERVER_LAYER_GRID_SELECT::RUN_MAID_GRID_MOVE_FROM_ACTION_ALL_BACK);//调用格子飞行特效
 		ManagerGrid::getInstance()->clearVecDataGridMaidSelected();
 	}
 	removeFromParent();

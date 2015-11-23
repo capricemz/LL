@@ -70,14 +70,17 @@
     <Filter Include="src\ui\plot">
       <UniqueIdentifier>{79e75c91-9bcc-40e9-af6d-8c169e832ec4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\ui\main\battle\gridShow">
-      <UniqueIdentifier>{3ca71e63-ae88-441f-be57-849853003c47}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\ui\main\battle\result">
       <UniqueIdentifier>{c405081c-22b6-4ce8-b2c9-8cc8c31b57e7}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\ui\main\skills">
       <UniqueIdentifier>{4159eb82-21f0-453a-9a81-363589a77827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\main\battle\gridSelect">
+      <UniqueIdentifier>{72aeaeda-b72f-468c-806a-cf1380d0203c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\main\battle\gridShow">
+      <UniqueIdentifier>{3ca71e63-ae88-441f-be57-849853003c47}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -180,18 +183,6 @@
     <ClCompile Include="..\Classes\ui\main\battle\LayerBattle.cpp">
       <Filter>src\ui\main\battle</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ui\main\battle\HandleHeadIcon.cpp">
-      <Filter>src\ui\main\battle</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\ui\main\battle\HandleGridSelected.cpp">
-      <Filter>src\ui\main\battle</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\ui\main\battle\HandleGridSelect.cpp">
-      <Filter>src\ui\main\battle</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\ui\main\battle\NodeCircleLine.cpp">
-      <Filter>src\ui\main\battle</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\data\data\HandleDataEntity.cpp">
       <Filter>src\data\data</Filter>
     </ClCompile>
@@ -212,6 +203,21 @@
     </ClCompile>
     <ClCompile Include="..\Classes\data\data\HandleDataUnlock.cpp">
       <Filter>src\data\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\HandleBg.cpp">
+      <Filter>src\ui\main\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\HandleHead.cpp">
+      <Filter>src\ui\main\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\HandleGrid.cpp">
+      <Filter>src\ui\main\battle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\gridSelect\NodeCircleLine.cpp">
+      <Filter>src\ui\main\battle\gridSelect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\gridSelect\LayerGridSelect.cpp">
+      <Filter>src\ui\main\battle\gridSelect</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -320,18 +326,6 @@
     <ClInclude Include="..\Classes\ui\main\battle\LayerBattle.h">
       <Filter>src\ui\main\battle</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ui\main\battle\HandleHeadIcon.h">
-      <Filter>src\ui\main\battle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ui\main\battle\HandleGridSelected.h">
-      <Filter>src\ui\main\battle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ui\main\battle\HandleGridSelect.h">
-      <Filter>src\ui\main\battle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ui\main\battle\NodeCircleLine.h">
-      <Filter>src\ui\main\battle</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\ui\main\battle\gridShow\LayerGridShow.h">
       <Filter>src\ui\main\battle\gridShow</Filter>
     </ClInclude>
@@ -346,6 +340,21 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ui\main\skills\LayerSkills.h">
       <Filter>src\ui\main\skills</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\HandleBg.h">
+      <Filter>src\ui\main\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\HandleHead.h">
+      <Filter>src\ui\main\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\HandleGrid.h">
+      <Filter>src\ui\main\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\gridSelect\NodeCircleLine.h">
+      <Filter>src\ui\main\battle\gridSelect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\gridSelect\LayerGridSelect.h">
+      <Filter>src\ui\main\battle\gridSelect</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

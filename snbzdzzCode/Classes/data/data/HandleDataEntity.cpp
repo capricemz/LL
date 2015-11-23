@@ -417,7 +417,7 @@ void HandleDataEntity::dealSkillRandom(const function<void()> &func /*= nullptr*
 	}
 	if (isSet)
 	{
-		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_GRID_SELECT, TYPE_OBSERVER_HANDLE_GRID_SELECT::RUN_MAID_GRID_PLAY_SPECIAL_STH_GENERATE, CallFunc::create(func));
+		ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_GRID_SELECT, TYPE_OBSERVER_LAYER_GRID_SELECT::RUN_MAID_GRID_PLAY_SPECIAL_STH_GENERATE, CallFunc::create(func));
 	}
 	else
 	{

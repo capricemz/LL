@@ -272,7 +272,7 @@ void Entity::switchEntity(const int &indexSwitchTo, bool &isSwitchSuccess, const
 			if (isAppearAll)
 			{
 				auto managerUI = ManagerUI::getInstance();
-				managerUI->notify(ID_OBSERVER::HANDLE_GRID_SELECT, TYPE_OBSERVER_HANDLE_GRID_SELECT::RUN_MAID_GRID_MOVE_FROM_ACTION_TAKE_BACK);
+				managerUI->notify(ID_OBSERVER::LAYER_GRID_SELECT, TYPE_OBSERVER_LAYER_GRID_SELECT::RUN_MAID_GRID_MOVE_FROM_ACTION_TAKE_BACK);
 				managerUI->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::UPDATE_HP);
 				managerUI->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::UPDATE_ENERGY);
 				if (func != nullptr)

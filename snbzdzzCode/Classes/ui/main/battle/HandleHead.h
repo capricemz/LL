@@ -9,14 +9,14 @@
 USING_NS_CC;
 using namespace ui;
 
-class HandleHeadIcon : public Ref
+class HandleHead : public Ref
 {
 public:
-	CREATE_FUNC(HandleHeadIcon);
+	CREATE_FUNC(HandleHead);
 
 public:
-	HandleHeadIcon();
-	~HandleHeadIcon();
+	HandleHead();
+	~HandleHead();
 
 	virtual bool init();
 

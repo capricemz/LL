@@ -7,10 +7,11 @@
 #include "common/observer/Observer.h"
 #include "ui/common/ILayerAppearDisappear.h"
 #include "HandleEntity.h"
-#include "HandleGridSelected.h"
-#include "HandleHeadIcon.h"
-#include "HandleGridSelect.h"
-#include "gridShow/LayerGridShow.h"
+#include "HandleBg.h"
+#include "HandleGrid.h"
+#include "HandleHead.h"
+#include "gridSelect/LayerGridSelect.h"
+/*#include "gridShow/LayerGridShow.h"*/
 #include "result/LayerBattleResult.h"
 
 USING_NS_CC;
@@ -33,14 +34,10 @@ public:
 	virtual void afterRunAppear();
 	virtual void afterRunDisAppear();
 	virtual void dealRemoveFromParent();
-
-	void funcAfterLayerGridShowRunAppearAction();
-	void funcAfterRunMstGridMoveFromAction();
-	void funcAfterRunMstGridTurnAction();
-	/*indexMaid 第几个
-	funcOneOver 一个格子动作完成时调用
-	funcAllOver 动作全部完成时回调*/
-	void runMaidGridMoveFromAction(const int &indexMaid, const function<void()> &funcOneOver = nullptr, const function<void()> &funcAllOver = nullptr);
+	/*显示怪物选中格子出现动画*/
+	void showAppearGridSelectedMst();
+	/*显示女仆选择格子出现动画*/
+	void showAppearGridSelectMaid();
 	/*type 0女仆，1怪物
 	index 第几个*/
 	Vec2 getPostionHeadIcon(const int &type, const int &index);
@@ -53,11 +50,12 @@ private:
 private:
 	Layer *_skin;
 	HandleEntity *_handleEntity;
-	HandleGridSelected *_handleGridSelected;
-	HandleHeadIcon *_handleHeadIcon;
-	HandleGridSelect *_handleGridSelect;
+	HandleBg *_handleBg;
+	HandleHead *_handleHead;
+	HandleGrid *_handleGrid;
 
-	LayerGridShow *_layerGridShow;
+	LayerGridSelect *_layerGridSelect;
+	/*LayerGridShow *_layerGridShow;*/
 	LayerBattleResult *_layerBattleResult;
 
 };

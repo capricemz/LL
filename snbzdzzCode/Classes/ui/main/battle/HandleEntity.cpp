@@ -42,15 +42,8 @@ void HandleEntity::setSkin(Layout *skin)
 	{
 		auto isMst = i < 1;
 		//
-		auto grid = Grid::create();
-		grid->setIndexGrid(i);
-		grid->setPosition(vecPostionGridBattle[i]);
-		grid->setName(isMst ? "gridBattleMst" : "gridBattleMaid");
-		grid->setVisible(false);
-		_skin->addChild(grid);
-		ManagerGrid::getInstance()->insertGridBattle(i, grid);
+		auto layout = (Layout *)_skin->getChildByName(isMst ? "layoutMst" : "layoutMaid");
 		//
-		auto layout = (Layout *)_skin->getChildByName("layoutEntityBattle")->getChildByName(isMst ? "layoutMstEB" : "layoutMaidEB");
 		auto entity = isMst ? (Entity *)Monster::create() : (Entity *)Maid::create();
 		entity->setName("entity");
 		entity->setVisible(false);
@@ -58,8 +51,8 @@ void HandleEntity::setSkin(Layout *skin)
 		auto managerEntity = ManagerEntity::getInstance();
 		isMst ? managerEntity->setMonster((Monster *)entity) : managerEntity->setMaid((Maid *)entity);
 		//
-		setTxtHpOrEnergy(entity, isMst, true);
-		setTxtHpOrEnergy(entity, isMst, false);
+		/*setTxtHpOrEnergy(entity, isMst, true);
+		setTxtHpOrEnergy(entity, isMst, false);*/
 	}
 }
 
@@ -67,10 +60,6 @@ void HandleEntity::resetSkin()
 {
 	for (int i = 0; i < 2; i++)
 	{
-		auto isMst = i < 1;
-		auto grid = (Grid *)_skin->getChildByName(isMst ? "gridBattleMst" : "gridBattleMaid");
-		grid->setVisible(false);
-
 		/*auto managerEntity = ManagerEntity::getInstance();
 		auto entity = isMst ? (Entity *)managerEntity->getMonster() : (Entity *)managerEntity->getMaid();
 		entity->setVisible(false);*/
@@ -84,13 +73,13 @@ void HandleEntity::updateBySubject(va_list values)
 	{
 		runEntityAppear();
 	}
-	else if (type == TYPE_OBSERVER_HANDLE_ENTITY::RUN_GRID_MOVE_AND_THROW)
-	{
-		runGridMoveAndThrow();
-	}
 	else if (type == TYPE_OBSERVER_HANDLE_ENTITY::RUN_ENTITY_ACTION)
 	{
 		runEntityAction();
+	}
+	else if (type == TYPE_OBSERVER_HANDLE_ENTITY::RUN_BACKGROUND_EFFECT)
+	{
+		runBackgroundEffect();
 	}
 	else if (type == TYPE_OBSERVER_HANDLE_ENTITY::DEAL_ROUND_OVER)
 	{
@@ -119,7 +108,7 @@ void HandleEntity::runEntityAppear()
 			auto isAppearAll = ManagerEntity::getInstance()->isRunAppearOverAll();
 			if (isAppearAll)
 			{
-				ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_GRID_SHOW);
+				ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_APPEAR_GRID_SELECTED_MST);
 			}
 		});
 	}
@@ -145,57 +134,9 @@ void HandleEntity::setTxtHpOrEnergy(Entity *entity, const bool &isMst, const boo
 	txt->setString(text);
 }
 
-void HandleEntity::runGridMoveAndThrow()
-{
-	auto indexGrid = ManagerData::getInstance()->getHandleDataGrid()->getIndexGridBattle();
-	/*log("``````````HandleEntity::executeGrid indexGrid:%d", indexGrid);*/
-	gridMoveFrom(indexGrid);
-}
-
-void HandleEntity::gridMoveFrom(const int &indexGrid)
-{
-	for (int i = 0; i < 2; i++)
-	{
-		auto isMst = i < 1;
-		auto managerGrid = ManagerGrid::getInstance();
-		auto gridSelected = (Grid *)isMst ? managerGrid->getDicGridMstSelected().at(indexGrid) : managerGrid->getDicGridMaidSelected().at(indexGrid);
-		gridSelected->setVisible(false);
-		auto dataGrid = gridSelected->getDataGrid();
-		auto postion = gridSelected->getLayoutTouch()->getWorldPosition();
-		auto grid = (Grid *)_skin->getChildByName(isMst ? "gridBattleMst" : "gridBattleMaid");
-		grid->setDataGrid(dataGrid);
-		grid->moveFrom(postion, false, 0.5f, 1.0f, Vec2::ZERO, CC_CALLBACK_0(HandleEntity::gridMoveFromOver, this, grid, isMst));
-	}
-}
-
-void HandleEntity::gridMoveFromOver(Grid *grid, const bool &isMst)
-{
-	if (grid->getIsCard())
-	{
-		runBackgroundEffect();//播放实体背景特效
-		auto postion = grid->getParent()->convertToWorldSpace(vecPostionGridBattle[2]);
-		grid->throwTo(postion, isMst ? -60.0f : 60.0f, CC_CALLBACK_0(HandleEntity::gridThrowToOrPlayOver, this, grid, isMst));
-	}
-	else
-	{
-		grid->playSpecialSthBeUse(CC_CALLBACK_0(HandleEntity::gridThrowToOrPlayOver, this, grid, isMst));
-	}
-}
-
 void HandleEntity::runBackgroundEffect()
 {
 
-}
-
-void HandleEntity::gridThrowToOrPlayOver(Grid *grid, const bool &isMst)
-{
-	grid->resetSkin();
-	grid->setVisible(false);
-
-	if (!isMst)
-	{
-		ManagerGrid::getInstance()->dealBattle();
-	}
 }
 
 void HandleEntity::runEntityAction()
@@ -265,7 +206,7 @@ void HandleEntity::dealTurnOver()
 		auto isRoundOver = ManagerData::getInstance()->getHandleDataGrid()->isRoundOver();
 		if (!isRoundOver)
 		{
-			runGridMoveAndThrow();
+			ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_GRID, TYPE_OBSERVER_HANDLE_GRID::RUN_GRID_MOVE_AND_THROW);
 		}
 		else//若回合结束
 		{
@@ -280,7 +221,7 @@ void HandleEntity::dealRoundOver(const bool &isForce /*= false*/)
 	{
 		auto managerUI = ManagerUI::getInstance();
 		managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::RESET_SKIN);
-		managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_GRID_SHOW);
+		managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_APPEAR_GRID_SELECTED_MST);
 	};
 
 	ManagerData::getInstance()->getHandleDataGrid()->resetIndexGridBattle();
@@ -327,7 +268,7 @@ void HandleEntity::updateTxtHpOrEnergy(const bool &isHp)
 		auto entity = isMst ? (Entity *)managerEntity->getMonster() : (Entity *)managerEntity->getMaid();
 		auto value = entity->getDataEntity()->getAttribute(idAttribute);
 		auto text = isMst ? Value(value).asString() + "X" : "X" + Value(value).asString();
-		auto txt = (Text *)_skin->getChildByName(isMst ? "layoutMstBar" : "layoutMaidBar")->getChildByName(name);
-		txt->setString(text);
+		/*auto txt = (Text *)_skin->getChildByName(isMst ? "layoutMstBar" : "layoutMaidBar")->getChildByName(name);
+		txt->setString(text);*/
 	}
 }

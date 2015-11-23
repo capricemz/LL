@@ -19,6 +19,7 @@ static const string RES_MODULES_MAIN_PLIST_MAIN_PLIST = "modules/main/PlistMain.
 static const string RES_MODULES_MAIN_SCENE_MAIN_CSB = "modules/main/SceneMain.csb";
 
 static const string RES_MODULES_MAIN_LAYER_BATTLE_CSB = "modules/main/LayerBattle.csb";
+static const string RES_MODULES_MAIN_LAYER_GRID_SELECT_CSB = "modules/main/LayerGridSelect.csb";
 static const string RES_MODULES_MAIN_LAYER_GRID_SHOW_CSB = "modules/main/LayerGridShow.csb";
 static const string RES_MODULES_MAIN_LAYER_BATTLE_RESULT_CSB = "modules/main/LayerBattleResult.csb";
 

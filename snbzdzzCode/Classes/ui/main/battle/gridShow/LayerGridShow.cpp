@@ -17,8 +17,8 @@ LayerGridShow::LayerGridShow() : _skin(nullptr)
 
 LayerGridShow::~LayerGridShow()
 {
-	ManagerGrid::getInstance()->clearDicGridMstShow();
-	ManagerGrid::getInstance()->clearDicGridMaidShow();
+	/*ManagerGrid::getInstance()->clearDicGridMstShow();
+	ManagerGrid::getInstance()->clearDicGridMaidShow();*/
 	ManagerUI::getInstance()->detach(this);
 	_skin = nullptr;
 }
@@ -30,7 +30,7 @@ bool LayerGridShow::init()
 	{
 		CC_BREAK_IF(!Layer::init());
 
-		idObserverSet(ID_OBSERVER::LAYER_GRID_SHOW);
+		/*idObserverSet(ID_OBSERVER::LAYER_GRID_SHOW);*/
 		ManagerUI::getInstance()->attach(this);
 
 		createSkin();
@@ -151,12 +151,12 @@ void LayerGridShow::createSkin()
 		grid->setIndexGrid(index);
 		isMstGrid ? grid->createDataGrid() : nullptr;
 		isMstGrid ? grid->createDataGridSkill(true) : nullptr;
-		grid->setPosition(isMstGrid ? vecPostionGridShowMst[index] : vecPostionGridShowMaid[index]);
+		/*grid->setPosition(isMstGrid ? vecPostionGridShowMst[index] : vecPostionGridShowMaid[index]);*/
 		grid->setName(isMstGrid ? "gridMst" + Value(index).asString() : "gridMaid" + Value(index).asString());
 		grid->setVisible(false);
 		_skin->addChild(grid);
 		auto managerGrid = ManagerGrid::getInstance();
-		isMstGrid ? managerGrid->insertGridMstShow(index, grid) : managerGrid->insertGridMaidShow(index, grid);
+		/*isMstGrid ? managerGrid->insertGridMstShow(index, grid) : managerGrid->insertGridMaidShow(index, grid);*/
 	}
 }
 

@@ -179,7 +179,7 @@ void DataGrid::addAttributeCondition(const IdAttribute &idAttribute, const strin
 	}
 }
 
-HandleDataGrid::HandleDataGrid() : _idDataGridNow(0), _indexGridBattle(0)
+HandleDataGrid::HandleDataGrid() : _vecPostionGridSelectedMaid({}), _vecPostionGridSelectedMst({}), _idDataGridNow(0), _indexGridBattle(0)
 {
 }
 
@@ -192,6 +192,16 @@ DataGrid * HandleDataGrid::getDataGrid()
 	auto dataGrid = DataGrid::create();
 	dataGrid->setId(_idDataGridNow++);
 	return dataGrid;
+}
+
+cocos2d::Vec2 HandleDataGrid::postionGridSelectedGet(const bool &isMst, const int &index) const
+{
+	return isMst ? _vecPostionGridSelectedMst.at(index) : _vecPostionGridSelectedMaid.at(index);
+}
+
+void HandleDataGrid::postionGridSelectedPush(const bool &isMst, const Vec2 &val)
+{
+	isMst ? _vecPostionGridSelectedMst.push_back(val) : _vecPostionGridSelectedMaid.push_back(val);
 }
 
 int HandleDataGrid::getIndexGridBattle()

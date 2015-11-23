@@ -37,7 +37,7 @@ cocos2d::Vec2 Maid::getPostionAppearDisAppear()
 cocos2d::Vec2 Maid::getPostionEndAttack()
 {
 	auto size = _skin->getContentSize();
-	return Vec2(size.width, 0.0f);
+	return Vec2(-size.width * 2.0f, 0.0f);
 }
 
 void Maid::switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess)

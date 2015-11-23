@@ -133,12 +133,17 @@ class HandleDataGrid
 		DataGrid * getDataGrid();
 		
 	public:
+		Vec2 postionGridSelectedGet(const bool &isMst, const int &index) const;
+		void postionGridSelectedPush(const bool &isMst, const Vec2 &val);
 		int getIndexGridBattle();
 		void resetIndexGridBattle(){ _indexGridBattle = 0; }
 		bool isRoundOver() { return _indexGridBattle == GRID_SELECTED_MAX; }//回合是否结束
 		
 	private:
-		int _idDataGridNow;
+		vector<Vec2> _vecPostionGridSelectedMaid;
+		vector<Vec2> _vecPostionGridSelectedMst;
+
+		int _idDataGridNow;//格子的唯一id
 
 		int _indexGridBattle;
 		
