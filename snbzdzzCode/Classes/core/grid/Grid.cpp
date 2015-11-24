@@ -304,7 +304,6 @@ void Grid::moveFrom(const Vec2 &postion, const bool &isBack, const float &scaleB
 	auto actionCallFunc = CallFunc::create([func, this]()
 	{
 		setLocalZOrder(0);
-		_skin->getScale();
 		if (func != nullptr)
 		{
 			func();

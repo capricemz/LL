@@ -29,6 +29,12 @@ void Maid::setDataEntity()
 	_dataEntity = ManagerData::getInstance()->getHandleDataEntity()->getDataEntityMaid();
 }
 
+void Maid::setMyScale()
+{
+	_skin->setScaleX(-0.7f);
+	_skin->setScaleY(0.7f);
+}
+
 cocos2d::Vec2 Maid::getPostionAppearDisAppear()
 {
 	auto size = _skin->getContentSize();

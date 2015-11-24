@@ -486,15 +486,15 @@
       <ObjectData Name="NodeGrid" Tag="71" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="spriteBgp" ActionTag="-894527357" Alpha="0" Tag="72" IconVisible="False" LeftMargin="-55.0000" RightMargin="-55.0000" TopMargin="-70.0000" BottomMargin="-70.0000" ctype="SpriteObjectData">
-            <Size X="110.0000" Y="140.0000" />
+          <AbstractNodeData Name="spriteBgp" ActionTag="-894527357" Alpha="0" Tag="72" IconVisible="False" LeftMargin="-60.5000" RightMargin="-60.5000" TopMargin="-82.5000" BottomMargin="-82.5000" ctype="SpriteObjectData">
+            <Size X="121.0000" Y="165.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <FileData Type="Normal" Path="images/battle/gold_card_bg.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="spriteBgn" CanEdit="False" ActionTag="1596804542" Tag="73" IconVisible="False" LeftMargin="-60.0000" RightMargin="-64.0000" TopMargin="-74.5000" BottomMargin="-80.5000" ctype="SpriteObjectData">

@@ -8,16 +8,6 @@
 
 using namespace std;
 
-//
-struct CfgLevels//关卡
-{
-	int id;//标志
-	string name;//名称
-	string urlPics;//图片路径
-	string msts;//怪物配置
-};
-typedef map<int32_t, CfgLevels> DicCfgLevels;
-//
 struct CfgAttribute//属性
 {
 	int id;//标志
@@ -54,13 +44,22 @@ struct CfgEntity
 	string name;//名称
 	TypeEntity type;//类型 1女仆2怪物
 	TypeJob typeJob;//职业 1盗贼2战士3法师4治疗5坦克6弓手
-	string urlPic;//图片
+	vector<string> vecUrlPic;//图片
 	int xPic;//图片x
 	int yPic;//图片y
 	string attribute;//属性 101生命上限103能量上限104物理攻击105魔法攻击106金币收益
 	int skillGroup;//技能组
 };
 typedef map<int32_t, CfgEntity> DicCfgEntity;
+//
+struct CfgLevels//关卡
+{
+	int id;//标志
+	string name;//名称
+	vector<string> vecUrlPic;//图片路径
+	string msts;//怪物配置
+};
+typedef map<int32_t, CfgLevels> DicCfgLevels;
 //
 struct CfgPlot
 {

@@ -14,12 +14,12 @@
             <Image Name="element_sm.png" />
             <Image Name="element_wf.png" />
             <Image Name="element_wg.png" />
-            <Image Name="op_cike.png" />
-            <Image Name="op_fs.png" />
-            <Image Name="op_pz.png" />
-            <Image Name="op_ss.png" />
-            <Image Name="op_tk.png" />
-            <Image Name="op_zs.png" />
+            <Image Name="typeJobRogue.png" />
+            <Image Name="typeJobMage.png" />
+            <Image Name="typeJobArcher.png" />
+            <Image Name="typeJobTreat.png" />
+            <Image Name="typeJobTank.png" />
+            <Image Name="typeJobWarrior.png" />
           </Folder>
           <Folder Name="main">
             <Folder Name="icon">
@@ -138,6 +138,7 @@
             <Project Name="LayerBattleResult.csd" Type="Layer" />
             <Project Name="LayerSkills.csd" Type="Layer" />
             <Project Name="LayerGridSelect.csd" Type="Layer" />
+            <Project Name="NodeHead.csd" Type="Node" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />

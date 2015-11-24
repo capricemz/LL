@@ -16,6 +16,7 @@ public:
 
 protected:
 	virtual void setDataEntity();
+	virtual void setMyScale();
 	virtual Vec2 getPostionAppearDisAppear();
 	virtual Vec2 getPostionEndAttack();
 	virtual void updateHp();

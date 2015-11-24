@@ -440,7 +440,7 @@ void HandleDataEntity::resetDataEntityAttributeTemp()
 	dataEntity->setAttribute(IdAttribute::ENTITY_COST_HP_ALL, 0);
 	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE_EXTRA, 0);
 	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES_EXTRA, 0);
-	dataEntity =getDataEntityMst();
+	dataEntity = getDataEntityMaid();
 	dataEntity->setAttribute(IdAttribute::ENTITY_QUICK, 0);
 	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE, 0);
 	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES, 0);

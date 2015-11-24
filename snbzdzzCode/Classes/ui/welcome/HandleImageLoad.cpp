@@ -38,14 +38,17 @@ void HandleImageLoad::loadImages()
 	for (auto var : dicCfgLevels)
 	{
 		auto cfgLevels = var.second;
-		auto urlPics = cfgLevels.urlPics;
-		if (urlPics == "")
+		auto vecUrlPic = cfgLevels.vecUrlPic;
+		if (vecUrlPic.size() == 0)
 		{
 			continue;
 		}
-		auto vecUrlPic = UtilString::split(urlPics, "|");
 		for (auto urlPic : vecUrlPic)
 		{
+			if (urlPic == "")
+			{
+				continue;
+			}
 			if (_dicUrlLoaded.find(urlPic) == _dicUrlLoaded.end())
 			{
 				_dicUrlLoaded[urlPic] = true;
@@ -58,15 +61,22 @@ void HandleImageLoad::loadImages()
 	for (auto var : dicCfgEntity)
 	{
 		auto cfgEntity = var.second;
-		auto urlPic = cfgEntity.urlPic;
-		if (urlPic == "")
+		auto vecUrlPic = cfgEntity.vecUrlPic;
+		if (vecUrlPic.size() == 0)
 		{
 			continue;
 		}
-		if (_dicUrlLoaded.find(urlPic) == _dicUrlLoaded.end())
+		for (auto urlPic : vecUrlPic)
 		{
-			_dicUrlLoaded[urlPic] = true;
-			imageAsyncLoad(urlPic);
+			if (urlPic == "")
+			{
+				continue;
+			}
+			if (_dicUrlLoaded.find(urlPic) == _dicUrlLoaded.end())
+			{
+				_dicUrlLoaded[urlPic] = true;
+				imageAsyncLoad(urlPic);
+			}
 		}
 	}
 }

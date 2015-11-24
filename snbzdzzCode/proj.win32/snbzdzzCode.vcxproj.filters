@@ -219,6 +219,9 @@
     <ClCompile Include="..\Classes\ui\main\battle\gridSelect\LayerGridSelect.cpp">
       <Filter>src\ui\main\battle\gridSelect</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\NodeHead.cpp">
+      <Filter>src\ui\main\battle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -355,6 +358,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ui\main\battle\gridSelect\LayerGridSelect.h">
       <Filter>src\ui\main\battle\gridSelect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\NodeHead.h">
+      <Filter>src\ui\main\battle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

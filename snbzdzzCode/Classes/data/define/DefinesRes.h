@@ -22,16 +22,24 @@ static const string RES_MODULES_MAIN_LAYER_BATTLE_CSB = "modules/main/LayerBattl
 static const string RES_MODULES_MAIN_LAYER_GRID_SELECT_CSB = "modules/main/LayerGridSelect.csb";
 static const string RES_MODULES_MAIN_LAYER_GRID_SHOW_CSB = "modules/main/LayerGridShow.csb";
 static const string RES_MODULES_MAIN_LAYER_BATTLE_RESULT_CSB = "modules/main/LayerBattleResult.csb";
+static const string RES_MODULES_MAIN_LAYER_LEVELS_CSB = "modules/main/LayerLevels.csb";
+static const string RES_MODULES_MAIN_LAYER_SKILLS_CSB = "modules/main/LayerSkills.csb";
+
+static const string RES_MODULES_MAIN_NODE_GRID_CSB = "modules/main/NodeGrid.csb";
+static const string RES_MODULES_MAIN_NODE_HEAD_CSB = "modules/main/NodeHead.csb";
 
 static const string RES_IMAGES_MAIN_CIRCLE_LINE_POINT_PNG = "images/main/circleLine/lianxian_dian.png";
 static const string RES_IMAGES_MAIN_CIRCLE_LINE_CIRCLE_PNG = "images/main/circleLine/lianxian_quan.png";
 static const string RES_IMAGES_MAIN_CIRCLE_LINE_LINE_PNG = "images/main/circleLine/lianxian_xian.png";
 
-static const string RES_MODULES_MAIN_NODE_GRID_CSB = "modules/main/NodeGrid.csb";
-
-static const string RES_MODULES_MAIN_LAYER_LEVELS_CSB = "modules/main/LayerLevels.csb";
-
-static const string RES_MODULES_MAIN_LAYER_SKILLS_CSB = "modules/main/LayerSkills.csb";
+static const vector<string> RES_IMAGES_COMMON_TYPE_JOB_PNG_VEC = { 
+	"", 
+	"images/common/typeJobRogue.png",
+	"images/common/typeJobWarrior.png", 
+	"images/common/typeJobMage.png", 
+	"images/common/typeJobTreat.png", 
+	"images/common/typeJobTank.png", 
+	"images/common/typeJobArcher.png" };
 
 static const string SOUND_EFFECT_SYSTEM_BTN_0_MP3 = "sound/effect/systemBtn0.mp3";//音效系统按钮0
 static const string SOUND_EFFECT_SYSTEM_BTN_1_MP3 = "sound/effect/systemBtn1.mp3";//音效系统按钮1

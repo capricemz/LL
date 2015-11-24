@@ -228,7 +228,8 @@ void ManagerCfg::assignCfgEntity(const VectorString &vecItem)
 	cfg.name = vecItem[1];
 	cfg.type = (TypeEntity)Value(vecItem[2]).asInt();
 	cfg.typeJob = (TypeJob)Value(vecItem[3]).asInt();
-	cfg.urlPic = vecItem[4];
+	auto vecUrlPic = UtilString::split(vecItem[4], ":");
+	cfg.vecUrlPic = vecUrlPic;
 	auto vecStr = UtilString::split(vecItem[5], ":");
 	cfg.xPic = Value(vecStr[0]).asInt();
 	cfg.yPic = Value(vecStr[1]).asInt();
@@ -244,7 +245,8 @@ void ManagerCfg::assignCfgLevels(const VectorString &vecItem)
 	auto nameTemp = vecItem[1];
 	auto isFind = nameTemp.find("//") != string::npos;
 	cfg.name = isFind ? UtilString::split(nameTemp, "//")[0] : nameTemp;
-	cfg.urlPics = vecItem[2];
+	auto vecUrlPic = UtilString::split(vecItem[2], ":");
+	cfg.vecUrlPic = vecUrlPic;
 	cfg.msts = vecItem[3];
 	_dicCfgLevels[cfg.id] = cfg;
 }

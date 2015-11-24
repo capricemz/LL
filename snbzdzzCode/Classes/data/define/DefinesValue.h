@@ -18,34 +18,6 @@ static const int ENTITY_BATTLE_MAX = 3;
 
 static const int DATA_UNLOCK_INIT_MAID = 1000;//初始化时默认解锁的女仆
 
-/*
-static const vector<Vec2> vecPostionGridSelect =
-{
-	Vec2(60.0f, 396.0f), Vec2(187.0f, 396.0f), Vec2(314.0f, 396.0f),
-	Vec2(60.0f, 238.0f), Vec2(187.0f, 238.0f), Vec2(314.0f, 238.0f),
-	Vec2(60.0f, 80.0f), Vec2(187.0f, 80.0f), Vec2(314.0f, 80.0f)
-};
-
-static const vector<Vec2> vecPostionGridShowMst =
-{
-	Vec2(80.0f, 259.0f), Vec2(202.0f, 259.0f), Vec2(324.0f, 259.0f), Vec2(446.0f, 259.0f)
-};
-
-static const vector<Vec2> vecPostionGridShowMaid =
-{
-	Vec2(194.0f, 80.0f), Vec2(316.0f, 80.0f), Vec2(438.0f, 80.0f), Vec2(560.0f, 80.0f)
-};
-
-static const vector<Vec2> vecPostionGridSelectedMaid =
-{
-	Vec2(218.0f, 40.0f), Vec2(157.0f, 40.0f), Vec2(96.0f, 40.0f), Vec2(35.0f, 40.0f)
-};
-
-static const vector<Vec2> vecPostionGridSelectedMst =
-{
-	Vec2(422.0f, 40.0f), Vec2(483.0f, 40.0f), Vec2(544.0f, 40.0f), Vec2(605.0f, 40.0f)
-};*/
-
 static const vector<Vec2> vecPostionGridBattle =
 {
 	Vec2(160.0f, 620.0f), Vec2(480.0f, 340.0f), Vec2(320.0f, 480.0f)

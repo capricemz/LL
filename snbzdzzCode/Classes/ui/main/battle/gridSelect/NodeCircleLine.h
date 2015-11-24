@@ -1,7 +1,7 @@
 #pragma execution_character_set("utf-8")
 
-#ifndef __UI_MAIN_BATTLE_NODE_CIRCLE_LINE_H__
-#define __UI_MAIN_BATTLE_NODE_CIRCLE_LINE_H__
+#ifndef __UI_MAIN_BATTLE_GRID_SELECT_NODE_CIRCLE_LINE_H__
+#define __UI_MAIN_BATTLE_GRID_SELECT_NODE_CIRCLE_LINE_H__
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"

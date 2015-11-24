@@ -39,16 +39,18 @@ void Entity::updateSkin()
 
 	auto cfgEntity = _dataEntity->getCfgEntity();
 	setPosition(cfgEntity.xPic, cfgEntity.yPic);
-
-	auto urlPic = cfgEntity.urlPic;
+	
+	auto urlPic = cfgEntity.vecUrlPic[0];
 	if (_skin == nullptr)
 	{
 		_skin = Sprite::create(urlPic);
+		setMyScale();
 		addChild(_skin);
 	}
 	else
 	{
-		_skin->initWithFile(urlPic);
+		auto texture = Director::getInstance()->getTextureCache()->getTextureForKey(urlPic);
+		_skin->setTexture(texture);
 	}
 }
 
@@ -321,7 +323,7 @@ void Entity::dealResultValueChange(const IdAttribute &idAttributeGet, const bool
 		words = STR_EP + words;
 		updateEnergy();//界面刷新
 	}
-	managerUI->showWordsDrift(getParent(), getPosition() + Vec2(0.0f, 250.0f), words, color, duration);
+	managerUI->showWordsDrift(getParent(), getPosition() + Vec2(0.0f, 100.0f), words, color, duration);
 }
 
 void Entity::dealDeadEffect(const float &duration)
@@ -329,7 +331,7 @@ void Entity::dealDeadEffect(const float &duration)
 	//显示死亡效果
 	auto managerUI = ManagerUI::getInstance();
 	/*managerUI->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::UPDATE_HP);*///界面刷新
-	managerUI->showWordsDrift(getParent(), getPosition() + Vec2(0.0f, 250.0f), STR_DEAD, Color4B::RED, duration);
+	managerUI->showWordsDrift(getParent(), getPosition() + Vec2(0.0f, 100.0f), STR_DEAD, Color4B::RED, duration);
 }
 
 void Entity::dealDead()

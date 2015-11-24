@@ -4,14 +4,17 @@
 #include "ui/UILoadingBar.h"
 #include "data/data/ManagerData.h"
 #include "ui/ManagerUI.h"
+#include "NodeHead.h"
 
-HandleHead::HandleHead() : _skin(nullptr)
+HandleHead::HandleHead() : _skin(nullptr), _vecNodeHeadMst({}), _vecNodeHeadMaid({})
 {
 }
 
 HandleHead::~HandleHead()
 {
 	ManagerUI::getInstance()->detach(this);
+	_vecNodeHeadMaid.clear();
+	_vecNodeHeadMst.clear();
 	_skin = nullptr;
 }
 
@@ -34,57 +37,85 @@ void HandleHead::updateBySubject(va_list values)
 	if (type == TYPE_OBSERVER_HANDLE_HEAD::UPDATE_HP)
 	{
 		auto isMst = va_arg(values, bool);
-		auto name = isMst ? "layoutMst0" : "layoutMaid0";
-		auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-		auto dataEntity = isMst ? handleDataEntity->getDataEntityMst() : handleDataEntity->getDataEntityMaid();
-		updateBarHp(name, dataEntity);
+		updateBarHp(isMst, 0);
 	}
 	else if (type == TYPE_OBSERVER_HANDLE_HEAD::UPDATE_HP_ALL)
 	{
 		auto isMst = va_arg(values, bool);
 		for (auto i = 0; i < ENTITY_BATTLE_MAX; i++)
 		{
-			auto name = isMst ? "layoutMst" : "layoutMaid" + Value(i).asString();
-			auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-			auto dataEntity = isMst ? handleDataEntity->getVecDataEntityMst().at(i) : handleDataEntity->getVecDataEntityMaid().at(i);
-			updateBarHp(name, dataEntity);
+			updateBarHp(isMst, i);
 		}
 	}
 	else if (type == TYPE_OBSERVER_HANDLE_HEAD::UPDATE_ENERGY)
 	{
 		auto isMst = va_arg(values, bool);
-		auto name = isMst ? "layoutEnergyMst" : "layoutEnergyMaid";
-		auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-		auto dataEntity = isMst ? handleDataEntity->getDataEntityMst() : handleDataEntity->getDataEntityMaid();
-		updateBarEnergy(name, dataEntity);
+		updateBarEnergy(isMst);
 	}
 }
 
 void HandleHead::setSkin(Layout *skin)
 {
 	_skin = skin;
+
 	for (int i = 0; i < 6; i++)
 	{
 		auto index = i % 3;
 		auto isMst = i < 3;
-		auto layout = (Layout *)_skin->getChildByName(isMst ? "layoutMst" + Value(index).asString() : "layoutMaid" + Value(index).asString());
-		auto spriteIcon = (Sprite *)layout->getChildByName("spriteIcon");
+
+		auto layout = (Layout *)_skin->getChildByName(isMst ? "layoutHeadMst" : "layoutHeadMaid");
+		layout->addTouchEventListener(CC_CALLBACK_2(HandleHead::onTouchMoveHead, this, isMst));//添加头像拖动事件
+
+		auto skinNodeHead = (Node *)layout->getChildByName("nodeHead" + Value(index).asString());
+		
+		auto nodeHead = NodeHead::create();
+		nodeHead->setIsMst(isMst);
+		nodeHead->setIndexDataEntity(index);
+		nodeHead->setSkin(skinNodeHead);
+		nodeHead->updateAll();
+
+		isMst ? _vecNodeHeadMst.pushBack(nodeHead) : _vecNodeHeadMaid.pushBack(nodeHead);
 	}
+	
 	for (size_t i = 0; i < 2; i++)
 	{
 		auto isMst = i < 1;
-		auto name = isMst ? "layoutEnergyMst" : "layoutEnergyMaid";
-		auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-		auto dataEntity = isMst ? handleDataEntity->getDataEntityMst() : handleDataEntity->getDataEntityMaid();
-		updateBarEnergy(name,dataEntity);
+		updateBarEnergy(isMst);
 	}
 }
 
 cocos2d::Vec2 HandleHead::getPostionHeadIcon(const int &type, const int &index)
 {
-	auto layoutMst = (Layout *)_skin->getChildByName((type == 0 ? "layoutMaid" : "layoutMst") + Value(index).asString());
-	auto postion = layoutMst->getParent()->convertToWorldSpace(layoutMst->getPosition());
+	auto vec = type == 1 ? _vecNodeHeadMst : _vecNodeHeadMaid;
+	CCASSERT(vec.size() > index, "HandleHead::getPostionHeadIcon vec.size() <= index");
+	auto nodeHead = vec.at(index);
+	auto postion = nodeHead->getParent()->convertToWorldSpace(nodeHead->getPosition());
 	return postion;
+}
+
+void HandleHead::switchHead()
+{
+
+}
+
+void HandleHead::onTouchMoveHead(Ref *ref, Widget::TouchEventType type, const bool &isMst)
+{
+	switch (type)
+	{
+	case cocos2d::ui::Widget::TouchEventType::BEGAN:
+
+		break;
+	case cocos2d::ui::Widget::TouchEventType::MOVED:
+		auto layout = (Layout *)ref;
+		/*auto touchBeganPostion = layout->getTouchBeganPosition();
+		auto touchMovePostion = layout->getTouchMovePosition();*/
+		/*auto touchDelta = touchMovePostion - touchBeganPostion;*/
+		break;
+	case cocos2d::ui::Widget::TouchEventType::ENDED:
+	case cocos2d::ui::Widget::TouchEventType::CANCELED:
+
+		break;
+	}
 }
 
 void HandleHead::resetSkin()
@@ -92,23 +123,25 @@ void HandleHead::resetSkin()
 	for (int i = 0; i < 6; i++)
 	{
 		auto index = i % 3;
-		auto layout = (Layout *)_skin->getChildByName(i < 3 ? "layoutMaid" + Value(index).asString() : "layoutMst" + Value(index).asString());
-		auto spriteIcon = (Sprite *)layout->getChildByName("spriteIcon");
 	}
 }
 
-void HandleHead::updateBarHp(const std::string &name, DataEntity *dataEntity)
+void HandleHead::updateBarHp(const bool &isMst, const int &indexNodeHead)
 {
-	auto hp = dataEntity->getAttribute(IdAttribute::ENTITY_HP);
-	auto hpMax = dataEntity->getAttribute(IdAttribute::ENTITY_HP_MAX);
-
-	auto layout = (Layout *)_skin->getChildByName(name);
-	auto bar = (LoadingBar *)layout->getChildByName("spriteHpBg")->getChildByName("barHp");
-	bar->setPercent(((float)hp / (float)hpMax) * 100.0f);
+	auto vec = isMst ? _vecNodeHeadMst : _vecNodeHeadMaid;
+	if (vec.size() > indexNodeHead)
+	{
+		auto nodeHead = vec.at(indexNodeHead);
+		nodeHead->updateBarHp();
+	}
 }
 
-void HandleHead::updateBarEnergy(const std::string &name, DataEntity *dataEntity)
+void HandleHead::updateBarEnergy(const bool &isMst)
 {
+	auto name = isMst ? "layoutEnergyMst" : "layoutEnergyMaid";
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto dataEntity = isMst ? handleDataEntity->getDataEntityMst() : handleDataEntity->getDataEntityMaid();
+
 	auto energy = dataEntity->getAttribute(IdAttribute::ENTITY_ENERGY);
 	auto energyMax = dataEntity->getAttribute(IdAttribute::ENTITY_ENERGY_MAX);
 

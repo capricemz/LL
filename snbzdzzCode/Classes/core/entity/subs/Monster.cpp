@@ -27,6 +27,12 @@ void Monster::setDataEntity()
 	_dataEntity = ManagerData::getInstance()->getHandleDataEntity()->getDataEntityMst();
 }
 
+void Monster::setMyScale()
+{
+	_skin->setScaleX(-0.7f);
+	_skin->setScaleY(0.7f);
+}
+
 cocos2d::Vec2 Monster::getPostionAppearDisAppear()
 {
 	auto size = _skin->getContentSize();
