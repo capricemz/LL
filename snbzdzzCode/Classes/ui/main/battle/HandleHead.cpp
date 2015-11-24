@@ -100,20 +100,21 @@ void HandleHead::switchHead()
 
 void HandleHead::onTouchMoveHead(Ref *ref, Widget::TouchEventType type, const bool &isMst)
 {
+	auto layout = (Layout *)ref;
 	switch (type)
 	{
 	case cocos2d::ui::Widget::TouchEventType::BEGAN:
-
 		break;
 	case cocos2d::ui::Widget::TouchEventType::MOVED:
-		auto layout = (Layout *)ref;
 		/*auto touchBeganPostion = layout->getTouchBeganPosition();
 		auto touchMovePostion = layout->getTouchMovePosition();*/
 		/*auto touchDelta = touchMovePostion - touchBeganPostion;*/
 		break;
 	case cocos2d::ui::Widget::TouchEventType::ENDED:
+		break;
 	case cocos2d::ui::Widget::TouchEventType::CANCELED:
-
+		break;
+	default:
 		break;
 	}
 }
