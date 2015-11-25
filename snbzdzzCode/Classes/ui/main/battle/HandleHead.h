@@ -38,13 +38,19 @@ public:
 private:
 	void updateBarHp(const bool &isMst, const int &indexNodeHead);
 	void updateBarEnergy(const bool &isMst);
+
+	void nodeHeadScalePostionGet(const bool &isMove, const int &index, NodeHead *nodeHead, NodeHead *nodeHeadLast, float &scale, Vec2 &postion);
+	void recordPostionBegan(const bool &isMst);//记录开始时NodeHead位置
+	void moveNodeHead(const bool &isMst, const Vec2 &offset);//移动NodeHead位置
+	void dealOverMoveNodeHead(const Vec2 &offsetOver);//移动NodeHead结束时处理判断
 	
 private:
 	Layout *_skin;
 	Vector<NodeHead *> _vecNodeHeadMst;
 	Vector<NodeHead *> _vecNodeHeadMaid;
 
-	Vec2 _postionMoveBegan;
+	float _xPostionBeganNodeHead;
+	bool _isInserted;
 
 };
 

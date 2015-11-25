@@ -31,6 +31,8 @@ bool HandleGrid::init()
 void HandleGrid::setSkin(Layout *skin)
 {
 	_skin = skin;
+	_skin->setTouchEnabled(false);
+
 	for (int i = 0; i < GRID_SELECTED_MAX * 2; i++)//隔间选中格子
 	{
 		auto isMst = i < GRID_SELECTED_MAX;
@@ -51,6 +53,7 @@ void HandleGrid::setSkin(Layout *skin)
 		auto managerGrid = ManagerGrid::getInstance();
 		isMst ? managerGrid->insertGridMstSelected(index, grid) : managerGrid->insertGridMaidSelected(index, grid);
 	}
+
 	for (auto i = 0; i < 2; i++)//构建战斗格子
 	{
 		auto isMst = i < 1;

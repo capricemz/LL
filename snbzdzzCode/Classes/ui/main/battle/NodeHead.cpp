@@ -22,8 +22,8 @@ bool NodeHead::init()
 	do
 	{
 		CC_BREAK_IF(!Node::init());
-
-		setAnchorPoint(Vec2::ANCHOR_MIDDLE);
+		
+		createSkin();
 		
 		isInit = true;
 	} while (0);
@@ -36,14 +36,13 @@ void NodeHead::createSkin()
 	addChild(_skin);
 }
 
-void NodeHead::setSkin(Node *skin)
+void NodeHead::setInfo(const bool &isMst, const int &indexDataEntity)
 {
-	_skin = skin;
-	auto parent = _skin->getParent();
-	auto postion = _skin->getPosition();
-	_skin->setParent(this);
-	setPosition(postion);
-	setParent(parent);
+	_isMst = isMst;
+	_indexDataEntity = indexDataEntity;
+	
+	auto size = getLayoutBg()->getContentSize();
+	_isMst ? _skin->setPosition(0.0f, -size.height * 0.5f) : _skin->setPosition(0.0f, size.height * 0.5f);
 }
 
 void NodeHead::updateAll()
@@ -177,4 +176,12 @@ void NodeHead::moveFrom(const Vec2 &postion, const bool &isBack, const float &sc
 
 	auto actoinSequence = Sequence::create(vecActions);
 	_skin->runAction(actoinSequence);
+}
+
+NodeHead * NodeHead::clone()
+{
+	auto nodeHead = create();
+	nodeHead->setInfo(_isMst, _indexDataEntity);
+	nodeHead->updateAll();
+	return nodeHead;
 }

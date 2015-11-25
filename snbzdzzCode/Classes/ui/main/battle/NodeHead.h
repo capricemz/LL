@@ -5,14 +5,16 @@
 
 #include "cocos2d.h"
 #include "data/data/ManagerData.h"
+#include "ui/UILayout.h"
 
 USING_NS_CC;
+using namespace ui;
 
 class NodeHead : public Node
 {
 public:
 	CREATE_FUNC(NodeHead);
-
+	
 public:
 	NodeHead();
 	~NodeHead();
@@ -20,7 +22,7 @@ public:
 	virtual bool init();
 
 	void createSkin();
-	void setSkin(Node *skin);
+	void setInfo(const bool &isMst, const int &indexDataEntity);
 
 	void updateAll();
 	void updateSpriteIcon();
@@ -35,23 +37,22 @@ public:
 	offsetEnd 终点偏移 Vec2::ZERO表示移动到添加位置
 	func 动作结束时调用*/
 	void moveFrom(const Vec2 &postion, const bool &isBack, const float &scaleBegan, const float &scaleEnd, const Vec2 & offsetEnd, const function<void()> &func = nullptr);
-
+	
+	NodeHead *clone();
+	
 public:
 	bool getIsMst() const
 	{
 		return _isMst;
 	}
-	void setIsMst(bool val)
-	{
-		_isMst = val;
-	}
 	int getIndexDataEntity() const
 	{
 		return _indexDataEntity;
 	}
-	void setIndexDataEntity(int val)
+
+	Layout *getLayoutBg()
 	{
-		_indexDataEntity = val;
+		return (Layout *)_skin->getChildByName("layoutBg");
 	}
 
 private:

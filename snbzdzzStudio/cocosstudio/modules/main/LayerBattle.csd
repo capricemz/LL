@@ -23,17 +23,6 @@
                     <FileData Type="Normal" Path="images/bg/battle_bg1.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="spriteMaid" ActionTag="510941598" Tag="215" IconVisible="False" LeftMargin="87.0000" RightMargin="-87.0000" TopMargin="-155.0000" BottomMargin="-165.0000" ctype="SpriteObjectData">
-                    <Size X="640.0000" Y="800.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="407.0000" Y="235.0000" />
-                    <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6359" Y="0.4896" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/big_head/big_head_3.png" Plist="" />
-                    <BlendFunc Src="770" Dst="771" />
-                  </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
                 <Position />
@@ -58,17 +47,6 @@
                     <PrePosition X="1.0000" Y="1.1852" />
                     <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="images/bg/battle_bg1.png" Plist="" />
-                    <BlendFunc Src="770" Dst="771" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="spriteMst" ActionTag="1350672091" Tag="218" IconVisible="False" LeftMargin="-100.0000" RightMargin="100.0000" TopMargin="70.0000" BottomMargin="-390.0000" ctype="SpriteObjectData">
-                    <Size X="640.0000" Y="800.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="220.0000" Y="10.0000" />
-                    <Scale ScaleX="0.7000" ScaleY="0.7000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.3438" Y="0.0208" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/big_head/big_head_31.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -223,60 +201,18 @@
             <Children>
               <AbstractNodeData Name="layoutHeadMaid" ActionTag="1751947810" Tag="192" IconVisible="False" LeftMargin="374.9993" RightMargin="0.0007" TopMargin="754.9993" BottomMargin="0.0007" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="265.0000" Y="205.0000" />
-                <Children>
-                  <AbstractNodeData Name="nodeHead2" ActionTag="532791985" Tag="92" IconVisible="True" LeftMargin="34.9986" RightMargin="230.0014" TopMargin="147.0004" BottomMargin="57.9996" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <AnchorPoint />
-                    <Position X="34.9986" Y="57.9996" />
-                    <Scale ScaleX="0.5500" ScaleY="0.5500" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.1321" Y="0.2829" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="modules/main/NodeHead.csd" Plist="" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="nodeHead1" ActionTag="2138577594" Tag="85" IconVisible="True" LeftMargin="105.9980" RightMargin="159.0020" TopMargin="147.0005" BottomMargin="57.9995" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <AnchorPoint />
-                    <Position X="105.9980" Y="57.9995" />
-                    <Scale ScaleX="0.5500" ScaleY="0.5500" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4000" Y="0.2829" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="modules/main/NodeHead.csd" Plist="" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="nodeHead0" ActionTag="920602910" Tag="71" IconVisible="True" LeftMargin="204.0000" RightMargin="61.0000" TopMargin="101.9982" BottomMargin="103.0018" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <AnchorPoint />
-                    <Position X="204.0000" Y="103.0018" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.7698" Y="0.5024" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="modules/main/NodeHead.csd" Plist="" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="nodeHeadTemp" ActionTag="2014327894" Tag="207" IconVisible="True" LeftMargin="326.0000" RightMargin="-61.0000" TopMargin="102.0000" BottomMargin="103.0000" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <AnchorPoint />
-                    <Position X="326.0000" Y="103.0000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="1.2302" Y="0.5024" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="modules/main/NodeHead.csd" Plist="" />
-                  </AbstractNodeData>
-                </Children>
                 <AnchorPoint />
                 <Position X="374.9993" Y="0.0007" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5859" Y="0.0000" />
+                <PrePosition X="0.5859" />
                 <PreSize X="0.4141" Y="0.2135" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="layoutEnergyMaid" ActionTag="1136608063" Tag="156" IconVisible="False" LeftMargin="374.0836" RightMargin="124.9164" TopMargin="793.3898" BottomMargin="118.6102" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+              <AbstractNodeData Name="layoutEnergyMaid" ActionTag="1136608063" Tag="156" IconVisible="False" LeftMargin="376.0000" RightMargin="123.0000" TopMargin="794.0000" BottomMargin="118.0000" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="141.0000" Y="48.0000" />
                 <Children>
                   <AbstractNodeData Name="barEnergy" ActionTag="1377480472" Tag="158" IconVisible="False" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="3.9999" BottomMargin="8.0001" ProgressInfo="100" ctype="LoadingBarObjectData">
@@ -302,10 +238,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
-                <Position X="374.0836" Y="118.6102" />
+                <Position X="376.0000" Y="118.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5845" Y="0.1236" />
+                <PrePosition X="0.5875" Y="0.1229" />
                 <PreSize X="0.2203" Y="0.0500" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
@@ -314,48 +250,6 @@
               </AbstractNodeData>
               <AbstractNodeData Name="layoutHeadMst" ActionTag="1609905036" Tag="193" IconVisible="False" RightMargin="375.0000" BottomMargin="755.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="265.0000" Y="205.0000" />
-                <Children>
-                  <AbstractNodeData Name="nodeHead2" ActionTag="714105726" Tag="99" IconVisible="True" LeftMargin="231.9997" RightMargin="33.0003" TopMargin="57.0000" BottomMargin="148.0000" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <AnchorPoint />
-                    <Position X="231.9997" Y="148.0000" />
-                    <Scale ScaleX="0.5500" ScaleY="0.5500" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.8755" Y="0.7220" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="modules/main/NodeHead.csd" Plist="" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="nodeHead1" ActionTag="-816412637" Tag="106" IconVisible="True" LeftMargin="160.9989" RightMargin="104.0011" TopMargin="57.0000" BottomMargin="148.0000" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <AnchorPoint />
-                    <Position X="160.9989" Y="148.0000" />
-                    <Scale ScaleX="0.5500" ScaleY="0.5500" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6075" Y="0.7220" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="modules/main/NodeHead.csd" Plist="" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="nodeHead0" ActionTag="-1389005408" Tag="113" IconVisible="True" LeftMargin="61.0000" RightMargin="204.0000" TopMargin="102.0000" BottomMargin="103.0000" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <AnchorPoint />
-                    <Position X="61.0000" Y="103.0000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.2302" Y="0.5024" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="modules/main/NodeHead.csd" Plist="" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="nodeHeadTemp" ActionTag="7707796" Tag="194" IconVisible="True" LeftMargin="-61.0000" RightMargin="326.0000" TopMargin="102.0000" BottomMargin="103.0000" InnerActionSpeed="1.0000" ctype="ProjectNodeObjectData">
-                    <Size X="0.0000" Y="0.0000" />
-                    <AnchorPoint />
-                    <Position X="-61.0000" Y="103.0000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="-0.2302" Y="0.5024" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="modules/main/NodeHead.csd" Plist="" />
-                  </AbstractNodeData>
-                </Children>
                 <AnchorPoint ScaleY="1.0000" />
                 <Position Y="960.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -380,13 +274,13 @@
                     <PreSize X="0.9291" Y="0.7500" />
                     <ImageFileData Type="Normal" Path="images/battle/nl_bar.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="spriteBgEnergy" CanEdit="False" ActionTag="-1271984136" Tag="186" IconVisible="False" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="spriteBgEnergy" ActionTag="-1271984136" Tag="186" IconVisible="False" LeftMargin="-2.5000" RightMargin="2.5000" TopMargin="2.0000" BottomMargin="-2.0000" ctype="SpriteObjectData">
                     <Size X="141.0000" Y="48.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="70.5000" Y="24.0000" />
+                    <Position X="68.0000" Y="22.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5000" Y="0.5000" />
+                    <PrePosition X="0.4823" Y="0.4583" />
                     <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="images/battle/nl_bg.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
@@ -415,7 +309,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutGrid" Visible="False" ActionTag="207144131" Tag="161" IconVisible="False" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutGrid" CanEdit="False" ActionTag="207144131" Tag="161" IconVisible="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="640.0000" Y="960.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="320.0000" Y="480.0000" />
