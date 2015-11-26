@@ -119,7 +119,7 @@ void LayerBattle::dealRemoveFromParent()
 void LayerBattle::showAppearGridSelectedMst()
 {
 	auto indexMst = ManagerData::getInstance()->getHandleDataEntity()->getIndexMst();
-	auto postion = getPostionHeadIcon(1, indexMst);
+	auto postion = getPostionHeadIcon(1, /*indexMst*/0);
 	_handleGrid->showAppearGridSelectedMst(postion);
 }
 
@@ -130,7 +130,7 @@ void LayerBattle::showAppearGridSelectMaid()
 		return;
 	}
 	auto indexMaid = ManagerData::getInstance()->getHandleDataEntity()->getIndexMaid();
-	auto postion = getPostionHeadIcon(0, indexMaid);
+	auto postion = getPostionHeadIcon(0, /*indexMaid*/0);
 	_layerGridSelect->showAppearGridSelectMaid(postion);
 }
 

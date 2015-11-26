@@ -21,6 +21,7 @@ protected:
 	virtual Vec2 getPostionEndAttack();
 	virtual void updateHp();
 	virtual void updateEnergy();
+	virtual void dealDead();
 	virtual void switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess);
 	
 private:

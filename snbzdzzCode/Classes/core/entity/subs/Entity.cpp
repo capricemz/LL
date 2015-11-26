@@ -336,7 +336,7 @@ void Entity::dealDeadEffect(const float &duration)
 
 void Entity::dealDead()
 {
-	auto func = []()
+	/*auto func = []()
 	{
 		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::DEAL_ROUND_OVER, true);//处理回合结束
 	};
@@ -345,5 +345,5 @@ void Entity::dealDead()
 	if (!isSwitchSuccess)
 	{
 		func();
-	}
+	}*/
 }

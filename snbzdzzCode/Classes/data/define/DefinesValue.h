@@ -12,11 +12,13 @@ using namespace std;
 static const int TIME_LAST_SAVE_INTERVAL = 300;
 static const int TIME_OFF_LINE_MAX = 172800;
 
+static const int DATA_UNLOCK_INIT_MAID = 1000;//初始化时默认解锁的女仆
+
 static const int GRID_SELECT_MAX = 9;
 static const int GRID_SELECTED_MAX = 3;
 static const int ENTITY_BATTLE_MAX = 3;
 
-static const int DATA_UNLOCK_INIT_MAID = 1000;//初始化时默认解锁的女仆
+static const int ENERGY_SWITCH_ENTITY = 8;
 
 static const vector<Vec2> vecPostionGridBattle =
 {
@@ -248,6 +250,8 @@ enum class TYPE_OBSERVER_HANDLE_HEAD
 	UPDATE_HP,
 	UPDATE_HP_ALL,
 	UPDATE_ENERGY,
+	SWITCH_NODE_HEAD_TO,
+	SWITCH_LAYOUT_HEAD_MAID_TOUCHABLE
 };
 
 enum class TYPE_OBSERVER_HANDLE_ENTITY

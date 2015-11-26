@@ -38,6 +38,7 @@ void HandleDataUnlock::dataFileGet()
 	{
 		_vecDataUnlock.push_back(Value(var).asInt());
 	}
+	setIsUnlockMaid(1001);//for test
 }
 
 void HandleDataUnlock::dataFileSet()

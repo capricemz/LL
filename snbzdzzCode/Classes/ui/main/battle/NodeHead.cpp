@@ -34,6 +34,8 @@ void NodeHead::createSkin()
 {
 	_skin = (Node *)CSLoader::createNode(RES_MODULES_MAIN_NODE_HEAD_CSB);
 	addChild(_skin);
+
+	getLayoutBg()->setTouchEnabled(false);
 }
 
 void NodeHead::setInfo(const bool &isMst, const int &indexDataEntity)
@@ -48,7 +50,7 @@ void NodeHead::setInfo(const bool &isMst, const int &indexDataEntity)
 void NodeHead::updateAll()
 {
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto vecDataEntity = _isMst ? handleDataEntity->getVecDataEntityMst() : handleDataEntity->getVecDataEntityMaid();
+	auto &vecDataEntity = _isMst ? handleDataEntity->getVecDataEntityMst() : handleDataEntity->getVecDataEntityMaid();
 	if (vecDataEntity.size() <= _indexDataEntity)
 	{
 		_skin->setVisible(false);

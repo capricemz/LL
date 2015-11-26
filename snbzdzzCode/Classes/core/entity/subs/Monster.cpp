@@ -36,7 +36,7 @@ void Monster::setMyScale()
 cocos2d::Vec2 Monster::getPostionAppearDisAppear()
 {
 	auto size = _skin->getContentSize();
-	return Vec2(size.width, -size.height);
+	return Vec2(-size.width, size.height);
 }
 
 cocos2d::Vec2 Monster::getPostionEndAttack()
@@ -53,6 +53,11 @@ void Monster::updateHp()
 void Monster::updateEnergy()
 {
 	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::UPDATE_ENERGY, true);//界面刷新
+}
+
+void Monster::dealDead()
+{
+	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::SWITCH_NODE_HEAD_TO, true, ENTITY_BATTLE_MAX);//参数：不是怪物，切换下一个
 }
 
 void Monster::switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess)

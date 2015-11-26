@@ -135,6 +135,7 @@ void NodeCircleLine::onTouchEndedCanceled()
 		managerGrid->linkDataGridSelected();
 		auto managerUI = ManagerUI::getInstance();
 		managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::HIDE_LAYER_GRID_SELECT);
+		managerUI->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::SWITCH_LAYOUT_HEAD_MAID_TOUCHABLE, false);
 	}
 	else
 	{

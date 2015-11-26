@@ -199,13 +199,13 @@
           <AbstractNodeData Name="layoutHead" ActionTag="1116761913" Tag="160" IconVisible="False" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="640.0000" Y="960.0000" />
             <Children>
-              <AbstractNodeData Name="layoutHeadMaid" ActionTag="1751947810" Tag="192" IconVisible="False" LeftMargin="374.9993" RightMargin="0.0007" TopMargin="754.9993" BottomMargin="0.0007" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+              <AbstractNodeData Name="layoutHeadMaid" ActionTag="1751947810" Tag="192" IconVisible="False" LeftMargin="375.0000" TopMargin="754.9993" BottomMargin="0.0007" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="265.0000" Y="205.0000" />
-                <AnchorPoint />
-                <Position X="374.9993" Y="0.0007" />
+                <AnchorPoint ScaleX="1.0000" />
+                <Position X="640.0000" Y="0.0007" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5859" />
+                <PrePosition X="1.0000" Y="0.0000" />
                 <PreSize X="0.4141" Y="0.2135" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
@@ -215,23 +215,23 @@
               <AbstractNodeData Name="layoutEnergyMaid" ActionTag="1136608063" Tag="156" IconVisible="False" LeftMargin="376.0000" RightMargin="123.0000" TopMargin="794.0000" BottomMargin="118.0000" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="141.0000" Y="48.0000" />
                 <Children>
-                  <AbstractNodeData Name="barEnergy" ActionTag="1377480472" Tag="158" IconVisible="False" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="3.9999" BottomMargin="8.0001" ProgressInfo="100" ctype="LoadingBarObjectData">
+                  <AbstractNodeData Name="barEnergy" ActionTag="1377480472" Tag="158" IconVisible="False" LeftMargin="4.5000" RightMargin="5.5000" TopMargin="4.0000" BottomMargin="8.0000" ProgressInfo="100" ctype="LoadingBarObjectData">
                     <Size X="131.0000" Y="36.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="70.5000" Y="26.0001" />
+                    <Position X="70.0000" Y="26.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5000" Y="0.5417" />
+                    <PrePosition X="0.4965" Y="0.5417" />
                     <PreSize X="0.9291" Y="0.7500" />
                     <ImageFileData Type="Normal" Path="images/battle/nl_bar.png" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="spriteBgEnergy" ActionTag="819361241" Tag="157" IconVisible="False" ctype="SpriteObjectData">
                     <Size X="141.0000" Y="48.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="70.5000" Y="24.0000" />
+                    <AnchorPoint />
+                    <Position />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5000" Y="0.5000" />
+                    <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="images/battle/nl_bg.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
@@ -264,23 +264,23 @@
               <AbstractNodeData Name="layoutEnergyMst" ActionTag="561136449" Tag="184" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="TopEdge" LeftMargin="125.0000" RightMargin="374.0000" TopMargin="118.0000" BottomMargin="794.0000" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="141.0000" Y="48.0000" />
                 <Children>
-                  <AbstractNodeData Name="barEnergy" ActionTag="1295506750" Tag="185" IconVisible="False" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="3.9999" BottomMargin="8.0001" ProgressInfo="100" ctype="LoadingBarObjectData">
+                  <AbstractNodeData Name="barEnergy" ActionTag="1295506750" Tag="185" IconVisible="False" LeftMargin="4.5000" RightMargin="5.5000" TopMargin="4.0000" BottomMargin="8.0000" ProgressInfo="100" ctype="LoadingBarObjectData">
                     <Size X="131.0000" Y="36.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="70.5000" Y="26.0001" />
+                    <Position X="70.0000" Y="26.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5000" Y="0.5417" />
+                    <PrePosition X="0.4965" Y="0.5417" />
                     <PreSize X="0.9291" Y="0.7500" />
                     <ImageFileData Type="Normal" Path="images/battle/nl_bar.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="spriteBgEnergy" ActionTag="-1271984136" Tag="186" IconVisible="False" LeftMargin="-2.5000" RightMargin="2.5000" TopMargin="2.0000" BottomMargin="-2.0000" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="spriteBgEnergy" ActionTag="-1271984136" Tag="186" IconVisible="False" ctype="SpriteObjectData">
                     <Size X="141.0000" Y="48.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="68.0000" Y="22.0000" />
+                    <AnchorPoint />
+                    <Position />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4823" Y="0.4583" />
+                    <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="images/battle/nl_bg.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />

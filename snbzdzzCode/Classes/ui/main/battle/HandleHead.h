@@ -29,8 +29,8 @@ public:
 	/*type 0女仆，1怪物
 	index 第几个*/
 	Vec2 getPostionHeadIcon(const int &type, const int &index);
-	/*切换头像*/
-	void switchHead();
+	/*切换头像到下一个*/
+	void switchNodeHeadTo(const bool &isMst, const int &indexTo);
 	void onTouchMoveHead(Ref *ref, Widget::TouchEventType type, const bool &isMst);
 	
 	void resetSkin();
@@ -38,19 +38,20 @@ public:
 private:
 	void updateBarHp(const bool &isMst, const int &indexNodeHead);
 	void updateBarEnergy(const bool &isMst);
-
-	void nodeHeadScalePostionGet(const bool &isMove, const int &index, NodeHead *nodeHead, NodeHead *nodeHeadLast, float &scale, Vec2 &postion);
-	void recordPostionBegan(const bool &isMst);//记录开始时NodeHead位置
-	void moveNodeHead(const bool &isMst, const Vec2 &offset);//移动NodeHead位置
-	void dealOverMoveNodeHead(const Vec2 &offsetOver);//移动NodeHead结束时处理判断
+	
+	void switchLayoutHeadMaidTouchable(const bool &isTouchEnabled);
+	void nodeHeadScalePostionGet(const int &index, const bool &isMst, float &scale, Vec2 &postion, const float &xOffset = 0.0f);
+	void moveNodeHead(const bool &isMst, const float &xOffset);//移动NodeHead位置
+	void dealNodeHeadTemp(const bool &isMst, const bool &isLeft);
+	void dealOverMoveNodeHead(const bool &isMst, const bool &isActive);//移动NodeHead结束时处理判断
 	
 private:
 	Layout *_skin;
 	Vector<NodeHead *> _vecNodeHeadMst;
 	Vector<NodeHead *> _vecNodeHeadMaid;
 
-	float _xPostionBeganNodeHead;
-	bool _isInserted;
+	float _xPostionMoveTouchLast;
+	int _indexNodeHeadTemp;
 
 };
 

@@ -105,7 +105,16 @@ void LayerGridSelect::runSkillRandom()
 
 void LayerGridSelect::showAppearGridSelectMaid(const Vec2 &postion)
 {
-	runActionGridSelectMaidMoveFrom(postion, nullptr, CC_CALLBACK_0(LayerGridSelect::runActionGridSelectMaidTurn, this, nullptr, nullptr));
+	runActionGridSelectMaidMoveFrom(postion, nullptr, CC_CALLBACK_0(LayerGridSelect::runActionGridSelectMaidTurn, this, nullptr, []()
+	{
+		auto dataEntity = ManagerData::getInstance()->getHandleDataEntity()->getDataEntityMaid();
+		auto energy = dataEntity->getAttribute(IdAttribute::ENTITY_ENERGY);
+		/*auto energyMax = dataEntity->getAttribute(IdAttribute::ENTITY_ENERGY_MAX);*/
+		if (energy >= ENERGY_SWITCH_ENTITY)
+		{
+			ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::SWITCH_LAYOUT_HEAD_MAID_TOUCHABLE, true);
+		}
+	}));
 }
 
 void LayerGridSelect::runDisappearAction()

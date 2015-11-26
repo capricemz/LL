@@ -210,41 +210,30 @@ void HandleEntity::dealTurnOver()
 		}
 		else//若回合结束
 		{
-			dealRoundOver();
+			auto indexTo = 0;
+			auto isSkillNeedSwitchEntity = handleDataEntity->getIsSkillNeedSwitchEntity(indexTo);
+			if (isSkillNeedSwitchEntity)
+			{
+				ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::SWITCH_NODE_HEAD_TO, true, indexTo);//参数：是怪物，切换目标
+			}
+			else
+			{
+				dealRoundOver();
+			}
 		}
 	}
 }
 
 void HandleEntity::dealRoundOver(const bool &isForce /*= false*/)
 {
-	auto func = []()
-	{
-		auto managerUI = ManagerUI::getInstance();
-		managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::RESET_SKIN);
-		managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_APPEAR_GRID_SELECTED_MST);
-	};
-
 	ManagerData::getInstance()->getHandleDataGrid()->resetIndexGridBattle();
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
 	handleDataEntity->addRound();
 	handleDataEntity->dealDataEntitySkillSort(isForce);
 
-	auto indexTo = 0;
-	auto isSkillNeedSwitchEntity = handleDataEntity->getIsSkillNeedSwitchEntity(indexTo);
-	if (isSkillNeedSwitchEntity)
-	{
-		auto isSwitchSuccess = false;
-		auto monster = ManagerEntity::getInstance()->getMonster();
-		monster->switchEntity(indexTo, isSwitchSuccess, func);
-		if (!isSwitchSuccess)
-		{
-			func();
-		}
-	}
-	else
-	{
-		func();
-	}
+	auto managerUI = ManagerUI::getInstance();
+	managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::RESET_SKIN);
+	managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_APPEAR_GRID_SELECTED_MST);
 }
 
 void HandleEntity::updateTxtHpOrEnergy(const bool &isHp)

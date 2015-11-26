@@ -38,7 +38,7 @@ void Maid::setMyScale()
 cocos2d::Vec2 Maid::getPostionAppearDisAppear()
 {
 	auto size = _skin->getContentSize();
-	return Vec2(-size.width, -size.height);
+	return Vec2(size.width, -size.height);
 }
 
 cocos2d::Vec2 Maid::getPostionEndAttack()
@@ -55,6 +55,11 @@ void Maid::updateHp()
 void Maid::updateEnergy()
 {
 	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::UPDATE_ENERGY, false);//界面刷新
+}
+
+void Maid::dealDead()
+{
+	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::SWITCH_NODE_HEAD_TO, false, ENTITY_BATTLE_MAX);//参数：不是怪物，切换下一个
 }
 
 void Maid::switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess)
