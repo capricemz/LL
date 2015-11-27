@@ -41,7 +41,7 @@ static const vector<string> RES_IMAGES_COMMON_TYPE_JOB_PNG_VEC = {
 	"images/common/typeJobTank.png", 
 	"images/common/typeJobArcher.png" };
 
-static const string SOUND_EFFECT_SYSTEM_BTN_0_MP3 = "sound/effect/systemBtn0.mp3";//音效系统按钮0
-static const string SOUND_EFFECT_SYSTEM_BTN_1_MP3 = "sound/effect/systemBtn1.mp3";//音效系统按钮1
+static const string SOUND_EFFECT_SYSTEM_BTN_0_MP3 = "effect/systemBtn0.mp3";//音效系统按钮0
+static const string SOUND_EFFECT_SYSTEM_BTN_1_MP3 = "effect/systemBtn1.mp3";//音效系统按钮1
 
 #endif

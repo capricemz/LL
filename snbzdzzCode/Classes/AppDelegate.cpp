@@ -77,6 +77,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
 	FileUtils::getInstance()->addSearchPath("res");
 	FileUtils::getInstance()->addSearchPath("configs");
+	FileUtils::getInstance()->addSearchPath("sound");
 
     // create a scene. it's an autorelease object
 	/*auto scene = HelloWorld::createScene();*/
