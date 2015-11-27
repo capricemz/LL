@@ -50,7 +50,7 @@ void NodeHead::setInfo(const bool &isMst, const int &indexDataEntity)
 void NodeHead::updateAll()
 {
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto &vecDataEntity = _isMst ? handleDataEntity->getVecDataEntityMst() : handleDataEntity->getVecDataEntityMaid();
+	auto vecDataEntity = _isMst ? handleDataEntity->getVecDataEntityMst() : handleDataEntity->getVecDataEntityMaid();
 	if (vecDataEntity.size() <= _indexDataEntity)
 	{
 		_skin->setVisible(false);

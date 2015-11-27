@@ -45,10 +45,10 @@ void LayerGridShow::updateBySubject(va_list values)
 	auto type = va_arg(values, TYPE_OBSERVER_LAYER_GRID_SHOW);
 	if (type == TYPE_OBSERVER_LAYER_GRID_SHOW::RUN_MAID_GRID_MOVE_FROM_ACTION)
 	{
-		auto index = va_arg(values, int);
+		/*auto index = va_arg(values, int);
 		auto postion = va_arg(values, Vec2);
-		/*auto func = va_arg(values, function<void()>);*/
-		runMaidGridMoveFromAction(index, postion, nullptr);
+		/ *auto func = va_arg(values, function<void()>);* /
+		runMaidGridMoveFromAction(index, postion, nullptr);*/
 	}
 	else if (type == TYPE_OBSERVER_LAYER_GRID_SHOW::HIDE_BG)
 	{
@@ -149,8 +149,11 @@ void LayerGridShow::createSkin()
 		auto index = i % 4;
 		auto grid = Grid::create();
 		grid->setIndexGrid(index);
-		isMstGrid ? grid->createDataGrid() : nullptr;
-		isMstGrid ? grid->createDataGridSkill(true) : nullptr;
+		if (isMstGrid)
+		{
+			grid->createDataGrid();
+			grid->createDataGridSkill(true);
+		}
 		/*grid->setPosition(isMstGrid ? vecPostionGridShowMst[index] : vecPostionGridShowMaid[index]);*/
 		grid->setName(isMstGrid ? "gridMst" + Value(index).asString() : "gridMaid" + Value(index).asString());
 		grid->setVisible(false);

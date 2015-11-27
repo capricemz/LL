@@ -27,3 +27,11 @@ Debug.win32
 /snbzdzzCode/Resources/HelloWorld.png
 /snbzdzzCode/Resources/CloseNormal.png
 /snbzdzzCode/Resources/CloseSelected.png
+/snbzdzzCode/cocos2d/cocos/platform/android/java/bin
+/snbzdzzCode/cocos2d/cocos/platform/android/java/gen
+/snbzdzzCode/cocos2d/cocos/platform/android/java/libs
+/snbzdzzCode/cocos2d/cocos/platform/android/java/res
+/snbzdzzCode/bin
+/snbzdzzCode/proj.android/assets
+/snbzdzzCode/proj.android/bin
+/snbzdzzCode/proj.android/gen

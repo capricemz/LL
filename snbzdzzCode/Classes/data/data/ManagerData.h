@@ -267,7 +267,7 @@ class HandleDataEntity
 		void dealBattleOver();//处理战斗结束数据
 		
 	public:
-		Vector<DataEntity *> getVecDataEntityMst() const
+		Vector<DataEntity *> &getVecDataEntityMst()
 		{
 			return _vecDataEntityMst;
 		}
@@ -279,7 +279,7 @@ class HandleDataEntity
 		{
 			_vecDataEntityMst.clear();
 		}
-		Vector<DataEntity *> getVecDataEntityMaid() const
+		Vector<DataEntity *> &getVecDataEntityMaid()
 		{
 			return _vecDataEntityMaid;
 		}

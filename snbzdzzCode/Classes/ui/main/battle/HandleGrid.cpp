@@ -43,8 +43,11 @@ void HandleGrid::setSkin(Layout *skin)
 
 		auto grid = Grid::create();
 		grid->setIndexGrid(index);
-		isMst ? grid->createDataGrid() : nullptr;
-		isMst ? grid->createDataGridSkill(true) : nullptr;
+		if (isMst)
+		{
+			grid->createDataGrid();
+			grid->createDataGridSkill(true);
+		}
 		grid->setPosition(postion);
 		grid->setName(name);
 		grid->setVisible(false);
