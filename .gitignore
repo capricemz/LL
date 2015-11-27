@@ -22,3 +22,8 @@ snbzdzzStudio.udf
 Debug.win32
 *.pch
 *.user
+/snbzdzzCode/Resources/fonts
+/snbzdzzCode/Resources/res
+/snbzdzzCode/Resources/HelloWorld.png
+/snbzdzzCode/Resources/CloseNormal.png
+/snbzdzzCode/Resources/CloseSelected.png
