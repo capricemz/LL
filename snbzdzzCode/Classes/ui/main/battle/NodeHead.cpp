@@ -66,8 +66,7 @@ void NodeHead::updateAll()
 
 void NodeHead::updateSpriteIcon()
 {
-	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto dataEntity = _isMst ? handleDataEntity->getVecDataEntityMst().at(_indexDataEntity) : handleDataEntity->getVecDataEntityMaid().at(_indexDataEntity);
+	auto dataEntity = getDataEntity();
 	auto cfgEntity = dataEntity->getCfgEntity();
 	auto urlPic = cfgEntity.vecUrlPic[1];
 	auto texture = Director::getInstance()->getTextureCache()->getTextureForKey(urlPic);
@@ -78,8 +77,7 @@ void NodeHead::updateSpriteIcon()
 
 void NodeHead::updateBarHp()
 {
-	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto dataEntity = _isMst ? handleDataEntity->getVecDataEntityMst().at(_indexDataEntity) : handleDataEntity->getVecDataEntityMaid().at(_indexDataEntity);
+	auto dataEntity = getDataEntity();
 	auto hp = dataEntity->getAttribute(IdAttribute::ENTITY_HP);
 	auto hpMax = dataEntity->getAttribute(IdAttribute::ENTITY_HP_MAX);
 
@@ -89,8 +87,7 @@ void NodeHead::updateBarHp()
 
 void NodeHead::updateSpriteJob()
 {
-	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto dataEntity = _isMst ? handleDataEntity->getVecDataEntityMst().at(_indexDataEntity) : handleDataEntity->getVecDataEntityMaid().at(_indexDataEntity);
+	auto dataEntity = getDataEntity();
 	auto cfgEntity = dataEntity->getCfgEntity();
 	auto urlPic = RES_IMAGES_COMMON_TYPE_JOB_PNG_VEC[(int)cfgEntity.typeJob];
 	auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(urlPic);
@@ -186,4 +183,11 @@ NodeHead * NodeHead::clone()
 	nodeHead->setInfo(_isMst, _indexDataEntity);
 	nodeHead->updateAll();
 	return nodeHead;
+}
+
+DataEntity * NodeHead::getDataEntity()
+{
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto dataEntity = _isMst ? handleDataEntity->getVecDataEntityMst().at(_indexDataEntity) : handleDataEntity->getVecDataEntityMaid().at(_indexDataEntity);
+	return dataEntity;
 }

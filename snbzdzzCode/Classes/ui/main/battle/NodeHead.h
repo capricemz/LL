@@ -55,6 +55,8 @@ public:
 		return (Layout *)_skin->getChildByName("layoutBg");
 	}
 
+	DataEntity *getDataEntity();
+
 private:
 	Node *_skin;
 	bool _isMst;

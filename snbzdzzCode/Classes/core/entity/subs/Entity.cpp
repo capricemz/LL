@@ -249,16 +249,6 @@ void Entity::stopSkinAllActions()
 
 void Entity::switchEntity(const int &indexSwitchTo, bool &isSwitchSuccess, const function<void()> &func /*= nullptr*/)
 {
-	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto isAllMstDead = handleDataEntity->isAllMstDead();
-	auto isAllMaidDead = handleDataEntity->isAllMaidDead();
-	if (isAllMstDead || isAllMaidDead)
-	{
-		ManagerEntity::getInstance()->dealBattleOver();
-		isSwitchSuccess = true;//战斗结束时，不用在外部调用func()
-		return;
-	}
-	//
 	switchDataEntity(indexSwitchTo, isSwitchSuccess);
 	if (!isSwitchSuccess)
 	{
@@ -268,15 +258,16 @@ void Entity::switchEntity(const int &indexSwitchTo, bool &isSwitchSuccess, const
 	runDisAppear([this, func]()
 	{
 		updateSkin();
-		runAppear([func]()
+		runAppear([this, func]()
 		{
 			auto isAppearAll = ManagerEntity::getInstance()->isRunAppearOverAll();
 			if (isAppearAll)
 			{
 				auto managerUI = ManagerUI::getInstance();
 				managerUI->notify(ID_OBSERVER::LAYER_GRID_SELECT, TYPE_OBSERVER_LAYER_GRID_SELECT::RUN_MAID_GRID_MOVE_FROM_ACTION_TAKE_BACK);
-				managerUI->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::UPDATE_HP);
-				managerUI->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::UPDATE_ENERGY);
+				/*managerUI->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::UPDATE_HP);
+				managerUI->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::UPDATE_ENERGY);*/
+				updateEnergy();
 				if (func != nullptr)
 				{
 					func();
@@ -284,6 +275,19 @@ void Entity::switchEntity(const int &indexSwitchTo, bool &isSwitchSuccess, const
 			}
 		});
 	});
+}
+
+bool Entity::dealIsBattleOver()
+{
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto isAllMstDead = handleDataEntity->isAllMstDead();
+	auto isAllMaidDead = handleDataEntity->isAllMaidDead();
+	if (isAllMstDead || isAllMaidDead)
+	{
+		ManagerEntity::getInstance()->dealBattleOver();
+		return true;
+	}
+	return false;
 }
 
 void Entity::dealResultValueChange(const IdAttribute &idAttributeGet, const bool &isPositive, const IdAttribute &idAttributeChange, const Color4B &color, const float &duration)
@@ -332,18 +336,4 @@ void Entity::dealDeadEffect(const float &duration)
 	auto managerUI = ManagerUI::getInstance();
 	/*managerUI->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::UPDATE_HP);*///界面刷新
 	managerUI->showWordsDrift(getParent(), getPosition() + Vec2(0.0f, 100.0f), STR_DEAD, Color4B::RED, duration);
-}
-
-void Entity::dealDead()
-{
-	/*auto func = []()
-	{
-		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::DEAL_ROUND_OVER, true);//处理回合结束
-	};
-	auto isSwitchSuccess = false;
-	switchEntity(ENTITY_BATTLE_MAX, isSwitchSuccess, func);//Entity内部调用switchEntity时需要手动调用DealRoundOver已切换下一轮
-	if (!isSwitchSuccess)
-	{
-		func();
-	}*/
 }

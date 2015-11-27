@@ -57,7 +57,11 @@ void Monster::updateEnergy()
 
 void Monster::dealDead()
 {
-	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::SWITCH_NODE_HEAD_TO, true, ENTITY_BATTLE_MAX);//参数：不是怪物，切换下一个
+	auto isBattleOver = dealIsBattleOver();
+	if (!isBattleOver)
+	{
+		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::SWITCH_NODE_HEAD_TO, true, ENTITY_BATTLE_MAX);//参数：不是怪物，切换下一个
+	}
 }
 
 void Monster::switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess)

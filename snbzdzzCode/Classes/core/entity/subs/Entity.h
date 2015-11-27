@@ -64,9 +64,9 @@ protected:
 	virtual Vec2 getPostionEndAttack() { return Vec2::ZERO; }
 	virtual void updateHp() {}
 	virtual void updateEnergy() {}
-	virtual void dealDead();
+	bool dealIsBattleOver();
+	virtual void dealDead() {}
 	virtual void switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess) {}
-
 	
 private:
 	void dealResultValueChange(const IdAttribute &idAttributeGet, const bool &isPositive, const IdAttribute &idAttributeChange, const Color4B &color, const float &duration);

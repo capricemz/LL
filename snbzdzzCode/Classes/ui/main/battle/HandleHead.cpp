@@ -7,7 +7,7 @@
 #include "NodeHead.h"
 #include "core/entity/ManagerEntity.h"
 
-HandleHead::HandleHead() : _skin(nullptr), _vecNodeHeadMst({}), _vecNodeHeadMaid({}), _xPostionMoveTouchLast(0.0f), _indexNodeHeadTemp(-1)
+HandleHead::HandleHead() : _skin(nullptr), _vecNodeHeadMst({}), _vecNodeHeadMaid({}), _xPostionMoveTouchLast(0.0f), _indexNodeHeadTemp(-1), _dictanceMoved(0.0f)
 {
 }
 
@@ -151,39 +151,55 @@ cocos2d::Vec2 HandleHead::getPostionHeadIcon(const int &type, const int &index)
 
 void HandleHead::switchNodeHeadTo(const bool &isMst, const int &indexTo)
 {
+	_dictanceMoved = 0.0f;
 	auto dictance = 0.0f;
 	auto &vecNodeHead = isMst ? _vecNodeHeadMst : _vecNodeHeadMaid;
 	auto length = (int)vecNodeHead.size();
+	auto isSuccess = false;
 	for (auto i = 0; i < length; i++)
 	{
 		auto nodeHead = vecNodeHead.at(i);
-		if (nodeHead->getIndexDataEntity() == indexTo)
-		{
-			break;
-		}
 		if (i != 0)
 		{
 			auto nodeHeadLast = vecNodeHead.at(i - 1);
-			dictance += nodeHeadLast->getLayoutBg()->getContentSize().width * nodeHeadLast->getScaleX() * 0.5f;
+			dictance += nodeHeadLast->getLayoutBg()->getContentSize().width * nodeHeadLast->getScaleX() * 0.5f;//前一个的一半
+
+			dictance += nodeHead->getLayoutBg()->getContentSize().width * nodeHead->getScaleX() * 0.5f;//当前的一半
+
+			if ((indexTo == ENTITY_BATTLE_MAX && nodeHead->getDataEntity()->getIsAlive()) || nodeHead->getIndexDataEntity() == indexTo)
+			{
+				isSuccess = true;
+				break;
+			}
 		}
-		dictance += nodeHead->getLayoutBg()->getContentSize().width * nodeHead->getScaleX() * 0.5f;
 	}
-	if (dictance == 0.0f)
+	if (!isSuccess)
 	{
+		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::DEAL_ROUND_OVER, true);//处理回合结束
 		return;
 	}
-	auto duration = 0.4f;
+	auto speed = 244.0f;
 	auto durationCallMove = 0.01f;
+	auto duration = dictance / speed;
 	auto xOffset = dictance / (duration / durationCallMove);
 	xOffset = isMst ? -xOffset : xOffset;
-	auto actionMoveNodeHead = RepeatForever::create(Sequence::createWithTwoActions(DelayTime::create(durationCallMove), CallFunc::create(CC_CALLBACK_0(HandleHead::moveNodeHead, this, isMst, xOffset))));
-	actionMoveNodeHead->setTag(1);
 	auto layout = (Layout *)_skin->getChildByName(isMst ? "layoutHeadMst" : "layoutHeadMaid");
-	layout->runAction(actionMoveNodeHead);
-	layout->runAction(Sequence::create(DelayTime::create(duration), CallFunc::create([layout]
+	auto actionCallFunc = CallFunc::create([this, isMst, xOffset, layout, dictance]()
 	{
-		layout->stopActionByTag(1);
-	}), CallFunc::create(CC_CALLBACK_0(HandleHead::dealOverMoveNodeHead, this, isMst, false)), nullptr));
+		if (_dictanceMoved < dictance)
+		{
+			moveNodeHead(isMst, xOffset);
+			_dictanceMoved += abs(xOffset);
+		}
+		else
+		{
+			layout->stopActionByTag(1);
+			dealOverMoveNodeHead(isMst, false);
+		}
+	});
+	auto actionMoveNodeHead = RepeatForever::create(Sequence::createWithTwoActions(DelayTime::create(durationCallMove), actionCallFunc));
+	actionMoveNodeHead->setTag(1);
+	layout->runAction(actionMoveNodeHead);
 }
 
 void HandleHead::onTouchMoveHead(Ref *ref, Widget::TouchEventType type, const bool &isMst)
@@ -413,18 +429,22 @@ void HandleHead::dealOverMoveNodeHead(const bool &isMst, const bool &isActive)
 
 		auto nodeHead = vecNodeHead.at(0);
 		auto indexDataEntityShow = nodeHead->getIndexDataEntity();
-		auto indexDataEntityMaid = ManagerData::getInstance()->getHandleDataEntity()->getIndexMaid();
-		if (indexDataEntityShow != indexDataEntityMaid)
+		auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+		auto indexDataEntityCurrent = isMst ? handleDataEntity->getIndexMst() : handleDataEntity->getIndexMaid();
+		if (indexDataEntityShow != indexDataEntityCurrent)
 		{
-			auto func = [isActive]()
+			auto func = []()
 			{
 				ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::DEAL_ROUND_OVER, true);//处理回合结束
 			};
 			auto isSwitchSuccess = false;
-			ManagerEntity::getInstance()->getMaid()->switchEntity(indexDataEntityShow, isSwitchSuccess, func);//Entity内部调用switchEntity时需要手动调用DealRoundOver已切换下一轮
+			auto managerEntity = ManagerEntity::getInstance();
+			auto entity = isMst ? (Entity *)managerEntity->getMonster() : (Entity *)managerEntity->getMaid();
+			entity->switchEntity(indexDataEntityShow, isSwitchSuccess, func);//Entity内部调用switchEntity时需要手动调用DealRoundOver已切换下一轮
 			if (isSwitchSuccess && isActive)
 			{
-				ManagerData::getInstance()->getHandleDataEntity()->getDataEntityMaid()->setAttribute(IdAttribute::ENTITY_ENERGY, 0);//消耗能量
+				auto dataEntity = isMst ? handleDataEntity->getDataEntityMst() : handleDataEntity->getDataEntityMaid();
+				dataEntity->setAttribute(IdAttribute::ENTITY_ENERGY, 0);//消耗能量
 			}
 			if (!isSwitchSuccess && !isActive)//未成功且非主动
 			{

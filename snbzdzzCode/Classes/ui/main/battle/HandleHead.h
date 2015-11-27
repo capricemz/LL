@@ -52,6 +52,7 @@ private:
 
 	float _xPostionMoveTouchLast;
 	int _indexNodeHeadTemp;
+	float _dictanceMoved;
 
 };
 

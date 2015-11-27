@@ -59,7 +59,11 @@ void Maid::updateEnergy()
 
 void Maid::dealDead()
 {
-	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::SWITCH_NODE_HEAD_TO, false, ENTITY_BATTLE_MAX);//参数：不是怪物，切换下一个
+	auto isBattleOver = dealIsBattleOver();
+	if (!isBattleOver)
+	{
+		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::SWITCH_NODE_HEAD_TO, false, ENTITY_BATTLE_MAX);//参数：不是怪物，切换下一个
+	}
 }
 
 void Maid::switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess)
@@ -86,12 +90,12 @@ void Maid::switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess)
 	}
 	else
 	{
-		auto vecDataEntityMst = handleDataEntity->getVecDataEntityMst();
-		if (vecDataEntityMst.size() <= indexSwitchTo)
+		auto vecDataEntityMaid = handleDataEntity->getVecDataEntityMaid();
+		if (vecDataEntityMaid.size() <= indexSwitchTo)
 		{
 			return;
 		}
-		auto isAlive = vecDataEntityMst.at(indexSwitchTo)->getIsAlive();
+		auto isAlive = vecDataEntityMaid.at(indexSwitchTo)->getIsAlive();
 		if (!isAlive)
 		{
 			return;
