@@ -64,17 +64,16 @@ void DataGrid::updateSkillEffect()
 	for (auto varEffect : vecEffect)
 	{
 		auto vec = UtilString::split(varEffect, ":");
-		auto size = (int)vec.size();
 		auto idAttribute = (IdAttribute)Value(vec[0]).asInt();
-		if (idAttribute < IdAttribute::GRID_ATTRIBUTE_LAST)
+		auto cfgAttribute = ManagerCfg::getInstance()->getDicCfgAttribute()[(int)idAttribute];
+		auto value = Value(vec[1]).asInt();
+		setAttribute(idAttribute, value);
+		if (cfgAttribute.type == TypeAttribute::GRID_COMPLEX)
 		{
-			auto value = size > 1 ? Value(vec[1]).asInt() : 1;
-			setAttribute(idAttribute, value);
-		}
-		else
-		{
-			CCASSERT(size > 1, "HandleDataGrid::getDataGrid vec.size <= 1");
-			setAttributeCondition(idAttribute, vec[1]);
+			auto vec = UtilString::split(cfgAttribute.args, ":");
+			idAttribute = (IdAttribute)Value(vec[0]).asInt();
+			/*auto value = vec[1];*/
+			setAttributeCondition(idAttribute, /*value*/cfgAttribute.args);
 		}
 	}
 }
@@ -175,7 +174,7 @@ void DataGrid::addAttributeCondition(const IdAttribute &idAttribute, const strin
 	}
 	else
 	{
-		_dicAttributeCondition[idAttribute] += "+" + value;
+		_dicAttributeCondition[idAttribute] += "|" + value;
 	}
 }
 

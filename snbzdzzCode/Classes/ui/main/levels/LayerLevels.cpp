@@ -59,7 +59,7 @@ void LayerLevels::createSkin()
 	addChild(_skin);
 
 	auto layoutBtns = (Layout *)_skin->getChildByName("layoutBtns");
-	for (auto i = 0; i < 15; i++)
+	for (auto i = 0; i < /*15*/1; i++)
 	{
 		auto btn = (Button *)layoutBtns->getChildByName("btn" + Value(i).asString());
 		btn->addTouchEventListener(CC_CALLBACK_2(LayerLevels::onTouchBtnLv, this));

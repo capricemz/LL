@@ -399,17 +399,16 @@ void HandleDataEntity::dealSkillRandom(const function<void()> &func /*= nullptr*
 		{
 			auto cfgSkill = ManagerCfg::getInstance()->getDicDicCfgSkill()[idSkill][indexSkill];
 			auto vecStr = UtilString::split(cfgSkill.effect, ":");
-			auto idAttributeEntity = (IdAttribute)Value(vecStr[0]).asInt();
-			if (idAttributeEntity != IdAttribute::ENTITY_SWITCH)
+			auto idAttribute = (IdAttribute)Value(vecStr[0]).asInt();
+			if (idAttribute != IdAttribute::ENTITY_SWITCH)
 			{
-				auto idAttributeGrid = (IdAttribute)Value(vecStr[1]).asInt();
-				auto value = Value(vecStr[2]).asInt();
+				auto value = Value(vecStr[1]).asInt();
 				while (num--)
 				{
 					int index = UtilRandom::randomBewteen(0.0f, GRID_SELECT_MAX);
 					auto grid = dicGridMaidSelect.at(index);
 					grid->createDataGrid();
-					grid->getDataGrid()->setAttribute(idAttributeGrid, value);
+					grid->getDataGrid()->setAttribute(idAttribute, value);
 					isSet = true;
 				}
 			}

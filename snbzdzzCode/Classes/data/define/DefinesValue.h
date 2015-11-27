@@ -34,6 +34,8 @@ enum class TypeLoadState
 
 enum class IdAttribute
 {
+	ATTRIBUTE_NONE,
+
 	ENTITY_HP = 100,//血量
 	ENTITY_HP_MAX,//血量上限
 	ENTITY_ENERGY,//能量
@@ -84,7 +86,10 @@ enum class IdAttribute
 	GRID_DAMAGE_PHYSICAL_EXTRA,//额外物理伤害
 	GRID_DAMAGE_MAGIC_EXTRA,//额外魔法伤害
 
-	GRID_ATTRIBUTE_LAST = 299,//标志最后一个格子属性位
+	GRID_GOLD = 250,//宝箱
+	GRID_STONE,//石头
+	GRID_ICE,//冰块
+	GRID_TRAP,//陷阱
 
 	GRID_PHYSICAL_DAMAGE_SUCCESS = 300,//物理伤害成功
 	GRID_PHYSICAL_DAMAGE_FAILED,//物理伤害失败
@@ -120,12 +125,16 @@ enum class IdAttribute
 	GRID_EFFECTIVE_ROUND = 400,//第n轮生效//n为0表示当前回合
 	GRID_EFFECTIVE_ROUND_COUNT,//持续n个轮
 	GIRD_EFFECTIVE_TO_OTHER,//对对方
-	GRID_EFFECTIVE_EACH,//每点
+	GRID_EFFECTIVE_EACH//每点
+};
 
-	GRID_GOLD = 450,//宝箱
-	GRID_STONE,//石头
-	GRID_ICE,//冰块
-	GRID_TRAP//陷阱
+enum class TypeAttribute
+{
+	NONE,
+	ENTITY,//实体属性
+	GRID_BASE,//格子基本属性
+	GRID_IF,//格子条件属性
+	GRID_COMPLEX,//格子复合属性
 };
 
 enum class TypeEntity

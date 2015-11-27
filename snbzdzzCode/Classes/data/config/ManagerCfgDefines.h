@@ -11,8 +11,10 @@ using namespace std;
 struct CfgAttribute//属性
 {
 	int id;//标志
-	string name;//名称
+	string desc;//描述
 	string urlPic;//图片路径
+	TypeAttribute type;//类型
+	string args;//参数
 };
 typedef map<int32_t, CfgAttribute> DicCfgAttribute;
 //

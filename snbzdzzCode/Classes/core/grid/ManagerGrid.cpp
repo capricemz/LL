@@ -3,6 +3,7 @@
 #include "ManagerGrid.h"
 #include "ui/ManagerUI.h"
 #include "common/util/UtilString.h"
+#include "data/config/ManagerCfg.h"
 
 static ManagerGrid *_instance;
 
@@ -285,49 +286,49 @@ void ManagerGrid::dealDamageAttributeCondition(DataGrid *dataGridCase, DataGrid 
 	value2Count = damageMagic > 0 ? -1 : damageMagicCase;//若魔法抵挡成功，则传入造成方魔法伤害
 	dealAttributeCondition(dataGridTakes, idAttribute, dataGridCase, dataEntityTakes, value2Count);
 
-	idAttribute = damagePhysical > 0 || damageMagic > 0 ? IdAttribute::GRID_ANY_DAMAGE_SUCCESS : IdAttribute::GRID_ATTRIBUTE_LAST;//任意伤害成功
+	idAttribute = damagePhysical > 0 || damageMagic > 0 ? IdAttribute::GRID_ANY_DAMAGE_SUCCESS : IdAttribute::ATTRIBUTE_NONE;//任意伤害成功
 	value2Count = damagePhysical > 0 || damageMagic > 0 ? damagePhysical + damageMagic : -1;//若任意伤害成功，则传入最终所有伤害
 	dealAttributeCondition(dataGridCase, idAttribute, dataGridTakes, dataEntityCase, value2Count);
 	
-	idAttribute = damagePhysical <= 0 || damageMagic <= 0 ? IdAttribute::GRID_ANY_DAMAGE_FAILED : IdAttribute::GRID_ATTRIBUTE_LAST;//任意伤害失败
+	idAttribute = damagePhysical <= 0 || damageMagic <= 0 ? IdAttribute::GRID_ANY_DAMAGE_FAILED : IdAttribute::ATTRIBUTE_NONE;//任意伤害失败
 	dealAttributeCondition(dataGridCase, idAttribute, dataGridTakes, dataEntityCase);
 	
-	idAttribute = damagePhysical > 0 || damageMagic > 0 ? IdAttribute::GRID_ANY_BLOCK_FAILED : IdAttribute::GRID_ATTRIBUTE_LAST;//任意抵挡失败
+	idAttribute = damagePhysical > 0 || damageMagic > 0 ? IdAttribute::GRID_ANY_BLOCK_FAILED : IdAttribute::ATTRIBUTE_NONE;//任意抵挡失败
 	dealAttributeCondition(dataGridTakes, idAttribute, dataGridCase, dataEntityTakes);
 	
-	idAttribute = damagePhysical <= 0 || damageMagic <= 0 ? IdAttribute::GRID_ANY_BLOCK_SUCCESS : IdAttribute::GRID_ATTRIBUTE_LAST;//任意抵挡成功
+	idAttribute = damagePhysical <= 0 || damageMagic <= 0 ? IdAttribute::GRID_ANY_BLOCK_SUCCESS : IdAttribute::ATTRIBUTE_NONE;//任意抵挡成功
 	value2Count = damagePhysical <= 0 || damageMagic <= 0 ? 
 		(damagePhysical <= 0 && damageMagic <= 0 ? damagePhysicalCase + damageMagicCase : (damagePhysical <= 0 ? damagePhysicalCase : damageMagicCase)) :
 		-1;//若任意抵挡成功，则传入接受方被抵挡类型伤害抵挡
 	dealAttributeCondition(dataGridTakes, idAttribute, dataGridCase, dataEntityTakes, value2Count);
 
 	value2Count = damagePhysical > 0 ? damagePhysical : -1;//若物理伤害成功，则传入最终物理伤害
-	idAttribute = damagePhysical > 0 ? IdAttribute::GRID_N_PHYSICAL_DAMAGE : IdAttribute::GRID_ATTRIBUTE_LAST;//造成n点物理伤害
+	idAttribute = damagePhysical > 0 ? IdAttribute::GRID_N_PHYSICAL_DAMAGE : IdAttribute::ATTRIBUTE_NONE;//造成n点物理伤害
 	dealAttributeCondition(dataGridCase, idAttribute, dataGridTakes, dataEntityCase, value2Count, value2Count);
-	idAttribute = damagePhysical > 0 ? IdAttribute::GRID_N_PHYSICAL_TAKES : IdAttribute::GRID_ATTRIBUTE_LAST;//受到n点物理伤害
+	idAttribute = damagePhysical > 0 ? IdAttribute::GRID_N_PHYSICAL_TAKES : IdAttribute::ATTRIBUTE_NONE;//受到n点物理伤害
 	dealAttributeCondition(dataGridTakes, idAttribute, dataGridCase, dataEntityTakes, value2Count, value2Count);
 
-	idAttribute = damagePhysical > 0 ? IdAttribute::GRID_N_PHYSICAL_BLOCK : IdAttribute::GRID_ATTRIBUTE_LAST;//抵挡n点物理伤害
+	idAttribute = damagePhysical > 0 ? IdAttribute::GRID_N_PHYSICAL_BLOCK : IdAttribute::ATTRIBUTE_NONE;//抵挡n点物理伤害
 	value2Count = damagePhysical > 0 ? -1 : damagePhysicalCase;//若物理抵挡成功，则传入造成方物理伤害
 	dealAttributeCondition(dataGridTakes, idAttribute, dataGridCase, dataEntityTakes, value2Count, value2Count);
 
-	idAttribute = damageMagic > 0 ? IdAttribute::GRID_N_MAGIC_DAMAGE : IdAttribute::GRID_ATTRIBUTE_LAST;//造成n点魔法伤害
+	idAttribute = damageMagic > 0 ? IdAttribute::GRID_N_MAGIC_DAMAGE : IdAttribute::ATTRIBUTE_NONE;//造成n点魔法伤害
 	value2Count = damageMagic > 0 ? damageMagic : -1;//若物理伤害成功，则传入最终物理伤害
 	dealAttributeCondition(dataGridCase, idAttribute, dataGridTakes, dataEntityCase, value2Count, value2Count);
-	idAttribute = damageMagic > 0 ? IdAttribute::GRID_N_MAGIC_TAKES : IdAttribute::GRID_ATTRIBUTE_LAST;//受到n点魔法伤害
+	idAttribute = damageMagic > 0 ? IdAttribute::GRID_N_MAGIC_TAKES : IdAttribute::ATTRIBUTE_NONE;//受到n点魔法伤害
 	dealAttributeCondition(dataGridTakes, idAttribute, dataGridCase, dataEntityTakes, value2Count, value2Count);
 
-	idAttribute = damagePhysical > 0 ? IdAttribute::GRID_N_MAGIC_BLOCK : IdAttribute::GRID_ATTRIBUTE_LAST;//抵挡n点魔法伤害
+	idAttribute = damagePhysical > 0 ? IdAttribute::GRID_N_MAGIC_BLOCK : IdAttribute::ATTRIBUTE_NONE;//抵挡n点魔法伤害
 	value2Count = damageMagic > 0 ? -1 : damageMagicCase;//若魔法抵挡成功，则传入造成方魔法伤害
 	dealAttributeCondition(dataGridTakes, idAttribute, dataGridCase, dataEntityTakes, value2Count, value2Count);
 
 	value2Count = damagePhysical > 0 || damageMagic > 0 ? damagePhysical + damageMagic : -1;//若任意伤害成功，则传入最终所有伤害
-	idAttribute = damagePhysical > 0 || damageMagic > 0 ? IdAttribute::GRID_N_ANY_DAMAGE : IdAttribute::GRID_ATTRIBUTE_LAST;//造成n点任意伤害
+	idAttribute = damagePhysical > 0 || damageMagic > 0 ? IdAttribute::GRID_N_ANY_DAMAGE : IdAttribute::ATTRIBUTE_NONE;//造成n点任意伤害
 	dealAttributeCondition(dataGridCase, idAttribute, dataGridTakes, dataEntityCase, value2Count, value2Count);
-	idAttribute = damagePhysical > 0 || damageMagic > 0 ? IdAttribute::GRID_N_ANY_TAKES: IdAttribute::GRID_ATTRIBUTE_LAST;//受到n点任意伤害
+	idAttribute = damagePhysical > 0 || damageMagic > 0 ? IdAttribute::GRID_N_ANY_TAKES: IdAttribute::ATTRIBUTE_NONE;//受到n点任意伤害
 	dealAttributeCondition(dataGridTakes, idAttribute, dataGridCase, dataEntityTakes, value2Count, value2Count);
 
-	idAttribute = damagePhysical <= 0 || damageMagic <= 0 ? IdAttribute::GRID_N_ANY_BLOCK : IdAttribute::GRID_ATTRIBUTE_LAST;//抵挡n点任意伤害
+	idAttribute = damagePhysical <= 0 || damageMagic <= 0 ? IdAttribute::GRID_N_ANY_BLOCK : IdAttribute::ATTRIBUTE_NONE;//抵挡n点任意伤害
 	value2Count = damagePhysical <= 0 || damageMagic <= 0 ?
 		(damagePhysical <= 0 && damageMagic <= 0 ? damagePhysicalCase + damageMagicCase : (damagePhysical <= 0 ? damagePhysicalCase : damageMagicCase)) :
 		-1;//若任意抵挡成功，则传入接受方被抵挡类型伤害抵挡
@@ -400,30 +401,32 @@ void ManagerGrid::dealAttributeCondition(DataGrid *dataGridCase, const IdAttribu
 		}
 	}
 	DataGrid *dataGrid = nullptr;
-	auto vecArgs = UtilString::split(value, "+");
+	auto vecArgs = UtilString::split(value, "|");
 	for (auto varArgs : vecArgs)
 	{
-		auto vecArg = UtilString::split(varArgs, "*");
-		auto idAttribute = (IdAttribute)Value(vecArg[0]).asInt();
+		auto vecArg = UtilString::split(varArgs, ":");
+		auto idAttribute = (IdAttribute)Value(vecArg[0]).asInt();//条件类型
 		vecArg.erase(vecArg.begin());
-		if (idAttribute == IdAttribute::GIRD_EFFECTIVE_TO_OTHER)
+		if (value2Judge != -1)//若有条件类型值
 		{
-			idAttribute = (IdAttribute)Value(vecArg[0]).asInt();
+			auto valueJudgment = Value(vecArg[0]).asInt();//条件类型值
+			vecArg.erase(vecArg.begin());
+			if (valueJudgment > value2Judge)//判断阀值大于实际值
+			{
+				continue;
+			}
+		}
+		idAttribute = (IdAttribute)Value(vecArg[0]).asInt();
+		vecArg.erase(vecArg.begin());
+		if (idAttribute == IdAttribute::GIRD_EFFECTIVE_TO_OTHER)//若是402，‘对对方’
+		{
+			idAttribute = (IdAttribute)Value(vecArg[0]).asInt();//对对方后必须是，400或401
 			vecArg.erase(vecArg.begin());
 			dataGrid = dataGridTakes;
 		}
 		else
 		{
 			dataGrid = dataGridCase;
-		}
-		if (value2Judge != -1)
-		{
-			auto valueJudgment = Value(vecArg[0]).asInt();
-			vecArg.erase(vecArg.begin());
-			if (valueJudgment < value2Judge)
-			{
-				continue;
-			}
 		}
 		if (idAttribute == IdAttribute::GRID_EFFECTIVE_ROUND)
 		{
@@ -451,7 +454,7 @@ void ManagerGrid::dealAttributeCondition(DataGrid *dataGridCase, const IdAttribu
 void ManagerGrid::dealEffectiveEach(vector<string> &args, const int &value2Count)
 {
 	auto idAttribute = (IdAttribute)Value(args[0]).asInt();
-	if (idAttribute == IdAttribute::GRID_EFFECTIVE_EACH)
+	if (idAttribute == IdAttribute::GRID_EFFECTIVE_EACH)//若是每点
 	{
 		args.erase(args.begin());
 		args[1] = Value(Value(args[1]).asInt() * value2Count).asString();
@@ -491,20 +494,17 @@ void ManagerGrid::dealEffectiveRoundCount(DataGrid *dataGridCase, const int &rou
 void ManagerGrid::dealEffective(DataGrid *dataGrid, const vector<string> &args)
 {
 	auto idAttribute = (IdAttribute)Value(args[0]).asInt();
-	if (idAttribute < IdAttribute::GRID_ATTRIBUTE_LAST)
+	
+	auto value = Value(args[1]).asInt();
+	dataGrid->addAttribute(idAttribute, value);
+
+	auto cfgAttribute = ManagerCfg::getInstance()->getDicCfgAttribute()[(int)idAttribute];
+	if (cfgAttribute.type == TypeAttribute::GRID_COMPLEX)
 	{
-		auto value = Value(args[1]).asInt();
-		dataGrid->addAttribute(idAttribute, value);
-		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_GRID, TYPE_OBSERVER_HANDLE_GRID::UPDATE_GRID, dataGrid->getId());
+		auto vec = UtilString::split(cfgAttribute.args, ":");
+		auto idAttribute = (IdAttribute)Value(vec[0]).asInt();
+		dataGrid->addAttributeCondition(idAttribute, cfgAttribute.args);
 	}
-	else
-	{
-		string value = "";
-		auto size = (int)args.size();
-		for (auto i = 1; i < size; i++)
-		{
-			value += args[i] + (i != size - 1 ? "*" : "");
-		}
-		dataGrid->addAttributeCondition(idAttribute, value);
-	}
+
+	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_GRID, TYPE_OBSERVER_HANDLE_GRID::UPDATE_GRID, dataGrid->getId());
 }

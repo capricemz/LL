@@ -4,6 +4,7 @@
 #include "data/define/DefinesRes.h"
 #include "ManagerGrid.h"
 #include "data/config/ManagerCfg.h"
+#include "ui/UIText.h"
 
 using namespace cocostudio::timeline;
 
@@ -72,111 +73,107 @@ void Grid::setDataGrid(DataGrid *dataGrid)
 void Grid::updateSkinAttribute()
 {
 	auto spriteBgp = (Sprite *)_skin->getChildByName("spriteBgp");
-	spriteBgp->removeAllChildren();
+	spriteBgp->getChildByName("layoutGridComplex")->removeAllChildren();
+	spriteBgp->getChildByName("layoutGridBase0")->removeAllChildren();
+	spriteBgp->getChildByName("layoutGridBase1")->removeAllChildren();
 	//
 	auto count = 0;
 	vector<int> countLineBefores = {};//到当前行为止的总数
 	vector<float> lineWidths = {};
 	vector<float> lineBottom = {};
+	float widthChildrenLayoutGridBase0 = 0.0f;
+	float interval = 20.0f;
 	auto idAttributeLast = IdAttribute::GRID_DAMAGE_PHYSICAL;
 	auto dic = _dataGrid->getDicAttribute();
 	for (auto var : dic)
 	{
 		auto idAttribute = var.first;
 		auto value = var.second;
-		auto remainder = count % 3;
-		if (remainder != 0 && value && idAttributeLast != idAttribute)//若余数不为0且有属性值且与之前属性不同
+
+		auto cfgAttribute = ManagerCfg::getInstance()->getDicCfgAttribute()[(int)idAttribute];
+		if (cfgAttribute.urlPic != "")
 		{
-			count += 3 - remainder;//换行显示
-		}
-		idAttributeLast = idAttribute;
-		while (value--)
-		{
-			auto cfgAttribute = ManagerCfg::getInstance()->getDicCfgAttribute()[(int)idAttribute];
-			if (cfgAttribute.urlPic != "")
+			if (cfgAttribute.type == TypeAttribute::GRID_COMPLEX)
 			{
-				auto node = Sprite::createWithSpriteFrameName(cfgAttribute.urlPic);
-				spriteBgp->addChild(node);
-				auto line = count / 3;
-				auto nodeHeight = node->getContentSize().height;
-				auto nodeWidth = node->getContentSize().width;
-				auto countLineBeforeLast = line > 0 ? countLineBefores[line - 1] : 0;
-				if ((int)countLineBefores.size() < line + 1)
+				auto remainder = count % 3;
+				if (remainder != 0 && value && idAttributeLast != idAttribute)//若余数不为0且有属性值且与之前属性不同
 				{
-					countLineBefores.push_back(1 + countLineBeforeLast);
+					count += 3 - remainder;//换行显示
 				}
-				else
+				idAttributeLast = idAttribute;
+				while (value--)
 				{
-					countLineBefores[line]++;
+					auto sprite = Sprite::createWithSpriteFrameName(cfgAttribute.urlPic);
+					spriteBgp->getChildByName("layoutGridComplex")->addChild(sprite);
+					auto line = count / 3;
+					auto nodeHeight = sprite->getContentSize().height;
+					auto nodeWidth = sprite->getContentSize().width;
+					auto countLineBeforeLast = line > 0 ? countLineBefores[line - 1] : 0;
+					if ((int)countLineBefores.size() < line + 1)
+					{
+						countLineBefores.push_back(1 + countLineBeforeLast);
+					}
+					else
+					{
+						countLineBefores[line]++;
+					}
+					auto lineTopLast = line > 0 ? lineBottom[line - 1] : 0.0f;
+					if ((int)lineBottom.size() < line + 1)
+					{
+						lineBottom.push_back(nodeHeight + lineTopLast);
+					}
+					else if (lineBottom[line] < nodeHeight + lineTopLast)
+					{
+						lineBottom[line] = nodeHeight;
+					}
+					if ((int)lineWidths.size() < line + 1)
+					{
+						lineWidths.push_back(nodeWidth);
+					}
+					else
+					{
+						lineWidths[line] += nodeWidth;
+					}
+					count++;
 				}
-				auto lineTopLast = line > 0 ? lineBottom[line - 1] : 0.0f;
-				if ((int)lineBottom.size() < line + 1)
+			}
+			else if (cfgAttribute.type == TypeAttribute::GRID_BASE)
+			{
+				auto sprite = Sprite::createWithSpriteFrameName(cfgAttribute.urlPic);
+				Layout *layoutGridBase = nullptr;
+				auto isUnblockableOrQuick = cfgAttribute.id == (int)IdAttribute::GRID_UNBLOCKABLE || cfgAttribute.id == (int)IdAttribute::GRID_QUICK;
+				layoutGridBase = (Layout *)spriteBgp->getChildByName("layoutGridBase" + Value(isUnblockableOrQuick ? 1 : 0).asString());
+				auto children = layoutGridBase->getChildren();
+				auto size = sprite->getContentSize();
+				auto postion = Vec2(size.width * 0.5f, size.height * 0.5f);
+				if (children.size() > 0)
 				{
-					lineBottom.push_back(nodeHeight + lineTopLast);
+					auto spriteLast = children.at(children.size() - 1);
+					postion = spriteLast->getPosition();
+					postion = Vec2(postion.x + spriteLast->getContentSize().width + interval, postion.y);
+					if (!isUnblockableOrQuick)
+					{
+						widthChildrenLayoutGridBase0 += interval;
+					}
 				}
-				else if(lineBottom[line] < nodeHeight + lineTopLast)
+				sprite->setPosition(postion);
+				layoutGridBase->addChild(sprite);
+				if (!isUnblockableOrQuick)
 				{
-					lineBottom[line] = nodeHeight;
+					widthChildrenLayoutGridBase0 += sprite->getContentSize().width;
+					auto txt = Text::create(Value(value).asString(), RES_FONTS_KTJT, 30);
+					txt->enableOutline(Color4B::BLACK);
+					txt->setPosition(Vec2(postion.x, postion.y));
+					layoutGridBase->addChild(txt);
 				}
-				if ((int)lineWidths.size() < line + 1)
-				{
-					lineWidths.push_back(nodeWidth);
-				}
-				else
-				{
-					lineWidths[line] += nodeWidth;
-				}
-				count++;
 			}
 		}
-	}
-	//
-	auto dicCondition = _dataGrid->getDicAttributeCondition();
-	if (dicCondition.size() != 0)
-	{
-		auto remainder = count % 3;
-		if (remainder != 0)//若余数不为0且有属性值且与之前属性不同
-		{
-			count += 3 - remainder;//换行显示
-		}
-		auto node = Sprite::createWithSpriteFrameName("images/main/icon/zd.png");//for test
-		spriteBgp->addChild(node);
-		auto line = count / 3;
-		auto nodeHeight = node->getContentSize().height;
-		auto nodeWidth = node->getContentSize().width;
-		auto countLineBeforeLast = line > 0 ? countLineBefores[line - 1] : 0;
-		if ((int)countLineBefores.size() < line + 1)
-		{
-			countLineBefores.push_back(1 + countLineBeforeLast);
-		}
-		else
-		{
-			countLineBefores[line]++;
-		}
-		auto lineTopLast = line > 0 ? lineBottom[line - 1] : 0.0f;
-		if ((int)lineBottom.size() < line + 1)
-		{
-			lineBottom.push_back(nodeHeight + lineTopLast);
-		}
-		else if (lineBottom[line] < nodeHeight + lineTopLast)
-		{
-			lineBottom[line] = nodeHeight;
-		}
-		if ((int)lineWidths.size() < line + 1)
-		{
-			lineWidths.push_back(nodeWidth);
-		}
-		else
-		{
-			lineWidths[line] += nodeWidth;
-		}
-		count++;
 	}
 	//
 	auto xPostion = 0.0f;
 	auto yPostion = 0.0f;
 	count = 0;
-	auto children = spriteBgp->getChildren();
+	auto children = spriteBgp->getChildByName("layoutGridComplex")->getChildren();
 	for (auto line = 0; line < (int)countLineBefores.size();)
 	{
 		auto countLineBefore = countLineBefores[line];
@@ -186,8 +183,8 @@ void Grid::updateSkinAttribute()
 			{
 				line++;
 			}
-			xPostion = spriteBgp->getContentSize().width / 2.0f - lineWidths[line] / 2.0f;//行居中行起始x位置
-			yPostion = spriteBgp->getContentSize().height / 2.0f + lineBottom[lineBottom.size() - 1] / 2.0f - (line > 0 ? lineBottom[line - 1] : 0.0f);//行居中对齐行y位置
+			xPostion = spriteBgp->getChildByName("layoutGridComplex")->getContentSize().width / 2.0f - lineWidths[line] / 2.0f;//行居中行起始x位置
+			yPostion = spriteBgp->getChildByName("layoutGridComplex")->getContentSize().height / 2.0f + lineBottom[lineBottom.size() - 1] / 2.0f - (line > 0 ? lineBottom[line - 1] : 0.0f);//行居中对齐行y位置
 		}
 		auto node = (Node *)children.at(count);
 		xPostion += node->getContentSize().width / 2.0f;
@@ -199,6 +196,14 @@ void Grid::updateSkinAttribute()
 		{
 			break;
 		}
+	}
+	//
+	auto layoutGridBase0 = spriteBgp->getChildByName("layoutGridBase0");
+	auto xFix = (layoutGridBase0->getContentSize().width - widthChildrenLayoutGridBase0) * 0.5f;
+	children = layoutGridBase0->getChildren();
+	for (auto var : children)
+	{
+		var->setPositionX(var->getPositionX() + xFix);
 	}
 }
 

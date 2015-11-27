@@ -28,9 +28,9 @@ static const string RES_MODULES_MAIN_LAYER_SKILLS_CSB = "modules/main/LayerSkill
 static const string RES_MODULES_MAIN_NODE_GRID_CSB = "modules/main/NodeGrid.csb";
 static const string RES_MODULES_MAIN_NODE_HEAD_CSB = "modules/main/NodeHead.csb";
 
-static const string RES_IMAGES_MAIN_CIRCLE_LINE_POINT_PNG = "images/main/circleLine/lianxian_dian.png";
-static const string RES_IMAGES_MAIN_CIRCLE_LINE_CIRCLE_PNG = "images/main/circleLine/lianxian_quan.png";
-static const string RES_IMAGES_MAIN_CIRCLE_LINE_LINE_PNG = "images/main/circleLine/lianxian_xian.png";
+static const string RES_IMAGES_MAIN_CIRCLE_LINE_POINT_PNG = "images/battle/lianxian_dian.png";
+static const string RES_IMAGES_MAIN_CIRCLE_LINE_CIRCLE_PNG = "images/battle/lianxian_quan.png";
+static const string RES_IMAGES_MAIN_CIRCLE_LINE_LINE_PNG = "images/battle/lianxian_xian.png";
 
 static const vector<string> RES_IMAGES_COMMON_TYPE_JOB_PNG_VEC = { 
 	"", 

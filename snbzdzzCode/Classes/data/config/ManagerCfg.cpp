@@ -136,8 +136,13 @@ void ManagerCfg::assignCfgAttribute(const VectorString &vecItem)
 	cfg.id = Value(vecItem[0]).asInt();
 	auto nameTemp = vecItem[1];
 	auto isFind = nameTemp.find("//") != string::npos;
-	cfg.name = isFind ? UtilString::split(nameTemp, "//")[0] : nameTemp;
+	cfg.desc = isFind ? UtilString::split(nameTemp, "//")[0] : nameTemp;
 	cfg.urlPic = vecItem[2];
+	auto typeTemp = vecItem[3];
+	isFind = typeTemp.find("//") != string::npos;
+	typeTemp = isFind ? UtilString::split(typeTemp, "//")[0] : typeTemp;
+	cfg.type = (TypeAttribute)Value(typeTemp).asInt();
+	cfg.args = vecItem[4];
 	_dicCfgAttribute[cfg.id] = cfg;
 }
 
