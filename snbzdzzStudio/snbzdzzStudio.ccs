@@ -20,80 +20,18 @@
             <Image Name="typeJobTreat.png" />
             <Image Name="typeJobTank.png" />
             <Image Name="typeJobWarrior.png" />
+            <Image Name="add.png" />
           </Folder>
           <Folder Name="main">
-            <Folder Name="icon">
-              <Image Name="mb.png" />
-              <Image Name="md.png" />
-              <Image Name="pb.png" />
-              <Image Name="pd.png" />
-              <Image Name="rh.png" />
-              <Image Name="rn.png" />
-              <Image Name="sd.png" />
-              <Image Name="ub.png" />
-              <Image Name="ax.png" />
-              <Image Name="bgn.png" />
-              <Image Name="bgp.png" />
-              <Image Name="hp_1.png" />
-              <Image Name="hp_2.png" />
-              <Image Name="hp_3.png" />
-              <Image Name="hp_4.png" />
-              <Image Name="hp_5.png" />
-              <Image Name="hp_6.png" />
-              <Image Name="hp_7.png" />
-              <Image Name="hp_bg.png" />
-              <Image Name="jb.png" />
-              <Image Name="zd.png" />
-              <Image Name="zs.png" />
-              <Image Name="ch.png" />
-              <Image Name="ab.png" />
-            </Folder>
-            <Folder Name="circleLine">
-              <Image Name="lianxian_dian.png" />
-              <Image Name="lianxian_quan.png" />
-              <Image Name="lianxian_xian.png" />
-            </Folder>
-            <Folder Name="hero_head">
-              <Image Name="hero_head_1003.png" />
-              <Image Name="hero_head_2003.png" />
-              <Image Name="hero_head_3.png" />
-            </Folder>
-            <Folder Name="bar">
-              <Image Name="bar_bg_1.png" />
-              <Image Name="bar_hp_1.png" />
-              <Image Name="bar_nl_1.png" />
-              <Image Name="main_head.png" />
-              <Image Name="main_role_bg.png" />
-              <Image Name="main_zy_bg.png" />
-              <Image Name="nenliang.png" />
-              <Image Name="nenliang_bar.png" />
-              <Image Name="bar_bg_2.png" />
-              <Image Name="bar_hp_2.png" />
-            </Folder>
-            <Folder Name="button">
-              <Image Name="add.png" />
-              <Image Name="cut1.png" />
-              <Image Name="cut2.png" />
-              <Image Name="nemu_btn_1.png" />
-              <Image Name="nemu_btn_2.png" />
-              <Image Name="nemu_btn_3.png" />
-              <Image Name="nemu_btn_4.png" />
-              <Image Name="nemu_btn_5.png" />
-              <Image Name="nemu_btn_xuanzhong.png" />
-              <Image Name="skill_btn.png" />
-            </Folder>
-            <Folder Name="slots">
-              <Image Name="zhiling.png" />
-              <Image Name="role_bg.png" />
-              <Image Name="main.png" />
-              <Image Name="zhiling_bg.png" />
-              <Image Name="zl.png" />
-              <Image Name="zl_zb.png" />
-            </Folder>
-            <Folder Name="txt">
-              <Image Name="vs.png" />
-              <Image Name="jieshuzhandou.png" />
-            </Folder>
+            <Image Name="nemu_btn_1.png" />
+            <Image Name="nemu_btn_2.png" />
+            <Image Name="nemu_btn_3.png" />
+            <Image Name="nemu_btn_4.png" />
+            <Image Name="nemu_btn_5.png" />
+            <Image Name="nemu_btn_xuanzhong.png" />
+            <Image Name="main_head.png" />
+            <Image Name="main_role_bg.png" />
+            <Image Name="main_zy_bg.png" />
           </Folder>
           <Folder Name="battle">
             <Image Name="card_bar.png" />
@@ -107,6 +45,10 @@
             <Image Name="skill_card_bg.png" />
             <Image Name="line.png" />
             <Image Name="vs.png" />
+            <Image Name="lianxian_dian.png" />
+            <Image Name="lianxian_quan.png" />
+            <Image Name="lianxian_xian.png" />
+            <Image Name="zl.png" />
           </Folder>
           <Folder Name="role_card">
             <Image Name="role_card_4.png" />
@@ -120,6 +62,48 @@
             <Image Name="big_head_31.png" />
             <Image Name="big_head_32.png" />
           </Folder>
+          <Folder Name="icon">
+            <Image Name="mb.png" />
+            <Image Name="md.png" />
+            <Image Name="pb.png" />
+            <Image Name="pd.png" />
+            <Image Name="rh.png" />
+            <Image Name="rn.png" />
+            <Image Name="sd.png" />
+            <Image Name="ub.png" />
+            <Image Name="ax.png" />
+            <Image Name="bgn.png" />
+            <Image Name="bgp.png" />
+            <Image Name="hp_1.png" />
+            <Image Name="hp_2.png" />
+            <Image Name="hp_3.png" />
+            <Image Name="hp_4.png" />
+            <Image Name="hp_5.png" />
+            <Image Name="hp_6.png" />
+            <Image Name="hp_7.png" />
+            <Image Name="hp_bg.png" />
+            <Image Name="jb.png" />
+            <Image Name="zd.png" />
+            <Image Name="zs.png" />
+            <Image Name="ch.png" />
+            <Image Name="ab.png" />
+          </Folder>
+          <Folder Name="girl">
+            <Image Name="cut1.png" />
+            <Image Name="cut2.png" />
+            <Image Name="skill_btn.png" />
+          </Folder>
+          <Folder Name="levels">
+            <Image Name="gk_xx.png" />
+            <Image Name="line_1.png" />
+            <Image Name="line_2.png" />
+            <Image Name="line_3.png" />
+            <Image Name="line_4.png" />
+            <Image Name="map.png" />
+            <Image Name="ok_txt.png" />
+            <Image Name="xing.png" />
+            <Image Name="gk_btn.png" />
+          </Folder>
         </Folder>
         <Folder Name="fonts">
           <TTF Name="ktjt.ttf" />
@@ -132,13 +116,13 @@
             <Project Name="LayerBattle.csd" Type="Layer" />
             <Project Name="SceneMain.csd" Type="Scene" />
             <PlistInfo Name="PlistMain.csi" Type="Plist" />
-            <Project Name="LayerGridShow.csd" Type="Layer" />
             <Project Name="NodeGrid.csd" Type="Node" />
             <Project Name="LayerLevels.csd" Type="Layer" />
             <Project Name="LayerBattleResult.csd" Type="Layer" />
             <Project Name="LayerSkills.csd" Type="Layer" />
             <Project Name="LayerGridSelect.csd" Type="Layer" />
             <Project Name="NodeHead.csd" Type="Node" />
+            <Project Name="Levels_list.csd" Type="Node" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />

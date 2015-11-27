@@ -488,6 +488,47 @@
         <Children>
           <AbstractNodeData Name="spriteBgp" ActionTag="-894527357" Alpha="0" Tag="72" IconVisible="False" LeftMargin="-60.5000" RightMargin="-60.5000" TopMargin="-82.5000" BottomMargin="-82.5000" ctype="SpriteObjectData">
             <Size X="121.0000" Y="165.0000" />
+            <Children>
+              <AbstractNodeData Name="layoutGridBase1" ActionTag="-634455372" Tag="102" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="7.0000" BottomMargin="130.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                <Size X="107.0000" Y="28.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
+                <Position X="60.5000" Y="158.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.9576" />
+                <PreSize X="0.8843" Y="0.1697" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="layoutGridComplex" ActionTag="-2107413498" Tag="103" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="35.0000" BottomMargin="40.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                <Size X="107.0000" Y="90.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="60.5000" Y="85.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5152" />
+                <PreSize X="0.8843" Y="0.5455" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="layoutGridBase0" ActionTag="835119385" Tag="104" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="130.0000" BottomMargin="7.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                <Size X="107.0000" Y="28.0000" />
+                <AnchorPoint ScaleX="0.5000" />
+                <Position X="60.5000" Y="7.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.0424" />
+                <PreSize X="0.8843" Y="0.1697" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
+              </AbstractNodeData>
+            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -505,10 +546,10 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="images/main/slots/zl.png" Plist="modules/main/PlistMain.plist" />
+            <FileData Type="MarkedSubImage" Path="images/battle/zl.png" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spriteGold" ActionTag="-1395104190" VisibleForFrame="False" Alpha="0" Tag="91" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteGold" Visible="False" ActionTag="-1395104190" VisibleForFrame="False" Alpha="0" Tag="91" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
             <Size X="40.0000" Y="40.0000" />
             <Children>
               <AbstractNodeData Name="txt" ActionTag="797327923" Tag="95" IconVisible="False" LeftMargin="2.0000" RightMargin="2.0000" TopMargin="8.5000" BottomMargin="8.5000" FontSize="18" LabelText="金币" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -530,10 +571,10 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="images/main/icon/jb.png" Plist="modules/main/PlistMain.plist" />
+            <FileData Type="MarkedSubImage" Path="images/icon/jb.png" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spriteStone" ActionTag="-2104448362" VisibleForFrame="False" Alpha="0" Tag="92" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteStone" Visible="False" ActionTag="-2104448362" VisibleForFrame="False" Alpha="0" Tag="92" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
             <Size X="40.0000" Y="40.0000" />
             <Children>
               <AbstractNodeData Name="txt" ActionTag="963964973" Tag="96" IconVisible="False" LeftMargin="2.0000" RightMargin="2.0000" TopMargin="8.5000" BottomMargin="8.5000" FontSize="18" LabelText="石头" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -555,10 +596,10 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="images/main/icon/jb.png" Plist="modules/main/PlistMain.plist" />
+            <FileData Type="MarkedSubImage" Path="images/icon/jb.png" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spriteIce" ActionTag="588232590" VisibleForFrame="False" Alpha="0" Tag="93" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteIce" Visible="False" ActionTag="588232590" VisibleForFrame="False" Alpha="0" Tag="93" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
             <Size X="40.0000" Y="40.0000" />
             <Children>
               <AbstractNodeData Name="txt" ActionTag="-1458949742" Tag="97" IconVisible="False" LeftMargin="2.0000" RightMargin="2.0000" TopMargin="8.5000" BottomMargin="8.5000" FontSize="18" LabelText="冰块" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -580,10 +621,10 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="images/main/icon/jb.png" Plist="modules/main/PlistMain.plist" />
+            <FileData Type="MarkedSubImage" Path="images/icon/jb.png" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spriteTrap" ActionTag="173631201" VisibleForFrame="False" Alpha="0" Tag="94" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteTrap" Visible="False" ActionTag="173631201" VisibleForFrame="False" Alpha="0" Tag="94" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
             <Size X="40.0000" Y="40.0000" />
             <Children>
               <AbstractNodeData Name="txt" ActionTag="1161872025" Tag="98" IconVisible="False" LeftMargin="2.0000" RightMargin="2.0000" TopMargin="8.5000" BottomMargin="8.5000" FontSize="18" LabelText="陷阱" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -605,10 +646,10 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="images/main/icon/jb.png" Plist="modules/main/PlistMain.plist" />
+            <FileData Type="MarkedSubImage" Path="images/icon/jb.png" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutTouch" ActionTag="-193953258" Tag="70" IconVisible="False" LeftMargin="-37.5000" RightMargin="-37.5000" TopMargin="-37.5000" BottomMargin="-37.5000" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutTouch" Visible="False" ActionTag="-193953258" Tag="70" IconVisible="False" LeftMargin="-37.5000" RightMargin="-37.5000" TopMargin="-37.5000" BottomMargin="-37.5000" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="75.0000" Y="75.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />

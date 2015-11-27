@@ -10,6 +10,6 @@
       <FilePathData Path="images/common/typeJobTreat.png" />
       <FilePathData Path="images/common/typeJobWarrior.png" />
     </ImageFiles>
-    <MaxSize Width="1024" Height="1024" />
+    <MaxSize Width="256" Height="128" />
   </Content>
 </PlistInfoProjectFile>

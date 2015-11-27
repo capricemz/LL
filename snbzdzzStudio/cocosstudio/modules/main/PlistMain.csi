@@ -2,31 +2,23 @@
   <PropertyGroup Type="Plist" Name="PlistMain" ID="702d397f-e71b-4232-b679-4d23e1875598" Version="2.3.2.3" />
   <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="1" AllowRotation="True" AllowAnySize="True" AllowTrim="True" ctype="PlistInfoData">
     <ImageFiles>
-      <FilePathData Path="images/main/bar/bar_bg_1.png" />
-      <FilePathData Path="images/main/bar/bar_hp_1.png" />
-      <FilePathData Path="images/main/bar/bar_nl_1.png" />
-      <FilePathData Path="images/main/slots/role_bg.png" />
-      <FilePathData Path="images/main/txt/jieshuzhandou.png" />
-      <FilePathData Path="images/main/txt/vs.png" />
-      <FilePathData Path="images/main/icon/mb.png" />
-      <FilePathData Path="images/main/icon/md.png" />
-      <FilePathData Path="images/main/icon/pb.png" />
-      <FilePathData Path="images/main/icon/pd.png" />
-      <FilePathData Path="images/main/icon/rh.png" />
-      <FilePathData Path="images/main/icon/rn.png" />
-      <FilePathData Path="images/main/icon/sd.png" />
-      <FilePathData Path="images/main/icon/ub.png" />
-      <FilePathData Path="images/main/slots/zhiling_bg.png" />
-      <FilePathData Path="images/main/slots/zl.png" />
-      <FilePathData Path="images/main/slots/zl_zb.png" />
-      <FilePathData Path="images/main/circleLine/lianxian_dian.png" />
-      <FilePathData Path="images/main/circleLine/lianxian_quan.png" />
-      <FilePathData Path="images/main/circleLine/lianxian_xian.png" />
-      <FilePathData Path="images/main/icon/ch.png" />
-      <FilePathData Path="images/main/icon/zd.png" />
-      <FilePathData Path="images/main/icon/ab.png" />
-      <FilePathData Path="images/main/icon/jb.png" />
+      <FilePathData Path="images/icon/mb.png" />
+      <FilePathData Path="images/icon/md.png" />
+      <FilePathData Path="images/icon/pb.png" />
+      <FilePathData Path="images/icon/pd.png" />
+      <FilePathData Path="images/icon/rh.png" />
+      <FilePathData Path="images/icon/rn.png" />
+      <FilePathData Path="images/icon/sd.png" />
+      <FilePathData Path="images/icon/ub.png" />
+      <FilePathData Path="images/battle/zl.png" />
+      <FilePathData Path="images/battle/lianxian_dian.png" />
+      <FilePathData Path="images/battle/lianxian_quan.png" />
+      <FilePathData Path="images/battle/lianxian_xian.png" />
+      <FilePathData Path="images/icon/ch.png" />
+      <FilePathData Path="images/icon/zd.png" />
+      <FilePathData Path="images/icon/ab.png" />
+      <FilePathData Path="images/icon/jb.png" />
     </ImageFiles>
-    <MaxSize Width="1024" Height="256" />
+    <MaxSize Width="256" Height="256" />
   </Content>
 </PlistInfoProjectFile>
