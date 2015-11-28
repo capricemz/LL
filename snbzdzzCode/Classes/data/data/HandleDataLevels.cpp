@@ -2,6 +2,7 @@
 
 #include "ManagerData.h"
 #include "common/util/UtilString.h"
+#include "../config/ManagerCfg.h"
 
 DataLevels::DataLevels()
 {
@@ -50,4 +51,10 @@ void HandleDataLevels::dataFileSet()
 	auto strDatalevels = Value(_levelCurrent).asString();
 	userDefault->setStringForKey(USER_DEFAULT_KEY_DL.c_str(), strDatalevels);//�޸Ĵ浵//TODO
 	userDefault->flush();
+}
+
+CfgLevels HandleDataLevels::getCfgLevels()
+{
+	auto cfgLevels = ManagerCfg::getInstance()->getDicCfgLevels()[_levelCurrent];
+	return cfgLevels;
 }

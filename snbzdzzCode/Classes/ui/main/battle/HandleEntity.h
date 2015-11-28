@@ -32,7 +32,7 @@ public:
 private:
 	void setTxtHpOrEnergy(Entity *entity, const bool &isMst, const bool &isHp);
 
-	void runBackgroundEffect();
+	void runBackgroundEffect(const bool &isMst);
 
 	void runEntityAction();
 	

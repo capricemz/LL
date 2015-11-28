@@ -200,7 +200,7 @@ void HandleGrid::gridMoveFromOver(Grid *grid, const bool &isMst)
 {
 	if (grid->getIsCard())
 	{
-		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::RUN_BACKGROUND_EFFECT);//播放实体背景特效
+		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::RUN_BACKGROUND_EFFECT, isMst);//播放实体背景特效
 		auto postion = grid->getParent()->convertToWorldSpace(vecPostionGridBattle[2]);
 		grid->throwTo(postion, isMst ? 60.0f : -60.0f, CC_CALLBACK_0(HandleGrid::gridThrowToOrPlayOver, this, grid, isMst));
 	}

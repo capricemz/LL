@@ -364,8 +364,8 @@ class HandleDataLevels
 		void dataFileInit();
 		void dataFileGet();
 		void dataFileSet();
-
-	public:
+		
+public:
 		int getLevelCurrent() const
 		{
 			return _levelCurrent;
@@ -374,6 +374,7 @@ class HandleDataLevels
 		{
 			_levelCurrent = val;
 		}
+		CfgLevels getCfgLevels();
 		
 	private:
 		const string USER_DEFAULT_KEY_DL = "dataLevels";//¹Ø¿¨Êý¾Ý

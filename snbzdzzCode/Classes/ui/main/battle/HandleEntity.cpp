@@ -10,6 +10,7 @@
 #include "core/entity/subs/Monster.h"
 #include "core/entity/ManagerEntity.h"
 #include "data/define/DefinesRes.h"
+#include "ui/common/SpriteBlur.h"
 
 HandleEntity::HandleEntity() : _skin(nullptr)
 {
@@ -41,8 +42,23 @@ void HandleEntity::setSkin(Layout *skin)
 	for (int i = 0; i < 2; i++)
 	{
 		auto isMst = i < 1;
-		//
 		auto layout = (Layout *)_skin->getChildByName(isMst ? "layoutMst" : "layoutMaid");
+		//
+		auto spriteBg = (Sprite *)layout->getChildByName("spriteBg");
+		auto cfgLevels = ManagerData::getInstance()->getHandleDataLevels()->getCfgLevels();
+		auto urlPic = cfgLevels.vecUrlPic[i];
+		auto texture = Director::getInstance()->getTextureCache()->getTextureForKey(urlPic);
+		spriteBg->setTexture(texture);
+
+		if (!isMst)
+		{
+			auto postion = spriteBg->getPosition();
+			auto spriteBlur0 = (SpriteBlur *)SpriteBlur::create(urlPic.c_str());
+			spriteBlur0->setPosition(postion);
+			spriteBlur0->setBlurRadius(10.0f);
+			spriteBlur0->setBlurSampleNum(10.0f);
+			layout->addChild(spriteBlur0);
+		}
 		//
 		auto entity = isMst ? (Entity *)Monster::create() : (Entity *)Maid::create();
 		entity->setName("entity");
@@ -79,7 +95,8 @@ void HandleEntity::updateBySubject(va_list values)
 	}
 	else if (type == TYPE_OBSERVER_HANDLE_ENTITY::RUN_BACKGROUND_EFFECT)
 	{
-		runBackgroundEffect();
+		auto isMst = va_arg(values, bool);
+		runBackgroundEffect(isMst);
 	}
 	else if (type == TYPE_OBSERVER_HANDLE_ENTITY::DEAL_ROUND_OVER)
 	{
@@ -134,9 +151,34 @@ void HandleEntity::setTxtHpOrEnergy(Entity *entity, const bool &isMst, const boo
 	txt->setString(text);
 }
 
-void HandleEntity::runBackgroundEffect()
+void HandleEntity::runBackgroundEffect(const bool &isMst)
 {
-
+	auto durationCallMove = 0.01f;
+	auto layout = (Layout *)_skin->getChildByName(isMst ? "layoutMst" : "layoutMaid");
+	//
+	auto spriteBg = (Sprite *)layout->getChildByName("spriteBg");
+	auto postion = spriteBg->getPosition();
+	auto cfgLevels = ManagerData::getInstance()->getHandleDataLevels()->getCfgLevels();
+	auto urlPic = cfgLevels.vecUrlPic[isMst ? 0 : 1];
+	auto spriteBlur0 = (SpriteBlur *)SpriteBlur::create(urlPic.c_str());
+	spriteBlur0->setPosition(postion);
+	spriteBlur0->setBlurRadius(10.0f);
+	layout->addChild(spriteBlur0);
+	auto widthSpriteBlur = spriteBlur0->getContentSize().width;
+	/*auto spriteBlur1 = (SpriteBlur *)SpriteBlur::create(urlPic.c_str());
+	spriteBlur1->setPosition(Vec2(postion.x + (isMst ? widthSpriteBlur : -widthSpriteBlur), postion.y));
+	spriteBlur1->setBlurRadius(10.0f);
+	layout->addChild(spriteBlur1);*/
+	//
+	auto duration = 1.0f;
+	auto actionMoveBy = MoveBy::create(duration, Vec2(isMst ? -widthSpriteBlur : widthSpriteBlur, 0.0f));
+	auto actionCallFunc = CallFunc::create([spriteBlur0/*, spriteBlur1*/]()
+	{
+		spriteBlur0->removeFromParent();
+		/*spriteBlur1->removeFromParent();*/
+	});
+	spriteBlur0->runAction(Sequence::createWithTwoActions(actionMoveBy, actionCallFunc));
+	/*spriteBlur1->runAction(Sequence::createWithTwoActions(actionMoveBy, actionCallFunc));*/
 }
 
 void HandleEntity::runEntityAction()
