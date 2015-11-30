@@ -7,6 +7,7 @@
 HandleDataUnlock::HandleDataUnlock() : 
 	_dicTypeUnlockMaid({}), 
 	_dicDicTypeUnlockSkill({}),
+	_dicDicTypeUnlockLevelTarget({}),
 	_vecDataUnlock({})
 {
 }
@@ -15,6 +16,7 @@ HandleDataUnlock::~HandleDataUnlock()
 {
 	_dicTypeUnlockMaid.clear();
 	_dicDicTypeUnlockSkill.clear();
+	_dicDicTypeUnlockLevelTarget.clear();
 	_vecDataUnlock.clear();
 }
 
@@ -38,7 +40,7 @@ void HandleDataUnlock::dataFileGet()
 	{
 		_vecDataUnlock.push_back(Value(var).asInt());
 	}
-	setIsUnlockMaid(1001);//for test
+	/*setIsUnlockMaid(1001);//for test*/
 }
 
 void HandleDataUnlock::dataFileSet()
@@ -80,29 +82,50 @@ void HandleDataUnlock::createTypeUnlockOther()
 			}
 		}
 	}
+	auto dicCfgLevels = managerCfg->getDicCfgLevels();
+	for (auto var : dicCfgLevels)
+	{
+		auto idLevel = var.second.id;
+		for (auto var : var.second.targets)
+		{
+			_dicDicTypeUnlockLevelTarget[idLevel][var] = indexUnlockCurrent++;
+		}
+	}
 }
 
-bool HandleDataUnlock::getIsUnlockMaid(int idEntity)
+bool HandleDataUnlock::getIsUnlockMaid(const int &idEntity)
 {
 	auto index = _dicTypeUnlockMaid[idEntity];
 	return getIsUnlock(index);
 }
 
-void HandleDataUnlock::setIsUnlockMaid(int idEntity)
+void HandleDataUnlock::setIsUnlockMaid(const int &idEntity)
 {
 	auto index = _dicTypeUnlockMaid[idEntity];
 	setIsUnlock(index);
 }
 
-bool HandleDataUnlock::getIsUnlockSkill(int idSkill, int indexSkill)
+bool HandleDataUnlock::getIsUnlockSkill(const int &idSkill, const int &indexSkill)
 {
 	auto index = _dicDicTypeUnlockSkill[idSkill][indexSkill];
 	return getIsUnlock(index);
 }
 
-void HandleDataUnlock::setIsUnlockSkillPassive(int idSkill, int indexSkill)
+void HandleDataUnlock::setIsUnlockSkill(const int &idSkill, const int &indexSkill)
 {
 	auto index = _dicDicTypeUnlockSkill[idSkill][indexSkill];
+	setIsUnlock(index);
+}
+
+bool HandleDataUnlock::getIsUnlockLevelTarget(const int &idLevel, const int &idLevelTarget)
+{
+	auto index = _dicDicTypeUnlockLevelTarget[idLevel][idLevelTarget];
+	return getIsUnlock(index);
+}
+
+void HandleDataUnlock::setIsUnlockLevelTarget(const int &idLevel, const int &idLevelTarget)
+{
+	auto index = _dicDicTypeUnlockLevelTarget[idLevel][idLevelTarget];
 	setIsUnlock(index);
 }
 

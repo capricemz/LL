@@ -18,7 +18,16 @@
       <FilePathData Path="images/icon/zd.png" />
       <FilePathData Path="images/icon/ab.png" />
       <FilePathData Path="images/icon/jb.png" />
+      <FilePathData Path="images/levels/gk_btn.png" />
+      <FilePathData Path="images/levels/gk_xx.png" />
+      <FilePathData Path="images/levels/line_1.png" />
+      <FilePathData Path="images/levels/line_2.png" />
+      <FilePathData Path="images/levels/line_3.png" />
+      <FilePathData Path="images/levels/line_4.png" />
+      <FilePathData Path="images/levels/ok_txt.png" />
+      <FilePathData Path="images/levels/xing.png" />
+      <FilePathData Path="images/levels/xingKong.png" />
     </ImageFiles>
-    <MaxSize Width="256" Height="256" />
+    <MaxSize Width="1024" Height="128" />
   </Content>
 </PlistInfoProjectFile>

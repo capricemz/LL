@@ -30,8 +30,8 @@ void Scenery::updateSkin(const bool &isMst)
 {
 	_isMst = isMst;
 
-	auto cfgLevels = ManagerData::getInstance()->getHandleDataLevels()->getCfgLevels();
-	auto urlPic = cfgLevels.vecUrlPic[_isMst ? 0 : 1];
+	auto dataLevel = ManagerData::getInstance()->getHandleDataLevels()->getDataLevelCurrent();
+	auto urlPic = dataLevel->getCfgLevel().vecUrlPic[_isMst ? 0 : 1];
 	if (_skin == nullptr)
 	{
 		_skin = Sprite::create(urlPic);
@@ -49,8 +49,8 @@ void Scenery::updateSkin(const bool &isMst)
 void Scenery::runEffect()
 {
 	auto postion = _skin->getPosition();
-	auto cfgLevels = ManagerData::getInstance()->getHandleDataLevels()->getCfgLevels();
-	auto urlPic = cfgLevels.vecUrlPic[_isMst ? 0 : 1];
+	auto dataLevel = ManagerData::getInstance()->getHandleDataLevels()->getDataLevelCurrent();
+	auto urlPic = dataLevel->getCfgLevel().vecUrlPic[_isMst ? 0 : 1];
 	_skinBlur = (SpriteBlur *)SpriteBlur::create(urlPic.c_str());
 	_skinBlur->setBlurSampleNum(1.0f);
 	_skinBlur->setBlurRadius(10.0f);

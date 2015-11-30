@@ -103,6 +103,7 @@
             <Image Name="ok_txt.png" />
             <Image Name="xing.png" />
             <Image Name="gk_btn.png" />
+            <Image Name="xingKong.png" />
           </Folder>
         </Folder>
         <Folder Name="fonts">

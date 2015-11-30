@@ -32,6 +32,9 @@ static const string RES_IMAGES_MAIN_CIRCLE_LINE_POINT_PNG = "images/battle/lianx
 static const string RES_IMAGES_MAIN_CIRCLE_LINE_CIRCLE_PNG = "images/battle/lianxian_quan.png";
 static const string RES_IMAGES_MAIN_CIRCLE_LINE_LINE_PNG = "images/battle/lianxian_xian.png";
 
+static const string RES_IMAGES_MAIN_LEVELS_XING_PNG = "images/levels/xing.png";
+static const string RES_IMAGES_MAIN_LEVELS_XING_KONG_PNG = "images/levels/xingKong.png";
+
 static const vector<string> RES_IMAGES_COMMON_TYPE_JOB_PNG_VEC = { 
 	"", 
 	"images/common/typeJobRogue.png",

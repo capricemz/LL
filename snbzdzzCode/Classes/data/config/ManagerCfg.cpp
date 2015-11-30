@@ -64,6 +64,7 @@ void ManagerCfg::threadDeal()
 	assignCfgSkillGroupTypeArgs();
 	doLoad("entity.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgEntity,this));
 	doLoad("levels.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgLevels, this));
+	doLoad("levelTargets.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgLevelTargets, this));
 	doLoad("plot.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgPlot, this));
 	doLoad("targetAward.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgTargetAward, this));
 	doLoad("guide.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgGuide, this));
@@ -245,7 +246,7 @@ void ManagerCfg::assignCfgEntity(const VectorString &vecItem)
 
 void ManagerCfg::assignCfgLevels(const VectorString &vecItem)
 {
-	CfgLevels cfg;
+	CfgLevel cfg;
 	cfg.id = Value(vecItem[0]).asInt();
 	auto nameTemp = vecItem[1];
 	auto isFind = nameTemp.find("//") != string::npos;
@@ -253,7 +254,32 @@ void ManagerCfg::assignCfgLevels(const VectorString &vecItem)
 	auto vecUrlPic = UtilString::split(vecItem[2], ":");
 	cfg.vecUrlPic = vecUrlPic;
 	cfg.msts = vecItem[3];
+	cfg.roundLimit = Value(vecItem[4]).asInt();
+	cfg.isRoundLimitWin = Value(vecItem[5]).asBool();
+	auto strTargets = vecItem[6];
+	if (strTargets != "")
+	{
+		auto vec = UtilString::split(strTargets, ":");
+		for (auto var : vec)
+		{
+			cfg.targets.push_back(Value(var).asInt());
+		}
+	}
 	_dicCfgLevels[cfg.id] = cfg;
+}
+
+void ManagerCfg::assignCfgLevelTargets(const VectorString &vecItem)
+{
+	CfgLevelTarget cfg;
+	cfg.id = Value(vecItem[0]).asInt();
+	cfg.desc = vecItem[1];
+	cfg.type = (TypeLevelTarget)Value(vecItem[2]).asInt();
+	cfg.args = Value(vecItem[3]).asInt();
+	cfg.roundLimitMst = Value(vecItem[4]).asInt();
+	cfg.roundLimitMaid = Value(vecItem[5]).asInt();
+	cfg.roundLimitTotal = Value(vecItem[6]).asInt();
+	cfg.award = vecItem[7];
+	_dicCfgLevelTargets[cfg.id] = cfg;
 }
 
 void ManagerCfg::assignCfgPlot(const VectorString &vecItem)

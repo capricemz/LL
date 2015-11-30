@@ -54,14 +54,30 @@ struct CfgEntity
 };
 typedef map<int32_t, CfgEntity> DicCfgEntity;
 //
-struct CfgLevels//关卡
+struct CfgLevel//关卡
 {
 	int id;//标志
 	string name;//名称
 	vector<string> vecUrlPic;//图片路径
 	string msts;//怪物配置
+	int roundLimit;//回合限制
+	bool isRoundLimitWin;//是否回合限制获胜
+	vector<int> targets;//目标
 };
-typedef map<int32_t, CfgLevels> DicCfgLevels;
+typedef map<int32_t, CfgLevel> DicCfgLevels;
+//
+struct CfgLevelTarget
+{
+	int id;//标志
+	string desc;//描述
+	TypeLevelTarget type;//类型
+	int args;//参数
+	int roundLimitMst;//怪物回合限制
+	int roundLimitMaid;//女仆回合限制
+	int roundLimitTotal;//总回合限制
+	string award;//奖励
+};
+typedef map<int32_t, CfgLevelTarget> DicCfgLevelTargets;
 //
 struct CfgPlot
 {

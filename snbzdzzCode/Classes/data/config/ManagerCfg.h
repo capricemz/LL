@@ -45,6 +45,10 @@ public:
 	{
 		return _dicCfgLevels;
 	};
+	DicCfgLevelTargets getDicCfgLevelTargets() const
+	{
+		return _dicCfgLevelTargets;
+	};
 	DicDicCfgPlot getDicDicCfgPlot() const
 	{
 		return _dicDicCfgPlot;
@@ -75,6 +79,7 @@ private:
 	void assignCfgSkillGroupTypeArgs();
 	void assignCfgEntity(const VectorString &vecItem);
 	void assignCfgLevels(const VectorString &vecItem);
+	void assignCfgLevelTargets(const VectorString &vecItem);
 	void assignCfgPlot(const VectorString &vecItem);
 	void assignCfgTargetAward(const VectorString &vecItem);
 	void assignCfgGuide(const VectorString &vecItem);
@@ -88,6 +93,7 @@ private:
 	DicVecCfgSkillGroupTypeArgs _dicVecCfgSkillGroupTypeArgs;
 	DicCfgEntity _dicCfgEntity;
 	DicCfgLevels _dicCfgLevels;
+	DicCfgLevelTargets _dicCfgLevelTargets;
 	DicDicCfgPlot _dicDicCfgPlot;
 	DicCfgTargetAward _dicDicCfgTargetAward;
 	DicCfgGuide _dicDicCfgGuide;

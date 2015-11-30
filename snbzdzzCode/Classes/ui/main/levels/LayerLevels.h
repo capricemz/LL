@@ -7,7 +7,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "ui/common/ILayerAppearDisappear.h"
-#include "data/config/ManagerCfgDefines.h"
+#include "data/data/ManagerData.h"
 
 USING_NS_CC;
 using namespace ui;
@@ -20,22 +20,22 @@ public:
 public:
 	LayerLevels();
 	~LayerLevels();
-
+	
 	virtual bool init();
-
+	
 	virtual Layer *getThis();
 	virtual void afterRunAppear();
 	virtual void afterRunDisappear();
 	virtual void dealRemoveFromParent();
-
+	
 private:
 	void createSkin();
 	void onTouchBtnLv(Ref *ref, Widget::TouchEventType type);
-	void updateNodeLevel(Node *nodeLevel, const CfgLevels &cfgLevels);
+	void updateNodeLevel(Node *nodeLevel, DataLevel *dataLevel);
 	
 private:
 	Layer *_skin;
-
+	
 };
 
 #endif

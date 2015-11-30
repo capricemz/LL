@@ -5,6 +5,7 @@
 #include "ui/ManagerUI.h"
 #include "data/data/ManagerData.h"
 #include "cocostudio/CCComExtensionData.h"
+#include "data/define/DefinesString.h"
 
 using namespace ui;
 
@@ -54,20 +55,22 @@ void LayerLevels::dealRemoveFromParent()
 
 void LayerLevels::createSkin()
 {
+	auto handleDataLevels = ManagerData::getInstance()->getHandleDataLevels();
+	handleDataLevels->createVecDataLevel();
+
 	_skin = (Layer *)CSLoader::createNode(RES_MODULES_MAIN_LAYER_LEVELS_CSB);
 	addChild(_skin);
 
 	auto listView = (ListView *)_skin->getChildByName("listViewBtns");
 	auto layoutBtns = (Layout *)listView->getChildByName("layoutBtns");
-	auto dicCfgLevels = ManagerData::getInstance()->getHandleDataLevels()->getDicCfgLevels();
-	auto length = (int)dicCfgLevels.size();
+	auto vecDataLevel = handleDataLevels->getVecDataLevel();
+	auto length = (int)vecDataLevel.size();
 	auto index = 0;
-	for (auto var : dicCfgLevels)
+	for (auto dataLevel : vecDataLevel)
 	{
-		auto cfgLevels = var.second;
 		auto nodeLevel = (Node *)layoutBtns->getChildByName("nodeLevel" + Value(index).asString());
 		
-		updateNodeLevel(nodeLevel, cfgLevels);
+		updateNodeLevel(nodeLevel, dataLevel);
 
 		index++;
 	}
@@ -82,20 +85,56 @@ void LayerLevels::createSkin()
 	});
 }
 
-void LayerLevels::updateNodeLevel(Node *nodeLevel, const CfgLevels &cfgLevels)
+void LayerLevels::updateNodeLevel(Node *nodeLevel, DataLevel *dataLevel)
 {
+	auto cfgLevel = dataLevel->getCfgLevel();
 	auto layout = (Layout *)nodeLevel->getChildByName("layout");
-	auto spriteState = (Sprite *)layout->getChildByName("spriteState");
-	auto txtLevel = (Text *)layout->getChildByName("txtLevel");
-	auto txtName = (Text *)layout->getChildByName("txtName");
-	txtName->setString(cfgLevels.name);
-	auto spriteStar0 = (Sprite *)layout->getChildByName("spriteStar0");
-	auto spriteStar1 = (Sprite *)layout->getChildByName("spriteStar1");
-	auto spriteStar2 = (Sprite *)layout->getChildByName("spriteStar2");
+	
+	auto spriteState = (Sprite *)nodeLevel->getChildByName("spriteState");
+	spriteState->setVisible(dataLevel->getState() == TypeLevelState::PASSED);
+	
+	auto txtLevel = (Text *)nodeLevel->getChildByName("txtLevel");
+	txtLevel->setString(STR_LEVEL_0 + Value(cfgLevel.id).asString() + STR_LEVEL_1);
 
-	auto btn = (Button *)layout->getChildByName("btn");
+	auto txtName = (Text *)nodeLevel->getChildByName("txtName");
+	txtName->setString(cfgLevel.name);
+
+	auto levelTargetNum = dataLevel->levelTargetNumGet();
+	auto layoutStar = (Layout *)nodeLevel->getChildByName("layoutStar");
+	auto isSpriteNullptr = false;
+	auto widthSpriteStar = 0.0f;
+	for (auto i = 0; i < levelTargetNum; i++)
+	{
+		auto spriteStar = (Sprite *)layoutStar->getChildByName("spriteStar" + Value(i).asInt());
+		if (spriteStar == nullptr)
+		{
+			spriteStar = Sprite::create();
+			layoutStar->addChild(spriteStar);
+			isSpriteNullptr = true;
+		}
+		
+		auto isComolete = dataLevel->levelTargetIsComplete(i);
+		auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(isComolete ? RES_IMAGES_MAIN_LEVELS_XING_PNG : RES_IMAGES_MAIN_LEVELS_XING_KONG_PNG);
+		spriteStar->setSpriteFrame(spriteFrame);
+		auto width = spriteStar->getContentSize().width;
+		if (isSpriteNullptr && (widthSpriteStar == 0.0f || width > widthSpriteStar))
+		{
+			widthSpriteStar = width;
+		}
+	}
+	if (widthSpriteStar != 0.0f)
+	{
+		auto postion = Vec2((layoutStar->getContentSize().width - widthSpriteStar) * 0.5f, 0.0f);
+		for (auto i = 0; i < levelTargetNum; i++)
+		{
+			auto spriteStar = (Sprite *)layoutStar->getChildByName("spriteStar" + Value(i).asInt());
+			spriteStar->setPosition(postion + Vec2(widthSpriteStar * 0.5f + 5.0f, 0.0f));
+		}
+	}
+	
+	auto btn = (Button *)nodeLevel->getChildByName("btn");
 	btn->addTouchEventListener(CC_CALLBACK_2(LayerLevels::onTouchBtnLv, this));
-	btn->setUserData((void *)cfgLevels.id);
+	btn->setUserData((void *)cfgLevel.id);
 }
 
 void LayerLevels::onTouchBtnLv(Ref *ref, Widget::TouchEventType type)

@@ -51,6 +51,9 @@ enum class IdAttribute
 	ENTITY_TRAP_GENERATE,//生成陷阱
 	ENTITY_TRAP_DISARM,//解除陷阱
 	ENTITY_SWITCH,//切换角色
+	ENTITY_KILL,//击杀
+	ENTITY_BREAK_CASE,//造成破衣
+	ENTITY_BREAK_TAKES,//受到破衣
 
 	ENTITY_QUICK = 150,//快速攻击
 	ENTITY_DAMAGE_CASE,//造成伤害
@@ -172,6 +175,29 @@ enum class TypeSkillGroup
 	ROUND,//回合
 };
 
+enum class TypeLevelState
+{
+	NONE,
+	PASSED,//已通过
+	CURRENT,//当前
+	PASSING,//通过
+	LOCK//未开启
+};
+
+enum class TypeLevelTarget
+{
+	NONE,
+	HP_MST,//血量怪物 正数大于，负数小于
+	HP_MAID,//血量女仆 正数大于，负数小于
+	PASS,//通关
+	KILL,//击杀
+	BREAK,//破衣
+	GOLD,//获得金币
+	STONE,//击碎石头
+	ICE,//融化冰块
+	TRAP//解除陷阱
+};
+
 enum class TypeUnlock
 {
 	LAST_NEXT
@@ -270,6 +296,16 @@ enum class TYPE_OBSERVER_HANDLE_ENTITY
 	DEAL_ROUND_OVER,
 	UPDATE_HP,
 	UPDATE_ENERGY
+};
+
+static const map < TypeLevelTarget, IdAttribute > dicTypeLevelTarget2IdAttribute = 
+{
+	{ TypeLevelTarget::KILL, IdAttribute::ENTITY_KILL },
+	{ TypeLevelTarget::BREAK, IdAttribute::ENTITY_BREAK_CASE },
+	{ TypeLevelTarget::GOLD, IdAttribute::ENTITY_GOLD_INCOME },
+	{ TypeLevelTarget::STONE, IdAttribute::ENTITY_STONE_CRUSHED },
+	{ TypeLevelTarget::ICE, IdAttribute::ENTITY_ICE_MELTING },
+	{ TypeLevelTarget::TRAP, IdAttribute::ENTITY_TRAP_DISARM }
 };
 
 #endif
