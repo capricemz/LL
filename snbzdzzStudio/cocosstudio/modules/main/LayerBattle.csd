@@ -11,19 +11,6 @@
             <Children>
               <AbstractNodeData Name="layoutMaid" ActionTag="-415033658" Tag="213" IconVisible="False" VerticalEdge="BottomEdge" TopMargin="480.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="640.0000" Y="480.0000" />
-                <Children>
-                  <AbstractNodeData Name="spriteBg" ActionTag="-47616552" Tag="214" IconVisible="False" VerticalEdge="TopEdge" RightMargin="-320.0000" ctype="SpriteObjectData">
-                    <Size X="640.0000" Y="479.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="320.0000" Y="240.5000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="1.0000" Y="1.1594" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/bg/battle_bg1.png" Plist="" />
-                    <BlendFunc Src="770" Dst="771" />
-                  </AbstractNodeData>
-                </Children>
                 <AnchorPoint />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -37,19 +24,6 @@
               </AbstractNodeData>
               <AbstractNodeData Name="layoutMst" ActionTag="1403714957" Tag="216" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="TopEdge" BottomMargin="480.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="640.0000" Y="480.0000" />
-                <Children>
-                  <AbstractNodeData Name="spriteBg" ActionTag="-1545330905" Tag="217" IconVisible="False" VerticalEdge="BottomEdge" RightMargin="-320.0000" TopMargin="-555.0000" ctype="SpriteObjectData">
-                    <Size X="640.0000" Y="479.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="320.0000" Y="239.5000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="1.0000" Y="1.1852" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/bg/battle_bg1.png" Plist="" />
-                    <BlendFunc Src="770" Dst="771" />
-                  </AbstractNodeData>
-                </Children>
                 <AnchorPoint />
                 <Position Y="480.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -205,7 +179,7 @@
                 <Position X="640.0000" Y="0.0007" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="1.0000" Y="0.0000" />
+                <PrePosition X="1.0000" />
                 <PreSize X="0.4141" Y="0.2135" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />

@@ -222,6 +222,9 @@
     <ClCompile Include="..\Classes\ui\main\battle\NodeHead.cpp">
       <Filter>src\ui\main\battle</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\core\entity\subs\Scenery.cpp">
+      <Filter>src\core\entity\subs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -361,6 +364,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ui\main\battle\NodeHead.h">
       <Filter>src\ui\main\battle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\core\entity\subs\Scenery.h">
+      <Filter>src\core\entity\subs</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

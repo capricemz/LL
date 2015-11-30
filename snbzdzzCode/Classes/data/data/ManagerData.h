@@ -364,8 +364,8 @@ class HandleDataLevels
 		void dataFileInit();
 		void dataFileGet();
 		void dataFileSet();
-		
-public:
+
+	public:
 		int getLevelCurrent() const
 		{
 			return _levelCurrent;
@@ -374,6 +374,7 @@ public:
 		{
 			_levelCurrent = val;
 		}
+		DicCfgLevels getDicCfgLevels();
 		CfgLevels getCfgLevels();
 		
 	private:

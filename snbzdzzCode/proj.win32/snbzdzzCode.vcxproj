@@ -155,6 +155,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\core\entity\subs\Entity.cpp" />
     <ClCompile Include="..\Classes\core\entity\subs\Maid.cpp" />
     <ClCompile Include="..\Classes\core\entity\subs\Monster.cpp" />
+    <ClCompile Include="..\Classes\core\entity\subs\Scenery.cpp" />
     <ClCompile Include="..\Classes\core\grid\Grid.cpp" />
     <ClCompile Include="..\Classes\core\grid\ManagerGrid.cpp" />
     <ClCompile Include="..\Classes\core\timer\ManagerTimer.cpp" />
@@ -203,6 +204,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\core\entity\subs\Entity.h" />
     <ClInclude Include="..\Classes\core\entity\subs\Maid.h" />
     <ClInclude Include="..\Classes\core\entity\subs\Monster.h" />
+    <ClInclude Include="..\Classes\core\entity\subs\Scenery.h" />
     <ClInclude Include="..\Classes\core\grid\Grid.h" />
     <ClInclude Include="..\Classes\core\grid\ManagerGrid.h" />
     <ClInclude Include="..\Classes\core\timer\ManagerTimer.h" />

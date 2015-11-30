@@ -5,6 +5,7 @@
 #include "subs/Entity.h"
 #include "subs/Maid.h"
 #include "subs/Monster.h"
+#include "subs/Scenery.h"
 
 USING_NS_CC;
 
@@ -25,12 +26,43 @@ public:
 	bool isTurnOverAll();
 
 	void dealBattleOver();
+
+	void runSceneryEffect(const bool &isMst);
+	void stopSceneryEffect(const bool &isMst);
 	
 public:
-	Monster * getMonster() const { return _monster; }
-	void setMonster(Monster * val) { _monster = val; }
-	Maid * getMaid() const { return _maid; }
-	void setMaid(Maid * val) { _maid = val; }
+	Monster * getMonster() const
+	{
+		return _monster;
+	}
+	void setMonster(Monster * val)
+	{
+		_monster = val;
+	}
+	Maid * getMaid() const
+	{
+		return _maid;
+	}
+	void setMaid(Maid * val)
+	{
+		_maid = val;
+	}
+	Scenery * getSceneryMst() const
+	{
+		return _sceneryMst;
+	}
+	void setSceneryMst(Scenery * val)
+	{
+		_sceneryMst = val;
+	}
+	Scenery * getsSceneryMaid() const
+	{
+		return _sceneryMaid;
+	}
+	void setSceneryMaid(Scenery * val)
+	{
+		_sceneryMaid = val;
+	}
 	
 private:
 	ManagerEntity();
@@ -38,6 +70,8 @@ private:
 private:
 	Monster *_monster;
 	Maid *_maid;
+	Scenery *_sceneryMst;
+	Scenery *_sceneryMaid;
 	
 };
 

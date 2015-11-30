@@ -4,7 +4,6 @@
 #include "data/define/DefinesRes.h"
 #include "ui/ManagerUI.h"
 #include "data/data/ManagerData.h"
-#include "data/config/ManagerCfg.h"
 #include "cocostudio/CCComExtensionData.h"
 
 using namespace ui;
@@ -58,11 +57,19 @@ void LayerLevels::createSkin()
 	_skin = (Layer *)CSLoader::createNode(RES_MODULES_MAIN_LAYER_LEVELS_CSB);
 	addChild(_skin);
 
-	auto layoutBtns = (Layout *)_skin->getChildByName("layoutBtns");
-	for (auto i = 0; i < /*15*/1; i++)
+	auto listView = (ListView *)_skin->getChildByName("listViewBtns");
+	auto layoutBtns = (Layout *)listView->getChildByName("layoutBtns");
+	auto dicCfgLevels = ManagerData::getInstance()->getHandleDataLevels()->getDicCfgLevels();
+	auto length = (int)dicCfgLevels.size();
+	auto index = 0;
+	for (auto var : dicCfgLevels)
 	{
-		auto btn = (Button *)layoutBtns->getChildByName("btn" + Value(i).asString());
-		btn->addTouchEventListener(CC_CALLBACK_2(LayerLevels::onTouchBtnLv, this));
+		auto cfgLevels = var.second;
+		auto nodeLevel = (Node *)layoutBtns->getChildByName("nodeLevel" + Value(index).asString());
+		
+		updateNodeLevel(nodeLevel, cfgLevels);
+
+		index++;
 	}
 
 	auto btnSkills = (Button *)_skin->getChildByName("btnSkills");
@@ -75,15 +82,32 @@ void LayerLevels::createSkin()
 	});
 }
 
+void LayerLevels::updateNodeLevel(Node *nodeLevel, const CfgLevels &cfgLevels)
+{
+	auto layout = (Layout *)nodeLevel->getChildByName("layout");
+	auto spriteState = (Sprite *)layout->getChildByName("spriteState");
+	auto txtLevel = (Text *)layout->getChildByName("txtLevel");
+	auto txtName = (Text *)layout->getChildByName("txtName");
+	txtName->setString(cfgLevels.name);
+	auto spriteStar0 = (Sprite *)layout->getChildByName("spriteStar0");
+	auto spriteStar1 = (Sprite *)layout->getChildByName("spriteStar1");
+	auto spriteStar2 = (Sprite *)layout->getChildByName("spriteStar2");
+
+	auto btn = (Button *)layout->getChildByName("btn");
+	btn->addTouchEventListener(CC_CALLBACK_2(LayerLevels::onTouchBtnLv, this));
+	btn->setUserData((void *)cfgLevels.id);
+}
+
 void LayerLevels::onTouchBtnLv(Ref *ref, Widget::TouchEventType type)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
 		auto btn = (Button *)ref;
 		//在代码里面先获取到button，getComponent()，并把获取的对象强转为Cocos Studio::ComExtensionData* 指针，再调用getCustomProperty()
-		cocostudio::ComExtensionData* data = dynamic_cast<cocostudio::ComExtensionData*>(btn->getComponent("ComExtensionData"));
-		auto idLevel = Value(data->getCustomProperty()).asInt();
-		ManagerData::getInstance()->getHandleDataLevels()->setLevelCurrent(idLevel);//for test
+		/*cocostudio::ComExtensionData* data = dynamic_cast<cocostudio::ComExtensionData*>(btn->getComponent("ComExtensionData"));
+		auto idLevel = Value(data->getCustomProperty()).asInt();*/
+		auto idLevel = (int)btn->getUserData();
+		ManagerData::getInstance()->getHandleDataLevels()->setLevelCurrent(idLevel);
 		ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_BATTLE);
 	}
 }

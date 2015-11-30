@@ -53,6 +53,11 @@ void HandleDataLevels::dataFileSet()
 	userDefault->flush();
 }
 
+DicCfgLevels HandleDataLevels::getDicCfgLevels()
+{
+	return ManagerCfg::getInstance()->getDicCfgLevels();
+}
+
 CfgLevels HandleDataLevels::getCfgLevels()
 {
 	auto cfgLevels = ManagerCfg::getInstance()->getDicCfgLevels()[_levelCurrent];

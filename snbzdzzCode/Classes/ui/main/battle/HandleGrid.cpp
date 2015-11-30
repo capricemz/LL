@@ -4,6 +4,7 @@
 #include "ui/ManagerUI.h"
 #include "core/grid/Grid.h"
 #include "core/grid/ManagerGrid.h"
+#include "core/entity/ManagerEntity.h"
 
 HandleGrid::HandleGrid() : _skin(nullptr)
 {
@@ -198,9 +199,17 @@ void HandleGrid::gridMoveFrom(const int &indexGrid)
 
 void HandleGrid::gridMoveFromOver(Grid *grid, const bool &isMst)
 {
+	auto actionDelayTime = DelayTime::create(0.4f);
+	auto actionCallFunc = CallFunc::create(CC_CALLBACK_0(HandleGrid::gridDelayTimeOver, this, grid, isMst));
+	grid->runAction(Sequence::createWithTwoActions(actionDelayTime, actionCallFunc));
+}
+
+void HandleGrid::gridDelayTimeOver(Grid *grid, const bool &isMst)
+{
 	if (grid->getIsCard())
 	{
-		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::RUN_BACKGROUND_EFFECT, isMst);//播放实体背景特效
+		ManagerEntity::getInstance()->runSceneryEffect(isMst);//播放实体背景特效
+
 		auto postion = grid->getParent()->convertToWorldSpace(vecPostionGridBattle[2]);
 		grid->throwTo(postion, isMst ? 60.0f : -60.0f, CC_CALLBACK_0(HandleGrid::gridThrowToOrPlayOver, this, grid, isMst));
 	}
@@ -212,6 +221,8 @@ void HandleGrid::gridMoveFromOver(Grid *grid, const bool &isMst)
 
 void HandleGrid::gridThrowToOrPlayOver(Grid *grid, const bool &isMst)
 {
+	ManagerEntity::getInstance()->stopSceneryEffect(isMst);//停止实体背景特效
+
 	grid->resetSkin();
 	grid->setVisible(false);
 

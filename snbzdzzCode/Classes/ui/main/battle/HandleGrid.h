@@ -46,6 +46,7 @@ private:
 	void runGridMoveAndThrow();//轮开始执行
 	void gridMoveFrom(const int &indexGrid);
 	void gridMoveFromOver(Grid *grid, const bool &isMst);
+	void gridDelayTimeOver(Grid *grid, const bool &isMst);
 	void gridThrowToOrPlayOver(Grid *grid, const bool &isMst);
 
 	void updateGrid(const int &idDataGrid);//刷新格子显示

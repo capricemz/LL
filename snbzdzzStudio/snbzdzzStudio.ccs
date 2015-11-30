@@ -122,7 +122,7 @@
             <Project Name="LayerSkills.csd" Type="Layer" />
             <Project Name="LayerGridSelect.csd" Type="Layer" />
             <Project Name="NodeHead.csd" Type="Node" />
-            <Project Name="Levels_list.csd" Type="Node" />
+            <Project Name="NodeLevel.csd" Type="Node" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />

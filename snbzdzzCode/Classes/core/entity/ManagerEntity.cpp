@@ -19,15 +19,16 @@ void ManagerEntity::destroyInstance()
 	CC_SAFE_DELETE(_instance);
 }
 
-ManagerEntity::ManagerEntity() : _monster(nullptr), _maid(nullptr)
+ManagerEntity::ManagerEntity() : _monster(nullptr), _maid(nullptr), _sceneryMst(nullptr), _sceneryMaid(nullptr)
 {
-
 }
 
 ManagerEntity::~ManagerEntity()
 {
 	_monster = nullptr;
 	_maid = nullptr;
+	_sceneryMst = nullptr;
+	_sceneryMaid = nullptr;
 }
 
 void ManagerEntity::stopAllActions()
@@ -64,4 +65,16 @@ void ManagerEntity::dealBattleOver()
 
 	auto isAllMaidDead = managerData->getHandleDataEntity()->isAllMaidDead();
 	ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_BATTLE_RESULT, !isAllMaidDead);
+}
+
+void ManagerEntity::runSceneryEffect(const bool &isMst)
+{
+	auto scenery = isMst ? _sceneryMst : _sceneryMaid;
+	scenery->runEffect();
+}
+
+void ManagerEntity::stopSceneryEffect(const bool &isMst)
+{
+	auto scenery = isMst ? _sceneryMst : _sceneryMaid;
+	scenery->stopEffect();
 }
