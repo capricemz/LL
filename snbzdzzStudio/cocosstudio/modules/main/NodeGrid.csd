@@ -2,7 +2,7 @@
   <PropertyGroup Type="Node" Name="NodeGrid" ID="e2dd582d-85e7-4f16-b64a-8ea85dda59e0" Version="2.3.2.3" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="130" Speed="1.0000" ActivedAnimationName="animationBack">
+      <Animation Duration="143" Speed="1.0000" ActivedAnimationName="animationTrapDisarm">
         <Timeline ActionTag="-894527357" Property="Position">
           <PointFrame FrameIndex="0" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
@@ -385,6 +385,18 @@
           <PointFrame FrameIndex="130" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
+          <PointFrame FrameIndex="131" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </PointFrame>
+          <PointFrame FrameIndex="135" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </PointFrame>
+          <PointFrame FrameIndex="142" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </PointFrame>
+          <PointFrame FrameIndex="143" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </PointFrame>
         </Timeline>
         <Timeline ActionTag="173631201" Property="Scale">
           <ScaleFrame FrameIndex="105" X="1.0000" Y="1.0000">
@@ -397,6 +409,18 @@
             <EasingData Type="0" />
           </ScaleFrame>
           <ScaleFrame FrameIndex="130" X="1.0000" Y="1.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="131" X="1.0000" Y="1.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="135" X="1.0000" Y="1.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="142" X="1.0000" Y="1.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="143" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
@@ -413,6 +437,18 @@
           <ScaleFrame FrameIndex="130" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </ScaleFrame>
+          <ScaleFrame FrameIndex="131" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="135" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="142" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="143" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
         </Timeline>
         <Timeline ActionTag="173631201" Property="VisibleForFrame">
           <BoolFrame FrameIndex="0" Tween="False" Value="False" />
@@ -420,6 +456,10 @@
           <BoolFrame FrameIndex="117" Tween="False" Value="True" />
           <BoolFrame FrameIndex="118" Tween="False" Value="True" />
           <BoolFrame FrameIndex="130" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="131" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="135" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="142" Tween="False" Value="True" />
+          <BoolFrame FrameIndex="143" Tween="False" Value="True" />
         </Timeline>
         <Timeline ActionTag="173631201" Property="Alpha">
           <IntFrame FrameIndex="105" Value="0">
@@ -432,6 +472,18 @@
             <EasingData Type="0" />
           </IntFrame>
           <IntFrame FrameIndex="130" Value="0">
+            <EasingData Type="0" />
+          </IntFrame>
+          <IntFrame FrameIndex="131" Value="255">
+            <EasingData Type="0" />
+          </IntFrame>
+          <IntFrame FrameIndex="135" Value="170">
+            <EasingData Type="0" />
+          </IntFrame>
+          <IntFrame FrameIndex="142" Value="255">
+            <EasingData Type="0" />
+          </IntFrame>
+          <IntFrame FrameIndex="143" Value="0">
             <EasingData Type="0" />
           </IntFrame>
         </Timeline>
@@ -482,11 +534,14 @@
         <AnimationInfo Name="animationTrapDisarm" StartIndex="118" EndIndex="130">
           <RenderColor A="255" R="173" G="255" B="47" />
         </AnimationInfo>
+        <AnimationInfo Name="animationTrapTrigger" StartIndex="131" EndIndex="143">
+          <RenderColor A="150" R="224" G="255" B="255" />
+        </AnimationInfo>
       </AnimationList>
       <ObjectData Name="NodeGrid" Tag="71" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="spriteBgp" ActionTag="-894527357" Alpha="0" Tag="72" IconVisible="False" LeftMargin="-60.5000" RightMargin="-60.5000" TopMargin="-82.5000" BottomMargin="-82.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteBgp" ActionTag="-894527357" VisibleForFrame="False" Tag="72" IconVisible="False" LeftMargin="-60.5000" RightMargin="-60.5000" TopMargin="-82.5000" BottomMargin="-82.5000" ctype="SpriteObjectData">
             <Size X="121.0000" Y="165.0000" />
             <Children>
               <AbstractNodeData Name="layoutGridBase1" ActionTag="-634455372" Tag="102" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="7.0000" BottomMargin="130.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
@@ -538,7 +593,7 @@
             <FileData Type="Normal" Path="images/battle/gold_card_bg.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spriteBgn" CanEdit="False" ActionTag="1596804542" Tag="73" IconVisible="False" LeftMargin="-60.0000" RightMargin="-64.0000" TopMargin="-74.5000" BottomMargin="-80.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteBgn" CanEdit="False" ActionTag="1596804542" VisibleForFrame="False" Alpha="0" Tag="73" IconVisible="False" LeftMargin="-60.0000" RightMargin="-64.0000" TopMargin="-74.5000" BottomMargin="-80.5000" ctype="SpriteObjectData">
             <Size X="124.0000" Y="155.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="2.0000" Y="-3.0000" />
@@ -549,7 +604,7 @@
             <FileData Type="MarkedSubImage" Path="images/battle/zl.png" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spriteGold" Visible="False" ActionTag="-1395104190" VisibleForFrame="False" Alpha="0" Tag="91" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteGold" Visible="False" ActionTag="-1395104190" Alpha="0" Tag="91" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
             <Size X="40.0000" Y="40.0000" />
             <Children>
               <AbstractNodeData Name="txt" ActionTag="797327923" Tag="95" IconVisible="False" LeftMargin="2.0000" RightMargin="2.0000" TopMargin="8.5000" BottomMargin="8.5000" FontSize="18" LabelText="金币" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -574,7 +629,7 @@
             <FileData Type="MarkedSubImage" Path="images/icon/jb.png" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spriteStone" Visible="False" ActionTag="-2104448362" VisibleForFrame="False" Alpha="0" Tag="92" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteStone" Visible="False" ActionTag="-2104448362" Alpha="0" Tag="92" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
             <Size X="40.0000" Y="40.0000" />
             <Children>
               <AbstractNodeData Name="txt" ActionTag="963964973" Tag="96" IconVisible="False" LeftMargin="2.0000" RightMargin="2.0000" TopMargin="8.5000" BottomMargin="8.5000" FontSize="18" LabelText="石头" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -599,7 +654,7 @@
             <FileData Type="MarkedSubImage" Path="images/icon/jb.png" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spriteIce" Visible="False" ActionTag="588232590" VisibleForFrame="False" Alpha="0" Tag="93" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteIce" Visible="False" ActionTag="588232590" Alpha="0" Tag="93" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
             <Size X="40.0000" Y="40.0000" />
             <Children>
               <AbstractNodeData Name="txt" ActionTag="-1458949742" Tag="97" IconVisible="False" LeftMargin="2.0000" RightMargin="2.0000" TopMargin="8.5000" BottomMargin="8.5000" FontSize="18" LabelText="冰块" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -624,16 +679,16 @@
             <FileData Type="MarkedSubImage" Path="images/icon/jb.png" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spriteTrap" Visible="False" ActionTag="173631201" VisibleForFrame="False" Alpha="0" Tag="94" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteTrap" ActionTag="173631201" Alpha="0" Tag="94" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
             <Size X="40.0000" Y="40.0000" />
             <Children>
-              <AbstractNodeData Name="txt" ActionTag="1161872025" Tag="98" IconVisible="False" LeftMargin="2.0000" RightMargin="2.0000" TopMargin="8.5000" BottomMargin="8.5000" FontSize="18" LabelText="陷阱" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="txt" ActionTag="1161872025" Tag="98" IconVisible="False" RightMargin="4.0000" TopMargin="5.5000" BottomMargin="11.5000" FontSize="18" LabelText="陷阱" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="36.0000" Y="23.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="20.0000" Y="20.0000" />
+                <Position X="18.0000" Y="23.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.5000" />
+                <PrePosition X="0.4500" Y="0.5750" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <OutlineColor A="255" R="0" G="0" B="0" />

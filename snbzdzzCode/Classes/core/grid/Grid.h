@@ -47,10 +47,12 @@ public:
 	angleEnd 终止转动角度
 	func 动作结束时调用*/
 	void throwTo(const Vec2 &postion, const float &angleEnd, const function<void ()> &func = nullptr);
-	/*播放技能效果特殊物品生成
+	/*播放特殊格子生成
 	func 动作结束时调用*/
 	void playSpecialSthGenerate(const function<void()> &func = nullptr);
-	/*播放特殊物品使用
+	/*获取特殊格子使用动画时间*/
+	float durationPlaySpecialSthBeUse();
+	/*播放特殊格子使用
 	func 动作结束时调用*/
 	void playSpecialSthBeUse(const function<void()> &func = nullptr);
 	/*是否能够划过选中*/
@@ -102,7 +104,8 @@ public:
 	}
 	
 	bool getIsCard();//是否为卡牌
-	bool getIsNotCard();
+	bool getIsNotCard();//是否为特殊格子
+	bool getIsIceMelting();//是否为播放冰块融化
 	
 private:
 	void createSkin();

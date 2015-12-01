@@ -327,13 +327,20 @@ void HandleDataEntity::dataFileSet()
 	userDefault->flush();
 }
 
-void HandleDataEntity::setDataEntityMaidHpFull()
+void HandleDataEntity::resetDataEntityMaid()
 {
 	for (auto var : _vecDataEntityMaid)
 	{
 		auto hpMax = var->getAttribute(IdAttribute::ENTITY_HP_MAX);
 		var->setAttribute(IdAttribute::ENTITY_HP, hpMax);
 		var->setAttribute(IdAttribute::ENTITY_ENERGY, 0);
+		var->setAttribute(IdAttribute::ENTITY_KILL_NUM, 0);
+		var->setAttribute(IdAttribute::ENTITY_BREAK_CASE_NUM, 0);
+		var->setAttribute(IdAttribute::ENTITY_BREAK_TAKES_NUM, 0);
+		var->setAttribute(IdAttribute::ENTITY_GOLD_INCOME_NUM, 0);
+		var->setAttribute(IdAttribute::ENTITY_STONE_CRUSHED_NUM, 0);
+		var->setAttribute(IdAttribute::ENTITY_ICE_MELTING_NUM, 0);
+		var->setAttribute(IdAttribute::ENTITY_TRAP_DISARM_NUM, 0);
 	}
 }
 
@@ -427,30 +434,24 @@ void HandleDataEntity::dealSkillRandom(const function<void()> &func /*= nullptr*
 
 void HandleDataEntity::resetDataEntityAttributeTemp()
 {
-	auto dataEntity = getDataEntityMst();
-	dataEntity->setAttribute(IdAttribute::ENTITY_QUICK, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_HP, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_COST_HP, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_ENERGY, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_COST_ENERGY, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_HP_ALL, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_COST_HP_ALL, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE_EXTRA, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES_EXTRA, 0);
-	dataEntity = getDataEntityMaid();
-	dataEntity->setAttribute(IdAttribute::ENTITY_QUICK, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_HP, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_COST_HP, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_ENERGY, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_COST_ENERGY, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_HP_ALL, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_COST_HP_ALL, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE_EXTRA, 0);
-	dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES_EXTRA, 0);
+	for (auto i = 0; i < 2; i++)
+	{
+		auto isMst = i < 1;
+		auto dataEntity = isMst ? getDataEntityMst() : getDataEntityMaid();
+		dataEntity->setAttribute(IdAttribute::ENTITY_QUICK, 0);
+		dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE, 0);
+		dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES, 0);
+		dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_HP, 0);
+		dataEntity->setAttribute(IdAttribute::ENTITY_COST_HP, 0);
+		dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_ENERGY, 0);
+		dataEntity->setAttribute(IdAttribute::ENTITY_COST_ENERGY, 0);
+		dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_HP_ALL, 0);
+		dataEntity->setAttribute(IdAttribute::ENTITY_COST_HP_ALL, 0);
+		dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE_EXTRA, 0);
+		dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES_EXTRA, 0);
+		dataEntity->setAttribute(IdAttribute::ENTITY_BREAK_CASE, 0);
+		dataEntity->setAttribute(IdAttribute::ENTITY_BREAK_TAKES, 0);
+	}
 }
 
 void HandleDataEntity::dealVecSkillActiveInUse2UseOverMaid()
@@ -526,7 +527,7 @@ void HandleDataEntity::resetRound()
 	dataEntityMaid->resetRound();
 }
 
-bool HandleDataEntity::getIsSkillNeedSwitchEntity(int &indexTo)
+bool HandleDataEntity::getIsSkillNeedSwitchMst(int &indexTo)
 {
 	auto vecSkillRandom = getDataEntityMst()->getVecSkillRandom();
 	for (auto skillInfo : vecSkillRandom)

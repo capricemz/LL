@@ -57,17 +57,26 @@ void ManagerEntity::dealBattleOver()
 	stopAllActions();
 	
 	auto managerData = ManagerData::getInstance();
-	managerData->getHandleDataGrid()->resetIndexGridBattle();
+
+	auto handleDataGrid = managerData->getHandleDataGrid();
+	handleDataGrid->resetIndexGridBattle();
 	
 	auto handleDataEntity = managerData->getHandleDataEntity();
 	handleDataEntity->resetDataEntityAttributeTemp();
 	handleDataEntity->dealBattleOver();
 
-	auto isAllMaidDead = managerData->getHandleDataEntity()->isAllMaidDead();
+	auto isAllMaidDead = handleDataEntity->isAllMaidDead();
 
+	auto handleDataLevels = managerData->getHandleDataLevels();
+	auto dataLevelCurrent = handleDataLevels->getDataLevelCurrent();
 	if (!isAllMaidDead)//战斗胜利
 	{
-		managerData->getHandleDataLevels()->getDataLevelCurrent()->dealLevelPassed();//处理通关
+		dataLevelCurrent->dealLevelTarget();
+		dataLevelCurrent->dealLevelPassed();//处理通关
+	}
+	else
+	{
+		dataLevelCurrent->setVecTargetComplete();
 	}
 
 	ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_BATTLE_RESULT, !isAllMaidDead);

@@ -194,32 +194,38 @@ void HandleGrid::gridMoveFrom(const int &indexGrid)
 		auto grid = (Grid *)_skin->getChildByName(isMst ? "gridBattleMst" : "gridBattleMaid");
 		grid->setDataGrid(dataGrid);
 		grid->moveFrom(postion, false, 0.5f, 1.0f, Vec2::ZERO, CC_CALLBACK_0(HandleGrid::gridMoveFromOver, this, grid, isMst));
+		
+		if (!isMst)
+		{
+			ManagerGrid::getInstance()->dealSpecialSth();
+		}
 	}
 }
 
 void HandleGrid::gridMoveFromOver(Grid *grid, const bool &isMst)
 {
-	auto actionDelayTime = DelayTime::create(0.4f);
-	auto actionCallFunc = CallFunc::create(CC_CALLBACK_0(HandleGrid::gridDelayTimeOver, this, grid, isMst));
-	grid->runAction(Sequence::createWithTwoActions(actionDelayTime, actionCallFunc));
-}
-
-void HandleGrid::gridDelayTimeOver(Grid *grid, const bool &isMst)
-{
 	if (grid->getIsCard())
 	{
-		ManagerEntity::getInstance()->runSceneryEffect(isMst);//播放实体背景特效
-
-		auto postion = grid->getParent()->convertToWorldSpace(vecPostionGridBattle[2]);
-		grid->throwTo(postion, isMst ? 60.0f : -60.0f, CC_CALLBACK_0(HandleGrid::gridThrowToOrPlayOver, this, grid, isMst));
+		auto duration = ManagerGrid::getInstance()->durationPlaySpecialSthBeUse();
+		auto actionDelayTime = DelayTime::create(duration);
+		auto actionCallFunc = CallFunc::create(CC_CALLBACK_0(HandleGrid::gridSpecialOrDelayOver, this, grid, isMst));
+		grid->runAction(Sequence::createWithTwoActions(actionDelayTime, actionCallFunc));
 	}
 	else
 	{
-		grid->playSpecialSthBeUse(CC_CALLBACK_0(HandleGrid::gridThrowToOrPlayOver, this, grid, isMst));
+		grid->playSpecialSthBeUse(CC_CALLBACK_0(HandleGrid::gridSpecialOrDelayOver, this, grid, isMst));
 	}
 }
 
-void HandleGrid::gridThrowToOrPlayOver(Grid *grid, const bool &isMst)
+void HandleGrid::gridSpecialOrDelayOver(Grid *grid, const bool &isMst)
+{
+	ManagerEntity::getInstance()->runSceneryEffect(isMst);//播放实体背景特效
+
+	auto postion = grid->getParent()->convertToWorldSpace(vecPostionGridBattle[2]);
+	grid->throwTo(postion, isMst ? 60.0f : -60.0f, CC_CALLBACK_0(HandleGrid::gridThrowToOver, this, grid, isMst));
+}
+
+void HandleGrid::gridThrowToOver(Grid *grid, const bool &isMst)
 {
 	ManagerEntity::getInstance()->stopSceneryEffect(isMst);//停止实体背景特效
 

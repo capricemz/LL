@@ -70,6 +70,7 @@ protected:
 	
 private:
 	void dealResultValueChange(const IdAttribute &idAttributeGet, const bool &isPositive, const IdAttribute &idAttributeChange, const Color4B &color, const float &duration);
+	void dealBreak(const float &duration);
 	void dealDeadEffect(const float &duration);
 	
 protected:

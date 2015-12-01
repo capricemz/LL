@@ -25,6 +25,9 @@ public:
 	
 	void linkDataGridSelected();
 
+	void dealSpecialSth();//处理特殊格子
+	float durationPlaySpecialSthBeUse();
+
 	void dealBattle();
 	
 public:

@@ -194,7 +194,7 @@ void HandleEntity::runEntityAction()
 
 void HandleEntity::dealTurnOver()
 {
-	auto isTurnAll = ManagerEntity::getInstance()->isTurnOverAll();
+	auto isTurnAll = ManagerEntity::getInstance()->isTurnOverAll();//一轮行动的动作全部结束
 	if (isTurnAll)
 	{
 		auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
@@ -208,7 +208,7 @@ void HandleEntity::dealTurnOver()
 		else//若回合结束
 		{
 			auto indexTo = 0;
-			auto isSkillNeedSwitchEntity = handleDataEntity->getIsSkillNeedSwitchEntity(indexTo);
+			auto isSkillNeedSwitchEntity = handleDataEntity->getIsSkillNeedSwitchMst(indexTo);
 			if (isSkillNeedSwitchEntity)
 			{
 				ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::SWITCH_NODE_HEAD_TO, true, indexTo);//参数：是怪物，切换目标
@@ -223,10 +223,15 @@ void HandleEntity::dealTurnOver()
 
 void HandleEntity::dealRoundOver(const bool &isForce /*= false*/)
 {
-	ManagerData::getInstance()->getHandleDataGrid()->resetIndexGridBattle();
+	auto handleDataGrid = ManagerData::getInstance()->getHandleDataGrid();
+	handleDataGrid->resetIndexGridBattle();
+	
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
 	handleDataEntity->addRound();
 	handleDataEntity->dealDataEntitySkillSort(isForce);
+
+	auto handleDataLevels = ManagerData::getInstance()->getHandleDataLevels();
+	handleDataLevels->getDataLevelCurrent()->dealLevelTarget();
 
 	auto managerUI = ManagerUI::getInstance();
 	managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::RESET_SKIN);

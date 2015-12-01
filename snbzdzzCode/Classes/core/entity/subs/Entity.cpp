@@ -215,6 +215,16 @@ void Entity::showEffect(const function<void()> &func /*= nullptr*/)
 		vecActions.pushBack(actionDelay);
 	}
 
+	auto breakTakes = _dataEntity->getAttribute(IdAttribute::ENTITY_BREAK_TAKES);
+	if (breakTakes)
+	{
+		auto duration = 0.6f;
+		auto actionDeal = CallFunc::create(CC_CALLBACK_0(Entity::dealBreak, this, duration));
+		vecActions.pushBack(actionDeal);
+		auto actionDelay = DelayTime::create(duration + 0.1f);
+		vecActions.pushBack(actionDelay);
+	}
+
 	auto hpFinal = _dataEntity->getAttribute(IdAttribute::ENTITY_HP) - damageTakes - damageTakesExtra;
 	if (hpFinal <= 0)
 	{
@@ -328,6 +338,14 @@ void Entity::dealResultValueChange(const IdAttribute &idAttributeGet, const bool
 		updateEnergy();//界面刷新
 	}
 	managerUI->showWordsDrift(getParent(), getPosition() + Vec2(0.0f, 100.0f), words, color, duration);
+}
+
+void Entity::dealBreak(const float &duration)
+{
+	//显示破衣效果
+	auto managerUI = ManagerUI::getInstance();
+	/*managerUI->notify(ID_OBSERVER::HANDLE_ENTITY, TYPE_OBSERVER_HANDLE_ENTITY::UPDATE_HP);*///界面刷新
+	managerUI->showWordsDrift(getParent(), getPosition() + Vec2(0.0f, 100.0f), STR_BREAK, Color4B::RED, duration);
 }
 
 void Entity::dealDeadEffect(const float &duration)

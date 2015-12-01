@@ -57,6 +57,8 @@ void Monster::updateEnergy()
 
 void Monster::dealDead()
 {
+	auto dataEntityMaid = ManagerData::getInstance()->getHandleDataEntity()->getDataEntityMaid();
+	dataEntityMaid->addAttribute(IdAttribute::ENTITY_KILL_NUM, 1);
 	auto isBattleOver = dealIsBattleOver();
 	if (!isBattleOver)
 	{

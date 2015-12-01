@@ -114,6 +114,7 @@ void LayerLevels::updateNodeLevel(const int &index, Node *nodeLevel, DataLevel *
 		if (spriteStar == nullptr)
 		{
 			spriteStar = Sprite::create();
+			spriteStar->setName("spriteStar" + Value(i).asInt());
 			layoutStar->addChild(spriteStar);
 			isSpriteNullptr = true;
 		}
@@ -130,11 +131,14 @@ void LayerLevels::updateNodeLevel(const int &index, Node *nodeLevel, DataLevel *
 	}
 	if (widthSpriteStar != 0.0f)
 	{
-		auto postion = Vec2((layoutStar->getContentSize().width - widthSpriteStar) * 0.5f, 0.0f);
+		widthSpriteStar += 5.0f;
+		auto size = layoutStar->getContentSize();
+		auto postion = Vec2((size.width - widthSpriteStar * (levelTargetNum - 1)) * 0.5f, size.height * 0.5f);
 		for (auto i = 0; i < levelTargetNum; i++)
 		{
 			auto spriteStar = (Sprite *)layoutStar->getChildByName("spriteStar" + Value(i).asInt());
-			spriteStar->setPosition(postion + Vec2(widthSpriteStar * 0.5f + 5.0f, 0.0f));
+			spriteStar->setPosition(postion);
+			postion += Vec2(widthSpriteStar, 0.0f);
 		}
 	}
 	

@@ -157,6 +157,54 @@ void ManagerGrid::linkDataGridSelected()
 	dataGridMaid->setDataGridNext(nullptr);
 }
 
+float ManagerGrid::durationPlaySpecialSthBeUse()
+{
+	return _dicGridBattle.at(1)->durationPlaySpecialSthBeUse();
+}
+
+void ManagerGrid::dealSpecialSth()
+{
+	auto dataEntityMaid = ManagerData::getInstance()->getHandleDataEntity()->getDataEntityMaid();
+	auto valueGoldIncome = dataEntityMaid->getAttribute(IdAttribute::ENTITY_GOLD_INCOME);
+	auto valueStoneCrushed = dataEntityMaid->getAttribute(IdAttribute::ENTITY_STONE_CRUSHED);
+	auto valueIceMelting = dataEntityMaid->getAttribute(IdAttribute::ENTITY_ICE_MELTING);
+	auto valueTrapDisarm = dataEntityMaid->getAttribute(IdAttribute::ENTITY_TRAP_DISARM);
+	
+	auto dataGridMaid = _dicGridBattle.at(1)->getDataGrid();
+	auto valueGold = dataGridMaid->getAttribute(IdAttribute::GRID_GOLD);
+	auto valueStone = dataGridMaid->getAttribute(IdAttribute::GRID_STONE);
+	auto valueIce = dataGridMaid->getAttribute(IdAttribute::GRID_ICE);
+	auto valueTrap = dataGridMaid->getAttribute(IdAttribute::GRID_TRAP);
+	if (valueGold != 0)
+	{
+		//调用获得物品处理
+		dataGridMaid->setAttribute(IdAttribute::GRID_GOLD_GET, 1);
+		dataEntityMaid->addAttribute(IdAttribute::ENTITY_GOLD_INCOME_NUM, 1);
+	}
+	else if (valueStone != 0 && valueStoneCrushed >= valueStone)
+	{
+		dataGridMaid->setAttribute(IdAttribute::GRID_STONE_CRUSHED, 1);
+		dataEntityMaid->addAttribute(IdAttribute::ENTITY_STONE_CRUSHED_NUM, 1);
+	}
+	else if (valueIce != 0 && valueIceMelting >= valueIce)
+	{
+		dataGridMaid->setAttribute(IdAttribute::GRID_ICE_MELTING, 1);
+		dataEntityMaid->addAttribute(IdAttribute::ENTITY_ICE_MELTING_NUM, 1);
+	}
+	else if (valueTrap != 0)
+	{
+		if (valueTrapDisarm >= valueTrap)
+		{
+			dataGridMaid->setAttribute(IdAttribute::GRID_TRAP_DISARM, 1);
+			dataEntityMaid->addAttribute(IdAttribute::ENTITY_TRAP_DISARM_NUM, 1);
+		}
+		else
+		{
+			dataGridMaid->setAttribute(IdAttribute::GRID_TRAP_TRIGGER, 1);
+		}
+	}
+}
+
 void ManagerGrid::dealBattle()
 {
 	auto dataGridMst = _dicGridBattle.at(0)->getDataGrid();
@@ -242,7 +290,7 @@ void ManagerGrid::dealDamage(DataGrid *dataGridCase, DataGrid *dataGridTakes, Da
 	auto physicalAttackCase = dataEntityCase->getAttribute(IdAttribute::ENTITY_PHYSICAL_ATTACK);//物理攻击
 	auto magicAttackCase = dataEntityCase->getAttribute(IdAttribute::ENTITY_MAGIC_ATTACK);//魔法攻击
 
-	auto valueDamage = damagePhysical * physicalAttackCase + damageMagic * magicAttackCase;
+	auto valueDamage = damagePhysical * physicalAttackCase + damageMagic * magicAttackCase;//实际伤害值
 
 	dataEntityCase->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE, valueDamage);
 	dataEntityTakes->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES, valueDamage);
@@ -252,10 +300,19 @@ void ManagerGrid::dealDamage(DataGrid *dataGridCase, DataGrid *dataGridTakes, Da
 	auto damagePhysicalExtra = dataGridCase->getAttribute(IdAttribute::GRID_DAMAGE_PHYSICAL_EXTRA);
 	auto damageMagicExtra = dataGridCase->getAttribute(IdAttribute::GRID_DAMAGE_MAGIC_EXTRA);
 
-	auto valueDamageExtra = damagePhysicalExtra * physicalAttackCase + damageMagicExtra * magicAttackCase;
+	auto valueDamageExtra = damagePhysicalExtra * physicalAttackCase + damageMagicExtra * magicAttackCase;//实际额外伤害值
 
 	dataEntityCase->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE_EXTRA, valueDamageExtra);
 	dataEntityTakes->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES_EXTRA, valueDamageExtra);
+
+	auto damageTotal = damagePhysical + damagePhysicalExtra + damageMagic + damageMagicExtra;
+	if (damageTotal >= BREAK_DAMAGE_TAKES)
+	{
+		dataEntityCase->setAttribute(IdAttribute::ENTITY_BREAK_CASE, 1);
+		dataEntityCase->addAttribute(IdAttribute::ENTITY_BREAK_CASE_NUM, 1);
+		dataEntityTakes->setAttribute(IdAttribute::ENTITY_BREAK_TAKES, 1);
+		dataEntityTakes->addAttribute(IdAttribute::ENTITY_BREAK_TAKES_NUM, 1);
+	}
 }
 
 void ManagerGrid::dealDamageAttributeCondition(DataGrid *dataGridCase, DataGrid *dataGridTakes, const int &damagePhysical, const int &damageMagic, DataEntity *dataEntityCase, DataEntity *dataEntityTakes)

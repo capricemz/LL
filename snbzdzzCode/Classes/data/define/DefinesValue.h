@@ -21,6 +21,8 @@ static const int ENTITY_BATTLE_MAX = 3;
 
 static const int ENERGY_SWITCH_ENTITY = 8;
 
+static const int BREAK_DAMAGE_TAKES = 5;
+
 static const vector<Vec2> vecPostionGridBattle =
 {
 	Vec2(160.0f, 620.0f), Vec2(480.0f, 340.0f), Vec2(320.0f, 480.0f)
@@ -52,9 +54,13 @@ enum class IdAttribute
 	ENTITY_TRAP_GENERATE,//生成陷阱
 	ENTITY_TRAP_DISARM,//解除陷阱
 	ENTITY_SWITCH,//切换角色
-	ENTITY_KILL,//击杀
-	ENTITY_BREAK_CASE,//造成破衣
-	ENTITY_BREAK_TAKES,//受到破衣
+	ENTITY_KILL_NUM,//击杀
+	ENTITY_BREAK_CASE_NUM,//造成破衣次数
+	ENTITY_BREAK_TAKES_NUM,//受到破衣次数
+	ENTITY_GOLD_INCOME_NUM,//金币收益次数
+	ENTITY_STONE_CRUSHED_NUM,//击碎石头次数
+	ENTITY_ICE_MELTING_NUM,//融化冰块次数
+	ENTITY_TRAP_DISARM_NUM,//解除陷阱次数
 
 	ENTITY_QUICK = 150,//快速攻击
 	ENTITY_DAMAGE_CASE,//造成伤害
@@ -67,6 +73,8 @@ enum class IdAttribute
 	ENTITY_COST_HP_ALL,//全体消耗生命
 	ENTITY_DAMAGE_CASE_EXTRA,//额外造成伤害
 	ENTITY_DAMAGE_TAKES_EXTRA,//额外受到伤害
+	ENTITY_BREAK_CASE,//造成破衣
+	ENTITY_BREAK_TAKES,//受到破衣
 
 	GRID_DAMAGE_PHYSICAL = 200,//物理伤害
 	GRID_DAMAGE_MAGIC,//魔法伤害
@@ -94,6 +102,11 @@ enum class IdAttribute
 	GRID_STONE,//石头
 	GRID_ICE,//冰块
 	GRID_TRAP,//陷阱
+	GRID_GOLD_GET,//宝箱获得
+	GRID_STONE_CRUSHED,//石头击碎
+	GRID_ICE_MELTING,//冰块融化
+	GRID_TRAP_TRIGGER,//陷阱触发
+	GRID_TRAP_DISARM,//陷阱解除
 
 	GRID_PHYSICAL_DAMAGE_SUCCESS = 300,//物理伤害成功
 	GRID_PHYSICAL_DAMAGE_FAILED,//物理伤害失败
@@ -181,7 +194,6 @@ enum class TypeLevelState
 	NONE,
 	PASSED,//已通过
 	CURRENT,//当前
-	PASSING,//通过
 	LOCK//未开启
 };
 
@@ -301,12 +313,12 @@ enum class TYPE_OBSERVER_HANDLE_ENTITY
 
 static const map < TypeLevelTarget, IdAttribute > dicTypeLevelTarget2IdAttribute = 
 {
-	{ TypeLevelTarget::KILL, IdAttribute::ENTITY_KILL },
-	{ TypeLevelTarget::BREAK, IdAttribute::ENTITY_BREAK_CASE },
-	{ TypeLevelTarget::GOLD, IdAttribute::ENTITY_GOLD_INCOME },
-	{ TypeLevelTarget::STONE, IdAttribute::ENTITY_STONE_CRUSHED },
-	{ TypeLevelTarget::ICE, IdAttribute::ENTITY_ICE_MELTING },
-	{ TypeLevelTarget::TRAP, IdAttribute::ENTITY_TRAP_DISARM }
+	{ TypeLevelTarget::KILL, IdAttribute::ENTITY_KILL_NUM },
+	{ TypeLevelTarget::BREAK, IdAttribute::ENTITY_BREAK_CASE_NUM },
+	{ TypeLevelTarget::GOLD, IdAttribute::ENTITY_GOLD_INCOME_NUM },
+	{ TypeLevelTarget::STONE, IdAttribute::ENTITY_STONE_CRUSHED_NUM },
+	{ TypeLevelTarget::ICE, IdAttribute::ENTITY_ICE_MELTING_NUM },
+	{ TypeLevelTarget::TRAP, IdAttribute::ENTITY_TRAP_DISARM_NUM }
 };
 
 #endif

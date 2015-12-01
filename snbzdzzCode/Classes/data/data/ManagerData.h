@@ -253,7 +253,7 @@ class HandleDataEntity
 		void dataFileGet();//备用
 		void dataFileSet();//备用
 		
-		void setDataEntityMaidHpFull();//开始关卡是将女仆血量补满
+		void resetDataEntityMaid();//开始关卡时，重置女仆数据，如将女仆血量补满等
 		void createDataEntityMaid();
 		void createDataEntityMst();//根据当前关卡构建怪物DataEntity
 		void vecSkillActiveSortMaid();//女仆洗牌
@@ -323,7 +323,7 @@ class HandleDataEntity
 		void addRound();
 		void resetRound();
 
-		bool getIsSkillNeedSwitchEntity(int &indexTo);
+		bool getIsSkillNeedSwitchMst(int &indexTo);
 
 	private:
 		DataEntity * createDataEntity(const int &idEntity);
@@ -356,6 +356,7 @@ class DataLevel : public Ref
 		void dealLevelPassed();
 		void dealLevelTarget();
 		void setState();//设置状态
+		void setVecTargetComplete();//根据完成数据设置完成状态
 		
 	public:
 		int getId() const
@@ -366,10 +367,6 @@ class DataLevel : public Ref
 		TypeLevelState getState() const
 		{
 			return _state;
-		}
-		void setStatePassing()
-		{
-			_state = TypeLevelState::PASSING;
 		}
 		int levelTargetNumGet() const
 		{
@@ -383,9 +380,6 @@ class DataLevel : public Ref
 			}
 			return _vecTargetComplete[index];
 		}
-		
-	private:
-		void setVecTargetComplete();
 		
 	private:
 		int _id;

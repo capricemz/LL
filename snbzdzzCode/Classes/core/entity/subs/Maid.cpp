@@ -59,6 +59,8 @@ void Maid::updateEnergy()
 
 void Maid::dealDead()
 {
+	auto dataEntityMst = ManagerData::getInstance()->getHandleDataEntity()->getDataEntityMst();
+	dataEntityMst->addAttribute(IdAttribute::ENTITY_KILL_NUM, 1);
 	auto isBattleOver = dealIsBattleOver();
 	if (!isBattleOver)
 	{

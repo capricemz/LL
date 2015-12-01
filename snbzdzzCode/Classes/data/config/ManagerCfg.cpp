@@ -274,7 +274,9 @@ void ManagerCfg::assignCfgLevelTargets(const VectorString &vecItem)
 	CfgLevelTarget cfg;
 	cfg.id = Value(vecItem[0]).asInt();
 	cfg.desc = vecItem[1];
-	cfg.type = (TypeLevelTarget)Value(vecItem[2]).asInt();
+	auto typeTemp = vecItem[2];
+	auto isFind = typeTemp.find("//") != string::npos;
+	cfg.type = (TypeLevelTarget)Value(isFind ? UtilString::split(typeTemp, "//")[0] : typeTemp).asInt();
 	cfg.args = Value(vecItem[3]).asInt();
 	cfg.roundLimitMst = Value(vecItem[4]).asInt();
 	cfg.roundLimitMaid = Value(vecItem[5]).asInt();

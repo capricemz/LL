@@ -58,6 +58,7 @@ void DataLevel::dealLevelPassed()
 void DataLevel::dealLevelTarget()
 {
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
 
 	auto cfgLevel = getCfgLevel();
 	auto targets = cfgLevel.targets;
@@ -66,7 +67,8 @@ void DataLevel::dealLevelTarget()
 	{
 		auto idLevelTarget = targets[i];
 
-		if (_vecTargetComplete[i])
+		auto isComplete = handleDataUnlock->getIsCompleteLevelTarget(cfgLevel.id, idLevelTarget);
+		if (isComplete)
 		{
 			continue;
 		}
@@ -107,11 +109,16 @@ void DataLevel::dealLevelTarget()
 		}
 		else if (type == TypeLevelTarget::PASS)
 		{
-			isTargetComplete = _state == TypeLevelState::PASSING;
+			auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+			auto isAllMstDead = handleDataEntity->isAllMstDead();
+			auto isAllMaidDead = handleDataEntity->isAllMaidDead();
+			isTargetComplete = isAllMstDead && !isAllMaidDead;
 		}
 		else
 		{
-			auto value = handleDataEntity->getDataEntityMaid()->getAttribute(dicTypeLevelTarget2IdAttribute.at(type));
+			auto dataEntityMaid = handleDataEntity->getDataEntityMaid();
+			auto idAttribute = dicTypeLevelTarget2IdAttribute.at(type);
+			auto value = dataEntityMaid->getAttribute(idAttribute);
 			isTargetComplete = value >= args;
 		}
 		_vecTargetComplete[i] = isTargetComplete;
@@ -136,14 +143,9 @@ void DataLevel::setState()
 	_state = TypeLevelState::CURRENT;
 }
 
-CfgLevel DataLevel::getCfgLevel() const
-{
-	auto cfgLevel = ManagerCfg::getInstance()->getDicCfgLevels()[_id];
-	return cfgLevel;
-}
-
 void DataLevel::setVecTargetComplete()
 {
+	_vecTargetComplete.clear();
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
 	auto cfgLevel = getCfgLevel();
 	auto targets = cfgLevel.targets;
@@ -154,6 +156,12 @@ void DataLevel::setVecTargetComplete()
 		auto isComplete = handleDataUnlock->getIsCompleteLevelTarget(cfgLevel.id, idLevelTarget);
 		_vecTargetComplete.push_back(isComplete);
 	}
+}
+
+CfgLevel DataLevel::getCfgLevel() const
+{
+	auto cfgLevel = ManagerCfg::getInstance()->getDicCfgLevels()[_id];
+	return cfgLevel;
 }
 
 HandleDataLevels::HandleDataLevels() : _dicDataLevel({}), _levelCurrent(0)

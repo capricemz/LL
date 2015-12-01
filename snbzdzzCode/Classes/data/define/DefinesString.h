@@ -21,6 +21,7 @@ static const string STR_BATTLE_DEFEAT = "战斗失败";
 static const string STR_HP = "HP";
 static const string STR_EP = "EP";
 
+static const string STR_BREAK = "破衣";
 static const string STR_DEAD = "角色死亡";
 
 static const string STR_LEVEL_0 = "第";
