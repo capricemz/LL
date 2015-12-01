@@ -55,25 +55,30 @@ void LayerLevels::dealRemoveFromParent()
 
 void LayerLevels::createSkin()
 {
-	auto handleDataLevels = ManagerData::getInstance()->getHandleDataLevels();
-	handleDataLevels->createVecDataLevel();
-
 	_skin = (Layer *)CSLoader::createNode(RES_MODULES_MAIN_LAYER_LEVELS_CSB);
 	addChild(_skin);
 
 	auto listView = (ListView *)_skin->getChildByName("listViewBtns");
 	auto layoutBtns = (Layout *)listView->getChildByName("layoutBtns");
-	auto vecDataLevel = handleDataLevels->getVecDataLevel();
-	auto length = (int)vecDataLevel.size();
+	auto dicDataLevel = ManagerData::getInstance()->getHandleDataLevels()->getDicDataLevel();
 	auto index = 0;
-	for (auto dataLevel : vecDataLevel)
+	Node *nodeLevel = nullptr;
+	do 
 	{
-		auto nodeLevel = (Node *)layoutBtns->getChildByName("nodeLevel" + Value(index).asString());
+		nodeLevel = (Node *)layoutBtns->getChildByName("nodeLevel" + Value(index).asString());
+		if (nodeLevel == nullptr)
+		{
+			break;
+		}
+		//在代码里面先获取到button，getComponent()，并把获取的对象强转为Cocos Studio::ComExtensionData* 指针，再调用getCustomProperty()
+		cocostudio::ComExtensionData* data = dynamic_cast<cocostudio::ComExtensionData*>(nodeLevel->getComponent("ComExtensionData"));
+		auto idLevel = Value(data->getCustomProperty()).asInt();
+		auto dataLevel = dicDataLevel.at(idLevel);
 		
-		updateNodeLevel(nodeLevel, dataLevel);
+		updateNodeLevel(index, nodeLevel, dataLevel);
 
 		index++;
-	}
+	} while (true);
 
 	auto btnSkills = (Button *)_skin->getChildByName("btnSkills");
 	btnSkills->addTouchEventListener([](Ref *ref, Widget::TouchEventType type)
@@ -85,7 +90,7 @@ void LayerLevels::createSkin()
 	});
 }
 
-void LayerLevels::updateNodeLevel(Node *nodeLevel, DataLevel *dataLevel)
+void LayerLevels::updateNodeLevel(const int &index, Node *nodeLevel, DataLevel *dataLevel)
 {
 	auto cfgLevel = dataLevel->getCfgLevel();
 	auto layout = (Layout *)nodeLevel->getChildByName("layout");
@@ -94,7 +99,7 @@ void LayerLevels::updateNodeLevel(Node *nodeLevel, DataLevel *dataLevel)
 	spriteState->setVisible(dataLevel->getState() == TypeLevelState::PASSED);
 	
 	auto txtLevel = (Text *)nodeLevel->getChildByName("txtLevel");
-	txtLevel->setString(STR_LEVEL_0 + Value(cfgLevel.id).asString() + STR_LEVEL_1);
+	txtLevel->setString(STR_LEVEL_0 + Value(index + 1).asString() + STR_LEVEL_1);
 
 	auto txtName = (Text *)nodeLevel->getChildByName("txtName");
 	txtName->setString(cfgLevel.name);
@@ -116,6 +121,7 @@ void LayerLevels::updateNodeLevel(Node *nodeLevel, DataLevel *dataLevel)
 		auto isComolete = dataLevel->levelTargetIsComplete(i);
 		auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(isComolete ? RES_IMAGES_MAIN_LEVELS_XING_PNG : RES_IMAGES_MAIN_LEVELS_XING_KONG_PNG);
 		spriteStar->setSpriteFrame(spriteFrame);
+
 		auto width = spriteStar->getContentSize().width;
 		if (isSpriteNullptr && (widthSpriteStar == 0.0f || width > widthSpriteStar))
 		{
@@ -133,8 +139,16 @@ void LayerLevels::updateNodeLevel(Node *nodeLevel, DataLevel *dataLevel)
 	}
 	
 	auto btn = (Button *)nodeLevel->getChildByName("btn");
-	btn->addTouchEventListener(CC_CALLBACK_2(LayerLevels::onTouchBtnLv, this));
-	btn->setUserData((void *)cfgLevel.id);
+	if (dataLevel->getState() != TypeLevelState::LOCK)
+	{
+		btn->setTouchEnabled(true);
+		btn->setUserData((void *)cfgLevel.id);
+		btn->addTouchEventListener(CC_CALLBACK_2(LayerLevels::onTouchBtnLv, this));
+	}
+	else
+	{
+		btn->setTouchEnabled(false);
+	}
 }
 
 void LayerLevels::onTouchBtnLv(Ref *ref, Widget::TouchEventType type)
@@ -142,9 +156,6 @@ void LayerLevels::onTouchBtnLv(Ref *ref, Widget::TouchEventType type)
 	if (type == Widget::TouchEventType::ENDED)
 	{
 		auto btn = (Button *)ref;
-		//在代码里面先获取到button，getComponent()，并把获取的对象强转为Cocos Studio::ComExtensionData* 指针，再调用getCustomProperty()
-		/*cocostudio::ComExtensionData* data = dynamic_cast<cocostudio::ComExtensionData*>(btn->getComponent("ComExtensionData"));
-		auto idLevel = Value(data->getCustomProperty()).asInt();*/
 		auto idLevel = (int)btn->getUserData();
 		ManagerData::getInstance()->getHandleDataLevels()->setLevelCurrent(idLevel);
 		ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_BATTLE);

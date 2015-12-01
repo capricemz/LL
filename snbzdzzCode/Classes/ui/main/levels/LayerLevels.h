@@ -31,7 +31,7 @@ public:
 private:
 	void createSkin();
 	void onTouchBtnLv(Ref *ref, Widget::TouchEventType type);
-	void updateNodeLevel(Node *nodeLevel, DataLevel *dataLevel);
+	void updateNodeLevel(const int &index, Node *nodeLevel, DataLevel *dataLevel);
 	
 private:
 	Layer *_skin;

@@ -63,6 +63,7 @@ struct CfgLevel//关卡
 	int roundLimit;//回合限制
 	bool isRoundLimitWin;//是否回合限制获胜
 	vector<int> targets;//目标
+	int unlockLevel;//解锁的关卡
 };
 typedef map<int32_t, CfgLevel> DicCfgLevels;
 //

@@ -265,6 +265,7 @@ void ManagerCfg::assignCfgLevels(const VectorString &vecItem)
 			cfg.targets.push_back(Value(var).asInt());
 		}
 	}
+	cfg.unlockLevel = Value(vecItem[7]).asInt();
 	_dicCfgLevels[cfg.id] = cfg;
 }
 

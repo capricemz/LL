@@ -32,14 +32,18 @@ bool LayerBattleResult::init()
 	return isInit;
 }
 
-void LayerBattleResult::runAppearAction(const bool &isWin, const function<void()> &func /*= nullptr*/)
+void LayerBattleResult::updateSkin(const bool &isWin)
+{
+	auto txt = (Text *)_skin->getChildByName("txt");
+	txt->setString(isWin ? STR_BATTLE_VICTORY : STR_BATTLE_DEFEAT);
+}
+
+void LayerBattleResult::runAppearAction(const function<void()> &func /*= nullptr*/)
 {
 	auto d = 0.4f;
 	_skin->setOpacity(0.0f);
 	_skin->setScale(10.0f);
-	auto txt = (Text *)_skin->getChildByName("txt");
-	txt->setString(isWin ? STR_BATTLE_VICTORY : STR_BATTLE_DEFEAT);
-
+	
 	auto actionSpawn = Spawn::createWithTwoActions(EaseCubicActionIn::create(FadeIn::create(d)), EaseCubicActionIn::create(ScaleTo::create(d, 1.0f)));
 	auto actionCallFunc = CallFunc::create([func]()
 	{

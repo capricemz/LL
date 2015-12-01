@@ -499,7 +499,7 @@ bool HandleDataEntity::isAllMaidDead()
 	for (auto dataEntity : _vecDataEntityMaid)
 	{
 		auto hp = dataEntity->getAttribute(IdAttribute::ENTITY_HP);
-		if (hp != 0)
+		if (hp > 0)
 		{
 			isAllDead = false;
 			break;

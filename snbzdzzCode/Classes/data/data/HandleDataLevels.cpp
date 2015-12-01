@@ -22,6 +22,39 @@ bool DataLevel::init()
 	return isInit;
 }
 
+void DataLevel::assignCfgLevel(const int &idLevel)
+{
+	_id = idLevel;
+	setState();
+	setVecTargetComplete();
+}
+
+void DataLevel::dealLevelPassed()
+{
+	auto cfgLevel = getCfgLevel();
+	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
+	handleDataUnlock->setIsPassedLevel(_id);
+	setState();
+	//
+	auto targets = cfgLevel.targets;
+	auto length = (int)targets.size();
+	for (auto i = 0; i < length; i++)
+	{
+		auto idLevelTarget = targets[i];
+		if (_vecTargetComplete[i])
+		{
+			handleDataUnlock->setIsCompleteLevelTarget(cfgLevel.id, idLevelTarget);
+		}
+	}
+	//处理解锁关卡数据
+	auto handleDataLevels = ManagerData::getInstance()->getHandleDataLevels();
+	handleDataUnlock->setIsUnlockLevel(cfgLevel.unlockLevel);
+	auto dataLevelUnlock = handleDataLevels->getDicDataLevel().at(cfgLevel.unlockLevel);
+	dataLevelUnlock->setState();
+	//保存数据
+	handleDataUnlock->dataFileSet();
+}
+
 void DataLevel::dealLevelTarget()
 {
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
@@ -85,6 +118,24 @@ void DataLevel::dealLevelTarget()
 	}
 }
 
+void DataLevel::setState()
+{
+	auto managerData = ManagerData::getInstance();
+	auto isUnlock = managerData->getHandleDataUnlock()->getIsUnlockLevel(_id);
+	if (!isUnlock)
+	{
+		_state = TypeLevelState::LOCK;
+		return;
+	}
+	auto isPassed = managerData->getHandleDataUnlock()->getIsPassedLevel(_id);
+	if (isPassed)
+	{
+		_state = TypeLevelState::PASSED;
+		return;
+	}
+	_state = TypeLevelState::CURRENT;
+}
+
 CfgLevel DataLevel::getCfgLevel() const
 {
 	auto cfgLevel = ManagerCfg::getInstance()->getDicCfgLevels()[_id];
@@ -100,12 +151,12 @@ void DataLevel::setVecTargetComplete()
 	for (auto i = 0; i < length; i++)
 	{
 		auto idLevelTarget = targets[i];
-		auto isUnlock = handleDataUnlock->getIsUnlockLevelTarget(cfgLevel.id, idLevelTarget);
-		_vecTargetComplete.push_back(isUnlock);
+		auto isComplete = handleDataUnlock->getIsCompleteLevelTarget(cfgLevel.id, idLevelTarget);
+		_vecTargetComplete.push_back(isComplete);
 	}
 }
 
-HandleDataLevels::HandleDataLevels() : _vecDataLevel({}), _levelPassed(0), _levelCurrent(0)
+HandleDataLevels::HandleDataLevels() : _dicDataLevel({}), _levelCurrent(0)
 {
 }
 
@@ -113,38 +164,15 @@ HandleDataLevels::~HandleDataLevels()
 {
 }
 
-void HandleDataLevels::dataFileInit()
-{
-	auto userDefault = UserDefault::getInstance();
-	userDefault->setStringForKey(USER_DEFAULT_KEY_DL.c_str(), "");//写入初始数据
-	userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io
-}
-
-void HandleDataLevels::dataFileGet()
-{
-	auto userDefault = UserDefault::getInstance();
-	auto strDatalevels = userDefault->getStringForKey(USER_DEFAULT_KEY_DL.c_str());
-	/*auto vecDataLevels = UtilString::split(strDatalevels, "|");
-	_levelPassed = Value(vecDataLevels[0]).asInt();*/
-	_levelPassed = Value(strDatalevels).asInt();
-}
-
-void HandleDataLevels::dataFileSet()
-{
-	auto userDefault = UserDefault::getInstance();
-	auto strDatalevels = Value(_levelPassed).asString();
-	userDefault->setStringForKey(USER_DEFAULT_KEY_DL.c_str(), strDatalevels);//修改存档
-	userDefault->flush();
-}
-
-void HandleDataLevels::createVecDataLevel()
+void HandleDataLevels::createDicDataLevel()
 {
 	auto dicCfgLevels = ManagerCfg::getInstance()->getDicCfgLevels();
 	for (auto var : dicCfgLevels)
 	{
 		auto cfgLevel = var.second;
+		auto idLevel = cfgLevel.id;
 		auto dataLevel = DataLevel::create();
-		dataLevel->setId(cfgLevel.id);
-		_vecDataLevel.push_back(dataLevel);
+		dataLevel->assignCfgLevel(idLevel);
+		_dicDataLevel.insert(idLevel, dataLevel);
 	}
 }

@@ -41,7 +41,7 @@ bool ManagerData::isSaveFileExist()
 		_handleDataTime->dataFileInit();
 		_handleDataUnlock->dataFileInit();
 		/*_handleDataEntity->dataFileInit();*/
-		_handleDataLevels->dataFileInit();
+		/*_handleDataLevels->dataFileInit();*/
 		return false;
 	}
 	else
@@ -57,7 +57,7 @@ void ManagerData::dataFileGet()
 		_handleDataTime->dataFileGet();
 		_handleDataUnlock->dataFileGet();
 		/*_handleDataEntity->dataFileGet();*/
-		_handleDataLevels->dataFileGet();
+		/*_handleDataLevels->dataFileGet();*/
 	}
 }
 
@@ -66,7 +66,7 @@ void ManagerData::dataFileSet()
 	_handleDataTime->dataFileSet();
 	_handleDataUnlock->dataFileSet();
 	/*_handleDataEntity->dataFileSet();*/
-	_handleDataLevels->dataFileSet();
+	/*_handleDataLevels->dataFileSet();*/
 }
 
 ManagerData::ManagerData()

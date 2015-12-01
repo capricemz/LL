@@ -7,7 +7,9 @@
 HandleDataUnlock::HandleDataUnlock() : 
 	_dicTypeUnlockMaid({}), 
 	_dicDicTypeUnlockSkill({}),
-	_dicDicTypeUnlockLevelTarget({}),
+	_dicTypeUnlockLevel({}),
+	_dicTypePassedLevel({}),
+	_dicDicTypeCompleteLevelTarget({}),
 	_vecDataUnlock({})
 {
 }
@@ -16,7 +18,9 @@ HandleDataUnlock::~HandleDataUnlock()
 {
 	_dicTypeUnlockMaid.clear();
 	_dicDicTypeUnlockSkill.clear();
-	_dicDicTypeUnlockLevelTarget.clear();
+	_dicTypeUnlockLevel.clear();
+	_dicTypePassedLevel.clear();
+	_dicDicTypeCompleteLevelTarget.clear();
 	_vecDataUnlock.clear();
 }
 
@@ -27,6 +31,7 @@ void HandleDataUnlock::dataFileInit()
 	userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io*/
 	createTypeUnlockOther();
 	setIsUnlockMaid(DATA_UNLOCK_INIT_MAID);
+	setIsUnlockLevel(DATA_UNLOCK_INIT_LEVEL);
 	dataFileSet();
 }
 
@@ -36,6 +41,7 @@ void HandleDataUnlock::dataFileGet()
 	auto userDefault = UserDefault::getInstance();
 	auto strDataUnlock = userDefault->getStringForKey(USER_DEFAULT_KEY_DU.c_str());
 	auto vecDataUnlock = UtilString::split(strDataUnlock, ":");
+	_vecDataUnlock.clear();
 	for (auto var : vecDataUnlock)
 	{
 		_vecDataUnlock.push_back(Value(var).asInt());
@@ -86,9 +92,11 @@ void HandleDataUnlock::createTypeUnlockOther()
 	for (auto var : dicCfgLevels)
 	{
 		auto idLevel = var.second.id;
+		_dicTypeUnlockLevel[idLevel] = indexUnlockCurrent++;
+		_dicTypePassedLevel[idLevel] = indexUnlockCurrent++;
 		for (auto var : var.second.targets)
 		{
-			_dicDicTypeUnlockLevelTarget[idLevel][var] = indexUnlockCurrent++;
+			_dicDicTypeCompleteLevelTarget[idLevel][var] = indexUnlockCurrent++;
 		}
 	}
 }
@@ -117,15 +125,39 @@ void HandleDataUnlock::setIsUnlockSkill(const int &idSkill, const int &indexSkil
 	setIsUnlock(index);
 }
 
-bool HandleDataUnlock::getIsUnlockLevelTarget(const int &idLevel, const int &idLevelTarget)
+bool HandleDataUnlock::getIsUnlockLevel(const int &idLevel)
 {
-	auto index = _dicDicTypeUnlockLevelTarget[idLevel][idLevelTarget];
+	auto index = _dicTypeUnlockLevel[idLevel];
 	return getIsUnlock(index);
 }
 
-void HandleDataUnlock::setIsUnlockLevelTarget(const int &idLevel, const int &idLevelTarget)
+void HandleDataUnlock::setIsUnlockLevel(const int &idLevel)
 {
-	auto index = _dicDicTypeUnlockLevelTarget[idLevel][idLevelTarget];
+	auto index = _dicTypeUnlockLevel[idLevel];
+	setIsUnlock(index);
+}
+
+bool HandleDataUnlock::getIsPassedLevel(const int &idLevel)
+{
+	auto index = _dicTypePassedLevel[idLevel];
+	return getIsUnlock(index);
+}
+
+void HandleDataUnlock::setIsPassedLevel(const int &idLevel)
+{
+	auto index = _dicTypePassedLevel[idLevel];
+	setIsUnlock(index);
+}
+
+bool HandleDataUnlock::getIsCompleteLevelTarget(const int &idLevel, const int &idLevelTarget)
+{
+	auto index = _dicDicTypeCompleteLevelTarget[idLevel][idLevelTarget];
+	return getIsUnlock(index);
+}
+
+void HandleDataUnlock::setIsCompleteLevelTarget(const int &idLevel, const int &idLevelTarget)
+{
+	auto index = _dicDicTypeCompleteLevelTarget[idLevel][idLevelTarget];
 	setIsUnlock(index);
 }
 

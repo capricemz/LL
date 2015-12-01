@@ -85,8 +85,9 @@ void LayerBattle::updateBySubject(va_list values)
 	{
 		auto isWin = va_arg(values, bool);
 		_layerBattleResult = LayerBattleResult::create();
+		_layerBattleResult->updateSkin(isWin);
 		addChild(_layerBattleResult);
-		_layerBattleResult->runAppearAction(isWin, nullptr);
+		_layerBattleResult->runAppearAction(nullptr);
 	}
 	else if(type == TYPE_OBSERVER_LAYER_BATTLE::RESET_SKIN)
 	{

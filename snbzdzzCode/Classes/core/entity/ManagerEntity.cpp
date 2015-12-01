@@ -64,6 +64,12 @@ void ManagerEntity::dealBattleOver()
 	handleDataEntity->dealBattleOver();
 
 	auto isAllMaidDead = managerData->getHandleDataEntity()->isAllMaidDead();
+
+	if (!isAllMaidDead)//战斗胜利
+	{
+		managerData->getHandleDataLevels()->getDataLevelCurrent()->dealLevelPassed();//处理通关
+	}
+
 	ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_BATTLE_RESULT, !isAllMaidDead);
 }
 

@@ -18,9 +18,9 @@ public:
 	~LayerBattleResult();
 
 	virtual bool init();
-
+	void updateSkin(const bool &isWin);
 	/*func 动作全部完成时回调*/
-	void runAppearAction(const bool &isWin, const function<void()> &func = nullptr);
+	void runAppearAction(const function<void()> &func = nullptr);
 
 private:
 	void createSkin();

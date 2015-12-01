@@ -350,23 +350,26 @@ class DataLevel : public Ref
 		~DataLevel();
 		
 		virtual bool init();
+		
+		void assignCfgLevel(const int &idLevel);
 
+		void dealLevelPassed();
 		void dealLevelTarget();
-
+		void setState();//设置状态
+		
 	public:
 		int getId() const
 		{
 			return _id;
 		}
-		void setId(int val)
-		{
-			_id = val;
-			setVecTargetComplete();
-		}
 		CfgLevel getCfgLevel() const;
 		TypeLevelState getState() const
 		{
 			return _state;
+		}
+		void setStatePassing()
+		{
+			_state = TypeLevelState::PASSING;
 		}
 		int levelTargetNumGet() const
 		{
@@ -380,6 +383,7 @@ class DataLevel : public Ref
 			}
 			return _vecTargetComplete[index];
 		}
+		
 	private:
 		void setVecTargetComplete();
 		
@@ -396,11 +400,7 @@ class HandleDataLevels
 		HandleDataLevels();
 		~HandleDataLevels();
 		
-		void dataFileInit();
-		void dataFileGet();
-		void dataFileSet();
-
-		void createVecDataLevel();
+		void createDicDataLevel();
 
 	public:
 		int getLevelCurrent() const
@@ -411,23 +411,17 @@ class HandleDataLevels
 		{
 			_levelCurrent = val;
 		}
-		vector<DataLevel *> getVecDataLevel() const
+		Map<int, DataLevel *> getDicDataLevel() const
 		{
-			return _vecDataLevel;
+			return _dicDataLevel;
 		}
-		DataLevel *getDataLevelPassed()
-		{
-			return _vecDataLevel[_levelPassed];
-		}//当前通关关卡
 		DataLevel *getDataLevelCurrent()
 		{
-			return _vecDataLevel[_levelCurrent];
+			return _dicDataLevel.at(_levelCurrent);
 		}//当前关卡
 		
 	private:
-		const string USER_DEFAULT_KEY_DL = "dataLevels";//关卡数据
-		vector<DataLevel *> _vecDataLevel;
-		int _levelPassed;//当前通关
+		Map<int, DataLevel *> _dicDataLevel;
 		int _levelCurrent;//当前关卡
 		
 };
@@ -447,8 +441,12 @@ public:
 	void setIsUnlockMaid(const int &idEntity);
 	bool getIsUnlockSkill(const int &idSkill, const int &indexSkill);
 	void setIsUnlockSkill(const int &idSkill, const int &indexSkill);
-	bool getIsUnlockLevelTarget(const int &idLevel, const int &idLevelTarget);
-	void setIsUnlockLevelTarget(const int &idLevel, const int &idLevelTarget);
+	bool getIsUnlockLevel(const int &idLevel);
+	void setIsUnlockLevel(const int &idLevel);
+	bool getIsPassedLevel(const int &idLevel);
+	void setIsPassedLevel(const int &idLevel);
+	bool getIsCompleteLevelTarget(const int &idLevel, const int &idLevelTarget);
+	void setIsCompleteLevelTarget(const int &idLevel, const int &idLevelTarget);
 	bool getIsUnlock(int index);
 	void setIsUnlock(int index);
 	
@@ -456,7 +454,9 @@ private:
 	const string USER_DEFAULT_KEY_DU = "dataUnlock";//解锁数据
 	map<int, int> _dicTypeUnlockMaid;
 	map<int, map<int, int>> _dicDicTypeUnlockSkill;
-	map<int, map<int, int>> _dicDicTypeUnlockLevelTarget;
+	map<int, int> _dicTypeUnlockLevel;
+	map<int, int> _dicTypePassedLevel;
+	map<int, map<int, int>> _dicDicTypeCompleteLevelTarget;
 	vector<int> _vecDataUnlock;
 	
 };
