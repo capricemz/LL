@@ -63,7 +63,7 @@ void LayerLevels::createSkin()
 	auto dicDataLevel = ManagerData::getInstance()->getHandleDataLevels()->getDicDataLevel();
 	auto index = 0;
 	Node *nodeLevel = nullptr;
-	do 
+	while (true)
 	{
 		nodeLevel = (Node *)layoutBtns->getChildByName("nodeLevel" + Value(index).asString());
 		if (nodeLevel == nullptr)
@@ -78,7 +78,7 @@ void LayerLevels::createSkin()
 		updateNodeLevel(index, nodeLevel, dataLevel);
 
 		index++;
-	} while (true);
+	}
 
 	auto btnSkills = (Button *)_skin->getChildByName("btnSkills");
 	btnSkills->addTouchEventListener([](Ref *ref, Widget::TouchEventType type)

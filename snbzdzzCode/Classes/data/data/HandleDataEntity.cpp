@@ -17,6 +17,7 @@ DataEntity::DataEntity() :
 	_vecSkillActive({}),
 	_vecSkillPassive({}),
 	_vecSkillRandom({}),
+	_vecSkillNeedUnlock({}),
 	_round(0)
 {
 
@@ -239,6 +240,7 @@ void DataEntity::setSkill(const string &skillInfo)
 	{
 		if (getCfgEntity().type == TypeEntity::MAID && cfgSkill.unlock != "")//若技能需要解锁
 		{
+			_vecSkillNeedUnlock.push_back(vecSkillInfo);
 			auto isUnlockSkill = handleDataUnlock->getIsUnlockSkill(idSkill, indexSkill);
 			if (!isUnlockSkill)//若未解锁
 			{
@@ -255,6 +257,7 @@ void DataEntity::setSkill(const string &skillInfo)
 	{
 		if (getCfgEntity().type == TypeEntity::MAID && cfgSkill.unlock != "")//若技能需要解锁
 		{
+			_vecSkillNeedUnlock.push_back(vecSkillInfo);
 			auto indexSkillUnlockMax = -1;
 			for (auto var : dicCfgSkill)
 			{
@@ -286,6 +289,7 @@ void DataEntity::vecSkillClear()
 	_vecSkillActiveUseOver.clear();
 	_vecSkillPassive.clear();
 	_vecSkillRandom.clear();
+	_vecSkillNeedUnlock.clear();
 }
 
 HandleDataEntity::HandleDataEntity() :
@@ -479,6 +483,25 @@ void HandleDataEntity::dealBattleOver()
 	resetRound();
 }
 
+int HandleDataEntity::getLengthVecDataEntity(const bool &isMst)
+{
+	if (isMst)
+	{
+		return _vecDataEntityMst.size();
+	}
+	else
+	{
+		if (_vecDataEntityMaid.size() > ENTITY_BATTLE_MAX)
+		{
+			return ENTITY_BATTLE_MAX;
+		}
+		else
+		{
+			return _vecDataEntityMaid.size();
+		}
+	}
+}
+
 bool HandleDataEntity::isAllMstDead()
 {
 	auto isAllDead = true;
@@ -497,8 +520,9 @@ bool HandleDataEntity::isAllMstDead()
 bool HandleDataEntity::isAllMaidDead()
 {
 	auto isAllDead = true;
-	for (auto dataEntity : _vecDataEntityMaid)
+	for (auto i = 0; i < ENTITY_BATTLE_MAX; i++)
 	{
+		auto dataEntity = _vecDataEntityMaid.at(i);
 		auto hp = dataEntity->getAttribute(IdAttribute::ENTITY_HP);
 		if (hp > 0)
 		{

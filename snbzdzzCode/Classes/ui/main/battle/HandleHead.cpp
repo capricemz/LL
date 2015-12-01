@@ -71,8 +71,6 @@ void HandleHead::setSkin(Layout *skin)
 	_skin = skin;
 
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto lengthVecDataEntityMst = handleDataEntity->getVecDataEntityMst().size();
-	auto lengthVecDataEntityMaid = handleDataEntity->getVecDataEntityMaid().size();
 
 	Layout *layout = nullptr;
 	int lengthVecDataEntity = 0;
@@ -87,7 +85,7 @@ void HandleHead::setSkin(Layout *skin)
 			widthTotal = 0.0f;
 			layout = (Layout *)_skin->getChildByName(isMst ? "layoutHeadMst" : "layoutHeadMaid");
 			layout->setTouchEnabled(false);
-			lengthVecDataEntity = isMst ? lengthVecDataEntityMst : lengthVecDataEntityMaid;
+			lengthVecDataEntity = handleDataEntity->getLengthVecDataEntity(isMst);
 			if (lengthVecDataEntity > 1)//非怪物且大于一个时添加点击事件
 			{
 				layout->addTouchEventListener(CC_CALLBACK_2(HandleHead::onTouchMoveHead, this, isMst));//添加头像拖动事件

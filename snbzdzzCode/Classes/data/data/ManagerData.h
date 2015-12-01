@@ -205,6 +205,10 @@ class DataEntity : public Ref
 		{
 			return _vecSkillRandom;
 		}
+		vector<vector<int>> getVecSkillNeedUnlock()
+		{
+			return _vecSkillNeedUnlock;
+		}
 		/*设置技能
 		idSkill 技能表id
 		index 技能表index
@@ -238,6 +242,7 @@ class DataEntity : public Ref
 		vector<vector<int>> _vecSkillActiveUseOver;//vector:0idSkill1index2num3odds
 		vector<vector<int>> _vecSkillPassive;//vector:0idSkill1index2num3odds
 		vector<vector<int>> _vecSkillRandom;//vector:0idSkill1index2num3odds
+		vector<vector<int>> _vecSkillNeedUnlock;//vector:0idSkill1index2num3odds
 
 		int _round;//回合数
 		
@@ -287,6 +292,8 @@ class HandleDataEntity
 		{
 			return _vecDataEntityMaid.at(_indexMaid);
 		}
+
+		int getLengthVecDataEntity(const bool &isMst);
 
 		int getIndexMst() const
 		{

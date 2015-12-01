@@ -5,8 +5,10 @@
 
 #include "cocos2d.h"
 #include "ui/common/ILayerAppearDisappear.h"
+#include "ui/UIWidget.h"
 
 USING_NS_CC;
+using namespace ui;
 
 class LayerSkills : public Layer, public ILayerAppearDisappear
 {
@@ -23,10 +25,14 @@ public:
 	virtual void afterRunAppear();
 	virtual void afterRunDisappear();
 	virtual void dealRemoveFromParent();
-
+	
 private:
 	void createSkin();
-
+	void updateLayoutBtns();
+	void onTouchBtnMaid(Ref *ref, Widget::TouchEventType type);
+	void updateLayoutSkillItems(const int &idEntity);
+	void onTouchBtnSkill(Ref *ref, Widget::TouchEventType type);
+	
 private:
 	Layer *_skin;
 	
