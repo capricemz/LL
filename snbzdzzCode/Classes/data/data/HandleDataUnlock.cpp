@@ -79,9 +79,9 @@ void HandleDataUnlock::createTypeUnlockOther()
 	for (auto var : dicDicCfgSkill)
 	{
 		auto dicCfgSkill = var.second;
-		for (auto var : dicCfgSkill)
+		for (auto var1 : dicCfgSkill)
 		{
-			auto cfgSkill = var.second;
+			auto cfgSkill = var1.second;
 			if (cfgSkill.unlock != "")
 			{
 				_dicDicTypeUnlockSkill[cfgSkill.id][cfgSkill.index] = indexUnlockCurrent++;
@@ -94,9 +94,9 @@ void HandleDataUnlock::createTypeUnlockOther()
 		auto idLevel = var.second.id;
 		_dicTypeUnlockLevel[idLevel] = indexUnlockCurrent++;
 		_dicTypePassedLevel[idLevel] = indexUnlockCurrent++;
-		for (auto var : var.second.targets)
+		for (auto var1 : var.second.targets)
 		{
-			_dicDicTypeCompleteLevelTarget[idLevel][var] = indexUnlockCurrent++;
+			_dicDicTypeCompleteLevelTarget[idLevel][var1] = indexUnlockCurrent++;
 		}
 	}
 }
