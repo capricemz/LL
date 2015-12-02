@@ -5,6 +5,7 @@
 
 #include <vector>
 #include <string>
+#include "DefinesValue.h"
 
 using namespace std;
 
@@ -28,5 +29,22 @@ static const string STR_LEVEL_0 = "第";
 static const string STR_LEVEL_1 = "关";
 
 static const string STR_FILLED = "已满";
+
+static const string STR_LEVEL_TARGET = "怪物|女仆|出场&x回合内|总回合&x回合内|大于|小于";
+
+static const string STR_COMMA = "，";
+
+static const map<TypeLevelTarget, string> DIC_STR_BY_LEVEL_TARGET_TYPE =
+{
+	{ TypeLevelTarget::HP_MST, "&a血量&b&x%" },
+	{ TypeLevelTarget::HP_MAID, "&a血量&b&x%" },
+	{ TypeLevelTarget::PASS, "通关" },
+	{ TypeLevelTarget::KILL, "击杀&x次" },
+	{ TypeLevelTarget::BREAK, "破衣&x次" },
+	{ TypeLevelTarget::GOLD, "获得金币&x次" },
+	{ TypeLevelTarget::STONE, "击碎石头&x次" },
+	{ TypeLevelTarget::ICE, "融化冰块&x次" },
+	{ TypeLevelTarget::TRAP, "解除陷阱&x次" }
+};
 
 #endif

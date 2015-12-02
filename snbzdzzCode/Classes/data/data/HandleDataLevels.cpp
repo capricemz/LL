@@ -3,6 +3,7 @@
 #include "ManagerData.h"
 #include "common/util/UtilString.h"
 #include "../config/ManagerCfg.h"
+#include "../define/DefinesString.h"
 
 DataLevel::DataLevel() : _id(0), _index(0), _state(TypeLevelState::NONE), _vecTargetComplete({})
 {
@@ -166,7 +167,48 @@ CfgLevel DataLevel::getCfgLevel() const
 
 std::string DataLevel::getLevelTargetStr(const int &index) const
 {
-	return Value(index).asString();
+	auto vecIdLevelTarget = getCfgLevel().targets;
+	if ((int)vecIdLevelTarget.size() <= index)
+	{
+		return "";
+	}
+	string text = "";
+	auto vecStr = UtilString::split(STR_LEVEL_TARGET, "|");
+	auto idLevelTarget = vecIdLevelTarget.at(index);
+	auto cfgLevelTarget = ManagerCfg::getInstance()->getDicCfgLevelTargets()[idLevelTarget];
+	if (cfgLevelTarget.roundLimitMst != 0)
+	{
+		text += vecStr[0] + vecStr[2] + STR_COMMA;
+		UtilString::stringReplace(text, "&x", Value(cfgLevelTarget.roundLimitMst).asString());
+	}
+	if (cfgLevelTarget.roundLimitMaid != 0)
+	{
+		text += vecStr[1] + vecStr[2] + STR_COMMA;
+		UtilString::stringReplace(text, "&x", Value(cfgLevelTarget.roundLimitMaid).asString());
+	}
+	if (cfgLevelTarget.roundLimitTotal != 0)
+	{
+		text += vecStr[3] + STR_COMMA;
+		UtilString::stringReplace(text, "&x", Value(cfgLevelTarget.roundLimitTotal).asString());
+	}
+	text += DIC_STR_BY_LEVEL_TARGET_TYPE.at(cfgLevelTarget.type);
+	if (cfgLevelTarget.type == TypeLevelTarget::HP_MST)
+	{
+		UtilString::stringReplace(text, "&a", vecStr[0]);
+		UtilString::stringReplace(text, "&b", cfgLevelTarget.args > 0 ? vecStr[4] : vecStr[5]);
+		UtilString::stringReplace(text, "&x", Value(abs(cfgLevelTarget.args)).asString());
+	}
+	else if (cfgLevelTarget.type == TypeLevelTarget::HP_MAID)
+	{
+		UtilString::stringReplace(text, "&a", vecStr[1]);
+		UtilString::stringReplace(text, "&b", cfgLevelTarget.args > 0 ? vecStr[4] : vecStr[5]);
+		UtilString::stringReplace(text, "&x", Value(abs(cfgLevelTarget.args)).asString());
+	}
+	else
+	{
+		UtilString::stringReplace(text, "&x", Value(cfgLevelTarget.args).asString());
+	}
+	return text;
 }
 
 HandleDataLevels::HandleDataLevels() : _dicDataLevel({}), _levelCurrent(0)
