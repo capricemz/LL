@@ -89,6 +89,8 @@ void LayerSkills::updateLayoutBtns()
 		//在代码里面先获取到button，getComponent()，并把获取的对象强转为Cocos Studio::ComExtensionData* 指针，再调用getCustomProperty()
 		cocostudio::ComExtensionData* data = dynamic_cast<cocostudio::ComExtensionData*>(btn->getComponent("ComExtensionData"));
 		auto idEntity = Value(data->getCustomProperty()).asInt();
+		auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[idEntity];
+		btn->setTitleText(cfgEntity.name);
 		auto isUnlock = ManagerData::getInstance()->getHandleDataUnlock()->getIsUnlockMaid(idEntity);
 		if (isUnlock)
 		{
@@ -176,6 +178,7 @@ void LayerSkills::updateLayoutSKillItem(Layout *layoutSkillItem, const bool &isG
 		auto isUnlock = handleDataUnlock->getIsUnlockSkill(dataSkillInfo.id, dataSkillInfo.index);
 		if (!isUnlock)//若未解锁
 		{
+			btn->setTitleText("button");
 			btn->setTouchEnabled(true);
 		}
 		else
