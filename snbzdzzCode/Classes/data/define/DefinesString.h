@@ -27,4 +27,6 @@ static const string STR_DEAD = "角色死亡";
 static const string STR_LEVEL_0 = "第";
 static const string STR_LEVEL_1 = "关";
 
+static const string STR_FILLED = "已满";
+
 #endif

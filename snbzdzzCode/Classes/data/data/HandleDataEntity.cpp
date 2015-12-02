@@ -17,7 +17,7 @@ DataEntity::DataEntity() :
 	_vecSkillActive({}),
 	_vecSkillPassive({}),
 	_vecSkillRandom({}),
-	_vecSkillNeedUnlock({}),
+	_vecSkillActiveNeedUnlock({}),
 	_round(0)
 {
 
@@ -119,10 +119,10 @@ void DataEntity::updateSkillGroup()
 			break;
 		}
 	}
-	auto vecSkillItem = UtilString::split(cfgSkillGroup.skills, "|");
-	for (auto skillInfo : vecSkillItem)
+	auto vecDataSkillInfo = cfgSkillGroup.skills;
+	for (auto dataSkillInfo : vecDataSkillInfo)
 	{
-		setSkill(skillInfo);
+		setSkill(dataSkillInfo);
 	}
 }
 
@@ -182,19 +182,19 @@ bool DataEntity::getIsAlive()
 	return hp > 0;
 }
 
-vector<int> DataEntity::vecSkillActiveInfoGet()
+DataSkillInfo & DataEntity::vecSkillActiveInfoGet()
 {
-	auto vecSkill = _vecSkillActive[0];
+	auto &dataSkillInfo = _vecSkillActive[0];
 	_vecSkillActive.erase(_vecSkillActive.begin());
-	_vecSkillActiveInUse.push_back(vecSkill);
-	return vecSkill;
+	_vecSkillActiveInUse.push_back(dataSkillInfo);
+	return dataSkillInfo;
 }
 
 void DataEntity::vecSkillActiveInUse2UseOver()
 {
-	auto vecSkill = _vecSkillActiveInUse[0];
+	auto dataSkillInfo = _vecSkillActiveInUse[0];
 	_vecSkillActiveInUse.erase(_vecSkillActiveInUse.begin());
-	_vecSkillActiveUseOver.push_back(vecSkill);
+	_vecSkillActiveUseOver.push_back(dataSkillInfo);
 }
 
 bool DataEntity::vecSkillActiveIsAllUse()
@@ -206,15 +206,15 @@ void DataEntity::vecSkillActiveSort(const bool &isAll /*= false*/)
 {
 	if (isAll)
 	{
-		for (auto vecSkill : _vecSkillActiveInUse)
+		for (auto dataSkillInfo : _vecSkillActiveInUse)
 		{
-			_vecSkillActive.push_back(vecSkill);
+			_vecSkillActive.push_back(dataSkillInfo);
 		}
 		_vecSkillActiveInUse.clear();
 	}
-	for (auto vecSkill : _vecSkillActiveUseOver)
+	for (auto dataSkillInfo : _vecSkillActiveUseOver)
 	{
-		_vecSkillActive.push_back(vecSkill);
+		_vecSkillActive.push_back(dataSkillInfo);
 	}
 	_vecSkillActiveUseOver.clear();
 	int size = _vecSkillActive.size();
@@ -225,14 +225,12 @@ void DataEntity::vecSkillActiveSort(const bool &isAll /*= false*/)
 	}
 }
 
-void DataEntity::setSkill(const string &skillInfo)
+void DataEntity::setSkill(DataSkillInfo &dataSkillInfo)
 {
-	auto vecSkillStr = UtilString::split(skillInfo, ":");
-	auto idSkill = Value(vecSkillStr[0]).asInt();
-	auto indexSkill = Value(vecSkillStr[1]).asInt();
-	auto num = Value(vecSkillStr[2]).asInt();
-	auto odds = Value(vecSkillStr[3]).asInt();
-	vector<int> vecSkillInfo = { idSkill, indexSkill, num, odds};
+	auto idSkill = dataSkillInfo.id;
+	auto indexSkill = dataSkillInfo.index;
+	auto num = dataSkillInfo.num;
+	auto odds = dataSkillInfo.odds;
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
 	auto dicCfgSkill = ManagerCfg::getInstance()->getDicDicCfgSkill()[idSkill];
 	auto cfgSkill = dicCfgSkill[indexSkill];
@@ -240,7 +238,7 @@ void DataEntity::setSkill(const string &skillInfo)
 	{
 		if (getCfgEntity().type == TypeEntity::MAID && cfgSkill.unlock != "")//若技能需要解锁
 		{
-			_vecSkillNeedUnlock.push_back(vecSkillInfo);
+			_vecSkillActiveNeedUnlock.push_back(dataSkillInfo);
 			auto isUnlockSkill = handleDataUnlock->getIsUnlockSkill(idSkill, indexSkill);
 			if (!isUnlockSkill)//若未解锁
 			{
@@ -250,46 +248,53 @@ void DataEntity::setSkill(const string &skillInfo)
 		auto numTemp = num;
 		while (numTemp--)
 		{
-			_vecSkillActive.push_back(vecSkillInfo);
+			_vecSkillActive.push_back(dataSkillInfo);
 		}
 	}
 	else if (cfgSkill.type == TypeSkill::PASSIVE)
 	{
 		if (getCfgEntity().type == TypeEntity::MAID && cfgSkill.unlock != "")//若技能需要解锁
 		{
-			_vecSkillNeedUnlock.push_back(vecSkillInfo);
-			auto indexSkillUnlockMax = -1;
+			auto indexSkillLockMin = INT32_MAX;
+			auto indexSkillMax = 0;
 			for (auto var : dicCfgSkill)
 			{
 				auto indexSkillCurrent = var.first;
 				auto isUnlockSkill = handleDataUnlock->getIsUnlockSkill(idSkill, indexSkillCurrent);
-				if (isUnlockSkill && (indexSkillUnlockMax < indexSkillCurrent))//若解锁且最大小于当前
+				if (!isUnlockSkill && (indexSkillLockMin > indexSkillCurrent))//若解锁且最大小于当前
 				{
-					indexSkillUnlockMax = indexSkillCurrent;
+					indexSkillLockMin = indexSkillCurrent;
+				}
+				if (indexSkillMax < indexSkillCurrent)
+				{
+					indexSkillMax = indexSkillCurrent;
 				}
 			}
-			if (indexSkillUnlockMax == -1)
+			if (indexSkillLockMin != INT32_MAX)//若获取到最小未解锁index
 			{
-				return;
+				dataSkillInfo.index = indexSkillLockMin;
 			}
-			vecSkillInfo[1] = indexSkillUnlockMax;
+			else
+			{
+				dataSkillInfo.index = indexSkillMax;
+			}
 		}
-		_vecSkillPassive.push_back(vecSkillInfo);
+		_vecSkillPassive.push_back(dataSkillInfo);
 	}
 	else if (cfgSkill.type == TypeSkill::RANDOM)
 	{
-		_vecSkillRandom.push_back(vecSkillInfo);
+		_vecSkillRandom.push_back(dataSkillInfo);
 	}
 }
 
 void DataEntity::vecSkillClear()
 {
+	_vecSkillActiveNeedUnlock.clear();
 	_vecSkillActive.clear();
 	_vecSkillActiveInUse.clear();
 	_vecSkillActiveUseOver.clear();
 	_vecSkillPassive.clear();
 	_vecSkillRandom.clear();
-	_vecSkillNeedUnlock.clear();
 }
 
 HandleDataEntity::HandleDataEntity() :
@@ -399,12 +404,12 @@ void HandleDataEntity::dealSkillRandom(const function<void()> &func /*= nullptr*
 	}
 	auto isSet = false;
 	auto vecSkillRandom = getDataEntityMst()->getVecSkillRandom();
-	for (auto skillInfo : vecSkillRandom)
+	for (auto dataSkillInfo : vecSkillRandom)
 	{
-		auto idSkill = skillInfo[0];
-		auto indexSkill = skillInfo[1];
-		auto num = skillInfo[2];
-		auto odds = skillInfo[3];
+		auto idSkill = dataSkillInfo.id;
+		auto indexSkill = dataSkillInfo.index;
+		auto num = dataSkillInfo.num;
+		auto odds = dataSkillInfo.odds;
 		auto random = UtilRandom::randomBewteen(0.0f, 100.0f);
 		if (random < odds)
 		{
@@ -522,12 +527,15 @@ bool HandleDataEntity::isAllMaidDead()
 	auto isAllDead = true;
 	for (auto i = 0; i < ENTITY_BATTLE_MAX; i++)
 	{
-		auto dataEntity = _vecDataEntityMaid.at(i);
-		auto hp = dataEntity->getAttribute(IdAttribute::ENTITY_HP);
-		if (hp > 0)
+		if ((int)_vecDataEntityMaid.size() > i)
 		{
-			isAllDead = false;
-			break;
+			auto dataEntity = _vecDataEntityMaid.at(i);
+			auto hp = dataEntity->getAttribute(IdAttribute::ENTITY_HP);
+			if (hp > 0)
+			{
+				isAllDead = false;
+				break;
+			}
 		}
 	}
 	return isAllDead;
@@ -554,12 +562,12 @@ void HandleDataEntity::resetRound()
 bool HandleDataEntity::getIsSkillNeedSwitchMst(int &indexTo)
 {
 	auto vecSkillRandom = getDataEntityMst()->getVecSkillRandom();
-	for (auto skillInfo : vecSkillRandom)
+	for (auto dataSkillInfo : vecSkillRandom)
 	{
-		auto idSkill = skillInfo[0];
-		auto indexSkill = skillInfo[1];
-		auto num = skillInfo[2];
-		auto odds = skillInfo[3];
+		auto idSkill = dataSkillInfo.id;
+		auto indexSkill = dataSkillInfo.index;
+		auto num = dataSkillInfo.num;
+		auto odds = dataSkillInfo.odds;
 		auto random = UtilRandom::randomBewteen(0.0f, 100.0f);
 		if (random < odds)
 		{

@@ -7,10 +7,12 @@
 #include "data/define/DefinesRes.h"
 #include "ui/ManagerUI.h"
 #include "data/data/ManagerData.h"
+#include "data/config/ManagerCfg.h"
+#include "data/define/DefinesString.h"
 
 using namespace ui;
 
-LayerSkills::LayerSkills() : _skin(nullptr)
+LayerSkills::LayerSkills() : _skin(nullptr), _idEntityCurrent(DATA_UNLOCK_INIT_MAID)
 {
 }
 
@@ -70,7 +72,7 @@ void LayerSkills::createSkin()
 	
 	updateLayoutBtns();
 
-	updateLayoutSkillItems(DATA_UNLOCK_INIT_MAID);
+	updateLayoutSkillItems();
 }
 
 void LayerSkills::updateLayoutBtns()
@@ -107,25 +109,29 @@ void LayerSkills::onTouchBtnMaid(Ref *ref, Widget::TouchEventType type)
 	{
 		auto btn = (Button *)ref;
 		cocostudio::ComExtensionData* data = dynamic_cast<cocostudio::ComExtensionData*>(btn->getComponent("ComExtensionData"));
-		auto idEntity = Value(data->getCustomProperty()).asInt();
-		updateLayoutSkillItems(idEntity);
+		_idEntityCurrent = Value(data->getCustomProperty()).asInt();
+		updateLayoutSkillItems();
 	}
 }
 
-void LayerSkills::updateLayoutSkillItems(const int &idEntity)
+void LayerSkills::updateLayoutSkillItems()
 {
 	auto layoutSkillItems = (Layout *)_skin->getChildByName("layoutSkillItems");
 	auto vecdataEntityMaid = ManagerData::getInstance()->getHandleDataEntity()->getVecDataEntityMaid();
 	DataEntity *dataEntity = nullptr;
 	for (auto var : vecdataEntityMaid)
 	{
-		if (var->getIdEntity() == idEntity)
+		if (var->getIdEntity() == _idEntityCurrent)
 		{
 			dataEntity = var;
 			break;
 		}
 	}
-	CCASSERT(dataEntity != nullptr, "LayerSkills::updateLayoutSkillItems idEntity wrong");
+	CCASSERT(dataEntity != nullptr, "LayerSkills::updateLayoutSkillItems _idEntityCurrent wrong");
+	auto vecSkillActiveNeedUnlock = dataEntity->getVecSkillActiveNeedUnlock();
+	auto lengthVecSkillActiveNeedUnlock = (int)vecSkillActiveNeedUnlock.size();
+	auto vecSkillPassive = dataEntity->getVecSkillPassive();
+
 	auto index = 0;
 	while (true)
 	{
@@ -134,39 +140,72 @@ void LayerSkills::updateLayoutSkillItems(const int &idEntity)
 		{
 			break;
 		}
-		auto txt = (Text *)layoutSkillItem->getChildByName("txt");
-		auto btn = (Button *)layoutSkillItem->getChildByName("btn");
 
-		auto vec = dataEntity->vecSkillActiveInfoGet();
-		auto vecSkillNeedUnlock = dataEntity->getVecSkillNeedUnlock();
-		if ((int)vecSkillNeedUnlock.size() > index)
+		if (lengthVecSkillActiveNeedUnlock > index)
 		{
-			auto vecInfo = vecSkillNeedUnlock[index];
-			txt->setString("");
-			btn->setTouchEnabled(true);
-			auto idSkill = (int)btn->getUserData();
-			if (idSkill == 0)
-			{
-				btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkill, this));
-			}
-			btn->setUserData((void *)vecInfo);
+			auto dataSkillInfo = vecSkillActiveNeedUnlock[index];
+			updateLayoutSKillItem(layoutSkillItem, true, dataSkillInfo);
+		}
+		else if ((int)vecSkillPassive.size() > index - lengthVecSkillActiveNeedUnlock)
+		{
+			auto dataSkillInfo = vecSkillPassive[index - lengthVecSkillActiveNeedUnlock];
+			updateLayoutSKillItem(layoutSkillItem, true, dataSkillInfo);
 		}
 		else
 		{
-			txt->setString("");
-			btn->setTouchEnabled(false);
+			updateLayoutSKillItem(layoutSkillItem, false, {});
 		}
-		
+
 		index++;
 	}
 }
 
-void LayerSkills::onTouchBtnSkill(Ref *ref, Widget::TouchEventType type)
+void LayerSkills::updateLayoutSKillItem(Layout *layoutSkillItem, const bool &isGet, const DataSkillInfo &dataSkillInfo)
+{
+	auto txt = (Text *)layoutSkillItem->getChildByName("txt");
+	auto btn = (Button *)layoutSkillItem->getChildByName("btn");
+	btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkill, this, dataSkillInfo));
+
+	if (isGet)
+	{
+		auto cfgSkill = ManagerCfg::getInstance()->getDicDicCfgSkill()[dataSkillInfo.id][dataSkillInfo.index];
+		txt->setString(cfgSkill.desc);
+
+		btn->setVisible(true);
+		auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
+		auto isUnlock = handleDataUnlock->getIsUnlockSkill(dataSkillInfo.id, dataSkillInfo.index);
+		if (!isUnlock)//ÈôÎ´½âËø
+		{
+			btn->setTouchEnabled(true);
+		}
+		else
+		{
+			btn->setTitleText(STR_FILLED);
+			btn->setTouchEnabled(false);
+		}
+	}
+	else
+	{
+		txt->setString("");
+		btn->setVisible(false);
+	}
+}
+
+void LayerSkills::onTouchBtnSkill(Ref *ref, Widget::TouchEventType type, const DataSkillInfo &dataSkillInfo)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
-		auto btn = (Button *)ref;
-		auto idSkill = (int)btn->getUserData();
+		auto id = dataSkillInfo.id;
+		auto index = dataSkillInfo.index;
 
+		if (true)
+		{
+			auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
+			handleDataUnlock->setIsUnlockSkill(id, index);
+			handleDataUnlock->dataFileSet();
+			auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+			handleDataEntity->getDataEntityMaid()->updateSkillGroup();
+			updateLayoutSkillItems();
+		}
 	}
 }

@@ -53,9 +53,9 @@ void Grid::createDataGridSkill(const bool &isMst)
 	auto managerData = ManagerData::getInstance();
 	auto handleDataEntity = managerData->getHandleDataEntity();
 	auto dataEntity = isMst ? handleDataEntity->getDataEntityMst() : handleDataEntity->getDataEntityMaid();
-	auto vecSkillInfo = dataEntity->vecSkillActiveInfoGet();
-	auto idSkill = vecSkillInfo[0];
-	auto indexSkill = vecSkillInfo[1];
+	auto dataSkillInfo = dataEntity->vecSkillActiveInfoGet();
+	auto idSkill = dataSkillInfo.id;
+	auto indexSkill = dataSkillInfo.index;
 	_dataGrid->setIdSkill(idSkill);
 	_dataGrid->setIndexSkill(indexSkill);
 	_dataGrid->updateSkillEffect();

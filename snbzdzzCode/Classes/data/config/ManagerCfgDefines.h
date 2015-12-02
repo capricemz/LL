@@ -30,12 +30,19 @@ struct CfgSkill//指令
 };
 typedef map<int32_t, map<int32_t, CfgSkill>> DicDicCfgSkill;
 //
+struct DataSkillInfo
+{
+	int id;
+	int index;
+	int num;
+	int odds;
+};
 struct CfgSkillGroup//指令组
 {
 	int id;//标志
 	string typeArgs;//条件 类型(1血量百分比2能量值3总回合4回合):参数
 	int index;//排序
-	string skills;//技能标志 idSkill:indexSkill:num:odds
+	vector<DataSkillInfo> skills;//技能标志
 };
 typedef map<int32_t, map<string, map<int32_t, CfgSkillGroup>>> DicDicDicCfgSkillGroup;
 typedef map<int32_t, vector<string>> DicVecCfgSkillGroupTypeArgs;

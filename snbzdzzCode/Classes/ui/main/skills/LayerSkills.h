@@ -6,6 +6,8 @@
 #include "cocos2d.h"
 #include "ui/common/ILayerAppearDisappear.h"
 #include "ui/UIWidget.h"
+#include "ui/UILayout.h"
+#include "data/config/ManagerCfgDefines.h"
 
 USING_NS_CC;
 using namespace ui;
@@ -30,11 +32,14 @@ private:
 	void createSkin();
 	void updateLayoutBtns();
 	void onTouchBtnMaid(Ref *ref, Widget::TouchEventType type);
-	void updateLayoutSkillItems(const int &idEntity);
-	void onTouchBtnSkill(Ref *ref, Widget::TouchEventType type);
+	void updateLayoutSkillItems();
+	void updateLayoutSKillItem(Layout *layoutSkillItem, const bool &isGet, const DataSkillInfo &dataSkillInfo);
+	void onTouchBtnSkill(Ref *ref, Widget::TouchEventType type, const DataSkillInfo &dataSkillInfo);
 	
 private:
 	Layer *_skin;
+
+	int _idEntityCurrent;
 	
 };
 

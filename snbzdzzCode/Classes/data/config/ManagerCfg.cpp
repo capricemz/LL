@@ -166,7 +166,19 @@ void ManagerCfg::assignCfgSkillGroup(const VectorString &vecItem)
 	cfg.id = Value(vecItem[0]).asInt();
 	cfg.typeArgs = vecItem[1];
 	cfg.index = Value(vecItem[2]).asInt();
-	cfg.skills = vecItem[3];
+	auto strSkills = vecItem[3];
+	CCASSERT(strSkills != "", "ManagerCfg::assignCfgSkillGroup strSkills is """);
+	auto vec = UtilString::split(strSkills, "|");
+	for (auto var : vec)
+	{
+		auto vecSkillInfo = UtilString::split(var, ":");
+		DataSkillInfo dt;
+		dt.id = Value(vecSkillInfo[0]).asInt();
+		dt.index = Value(vecSkillInfo[1]).asInt();
+		dt.num = Value(vecSkillInfo[2]).asInt();
+		dt.odds = Value(vecSkillInfo[3]).asInt();
+		cfg.skills.push_back(dt);
+	}
 	_dicDicDicCfgSkillGroup[cfg.id][cfg.typeArgs][cfg.index] = cfg;
 }
 

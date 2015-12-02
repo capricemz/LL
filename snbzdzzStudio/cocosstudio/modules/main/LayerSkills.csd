@@ -117,20 +117,20 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutSkillItems" ActionTag="1958874509" Tag="28" IconVisible="False" TopMargin="150.0004" BottomMargin="109.9997" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutSkillItems" ActionTag="1958874509" Tag="28" IconVisible="False" TopMargin="150.0003" BottomMargin="109.9997" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="640.0000" Y="700.0000" />
             <Children>
               <AbstractNodeData Name="layoutSkillItem0" ActionTag="1091412483" Tag="182" IconVisible="False" LeftMargin="70.0000" RightMargin="270.0000" TopMargin="20.0007" BottomMargin="599.9993" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="300.0000" Y="80.0000" />
                 <Children>
-                  <AbstractNodeData Name="txt" ActionTag="1008203320" Tag="181" IconVisible="False" RightMargin="130.0000" BottomMargin="-25.0000" FontSize="30" LabelText="Text Label&#xA;dsfsdf&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="170.0000" Y="70.0000" />
+                  <AbstractNodeData Name="txt" ActionTag="1008203320" Tag="181" IconVisible="False" RightMargin="80.0000" TopMargin="5.0000" BottomMargin="5.0000" IsCustomSize="True" FontSize="30" LabelText="Text Label&#xA;dsfsdf&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="220.0000" Y="70.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position Y="80.0000" />
+                    <Position Y="75.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition Y="1.0000" />
-                    <PreSize X="0.1781" Y="0.0250" />
+                    <PrePosition Y="0.9375" />
+                    <PreSize X="0.7333" Y="0.8750" />
                     <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -157,7 +157,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1094" Y="0.8571" />
-                <PreSize X="1.5000" Y="0.4000" />
+                <PreSize X="0.4688" Y="0.1143" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
@@ -166,14 +166,14 @@
               <AbstractNodeData Name="layoutSkillItem1" ActionTag="1390131450" Tag="183" IconVisible="False" LeftMargin="109.9995" RightMargin="230.0005" TopMargin="140.0009" BottomMargin="479.9991" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="300.0000" Y="80.0000" />
                 <Children>
-                  <AbstractNodeData Name="txt" ActionTag="-1702685699" Tag="185" IconVisible="False" RightMargin="130.0000" BottomMargin="10.0000" FontSize="30" LabelText="Text Label&#xA;213" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="170.0000" Y="70.0000" />
+                  <AbstractNodeData Name="txt" ActionTag="-1702685699" Tag="185" IconVisible="False" RightMargin="80.0000" TopMargin="5.0000" BottomMargin="5.0000" IsCustomSize="True" FontSize="30" LabelText="Text Label&#xA;213" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="220.0000" Y="70.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position Y="80.0000" />
+                    <Position Y="75.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition Y="1.0000" />
-                    <PreSize X="0.1781" Y="0.0250" />
+                    <PrePosition Y="0.9375" />
+                    <PreSize X="0.7333" Y="0.8750" />
                     <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -200,7 +200,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1719" Y="0.6857" />
-                <PreSize X="0.4688" Y="0.1250" />
+                <PreSize X="0.4688" Y="0.1143" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
@@ -209,14 +209,14 @@
               <AbstractNodeData Name="layoutSkillItem2" ActionTag="1379822423" Tag="186" IconVisible="False" LeftMargin="149.9992" RightMargin="190.0008" TopMargin="260.0004" BottomMargin="359.9996" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="300.0000" Y="80.0000" />
                 <Children>
-                  <AbstractNodeData Name="txt" ActionTag="1700653335" Tag="188" IconVisible="False" RightMargin="130.0000" BottomMargin="45.0000" FontSize="30" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="170.0000" Y="35.0000" />
+                  <AbstractNodeData Name="txt" ActionTag="1700653335" Tag="188" IconVisible="False" RightMargin="80.0000" TopMargin="5.0000" BottomMargin="5.0000" IsCustomSize="True" FontSize="30" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="220.0000" Y="70.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position Y="80.0000" />
+                    <Position Y="75.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition Y="1.0000" />
-                    <PreSize X="0.1781" Y="0.0250" />
+                    <PrePosition Y="0.9375" />
+                    <PreSize X="0.7333" Y="0.8750" />
                     <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -243,7 +243,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2344" Y="0.5143" />
-                <PreSize X="1.5000" Y="0.4000" />
+                <PreSize X="0.4688" Y="0.1143" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
@@ -252,14 +252,14 @@
               <AbstractNodeData Name="layoutSkillItem3" ActionTag="1053568912" Tag="189" IconVisible="False" LeftMargin="189.9987" RightMargin="150.0013" TopMargin="380.0004" BottomMargin="239.9996" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="300.0000" Y="80.0000" />
                 <Children>
-                  <AbstractNodeData Name="txt" ActionTag="-1716799639" Tag="191" IconVisible="False" RightMargin="130.0000" BottomMargin="45.0000" FontSize="30" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="170.0000" Y="35.0000" />
+                  <AbstractNodeData Name="txt" ActionTag="-1716799639" Tag="191" IconVisible="False" RightMargin="80.0000" TopMargin="5.0000" BottomMargin="5.0000" IsCustomSize="True" FontSize="30" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="220.0000" Y="70.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position Y="80.0000" />
+                    <Position Y="75.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition Y="1.0000" />
-                    <PreSize X="0.1781" Y="0.0250" />
+                    <PrePosition Y="0.9375" />
+                    <PreSize X="0.7333" Y="0.8750" />
                     <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -286,23 +286,23 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2969" Y="0.3429" />
-                <PreSize X="1.5000" Y="0.4000" />
+                <PreSize X="0.4688" Y="0.1143" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="layoutSkillItem4" ActionTag="-223540636" Tag="22" IconVisible="False" LeftMargin="229.9986" RightMargin="110.0013" TopMargin="499.9997" BottomMargin="120.0003" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+              <AbstractNodeData Name="layoutSkillItem4" ActionTag="-223540636" Tag="22" IconVisible="False" LeftMargin="229.9986" RightMargin="110.0014" TopMargin="499.9997" BottomMargin="120.0003" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="300.0000" Y="80.0000" />
                 <Children>
-                  <AbstractNodeData Name="txt" ActionTag="70286954" Tag="23" IconVisible="False" RightMargin="130.0000" BottomMargin="45.0000" FontSize="30" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="170.0000" Y="35.0000" />
+                  <AbstractNodeData Name="txt" ActionTag="70286954" Tag="23" IconVisible="False" RightMargin="80.0000" TopMargin="5.0000" BottomMargin="5.0000" IsCustomSize="True" FontSize="30" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="220.0000" Y="70.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position Y="80.0000" />
+                    <Position Y="75.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition Y="1.0000" />
-                    <PreSize X="0.1781" Y="0.0250" />
+                    <PrePosition Y="0.9375" />
+                    <PreSize X="0.7333" Y="0.8750" />
                     <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -329,7 +329,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3594" Y="0.1714" />
-                <PreSize X="1.5000" Y="0.4000" />
+                <PreSize X="0.4688" Y="0.1143" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
@@ -338,14 +338,14 @@
               <AbstractNodeData Name="layoutSkillItem5" ActionTag="679833483" Tag="25" IconVisible="False" LeftMargin="269.9999" RightMargin="70.0001" TopMargin="619.9996" BottomMargin="0.0004" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="300.0000" Y="80.0000" />
                 <Children>
-                  <AbstractNodeData Name="txt" ActionTag="-2060600731" Tag="26" IconVisible="False" RightMargin="130.0000" BottomMargin="45.0000" FontSize="30" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                    <Size X="170.0000" Y="35.0000" />
+                  <AbstractNodeData Name="txt" ActionTag="-2060600731" Tag="26" IconVisible="False" RightMargin="80.0000" TopMargin="5.0000" BottomMargin="5.0000" IsCustomSize="True" FontSize="30" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="220.0000" Y="70.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position Y="80.0000" />
+                    <Position Y="75.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition Y="1.0000" />
-                    <PreSize X="0.1781" Y="0.0250" />
+                    <PrePosition Y="0.9375" />
+                    <PreSize X="0.7333" Y="0.8750" />
                     <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
@@ -372,7 +372,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4219" Y="0.0000" />
-                <PreSize X="1.5000" Y="0.4000" />
+                <PreSize X="0.4688" Y="0.1143" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />

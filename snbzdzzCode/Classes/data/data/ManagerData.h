@@ -193,27 +193,27 @@ class DataEntity : public Ref
 		void addAttribute(IdAttribute idAttribute, int value);//idAttribute 元素id, value 正值增加，负值减少
 		bool getIsAlive();
 
-		vector<int> vecSkillActiveInfoGet();//获取技能信息
+		DataSkillInfo &vecSkillActiveInfoGet();//获取技能信息
 		void vecSkillActiveInUse2UseOver();//加使用的牌放入弃牌库
 		bool vecSkillActiveIsAllUse();//是否取完牌库
 		void vecSkillActiveSort(const bool &isAll = false);//洗牌
-		vector<vector<int>> getVecSkillPassive()
+		vector<DataSkillInfo> &getVecSkillPassive()
 		{
 			return _vecSkillPassive;
 		}
-		vector<vector<int>> getVecSkillRandom()//vector:0idSkill1index2num3odds
+		vector<DataSkillInfo> &getVecSkillRandom()//
 		{
 			return _vecSkillRandom;
 		}
-		vector<vector<int>> getVecSkillNeedUnlock()
+		vector<DataSkillInfo> &getVecSkillActiveNeedUnlock()
 		{
-			return _vecSkillNeedUnlock;
+			return _vecSkillActiveNeedUnlock;
 		}
 		/*设置技能
 		idSkill 技能表id
 		index 技能表index
 		num 数量*/
-		void setSkill(const string &skillInfo);
+		void setSkill(DataSkillInfo &dataSkillInfo);
 		void vecSkillClear();
 
 		int getRound() const//获取当前回合数
@@ -237,12 +237,12 @@ class DataEntity : public Ref
 		int _idEntity;//idEntity
 		int _index;
 		map<IdAttribute, int> _dicAttribute;//idAttribute value
-		vector<vector<int>> _vecSkillActive;//vector:0idSkill1index2num3odds
-		vector<vector<int>> _vecSkillActiveInUse;//vector:0idSkill1index2num3odds
-		vector<vector<int>> _vecSkillActiveUseOver;//vector:0idSkill1index2num3odds
-		vector<vector<int>> _vecSkillPassive;//vector:0idSkill1index2num3odds
-		vector<vector<int>> _vecSkillRandom;//vector:0idSkill1index2num3odds
-		vector<vector<int>> _vecSkillNeedUnlock;//vector:0idSkill1index2num3odds
+		vector<DataSkillInfo> _vecSkillActiveNeedUnlock;
+		vector<DataSkillInfo> _vecSkillActive;
+		vector<DataSkillInfo> _vecSkillActiveInUse;
+		vector<DataSkillInfo> _vecSkillActiveUseOver;
+		vector<DataSkillInfo> _vecSkillPassive;
+		vector<DataSkillInfo> _vecSkillRandom;
 
 		int _round;//回合数
 		
