@@ -280,6 +280,10 @@ class HandleDataEntity
 		{
 			return _vecDataEntityMst.at(_indexMst);
 		}
+		void swapVecDataEntityMst(const int &index0, const int &index1)
+		{
+			_vecDataEntityMst.swap(index0, index1);
+		}
 		void clearVecDataEntityMst()
 		{
 			_vecDataEntityMst.clear();
@@ -291,6 +295,10 @@ class HandleDataEntity
 		DataEntity * getDataEntityMaid() const//获取当前女仆DataEntity
 		{
 			return _vecDataEntityMaid.at(_indexMaid);
+		}
+		void swapVecDataEntityMaid(const int &index0, const int &index1)
+		{
+			_vecDataEntityMaid.swap(index0, index1);
 		}
 
 		int getLengthVecDataEntity(const bool &isMst);
@@ -370,6 +378,14 @@ class DataLevel : public Ref
 		{
 			return _id;
 		}
+		int getIndex() const
+		{
+			return _index;
+		}
+		void setIndex(const int &value)
+		{
+			_index = value;
+		}
 		CfgLevel getCfgLevel() const;
 		TypeLevelState getState() const
 		{
@@ -387,9 +403,11 @@ class DataLevel : public Ref
 			}
 			return _vecTargetComplete[index];
 		}
+		string getLevelTargetStr(const int &index) const;
 		
 	private:
 		int _id;
+		int _index;
 		TypeLevelState _state;
 		vector<bool> _vecTargetComplete;
 		

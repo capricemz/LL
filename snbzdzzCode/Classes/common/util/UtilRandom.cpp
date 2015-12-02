@@ -50,7 +50,8 @@ float UtilRandom::randomWave( float value, float wave )
 float UtilRandom::randomBewteen( float valueMin, float valueMax )
 {
 	auto r = random();
-	return valueMin + (valueMax - valueMin) * r;
+	r = valueMin + (valueMax - valueMin) * r;
+	return r == valueMax ? r - 0.0001f : r;
 }
 /*
 根据probabilityDistribution数组中的概率分布获得随机值

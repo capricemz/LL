@@ -8,6 +8,7 @@
 #include "ui/CocosGUI.h"
 #include "ui/common/ILayerAppearDisappear.h"
 #include "data/data/ManagerData.h"
+#include "LayerMaidSelect.h"
 
 USING_NS_CC;
 using namespace ui;
@@ -30,11 +31,13 @@ public:
 	
 private:
 	void createSkin();
+	void updateNodeLevel(Node *nodeLevel, DataLevel *dataLevel);
 	void onTouchBtnLv(Ref *ref, Widget::TouchEventType type);
-	void updateNodeLevel(const int &index, Node *nodeLevel, DataLevel *dataLevel);
+	void showLayerMaidSelect();
 	
 private:
 	Layer *_skin;
+	/*LayerMaidSelect *_layerMaidSelect;*/
 	
 };
 

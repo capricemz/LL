@@ -74,8 +74,9 @@ void LayerLevels::createSkin()
 		cocostudio::ComExtensionData* data = dynamic_cast<cocostudio::ComExtensionData*>(nodeLevel->getComponent("ComExtensionData"));
 		auto idLevel = Value(data->getCustomProperty()).asInt();
 		auto dataLevel = dicDataLevel.at(idLevel);
+		dataLevel->setIndex(index);
 		
-		updateNodeLevel(index, nodeLevel, dataLevel);
+		updateNodeLevel(nodeLevel, dataLevel);
 
 		index++;
 	}
@@ -90,7 +91,7 @@ void LayerLevels::createSkin()
 	});
 }
 
-void LayerLevels::updateNodeLevel(const int &index, Node *nodeLevel, DataLevel *dataLevel)
+void LayerLevels::updateNodeLevel(Node *nodeLevel, DataLevel *dataLevel)
 {
 	auto cfgLevel = dataLevel->getCfgLevel();
 	auto layout = (Layout *)nodeLevel->getChildByName("layout");
@@ -99,7 +100,7 @@ void LayerLevels::updateNodeLevel(const int &index, Node *nodeLevel, DataLevel *
 	spriteState->setVisible(dataLevel->getState() == TypeLevelState::PASSED);
 	
 	auto txtLevel = (Text *)nodeLevel->getChildByName("txtLevel");
-	txtLevel->setString(STR_LEVEL_0 + Value(index + 1).asString() + STR_LEVEL_1);
+	txtLevel->setString(STR_LEVEL_0 + Value(dataLevel->getIndex() + 1).asString() + STR_LEVEL_1);
 
 	auto txtName = (Text *)nodeLevel->getChildByName("txtName");
 	txtName->setString(cfgLevel.name);
@@ -162,6 +163,13 @@ void LayerLevels::onTouchBtnLv(Ref *ref, Widget::TouchEventType type)
 		auto btn = (Button *)ref;
 		auto idLevel = (int)btn->getUserData();
 		ManagerData::getInstance()->getHandleDataLevels()->setLevelCurrent(idLevel);
-		ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_BATTLE);
+		showLayerMaidSelect();
 	}
+}
+
+void LayerLevels::showLayerMaidSelect()
+{
+	auto layerMaidSelect = LayerMaidSelect::create();
+	addChild(layerMaidSelect);
+	layerMaidSelect->runAppear(nullptr);
 }

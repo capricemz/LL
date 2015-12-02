@@ -4,7 +4,7 @@
 #include "common/util/UtilString.h"
 #include "../config/ManagerCfg.h"
 
-DataLevel::DataLevel() : _id(0), _state(TypeLevelState::NONE), _vecTargetComplete({})
+DataLevel::DataLevel() : _id(0), _index(0), _state(TypeLevelState::NONE), _vecTargetComplete({})
 {
 }
 
@@ -162,6 +162,11 @@ CfgLevel DataLevel::getCfgLevel() const
 {
 	auto cfgLevel = ManagerCfg::getInstance()->getDicCfgLevels()[_id];
 	return cfgLevel;
+}
+
+std::string DataLevel::getLevelTargetStr(const int &index) const
+{
+	return Value(index).asString();
 }
 
 HandleDataLevels::HandleDataLevels() : _dicDataLevel({}), _levelCurrent(0)

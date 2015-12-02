@@ -21,7 +21,6 @@ public:
 
 	virtual bool init();
 
-	void createSkin();
 	void setInfo(const bool &isMst, const int &indexDataEntity);
 
 	void updateAll();
@@ -56,7 +55,10 @@ public:
 	}
 
 	DataEntity *getDataEntity();
-
+	
+public:
+	void createSkin();
+	
 private:
 	Node *_skin;
 	bool _isMst;

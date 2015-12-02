@@ -124,6 +124,7 @@
             <Project Name="LayerGridSelect.csd" Type="Layer" />
             <Project Name="NodeHead.csd" Type="Node" />
             <Project Name="NodeLevel.csd" Type="Node" />
+            <Project Name="LayerMaidSelect.csd" Type="Layer" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />
