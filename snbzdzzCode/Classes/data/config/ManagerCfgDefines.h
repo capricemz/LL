@@ -25,7 +25,7 @@ struct CfgSkill//指令
 	string name;//名称
 	TypeSkill type;//类型
 	string effect;//效果
-	string unlock;//解锁
+	int buyCost;//购买花费
 	string desc;//描述
 };
 typedef map<int32_t, map<int32_t, CfgSkill>> DicDicCfgSkill;
@@ -70,7 +70,9 @@ struct CfgLevel//关卡
 	int roundLimit;//回合限制
 	bool isRoundLimitWin;//是否回合限制获胜
 	vector<int> targets;//目标
-	int unlockLevel;//解锁的关卡
+	vector<int> unlockLevels;//解锁关卡
+	vector<vector<int>> unlockSkills;//解锁技能
+	vector<int> unlockMaids;//解锁女仆
 };
 typedef map<int32_t, CfgLevel> DicCfgLevels;
 //

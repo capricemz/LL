@@ -130,8 +130,8 @@ void LayerSkills::updateLayoutSkillItems()
 		}
 	}
 	CCASSERT(dataEntity != nullptr, "LayerSkills::updateLayoutSkillItems _idEntityCurrent wrong");
-	auto vecSkillActiveNeedUnlock = dataEntity->getVecSkillActiveNeedUnlock();
-	auto lengthVecSkillActiveNeedUnlock = (int)vecSkillActiveNeedUnlock.size();
+	auto vecSkillActiveNeedBuy = dataEntity->getVecSkillActiveNeedBuy();
+	auto lengthVecSkillActiveNeedBuy = (int)vecSkillActiveNeedBuy.size();
 	auto vecSkillPassive = dataEntity->getVecSkillPassive();
 
 	auto index = 0;
@@ -143,14 +143,14 @@ void LayerSkills::updateLayoutSkillItems()
 			break;
 		}
 
-		if (lengthVecSkillActiveNeedUnlock > index)
+		if (lengthVecSkillActiveNeedBuy > index)
 		{
-			auto dataSkillInfo = vecSkillActiveNeedUnlock[index];
+			auto dataSkillInfo = vecSkillActiveNeedBuy[index];
 			updateLayoutSKillItem(layoutSkillItem, true, dataSkillInfo);
 		}
-		else if ((int)vecSkillPassive.size() > index - lengthVecSkillActiveNeedUnlock)
+		else if ((int)vecSkillPassive.size() > index - lengthVecSkillActiveNeedBuy)
 		{
-			auto dataSkillInfo = vecSkillPassive[index - lengthVecSkillActiveNeedUnlock];
+			auto dataSkillInfo = vecSkillPassive[index - lengthVecSkillActiveNeedBuy];
 			updateLayoutSKillItem(layoutSkillItem, true, dataSkillInfo);
 		}
 		else
@@ -217,6 +217,7 @@ void LayerSkills::onTouchBtnSkill(Ref *ref, Widget::TouchEventType type, const D
 			handleDataUnlock->dataFileSet();
 			auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
 			handleDataEntity->getDataEntityMaid()->updateSkillGroup();
+			handleDataEntity->getDataEntityMaid()->updateAttributeSkillPassive();
 			updateLayoutSkillItems();
 		}
 	}

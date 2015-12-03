@@ -288,7 +288,9 @@ void ManagerGrid::dealDamage(DataGrid *dataGridCase, DataGrid *dataGridTakes, Da
 	damageMagic = blockAllTakes == 0 ? damageMagic : 0;//若有抵挡全部伤害，魔法伤害置为0
 
 	auto physicalAttackCase = dataEntityCase->getAttribute(IdAttribute::ENTITY_PHYSICAL_ATTACK);//物理攻击
+	physicalAttackCase += dataEntityCase->getAttribute(IdAttribute::ENTITY_PHYSICAL_ATTACK_EXTRA);//物理攻击额外
 	auto magicAttackCase = dataEntityCase->getAttribute(IdAttribute::ENTITY_MAGIC_ATTACK);//魔法攻击
+	magicAttackCase += dataEntityCase->getAttribute(IdAttribute::ENTITY_MAGIC_ATTACK_EXTRA);//魔法攻击额外
 
 	auto valueDamage = damagePhysical * physicalAttackCase + damageMagic * magicAttackCase;//实际伤害值
 

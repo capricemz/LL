@@ -10,9 +10,13 @@ HandleDataTime::~HandleDataTime()
 
 void HandleDataTime::dataFileInit()
 {
-	auto userDefault = UserDefault::getInstance();
-	userDefault->setStringForKey(USER_DEFAULT_KEY_DT.c_str(), "");//写入初始数据
-	userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io
+	if (!_isDataFileInit)
+	{
+		_isDataFileInit = true;
+		auto userDefault = UserDefault::getInstance();
+		userDefault->setStringForKey(USER_DEFAULT_KEY_DT.c_str(), "");//写入初始数据
+		userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io
+	}
 }
 
 void HandleDataTime::dataFileGet()

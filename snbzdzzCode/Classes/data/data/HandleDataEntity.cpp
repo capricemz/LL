@@ -12,12 +12,12 @@ DataEntity::DataEntity() :
 	_idEntity(0),
 	_index(0),
 	_dicAttribute({}),
+	_vecSkillActiveNeedBuy({}),
 	_vecSkillActiveInUse({}),
 	_vecSkillActiveUseOver({}),
 	_vecSkillActive({}),
 	_vecSkillPassive({}),
 	_vecSkillRandom({}),
-	_vecSkillActiveNeedUnlock({}),
 	_round(0)
 {
 
@@ -123,6 +123,35 @@ void DataEntity::updateSkillGroup()
 	for (auto dataSkillInfo : vecDataSkillInfo)
 	{
 		setSkill(dataSkillInfo);
+	}
+}
+
+void DataEntity::updateAttributeSkillPassive()
+{
+	auto managerCfg = ManagerCfg::getInstance();
+	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
+	for (auto dataSkillInfo : _vecSkillPassive)
+	{
+		auto isBuy = handleDataUnlock->getIsBuySkill(dataSkillInfo.id, dataSkillInfo.index);
+		auto indexSkill = dataSkillInfo.index + (!isBuy ? -1 : 0);
+		if (indexSkill < 0)
+		{
+			continue;
+		}
+		
+		auto cfgSkill = managerCfg->getDicDicCfgSkill()[dataSkillInfo.id][indexSkill];
+		auto vecAttrItem = UtilString::split(cfgSkill.effect, "|");
+		for (auto strAttrItem : vecAttrItem)
+		{
+			auto vecAttr = UtilString::split(strAttrItem, ":");
+			auto idAttribute = (IdAttribute)Value(vecAttr[0]).asInt();
+			auto value = Value(vecAttr[1]).asInt();
+			auto cfgAttribute = managerCfg->getDicCfgAttribute()[(int)idAttribute];
+			if (cfgAttribute.type == TypeAttribute::ENTITY)
+			{
+				setAttribute(idAttribute, value);
+			}
+		}
 	}
 }
 
@@ -236,9 +265,9 @@ void DataEntity::setSkill(DataSkillInfo &dataSkillInfo)
 	auto cfgSkill = dicCfgSkill[indexSkill];
 	if (cfgSkill.type == TypeSkill::ACTIVE)
 	{
-		if (getCfgEntity().type == TypeEntity::MAID && cfgSkill.unlock != "")//若技能需要解锁
+		if (getCfgEntity().type == TypeEntity::MAID && cfgSkill.buyCost != 0)//若技能需要购买
 		{
-			_vecSkillActiveNeedUnlock.push_back(dataSkillInfo);
+			_vecSkillActiveNeedBuy.push_back(dataSkillInfo);
 			auto isBuy = handleDataUnlock->getIsBuySkill(idSkill, indexSkill);
 			if (!isBuy)//若未购买
 			{
@@ -253,7 +282,7 @@ void DataEntity::setSkill(DataSkillInfo &dataSkillInfo)
 	}
 	else if (cfgSkill.type == TypeSkill::PASSIVE)
 	{
-		if (getCfgEntity().type == TypeEntity::MAID && cfgSkill.unlock != "")//若技能需要解锁
+		if (getCfgEntity().type == TypeEntity::MAID && cfgSkill.buyCost != 0)//若技能需要购买
 		{
 			auto indexSkillUnbuyMin = INT32_MAX;
 			auto indexSkillMax = 0;
@@ -261,7 +290,7 @@ void DataEntity::setSkill(DataSkillInfo &dataSkillInfo)
 			{
 				auto indexSkillCurrent = var.first;
 				auto isBuy = handleDataUnlock->getIsBuySkill(idSkill, indexSkillCurrent);
-				if (!isBuy && (indexSkillUnbuyMin > indexSkillCurrent))//若未购买且最小大于当前
+				if (!isBuy && (indexSkillUnbuyMin > indexSkillCurrent))//若未购买且最小未购买大于当前
 				{
 					indexSkillUnbuyMin = indexSkillCurrent;
 				}
@@ -289,7 +318,7 @@ void DataEntity::setSkill(DataSkillInfo &dataSkillInfo)
 
 void DataEntity::vecSkillClear()
 {
-	_vecSkillActiveNeedUnlock.clear();
+	_vecSkillActiveNeedBuy.clear();
 	_vecSkillActive.clear();
 	_vecSkillActiveInUse.clear();
 	_vecSkillActiveUseOver.clear();
@@ -298,6 +327,7 @@ void DataEntity::vecSkillClear()
 }
 
 HandleDataEntity::HandleDataEntity() :
+	_isDataFileInit(false),
 	_vecDataEntityMst({}),
 	_vecDataEntityMaid({}),
 	_indexMst(0), 
@@ -314,9 +344,13 @@ HandleDataEntity::~HandleDataEntity()
 
 void HandleDataEntity::dataFileInit()
 {
-	auto userDefault = UserDefault::getInstance();
-	userDefault->setStringForKey(USER_DEFAULT_KEY_DE.c_str(), "");//写入初始数据
-	userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io
+	if (!_isDataFileInit)
+	{
+		_isDataFileInit = true;
+		auto userDefault = UserDefault::getInstance();
+		userDefault->setStringForKey(USER_DEFAULT_KEY_DE.c_str(), "");//写入初始数据
+		userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io
+	}
 }
 
 void HandleDataEntity::dataFileGet()
@@ -355,6 +389,7 @@ void HandleDataEntity::resetDataEntityMaid()
 
 void HandleDataEntity::createDataEntityMaid()
 {
+	_vecDataEntityMaid.clear();
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
 	auto dicCfgEntity = ManagerCfg::getInstance()->getDicCfgEntity();
 	for (auto var : dicCfgEntity)
@@ -366,6 +401,24 @@ void HandleDataEntity::createDataEntityMaid()
 			auto dataEntity = createDataEntity(Value(idEntity).asInt());
 			_vecDataEntityMaid.pushBack(dataEntity);
 		}
+	}
+}
+
+void HandleDataEntity::createDataEntityMaid(const int &idEntity)
+{
+	for (auto var : _vecDataEntityMaid)
+	{
+		if (var->getIdEntity() == idEntity)
+		{
+			log("``````````HandleDataEntity::createDataEntityMaid dataEntity already exist");
+			return;
+		}
+	}
+	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
+	if (handleDataUnlock->getIsUnlockMaid(idEntity))
+	{
+		auto dataEntity = createDataEntity(Value(idEntity).asInt());
+		_vecDataEntityMaid.pushBack(dataEntity);
 	}
 }
 
@@ -590,5 +643,6 @@ DataEntity * HandleDataEntity::createDataEntity(const int &idEntity)
 	dataEntity->setIdEntity(idEntity);
 	dataEntity->updateAttribute();
 	dataEntity->updateSkillGroup();
+	dataEntity->updateAttributeSkillPassive();
 	return dataEntity;
 }

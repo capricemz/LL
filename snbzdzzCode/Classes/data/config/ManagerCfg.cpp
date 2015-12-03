@@ -155,7 +155,7 @@ void ManagerCfg::assignCfgSkill(const VectorString &vecItem)
 	cfg.name = vecItem[2];
 	cfg.type = (TypeSkill)Value(vecItem[3]).asInt();
 	cfg.effect = vecItem[4];
-	cfg.unlock = vecItem[5];
+	cfg.buyCost = Value(vecItem[5]).asInt();
 	cfg.desc = vecItem[6];
 	_dicDicCfgSkill[cfg.id][cfg.index] = cfg;
 }
@@ -268,16 +268,48 @@ void ManagerCfg::assignCfgLevels(const VectorString &vecItem)
 	cfg.msts = vecItem[3];
 	cfg.roundLimit = Value(vecItem[4]).asInt();
 	cfg.isRoundLimitWin = Value(vecItem[5]).asBool();
-	auto strTargets = vecItem[6];
-	if (strTargets != "")
+	auto strValue = vecItem[6];
+	if (strValue != "")
 	{
-		auto vec = UtilString::split(strTargets, ":");
+		auto vec = UtilString::split(strValue, ":");
 		for (auto var : vec)
 		{
 			cfg.targets.push_back(Value(var).asInt());
 		}
 	}
-	cfg.unlockLevel = Value(vecItem[7]).asInt();
+	strValue = vecItem[7];
+	if (strValue != "")
+	{
+		auto vec = UtilString::split(strValue, ":");
+		for (auto var : vec)
+		{
+			cfg.unlockLevels.push_back(Value(var).asInt());
+		}
+	}
+	strValue = vecItem[8];
+	if (strValue != "")
+	{
+		auto vec = UtilString::split(strValue, "|");
+		for (auto var : vec)
+		{
+			vector<int> vecSkillInfo;
+			auto vec1 = UtilString::split(var, ":");
+			for (auto var1 : vec1)
+			{
+				vecSkillInfo.push_back(Value(var1).asInt());
+			}
+			cfg.unlockSkills.push_back(vecSkillInfo);
+		}
+	}
+	strValue = vecItem[9];
+	if (strValue != "")
+	{
+		auto vec = UtilString::split(strValue, ":");
+		for (auto var : vec)
+		{
+			cfg.unlockMaids.push_back(Value(var).asInt());
+		}
+	}
 	_dicCfgLevels[cfg.id] = cfg;
 }
 

@@ -49,11 +49,23 @@ void DataLevel::dealLevelPassed()
 	}
 	//处理解锁关卡数据
 	auto handleDataLevels = ManagerData::getInstance()->getHandleDataLevels();
-	handleDataUnlock->setIsUnlockLevel(cfgLevel.unlockLevel);
-	auto dataLevelUnlock = handleDataLevels->getDicDataLevel().at(cfgLevel.unlockLevel);
-	dataLevelUnlock->setState();
-	//保存数据
-	handleDataUnlock->dataFileSet();
+	for (auto var : cfgLevel.unlockLevels)
+	{
+		handleDataUnlock->setIsUnlockLevel(var);
+		auto dataLevelUnlock = handleDataLevels->getDicDataLevel().at(var);
+		dataLevelUnlock->setState();
+	}
+	for (auto var : cfgLevel.unlockSkills)
+	{
+		handleDataUnlock->setIsUnlockSkill(var[0], var[1]);
+	}
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	for (auto var : cfgLevel.unlockMaids)
+	{
+		handleDataUnlock->setIsUnlockMaid(var);//解锁女仆
+		handleDataEntity->createDataEntityMaid(var);//构建女仆数据
+	}
+	handleDataUnlock->dataFileSet();//保存数据
 }
 
 void DataLevel::dealLevelTarget()

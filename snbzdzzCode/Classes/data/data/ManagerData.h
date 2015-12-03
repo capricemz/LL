@@ -14,7 +14,7 @@ using namespace std;
 class HandleDataTime
 {
 	public:
-		HandleDataTime() : _timeLast(0), _timeNow(0) {}
+		HandleDataTime() : _isDataFileInit(false), _timeLast(0), _timeNow(0) {}
 		~HandleDataTime();
 
 		void dataFileInit();
@@ -31,6 +31,7 @@ class HandleDataTime
 
 	private:
 		const string USER_DEFAULT_KEY_DT = "dataTime";//时刻数据,上一时刻，行动力恢复时刻，饱食度消耗时刻
+		bool _isDataFileInit;
 
 		double _timeLast;//上一时刻
 		double _timeNow;//当前时刻
@@ -164,6 +165,7 @@ class DataEntity : public Ref
 
 		void updateAttribute();
 		void updateSkillGroup();
+		void updateAttributeSkillPassive();
 
 	public:
 		int getIdEntity() const
@@ -205,9 +207,9 @@ class DataEntity : public Ref
 		{
 			return _vecSkillRandom;
 		}
-		vector<DataSkillInfo> &getVecSkillActiveNeedUnlock()
+		vector<DataSkillInfo> &getVecSkillActiveNeedBuy()
 		{
-			return _vecSkillActiveNeedUnlock;
+			return _vecSkillActiveNeedBuy;
 		}
 		/*设置技能
 		idSkill 技能表id
@@ -237,7 +239,7 @@ class DataEntity : public Ref
 		int _idEntity;//idEntity
 		int _index;
 		map<IdAttribute, int> _dicAttribute;//idAttribute value
-		vector<DataSkillInfo> _vecSkillActiveNeedUnlock;
+		vector<DataSkillInfo> _vecSkillActiveNeedBuy;
 		vector<DataSkillInfo> _vecSkillActive;
 		vector<DataSkillInfo> _vecSkillActiveInUse;
 		vector<DataSkillInfo> _vecSkillActiveUseOver;
@@ -260,6 +262,7 @@ class HandleDataEntity
 		
 		void resetDataEntityMaid();//开始关卡时，重置女仆数据，如将女仆血量补满等
 		void createDataEntityMaid();
+		void createDataEntityMaid(const int &idEntity);
 		void createDataEntityMst();//根据当前关卡构建怪物DataEntity
 		void vecSkillActiveSortMaid();//女仆洗牌
 
@@ -345,6 +348,7 @@ class HandleDataEntity
 		
 	private:
 		const string USER_DEFAULT_KEY_DE = "dataEntity";//实体数据
+		bool _isDataFileInit;
 
 		Vector<DataEntity *> _vecDataEntityMst;
 		Vector<DataEntity *> _vecDataEntityMaid;
@@ -459,7 +463,7 @@ public:
 	bool getIsUnlockMaid(const int &idEntity);
 	void setIsUnlockMaid(const int &idEntity);
 	bool getIsUnlockSkill(const int &idSkill, const int &indexSkill);
-	void setIsUnlockSkill(const int &idSkill, const int &indexSkill);
+	void setIsUnlockSkill(const int &idSkill, const int &indexSkill);//indexSkill为-1时，解锁所有
 	bool getIsBuySkill(const int &idSkill, const int &indexSkill);
 	void setIsBuySkill(const int &idSkill, const int &indexSkill);
 	bool getIsUnlockLevel(const int &idLevel);
@@ -473,6 +477,8 @@ public:
 	
 private:
 	const string USER_DEFAULT_KEY_DU = "dataUnlock";//解锁数据
+	bool _isDataFileInit;
+	
 	map<int, int> _dicTypeUnlockMaid;
 	map<int, map<int, int>> _dicDicTypeUnlockSkill;
 	map<int, map<int, int>> _dicDicTypeBuySkill;

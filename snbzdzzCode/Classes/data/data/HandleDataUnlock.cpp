@@ -5,6 +5,7 @@
 #include "../config/ManagerCfg.h"
 
 HandleDataUnlock::HandleDataUnlock() : 
+	_isDataFileInit(false),
 	_dicTypeUnlockMaid({}), 
 	_dicDicTypeUnlockSkill({}),
 	_dicDicTypeBuySkill({}),
@@ -28,13 +29,17 @@ HandleDataUnlock::~HandleDataUnlock()
 
 void HandleDataUnlock::dataFileInit()
 {
-	/*auto userDefault = UserDefault::getInstance();
-	userDefault->setStringForKey(USER_DEFAULT_KEY_DU.c_str(), "");//写入初始数据
-	userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io*/
-	createTypeUnlockOther();
-	setIsUnlockMaid(DATA_UNLOCK_INIT_MAID);
-	setIsUnlockLevel(DATA_UNLOCK_INIT_LEVEL);
-	dataFileSet();
+	if (!_isDataFileInit)
+	{
+		_isDataFileInit = true;
+		/*auto userDefault = UserDefault::getInstance();
+		userDefault->setStringForKey(USER_DEFAULT_KEY_DU.c_str(), "");//写入初始数据
+		userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io*/
+		createTypeUnlockOther();
+		setIsUnlockMaid(DATA_UNLOCK_INIT_MAID);
+		setIsUnlockLevel(DATA_UNLOCK_INIT_LEVEL);
+		dataFileSet();
+	}
 }
 
 void HandleDataUnlock::dataFileGet()
@@ -44,11 +49,11 @@ void HandleDataUnlock::dataFileGet()
 	auto strDataUnlock = userDefault->getStringForKey(USER_DEFAULT_KEY_DU.c_str());
 	auto vecDataUnlock = UtilString::split(strDataUnlock, ":");
 	_vecDataUnlock.clear();
-	for (auto var : vecDataUnlock)
+	for (int i = vecDataUnlock.size() - 1; i >= 0; i--)
 	{
-		_vecDataUnlock.push_back(Value(var).asInt());
+		_vecDataUnlock.push_back(Value(vecDataUnlock[i]).asInt());
 	}
-	setIsUnlockMaid(1001);//for test
+	/*setIsUnlockMaid(1001);//for test*/
 }
 
 void HandleDataUnlock::dataFileSet()
@@ -58,7 +63,7 @@ void HandleDataUnlock::dataFileSet()
 	auto length = (int)_vecDataUnlock.size();
 	for (auto i = 0; i < length; i++)
 	{
-		strDataUnlock += Value(_vecDataUnlock[i]).asString() + (i == length - 1 ? "" : ":");
+		strDataUnlock = Value(_vecDataUnlock[i]).asString() + (i == 0 ? "" : (":" + strDataUnlock));
 	}
 	userDefault->setStringForKey(USER_DEFAULT_KEY_DU.c_str(), strDataUnlock);//修改存档
 	userDefault->flush();
@@ -84,7 +89,7 @@ void HandleDataUnlock::createTypeUnlockOther()
 		for (auto var1 : dicCfgSkill)
 		{
 			auto cfgSkill = var1.second;
-			if (cfgSkill.unlock != "")
+			if (cfgSkill.buyCost != 0)
 			{
 				_dicDicTypeUnlockSkill[cfgSkill.id][cfgSkill.index] = indexUnlockCurrent++;
 				_dicDicTypeBuySkill[cfgSkill.id][cfgSkill.index] = indexUnlockCurrent++;
@@ -124,8 +129,20 @@ bool HandleDataUnlock::getIsUnlockSkill(const int &idSkill, const int &indexSkil
 
 void HandleDataUnlock::setIsUnlockSkill(const int &idSkill, const int &indexSkill)
 {
-	auto index = _dicDicTypeUnlockSkill[idSkill][indexSkill];
-	setIsUnlock(index);
+	if (indexSkill == -1)
+	{
+		auto dicTypeUnlockSkill = _dicDicTypeUnlockSkill[idSkill];
+		for (auto var : dicTypeUnlockSkill)
+		{
+			auto index = _dicDicTypeUnlockSkill[idSkill][var.first];
+			setIsUnlock(index);
+		}
+	}
+	else
+	{
+		auto index = _dicDicTypeUnlockSkill[idSkill][indexSkill];
+		setIsUnlock(index);
+	}
 }
 
 bool HandleDataUnlock::getIsBuySkill(const int &idSkill, const int &indexSkill)
