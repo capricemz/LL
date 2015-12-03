@@ -173,6 +173,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\ui\common\UIThingGet.cpp" />
     <ClCompile Include="..\Classes\ui\common\UITips.cpp" />
     <ClCompile Include="..\Classes\ui\common\UIWordsDrift.cpp" />
+    <ClCompile Include="..\Classes\ui\main\battle\catch\LayerCatch.cpp" />
     <ClCompile Include="..\Classes\ui\main\battle\gridSelect\LayerGridSelect.cpp" />
     <ClCompile Include="..\Classes\ui\main\battle\gridSelect\NodeCircleLine.cpp" />
     <ClCompile Include="..\Classes\ui\main\battle\gridShow\LayerGridShow.cpp" />
@@ -223,6 +224,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\ui\common\UIThingGet.h" />
     <ClInclude Include="..\Classes\ui\common\UITips.h" />
     <ClInclude Include="..\Classes\ui\common\UIWordsDrift.h" />
+    <ClInclude Include="..\Classes\ui\main\battle\catch\LayerCatch.h" />
     <ClInclude Include="..\Classes\ui\main\battle\gridSelect\LayerGridSelect.h" />
     <ClInclude Include="..\Classes\ui\main\battle\gridSelect\NodeCircleLine.h" />
     <ClInclude Include="..\Classes\ui\main\battle\gridShow\LayerGridShow.h" />

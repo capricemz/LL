@@ -27,6 +27,9 @@
       <FilePathData Path="images/levels/ok_txt.png" />
       <FilePathData Path="images/levels/xing.png" />
       <FilePathData Path="images/levels/xingKong.png" />
+      <FilePathData Path="images/battle/paper.jpg" />
+      <FilePathData Path="images/battle/rock.jpg" />
+      <FilePathData Path="images/battle/scissors.jpg" />
     </ImageFiles>
     <MaxSize Width="1024" Height="128" />
   </Content>

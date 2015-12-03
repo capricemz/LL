@@ -49,6 +49,9 @@
             <Image Name="lianxian_quan.png" />
             <Image Name="lianxian_xian.png" />
             <Image Name="zl.png" />
+            <Image Name="paper.jpg" />
+            <Image Name="rock.jpg" />
+            <Image Name="scissors.jpg" />
           </Folder>
           <Folder Name="role_card">
             <Image Name="role_card_4.png" />
@@ -125,6 +128,7 @@
             <Project Name="NodeHead.csd" Type="Node" />
             <Project Name="NodeLevel.csd" Type="Node" />
             <Project Name="LayerMaidSelect.csd" Type="Layer" />
+            <Project Name="LayerCatch.csd" Type="Layer" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />

@@ -82,6 +82,9 @@
     <Filter Include="src\ui\main\battle\gridShow">
       <UniqueIdentifier>{3ca71e63-ae88-441f-be57-849853003c47}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ui\main\battle\catch">
+      <UniqueIdentifier>{2ca585c4-b698-43f5-9d55-5b5ecda9079e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -228,6 +231,9 @@
     <ClCompile Include="..\Classes\ui\main\levels\LayerMaidSelect.cpp">
       <Filter>src\ui\main\levels</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\catch\LayerCatch.cpp">
+      <Filter>src\ui\main\battle\catch</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -373,6 +379,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ui\main\levels\LayerMaidSelect.h">
       <Filter>src\ui\main\levels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\catch\LayerCatch.h">
+      <Filter>src\ui\main\battle\catch</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

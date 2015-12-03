@@ -218,6 +218,14 @@ enum class TypeUnlock
 	LAST_NEXT
 };
 
+enum class TypeSRP
+{
+	NONE,
+	SCISSORS,
+	ROCK,
+	PAPER
+};
+
 enum class TypeConfirms
 {
 	MAP_TRANSFER,
