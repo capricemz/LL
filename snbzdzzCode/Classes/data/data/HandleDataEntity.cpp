@@ -239,8 +239,8 @@ void DataEntity::setSkill(DataSkillInfo &dataSkillInfo)
 		if (getCfgEntity().type == TypeEntity::MAID && cfgSkill.unlock != "")//若技能需要解锁
 		{
 			_vecSkillActiveNeedUnlock.push_back(dataSkillInfo);
-			auto isUnlockSkill = handleDataUnlock->getIsUnlockSkill(idSkill, indexSkill);
-			if (!isUnlockSkill)//若未解锁
+			auto isBuy = handleDataUnlock->getIsBuySkill(idSkill, indexSkill);
+			if (!isBuy)//若未购买
 			{
 				return;
 			}
@@ -255,24 +255,24 @@ void DataEntity::setSkill(DataSkillInfo &dataSkillInfo)
 	{
 		if (getCfgEntity().type == TypeEntity::MAID && cfgSkill.unlock != "")//若技能需要解锁
 		{
-			auto indexSkillLockMin = INT32_MAX;
+			auto indexSkillUnbuyMin = INT32_MAX;
 			auto indexSkillMax = 0;
 			for (auto var : dicCfgSkill)
 			{
 				auto indexSkillCurrent = var.first;
-				auto isUnlockSkill = handleDataUnlock->getIsUnlockSkill(idSkill, indexSkillCurrent);
-				if (!isUnlockSkill && (indexSkillLockMin > indexSkillCurrent))//若解锁且最大小于当前
+				auto isBuy = handleDataUnlock->getIsBuySkill(idSkill, indexSkillCurrent);
+				if (!isBuy && (indexSkillUnbuyMin > indexSkillCurrent))//若未购买且最小大于当前
 				{
-					indexSkillLockMin = indexSkillCurrent;
+					indexSkillUnbuyMin = indexSkillCurrent;
 				}
 				if (indexSkillMax < indexSkillCurrent)
 				{
 					indexSkillMax = indexSkillCurrent;
 				}
 			}
-			if (indexSkillLockMin != INT32_MAX)//若获取到最小未解锁index
+			if (indexSkillUnbuyMin != INT32_MAX)//若获取到最小未购买index
 			{
-				dataSkillInfo.index = indexSkillLockMin;
+				dataSkillInfo.index = indexSkillUnbuyMin;
 			}
 			else
 			{

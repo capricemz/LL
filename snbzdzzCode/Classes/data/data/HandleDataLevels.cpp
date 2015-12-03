@@ -192,15 +192,9 @@ std::string DataLevel::getLevelTargetStr(const int &index) const
 		UtilString::stringReplace(text, "&x", Value(cfgLevelTarget.roundLimitTotal).asString());
 	}
 	text += DIC_STR_BY_LEVEL_TARGET_TYPE.at(cfgLevelTarget.type);
-	if (cfgLevelTarget.type == TypeLevelTarget::HP_MST)
+	if (cfgLevelTarget.type == TypeLevelTarget::HP_MST || cfgLevelTarget.type == TypeLevelTarget::HP_MAID)
 	{
-		UtilString::stringReplace(text, "&a", vecStr[0]);
-		UtilString::stringReplace(text, "&b", cfgLevelTarget.args > 0 ? vecStr[4] : vecStr[5]);
-		UtilString::stringReplace(text, "&x", Value(abs(cfgLevelTarget.args)).asString());
-	}
-	else if (cfgLevelTarget.type == TypeLevelTarget::HP_MAID)
-	{
-		UtilString::stringReplace(text, "&a", vecStr[1]);
+		UtilString::stringReplace(text, "&a", cfgLevelTarget.type == TypeLevelTarget::HP_MST ? vecStr[0] : vecStr[1]);
 		UtilString::stringReplace(text, "&b", cfgLevelTarget.args > 0 ? vecStr[4] : vecStr[5]);
 		UtilString::stringReplace(text, "&x", Value(abs(cfgLevelTarget.args)).asString());
 	}

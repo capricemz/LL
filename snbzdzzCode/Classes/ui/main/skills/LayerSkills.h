@@ -33,7 +33,7 @@ private:
 	void updateLayoutBtns();
 	void onTouchBtnMaid(Ref *ref, Widget::TouchEventType type);
 	void updateLayoutSkillItems();
-	void updateLayoutSKillItem(Layout *layoutSkillItem, const bool &isGet, const DataSkillInfo &dataSkillInfo);
+	void updateLayoutSKillItem(Layout *layoutSkillItem, const bool &isExsit, const DataSkillInfo &dataSkillInfo);
 	void onTouchBtnSkill(Ref *ref, Widget::TouchEventType type, const DataSkillInfo &dataSkillInfo);
 	
 private:

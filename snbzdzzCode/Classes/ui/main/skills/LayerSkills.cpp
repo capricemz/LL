@@ -162,13 +162,13 @@ void LayerSkills::updateLayoutSkillItems()
 	}
 }
 
-void LayerSkills::updateLayoutSKillItem(Layout *layoutSkillItem, const bool &isGet, const DataSkillInfo &dataSkillInfo)
+void LayerSkills::updateLayoutSKillItem(Layout *layoutSkillItem, const bool &isExsit, const DataSkillInfo &dataSkillInfo)
 {
 	auto txt = (Text *)layoutSkillItem->getChildByName("txt");
 	auto btn = (Button *)layoutSkillItem->getChildByName("btn");
 	btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkill, this, dataSkillInfo));
 
-	if (isGet)
+	if (isExsit)
 	{
 		auto cfgSkill = ManagerCfg::getInstance()->getDicDicCfgSkill()[dataSkillInfo.id][dataSkillInfo.index];
 		txt->setString(cfgSkill.desc);
@@ -178,13 +178,22 @@ void LayerSkills::updateLayoutSKillItem(Layout *layoutSkillItem, const bool &isG
 		auto isUnlock = handleDataUnlock->getIsUnlockSkill(dataSkillInfo.id, dataSkillInfo.index);
 		if (!isUnlock)//ÈôÎ´½âËø
 		{
-			btn->setTitleText("button");
-			btn->setTouchEnabled(true);
+			btn->setTitleText(STR_UNLOCK);
+			btn->setTouchEnabled(false);
 		}
 		else
 		{
-			btn->setTitleText(STR_FILLED);
-			btn->setTouchEnabled(false);
+			auto isBuy = handleDataUnlock->getIsBuySkill(dataSkillInfo.id, dataSkillInfo.index);
+			if (isBuy)//ÈôÒÑ¹ºÂò
+			{
+				btn->setTitleText(STR_FILLED);
+				btn->setTouchEnabled(false);
+			}
+			else
+			{
+				btn->setTitleText(STR_BUY);
+				btn->setTouchEnabled(true);
+			}
 		}
 	}
 	else
@@ -204,7 +213,7 @@ void LayerSkills::onTouchBtnSkill(Ref *ref, Widget::TouchEventType type, const D
 		if (true)
 		{
 			auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
-			handleDataUnlock->setIsUnlockSkill(id, index);
+			handleDataUnlock->setIsBuySkill(id, index);
 			handleDataUnlock->dataFileSet();
 			auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
 			handleDataEntity->getDataEntityMaid()->updateSkillGroup();

@@ -460,6 +460,8 @@ public:
 	void setIsUnlockMaid(const int &idEntity);
 	bool getIsUnlockSkill(const int &idSkill, const int &indexSkill);
 	void setIsUnlockSkill(const int &idSkill, const int &indexSkill);
+	bool getIsBuySkill(const int &idSkill, const int &indexSkill);
+	void setIsBuySkill(const int &idSkill, const int &indexSkill);
 	bool getIsUnlockLevel(const int &idLevel);
 	void setIsUnlockLevel(const int &idLevel);
 	bool getIsPassedLevel(const int &idLevel);
@@ -473,6 +475,7 @@ private:
 	const string USER_DEFAULT_KEY_DU = "dataUnlock";//½âËøÊý¾Ý
 	map<int, int> _dicTypeUnlockMaid;
 	map<int, map<int, int>> _dicDicTypeUnlockSkill;
+	map<int, map<int, int>> _dicDicTypeBuySkill;
 	map<int, int> _dicTypeUnlockLevel;
 	map<int, int> _dicTypePassedLevel;
 	map<int, map<int, int>> _dicDicTypeCompleteLevelTarget;

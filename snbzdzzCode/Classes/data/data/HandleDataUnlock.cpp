@@ -7,6 +7,7 @@
 HandleDataUnlock::HandleDataUnlock() : 
 	_dicTypeUnlockMaid({}), 
 	_dicDicTypeUnlockSkill({}),
+	_dicDicTypeBuySkill({}),
 	_dicTypeUnlockLevel({}),
 	_dicTypePassedLevel({}),
 	_dicDicTypeCompleteLevelTarget({}),
@@ -18,6 +19,7 @@ HandleDataUnlock::~HandleDataUnlock()
 {
 	_dicTypeUnlockMaid.clear();
 	_dicDicTypeUnlockSkill.clear();
+	_dicDicTypeBuySkill.clear();
 	_dicTypeUnlockLevel.clear();
 	_dicTypePassedLevel.clear();
 	_dicDicTypeCompleteLevelTarget.clear();
@@ -85,6 +87,7 @@ void HandleDataUnlock::createTypeUnlockOther()
 			if (cfgSkill.unlock != "")
 			{
 				_dicDicTypeUnlockSkill[cfgSkill.id][cfgSkill.index] = indexUnlockCurrent++;
+				_dicDicTypeBuySkill[cfgSkill.id][cfgSkill.index] = indexUnlockCurrent++;
 			}
 		}
 	}
@@ -122,6 +125,18 @@ bool HandleDataUnlock::getIsUnlockSkill(const int &idSkill, const int &indexSkil
 void HandleDataUnlock::setIsUnlockSkill(const int &idSkill, const int &indexSkill)
 {
 	auto index = _dicDicTypeUnlockSkill[idSkill][indexSkill];
+	setIsUnlock(index);
+}
+
+bool HandleDataUnlock::getIsBuySkill(const int &idSkill, const int &indexSkill)
+{
+	auto index = _dicDicTypeBuySkill[idSkill][indexSkill];
+	return getIsUnlock(index);
+}
+
+void HandleDataUnlock::setIsBuySkill(const int &idSkill, const int &indexSkill)
+{
+	auto index = _dicDicTypeBuySkill[idSkill][indexSkill];
 	setIsUnlock(index);
 }
 
