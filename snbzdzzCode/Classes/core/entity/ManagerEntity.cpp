@@ -79,7 +79,15 @@ void ManagerEntity::dealBattleOver()
 		dataLevelCurrent->setVecTargetComplete();
 	}
 
-	ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_BATTLE_RESULT, !isAllMaidDead);
+	auto value = handleDataEntity->getDataEntityMaid()->getAttribute(IdAttribute::ENTITY_BREAK_CASE_NUM);
+	if (value > 0)//ÈôÔì³ÉÆÆÒÂ
+	{
+		ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_CATCH);
+	}
+	else
+	{
+		ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_BATTLE_RESULT);
+	}
 }
 
 void ManagerEntity::runSceneryEffect(const bool &isMst)

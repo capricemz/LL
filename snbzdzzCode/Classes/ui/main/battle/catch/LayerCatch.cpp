@@ -3,6 +3,7 @@
 #include "LayerCatch.h"
 #include "data/define/DefinesRes.h"
 #include "common/util/UtilRandom.h"
+#include "ui/ManagerUI.h"
 
 LayerCatch::LayerCatch() : _skin(nullptr), _typeSelectedMst(0), _typeSelectedMaid(0)
 {
@@ -47,6 +48,8 @@ void LayerCatch::runAppearAction(const function<void()> &func /*= nullptr*/)
 void LayerCatch::createSkin()
 {
 	_skin = (Layer *)CSLoader::createNode(RES_MODULES_MAIN_LAYER_CATCH_CSB);
+	_skin->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
+	_skin->setPosition(320.0f, 725.0f);
 	addChild(_skin);
 
 	auto btn = (Button *)_skin->getChildByName("btnScissors");
@@ -77,7 +80,7 @@ void LayerCatch::doWait()
 		auto actionRotateBack = EaseQuadraticActionInOut::create(RotateTo::create(1.0f / 3.0f, rotationBegan));
 		auto actionWait = RepeatForever::create(Sequence::createWithTwoActions(actionRotateTo, actionRotateBack));
 		actionWait->setTag(1);
-		_skin->runAction(actionWait);
+		sprite->runAction(actionWait);
 	}
 }
 
@@ -107,27 +110,38 @@ void LayerCatch::doReach()
 		auto rotationEnd0 = isMst ? -50.0f : 50.0f;
 		auto rotationEnd1 = isMst ? -70.0f : 70.0f;
 		auto sprite = (Sprite *)(isMst ? _skin->getChildByName("spriteMst") : _skin->getChildByName("spriteMaid"));
-		_skin->stopActionByTag(1);
+		sprite->stopActionByTag(1);
 		
 		auto actionRotateReset = RotateTo::create(0.01f, rotationBegan);
 		auto actionRotateTo0 = EaseQuadraticActionInOut::create(RotateTo::create(0.2f, rotationEnd0));
 		auto actionRotateBack0 = EaseQuadraticActionInOut::create(RotateTo::create(0.2f, rotationBegan));
 		auto actionRotateTo1 = EaseQuadraticActionInOut::create(RotateTo::create(1.0f / 6.0f, rotationEnd0));
 		auto actionRotateBack1 = EaseQuadraticActionInOut::create(RotateTo::create(1.0f / 6.0f, rotationBegan));
-		auto actionReachOut = CallFunc::create([sprite, this]()
+		auto actionReachOut = CallFunc::create([this, isMst, sprite]()
 		{
-			_typeSelectedMst = UtilRandom::randomBewteen((float)TypeSRP::SCISSORS, (float)TypeSRP::PAPER);
-			auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(RES_IMAGES_MAIN_SRP_PNG_VEC[_typeSelectedMst]);
+			string name = "";
+			if (isMst)
+			{
+				_typeSelectedMst = UtilRandom::randomBewteen((float)TypeSRP::SCISSORS, (float)TypeSRP::PAPER);
+				name = RES_IMAGES_MAIN_SRP_PNG_VEC[_typeSelectedMst];
+			}
+			else
+			{
+				name = RES_IMAGES_MAIN_SRP_PNG_VEC[_typeSelectedMaid];
+			}
+			auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(name);
 			sprite->setSpriteFrame(spriteFrame);
 		});
 		auto actionRotateTo2 = EaseQuadraticActionInOut::create(RotateTo::create(1.0f / 6.0f, rotationEnd1));
 
-		auto actionOver = CallFunc::create([this]()
+		auto actionOver = CallFunc::create([this, sprite]()
 		{
+			sprite->stopActionByTag(1);
 			showResult((_typeSelectedMst + 1) % 3 == _typeSelectedMaid);
 		});
-
-		_skin->runAction(Sequence::create(actionRotateReset, actionRotateTo0, actionRotateBack0, actionRotateTo1, actionRotateBack1, actionReachOut, actionRotateTo2, actionOver, nullptr));
+		auto actionReach = Sequence::create(actionRotateReset, actionRotateTo0, actionRotateBack0, actionRotateTo1, actionRotateBack1, actionReachOut, actionRotateTo2, actionOver, nullptr);
+		actionReach->setTag(1);
+		sprite->runAction(actionReach);
 	}
 }
 
@@ -138,11 +152,12 @@ void LayerCatch::showResult(const bool &isWin)
 	{
 		if (type == Widget::TouchEventType::ENDED)
 		{
+			ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_BATTLE_RESULT);
 			removeFromParent();
 		}
 	});
 
-	auto txt = Text::create("catch", RES_FONTS_KTJT, 40);
+	auto txt = Text::create(isWin ? "catch" : "missed", RES_FONTS_KTJT, 40);
 	txt->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
 	auto sizeSkin = layout->getContentSize();
 	txt->setPosition(Vec2(sizeSkin.width * 0.5f, sizeSkin.height * 0.5f));

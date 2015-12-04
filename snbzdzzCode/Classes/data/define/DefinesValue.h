@@ -21,7 +21,7 @@ static const int ENTITY_BATTLE_MAX = 3;
 
 static const int ENERGY_SWITCH_ENTITY = 8;
 
-static const int BREAK_DAMAGE_TAKES = 5;
+static const int BREAK_DAMAGE_TAKES = 2;
 
 static const vector<Vec2> vecPostionGridBattle =
 {
@@ -275,6 +275,7 @@ enum class TYPE_OBSERVER_LAYER_BATTLE
 	SHOW_LAYER_GRID_SELECT,//添加格子选择层，显示出现动画
 	SHOW_APPEAR_GRID_SELECT_MAID,//显示女仆选择格子出现动画
 	HIDE_LAYER_GRID_SELECT,//移除格子选择层，显示消失动画
+	SHOW_LAYER_CATCH,
 	SHOW_LAYER_BATTLE_RESULT,
 	RESET_SKIN
 };

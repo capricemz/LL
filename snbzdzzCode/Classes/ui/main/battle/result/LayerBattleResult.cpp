@@ -6,6 +6,7 @@
 #include "data/define/DefinesRes.h"
 #include "data/define/DefinesString.h"
 #include "ui/ManagerUI.h"
+#include "data/data/ManagerData.h"
 
 using namespace ui;
 
@@ -30,12 +31,6 @@ bool LayerBattleResult::init()
 		isInit = true;
 	} while (0);
 	return isInit;
-}
-
-void LayerBattleResult::updateSkin(const bool &isWin)
-{
-	auto txt = (Text *)_skin->getChildByName("txt");
-	txt->setString(isWin ? STR_BATTLE_VICTORY : STR_BATTLE_DEFEAT);
 }
 
 void LayerBattleResult::runAppearAction(const function<void()> &func /*= nullptr*/)
@@ -70,4 +65,10 @@ void LayerBattleResult::createSkin()
 			ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
 		}
 	});
+	//
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto isWin = !handleDataEntity->isAllMaidDead();
+
+	auto txt = (Text *)_skin->getChildByName("txt");
+	txt->setString(isWin ? STR_BATTLE_VICTORY : STR_BATTLE_DEFEAT);
 }

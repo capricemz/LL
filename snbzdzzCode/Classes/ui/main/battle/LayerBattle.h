@@ -12,7 +12,6 @@
 #include "HandleHead.h"
 #include "gridSelect/LayerGridSelect.h"
 /*#include "gridShow/LayerGridShow.h"*/
-#include "result/LayerBattleResult.h"
 
 USING_NS_CC;
 using namespace std;
@@ -56,7 +55,6 @@ private:
 
 	LayerGridSelect *_layerGridSelect;
 	/*LayerGridShow *_layerGridShow;*/
-	LayerBattleResult *_layerBattleResult;
 
 };
 

@@ -7,6 +7,8 @@
 #include "ui/ManagerUI.h"
 #include "common/shake/Shake.h"
 #include "core/entity/ManagerEntity.h"
+#include "result/LayerBattleResult.h"
+#include "catch/LayerCatch.h"
 
 LayerBattle::LayerBattle() : 
 	_skin(nullptr),
@@ -14,9 +16,8 @@ LayerBattle::LayerBattle() :
 	_handleBg(nullptr),
 	_handleHead(nullptr),
 	_handleGrid(nullptr),
-	_layerGridSelect(nullptr),
-	/*_layerGridShow(nullptr),*/
-	_layerBattleResult(nullptr)
+	_layerGridSelect(nullptr)/*,
+	_layerGridShow(nullptr),*/
 {
 }
 
@@ -31,7 +32,6 @@ LayerBattle::~LayerBattle()
 
 	_layerGridSelect = nullptr;
 	/*_layerGridShow = nullptr;*/
-	_layerBattleResult = nullptr;
 }
 
 bool LayerBattle::init()
@@ -81,13 +81,17 @@ void LayerBattle::updateBySubject(va_list values)
 			_layerGridSelect->runDisappearAction();
 		}
 	}
+	else if (type == TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_CATCH)
+	{
+		auto layerCatch = LayerCatch::create();
+		addChild(layerCatch);
+		layerCatch->runAppearAction(nullptr);
+	}
 	else if (type == TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_BATTLE_RESULT)
 	{
-		auto isWin = va_arg(values, bool);
-		_layerBattleResult = LayerBattleResult::create();
-		_layerBattleResult->updateSkin(isWin);
-		addChild(_layerBattleResult);
-		_layerBattleResult->runAppearAction(nullptr);
+		auto layerBattleResult = LayerBattleResult::create();
+		addChild(layerBattleResult);
+		layerBattleResult->runAppearAction(nullptr);
 	}
 	else if(type == TYPE_OBSERVER_LAYER_BATTLE::RESET_SKIN)
 	{
