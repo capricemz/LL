@@ -25,6 +25,7 @@ ManagerData::~ManagerData()
 	CC_SAFE_DELETE(_handleDataGrid);
 	CC_SAFE_DELETE(_handleDataEntity);
 	CC_SAFE_DELETE(_handleDataLevels);
+	CC_SAFE_DELETE(_handleDataIncome);
 }
 
 void ManagerData::setSaveFileExist()
@@ -42,6 +43,7 @@ bool ManagerData::isSaveFileExist()
 		_handleDataUnlock->dataFileInit();
 		/*_handleDataEntity->dataFileInit();*/
 		/*_handleDataLevels->dataFileInit();*/
+		_handleDataIncome->dataFileInit();
 		return false;
 	}
 	else
@@ -58,6 +60,7 @@ void ManagerData::dataFileGet()
 		_handleDataUnlock->dataFileGet();
 		/*_handleDataEntity->dataFileGet();*/
 		/*_handleDataLevels->dataFileGet();*/
+		_handleDataIncome->dataFileGet();
 	}
 }
 
@@ -67,6 +70,7 @@ void ManagerData::dataFileSet()
 	_handleDataUnlock->dataFileSet();
 	/*_handleDataEntity->dataFileSet();*/
 	/*_handleDataLevels->dataFileSet();*/
+	_handleDataIncome->dataFileSet();
 }
 
 ManagerData::ManagerData()
@@ -81,4 +85,5 @@ void ManagerData::initHandleDatas()
 	_handleDataGrid = new HandleDataGrid();
 	_handleDataEntity = new HandleDataEntity();
 	_handleDataLevels = new HandleDataLevels();
+	_handleDataIncome = new HandleDataIncome();
 }

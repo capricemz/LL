@@ -137,7 +137,7 @@ void LayerCatch::doReach()
 		auto actionOver = CallFunc::create([this, sprite]()
 		{
 			sprite->stopActionByTag(1);
-			showResult((_typeSelectedMst + 1) % 3 == _typeSelectedMaid);
+			showResult(_typeSelectedMst % 3 + 1 == _typeSelectedMaid);
 		});
 		auto actionReach = Sequence::create(actionRotateReset, actionRotateTo0, actionRotateBack0, actionRotateTo1, actionRotateBack1, actionReachOut, actionRotateTo2, actionOver, nullptr);
 		actionReach->setTag(1);

@@ -210,15 +210,27 @@ void LayerSkills::onTouchBtnSkill(Ref *ref, Widget::TouchEventType type, const D
 		auto id = dataSkillInfo.id;
 		auto index = dataSkillInfo.index;
 
-		if (true)
+		auto managerData = ManagerData::getInstance();
+		auto handleDataIncome = managerData->getHandleDataIncome();
+		auto dataIncome = handleDataIncome->getDataIncome(0);
+		auto cfgSkill = ManagerCfg::getInstance()->getDicDicCfgSkill()[id][index];//需要花费的金币
+		auto isGoldEnough = dataIncome->isGoldEnoughGet(cfgSkill.buyCost);
+		if (!isGoldEnough)
 		{
-			auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
-			handleDataUnlock->setIsBuySkill(id, index);
-			handleDataUnlock->dataFileSet();
-			auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-			handleDataEntity->getDataEntityMaid()->updateSkillGroup();
-			handleDataEntity->getDataEntityMaid()->updateAttributeSkillPassive();
-			updateLayoutSkillItems();
+			log("`````````` LayerSkills::onTouchBtnSkill gold is not enough");
+			return;
 		}
+
+		dataIncome->costGold(cfgSkill.buyCost);
+		log("`````````` LayerSkills::onTouchBtnSkill cost:%d,remain:%d",cfgSkill.buyCost, dataIncome->getGold());
+
+		auto handleDataUnlock = managerData->getHandleDataUnlock();
+		handleDataUnlock->setIsBuySkill(id, index);
+		handleDataUnlock->dataFileSet();
+
+		auto handleDataEntity = managerData->getHandleDataEntity();
+		handleDataEntity->getDataEntityMaid()->updateSkillGroup();
+		handleDataEntity->getDataEntityMaid()->updateAttributeSkillPassive();
+		updateLayoutSkillItems();
 	}
 }

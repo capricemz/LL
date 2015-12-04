@@ -358,7 +358,7 @@ class HandleDataEntity
 		int _roundTotal;//总回合数
 		
 };
-//关卡类
+//关卡数据类
 class DataLevel : public Ref
 {
 	public:
@@ -410,6 +410,9 @@ class DataLevel : public Ref
 		string getLevelTargetStr(const int &index) const;
 		
 	private:
+		void dealPassedIncome(const map<TypeAward, int> &award);
+		
+	private:
 		int _id;
 		int _index;
 		TypeLevelState _state;
@@ -451,42 +454,134 @@ class HandleDataLevels
 //处理解锁数据类
 class HandleDataUnlock
 {
-public:
-	HandleDataUnlock();
-	~HandleDataUnlock();
+	public:
+		HandleDataUnlock();
+		~HandleDataUnlock();
 
-	void dataFileInit();
-	void dataFileGet();
-	void dataFileSet();
-	void createTypeUnlockOther();
+		void dataFileInit();
+		void dataFileGet();
+		void dataFileSet();
+		void createTypeUnlockOther();
 	
-	bool getIsUnlockMaid(const int &idEntity);
-	void setIsUnlockMaid(const int &idEntity);
-	bool getIsUnlockSkill(const int &idSkill, const int &indexSkill);
-	void setIsUnlockSkill(const int &idSkill, const int &indexSkill);//indexSkill为-1时，解锁所有
-	bool getIsBuySkill(const int &idSkill, const int &indexSkill);
-	void setIsBuySkill(const int &idSkill, const int &indexSkill);
-	bool getIsUnlockLevel(const int &idLevel);
-	void setIsUnlockLevel(const int &idLevel);
-	bool getIsPassedLevel(const int &idLevel);
-	void setIsPassedLevel(const int &idLevel);
-	bool getIsCompleteLevelTarget(const int &idLevel, const int &idLevelTarget);
-	void setIsCompleteLevelTarget(const int &idLevel, const int &idLevelTarget);
-	bool getIsUnlock(int index);
-	void setIsUnlock(int index);
+		bool getIsUnlockMaid(const int &idEntity);
+		void setIsUnlockMaid(const int &idEntity);
+		bool getIsUnlockSkill(const int &idSkill, const int &indexSkill);
+		void setIsUnlockSkill(const int &idSkill, const int &indexSkill);//indexSkill为-1时，解锁所有
+		bool getIsBuySkill(const int &idSkill, const int &indexSkill);
+		void setIsBuySkill(const int &idSkill, const int &indexSkill);
+		bool getIsUnlockLevel(const int &idLevel);
+		void setIsUnlockLevel(const int &idLevel);
+		bool getIsPassedLevel(const int &idLevel);
+		void setIsPassedLevel(const int &idLevel);
+		bool getIsCompleteLevelTarget(const int &idLevel, const int &idLevelTarget);
+		void setIsCompleteLevelTarget(const int &idLevel, const int &idLevelTarget);
+		bool getIsUnlock(int index);
+		void setIsUnlock(int index);
 	
-private:
-	const string USER_DEFAULT_KEY_DU = "dataUnlock";//解锁数据
-	bool _isDataFileInit;
+	private:
+		const string USER_DEFAULT_KEY_DU = "dataUnlock";//解锁数据
+		bool _isDataFileInit;
 	
-	map<int, int> _dicTypeUnlockMaid;
-	map<int, map<int, int>> _dicDicTypeUnlockSkill;
-	map<int, map<int, int>> _dicDicTypeBuySkill;
-	map<int, int> _dicTypeUnlockLevel;
-	map<int, int> _dicTypePassedLevel;
-	map<int, map<int, int>> _dicDicTypeCompleteLevelTarget;
-	vector<int> _vecDataUnlock;
+		map<int, int> _dicTypeUnlockMaid;
+		map<int, map<int, int>> _dicDicTypeUnlockSkill;
+		map<int, map<int, int>> _dicDicTypeBuySkill;
+		map<int, int> _dicTypeUnlockLevel;
+		map<int, int> _dicTypePassedLevel;
+		map<int, map<int, int>> _dicDicTypeCompleteLevelTarget;
+		vector<int> _vecDataUnlock;
 	
+};
+//收益数据类
+class DataIncome : public Ref
+{
+	public:
+		CREATE_FUNC(DataIncome);
+		
+	public:
+		DataIncome();
+		~DataIncome();
+
+		virtual bool init();
+
+		string getStrData();
+
+		bool isGoldEnoughGet(const int &value);//金币是否足够
+		void costGold(const int &value);//消耗金币
+		
+	public:
+		int getId() const
+		{
+			return _id;
+		}
+		void setId(const int &val)
+		{
+			_id = val;
+		}
+		int getGold() const
+		{
+			return _gold;
+		}
+		void setGold(const int &val)
+		{
+			_gold = val;
+		}
+		void addGold(const int &val)
+		{
+			_gold += val;
+		}
+		vector<int> getVecIdEntityCatched() const
+		{
+			return _vecIdEntityCatched;
+		}
+		void pushVecIdEntityCatched(const int &val)
+		{
+			_vecIdEntityCatched.push_back(val);
+		}
+		void eraseVecIdEntityCatched(const int &val)
+		{
+			auto iter = find(_vecIdEntityCatched.begin(), _vecIdEntityCatched.end(), val);
+			if (iter == _vecIdEntityCatched.end())
+			{
+				return;
+			}
+			_vecIdEntityCatched.erase(iter);
+		}
+		
+	private:
+		int _id;
+		int _gold;
+		vector<int> _vecIdEntityCatched;
+		
+};
+//处理收益数据类
+class HandleDataIncome
+{
+	public:
+		HandleDataIncome();
+		~HandleDataIncome();
+		
+		void dataFileInit();
+		void dataFileGet();
+		void dataFileSet();
+		
+		DataIncome * getDataIncome(const int &id) const
+		{
+			if (_dicDataIncome.find(id) == _dicDataIncome.end())
+			{
+				return nullptr;
+			}
+			return _dicDataIncome.at(id);
+		}
+		
+	private:
+		void createDataIncome(string infos);
+		
+	private:
+		const string USER_DEFAULT_KEY_DI = "dataIncome";//收益数据
+		bool _isDataFileInit;
+
+		Map<int, DataIncome *> _dicDataIncome;
+
 };
 //数据类
 class ManagerData
@@ -512,6 +607,7 @@ class ManagerData
 		HandleDataGrid * getHandleDataGrid() { return _handleDataGrid; }
 		HandleDataEntity * getHandleDataEntity() { return _handleDataEntity; }
 		HandleDataLevels * getHandleDataLevels() { return _handleDataLevels; }
+		HandleDataIncome * getHandleDataIncome() { return _handleDataIncome; }
 
 	private:
 		const string USER_DEFAULT_KEY_ISFE = "isSaveFileExist";//储存文件是否存在
@@ -522,6 +618,7 @@ class ManagerData
 		HandleDataGrid *_handleDataGrid;//格子数据处理
 		HandleDataEntity *_handleDataEntity;//实体数据处理
 		HandleDataLevels *_handleDataLevels;//关卡数据处理
+		HandleDataIncome *_handleDataIncome;//收益数据处理
 
 };
 

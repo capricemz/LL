@@ -73,6 +73,7 @@ struct CfgLevel//关卡
 	vector<int> unlockLevels;//解锁关卡
 	vector<vector<int>> unlockSkills;//解锁技能
 	vector<int> unlockMaids;//解锁女仆
+	map<TypeAward, int> award;//奖励 类型(1金币2其他):值
 };
 typedef map<int32_t, CfgLevel> DicCfgLevels;
 //
@@ -85,7 +86,7 @@ struct CfgLevelTarget
 	int roundLimitMst;//怪物回合限制
 	int roundLimitMaid;//女仆回合限制
 	int roundLimitTotal;//总回合限制
-	string award;//奖励
+	map<TypeAward, int> award;//奖励 类型(1金币2其他):值
 };
 typedef map<int32_t, CfgLevelTarget> DicCfgLevelTargets;
 //

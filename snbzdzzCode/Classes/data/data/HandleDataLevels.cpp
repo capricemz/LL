@@ -32,8 +32,9 @@ void DataLevel::assignCfgLevel(const int &idLevel)
 
 void DataLevel::dealLevelPassed()
 {
+	auto managerData = ManagerData::getInstance();
 	auto cfgLevel = getCfgLevel();
-	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
+	auto handleDataUnlock = managerData->getHandleDataUnlock();
 	handleDataUnlock->setIsPassedLevel(_id);
 	setState();
 	//
@@ -42,13 +43,15 @@ void DataLevel::dealLevelPassed()
 	for (auto i = 0; i < length; i++)
 	{
 		auto idLevelTarget = targets[i];
-		if (_vecTargetComplete[i])
+		if (_vecTargetComplete[i])//若额外目标完成
 		{
 			handleDataUnlock->setIsCompleteLevelTarget(cfgLevel.id, idLevelTarget);
+			auto cfgLevelTarget = ManagerCfg::getInstance()->getDicCfgLevelTargets().at(idLevelTarget);
+			dealPassedIncome(cfgLevelTarget.award);
 		}
 	}
 	//处理解锁关卡数据
-	auto handleDataLevels = ManagerData::getInstance()->getHandleDataLevels();
+	auto handleDataLevels = managerData->getHandleDataLevels();
 	for (auto var : cfgLevel.unlockLevels)
 	{
 		handleDataUnlock->setIsUnlockLevel(var);
@@ -59,13 +62,17 @@ void DataLevel::dealLevelPassed()
 	{
 		handleDataUnlock->setIsUnlockSkill(var[0], var[1]);
 	}
-	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto handleDataEntity = managerData->getHandleDataEntity();
 	for (auto var : cfgLevel.unlockMaids)
 	{
 		handleDataUnlock->setIsUnlockMaid(var);//解锁女仆
 		handleDataEntity->createDataEntityMaid(var);//构建女仆数据
 	}
 	handleDataUnlock->dataFileSet();//保存数据
+	//处理收益数据
+	dealPassedIncome(cfgLevel.award);
+	auto handleDataIncome = managerData->getHandleDataIncome();
+	handleDataIncome->dataFileSet();
 }
 
 void DataLevel::dealLevelTarget()
@@ -215,6 +222,20 @@ std::string DataLevel::getLevelTargetStr(const int &index) const
 		UtilString::stringReplace(text, "&x", Value(cfgLevelTarget.args).asString());
 	}
 	return text;
+}
+
+void DataLevel::dealPassedIncome(const map<TypeAward, int>& award)
+{
+	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
+	for (auto var : award)
+	{
+		auto type = var.first;
+		if (type == TypeAward::GOLD)
+		{
+			auto dataIncome = handleDataIncome->getDataIncome(0);
+			dataIncome->addGold(var.second);
+		}
+	}
 }
 
 HandleDataLevels::HandleDataLevels() : _dicDataLevel({}), _levelCurrent(0)

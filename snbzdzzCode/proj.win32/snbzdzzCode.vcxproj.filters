@@ -234,6 +234,9 @@
     <ClCompile Include="..\Classes\ui\main\battle\catch\LayerCatch.cpp">
       <Filter>src\ui\main\battle\catch</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\data\data\HandleDataIncome.cpp">
+      <Filter>src\data\data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

@@ -310,6 +310,18 @@ void ManagerCfg::assignCfgLevels(const VectorString &vecItem)
 			cfg.unlockMaids.push_back(Value(var).asInt());
 		}
 	}
+	strValue = vecItem[10];
+	if (strValue != "")
+	{
+		auto vec = UtilString::split(strValue, "|");
+		for (auto var : vec)
+		{
+			auto vec1 = UtilString::split(var, ":");
+			auto type = (TypeAward)Value(vec1[0]).asInt();
+			auto value = Value(vec1[1]).asInt();
+			cfg.award.insert(make_pair(type, value));
+		}
+	}
 	_dicCfgLevels[cfg.id] = cfg;
 }
 
@@ -325,7 +337,18 @@ void ManagerCfg::assignCfgLevelTargets(const VectorString &vecItem)
 	cfg.roundLimitMst = Value(vecItem[4]).asInt();
 	cfg.roundLimitMaid = Value(vecItem[5]).asInt();
 	cfg.roundLimitTotal = Value(vecItem[6]).asInt();
-	cfg.award = vecItem[7];
+	auto strValue = vecItem[7];
+	if (strValue != "")
+	{
+		auto vec = UtilString::split(strValue, "|");
+		for (auto var : vec)
+		{
+			auto vec1 = UtilString::split(var, ":");
+			auto type = (TypeAward)Value(vec1[0]).asInt();
+			auto value = Value(vec1[1]).asInt();
+			cfg.award.insert(make_pair(type, value));
+		}
+	}
 	_dicCfgLevelTargets[cfg.id] = cfg;
 }
 
