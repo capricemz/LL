@@ -18,6 +18,7 @@ static const string RES_MODULES_PLOT_SCENE_PLOT_CSB = "modules/plot/ScenePlot.cs
 static const string RES_MODULES_MAIN_PLIST_MAIN_PLIST = "modules/main/PlistMain.plist";
 static const string RES_MODULES_MAIN_SCENE_MAIN_CSB = "modules/main/SceneMain.csb";
 
+static const string RES_MODULES_MAIN_LAYER_GUILD_CSB = "modules/main/LayerGuild.csb";
 static const string RES_MODULES_MAIN_LAYER_LEVELS_CSB = "modules/main/LayerLevels.csb";
 static const string RES_MODULES_MAIN_LAYER_MAID_SELECT_CSB = "modules/main/LayerMaidSelect.csb";
 static const string RES_MODULES_MAIN_LAYER_SKILLS_CSB = "modules/main/LayerSkills.csb";

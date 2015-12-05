@@ -85,6 +85,9 @@
     <Filter Include="src\ui\main\battle\catch">
       <UniqueIdentifier>{2ca585c4-b698-43f5-9d55-5b5ecda9079e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ui\main\guild">
+      <UniqueIdentifier>{4ca40d16-4b90-4f20-b12a-7c72c51d3729}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -237,6 +240,9 @@
     <ClCompile Include="..\Classes\data\data\HandleDataIncome.cpp">
       <Filter>src\data\data</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\guild\LayerGuild.cpp">
+      <Filter>src\ui\main\guild</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -385,6 +391,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ui\main\battle\catch\LayerCatch.h">
       <Filter>src\ui\main\battle\catch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\guild\LayerGuild.h">
+      <Filter>src\ui\main\guild</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

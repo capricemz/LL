@@ -129,6 +129,7 @@
             <Project Name="NodeLevel.csd" Type="Node" />
             <Project Name="LayerMaidSelect.csd" Type="Layer" />
             <Project Name="LayerCatch.csd" Type="Layer" />
+            <Project Name="LayerGuild.csd" Type="Layer" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />
