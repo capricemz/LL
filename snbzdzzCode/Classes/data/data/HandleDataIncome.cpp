@@ -1,13 +1,14 @@
 #include "ManagerData.h"
 #include "common\util\UtilString.h"
 
-DataIncome::DataIncome() : _id(0), _gold(0), _vecIdEntityCatched({})
+DataIncome::DataIncome() : _id(0), _gold(0), _vecIdEntityCatched({}), _vecValue({})
 {
 }
 
 DataIncome::~DataIncome()
 {
 	_vecIdEntityCatched.clear();
+	_vecValue.clear();
 }
 
 bool DataIncome::init()
@@ -34,7 +35,7 @@ string DataIncome::getStrData()
 			strData += ":";
 			strData += Value(idEntityCatchedMst).asString();
 			strData += ":";
-			strData += "0";
+			strData += Value().asString();
 		}
 	}
 	return strData;

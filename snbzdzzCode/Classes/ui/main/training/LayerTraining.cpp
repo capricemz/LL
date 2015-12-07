@@ -5,7 +5,7 @@
 #include "../guild/UIEntity.h"
 #include "data/data/ManagerData.h"
 
-LayerTraining::LayerTraining() : _skin(nullptr)
+LayerTraining::LayerTraining() : _skin(nullptr), _indexCurrent(0)
 {
 }
 
@@ -51,8 +51,9 @@ void LayerTraining::dealRemoveFromParent()
 
 void LayerTraining::updateSkin(const int &index)
 {
+	_indexCurrent = index;
 	auto dataIncome = ManagerData::getInstance()->getHandleDataIncome()->getDataIncome();
-	auto idEntity = dataIncome->getVecIdEntityCatched().at(index);
+	auto idEntity = dataIncome->getVecIdEntityCatched().at(_indexCurrent);
 
 	auto layout = (Layout *)_skin->getChildByName("layoutContent");
 	auto size = layout->getContentSize();
@@ -93,6 +94,9 @@ void LayerTraining::onTouchBtn(Ref *ref, Widget::TouchEventType type)
 	{
 		auto btn = (Button *)ref;
 		auto typeTrianing = (TypeTrianing)(int)btn->getUserData();
+
+		auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
+		auto dataIncome = handleDataIncome->getDataIncome();
 
 	}
 }

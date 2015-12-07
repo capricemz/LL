@@ -550,11 +550,29 @@ class DataIncome : public Ref
 			}
 			_vecIdEntityCatched.erase(iter);
 		}
+		vector<int> getVecValue() const
+		{
+			return _vecValue;
+		}
+		void pushVecValue(const int &val)
+		{
+			_vecValue.push_back(val);
+		}
+		void eraseVecValue(const int &val)
+		{
+			auto iter = find(_vecValue.begin(), _vecValue.end(), val);
+			if (iter == _vecValue.end())
+			{
+				return;
+			}
+			_vecValue.erase(iter);
+		}
 		
 	private:
 		int _id;
 		int _gold;
 		vector<int> _vecIdEntityCatched;
+		vector<int> _vecValue;
 		
 };
 //处理收益数据类
