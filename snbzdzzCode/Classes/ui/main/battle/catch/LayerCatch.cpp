@@ -166,7 +166,7 @@ void LayerCatch::showResult()
 		auto dataEntity = handleDataEntity->getVecDataEntityMst().at(_index);
 		auto idEntity = dataEntity->getIdEntity();
 		auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
-		handleDataIncome->getDataIncome(0)->pushVecIdEntityCatched(idEntity);
+		handleDataIncome->getDataIncome()->pushVecIdEntityCatched(idEntity);
 		handleDataIncome->dataFileSet();
 	}
 

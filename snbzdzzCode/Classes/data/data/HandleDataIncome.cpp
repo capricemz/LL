@@ -23,8 +23,8 @@ bool DataIncome::init()
 
 string DataIncome::getStrData()
 {
-	string strData = Value(_id).asString();
-	strData += ":" + Value(_gold).asString();
+	string strData = Value(_gold).asString();
+	/*strData += ":" + Value(_gold).asString();*/
 	auto length = (int)_vecIdEntityCatched.size();
 	if (length != 0)
 	{
@@ -50,12 +50,13 @@ void DataIncome::costGold(const int & value)
 	_gold -= value;
 }
 
-HandleDataIncome::HandleDataIncome() : _isDataFileInit(false), _dicDataIncome({})
+HandleDataIncome::HandleDataIncome() : _isDataFileInit(false), _dataIncome(nullptr)
 {
 }
 
 HandleDataIncome::~HandleDataIncome()
 {
+	CC_SAFE_RELEASE_NULL(_dataIncome);
 }
 
 void HandleDataIncome::dataFileInit()
@@ -64,7 +65,8 @@ void HandleDataIncome::dataFileInit()
 	{
 		_isDataFileInit = true;
 		auto userDefault = UserDefault::getInstance();
-		userDefault->setStringForKey(USER_DEFAULT_KEY_DI.c_str(), DATA_UNLOCK_INIT_INCOME);//写入初始数据
+		auto key = ManagerData::getInstance()->getUserDefaultKey(USER_DEFAULT_KEY_DI);
+		userDefault->setStringForKey(key.c_str(), "0");//写入初始数据
 		userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io
 		dataFileGet();
 	}
@@ -73,40 +75,29 @@ void HandleDataIncome::dataFileInit()
 void HandleDataIncome::dataFileGet()
 {
 	auto userDefault = UserDefault::getInstance();
-	auto strData = userDefault->getStringForKey(USER_DEFAULT_KEY_DI.c_str());
+	auto key = ManagerData::getInstance()->getUserDefaultKey(USER_DEFAULT_KEY_DI);
+	auto strData = userDefault->getStringForKey(key.c_str());
 	if (strData != "")
 	{
-		auto vecData = UtilString::split(strData, "|");
-		auto length = (int)vecData.size();
-		for (auto i = 0; i < length; i++)
-		{
-			createDataIncome(vecData[i]);
-		}
+		createDataIncome(strData);
 	}
 }
 
 void HandleDataIncome::dataFileSet()
 {
-	string strData = "";
+	string strData = _dataIncome->getStrData();
 	auto userDefault = UserDefault::getInstance();
-	for (auto var : _dicDataIncome)
-	{
-		auto dataIncome = var.second;
-		auto str = dataIncome->getStrData();
-		strData += (strData != "" ? "|" : "") + str;
-	}
-	userDefault->setStringForKey(USER_DEFAULT_KEY_DI.c_str(), strData);//修改存档
+	auto key = ManagerData::getInstance()->getUserDefaultKey(USER_DEFAULT_KEY_DI);
+	userDefault->setStringForKey(key.c_str(), strData);//修改存档
 	userDefault->flush();
 }
 
 void HandleDataIncome::createDataIncome(string infos)
 {
-	if (infos == "")
-	{
-		return;
-	}
-	auto data = DataIncome::create();
-	auto numDataOther = 2;
+	CC_SAFE_RELEASE_NULL(_dataIncome);
+	_dataIncome = DataIncome::create();
+	CC_SAFE_RETAIN(_dataIncome);
+	auto numDataOther = 1;
 	auto numDataCatchedMst = 2;
 
 	auto vecInfo = UtilString::split(infos, ":");
@@ -118,17 +109,13 @@ void HandleDataIncome::createDataIncome(string infos)
 		vecInfo.erase(vecInfo.begin());
 		if (index == 0)
 		{
-			data->setId(value);
-		}
-		else if (index == 1)
-		{
-			data->setGold(value);
+			_dataIncome->setGold(value);
 		}
 		else
 		{
 			if ((index - numDataOther) % numDataCatchedMst == 0)
 			{
-				data->pushVecIdEntityCatched(value);
+				_dataIncome->pushVecIdEntityCatched(value);
 			}
 			else
 			{
@@ -137,5 +124,4 @@ void HandleDataIncome::createDataIncome(string infos)
 		}
 		index++;
 	}
-	_dicDataIncome.insert(data->getId(), data);
 }

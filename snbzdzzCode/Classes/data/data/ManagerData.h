@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 
 #ifndef __DATA_DATA_MANAGER_DATA_H__
 #define __DATA_DATA_MANAGER_DATA_H__
@@ -10,7 +10,7 @@
 USING_NS_CC;
 using namespace std;
 
-//Ê±¼äÊı¾İ´¦ÀíÀà
+//æ—¶é—´æ•°æ®å¤„ç†ç±»
 class HandleDataTime
 {
 	public:
@@ -30,14 +30,14 @@ class HandleDataTime
 		bool isTimeLastNeedReset() const { return _timeNow - _timeLast >= TIME_LAST_SAVE_INTERVAL; }
 
 	private:
-		const string USER_DEFAULT_KEY_DT = "dataTime";//Ê±¿ÌÊı¾İ,ÉÏÒ»Ê±¿Ì£¬ĞĞ¶¯Á¦»Ö¸´Ê±¿Ì£¬±¥Ê³¶ÈÏûºÄÊ±¿Ì
+		const string USER_DEFAULT_KEY_DT = "dataTime";//æ—¶åˆ»æ•°æ®,ä¸Šä¸€æ—¶åˆ»ï¼Œè¡ŒåŠ¨åŠ›æ¢å¤æ—¶åˆ»ï¼Œé¥±é£Ÿåº¦æ¶ˆè€—æ—¶åˆ»
 		bool _isDataFileInit;
 
-		double _timeLast;//ÉÏÒ»Ê±¿Ì
-		double _timeNow;//µ±Ç°Ê±¿Ì
+		double _timeLast;//ä¸Šä¸€æ—¶åˆ»
+		double _timeNow;//å½“å‰æ—¶åˆ»
 
 };
-//¸ñ×ÓÊı¾İÀà
+//æ ¼å­æ•°æ®ç±»
 class DataGrid : public Ref
 {
 	public:
@@ -59,11 +59,11 @@ class DataGrid : public Ref
 		void updateSkillEffect();
 	
 	public:
-		int getId() const//Î¨Ò»id
+		int getId() const//å”¯ä¸€id
 		{
 			return _id;
 		}
-		void setId(int val)//Î¨Ò»id
+		void setId(int val)//å”¯ä¸€id
 		{
 			_id = val;
 		}
@@ -96,15 +96,15 @@ class DataGrid : public Ref
 			return _dicAttribute;
 		}
 		int getAttribute(const IdAttribute &idAttribute);
-		void setAttribute(const IdAttribute &idAttribute, const int &value);//idAttribute ÔªËØid, value ĞÂÖµ
-		void addAttribute(const IdAttribute &idAttribute, const int &value);//idAttribute ÔªËØid, value ÕıÖµÔö¼Ó£¬¸ºÖµ¼õÉÙ
+		void setAttribute(const IdAttribute &idAttribute, const int &value);//idAttribute å…ƒç´ id, value æ–°å€¼
+		void addAttribute(const IdAttribute &idAttribute, const int &value);//idAttribute å…ƒç´ id, value æ­£å€¼å¢åŠ ï¼Œè´Ÿå€¼å‡å°‘
 		map<IdAttribute, string> getDicAttributeCondition()
 		{
 			return _dicAttributeCondition;
 		}
 		string getAttributeCondition(const IdAttribute &idAttribute);
-		void setAttributeCondition(const IdAttribute &idAttribute, const string &value);//idAttribute ÔªËØid, value ĞÂÖµ
-		void addAttributeCondition(const IdAttribute &idAttribute, const string &value);//idAttribute ÔªËØid, value ÕıÖµÔö¼Ó£¬¸ºÖµ¼õÉÙ
+		void setAttributeCondition(const IdAttribute &idAttribute, const string &value);//idAttribute å…ƒç´ id, value æ–°å€¼
+		void addAttributeCondition(const IdAttribute &idAttribute, const string &value);//idAttribute å…ƒç´ id, value æ­£å€¼å¢åŠ ï¼Œè´Ÿå€¼å‡å°‘
 		DataGrid * getDataGridNext() const
 		{
 			return _dataGridNext;
@@ -124,7 +124,7 @@ class DataGrid : public Ref
 		DataGrid *_dataGridNext;
 		
 };
-//¸ñ×ÓÊı¾İ´¦ÀíÀà
+//æ ¼å­æ•°æ®å¤„ç†ç±»
 class HandleDataGrid
 {
 	public:
@@ -138,18 +138,18 @@ class HandleDataGrid
 		void postionGridSelectedPush(const bool &isMst, const Vec2 &val);
 		int getIndexGridBattle();
 		void resetIndexGridBattle(){ _indexGridBattle = 0; }
-		bool isRoundOver() { return _indexGridBattle == GRID_SELECTED_MAX; }//»ØºÏÊÇ·ñ½áÊø
+		bool isRoundOver() { return _indexGridBattle == GRID_SELECTED_MAX; }//å›åˆæ˜¯å¦ç»“æŸ
 		
 	private:
 		vector<Vec2> _vecPostionGridSelectedMaid;
 		vector<Vec2> _vecPostionGridSelectedMst;
 
-		int _idDataGridNow;//¸ñ×ÓµÄÎ¨Ò»id
+		int _idDataGridNow;//æ ¼å­çš„å”¯ä¸€id
 
 		int _indexGridBattle;
 		
 };
-//ÊµÌåÊı¾İÀà
+//å®ä½“æ•°æ®ç±»
 class DataEntity : public Ref
 {
 	public:
@@ -191,14 +191,14 @@ class DataEntity : public Ref
 			return _dicAttribute;
 		}
 		int getAttribute(IdAttribute idAttribute);
-		void setAttribute(IdAttribute idAttribute, int value);//idAttribute ÔªËØid, value ĞÂÖµ
-		void addAttribute(IdAttribute idAttribute, int value);//idAttribute ÔªËØid, value ÕıÖµÔö¼Ó£¬¸ºÖµ¼õÉÙ
+		void setAttribute(IdAttribute idAttribute, int value);//idAttribute å…ƒç´ id, value æ–°å€¼
+		void addAttribute(IdAttribute idAttribute, int value);//idAttribute å…ƒç´ id, value æ­£å€¼å¢åŠ ï¼Œè´Ÿå€¼å‡å°‘
 		bool getIsAlive();
 
-		DataSkillInfo &vecSkillActiveInfoGet();//»ñÈ¡¼¼ÄÜĞÅÏ¢
-		void vecSkillActiveInUse2UseOver();//¼ÓÊ¹ÓÃµÄÅÆ·ÅÈëÆúÅÆ¿â
-		bool vecSkillActiveIsAllUse();//ÊÇ·ñÈ¡ÍêÅÆ¿â
-		void vecSkillActiveSort(const bool &isAll = false);//Ï´ÅÆ
+		DataSkillInfo &vecSkillActiveInfoGet();//è·å–æŠ€èƒ½ä¿¡æ¯
+		void vecSkillActiveInUse2UseOver();//åŠ ä½¿ç”¨çš„ç‰Œæ”¾å…¥å¼ƒç‰Œåº“
+		bool vecSkillActiveIsAllUse();//æ˜¯å¦å–å®Œç‰Œåº“
+		void vecSkillActiveSort(const bool &isAll = false);//æ´—ç‰Œ
 		vector<DataSkillInfo> &getVecSkillPassive()
 		{
 			return _vecSkillPassive;
@@ -211,18 +211,18 @@ class DataEntity : public Ref
 		{
 			return _vecSkillActiveNeedBuy;
 		}
-		/*ÉèÖÃ¼¼ÄÜ
-		idSkill ¼¼ÄÜ±íid
-		index ¼¼ÄÜ±íindex
-		num ÊıÁ¿*/
+		/*è®¾ç½®æŠ€èƒ½
+		idSkill æŠ€èƒ½è¡¨id
+		index æŠ€èƒ½è¡¨index
+		num æ•°é‡*/
 		void setSkill(DataSkillInfo &dataSkillInfo);
 		void vecSkillClear();
 
-		int getRound() const//»ñÈ¡µ±Ç°»ØºÏÊı
+		int getRound() const//è·å–å½“å‰å›åˆæ•°
 		{
 			return _round;
 		}
-		void setRound(int val)//ÉèÖÃµ±Ç°»ØºÏÊı
+		void setRound(int val)//è®¾ç½®å½“å‰å›åˆæ•°
 		{
 			_round = val;
 		}
@@ -246,40 +246,40 @@ class DataEntity : public Ref
 		vector<DataSkillInfo> _vecSkillPassive;
 		vector<DataSkillInfo> _vecSkillRandom;
 
-		int _round;//»ØºÏÊı
+		int _round;//å›åˆæ•°
 		
 };
-//ÊµÌåÊı¾İ´¦ÀíÀà
+//å®ä½“æ•°æ®å¤„ç†ç±»
 class HandleDataEntity
 {
 	public:
 		HandleDataEntity();
 		~HandleDataEntity();
 
-		void dataFileInit();//±¸ÓÃ
-		void dataFileGet();//±¸ÓÃ
-		void dataFileSet();//±¸ÓÃ
+		void dataFileInit();
+		void dataFileGet();
+		void dataFileSet();
 		
-		void resetDataEntityMaid();//¿ªÊ¼¹Ø¿¨Ê±£¬ÖØÖÃÅ®ÆÍÊı¾İ£¬Èç½«Å®ÆÍÑªÁ¿²¹ÂúµÈ
+		void resetDataEntityMaid();//å¼€å§‹å…³å¡æ—¶ï¼Œé‡ç½®å¥³ä»†æ•°æ®ï¼Œå¦‚å°†å¥³ä»†è¡€é‡è¡¥æ»¡ç­‰
 		void createDataEntityMaid();
 		void createDataEntityMaid(const int &idEntity);
-		void createDataEntityMst();//¸ù¾İµ±Ç°¹Ø¿¨¹¹½¨¹ÖÎïDataEntity
-		void vecSkillActiveSortMaid();//Å®ÆÍÏ´ÅÆ
+		void createDataEntityMst();//æ ¹æ®å½“å‰å…³å¡æ„å»ºæ€ªç‰©DataEntity
+		void vecSkillActiveSortMaid();//å¥³ä»†æ´—ç‰Œ
 
 		void dealSkillRandom(const function<void()> &func = nullptr);
 
-		void resetDataEntityAttributeTemp();//ÖØÖÃÊµÌåÕ½¶·½á¹ûÁÙÊ±ÊôĞÔ
+		void resetDataEntityAttributeTemp();//é‡ç½®å®ä½“æˆ˜æ–—ç»“æœä¸´æ—¶å±æ€§
 
-		void dealVecSkillActiveInUse2UseOverMaid();//´¦ÀíĞĞ¶¯½áÊøÊı¾İ
-		void dealDataEntitySkillSort(const bool &isForce = false);//´¦Àí»ØºÏ½áÊøÊı¾İ
-		void dealBattleOver();//´¦ÀíÕ½¶·½áÊøÊı¾İ
+		void dealVecSkillActiveInUse2UseOverMaid();//å¤„ç†è¡ŒåŠ¨ç»“æŸæ•°æ®
+		void dealDataEntitySkillSort(const bool &isForce = false);//å¤„ç†å›åˆç»“æŸæ•°æ®
+		void dealBattleOver();//å¤„ç†æˆ˜æ–—ç»“æŸæ•°æ®
 		
 	public:
 		Vector<DataEntity *> &getVecDataEntityMst()
 		{
 			return _vecDataEntityMst;
 		}
-		DataEntity * getDataEntityMst() const//»ñÈ¡µ±Ç°¹ÖÎïDataEntity
+		DataEntity * getDataEntityMst() const//è·å–å½“å‰æ€ªç‰©DataEntity
 		{
 			return _vecDataEntityMst.at(_indexMst);
 		}
@@ -295,13 +295,14 @@ class HandleDataEntity
 		{
 			return _vecDataEntityMaid;
 		}
-		DataEntity * getDataEntityMaid() const//»ñÈ¡µ±Ç°Å®ÆÍDataEntity
+		DataEntity * getDataEntityMaid() const//è·å–å½“å‰å¥³ä»†DataEntity
 		{
 			return _vecDataEntityMaid.at(_indexMaid);
 		}
 		void swapVecDataEntityMaid(const int &index0, const int &index1)
 		{
 			_vecDataEntityMaid.swap(index0, index1);
+			dataFileSet();
 		}
 
 		int getLengthVecDataEntity(const bool &isMst);
@@ -334,7 +335,7 @@ class HandleDataEntity
 		}
 		bool isAllMaidDead();
 
-		int getRoundTotal() const//»ñÈ¡µ±Ç°×Ü»ØºÏÊı
+		int getRoundTotal() const//è·å–å½“å‰æ€»å›åˆæ•°
 		{
 			return _roundTotal;
 		}
@@ -349,18 +350,19 @@ class HandleDataEntity
 		DataEntity * createDataEntity(const int &idEntity);
 		
 	private:
-		const string USER_DEFAULT_KEY_DE = "dataEntity";//ÊµÌåÊı¾İ
+		const string USER_DEFAULT_KEY_DE = "dataEntity";//å®ä½“æ•°æ®
 		bool _isDataFileInit;
+		map<int, int> _dicSortIdEntityMaid;
 
 		Vector<DataEntity *> _vecDataEntityMst;
 		Vector<DataEntity *> _vecDataEntityMaid;
-		int _indexMst;//µ±Ç°Õ½¶·¹ÖÎï
-		int _indexMaid;//µ±Ç°Õ½¶·Å®ÆÍ
+		int _indexMst;//å½“å‰æˆ˜æ–—æ€ªç‰©
+		int _indexMaid;//å½“å‰æˆ˜æ–—å¥³ä»†
 
-		int _roundTotal;//×Ü»ØºÏÊı
+		int _roundTotal;//æ€»å›åˆæ•°
 		
 };
-//¹Ø¿¨Êı¾İÀà
+//å…³å¡æ•°æ®ç±»
 class DataLevel : public Ref
 {
 	public:
@@ -376,8 +378,8 @@ class DataLevel : public Ref
 
 		void dealLevelPassed();
 		void dealLevelTarget();
-		void setState();//ÉèÖÃ×´Ì¬
-		void setVecTargetComplete();//¸ù¾İÍê³ÉÊı¾İÉèÖÃÍê³É×´Ì¬
+		void setState();//è®¾ç½®çŠ¶æ€
+		void setVecTargetComplete();//æ ¹æ®å®Œæˆæ•°æ®è®¾ç½®å®ŒæˆçŠ¶æ€
 		
 	public:
 		int getId() const
@@ -421,7 +423,7 @@ class DataLevel : public Ref
 		vector<bool> _vecTargetComplete;
 		
 };
-//¹Ø¿¨Êı¾İ´¦ÀíÀà
+//å…³å¡æ•°æ®å¤„ç†ç±»
 class HandleDataLevels
 {
 	public:
@@ -446,14 +448,14 @@ class HandleDataLevels
 		DataLevel *getDataLevelCurrent()
 		{
 			return _dicDataLevel.at(_levelCurrent);
-		}//µ±Ç°¹Ø¿¨
+		}//å½“å‰å…³å¡
 		
 	private:
 		Map<int, DataLevel *> _dicDataLevel;
-		int _levelCurrent;//µ±Ç°¹Ø¿¨
+		int _levelCurrent;//å½“å‰å…³å¡
 		
 };
-//´¦Àí½âËøÊı¾İÀà
+//å¤„ç†è§£é”æ•°æ®ç±»
 class HandleDataUnlock
 {
 	public:
@@ -468,7 +470,7 @@ class HandleDataUnlock
 		bool getIsUnlockMaid(const int &idEntity);
 		void setIsUnlockMaid(const int &idEntity);
 		bool getIsUnlockSkill(const int &idSkill, const int &indexSkill);
-		void setIsUnlockSkill(const int &idSkill, const int &indexSkill);//indexSkillÎª-1Ê±£¬½âËøËùÓĞ
+		void setIsUnlockSkill(const int &idSkill, const int &indexSkill);//indexSkillä¸º-1æ—¶ï¼Œè§£é”æ‰€æœ‰
 		bool getIsBuySkill(const int &idSkill, const int &indexSkill);
 		void setIsBuySkill(const int &idSkill, const int &indexSkill);
 		bool getIsUnlockLevel(const int &idLevel);
@@ -481,7 +483,7 @@ class HandleDataUnlock
 		void setIsUnlock(int index);
 	
 	private:
-		const string USER_DEFAULT_KEY_DU = "dataUnlock";//½âËøÊı¾İ
+		const string USER_DEFAULT_KEY_DU = "dataUnlock";//è§£é”æ•°æ®
 		bool _isDataFileInit;
 	
 		map<int, int> _dicTypeUnlockMaid;
@@ -493,7 +495,7 @@ class HandleDataUnlock
 		vector<int> _vecDataUnlock;
 	
 };
-//ÊÕÒæÊı¾İÀà
+//æ”¶ç›Šæ•°æ®ç±»
 class DataIncome : public Ref
 {
 	public:
@@ -507,8 +509,8 @@ class DataIncome : public Ref
 
 		string getStrData();
 
-		bool isGoldEnoughGet(const int &value);//½ğ±ÒÊÇ·ñ×ã¹»
-		void costGold(const int &value);//ÏûºÄ½ğ±Ò
+		bool isGoldEnoughGet(const int &value);//é‡‘å¸æ˜¯å¦è¶³å¤Ÿ
+		void costGold(const int &value);//æ¶ˆè€—é‡‘å¸
 		
 	public:
 		int getId() const
@@ -555,7 +557,7 @@ class DataIncome : public Ref
 		vector<int> _vecIdEntityCatched;
 		
 };
-//´¦ÀíÊÕÒæÊı¾İÀà
+//å¤„ç†æ”¶ç›Šæ•°æ®ç±»
 class HandleDataIncome
 {
 	public:
@@ -566,26 +568,22 @@ class HandleDataIncome
 		void dataFileGet();
 		void dataFileSet();
 		
-		DataIncome * getDataIncome(const int &id) const
+		DataIncome * getDataIncome() const
 		{
-			if (_dicDataIncome.find(id) == _dicDataIncome.end())
-			{
-				return nullptr;
-			}
-			return _dicDataIncome.at(id);
+			return _dataIncome;
 		}
 		
 	private:
 		void createDataIncome(string infos);
 		
 	private:
-		const string USER_DEFAULT_KEY_DI = "dataIncome";//ÊÕÒæÊı¾İ
+		const string USER_DEFAULT_KEY_DI = "dataIncome";//æ”¶ç›Šæ•°æ®
 		bool _isDataFileInit;
 
-		Map<int, DataIncome *> _dicDataIncome;
+		DataIncome * _dataIncome;
 
 };
-//Êı¾İÀà
+//æ•°æ®ç±»
 class ManagerData
 {
 	public:
@@ -594,16 +592,21 @@ class ManagerData
 
 	public:
 		virtual ~ManagerData();
-		void setSaveFileExist();//ÉèÖÃÊı¾İ´æÔÚ
-		bool isSaveFileExist();//ÅĞ¶Ï´æµµÊÇ·ñ´æÔÚ
+		void setSaveFileExist();//è®¾ç½®æ•°æ®å­˜åœ¨
+		bool isSaveFileExist();//åˆ¤æ–­å­˜æ¡£æ˜¯å¦å­˜åœ¨
 		void dataFileGet();
-		void dataFileSet();//±£´æËùÓĞÊı¾İ
-
+		void dataFileAllSet();//ä¿å­˜æ‰€æœ‰æ•°æ®
+		
 	private:
 		ManagerData();
 		void initHandleDatas();
 
 	public:
+		string getUserDefaultKey(const string &key)
+		{
+			return (key + Value(_indexCareer).asString());
+		}
+		void setIndexCareer(int val) { _indexCareer = val; }
 		HandleDataTime * getHandleDataTime() { return _handleDataTime; }
 		HandleDataUnlock * getHandleDataUnlock() { return _handleDataUnlock; }
 		HandleDataGrid * getHandleDataGrid() { return _handleDataGrid; }
@@ -612,15 +615,16 @@ class ManagerData
 		HandleDataIncome * getHandleDataIncome() { return _handleDataIncome; }
 
 	private:
-		const string USER_DEFAULT_KEY_ISFE = "isSaveFileExist";//´¢´æÎÄ¼şÊÇ·ñ´æÔÚ
+		const string USER_DEFAULT_KEY_ISFE = "isSaveFileExist";//å‚¨å­˜æ–‡ä»¶æ˜¯å¦å­˜åœ¨
 
 	private:
-		HandleDataTime *_handleDataTime;//Ê±¼äÊı¾İ´¦Àí
-		HandleDataUnlock *_handleDataUnlock;
-		HandleDataGrid *_handleDataGrid;//¸ñ×ÓÊı¾İ´¦Àí
-		HandleDataEntity *_handleDataEntity;//ÊµÌåÊı¾İ´¦Àí
-		HandleDataLevels *_handleDataLevels;//¹Ø¿¨Êı¾İ´¦Àí
-		HandleDataIncome *_handleDataIncome;//ÊÕÒæÊı¾İ´¦Àí
+		int _indexCareer;//ç”Ÿæ¶¯å€¼
+		HandleDataTime *_handleDataTime;//æ—¶é—´æ•°æ®å¤„ç†
+		HandleDataUnlock *_handleDataUnlock;//è§£é”æ•°æ®å¤„ç†
+		HandleDataGrid *_handleDataGrid;//æ ¼å­æ•°æ®å¤„ç†
+		HandleDataEntity *_handleDataEntity;//å®ä½“æ•°æ®å¤„ç†
+		HandleDataLevels *_handleDataLevels;//å…³å¡æ•°æ®å¤„ç†
+		HandleDataIncome *_handleDataIncome;//æ”¶ç›Šæ•°æ®å¤„ç†
 
 };
 

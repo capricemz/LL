@@ -33,7 +33,8 @@ void HandleDataUnlock::dataFileInit()
 	{
 		_isDataFileInit = true;
 		/*auto userDefault = UserDefault::getInstance();
-		userDefault->setStringForKey(USER_DEFAULT_KEY_DU.c_str(), "");//写入初始数据
+		auto key = ManagerData::getInstance()->getUserDefaultKey(USER_DEFAULT_KEY_DU);
+		userDefault->setStringForKey(key.c_str(), "");//写入初始数据
 		userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io*/
 		createTypeUnlockOther();
 		setIsUnlockMaid(DATA_UNLOCK_INIT_MAID);
@@ -46,12 +47,13 @@ void HandleDataUnlock::dataFileGet()
 {
 	createTypeUnlockOther();
 	auto userDefault = UserDefault::getInstance();
-	auto strDataUnlock = userDefault->getStringForKey(USER_DEFAULT_KEY_DU.c_str());
-	auto vecDataUnlock = UtilString::split(strDataUnlock, ":");
+	auto key = ManagerData::getInstance()->getUserDefaultKey(USER_DEFAULT_KEY_DU);
+	auto strData = userDefault->getStringForKey(key.c_str());
+	auto vecData = UtilString::split(strData, ":");
 	_vecDataUnlock.clear();
-	for (int i = vecDataUnlock.size() - 1; i >= 0; i--)
+	for (int i = vecData.size() - 1; i >= 0; i--)
 	{
-		_vecDataUnlock.push_back(Value(vecDataUnlock[i]).asInt());
+		_vecDataUnlock.push_back(Value(vecData[i]).asInt());
 	}
 	/*setIsUnlockMaid(1001);//for test*/
 }
@@ -59,13 +61,14 @@ void HandleDataUnlock::dataFileGet()
 void HandleDataUnlock::dataFileSet()
 {
 	auto userDefault = UserDefault::getInstance();
-	string strDataUnlock = "";
+	string strData = "";
 	auto length = (int)_vecDataUnlock.size();
 	for (auto i = 0; i < length; i++)
 	{
-		strDataUnlock = Value(_vecDataUnlock[i]).asString() + (i == 0 ? "" : (":" + strDataUnlock));
+		strData = Value(_vecDataUnlock[i]).asString() + (i == 0 ? "" : (":" + strData));
 	}
-	userDefault->setStringForKey(USER_DEFAULT_KEY_DU.c_str(), strDataUnlock);//修改存档
+	auto key = ManagerData::getInstance()->getUserDefaultKey(USER_DEFAULT_KEY_DU);
+	userDefault->setStringForKey(key.c_str(), strData);//修改存档
 	userDefault->flush();
 }
 

@@ -14,7 +14,6 @@ static const int TIME_OFF_LINE_MAX = 172800;
 
 static const int DATA_UNLOCK_INIT_MAID = 1000;//初始化时默认解锁的女仆
 static const int DATA_UNLOCK_INIT_LEVEL = 1000;//初始化时默认解锁的关卡
-static const string DATA_UNLOCK_INIT_INCOME = "0:0";//初始化时默认收益数据
 
 static const int GRID_SELECT_MAX = 9;
 static const int GRID_SELECTED_MAX = 3;

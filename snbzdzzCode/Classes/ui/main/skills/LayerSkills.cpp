@@ -203,7 +203,7 @@ void LayerSkills::onTouchBtnSkill(Ref *ref, Widget::TouchEventType type, const D
 
 		auto managerData = ManagerData::getInstance();
 		auto handleDataIncome = managerData->getHandleDataIncome();
-		auto dataIncome = handleDataIncome->getDataIncome(0);
+		auto dataIncome = handleDataIncome->getDataIncome();
 		auto cfgSkill = ManagerCfg::getInstance()->getDicDicCfgSkill()[id][index];//需要花费的金币
 		auto isGoldEnough = dataIncome->isGoldEnoughGet(cfgSkill.buyCost);
 		if (!isGoldEnough)

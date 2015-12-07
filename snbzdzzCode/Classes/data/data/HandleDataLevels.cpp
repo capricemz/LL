@@ -232,7 +232,7 @@ void DataLevel::dealPassedIncome(const map<TypeAward, int>& award)
 		auto type = var.first;
 		if (type == TypeAward::GOLD)
 		{
-			auto dataIncome = handleDataIncome->getDataIncome(0);
+			auto dataIncome = handleDataIncome->getDataIncome();
 			dataIncome->addGold(var.second);
 		}
 	}

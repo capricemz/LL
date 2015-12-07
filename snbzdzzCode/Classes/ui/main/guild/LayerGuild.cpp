@@ -71,7 +71,7 @@ void LayerGuild::createSkin()
 void LayerGuild::createEntityMst()
 {
 	auto layout = (Layout *)_skin->getChildByName("layoutEntity");
-	auto dataIncome = ManagerData::getInstance()->getHandleDataIncome()->getDataIncome(0);
+	auto dataIncome = ManagerData::getInstance()->getHandleDataIncome()->getDataIncome();
 	auto vecIdEntity = dataIncome->getVecIdEntityCatched();
 	auto postion = Vec2::ZERO;
 	for (auto idEntity : vecIdEntity)

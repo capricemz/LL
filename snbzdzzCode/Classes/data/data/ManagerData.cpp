@@ -1,6 +1,7 @@
 #pragma execution_character_set("utf-8")
 
 #include "ManagerData.h"
+#include "common/util/UtilString.h"
 
 static ManagerData *_instance;
 
@@ -31,18 +32,19 @@ ManagerData::~ManagerData()
 void ManagerData::setSaveFileExist()
 {
 	auto userDefault = UserDefault::getInstance();
-	userDefault->setBoolForKey(USER_DEFAULT_KEY_ISFE.c_str(), true);//写入bool判断位
+	auto key = getUserDefaultKey(USER_DEFAULT_KEY_ISFE);
+	userDefault->setBoolForKey(key.c_str(), true);//写入bool判断位
 }
 
 bool ManagerData::isSaveFileExist()
 {
 	auto userDefault = UserDefault::getInstance();
-	if (!userDefault->getBoolForKey(USER_DEFAULT_KEY_ISFE.c_str()))//通过设置的bool型标志位判断，如果不存在
+	auto key = getUserDefaultKey(USER_DEFAULT_KEY_ISFE);
+	if (!userDefault->getBoolForKey(key.c_str()))//通过设置的bool型标志位判断，如果不存在
 	{
 		_handleDataTime->dataFileInit();
 		_handleDataUnlock->dataFileInit();
-		/*_handleDataEntity->dataFileInit();*/
-		/*_handleDataLevels->dataFileInit();*/
+		_handleDataEntity->dataFileInit();
 		_handleDataIncome->dataFileInit();
 		return false;
 	}
@@ -58,22 +60,20 @@ void ManagerData::dataFileGet()
 	{
 		_handleDataTime->dataFileGet();
 		_handleDataUnlock->dataFileGet();
-		/*_handleDataEntity->dataFileGet();*/
-		/*_handleDataLevels->dataFileGet();*/
+		_handleDataEntity->dataFileGet();
 		_handleDataIncome->dataFileGet();
 	}
 }
 
-void ManagerData::dataFileSet()
+void ManagerData::dataFileAllSet()
 {
 	_handleDataTime->dataFileSet();
 	_handleDataUnlock->dataFileSet();
-	/*_handleDataEntity->dataFileSet();*/
-	/*_handleDataLevels->dataFileSet();*/
+	_handleDataEntity->dataFileSet();
 	_handleDataIncome->dataFileSet();
 }
 
-ManagerData::ManagerData()
+ManagerData::ManagerData() : _indexCareer(0)
 {
 	initHandleDatas();
 }

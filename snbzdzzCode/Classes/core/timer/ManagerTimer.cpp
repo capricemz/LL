@@ -99,7 +99,7 @@ void ManagerTimer::updateCustom(float dt)
 	if (handleDataTime->isTimeLastNeedReset())//每隔3分钟保存一次上一时刻数据
 	{
 		timeLastReset();
-		ManagerData::getInstance()->dataFileSet();
+		ManagerData::getInstance()->dataFileAllSet();
 	}
 	//
 	/*auto managerData = ManagerData::getInstance();

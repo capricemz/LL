@@ -348,7 +348,8 @@ void HandleDataEntity::dataFileInit()
 	{
 		_isDataFileInit = true;
 		auto userDefault = UserDefault::getInstance();
-		userDefault->setStringForKey(USER_DEFAULT_KEY_DE.c_str(), "");//写入初始数据
+		auto key = ManagerData::getInstance()->getUserDefaultKey(USER_DEFAULT_KEY_DE);
+		userDefault->setStringForKey(key.c_str(), Value(DATA_UNLOCK_INIT_MAID).asString());//写入初始数据
 		userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io
 	}
 }
@@ -356,17 +357,28 @@ void HandleDataEntity::dataFileInit()
 void HandleDataEntity::dataFileGet()
 {
 	auto userDefault = UserDefault::getInstance();
-	auto strDataTimeData = userDefault->getStringForKey(USER_DEFAULT_KEY_DE.c_str());
-	auto vecInfo = UtilString::split(strDataTimeData, "|");
-	auto vecIdEntity = UtilString::split(vecInfo[0], ":");
-	createDataEntityMaid();
+	auto key = ManagerData::getInstance()->getUserDefaultKey(USER_DEFAULT_KEY_DE);
+	auto strData = userDefault->getStringForKey(key.c_str());
+	auto vecData = UtilString::split(strData, ":");
+	auto length = (int)vecData.size();
+	for (auto i = 0; i < length; i++)
+	{
+		_dicSortIdEntityMaid[Value(vecData[i]).asInt()] = i;
+	}
 }
 
 void HandleDataEntity::dataFileSet()
 {
+	string strData = "";
+	auto length = (int)_vecDataEntityMaid.size();
+	for (auto i = 0; i < length; i++)
+	{
+		strData += i == 0 ? "" : ":";
+		strData += Value(_vecDataEntityMaid.at(i)->getIdEntity()).asString();
+	}
+	auto key = ManagerData::getInstance()->getUserDefaultKey(USER_DEFAULT_KEY_DE);
 	auto userDefault = UserDefault::getInstance();
-	string strDataTimeData = "";
-	userDefault->setStringForKey(USER_DEFAULT_KEY_DE.c_str(), strDataTimeData);//修改存档
+	userDefault->setStringForKey(key.c_str(), strData);//修改存档
 	userDefault->flush();
 }
 
@@ -389,17 +401,35 @@ void HandleDataEntity::resetDataEntityMaid()
 
 void HandleDataEntity::createDataEntityMaid()
 {
-	_vecDataEntityMaid.clear();
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
-	auto dicCfgEntity = ManagerCfg::getInstance()->getDicCfgEntity();
-	for (auto var : dicCfgEntity)
+	if (_dicSortIdEntityMaid.size() < 2)
 	{
-		auto cfgEntity = var.second;
-		auto idEntity = cfgEntity.id;
-		if (cfgEntity.type == TypeEntity::MAID && handleDataUnlock->getIsUnlockMaid(idEntity))
+		auto dicCfgEntity = ManagerCfg::getInstance()->getDicCfgEntity();
+		for (auto var : dicCfgEntity)
 		{
-			auto dataEntity = createDataEntity(Value(idEntity).asInt());
-			_vecDataEntityMaid.pushBack(dataEntity);
+			auto cfgEntity = var.second;
+			auto idEntity = cfgEntity.id;
+			if (cfgEntity.type == TypeEntity::MAID && handleDataUnlock->getIsUnlockMaid(idEntity))
+			{
+				auto dataEntity = createDataEntity(Value(idEntity).asInt());
+				_vecDataEntityMaid.pushBack(dataEntity);
+			}
+		}
+	}
+	else
+	{
+		vector<DataEntity *> vecTemp(_dicSortIdEntityMaid.size());
+		for (auto var : _dicSortIdEntityMaid)
+		{
+			auto dataEntity = createDataEntity(var.first);
+			vecTemp[var.second] = dataEntity;
+		}
+		for (auto var : vecTemp)
+		{
+			if (handleDataUnlock->getIsUnlockMaid(var->getIdEntity()))
+			{
+				_vecDataEntityMaid.pushBack(var);
+			}
 		}
 	}
 }
@@ -420,6 +450,7 @@ void HandleDataEntity::createDataEntityMaid(const int &idEntity)
 		auto dataEntity = createDataEntity(Value(idEntity).asInt());
 		_vecDataEntityMaid.pushBack(dataEntity);
 	}
+	dataFileSet();
 }
 
 void HandleDataEntity::createDataEntityMst()

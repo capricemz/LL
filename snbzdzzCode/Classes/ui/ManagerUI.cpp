@@ -40,7 +40,7 @@ void ManagerUI::addKeyEvent(Scene *scene)
 	{
 		if (keyCode == EventKeyboard::KeyCode::KEY_BACK)
 		{
-			ManagerData::getInstance()->dataFileSet();
+			ManagerData::getInstance()->dataFileAllSet();
 
 			ManagerCfg::getInstance()->destroyInstance();
 			ManagerData::getInstance()->destroyInstance();
