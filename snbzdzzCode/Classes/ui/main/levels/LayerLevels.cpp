@@ -80,15 +80,6 @@ void LayerLevels::createSkin()
 
 		index++;
 	}
-
-	auto btnSkills = (Button *)_skin->getChildByName("btnSkills");
-	btnSkills->addTouchEventListener([](Ref *ref, Widget::TouchEventType type)
-	{
-		if (type == Widget::TouchEventType::ENDED)
-		{
-			ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS);
-		}
-	});
 }
 
 void LayerLevels::updateNodeLevel(Node *nodeLevel, DataLevel *dataLevel)

@@ -61,15 +61,6 @@ void LayerSkills::createSkin()
 	_skin = (Layer *)CSLoader::createNode(RES_MODULES_MAIN_LAYER_SKILLS_CSB);
 	addChild(_skin);
 
-	auto btn = (Button *)_skin->getChildByName("btnBack");
-	btn->addTouchEventListener([](Ref *ref, Widget::TouchEventType type)
-	{
-		if (type == Widget::TouchEventType::ENDED)
-		{
-			ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
-		}
-	});
-	
 	updateLayoutBtns();
 
 	updateLayoutSkillItems();

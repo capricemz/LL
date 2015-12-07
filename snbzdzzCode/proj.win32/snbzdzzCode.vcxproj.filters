@@ -243,6 +243,9 @@
     <ClCompile Include="..\Classes\ui\main\guild\LayerGuild.cpp">
       <Filter>src\ui\main\guild</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\guild\UIEntity.cpp">
+      <Filter>src\ui\main\guild</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -393,6 +396,9 @@
       <Filter>src\ui\main\battle\catch</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ui\main\guild\LayerGuild.h">
+      <Filter>src\ui\main\guild</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\guild\UIEntity.h">
       <Filter>src\ui\main\guild</Filter>
     </ClInclude>
   </ItemGroup>
