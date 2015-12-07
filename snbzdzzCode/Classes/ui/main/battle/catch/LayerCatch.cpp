@@ -80,8 +80,13 @@ void LayerCatch::doWait()
 		auto isMst = i < 1;
 		auto rotationBegan = isMst ? -20.0f : 20.0f;
 		auto rotationEnd = isMst ? -30.0f : 30.0f;
+		string name = RES_IMAGES_MAIN_SRP_PNG_VEC[(int)TypeSRP::ROCK];
+		auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(name);
+
 		auto sprite = (Sprite *)(isMst ? _skin->getChildByName("spriteMst") : _skin->getChildByName("spriteMaid"));
 		sprite->setRotation(rotationBegan);
+		sprite->setSpriteFrame(spriteFrame);
+
 		auto actionRotateTo = EaseQuadraticActionInOut::create(RotateTo::create(1.0f / 3.0f, rotationEnd));
 		auto actionRotateBack = EaseQuadraticActionInOut::create(RotateTo::create(1.0f / 3.0f, rotationBegan));
 		auto actionWait = RepeatForever::create(Sequence::createWithTwoActions(actionRotateTo, actionRotateBack));
