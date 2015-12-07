@@ -21,7 +21,7 @@ public:
 
 	virtual bool init();
 
-	void updateSkin(const int &idEntity);
+	void updateSkin(const int &idEntity, const float &scale);
 
 public:
 	Layout *getLayoutBg()

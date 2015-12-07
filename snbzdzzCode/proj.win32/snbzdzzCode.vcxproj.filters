@@ -88,6 +88,9 @@
     <Filter Include="src\ui\main\guild">
       <UniqueIdentifier>{4ca40d16-4b90-4f20-b12a-7c72c51d3729}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ui\main\training">
+      <UniqueIdentifier>{2c508853-fba7-457e-b0fe-6cab0b4d990b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -246,6 +249,9 @@
     <ClCompile Include="..\Classes\ui\main\guild\UIEntity.cpp">
       <Filter>src\ui\main\guild</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\training\LayerTraining.cpp">
+      <Filter>src\ui\main\training</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -400,6 +406,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ui\main\guild\UIEntity.h">
       <Filter>src\ui\main\guild</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\training\LayerTraining.h">
+      <Filter>src\ui\main\training</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

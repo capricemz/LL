@@ -1,14 +1,11 @@
 #include "SceneMain.h"
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
 #include "data/define/DefinesRes.h"
 #include "ui/ManagerUI.h"
 #include "battle/LayerBattle.h"
 #include "levels/LayerLevels.h"
 #include "skills/LayerSkills.h"
 #include "guild/LayerGuild.h"
-
-using namespace ui;
+#include "training/LayerTraining.h"
 
 SceneMain::SceneMain() : _skin(nullptr)
 {
@@ -58,11 +55,27 @@ void SceneMain::updateBySubject(va_list values)
 		layoutContent->addChild(layerGuild);
 		layer = layerGuild;
 	}
-	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_BATTLE)
+	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_TRAINING)
 	{
-		auto layerBattle = LayerBattle::create();
-		layoutContent->addChild(layerBattle);
-		layer = layerBattle;
+		auto index = va_arg(values, int);
+		auto layerTraining = LayerTraining::create();
+		if (index != INT32_MIN)
+		{
+			layerTraining->updateSkin(index);
+		}
+		layoutContent->addChild(layerTraining);
+		layer = layerTraining;
+	}
+	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS)
+	{
+		auto idEntity = va_arg(values, int);
+		auto layerSkills = LayerSkills::create();
+		if (idEntity != INT32_MIN)
+		{
+			layerSkills->updateSkin(idEntity);
+		}
+		layoutContent->addChild(layerSkills);
+		layer = layerSkills;
 	}
 	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS)
 	{
@@ -70,11 +83,11 @@ void SceneMain::updateBySubject(va_list values)
 		layoutContent->addChild(layerLevels);
 		layer = layerLevels;
 	}
-	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS)
+	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_BATTLE)
 	{
-		auto layerSkills = LayerSkills::create();
-		layoutContent->addChild(layerSkills);
-		layer = layerSkills;
+		auto layerBattle = LayerBattle::create();
+		layoutContent->addChild(layerBattle);
+		layer = layerBattle;
 	}
 	managerUI->runLayerAppearDisappear(layer);
 }
@@ -102,30 +115,29 @@ void SceneMain::createSkin()
 	managerUI->setTypeLayerRunning(TYPE_OBSERVER_SCENE_MAIN::SHOW_BATTLE);
 	managerUI->setLayerRunning(layerBattle);*/
 
-	auto btnGuild = (Button *)_skin->getChildByName("btnGuild");
-	btnGuild->addTouchEventListener([](Ref *ref, Widget::TouchEventType type)
-	{
-		if (type == Widget::TouchEventType::ENDED)
-		{
-			ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_GUILD);
-		}
-	});
+	auto btn = (Button *)_skin->getChildByName("btnGuild");
+	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
+	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_GUILD);
 
-	auto btnSkills = (Button *)_skin->getChildByName("btnSkills");
-	btnSkills->addTouchEventListener([](Ref *ref, Widget::TouchEventType type)
-	{
-		if (type == Widget::TouchEventType::ENDED)
-		{
-			ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS);
-		}
-	});
+	btn = (Button *)_skin->getChildByName("btnTraining");
+	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
+	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_TRAINING);
 
-	auto btnLevels = (Button *)_skin->getChildByName("btnLevels");
-	btnLevels->addTouchEventListener([](Ref *ref, Widget::TouchEventType type)
+	btn = (Button *)_skin->getChildByName("btnSkills");
+	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
+	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS);
+
+	btn = (Button *)_skin->getChildByName("btnLevels");
+	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
+	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
+}
+
+void SceneMain::onTouchBtn(Ref *ref, Widget::TouchEventType type)
+{
+	if (type == Widget::TouchEventType::ENDED)
 	{
-		if (type == Widget::TouchEventType::ENDED)
-		{
-			ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
-		}
-	});
+		auto btn = (Button *)ref;
+		auto typeShow = (TYPE_OBSERVER_SCENE_MAIN)(int)btn->getUserData();
+		ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, typeShow, INT32_MIN);
+	}
 }

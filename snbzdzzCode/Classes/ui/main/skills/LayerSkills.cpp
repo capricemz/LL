@@ -56,6 +56,12 @@ void LayerSkills::dealRemoveFromParent()
 	}
 }
 
+void LayerSkills::updateSkin(const int &idEntity)
+{
+	_idEntityCurrent = idEntity;
+	updateLayoutSkillItems();
+}
+
 void LayerSkills::createSkin()
 {
 	_skin = (Layer *)CSLoader::createNode(RES_MODULES_MAIN_LAYER_SKILLS_CSB);

@@ -231,6 +231,15 @@ enum class TypeSRP
 	PAPER
 };
 
+enum class TypeTrianing
+{
+	NONE,
+	WAY0,
+	WAY1,
+	WAY2,
+	WAY3
+};
+
 enum class TypeConfirms
 {
 	MAP_TRANSFER,
@@ -270,9 +279,10 @@ enum class ID_OBSERVER
 enum class TYPE_OBSERVER_SCENE_MAIN
 {
 	SHOW_GUILD,
-	SHOW_BATTLE,
+	SHOW_TRAINING,
+	SHOW_SKILLS,
 	SHOW_LEVELS,
-	SHOW_SKILLS
+	SHOW_BATTLE
 };
 
 enum class TYPE_OBSERVER_LAYER_BATTLE

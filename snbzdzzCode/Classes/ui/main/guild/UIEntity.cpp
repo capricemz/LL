@@ -25,7 +25,7 @@ bool UIEntity::init()
 	return isInit;
 }
 
-void UIEntity::updateSkin(const int &idEntity)
+void UIEntity::updateSkin(const int &idEntity, const float &scale)
 {
 	auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[idEntity];
 
@@ -33,7 +33,7 @@ void UIEntity::updateSkin(const int &idEntity)
 	if (_skin == nullptr)
 	{
 		_skin = Sprite::create(urlPic);
-		_skin->setScale(0.15f);
+		_skin->setScale(scale);
 		addChild(_skin);
 	}
 	else

@@ -74,15 +74,17 @@ void LayerGuild::createEntityMst()
 	auto dataIncome = ManagerData::getInstance()->getHandleDataIncome()->getDataIncome();
 	auto vecIdEntity = dataIncome->getVecIdEntityCatched();
 	auto postion = Vec2::ZERO;
-	for (auto idEntity : vecIdEntity)
+	auto length = (int)vecIdEntity.size();
+	for (auto i = 0; i < length; i++)
 	{
+		auto idEntity = vecIdEntity[i];
 		auto uiEntity = UIEntity::create();
-		uiEntity->updateSkin(idEntity);
-		uiEntity->getLayoutBg()->addTouchEventListener([](Ref *ref, Widget::TouchEventType type)
+		uiEntity->updateSkin(idEntity, 0.15f);
+		uiEntity->getLayoutBg()->addTouchEventListener([i](Ref *ref, Widget::TouchEventType type)
 		{
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				/*ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS);*/
+				ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_TRAINING, i);
 			}
 		});
 		layout->addChild(uiEntity);
@@ -111,12 +113,12 @@ void LayerGuild::createEntityMaid()
 		auto idEntity = var->getIdEntity();
 
 		auto uiEntity = UIEntity::create();
-		uiEntity->updateSkin(idEntity);
-		uiEntity->getLayoutBg()->addTouchEventListener([](Ref *ref, Widget::TouchEventType type)
+		uiEntity->updateSkin(idEntity, 0.15f);
+		uiEntity->getLayoutBg()->addTouchEventListener([idEntity](Ref *ref, Widget::TouchEventType type)
 		{
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS);
+				ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS, idEntity);
 			}
 		});
 		layout->addChild(uiEntity);

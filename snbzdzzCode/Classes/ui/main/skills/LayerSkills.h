@@ -20,13 +20,15 @@ public:
 public:
 	LayerSkills();
 	~LayerSkills();
-
+	
 	virtual bool init();
-
+	
 	virtual Layer *getThis();
 	virtual void afterRunAppear();
 	virtual void afterRunDisappear();
 	virtual void dealRemoveFromParent();
+	
+	void updateSkin(const int &idEntity);
 	
 private:
 	void createSkin();

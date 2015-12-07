@@ -191,6 +191,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\ui\main\levels\LayerMaidSelect.cpp" />
     <ClCompile Include="..\Classes\ui\main\SceneMain.cpp" />
     <ClCompile Include="..\Classes\ui\main\skills\LayerSkills.cpp" />
+    <ClCompile Include="..\Classes\ui\main\training\LayerTraining.cpp" />
     <ClCompile Include="..\Classes\ui\ManagerUI.cpp" />
     <ClCompile Include="..\Classes\ui\plot\ScenePlot.cpp" />
     <ClCompile Include="..\Classes\ui\welcome\HandleImageLoad.cpp" />
@@ -244,6 +245,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\ui\main\levels\LayerMaidSelect.h" />
     <ClInclude Include="..\Classes\ui\main\SceneMain.h" />
     <ClInclude Include="..\Classes\ui\main\skills\LayerSkills.h" />
+    <ClInclude Include="..\Classes\ui\main\training\LayerTraining.h" />
     <ClInclude Include="..\Classes\ui\ManagerUI.h" />
     <ClInclude Include="..\Classes\ui\plot\ScenePlot.h" />
     <ClInclude Include="..\Classes\ui\welcome\HandleImageLoad.h" />
