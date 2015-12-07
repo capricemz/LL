@@ -27,7 +27,9 @@ public:
 	
 private:
 	void createSkin();
-	
+	void createEntityMst();
+	void createEntityMaid();
+
 private:
 	Layer *_skin;
 	

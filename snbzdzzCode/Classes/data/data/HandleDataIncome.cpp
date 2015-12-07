@@ -28,12 +28,13 @@ string DataIncome::getStrData()
 	auto length = (int)_vecIdEntityCatched.size();
 	if (length != 0)
 	{
-		strData += ":";
 		for (auto i = 0; i < length; i++)
 		{
 			auto idEntityCatchedMst = _vecIdEntityCatched[i];
-			strData += Value(idEntityCatchedMst).asString() + ":";
-			strData += ":";//TODO
+			strData += ":";
+			strData += Value(idEntityCatchedMst).asString();
+			strData += ":";
+			strData += "0";
 		}
 	}
 	return strData;

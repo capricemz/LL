@@ -4,8 +4,10 @@
 #include "data/define/DefinesRes.h"
 #include "common/util/UtilRandom.h"
 #include "ui/ManagerUI.h"
+#include "data/data/ManagerData.h"
+#include "data/define/DefinesString.h"
 
-LayerCatch::LayerCatch() : _skin(nullptr), _typeSelectedMst(0), _typeSelectedMaid(0)
+LayerCatch::LayerCatch() : _skin(nullptr), _index(-1), _remain(0), _typeSelectedMst(0), _typeSelectedMaid(0)
 {
 }
 
@@ -64,6 +66,10 @@ void LayerCatch::createSkin()
 	btn->setUserData((void *)TypeSRP::PAPER);
 	btn->addTouchEventListener(CC_CALLBACK_2(LayerCatch::onTouchBtn, this));
 
+	updateIndexRemain();
+
+	updateInfo();
+
 	doWait();
 }
 
@@ -90,19 +96,18 @@ void LayerCatch::onTouchBtn(Ref *ref, Widget::TouchEventType type)
 	{
 		auto btn = (Button *)ref;
 		_typeSelectedMaid = (int)btn->getUserData();
+		_remain--;
+
+		updateInfo();
+		
+		setBtnVisible(false);
+
 		doReach();
 	}
 }
 
 void LayerCatch::doReach()
 {
-	auto btn = (Button *)_skin->getChildByName("btnScissors");
-	btn->setVisible(false);
-	btn = (Button *)_skin->getChildByName("btnRock");
-	btn->setVisible(false);
-	btn = (Button *)_skin->getChildByName("btnPaper");
-	btn->setVisible(false);
-
 	for (auto i = 0; i < 2; i++)
 	{
 		auto isMst = i < 1;
@@ -134,10 +139,13 @@ void LayerCatch::doReach()
 		});
 		auto actionRotateTo2 = EaseQuadraticActionInOut::create(RotateTo::create(1.0f / 6.0f, rotationEnd1));
 
-		auto actionOver = CallFunc::create([this, sprite]()
+		auto actionOver = CallFunc::create([this, sprite, isMst]()
 		{
 			sprite->stopActionByTag(1);
-			showResult(_typeSelectedMst % 3 + 1 == _typeSelectedMaid);
+			if (!isMst)
+			{
+				showResult();
+			}
 		});
 		auto actionReach = Sequence::create(actionRotateReset, actionRotateTo0, actionRotateBack0, actionRotateTo1, actionRotateBack1, actionReachOut, actionRotateTo2, actionOver, nullptr);
 		actionReach->setTag(1);
@@ -145,21 +153,87 @@ void LayerCatch::doReach()
 	}
 }
 
-void LayerCatch::showResult(const bool &isWin)
+void LayerCatch::showResult()
 {
+	auto isWin = _typeSelectedMst % 3 + 1 == _typeSelectedMaid;
+	
+	auto txtResult = (Text *)_skin->getChildByName("txtResult");
+	txtResult->setString(isWin ? "catch" : "missed");
+
+	if (isWin)
+	{
+		auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+		auto dataEntity = handleDataEntity->getVecDataEntityMst().at(_index);
+		auto idEntity = dataEntity->getIdEntity();
+		auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
+		handleDataIncome->getDataIncome(0)->pushVecIdEntityCatched(idEntity);
+		handleDataIncome->dataFileSet();
+	}
+
 	auto layout = (Layout *)_skin->getChildByName("layout");
-	layout->addTouchEventListener([this](Ref *ref, Widget::TouchEventType type)
+	layout->addTouchEventListener([this, isWin](Ref *ref, Widget::TouchEventType type)
 	{
 		if (type == Widget::TouchEventType::ENDED)
 		{
-			ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_BATTLE_RESULT);
-			removeFromParent();
+			if (isWin || _remain == 0)//若捕获成功或剩余0次
+			{
+				updateIndexRemain();
+			}
+
+			if (_index != -1)//若有下一个
+			{
+				updateInfo();
+				setBtnVisible(true);
+				doWait();
+			}
+			else
+			{
+				ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_BATTLE_RESULT);
+				removeFromParent();
+			}
 		}
 	});
+}
 
-	auto txt = Text::create(isWin ? "catch" : "missed", RES_FONTS_KTJT, 40);
-	txt->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
-	auto sizeSkin = layout->getContentSize();
-	txt->setPosition(Vec2(sizeSkin.width * 0.5f, sizeSkin.height * 0.5f));
-	_skin->addChild(txt);
+void LayerCatch::updateIndexRemain()
+{
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto vecDataEntity = handleDataEntity->getVecDataEntityMst();
+	auto length = (int)vecDataEntity.size();
+	for (auto i = _index + 1; i < length; i++)
+	{
+		auto numTakes = vecDataEntity.at(i)->getAttribute(IdAttribute::ENTITY_BREAK_TAKES_NUM);
+		if (numTakes > 0)
+		{
+			_index = i;
+			_remain = numTakes;
+			return;
+		}
+	}
+	_index = -1;
+	_remain = 0;
+}
+
+void LayerCatch::updateInfo()
+{
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto text = handleDataEntity->getVecDataEntityMst().at(_index)->getCfgEntity().name;
+	auto txtName = (Text *)_skin->getChildByName("txtName");
+	txtName->setString(text);
+
+	auto txtRemain = (Text *)_skin->getChildByName("txtRemain");
+	txtRemain->setString(STR_REMAIN + Value(_remain).asString() + STR_COUNT);
+
+	auto txtResult = (Text *)_skin->getChildByName("txtResult");
+	txtResult->setString("");
+}
+
+void LayerCatch::setBtnVisible(const bool &value)
+{
+	auto btn = (Button *)_skin->getChildByName("btnScissors");
+	btn->setVisible(value);
+	btn = (Button *)_skin->getChildByName("btnRock");
+	btn->setVisible(value);
+	btn = (Button *)_skin->getChildByName("btnPaper");
+	btn->setVisible(value);
 }

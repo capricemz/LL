@@ -16,6 +16,8 @@ static const vector<string> vecError =
 };
 
 static const string STR_WU = "无";
+static const string STR_REMAIN = "剩余";
+static const string STR_COUNT = "次";
 static const string STR_BATTLE_VICTORY = "战斗胜利";
 static const string STR_BATTLE_DEFEAT = "战斗失败";
 

@@ -79,8 +79,8 @@ void ManagerEntity::dealBattleOver()
 		dataLevelCurrent->setVecTargetComplete();
 	}
 
-	auto value = handleDataEntity->getDataEntityMaid()->getAttribute(IdAttribute::ENTITY_BREAK_CASE_NUM);
-	if (value > 0)//若造成破衣
+	auto isAnyMstCanCatch = handleDataEntity->getIsAnyMstCanCatch();
+	if (isAnyMstCanCatch)//若有可以捕捉的怪物
 	{
 		ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_CATCH);
 	}

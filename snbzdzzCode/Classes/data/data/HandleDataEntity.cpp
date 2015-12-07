@@ -637,6 +637,19 @@ bool HandleDataEntity::getIsSkillNeedSwitchMst(int &indexTo)
 	return false;
 }
 
+bool HandleDataEntity::getIsAnyMstCanCatch()
+{
+	for (auto var : _vecDataEntityMst)
+	{
+		auto value = var->getAttribute(IdAttribute::ENTITY_BREAK_TAKES_NUM);
+		if (value > 0)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
 DataEntity * HandleDataEntity::createDataEntity(const int &idEntity)
 {
 	auto dataEntity = DataEntity::create();

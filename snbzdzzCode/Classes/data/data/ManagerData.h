@@ -343,6 +343,8 @@ class HandleDataEntity
 
 		bool getIsSkillNeedSwitchMst(int &indexTo);
 
+		bool getIsAnyMstCanCatch();
+
 	private:
 		DataEntity * createDataEntity(const int &idEntity);
 		

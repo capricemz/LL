@@ -29,10 +29,15 @@ private:
 	void onTouchBtn(Ref *ref, Widget::TouchEventType type);
 	void doWait();//执行等待动画
 	void doReach();//执行出动画
-	void showResult(const bool &isWin);
-	
+	void showResult();
+	void updateIndexRemain();//更新数据
+	void updateInfo();//刷新显示信息
+	void setBtnVisible(const bool &value);
+
 private:
 	Layer *_skin;
+	int _index;//第几个怪
+	int _remain;//剩余捕获次数
 	int _typeSelectedMst;
 	int _typeSelectedMaid;
 	

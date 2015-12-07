@@ -83,6 +83,42 @@
             <FileData Type="MarkedSubImage" Path="images/battle/rock.jpg" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
+          <AbstractNodeData Name="txtName" ActionTag="-1867226147" Tag="8" IconVisible="False" LeftMargin="221.5000" RightMargin="221.5000" TopMargin="5.0000" BottomMargin="344.0000" FontSize="35" LabelText="Text Label" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="197.0000" Y="41.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
+            <Position X="320.0000" Y="385.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.9872" />
+            <PreSize X="0.1781" Y="0.0615" />
+            <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="txtRemain" ActionTag="-1145289798" Tag="9" IconVisible="False" LeftMargin="233.9096" RightMargin="236.0904" TopMargin="51.0000" BottomMargin="304.0000" FontSize="30" LabelText="Text Label" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="170.0000" Y="35.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
+            <Position X="318.9096" Y="339.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4983" Y="0.8692" />
+            <PreSize X="0.1781" Y="0.0615" />
+            <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="txtResult" ActionTag="609203631" Tag="10" IconVisible="False" LeftMargin="207.5000" RightMargin="207.5000" TopMargin="95.0000" BottomMargin="248.0000" FontSize="40" LabelText="Text Label" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="225.0000" Y="47.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
+            <Position X="320.0000" Y="295.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.7564" />
+            <PreSize X="0.1781" Y="0.0615" />
+            <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

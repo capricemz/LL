@@ -53,47 +53,84 @@ void LayerGuild::createSkin()
 	_skin = (Layer *)CSLoader::createNode(RES_MODULES_MAIN_LAYER_GUILD_CSB);
 	addChild(_skin);
 
-	auto layout = (Layout *)_skin->getChildByName("layoutEntity");
-
 	for (int i = 0; i < 2; i++)
 	{
 		auto isMst = i < 1;
 		//
 		if (isMst)
 		{
-
+			createEntityMst();
 		}
 		else
 		{
-			auto vecDataEntity = ManagerData::getInstance()->getHandleDataEntity()->getVecDataEntityMaid();
-			auto postion = Vec2::ZERO;
-			for (auto var : vecDataEntity)
-			{
-				auto idEntity = var->getIdEntity();
-
-				auto uiEntity = UIEntity::create();
-				uiEntity->updateSkin(idEntity);
-				uiEntity->getLayoutBg()->addTouchEventListener([](Ref *ref, Widget::TouchEventType type)
-				{
-					if (type == Widget::TouchEventType::ENDED)
-					{
-						ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS);
-					}
-				});
-				layout->addChild(uiEntity);
-
-				auto size = uiEntity->getLayoutBg()->getContentSize();
-				if (postion == Vec2::ZERO)
-				{
-					postion = Vec2(size.width * 0.5f + 50.0f, size.height * 0.5f + 50.0f);
-					uiEntity->setPosition(postion);
-				}
-				else
-				{
-					uiEntity->setPosition(postion);
-				}
-				postion += Vec2(size.width + 10.0f, 0.0f);
-			}
+			createEntityMaid();
 		}
+	}
+}
+
+void LayerGuild::createEntityMst()
+{
+	auto layout = (Layout *)_skin->getChildByName("layoutEntity");
+	auto dataIncome = ManagerData::getInstance()->getHandleDataIncome()->getDataIncome(0);
+	auto vecIdEntity = dataIncome->getVecIdEntityCatched();
+	auto postion = Vec2::ZERO;
+	for (auto idEntity : vecIdEntity)
+	{
+		auto uiEntity = UIEntity::create();
+		uiEntity->updateSkin(idEntity);
+		uiEntity->getLayoutBg()->addTouchEventListener([](Ref *ref, Widget::TouchEventType type)
+		{
+			if (type == Widget::TouchEventType::ENDED)
+			{
+				/*ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS);*/
+			}
+		});
+		layout->addChild(uiEntity);
+
+		auto size = uiEntity->getLayoutBg()->getContentSize();
+		if (postion == Vec2::ZERO)
+		{
+			postion = Vec2(size.width * 0.5f + 50.0f, size.height * 0.5f + 500.0f);
+			uiEntity->setPosition(postion);
+		}
+		else
+		{
+			uiEntity->setPosition(postion);
+		}
+		postion += Vec2(size.width + 10.0f, 0.0f);
+	}
+}
+
+void LayerGuild::createEntityMaid()
+{
+	auto layout = (Layout *)_skin->getChildByName("layoutEntity");
+	auto vecDataEntity = ManagerData::getInstance()->getHandleDataEntity()->getVecDataEntityMaid();
+	auto postion = Vec2::ZERO;
+	for (auto var : vecDataEntity)
+	{
+		auto idEntity = var->getIdEntity();
+
+		auto uiEntity = UIEntity::create();
+		uiEntity->updateSkin(idEntity);
+		uiEntity->getLayoutBg()->addTouchEventListener([](Ref *ref, Widget::TouchEventType type)
+		{
+			if (type == Widget::TouchEventType::ENDED)
+			{
+				ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS);
+			}
+		});
+		layout->addChild(uiEntity);
+
+		auto size = uiEntity->getLayoutBg()->getContentSize();
+		if (postion == Vec2::ZERO)
+		{
+			postion = Vec2(size.width * 0.5f + 50.0f, size.height * 0.5f + 100.0f);
+			uiEntity->setPosition(postion);
+		}
+		else
+		{
+			uiEntity->setPosition(postion);
+		}
+		postion += Vec2(size.width + 10.0f, 0.0f);
 	}
 }
