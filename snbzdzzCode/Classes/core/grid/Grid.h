@@ -47,6 +47,10 @@ public:
 	angleEnd 终止转动角度
 	func 动作结束时调用*/
 	void throwTo(const Vec2 &postion, const float &angleEnd, const function<void ()> &func = nullptr);
+	/*快速移动到
+	psotion 终点位置 全局坐标
+	func 动作结束时调用*/
+	void quickMoveTo(const Vec2 &postion, const function<void()> &func /*= nullptr*/);
 	/*播放特殊格子生成
 	func 动作结束时调用*/
 	void playSpecialSthGenerate(const function<void()> &func = nullptr);

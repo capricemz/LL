@@ -129,23 +129,28 @@ void HandleGrid::runActionGridSelectedMstMoveFrom(const Vec2 &postion, const fun
 	Vector<FiniteTimeAction *> vecActions;
 	for (int i = 0; i < GRID_SELECTED_MAX; i++)
 	{
-		auto actionCallFunc = CallFunc::create([=]()
-		{
-			Grid *grid = (Grid *)_skin->getChildByName("gridSelectedMst" + Value(i).asString());
-			grid->moveFrom(postion, true, 0.5f, 0.5f, Vec2(37.5f, 37.5f), funcOneOver);
-		});
-		vecActions.pushBack(actionCallFunc);
+		Grid *grid = (Grid *)_skin->getChildByName("gridSelectedMst" + Value(i).asString());
+
 		auto actionDelay = DelayTime::create(0.2f);
 		vecActions.pushBack(actionDelay);
-	}
-	if (funcAllOver != nullptr)
-	{
-		auto actionCallFuncAllOver = CallFunc::create([=]()
+		
+		auto actionCallFunc = CallFunc::create([grid, postion, funcOneOver, i, funcAllOver]()
 		{
-			funcAllOver();
+			grid->moveFrom(postion, true, 0.5f, 0.5f, Vec2(37.5f, 37.5f), [funcOneOver, i, funcAllOver]()
+			{
+				if (funcOneOver != nullptr)
+				{
+					funcOneOver();
+				}
+				if (i == GRID_SELECTED_MAX - 1 && funcAllOver != nullptr)
+				{
+					funcAllOver();
+				}
+			});
 		});
-		vecActions.pushBack(actionCallFuncAllOver);
+		vecActions.pushBack(actionCallFunc);
 	}
+	
 	_skin->runAction(Sequence::create(vecActions));
 }
 
@@ -154,23 +159,28 @@ void HandleGrid::runActionGridSelectedMstTurn(const function<void()> &funcOneOve
 	Vector<FiniteTimeAction *> vecActions;
 	for (int i = 0; i < GRID_SELECTED_MAX; i++)
 	{
-		auto actionCallFunc = CallFunc::create([=]()
-		{
-			Grid *grid = (Grid *)_skin->getChildByName("gridSelectedMst" + Value(i).asString());
-			grid->turn(funcOneOver);
-		});
-		vecActions.pushBack(actionCallFunc);
+		Grid *grid = (Grid *)_skin->getChildByName("gridSelectedMst" + Value(i).asString());
+
 		auto actionDelay = DelayTime::create(0.1f);
 		vecActions.pushBack(actionDelay);
-	}
-	if (funcAllOver != nullptr)
-	{
-		auto actionCallFuncAllOver = CallFunc::create([=]()
+
+		auto actionCallFunc = CallFunc::create([grid, funcOneOver, i, funcAllOver]()
 		{
-			funcAllOver();
+			grid->turn([funcOneOver, i, funcAllOver]()
+			{
+				if (funcOneOver != nullptr)
+				{
+					funcOneOver();
+				}
+				if (i == GRID_SELECTED_MAX - 1 && funcAllOver != nullptr)
+				{
+					funcAllOver();
+				}
+			});
 		});
-		vecActions.pushBack(actionCallFuncAllOver);
+		vecActions.pushBack(actionCallFunc);
 	}
+	
 	_skin->runAction(Sequence::create(vecActions));
 }
 

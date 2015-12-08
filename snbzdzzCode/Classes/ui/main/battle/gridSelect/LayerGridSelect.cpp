@@ -253,61 +253,116 @@ void LayerGridSelect::onGridLayoutTouch(Ref *ref, Widget::TouchEventType type, c
 
 void LayerGridSelect::runActionGridSelectMaidMoveFrom(const Vec2 &postion, const function<void()> &funcOneOver /*= nullptr*/, const function<void()> &funcAllOver /*= nullptr*/)
 {
+	auto total = 0;//总需要移动数
+	for (int i = 0; i < GRID_SELECT_MAX; i++)
+	{
+		Grid *grid = (Grid *)_skin->getChildByName("gridSelect" + Value(i).asString());
+
+		if (grid->isVisible())
+		{
+			continue;
+		}
+
+		total++;
+	}
+
+	if (total == 0 && funcAllOver != nullptr)
+	{
+		funcAllOver();
+	}
+	
+	auto index = 0;//当前移动数
 	Vector<FiniteTimeAction *> vecActions;
 	for (int i = 0; i < GRID_SELECT_MAX; i++)
 	{
 		Grid *grid = (Grid *)_skin->getChildByName("gridSelect" + Value(i).asString());
-		if (!grid->isVisible())
+		if (grid->isVisible())
 		{
-			auto actionCallFunc = CallFunc::create([grid, postion, funcOneOver]()
+			continue;
+		}
+
+		auto isLast = ++index == total;
+
+		auto actionDelay = DelayTime::create(0.2f);
+		vecActions.pushBack(actionDelay);
+		
+		auto actionCallFunc = CallFunc::create([grid, postion, funcOneOver, isLast, funcAllOver]()
+		{
+			grid->createDataGrid();
+			grid->createDataGridSkill(false);
+			grid->moveFrom(postion, true, 0.5f, 0.5f, Vec2(37.5f, 37.5f), [funcOneOver, isLast, funcAllOver]()
 			{
-				grid->createDataGrid();
-				grid->createDataGridSkill(false);
-				grid->moveFrom(postion, true, 0.5f, 0.5f, Vec2(37.5f, 37.5f), funcOneOver);
-				grid->setIsNeedTurn(true);
+				if (funcOneOver != nullptr)
+				{
+					funcOneOver();
+				}
+				if (isLast && funcAllOver != nullptr)
+				{
+					funcAllOver();
+				}
 			});
-			vecActions.pushBack(actionCallFunc);
-			auto actionDelay = DelayTime::create(0.2f);
-			vecActions.pushBack(actionDelay);
-		}
+			grid->setIsNeedTurn(true);
+		});
+		vecActions.pushBack(actionCallFunc);
 	}
-	auto actionCallFuncAllOver = CallFunc::create([=]()
-	{
-		if (funcAllOver != nullptr)
-		{
-			funcAllOver();
-		}
-	});
-	vecActions.pushBack(actionCallFuncAllOver);
+
 	_skin->runAction(Sequence::create(vecActions));
 }
 
 void LayerGridSelect::runActionGridSelectMaidTurn(const function<void()> &funcOneOver /*= nullptr*/, const function<void()> &funcAllOver /*= nullptr*/)
 {
+	auto total = 0;//总需要翻转数
+	for (int i = 0; i < GRID_SELECT_MAX; i++)
+	{
+		Grid *grid = (Grid *)_skin->getChildByName("gridSelect" + Value(i).asString());
+
+		if (!grid->getIsNeedTurn())
+		{
+			continue;
+		}
+
+		total++;
+	}
+
+	if (total == 0 && funcAllOver != nullptr)
+	{
+		funcAllOver();
+	}
+
+	auto index = 0;//当前翻转数
 	Vector<FiniteTimeAction *> vecActions;
 	for (int i = 0; i < GRID_SELECT_MAX; i++)
 	{
 		Grid *grid = (Grid *)_skin->getChildByName("gridSelect" + Value(i).asString());
-		if (grid->getIsNeedTurn())
+
+		if (!grid->getIsNeedTurn())
 		{
-			auto actionCallFunc = CallFunc::create([grid, funcOneOver]()
+			continue;
+		}
+		
+		auto isLast = ++index == total;
+
+		auto actionDelay = DelayTime::create(0.1f);
+		vecActions.pushBack(actionDelay);
+
+		auto actionCallFunc = CallFunc::create([grid, funcOneOver, isLast, funcAllOver]()
+		{
+			grid->turn([funcOneOver, isLast, funcAllOver]()
 			{
-				grid->turn(funcOneOver);
-				grid->setIsNeedTurn(false);
+				if (funcOneOver != nullptr)
+				{
+					funcOneOver();
+				}
+				if (isLast && funcAllOver != nullptr)
+				{
+					funcAllOver();
+				}
 			});
-			vecActions.pushBack(actionCallFunc);
-			auto actionDelay = DelayTime::create(0.1f);
-			vecActions.pushBack(actionDelay);
-		}
+			grid->setIsNeedTurn(false);
+		});
+		vecActions.pushBack(actionCallFunc);
 	}
-	auto actionCallFuncAllOver = CallFunc::create([=]()
-	{
-		if (funcAllOver != nullptr)
-		{
-			funcAllOver();
-		}
-	});
-	vecActions.pushBack(actionCallFuncAllOver);
+	
 	_skin->runAction(Sequence::create(vecActions));
 }
 
@@ -363,30 +418,35 @@ void LayerGridSelect::runMaidGridMoveFromActionTakeBack(const function<void()> &
 		auto grid = (Grid *)_skin->getChildByName("gridSelect" + Value(i).asString());
 		grid->setVisible(false);
 	}
-	/*Vector<FiniteTimeAction *> vecActions;
+
+	/*auto index = 0;//当前移动数
+	Vector<FiniteTimeAction *> vecActions;
 	for (int i = 0; i < GRID_SELECT_MAX; i++)
 	{
 		Grid *grid = (Grid *)_skin->getChildByName("gridSelect" + Value(i).asString());
-		if (grid->isVisible())
+
+		auto isLast = ++index == GRID_SELECT_MAX;
+
+		auto actionDelay = DelayTime::create(0.1f);
+		vecActions.pushBack(actionDelay);
+
+		auto actionCallFunc = CallFunc::create([grid, funcOneOver, isLast, funcAllOver]()
 		{
-			auto actionCallFunc = CallFunc::create([grid, postion, funcOneOver]()
+			auto postion = grid->getParent()->convertToWorldSpace(grid->getPosition() + Vec2(-640.0f, 0.0f));
+			grid->quickMoveTo(postion, [funcOneOver, isLast, funcAllOver]()
 			{
-				grid->createDataGrid(false);
-				grid->moveFrom(postion, true, 0.5f, 0.5f, Vec2(37.5f, 37.5f), funcOneOver);
-				grid->setIsNeedTurn(true);
+				if (funcOneOver != nullptr)
+				{
+					funcOneOver();
+				}
+				if (isLast && funcAllOver != nullptr)
+				{
+					funcAllOver();
+				}
 			});
-			vecActions.pushBack(actionCallFunc);
-			auto actionDelay = DelayTime::create(0.2f);
-			vecActions.pushBack(actionDelay);
-		}
+		});
+		vecActions.pushBack(actionCallFunc);
 	}
-	auto actionCallFuncAllOver = CallFunc::create([=]()
-	{
-		if (funcAllOver != nullptr)
-		{
-			funcAllOver();
-		}
-	});
-	vecActions.pushBack(actionCallFuncAllOver);
+
 	_skin->runAction(Sequence::create(vecActions));*/
 }

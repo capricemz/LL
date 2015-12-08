@@ -349,7 +349,7 @@ void Grid::throwTo(const Vec2 &postion, const float &angleEnd, const function<vo
 {
 	auto postionTo = convertToNodeSpace(postion);
 	auto actionThrow = Spawn::createWithTwoActions(EaseBackIn::create(RotateTo::create(0.6f, angleEnd)), EaseBackIn::create(MoveTo::create(0.6f, postionTo)));
-	auto actionCallFunc = CallFunc::create([=]()
+	auto actionCallFunc = CallFunc::create([func]()
 	{
 		if (func != nullptr)
 		{
@@ -357,6 +357,20 @@ void Grid::throwTo(const Vec2 &postion, const float &angleEnd, const function<vo
 		}
 	});
 	_skin->runAction(Sequence::create(actionThrow, actionCallFunc, nullptr));
+}
+
+void Grid::quickMoveTo(const Vec2 &postion, const function<void()> &func /*= nullptr*/)
+{
+	auto postionTo = convertToNodeSpace(postion);
+	auto actionQuickMoveTo = EaseCircleActionIn::create(MoveTo::create(0.2f, postionTo));
+	auto actionCallFunc = CallFunc::create([func]()
+	{
+		if (func != nullptr)
+		{
+			func();
+		}
+	});
+	_skin->runAction(Sequence::create(actionQuickMoveTo, actionCallFunc, nullptr));
 }
 
 void Grid::playSpecialSthGenerate(const function<void()> &func /*= nullptr*/)
