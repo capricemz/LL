@@ -23,6 +23,9 @@ static const int ENERGY_SWITCH_ENTITY = 8;
 
 static const int BREAK_DAMAGE_TAKES = 2;
 
+static const int LENGTH_INFO_THING = 2;
+static const int LENGTH_INFO_CATCH_MST = 3;
+
 static const vector<Vec2> vecPostionGridBattle =
 {
 	Vec2(160.0f, 620.0f), Vec2(480.0f, 340.0f), Vec2(320.0f, 480.0f)
@@ -212,12 +215,7 @@ enum class TypeLevelTarget
 	ICE,//融化冰块
 	TRAP//解除陷阱
 };
-enum class TypeAward
-{
-	NONE,
-	GOLD,
-	OTHER
-};
+
 enum class TypeUnlock
 {
 	LAST_NEXT
@@ -237,7 +235,16 @@ enum class TypeTrianing
 	WAY0,
 	WAY1,
 	WAY2,
-	WAY3
+};
+
+enum class IdThing
+{
+	THING_NONE,
+
+	GOLD = 100,//金币
+	ITEM,//道具
+	CLOTH,//时装
+	DIAMOND//钻石
 };
 
 enum class TypeConfirms

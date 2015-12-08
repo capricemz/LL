@@ -36,7 +36,7 @@ private:
 private:
 	Layer *_skin;
 	int _indexCurrent;
-
+	
 };
 
 #endif

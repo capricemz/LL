@@ -209,17 +209,16 @@ void LayerSkills::onTouchBtnSkill(Ref *ref, Widget::TouchEventType type, const D
 
 		auto managerData = ManagerData::getInstance();
 		auto handleDataIncome = managerData->getHandleDataIncome();
-		auto dataIncome = handleDataIncome->getDataIncome();
 		auto cfgSkill = ManagerCfg::getInstance()->getDicDicCfgSkill()[id][index];//需要花费的金币
-		auto isGoldEnough = dataIncome->isGoldEnoughGet(cfgSkill.buyCost);
-		if (!isGoldEnough)
+		auto isThingEnough = handleDataIncome->getThingEnough(IdThing::GOLD, cfgSkill.buyCost);
+		if (!isThingEnough)
 		{
 			log("`````````` LayerSkills::onTouchBtnSkill gold is not enough");
 			return;
 		}
 
-		dataIncome->costGold(cfgSkill.buyCost);
-		log("`````````` LayerSkills::onTouchBtnSkill cost:%d,remain:%d",cfgSkill.buyCost, dataIncome->getGold());
+		handleDataIncome->addThing(IdThing::GOLD, -cfgSkill.buyCost);
+		log("`````````` LayerSkills::onTouchBtnSkill cost:%d,remain:%d", cfgSkill.buyCost, handleDataIncome->getThing(IdThing::GOLD));
 
 		auto handleDataUnlock = managerData->getHandleDataUnlock();
 		handleDataUnlock->setIsBuySkill(id, index);

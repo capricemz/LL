@@ -57,7 +57,8 @@ struct CfgEntity
 	int xPic;//图片x
 	int yPic;//图片y
 	string attribute;//属性 101生命上限103能量上限104物理攻击105魔法攻击106金币收益
-	int skillGroup;//技能组
+	int idSkillGroup;//技能组id
+	int idTraining;//训练id
 };
 typedef map<int32_t, CfgEntity> DicCfgEntity;
 //
@@ -73,7 +74,7 @@ struct CfgLevel//关卡
 	vector<int> unlockLevels;//解锁关卡
 	vector<vector<int>> unlockSkills;//解锁技能
 	vector<int> unlockMaids;//解锁女仆
-	map<TypeAward, int> award;//奖励 类型(1金币2其他):值
+	map<IdThing, int> award;//奖励 类型:值
 };
 typedef map<int32_t, CfgLevel> DicCfgLevels;
 //
@@ -86,9 +87,34 @@ struct CfgLevelTarget
 	int roundLimitMst;//怪物回合限制
 	int roundLimitMaid;//女仆回合限制
 	int roundLimitTotal;//总回合限制
-	map<TypeAward, int> award;//奖励 类型(1金币2其他):值
+	map<IdThing, int> award;//奖励 类型:值
 };
 typedef map<int32_t, CfgLevelTarget> DicCfgLevelTargets;
+//
+struct CfgTraining
+{
+	int id;//标志
+	int limitMax;//星数上限
+	int valueLvBase;//基础价格
+	int valueLvAdd;//每星加价
+	int valueLvFull;//满星加价
+	int valueOther;//换装加价
+	int costWay0;//扰痒消耗(金币)
+	int costWay1;//刷牙消耗(道具)
+	int costWay2;//换装消耗(道具)
+	string urlPic;//换装图片
+	vector<vector<string>> vecVecDesc;//文本
+	vector<vector<string>> vecVecAnimation;//动画
+};
+typedef map<int32_t, CfgTraining> DicCfgTraining;
+struct CfgThing
+{
+	int id;//标志
+	string name;//名称
+	string urlPic;//图片路径
+	string desc;//描述
+};
+typedef map<int32_t, CfgThing> DicCfgThing;
 //
 struct CfgPlot
 {

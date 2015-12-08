@@ -71,15 +71,14 @@ void LayerGuild::createSkin()
 void LayerGuild::createEntityMst()
 {
 	auto layout = (Layout *)_skin->getChildByName("layoutEntity");
-	auto dataIncome = ManagerData::getInstance()->getHandleDataIncome()->getDataIncome();
-	auto vecIdEntity = dataIncome->getVecIdEntityCatched();
+	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
 	auto postion = Vec2::ZERO;
-	auto length = (int)vecIdEntity.size();
+	auto length = (int)handleDataIncome->getVecDataTrainingInfo().size();
 	for (auto i = 0; i < length; i++)
 	{
-		auto idEntity = vecIdEntity[i];
+		auto dt = handleDataIncome->getDataTrainingInfo(i);
 		auto uiEntity = UIEntity::create();
-		uiEntity->updateSkin(idEntity, 0.15f);
+		uiEntity->updateSkin(dt->getIdEntity(), 0.15f);
 		uiEntity->getLayoutBg()->addTouchEventListener([i](Ref *ref, Widget::TouchEventType type)
 		{
 			if (type == Widget::TouchEventType::ENDED)

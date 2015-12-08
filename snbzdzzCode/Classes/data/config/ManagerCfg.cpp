@@ -26,6 +26,7 @@ ManagerCfg::ManagerCfg() :
 	_dicVecCfgSkillGroupTypeArgs({}),
 	_dicCfgEntity({}),
 	_dicCfgLevels({}),
+	_dicCfgTraining({}),
 	_dicDicCfgPlot({}),
 	_dicDicCfgTargetAward({}),
 	_dicDicCfgGuide({})
@@ -40,6 +41,7 @@ ManagerCfg::~ManagerCfg()
 	_dicVecCfgSkillGroupTypeArgs.clear();
 	_dicCfgEntity.clear();
 	_dicCfgLevels.clear();
+	_dicCfgTraining.clear();
 	_dicDicCfgPlot.clear();
 	_dicDicCfgTargetAward.clear();
 	_dicDicCfgGuide.clear();
@@ -65,6 +67,8 @@ void ManagerCfg::threadDeal()
 	doLoad("entity.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgEntity,this));
 	doLoad("levels.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgLevels, this));
 	doLoad("levelTargets.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgLevelTargets, this));
+	doLoad("training.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgTraining, this));
+	doLoad("thing.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgThing, this));
 	doLoad("plot.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgPlot, this));
 	doLoad("targetAward.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgTargetAward, this));
 	doLoad("guide.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgGuide, this));
@@ -144,7 +148,7 @@ void ManagerCfg::assignCfgAttribute(const VectorString &vecItem)
 	typeTemp = isFind ? UtilString::split(typeTemp, "//")[0] : typeTemp;
 	cfg.type = (TypeAttribute)Value(typeTemp).asInt();
 	cfg.args = vecItem[4];
-	_dicCfgAttribute[cfg.id] = cfg;
+	_dicCfgAttribute.insert(make_pair(cfg.id, cfg));
 }
 
 void ManagerCfg::assignCfgSkill(const VectorString &vecItem)
@@ -235,7 +239,7 @@ void ManagerCfg::assignCfgSkillGroupTypeArgs()
 				break;
 			}
 		}
-		_dicVecCfgSkillGroupTypeArgs[var.first] = vecCfgSkillGroupTypeArgs;
+		_dicVecCfgSkillGroupTypeArgs.insert(make_pair(var.first, vecCfgSkillGroupTypeArgs));
 	}
 }
 
@@ -244,31 +248,42 @@ void ManagerCfg::assignCfgEntity(const VectorString &vecItem)
 	CfgEntity cfg;
 	cfg.id = Value(vecItem[0]).asInt();
 	cfg.name = vecItem[1];
-	cfg.type = (TypeEntity)Value(vecItem[2]).asInt();
-	cfg.typeJob = (TypeJob)Value(vecItem[3]).asInt();
-	auto vecUrlPic = UtilString::split(vecItem[4], ":");
+
+	auto strValue = vecItem[2];
+	auto isFind = strValue.find("//") != string::npos;
+	cfg.type = (TypeEntity)Value(isFind ? UtilString::split(strValue, "//")[0] : strValue).asInt();
+	
+	strValue = vecItem[3];
+	isFind = strValue.find("//") != string::npos;
+	cfg.typeJob = (TypeJob)Value(isFind ? UtilString::split(strValue, "//")[0] : strValue).asInt();
+	
+	cfg.attribute = vecItem[4];
+	cfg.idSkillGroup = Value(vecItem[5]).asInt();
+	cfg.idTraining = Value(vecItem[6]).asInt();
+	
+	auto vecUrlPic = UtilString::split(vecItem[7], ":");
 	cfg.vecUrlPic = vecUrlPic;
-	auto vecStr = UtilString::split(vecItem[5], ":");
+	
+	auto vecStr = UtilString::split(vecItem[8], ":");
 	cfg.xPic = Value(vecStr[0]).asInt();
 	cfg.yPic = Value(vecStr[1]).asInt();
-	cfg.attribute = vecItem[6];
-	cfg.skillGroup = Value(vecItem[7]).asInt();
-	_dicCfgEntity[cfg.id] = cfg;
+	
+	_dicCfgEntity.insert(make_pair(cfg.id, cfg));
 }
 
 void ManagerCfg::assignCfgLevels(const VectorString &vecItem)
 {
 	CfgLevel cfg;
 	cfg.id = Value(vecItem[0]).asInt();
-	auto nameTemp = vecItem[1];
-	auto isFind = nameTemp.find("//") != string::npos;
-	cfg.name = isFind ? UtilString::split(nameTemp, "//")[0] : nameTemp;
+	auto strValue = vecItem[1];
+	auto isFind = strValue.find("//") != string::npos;
+	cfg.name = isFind ? UtilString::split(strValue, "//")[0] : strValue;
 	auto vecUrlPic = UtilString::split(vecItem[2], ":");
 	cfg.vecUrlPic = vecUrlPic;
 	cfg.msts = vecItem[3];
 	cfg.roundLimit = Value(vecItem[4]).asInt();
 	cfg.isRoundLimitWin = Value(vecItem[5]).asBool();
-	auto strValue = vecItem[6];
+	strValue = vecItem[6];
 	if (strValue != "")
 	{
 		auto vec = UtilString::split(strValue, ":");
@@ -317,12 +332,12 @@ void ManagerCfg::assignCfgLevels(const VectorString &vecItem)
 		for (auto var : vec)
 		{
 			auto vec1 = UtilString::split(var, ":");
-			auto type = (TypeAward)Value(vec1[0]).asInt();
+			auto idThing = (IdThing)Value(vec1[0]).asInt();
 			auto value = Value(vec1[1]).asInt();
-			cfg.award.insert(make_pair(type, value));
+			cfg.award.insert(make_pair(idThing, value));
 		}
 	}
-	_dicCfgLevels[cfg.id] = cfg;
+	_dicCfgLevels.insert(make_pair(cfg.id, cfg));
 }
 
 void ManagerCfg::assignCfgLevelTargets(const VectorString &vecItem)
@@ -344,12 +359,58 @@ void ManagerCfg::assignCfgLevelTargets(const VectorString &vecItem)
 		for (auto var : vec)
 		{
 			auto vec1 = UtilString::split(var, ":");
-			auto type = (TypeAward)Value(vec1[0]).asInt();
+			auto idThing = (IdThing)Value(vec1[0]).asInt();
 			auto value = Value(vec1[1]).asInt();
-			cfg.award.insert(make_pair(type, value));
+			cfg.award.insert(make_pair(idThing, value));
 		}
 	}
-	_dicCfgLevelTargets[cfg.id] = cfg;
+	_dicCfgLevelTargets.insert(make_pair(cfg.id, cfg));
+}
+
+void ManagerCfg::assignCfgTraining(const VectorString &vecItem)
+{
+	CfgTraining cfg;
+	cfg.id = Value(vecItem[0]).asInt();
+	cfg.limitMax = Value(vecItem[1]).asInt();
+	cfg.valueLvBase = Value(vecItem[2]).asInt();
+	cfg.valueLvAdd = Value(vecItem[3]).asInt();
+	cfg.valueLvFull = Value(vecItem[4]).asInt();
+	cfg.valueOther = Value(vecItem[5]).asInt();
+	cfg.costWay0 = Value(vecItem[6]).asInt();
+	cfg.costWay1 = Value(vecItem[7]).asInt();
+	cfg.costWay2 = Value(vecItem[8]).asInt();
+	auto strValue = vecItem[9];
+	if (strValue != "")
+	{
+		auto vec = UtilString::split(strValue, "|");
+		for (auto var : vec)
+		{
+			auto vec1 = UtilString::split(var, ":");
+			cfg.vecVecDesc.push_back(vec1);
+		}
+	}
+	strValue = vecItem[10];
+	if (strValue != "")
+	{
+		auto vec = UtilString::split(strValue, "|");
+		for (auto var : vec)
+		{
+			auto vec1 = UtilString::split(var, ":");
+			cfg.vecVecAnimation.push_back(vec1);
+		}
+	}
+	cfg.urlPic = vecItem[11];
+	_dicCfgTraining.insert(make_pair(cfg.id, cfg));
+}
+
+void ManagerCfg::assignCfgThing(const VectorString &vecItem)
+{
+	CfgThing cfg;
+	cfg.id = Value(vecItem[0]).asInt();
+	cfg.name = vecItem[1];
+	cfg.urlPic = vecItem[2];
+	cfg.desc = vecItem[3];
+	_dicCfgThing.insert(make_pair(cfg.id, cfg));
 }
 
 void ManagerCfg::assignCfgPlot(const VectorString &vecItem)
@@ -373,7 +434,7 @@ void ManagerCfg::assignCfgTargetAward(const VectorString &vecItem)
 	cfg.num = Value(vecItem[3]).asInt();
 	cfg.desc = vecItem[4];
 	cfg.idNext = vecItem[5] == "" ? -1 : Value(vecItem[5]).asInt();
-	_dicDicCfgTargetAward[cfg.id] = cfg;
+	_dicDicCfgTargetAward.insert(make_pair(cfg.id, cfg));
 }
 
 void ManagerCfg::assignCfgGuide(const VectorString &vecItem)
@@ -384,5 +445,5 @@ void ManagerCfg::assignCfgGuide(const VectorString &vecItem)
 	cfg.desc = vecItem[2];
 	cfg.idRegion = Value(vecItem[3]).asInt();
 	cfg.idNext = vecItem[4] == "" ? -1 : Value(vecItem[4]).asInt();
-	_dicDicCfgGuide[cfg.id] = cfg;
+	_dicDicCfgGuide.insert(make_pair(cfg.id, cfg));
 }

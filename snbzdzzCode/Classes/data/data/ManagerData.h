@@ -414,7 +414,7 @@ class DataLevel : public Ref
 		string getLevelTargetStr(const int &index) const;
 		
 	private:
-		void dealPassedIncome(const map<TypeAward, int> &award);
+		void dealPassedIncome(const map<IdThing, int> &award);
 		
 	private:
 		int _id;
@@ -495,86 +495,32 @@ class HandleDataUnlock
 		vector<int> _vecDataUnlock;
 	
 };
-//收益数据类
-class DataIncome : public Ref
+class DataTrainingInfo : public Ref
 {
 	public:
-		CREATE_FUNC(DataIncome);
+		CREATE_FUNC(DataTrainingInfo);
 		
 	public:
-		DataIncome();
-		~DataIncome();
-
+		DataTrainingInfo();
+		~DataTrainingInfo();
+		
 		virtual bool init();
-
-		string getStrData();
-
-		bool isGoldEnoughGet(const int &value);//金币是否足够
-		void costGold(const int &value);//消耗金币
 		
 	public:
-		int getId() const
-		{
-			return _id;
-		}
-		void setId(const int &val)
-		{
-			_id = val;
-		}
-		int getGold() const
-		{
-			return _gold;
-		}
-		void setGold(const int &val)
-		{
-			_gold = val;
-		}
-		void addGold(const int &val)
-		{
-			_gold += val;
-		}
-		vector<int> getVecIdEntityCatched() const
-		{
-			return _vecIdEntityCatched;
-		}
-		void pushVecIdEntityCatched(const int &val)
-		{
-			_vecIdEntityCatched.push_back(val);
-		}
-		void eraseVecIdEntityCatched(const int &val)
-		{
-			auto iter = find(_vecIdEntityCatched.begin(), _vecIdEntityCatched.end(), val);
-			if (iter == _vecIdEntityCatched.end())
-			{
-				return;
-			}
-			_vecIdEntityCatched.erase(iter);
-		}
-		vector<int> getVecValue() const
-		{
-			return _vecValue;
-		}
-		void pushVecValue(const int &val)
-		{
-			_vecValue.push_back(val);
-		}
-		void eraseVecValue(const int &val)
-		{
-			auto iter = find(_vecValue.begin(), _vecValue.end(), val);
-			if (iter == _vecValue.end())
-			{
-				return;
-			}
-			_vecValue.erase(iter);
-		}
+		int getIdEntity() const { return _idEntity; }
+		void setIdEntity(int val) { _idEntity = val; }
+		int getValueLv() const { return _valueLv; }
+		void setValueLv(int val) { _valueLv = val; }
+		int getValuePrecent() const { return _valuePrecent; }
+		void setValuePrecent(int val) { _valuePrecent = val; }	
 		
 	private:
-		int _id;
-		int _gold;
-		vector<int> _vecIdEntityCatched;
-		vector<int> _vecValue;
+		int _idEntity;
+		int _valueLv;
+		int _valuePrecent;
 		
 };
+
 //处理收益数据类
 class HandleDataIncome
 {
@@ -586,20 +532,31 @@ class HandleDataIncome
 		void dataFileGet();
 		void dataFileSet();
 		
-		DataIncome * getDataIncome() const
+	public:
+		map<IdThing, int> getDicThing() const
 		{
-			return _dataIncome;
+			return _dicThing;
 		}
-		
-	private:
-		void createDataIncome(string infos);
+		int getThing(const IdThing &idThing);
+		bool getThingEnough(const IdThing &idThing, const int &valueNeed);
+		void setThing(const IdThing &idThing, const int &value);//idAttribute 元素id, value 新值
+		void addThing(const IdThing &idThing, const int &value);//idAttribute 元素id, value 正值增加，负值减少
+
+		Vector<DataTrainingInfo *> &getVecDataTrainingInfo()
+		{
+			return _vecDataTrainingInfo;
+		}
+		DataTrainingInfo *getDataTrainingInfo(const int &index);
+		void pushVecDataTrainingInfo(const int &idEntity, const int &valueLv, const int &valuePrecent);
+		void earseVecDataTrainingInfo(int index);
 		
 	private:
 		const string USER_DEFAULT_KEY_DI = "dataIncome";//收益数据
 		bool _isDataFileInit;
 
-		DataIncome * _dataIncome;
-
+		map<IdThing, int> _dicThing;
+		Vector<DataTrainingInfo *> _vecDataTrainingInfo;
+		
 };
 //数据类
 class ManagerData

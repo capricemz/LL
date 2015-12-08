@@ -63,11 +63,11 @@ void DataEntity::updateAttribute()
 void DataEntity::updateSkillGroup()
 {
 	auto cfgEntity = getCfgEntity();
-	CCASSERT(cfgEntity.skillGroup != 0,"DataEntity::updateSkillGroup cfgEntity.skillGroup == 0");
+	CCASSERT(cfgEntity.idSkillGroup != 0,"DataEntity::updateSkillGroup cfgEntity.idSkillGroup == 0");
 	vecSkillClear();
 	auto managerCfg = ManagerCfg::getInstance();
-	auto dicDicCfgSkillGroup = managerCfg->getDicDicDicCfgSkillGroup()[cfgEntity.skillGroup];
-	auto vecCfgSkillGroupTypeArgs = managerCfg->getDicVecCfgSkillGroupTypeArgs()[cfgEntity.skillGroup];
+	auto dicDicCfgSkillGroup = managerCfg->getDicDicDicCfgSkillGroup()[cfgEntity.idSkillGroup];
+	auto vecCfgSkillGroupTypeArgs = managerCfg->getDicVecCfgSkillGroupTypeArgs()[cfgEntity.idSkillGroup];
 	map<int32_t, CfgSkillGroup> dicCfgSkillGroup;
 	CfgSkillGroup cfgSkillGroup;
 	for (auto typeArgs : vecCfgSkillGroupTypeArgs)

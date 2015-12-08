@@ -52,14 +52,20 @@ void LayerTraining::dealRemoveFromParent()
 void LayerTraining::updateSkin(const int &index)
 {
 	_indexCurrent = index;
-	auto dataIncome = ManagerData::getInstance()->getHandleDataIncome()->getDataIncome();
-	auto idEntity = dataIncome->getVecIdEntityCatched().at(_indexCurrent);
+	
+	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
+	auto dt = handleDataIncome->getDataTrainingInfo(_indexCurrent);
+
+	if (dt == nullptr)
+	{
+		return;
+	}
 
 	auto layout = (Layout *)_skin->getChildByName("layoutContent");
 	auto size = layout->getContentSize();
 
 	auto uiEntity = UIEntity::create();
-	uiEntity->updateSkin(idEntity, 1.0f);
+	uiEntity->updateSkin(dt->getIdEntity(), 1.0f);
 	uiEntity->setPosition(Vec2(size.width * 0.5f, size.height *0.5f));
 	layout->addChild(uiEntity);
 }
@@ -82,10 +88,6 @@ void LayerTraining::createSkin()
 	btn = (Button *)_skin->getChildByName("btn2");
 	btn->addTouchEventListener(CC_CALLBACK_2(LayerTraining::onTouchBtn, this));
 	btn->setUserData((void *)TypeTrianing::WAY2);
-
-	btn = (Button *)_skin->getChildByName("btn3");
-	btn->addTouchEventListener(CC_CALLBACK_2(LayerTraining::onTouchBtn, this));
-	btn->setUserData((void *)TypeTrianing::WAY3);
 }
 
 void LayerTraining::onTouchBtn(Ref *ref, Widget::TouchEventType type)
@@ -96,7 +98,7 @@ void LayerTraining::onTouchBtn(Ref *ref, Widget::TouchEventType type)
 		auto typeTrianing = (TypeTrianing)(int)btn->getUserData();
 
 		auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
-		auto dataIncome = handleDataIncome->getDataIncome();
+		auto dt = handleDataIncome->getDataTrainingInfo(_indexCurrent);
 
 	}
 }

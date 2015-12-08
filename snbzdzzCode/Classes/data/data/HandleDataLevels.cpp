@@ -224,17 +224,12 @@ std::string DataLevel::getLevelTargetStr(const int &index) const
 	return text;
 }
 
-void DataLevel::dealPassedIncome(const map<TypeAward, int>& award)
+void DataLevel::dealPassedIncome(const map<IdThing, int>& award)
 {
 	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
 	for (auto var : award)
 	{
-		auto type = var.first;
-		if (type == TypeAward::GOLD)
-		{
-			auto dataIncome = handleDataIncome->getDataIncome();
-			dataIncome->addGold(var.second);
-		}
+		handleDataIncome->addThing(var.first, var.second);
 	}
 }
 
