@@ -329,7 +329,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.3438" Y="0.5667" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/girl/role2.png" Plist="" />
+                    <FileData Type="MarkedSubImage" Path="images/girl/role2.png" Plist="modules/main/PlistMain.plist" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_22_0" ActionTag="828821350" Tag="1045" IconVisible="False" LeftMargin="285.0000" RightMargin="245.0000" TopMargin="4.0000" BottomMargin="20.0000" ctype="SpriteObjectData">
@@ -340,7 +340,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5313" Y="0.5667" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/girl/role2.png" Plist="" />
+                    <FileData Type="MarkedSubImage" Path="images/girl/role2.png" Plist="modules/main/PlistMain.plist" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_22_0_0" ActionTag="846727730" Tag="1046" IconVisible="False" LeftMargin="395.0000" RightMargin="135.0000" TopMargin="4.0000" BottomMargin="20.0000" ctype="SpriteObjectData">
@@ -351,7 +351,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.7031" Y="0.5667" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/girl/role2.png" Plist="" />
+                    <FileData Type="MarkedSubImage" Path="images/girl/role2.png" Plist="modules/main/PlistMain.plist" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_22_0_0_0" ActionTag="-1692953178" Tag="1047" IconVisible="False" LeftMargin="515.0000" RightMargin="15.0000" TopMargin="4.0000" BottomMargin="20.0000" ctype="SpriteObjectData">
@@ -362,7 +362,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.8906" Y="0.5667" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/girl/role2.png" Plist="" />
+                    <FileData Type="MarkedSubImage" Path="images/girl/role2.png" Plist="modules/main/PlistMain.plist" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_35" ActionTag="649983741" Tag="1048" IconVisible="False" LeftMargin="7.0000" RightMargin="507.0000" TopMargin="26.5000" BottomMargin="16.5000" ctype="SpriteObjectData">

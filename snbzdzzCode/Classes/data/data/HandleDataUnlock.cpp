@@ -6,7 +6,8 @@
 
 HandleDataUnlock::HandleDataUnlock() : 
 	_isDataFileInit(false),
-	_dicTypeUnlockMaid({}), 
+	_dicTypeUnlockMaid({}),
+	_dicTypeBuyMaid({}),
 	_dicDicTypeUnlockSkill({}),
 	_dicDicTypeBuySkill({}),
 	_dicTypeUnlockLevel({}),
@@ -19,6 +20,7 @@ HandleDataUnlock::HandleDataUnlock() :
 HandleDataUnlock::~HandleDataUnlock()
 {
 	_dicTypeUnlockMaid.clear();
+	_dicTypeBuyMaid.clear();
 	_dicDicTypeUnlockSkill.clear();
 	_dicDicTypeBuySkill.clear();
 	_dicTypeUnlockLevel.clear();
@@ -38,6 +40,7 @@ void HandleDataUnlock::dataFileInit()
 		userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io*/
 		createTypeUnlockOther();
 		setIsUnlockMaid(DATA_UNLOCK_INIT_MAID);
+		setIsBuyMaid(DATA_UNLOCK_INIT_MAID);
 		setIsUnlockLevel(DATA_UNLOCK_INIT_LEVEL);
 		dataFileSet();
 	}
@@ -83,6 +86,7 @@ void HandleDataUnlock::createTypeUnlockOther()
 		if (cfgEntity.type == TypeEntity::MAID)
 		{
 			_dicTypeUnlockMaid[cfgEntity.id] = indexUnlockCurrent++;
+			_dicTypeBuyMaid[cfgEntity.id] = indexUnlockCurrent++;
 		}
 	}
 	auto dicDicCfgSkill = managerCfg->getDicDicCfgSkill();
@@ -121,6 +125,18 @@ bool HandleDataUnlock::getIsUnlockMaid(const int &idEntity)
 void HandleDataUnlock::setIsUnlockMaid(const int &idEntity)
 {
 	auto index = _dicTypeUnlockMaid[idEntity];
+	setIsUnlock(index);
+}
+
+bool HandleDataUnlock::getIsBuyMaid(const int &idEntity)
+{
+	auto index = _dicTypeBuyMaid[idEntity];
+	return getIsUnlock(index);
+}
+
+void HandleDataUnlock::setIsBuyMaid(const int &idEntity)
+{
+	auto index = _dicTypeBuyMaid[idEntity];
 	setIsUnlock(index);
 }
 

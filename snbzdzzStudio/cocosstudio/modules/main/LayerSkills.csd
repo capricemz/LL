@@ -34,26 +34,15 @@
               <AbstractNodeData Name="btn0" ActionTag="278364990" UserData="1000" Tag="193" IconVisible="False" LeftMargin="5.0000" RightMargin="537.0000" TopMargin="8.0000" BottomMargin="31.0000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="68" Scale9Height="76" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="98.0000" Y="98.0000" />
                 <Children>
-                  <AbstractNodeData Name="spriteLock" ActionTag="-1195702975" Tag="197" IconVisible="False" LeftMargin="-11.0000" RightMargin="-12.0000" TopMargin="-11.0000" BottomMargin="-12.0000" ctype="SpriteObjectData">
-                    <Size X="121.0000" Y="121.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="49.5000" Y="48.5000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5051" Y="0.4949" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/girl/box3.png" Plist="" />
-                    <BlendFunc Src="770" Dst="771" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="spriteLockState" ActionTag="-1200952394" Tag="90" IconVisible="False" LeftMargin="15.0000" RightMargin="15.0000" TopMargin="38.0000" BottomMargin="38.0000" ctype="SpriteObjectData">
-                    <Size X="68.0000" Y="22.0000" />
+                  <AbstractNodeData Name="spriteLockState" Visible="False" ActionTag="-1200952394" Tag="90" IconVisible="False" LeftMargin="15.0000" RightMargin="15.0000" TopMargin="38.0000" BottomMargin="38.0000" ctype="SpriteObjectData">
+                    <Size X="46.0000" Y="46.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="49.0000" Y="49.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
                     <PreSize X="0.1063" Y="0.1833" />
-                    <FileData Type="Normal" Path="images/girl/not unlock.png" Plist="" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -65,34 +54,23 @@
                 <PreSize X="0.1531" Y="0.7153" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/girl/box2.png" Plist="" />
-                <NormalFileData Type="Normal" Path="images/girl/box1.png" Plist="" />
+                <PressedFileData Type="MarkedSubImage" Path="images/girl/box2.png" Plist="modules/main/PlistMain.plist" />
+                <NormalFileData Type="MarkedSubImage" Path="images/girl/box1.png" Plist="modules/main/PlistMain.plist" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="btn1" ActionTag="-1524352908" UserData="1001" Tag="198" IconVisible="False" LeftMargin="111.0000" RightMargin="431.0000" TopMargin="8.0000" BottomMargin="31.0000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="68" Scale9Height="76" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="98.0000" Y="98.0000" />
                 <Children>
-                  <AbstractNodeData Name="spriteLock" ActionTag="-705543631" Tag="199" IconVisible="False" LeftMargin="-11.0000" RightMargin="-12.0000" TopMargin="-11.0000" BottomMargin="-12.0000" ctype="SpriteObjectData">
-                    <Size X="121.0000" Y="121.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="49.5000" Y="48.5000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5051" Y="0.4949" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/girl/box3.png" Plist="" />
-                    <BlendFunc Src="770" Dst="771" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="spriteLockState" ActionTag="-1048350666" Tag="208" IconVisible="False" LeftMargin="15.0000" RightMargin="15.0000" TopMargin="38.0000" BottomMargin="38.0000" ctype="SpriteObjectData">
-                    <Size X="68.0000" Y="22.0000" />
+                  <AbstractNodeData Name="spriteLockState" Visible="False" ActionTag="-1048350666" Tag="208" IconVisible="False" LeftMargin="15.0000" RightMargin="15.0000" TopMargin="38.0000" BottomMargin="38.0000" ctype="SpriteObjectData">
+                    <Size X="46.0000" Y="46.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="49.0000" Y="49.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
                     <PreSize X="0.1063" Y="0.1833" />
-                    <FileData Type="Normal" Path="images/girl/not unlock.png" Plist="" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -104,34 +82,23 @@
                 <PreSize X="0.1531" Y="0.7153" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/girl/box2.png" Plist="" />
-                <NormalFileData Type="Normal" Path="images/girl/box1.png" Plist="" />
+                <PressedFileData Type="MarkedSubImage" Path="images/girl/box2.png" Plist="modules/main/PlistMain.plist" />
+                <NormalFileData Type="MarkedSubImage" Path="images/girl/box1.png" Plist="modules/main/PlistMain.plist" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="btn2" ActionTag="940814926" UserData="1002" Tag="200" IconVisible="False" LeftMargin="217.0000" RightMargin="325.0000" TopMargin="8.0000" BottomMargin="31.0000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="68" Scale9Height="76" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="98.0000" Y="98.0000" />
                 <Children>
-                  <AbstractNodeData Name="spriteLock" ActionTag="-840475352" Tag="201" IconVisible="False" LeftMargin="-11.0000" RightMargin="-12.0000" TopMargin="-11.0000" BottomMargin="-12.0000" ctype="SpriteObjectData">
-                    <Size X="121.0000" Y="121.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="49.5000" Y="48.5000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5051" Y="0.4949" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/girl/box3.png" Plist="" />
-                    <BlendFunc Src="770" Dst="771" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="spriteLockState" ActionTag="-213993256" Tag="209" IconVisible="False" LeftMargin="15.0000" RightMargin="15.0000" TopMargin="38.0000" BottomMargin="38.0000" ctype="SpriteObjectData">
-                    <Size X="68.0000" Y="22.0000" />
+                  <AbstractNodeData Name="spriteLockState" Visible="False" ActionTag="-213993256" Tag="209" IconVisible="False" LeftMargin="15.0000" RightMargin="15.0000" TopMargin="38.0000" BottomMargin="38.0000" ctype="SpriteObjectData">
+                    <Size X="46.0000" Y="46.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="49.0000" Y="49.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
                     <PreSize X="0.1063" Y="0.1833" />
-                    <FileData Type="Normal" Path="images/girl/not unlock.png" Plist="" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -143,34 +110,23 @@
                 <PreSize X="0.1531" Y="0.7153" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/girl/box2.png" Plist="" />
-                <NormalFileData Type="Normal" Path="images/girl/box1.png" Plist="" />
+                <PressedFileData Type="MarkedSubImage" Path="images/girl/box2.png" Plist="modules/main/PlistMain.plist" />
+                <NormalFileData Type="MarkedSubImage" Path="images/girl/box1.png" Plist="modules/main/PlistMain.plist" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="btn3" ActionTag="1470003503" UserData="1003" Tag="202" IconVisible="False" LeftMargin="324.0000" RightMargin="218.0000" TopMargin="8.0000" BottomMargin="31.0000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="68" Scale9Height="76" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="98.0000" Y="98.0000" />
                 <Children>
-                  <AbstractNodeData Name="spriteLock" ActionTag="1743988838" Tag="203" IconVisible="False" LeftMargin="-11.0000" RightMargin="-12.0000" TopMargin="-11.0000" BottomMargin="-12.0000" ctype="SpriteObjectData">
-                    <Size X="121.0000" Y="121.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="49.5000" Y="48.5000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5051" Y="0.4949" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/girl/box3.png" Plist="" />
-                    <BlendFunc Src="770" Dst="771" />
-                  </AbstractNodeData>
                   <AbstractNodeData Name="spriteLockState" ActionTag="-139626396" Tag="210" IconVisible="False" LeftMargin="15.0000" RightMargin="15.0000" TopMargin="38.0000" BottomMargin="38.0000" ctype="SpriteObjectData">
-                    <Size X="68.0000" Y="22.0000" />
+                    <Size X="102.0000" Y="57.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="49.0000" Y="49.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
                     <PreSize X="0.1063" Y="0.1833" />
-                    <FileData Type="Normal" Path="images/girl/not unlock.png" Plist="" />
+                    <FileData Type="MarkedSubImage" Path="images/girl/buy.png" Plist="modules/main/PlistMain.plist" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -182,34 +138,23 @@
                 <PreSize X="0.1531" Y="0.7153" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/girl/box2.png" Plist="" />
-                <NormalFileData Type="Normal" Path="images/girl/box1.png" Plist="" />
+                <PressedFileData Type="MarkedSubImage" Path="images/girl/box2.png" Plist="modules/main/PlistMain.plist" />
+                <NormalFileData Type="MarkedSubImage" Path="images/girl/box1.png" Plist="modules/main/PlistMain.plist" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="btn4" ActionTag="-1864829275" UserData="1004" Tag="204" IconVisible="False" LeftMargin="431.0000" RightMargin="111.0000" TopMargin="8.0000" BottomMargin="31.0000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="68" Scale9Height="76" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="98.0000" Y="98.0000" />
                 <Children>
-                  <AbstractNodeData Name="spriteLock" ActionTag="-1816421855" Tag="205" IconVisible="False" LeftMargin="-11.0000" RightMargin="-12.0000" TopMargin="-11.0000" BottomMargin="-12.0000" ctype="SpriteObjectData">
-                    <Size X="121.0000" Y="121.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="49.5000" Y="48.5000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5051" Y="0.4949" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/girl/box3.png" Plist="" />
-                    <BlendFunc Src="770" Dst="771" />
-                  </AbstractNodeData>
                   <AbstractNodeData Name="spriteLockState" ActionTag="-2002036731" Tag="211" IconVisible="False" LeftMargin="15.0000" RightMargin="15.0000" TopMargin="38.0000" BottomMargin="38.0000" ctype="SpriteObjectData">
-                    <Size X="68.0000" Y="22.0000" />
+                    <Size X="74.0000" Y="28.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="49.0000" Y="49.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
                     <PreSize X="0.1063" Y="0.1833" />
-                    <FileData Type="Normal" Path="images/girl/not unlock.png" Plist="" />
+                    <FileData Type="MarkedSubImage" Path="images/girl/not_unlock.png" Plist="modules/main/PlistMain.plist" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -221,34 +166,23 @@
                 <PreSize X="0.1531" Y="0.7153" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/girl/box2.png" Plist="" />
-                <NormalFileData Type="Normal" Path="images/girl/box1.png" Plist="" />
+                <PressedFileData Type="MarkedSubImage" Path="images/girl/box2.png" Plist="modules/main/PlistMain.plist" />
+                <NormalFileData Type="MarkedSubImage" Path="images/girl/box1.png" Plist="modules/main/PlistMain.plist" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="btn5" ActionTag="-966584021" UserData="1005" Tag="206" IconVisible="False" LeftMargin="537.0000" RightMargin="5.0000" TopMargin="8.0000" BottomMargin="31.0000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="68" Scale9Height="76" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="98.0000" Y="98.0000" />
                 <Children>
-                  <AbstractNodeData Name="spriteLock" ActionTag="-523116362" Tag="207" IconVisible="False" LeftMargin="-11.0000" RightMargin="-12.0000" TopMargin="-11.0000" BottomMargin="-12.0000" ctype="SpriteObjectData">
-                    <Size X="121.0000" Y="121.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="49.5000" Y="48.5000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5051" Y="0.4949" />
-                    <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/girl/box3.png" Plist="" />
-                    <BlendFunc Src="770" Dst="771" />
-                  </AbstractNodeData>
                   <AbstractNodeData Name="spriteLockState" ActionTag="-1220956690" Tag="212" IconVisible="False" LeftMargin="15.0000" RightMargin="15.0000" TopMargin="38.0000" BottomMargin="38.0000" ctype="SpriteObjectData">
-                    <Size X="68.0000" Y="22.0000" />
+                    <Size X="74.0000" Y="28.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="49.0000" Y="49.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
                     <PreSize X="0.1063" Y="0.1833" />
-                    <FileData Type="Normal" Path="images/girl/not unlock.png" Plist="" />
+                    <FileData Type="MarkedSubImage" Path="images/girl/not_unlock.png" Plist="modules/main/PlistMain.plist" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -260,8 +194,8 @@
                 <PreSize X="0.1531" Y="0.7153" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/girl/box2.png" Plist="" />
-                <NormalFileData Type="Normal" Path="images/girl/box1.png" Plist="" />
+                <PressedFileData Type="MarkedSubImage" Path="images/girl/box2.png" Plist="modules/main/PlistMain.plist" />
+                <NormalFileData Type="MarkedSubImage" Path="images/girl/box1.png" Plist="modules/main/PlistMain.plist" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -288,7 +222,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5417" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/girl/gold unlock.png" Plist="" />
+                <FileData Type="MarkedSubImage" Path="images/girl/buy1.png" Plist="modules/main/PlistMain.plist" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteNameBg" ActionTag="1881748643" Tag="57" IconVisible="False" LeftMargin="235.0000" RightMargin="235.0000" TopMargin="759.0000" BottomMargin="159.0000" ctype="SpriteObjectData">
@@ -299,7 +233,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.1875" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/girl/role name.png" Plist="" />
+                <FileData Type="MarkedSubImage" Path="images/girl/role_name.png" Plist="modules/main/PlistMain.plist" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="btnPrev" ActionTag="-1233900949" Tag="213" IconVisible="False" LeftMargin="96.5000" RightMargin="436.5000" TopMargin="700.5000" BottomMargin="180.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="77" Scale9Height="57" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -311,8 +245,8 @@
                 <PrePosition X="0.2344" Y="0.2292" />
                 <PreSize X="0.1672" Y="0.0823" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/girl/left.png" Plist="" />
-                <NormalFileData Type="Normal" Path="images/girl/left.png" Plist="" />
+                <PressedFileData Type="MarkedSubImage" Path="images/girl/left.png" Plist="modules/main/PlistMain.plist" />
+                <NormalFileData Type="MarkedSubImage" Path="images/girl/left.png" Plist="modules/main/PlistMain.plist" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -325,8 +259,8 @@
                 <PrePosition X="0.7656" Y="0.2292" />
                 <PreSize X="0.1875" Y="0.0958" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/girl/right.png" Plist="" />
-                <NormalFileData Type="Normal" Path="images/girl/right.png" Plist="" />
+                <PressedFileData Type="MarkedSubImage" Path="images/girl/right.png" Plist="modules/main/PlistMain.plist" />
+                <NormalFileData Type="MarkedSubImage" Path="images/girl/right.png" Plist="modules/main/PlistMain.plist" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -339,8 +273,8 @@
                 <PrePosition X="0.9063" Y="0.7083" />
                 <PreSize X="0.1641" Y="0.1312" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/girl/skill.png" Plist="" />
-                <NormalFileData Type="Normal" Path="images/girl/skill.png" Plist="" />
+                <PressedFileData Type="MarkedSubImage" Path="images/girl/skill.png" Plist="modules/main/PlistMain.plist" />
+                <NormalFileData Type="MarkedSubImage" Path="images/girl/skill.png" Plist="modules/main/PlistMain.plist" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -356,7 +290,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutSkillItems" Visible="False" ActionTag="1958874509" Tag="28" IconVisible="False" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutSkillItems" ActionTag="1958874509" VisibleForFrame="False" Tag="28" IconVisible="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="640.0000" Y="960.0000" />
             <Children>
               <AbstractNodeData Name="layoutSkillItem0" ActionTag="1091412483" Tag="182" IconVisible="False" LeftMargin="69.9973" RightMargin="270.0027" TopMargin="198.0000" BottomMargin="682.0000" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">

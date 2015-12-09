@@ -88,6 +88,12 @@ void HandleImageLoad::imageAsyncLoad(const string &fileName)
 	{
 		UtilString::stringReplace(fileNamePic, ".plist", ".png");
 	}
+	auto fullpath = FileUtils::getInstance()->fullPathForFilename(fileName);
+	// check if file exists
+	if (fullpath.empty() || !FileUtils::getInstance()->isFileExist(fullpath))
+	{
+		return;
+	}
 	Director::getInstance()->getTextureCache()->addImageAsync(fileNamePic, CC_CALLBACK_1(HandleImageLoad::imageAsyncCallback, this, fileName));
 	_numPlistNeedLoad++;
 }

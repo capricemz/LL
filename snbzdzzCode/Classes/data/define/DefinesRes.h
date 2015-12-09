@@ -33,6 +33,9 @@ static const string RES_MODULES_MAIN_LAYER_CATCH_CSB = "modules/main/LayerCatch.
 static const string RES_MODULES_MAIN_NODE_GRID_CSB = "modules/main/NodeGrid.csb";
 static const string RES_MODULES_MAIN_NODE_HEAD_CSB = "modules/main/NodeHead.csb";
 
+static const string RES_IMAGES_MAIN_MAID_UNLOCK_PNG = "images/girl/not_unlock.png";
+static const string RES_IMAGES_MAIN_MAID_BUY_PNG = "images/girl/buy.png";
+
 static const string RES_IMAGES_MAIN_CIRCLE_LINE_POINT_PNG = "images/battle/lianxian_dian.png";
 static const string RES_IMAGES_MAIN_CIRCLE_LINE_CIRCLE_PNG = "images/battle/lianxian_quan.png";
 static const string RES_IMAGES_MAIN_CIRCLE_LINE_LINE_PNG = "images/battle/lianxian_xian.png";

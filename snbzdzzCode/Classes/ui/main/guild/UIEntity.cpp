@@ -2,6 +2,7 @@
 
 #include "UIEntity.h"
 #include "data/config/ManagerCfg.h"
+#include "data/data/ManagerData.h"
 
 UIEntity::UIEntity() : _idEntity(0), _skin(nullptr), _layoutBg(nullptr)
 {
@@ -27,9 +28,13 @@ bool UIEntity::init()
 
 void UIEntity::updateSkin(const int &idEntity, const float &scale)
 {
+	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
+	auto isBuy = handleDataUnlock->getIsBuyMaid(idEntity);
+	auto isUnlock = handleDataUnlock->getIsUnlockMaid(idEntity);
+
 	auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[idEntity];
 
-	auto urlPic = cfgEntity.vecUrlPic[0];
+	auto urlPic = cfgEntity.vecUrlPic[isUnlock && !isBuy ? 3 : 0];
 	if (_skin == nullptr)
 	{
 		_skin = Sprite::create(urlPic);

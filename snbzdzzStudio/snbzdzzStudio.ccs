@@ -123,18 +123,16 @@
             <Image Name="bg.png" />
             <Image Name="box1.png" />
             <Image Name="box2.png" />
-            <Image Name="box3.png" />
-            <Image Name="can unlock.png" />
-            <Image Name="gold unlock.png" />
             <Image Name="left.png" />
-            <Image Name="not unlock.png" />
             <Image Name="right.png" />
-            <Image Name="role box1.png" />
-            <Image Name="role name.png" />
             <Image Name="role.png" />
             <Image Name="role2.png" />
             <Image Name="silhouette.png" />
             <Image Name="skill.png" />
+            <Image Name="buy.png" />
+            <Image Name="buy1.png" />
+            <Image Name="role_name.png" />
+            <Image Name="not_unlock.png" />
           </Folder>
           <Folder Name="checkpoint">
             <Folder Name="bottombar">
@@ -276,6 +274,7 @@
             <Project Name="LayerCatch.csd" Type="Layer" />
             <Project Name="LayerGuild.csd" Type="Layer" />
             <Project Name="LayerTraining.csd" Type="Layer" />
+            <Project Name="NodeMain.csd" Type="Node" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />

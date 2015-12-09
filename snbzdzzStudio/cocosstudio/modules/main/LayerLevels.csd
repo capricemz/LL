@@ -17,7 +17,7 @@
             <FileData Type="Normal" Path="images/levels/map.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="listViewBtns" ActionTag="1739153259" CallBackType="Click" Tag="124" IconVisible="False" VerticalEdge="BottomEdge" TopMargin="60.0000" BottomMargin="100.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
+          <AbstractNodeData Name="listViewBtns" ActionTag="1739153259" CallBackType="Click" Tag="124" IconVisible="False" VerticalEdge="BottomEdge" TopMargin="60.0000" BottomMargin="100.0000" TouchEnable="True" BackColorAlpha="0" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
             <Size X="640.0000" Y="800.0000" />
             <Children>
               <AbstractNodeData Name="layoutBtns" ActionTag="-697133949" Tag="93" IconVisible="False" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
@@ -26,1888 +26,472 @@
                   <AbstractNodeData Name="layoutBg" ActionTag="-1109340219" Tag="215" IconVisible="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                     <Size X="640.0000" Y="5000.0000" />
                     <Children>
-                      <AbstractNodeData Name="Line0" ActionTag="1442205964" Tag="145" IconVisible="False" LeftMargin="163.4926" RightMargin="326.5074" TopMargin="163.6899" BottomMargin="4736.3101" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                      <AbstractNodeData Name="Line0" ActionTag="1442205964" Tag="145" RotationSkewX="-7.8762" RotationSkewY="-7.8863" IconVisible="False" LeftMargin="156.5554" RightMargin="333.4446" TopMargin="174.4043" BottomMargin="4725.5957" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                         <Size X="150.0000" Y="100.0000" />
                         <Children>
-                          <AbstractNodeData Name="line0" ActionTag="438372682" Tag="146" IconVisible="False" LeftMargin="7.2205" RightMargin="106.7795" TopMargin="72.6826" BottomMargin="-0.6826" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
+                          <AbstractNodeData Name="line0" ActionTag="438372682" Tag="146" RotationSkewX="-24.7342" RotationSkewY="-24.7342" IconVisible="False" LeftMargin="8.7207" RightMargin="120.2793" TopMargin="69.1829" BottomMargin="9.8171" ctype="SpriteObjectData">
+                            <Size X="21.0000" Y="21.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2205" Y="13.3174" />
+                            <Position X="19.2207" Y="20.3171" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1681" Y="0.1332" />
+                            <PrePosition X="0.1281" Y="0.2032" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="9048191" Tag="147" RotationSkewX="-5.7057" RotationSkewY="-5.7056" IconVisible="False" LeftMargin="41.2287" RightMargin="74.7713" TopMargin="59.5652" BottomMargin="15.4348" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
+                          <AbstractNodeData Name="line1" ActionTag="9048191" Tag="147" RotationSkewX="-5.7057" RotationSkewY="-5.7057" IconVisible="False" LeftMargin="32.6563" RightMargin="92.3438" TopMargin="36.5879" BottomMargin="47.4121" ctype="SpriteObjectData">
+                            <Size X="25.0000" Y="16.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.2287" Y="27.9348" />
+                            <Position X="45.1563" Y="55.4121" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3882" Y="0.2793" />
+                            <PrePosition X="0.3010" Y="0.5541" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="632260169" Tag="148" RotationSkewX="-27.7060" RotationSkewY="-27.7068" IconVisible="False" LeftMargin="71.3636" RightMargin="43.6364" TopMargin="42.3744" BottomMargin="32.6256" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
+                          <AbstractNodeData Name="line2" ActionTag="632260169" Tag="148" RotationSkewX="9.2691" RotationSkewY="9.2686" IconVisible="False" LeftMargin="64.0591" RightMargin="55.9409" TopMargin="13.6261" BottomMargin="69.3739" ctype="SpriteObjectData">
+                            <Size X="30.0000" Y="17.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="88.8636" Y="45.1256" />
+                            <Position X="79.0591" Y="77.8739" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5924" Y="0.4513" />
+                            <PrePosition X="0.5271" Y="0.7787" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="1109069767" Tag="149" RotationSkewX="-41.9815" RotationSkewY="-41.9815" IconVisible="False" LeftMargin="99.4492" RightMargin="21.5508" TopMargin="20.9111" BottomMargin="58.0889" ctype="SpriteObjectData">
+                          <AbstractNodeData Name="line3" ActionTag="1109069767" Tag="149" RotationSkewX="32.8339" RotationSkewY="32.8339" IconVisible="False" LeftMargin="105.0499" RightMargin="15.9501" TopMargin="-3.2951" BottomMargin="82.2951" ctype="SpriteObjectData">
                             <Size X="29.0000" Y="21.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="113.9492" Y="68.5889" />
+                            <Position X="119.5499" Y="92.7951" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.7597" Y="0.6859" />
+                            <PrePosition X="0.7970" Y="0.9280" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint />
-                        <Position X="163.4926" Y="4736.3101" />
+                        <Position X="156.5554" Y="4725.5957" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.2555" Y="0.9473" />
+                        <PrePosition X="0.2446" Y="0.9451" />
                         <PreSize X="0.2344" Y="0.0200" />
                         <SingleColor A="255" R="150" G="200" B="255" />
                         <FirstColor A="255" R="150" G="200" B="255" />
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Line1" ActionTag="-171665951" Tag="131" IconVisible="False" LeftMargin="285.8089" RightMargin="204.1911" TopMargin="328.1841" BottomMargin="4571.8159" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                      <AbstractNodeData Name="Line1" ActionTag="-171665951" Tag="131" RotationSkewX="1.0403" RotationSkewY="0.9513" IconVisible="False" LeftMargin="288.2539" RightMargin="201.7461" TopMargin="336.1294" BottomMargin="4563.8706" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                         <Size X="150.0000" Y="100.0000" />
                         <Children>
-                          <AbstractNodeData Name="line0" ActionTag="1448276447" Tag="132" RotationSkewX="-4.9598" RotationSkewY="-4.9598" IconVisible="False" LeftMargin="2.1685" RightMargin="111.8315" TopMargin="56.9580" BottomMargin="15.0420" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
+                          <AbstractNodeData Name="line0" ActionTag="1448276447" Tag="132" RotationSkewX="12.8022" RotationSkewY="12.8018" IconVisible="False" LeftMargin="11.6675" RightMargin="117.3325" TopMargin="69.4569" BottomMargin="9.5431" ctype="SpriteObjectData">
+                            <Size X="21.0000" Y="21.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="20.1685" Y="29.0420" />
+                            <Position X="22.1675" Y="20.0431" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1345" Y="0.2904" />
+                            <PrePosition X="0.1478" Y="0.2004" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="937600304" Tag="133" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
+                          <AbstractNodeData Name="line1" ActionTag="937600304" Tag="133" RotationSkewX="1.1974" RotationSkewY="1.1978" IconVisible="False" LeftMargin="55.5513" RightMargin="69.4487" TopMargin="60.4847" BottomMargin="23.5153" ctype="SpriteObjectData">
+                            <Size X="25.0000" Y="16.0000" />
+                            <AnchorPoint ScaleX="0.5004" ScaleY="0.5068" />
+                            <Position X="68.0604" Y="31.6234" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
+                            <PrePosition X="0.4537" Y="0.3162" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="369727426" Tag="134" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
+                          <AbstractNodeData Name="line2" ActionTag="369727426" Tag="134" RotationSkewX="-15.2826" RotationSkewY="-15.2822" IconVisible="False" LeftMargin="88.5496" RightMargin="31.4504" TopMargin="38.0169" BottomMargin="44.9831" ctype="SpriteObjectData">
+                            <Size X="30.0000" Y="17.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
+                            <Position X="103.5496" Y="53.4831" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
+                            <PrePosition X="0.6903" Y="0.5348" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-1526940259" Tag="135" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
+                          <AbstractNodeData Name="line3" ActionTag="-1526940259" Tag="135" RotationSkewX="-23.3747" RotationSkewY="-23.3757" IconVisible="False" LeftMargin="118.4627" RightMargin="2.5373" TopMargin="4.4557" BottomMargin="74.5443" ctype="SpriteObjectData">
                             <Size X="29.0000" Y="21.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
+                            <Position X="132.9627" Y="85.0443" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
+                            <PrePosition X="0.8864" Y="0.8504" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint />
-                        <Position X="285.8089" Y="4571.8159" />
+                        <Position X="288.2539" Y="4563.8706" />
                         <Scale ScaleX="-1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4466" Y="0.9144" />
+                        <PrePosition X="0.4504" Y="0.9128" />
                         <PreSize X="0.2344" Y="0.0200" />
                         <SingleColor A="255" R="150" G="200" B="255" />
                         <FirstColor A="255" R="150" G="200" B="255" />
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Line2" ActionTag="-310725958" Tag="117" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="319.7014" RightMargin="170.2986" TopMargin="465.4556" BottomMargin="4434.5444" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                      <AbstractNodeData Name="Line2" ActionTag="-310725958" Tag="117" RotationSkewX="-103.7860" RotationSkewY="-103.5987" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="349.6355" RightMargin="140.3645" TopMargin="452.5742" BottomMargin="4447.4258" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                         <Size X="150.0000" Y="100.0000" />
                         <Children>
-                          <AbstractNodeData Name="line0" ActionTag="350538251" Tag="118" RotationSkewX="10.6783" RotationSkewY="10.6783" IconVisible="False" LeftMargin="104.3008" RightMargin="9.6992" TopMargin="63.7949" BottomMargin="8.2051" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
+                          <AbstractNodeData Name="line0" ActionTag="350538251" Tag="118" RotationSkewX="-15.4993" RotationSkewY="-15.5015" IconVisible="False" LeftMargin="113.9595" RightMargin="15.0405" TopMargin="80.8941" BottomMargin="-1.8941" ctype="SpriteObjectData">
+                            <Size X="21.0000" Y="21.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="122.3008" Y="22.2051" />
+                            <Position X="124.4595" Y="8.6059" />
                             <Scale ScaleX="-1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.8153" Y="0.2221" />
+                            <PrePosition X="0.8297" Y="0.0861" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="-861902733" Tag="119" RotationSkewX="16.2920" RotationSkewY="16.2922" IconVisible="False" LeftMargin="85.3643" RightMargin="30.6357" TopMargin="49.6521" BottomMargin="25.3479" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="102.3643" Y="37.8479" />
+                          <AbstractNodeData Name="line1" ActionTag="-861902733" Tag="119" RotationSkewX="-8.1419" RotationSkewY="-8.1422" IconVisible="False" LeftMargin="73.8207" RightMargin="51.1793" TopMargin="77.6417" BottomMargin="6.3583" ctype="SpriteObjectData">
+                            <Size X="25.0000" Y="16.0000" />
+                            <AnchorPoint ScaleX="0.4884" ScaleY="0.5131" />
+                            <Position X="86.0301" Y="14.5677" />
                             <Scale ScaleX="-1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.6824" Y="0.3785" />
+                            <PrePosition X="0.5735" Y="0.1457" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-461844268" Tag="120" RotationSkewX="29.6987" RotationSkewY="29.6985" IconVisible="False" LeftMargin="63.8833" RightMargin="51.1167" TopMargin="34.3219" BottomMargin="40.6781" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="81.3833" Y="53.1781" />
+                          <AbstractNodeData Name="line2" ActionTag="-461844268" Tag="120" RotationSkewX="19.0209" RotationSkewY="19.0206" IconVisible="False" LeftMargin="36.1098" RightMargin="83.8902" TopMargin="55.5202" BottomMargin="27.4798" ctype="SpriteObjectData">
+                            <Size X="30.0000" Y="17.0000" />
+                            <AnchorPoint ScaleX="0.4947" ScaleY="0.5058" />
+                            <Position X="50.9522" Y="36.0783" />
                             <Scale ScaleX="-1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5426" Y="0.5318" />
+                            <PrePosition X="0.3397" Y="0.3608" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="120379775" Tag="121" RotationSkewX="38.0818" RotationSkewY="38.0810" IconVisible="False" LeftMargin="42.5932" RightMargin="78.4068" TopMargin="16.0119" BottomMargin="62.9881" ctype="SpriteObjectData">
+                          <AbstractNodeData Name="line3" ActionTag="120379775" Tag="121" RotationSkewX="23.8925" RotationSkewY="23.8915" IconVisible="False" LeftMargin="17.2316" RightMargin="103.7684" TopMargin="22.8904" BottomMargin="56.1096" ctype="SpriteObjectData">
                             <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="57.0932" Y="73.4881" />
+                            <AnchorPoint ScaleX="0.3935" ScaleY="0.4471" />
+                            <Position X="28.6422" Y="65.4984" />
                             <Scale ScaleX="-1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3806" Y="0.7349" />
+                            <PrePosition X="0.1909" Y="0.6550" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="1.0000" />
-                        <Position X="469.7014" Y="4434.5444" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.7339" Y="0.8869" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line3" ActionTag="-1660849087" ZOrder="1" Tag="103" IconVisible="False" LeftMargin="347.3487" RightMargin="142.6513" TopMargin="600.8462" BottomMargin="4299.1538" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="415388044" Tag="104" IconVisible="False" LeftMargin="7.2206" RightMargin="156.7794" TopMargin="156.9581" BottomMargin="15.0419" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2206" Y="29.0419" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1261" Y="0.1452" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="-638144782" Tag="105" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-333928146" Tag="106" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-479449833" Tag="107" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="347.3487" Y="4299.1538" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5427" Y="0.8598" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line0_0" ActionTag="1152681729" Tag="524" IconVisible="False" LeftMargin="128.3903" RightMargin="361.6097" TopMargin="731.5562" BottomMargin="4168.4438" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-308413611" Tag="525" IconVisible="False" LeftMargin="7.2205" RightMargin="106.7795" TopMargin="72.6826" BottomMargin="-0.6826" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2205" Y="13.3174" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1681" Y="0.1332" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="1114572342" Tag="526" RotationSkewX="-5.7057" RotationSkewY="-5.7056" IconVisible="False" LeftMargin="41.2287" RightMargin="74.7713" TopMargin="59.5652" BottomMargin="15.4348" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.2287" Y="27.9348" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3882" Y="0.2793" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-1992069968" Tag="527" RotationSkewX="-27.7060" RotationSkewY="-27.7068" IconVisible="False" LeftMargin="71.3636" RightMargin="43.6364" TopMargin="42.3744" BottomMargin="32.6256" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="88.8636" Y="45.1256" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5924" Y="0.4513" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-876556676" Tag="528" RotationSkewX="-41.9815" RotationSkewY="-41.9815" IconVisible="False" LeftMargin="99.4492" RightMargin="21.5508" TopMargin="20.9111" BottomMargin="58.0889" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="113.9492" Y="68.5889" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.7597" Y="0.6859" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="128.3903" Y="4168.4438" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.2006" Y="0.8337" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line1_0" ActionTag="-855611065" Tag="529" IconVisible="False" LeftMargin="253.0795" RightMargin="236.9205" TopMargin="877.0566" BottomMargin="4022.9431" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="1753886009" Tag="530" RotationSkewX="-4.9598" RotationSkewY="-4.9598" IconVisible="False" LeftMargin="2.1685" RightMargin="111.8315" TopMargin="56.9580" BottomMargin="15.0420" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="20.1685" Y="29.0420" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1345" Y="0.2904" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="86590531" Tag="531" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="1981603898" Tag="532" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-86984113" Tag="533" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="253.0795" Y="4022.9431" />
+                        <Position X="499.6355" Y="4447.4258" />
                         <Scale ScaleX="-1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.3954" Y="0.8046" />
+                        <PrePosition X="0.7807" Y="0.8895" />
                         <PreSize X="0.2344" Y="0.0200" />
                         <SingleColor A="255" R="150" G="200" B="255" />
                         <FirstColor A="255" R="150" G="200" B="255" />
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Line2_0" ActionTag="-28266210" Tag="534" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="303.5909" RightMargin="186.4091" TopMargin="1014.3289" BottomMargin="3885.6711" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                      <AbstractNodeData Name="Line3" ActionTag="-1660849087" ZOrder="1" Tag="103" RotationSkewX="-5.8773" RotationSkewY="-5.9136" IconVisible="False" LeftMargin="356.1243" RightMargin="133.8757" TopMargin="616.4663" BottomMargin="4283.5337" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                         <Size X="150.0000" Y="100.0000" />
                         <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-1240281318" Tag="535" RotationSkewX="10.6783" RotationSkewY="10.6783" IconVisible="False" LeftMargin="104.3008" RightMargin="9.6992" TopMargin="63.7949" BottomMargin="8.2051" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
+                          <AbstractNodeData Name="line0" ActionTag="415388044" Tag="104" RotationSkewX="20.7120" RotationSkewY="20.7123" IconVisible="False" LeftMargin="12.7197" RightMargin="116.2803" TopMargin="60.4579" BottomMargin="18.5421" ctype="SpriteObjectData">
+                            <Size X="21.0000" Y="21.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="122.3008" Y="22.2051" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
+                            <Position X="23.2197" Y="29.0421" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.8153" Y="0.2221" />
+                            <PrePosition X="0.1548" Y="0.2904" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="1454274919" Tag="536" RotationSkewX="16.2920" RotationSkewY="16.2922" IconVisible="False" LeftMargin="85.3643" RightMargin="30.6357" TopMargin="49.6521" BottomMargin="25.3479" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
+                          <AbstractNodeData Name="line1" ActionTag="-638144782" Tag="105" RotationSkewX="18.4568" RotationSkewY="18.4578" IconVisible="False" LeftMargin="53.6062" RightMargin="71.3938" TopMargin="56.1286" BottomMargin="27.8714" ctype="SpriteObjectData">
+                            <Size X="25.0000" Y="16.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="102.3643" Y="37.8479" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
+                            <Position X="66.1062" Y="35.8714" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.6824" Y="0.3785" />
+                            <PrePosition X="0.4407" Y="0.3587" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="123680560" Tag="537" RotationSkewX="29.6987" RotationSkewY="29.6985" IconVisible="False" LeftMargin="63.8833" RightMargin="51.1167" TopMargin="34.3219" BottomMargin="40.6781" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
+                          <AbstractNodeData Name="line2" ActionTag="-333928146" Tag="106" RotationSkewX="3.6560" RotationSkewY="3.6569" IconVisible="False" LeftMargin="88.8747" RightMargin="31.1253" TopMargin="41.7804" BottomMargin="41.2196" ctype="SpriteObjectData">
+                            <Size X="30.0000" Y="17.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="81.3833" Y="53.1781" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
+                            <Position X="103.8747" Y="49.7196" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5426" Y="0.5318" />
+                            <PrePosition X="0.6925" Y="0.4972" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-1908989126" Tag="538" RotationSkewX="38.0818" RotationSkewY="38.0810" IconVisible="False" LeftMargin="42.5932" RightMargin="78.4068" TopMargin="16.0119" BottomMargin="62.9881" ctype="SpriteObjectData">
+                          <AbstractNodeData Name="line3" ActionTag="-479449833" Tag="107" RotationSkewX="-18.4743" RotationSkewY="-18.4734" IconVisible="False" LeftMargin="121.8359" RightMargin="-0.8359" TopMargin="16.5162" BottomMargin="62.4838" ctype="SpriteObjectData">
                             <Size X="29.0000" Y="21.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="57.0932" Y="73.4881" />
+                            <Position X="136.3359" Y="72.9838" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.9089" Y="0.7298" />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
+                            <BlendFunc Src="770" Dst="771" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="356.1243" Y="4283.5337" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5564" Y="0.8567" />
+                        <PreSize X="0.2344" Y="0.0200" />
+                        <SingleColor A="255" R="150" G="200" B="255" />
+                        <FirstColor A="255" R="150" G="200" B="255" />
+                        <EndColor A="255" R="255" G="255" B="255" />
+                        <ColorVector ScaleY="1.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Line0_0" ActionTag="-195309634" Tag="529" RotationSkewX="-2.2226" RotationSkewY="-2.3227" IconVisible="False" LeftMargin="115.7323" RightMargin="374.2677" TopMargin="727.8594" BottomMargin="4172.1406" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                        <Size X="150.0000" Y="100.0000" />
+                        <Children>
+                          <AbstractNodeData Name="line0" ActionTag="816573260" Tag="530" RotationSkewX="-24.7342" RotationSkewY="-24.7342" IconVisible="False" LeftMargin="8.7207" RightMargin="120.2793" TopMargin="69.1829" BottomMargin="9.8171" ctype="SpriteObjectData">
+                            <Size X="21.0000" Y="21.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="19.2207" Y="20.3171" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.1281" Y="0.2032" />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
+                            <BlendFunc Src="770" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="line1" ActionTag="-25386090" Tag="531" RotationSkewX="-5.7057" RotationSkewY="-5.7057" IconVisible="False" LeftMargin="32.6563" RightMargin="92.3438" TopMargin="36.5879" BottomMargin="47.4121" ctype="SpriteObjectData">
+                            <Size X="25.0000" Y="16.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="45.1563" Y="55.4121" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.3010" Y="0.5541" />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
+                            <BlendFunc Src="770" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="line2" ActionTag="-520389437" Tag="532" RotationSkewX="9.2691" RotationSkewY="9.2686" IconVisible="False" LeftMargin="64.0591" RightMargin="55.9409" TopMargin="13.6261" BottomMargin="69.3739" ctype="SpriteObjectData">
+                            <Size X="30.0000" Y="17.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="79.0591" Y="77.8739" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.5271" Y="0.7787" />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
+                            <BlendFunc Src="770" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="line3" ActionTag="-2044385805" Tag="533" RotationSkewX="32.8339" RotationSkewY="32.8339" IconVisible="False" LeftMargin="105.0499" RightMargin="15.9501" TopMargin="-3.2951" BottomMargin="82.2951" ctype="SpriteObjectData">
+                            <Size X="29.0000" Y="21.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="119.5499" Y="92.7951" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.7970" Y="0.9280" />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
+                            <BlendFunc Src="770" Dst="771" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="115.7323" Y="4172.1406" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.1808" Y="0.8344" />
+                        <PreSize X="0.2344" Y="0.0200" />
+                        <SingleColor A="255" R="150" G="200" B="255" />
+                        <FirstColor A="255" R="150" G="200" B="255" />
+                        <EndColor A="255" R="255" G="255" B="255" />
+                        <ColorVector ScaleY="1.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Line1_0" ActionTag="-1170553115" Tag="534" RotationSkewX="1.0405" RotationSkewY="0.9513" IconVisible="False" LeftMargin="261.2817" RightMargin="228.7183" TopMargin="883.2837" BottomMargin="4016.7163" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                        <Size X="150.0000" Y="100.0000" />
+                        <Children>
+                          <AbstractNodeData Name="line0" ActionTag="-86894175" Tag="535" RotationSkewX="12.8022" RotationSkewY="12.8018" IconVisible="False" LeftMargin="11.6675" RightMargin="117.3325" TopMargin="69.4569" BottomMargin="9.5431" ctype="SpriteObjectData">
+                            <Size X="21.0000" Y="21.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="22.1675" Y="20.0431" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.1478" Y="0.2004" />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
+                            <BlendFunc Src="770" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="line1" ActionTag="728404379" Tag="536" RotationSkewX="1.1974" RotationSkewY="1.1978" IconVisible="False" LeftMargin="55.5513" RightMargin="69.4487" TopMargin="60.4847" BottomMargin="23.5153" ctype="SpriteObjectData">
+                            <Size X="25.0000" Y="16.0000" />
+                            <AnchorPoint ScaleX="0.5004" ScaleY="0.5068" />
+                            <Position X="68.0604" Y="31.6234" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.4537" Y="0.3162" />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
+                            <BlendFunc Src="770" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="line2" ActionTag="1066276903" Tag="537" RotationSkewX="-15.2826" RotationSkewY="-15.2822" IconVisible="False" LeftMargin="88.5496" RightMargin="31.4504" TopMargin="38.0169" BottomMargin="44.9831" ctype="SpriteObjectData">
+                            <Size X="30.0000" Y="17.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="103.5496" Y="53.4831" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.6903" Y="0.5348" />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
+                            <BlendFunc Src="770" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="line3" ActionTag="-1184560981" Tag="538" RotationSkewX="-23.3747" RotationSkewY="-23.3757" IconVisible="False" LeftMargin="118.4627" RightMargin="2.5373" TopMargin="4.4557" BottomMargin="74.5443" ctype="SpriteObjectData">
+                            <Size X="29.0000" Y="21.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="132.9627" Y="85.0443" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.8864" Y="0.8504" />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
+                            <BlendFunc Src="770" Dst="771" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint />
+                        <Position X="261.2817" Y="4016.7163" />
+                        <Scale ScaleX="-1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.4083" Y="0.8033" />
+                        <PreSize X="0.2344" Y="0.0200" />
+                        <SingleColor A="255" R="150" G="200" B="255" />
+                        <FirstColor A="255" R="150" G="200" B="255" />
+                        <EndColor A="255" R="255" G="255" B="255" />
+                        <ColorVector ScaleY="1.0000" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="Line2_0" ActionTag="-1091915598" Tag="539" RotationSkewX="-108.5195" RotationSkewY="-108.2995" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="336.3127" RightMargin="153.6873" TopMargin="997.4128" BottomMargin="3902.5872" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                        <Size X="150.0000" Y="100.0000" />
+                        <Children>
+                          <AbstractNodeData Name="line0" ActionTag="-1449346198" Tag="540" RotationSkewX="-15.4993" RotationSkewY="-15.5015" IconVisible="False" LeftMargin="113.9595" RightMargin="15.0405" TopMargin="80.8941" BottomMargin="-1.8941" ctype="SpriteObjectData">
+                            <Size X="21.0000" Y="21.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="124.4595" Y="8.6059" />
                             <Scale ScaleX="-1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3806" Y="0.7349" />
+                            <PrePosition X="0.8297" Y="0.0861" />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
+                            <BlendFunc Src="770" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="line1" ActionTag="-1958473703" Tag="541" RotationSkewX="-8.1419" RotationSkewY="-8.1422" IconVisible="False" LeftMargin="73.8207" RightMargin="51.1793" TopMargin="77.6417" BottomMargin="6.3583" ctype="SpriteObjectData">
+                            <Size X="25.0000" Y="16.0000" />
+                            <AnchorPoint ScaleX="0.4884" ScaleY="0.5131" />
+                            <Position X="86.0301" Y="14.5677" />
+                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.5735" Y="0.1457" />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
+                            <BlendFunc Src="770" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="line2" ActionTag="910440175" Tag="542" RotationSkewX="19.0209" RotationSkewY="19.0206" IconVisible="False" LeftMargin="36.1098" RightMargin="83.8902" TopMargin="55.5202" BottomMargin="27.4798" ctype="SpriteObjectData">
+                            <Size X="30.0000" Y="17.0000" />
+                            <AnchorPoint ScaleX="0.4947" ScaleY="0.5058" />
+                            <Position X="50.9522" Y="36.0783" />
+                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.3397" Y="0.3608" />
+                            <PreSize X="0.0000" Y="0.0000" />
+                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
+                            <BlendFunc Src="770" Dst="771" />
+                          </AbstractNodeData>
+                          <AbstractNodeData Name="line3" ActionTag="-815534482" Tag="543" RotationSkewX="23.8925" RotationSkewY="23.8915" IconVisible="False" LeftMargin="17.2316" RightMargin="103.7684" TopMargin="22.8904" BottomMargin="56.1096" ctype="SpriteObjectData">
+                            <Size X="29.0000" Y="21.0000" />
+                            <AnchorPoint ScaleX="0.3935" ScaleY="0.4471" />
+                            <Position X="28.6422" Y="65.4984" />
+                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.1909" Y="0.6550" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="1.0000" />
-                        <Position X="453.5909" Y="3885.6711" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.7087" Y="0.7771" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line3_0" ActionTag="532395663" ZOrder="1" Tag="539" IconVisible="False" LeftMargin="335.9964" RightMargin="154.0036" TopMargin="1149.7173" BottomMargin="3750.2827" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="756422007" Tag="540" IconVisible="False" LeftMargin="7.2206" RightMargin="156.7794" TopMargin="156.9581" BottomMargin="15.0419" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2206" Y="29.0419" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1261" Y="0.1452" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="-1060673321" Tag="541" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="2085375507" Tag="542" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="394849493" Tag="543" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="335.9964" Y="3750.2827" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5250" Y="0.7501" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line0_1" ActionTag="-1925728858" Tag="544" IconVisible="False" LeftMargin="156.8779" RightMargin="333.1221" TopMargin="1306.0313" BottomMargin="3593.9688" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="935037548" Tag="545" IconVisible="False" LeftMargin="7.2205" RightMargin="106.7795" TopMargin="72.6826" BottomMargin="-0.6826" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2205" Y="13.3174" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1681" Y="0.1332" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="-942789354" Tag="546" RotationSkewX="-5.7057" RotationSkewY="-5.7056" IconVisible="False" LeftMargin="41.2287" RightMargin="74.7713" TopMargin="59.5652" BottomMargin="15.4348" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.2287" Y="27.9348" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3882" Y="0.2793" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-59724928" Tag="547" RotationSkewX="-27.7060" RotationSkewY="-27.7068" IconVisible="False" LeftMargin="71.3636" RightMargin="43.6364" TopMargin="42.3744" BottomMargin="32.6256" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="88.8636" Y="45.1256" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5924" Y="0.4513" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-339335366" Tag="548" RotationSkewX="-41.9815" RotationSkewY="-41.9815" IconVisible="False" LeftMargin="99.4492" RightMargin="21.5508" TopMargin="20.9111" BottomMargin="58.0889" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="113.9492" Y="68.5889" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.7597" Y="0.6859" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="156.8779" Y="3593.9688" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.2451" Y="0.7188" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line1_1" ActionTag="636839553" Tag="549" IconVisible="False" LeftMargin="279.1946" RightMargin="210.8054" TopMargin="1470.5261" BottomMargin="3429.4739" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-1736017560" Tag="550" RotationSkewX="-4.9598" RotationSkewY="-4.9598" IconVisible="False" LeftMargin="2.1685" RightMargin="111.8315" TopMargin="56.9580" BottomMargin="15.0420" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="20.1685" Y="29.0420" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1345" Y="0.2904" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="-1224359156" Tag="551" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-806983232" Tag="552" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="937236235" Tag="553" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="279.1946" Y="3429.4739" />
+                        <Position X="486.3127" Y="3902.5872" />
                         <Scale ScaleX="-1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4362" Y="0.6859" />
+                        <PrePosition X="0.7599" Y="0.7805" />
                         <PreSize X="0.2344" Y="0.0200" />
                         <SingleColor A="255" R="150" G="200" B="255" />
                         <FirstColor A="255" R="150" G="200" B="255" />
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="Line2_1" ActionTag="1540478969" Tag="554" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="313.0861" RightMargin="176.9139" TopMargin="1607.7966" BottomMargin="3292.2034" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                      <AbstractNodeData Name="Line3_0" ActionTag="-1809072750" ZOrder="1" Tag="544" RotationSkewX="-10.5887" RotationSkewY="-10.5932" IconVisible="False" LeftMargin="350.5642" RightMargin="139.4358" TopMargin="1169.9185" BottomMargin="3730.0815" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                         <Size X="150.0000" Y="100.0000" />
                         <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-660265198" Tag="555" RotationSkewX="10.6783" RotationSkewY="10.6783" IconVisible="False" LeftMargin="104.3008" RightMargin="9.6992" TopMargin="63.7949" BottomMargin="8.2051" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
+                          <AbstractNodeData Name="line0" ActionTag="1895557874" Tag="545" RotationSkewX="20.7120" RotationSkewY="20.7123" IconVisible="False" LeftMargin="12.7197" RightMargin="116.2803" TopMargin="60.4579" BottomMargin="18.5421" ctype="SpriteObjectData">
+                            <Size X="21.0000" Y="21.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="122.3008" Y="22.2051" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
+                            <Position X="23.2197" Y="29.0421" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.8153" Y="0.2221" />
+                            <PrePosition X="0.1548" Y="0.2904" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="-394788474" Tag="556" RotationSkewX="16.2920" RotationSkewY="16.2922" IconVisible="False" LeftMargin="85.3643" RightMargin="30.6357" TopMargin="49.6521" BottomMargin="25.3479" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
+                          <AbstractNodeData Name="line1" ActionTag="-53297546" Tag="546" RotationSkewX="18.4568" RotationSkewY="18.4578" IconVisible="False" LeftMargin="53.6062" RightMargin="71.3938" TopMargin="56.1286" BottomMargin="27.8714" ctype="SpriteObjectData">
+                            <Size X="25.0000" Y="16.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="102.3643" Y="37.8479" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
+                            <Position X="66.1062" Y="35.8714" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.6824" Y="0.3785" />
+                            <PrePosition X="0.4407" Y="0.3587" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-539421704" Tag="557" RotationSkewX="29.6987" RotationSkewY="29.6985" IconVisible="False" LeftMargin="63.8833" RightMargin="51.1167" TopMargin="34.3219" BottomMargin="40.6781" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
+                          <AbstractNodeData Name="line2" ActionTag="-1341747584" Tag="547" RotationSkewX="3.6560" RotationSkewY="3.6569" IconVisible="False" LeftMargin="88.8747" RightMargin="31.1253" TopMargin="41.7804" BottomMargin="41.2196" ctype="SpriteObjectData">
+                            <Size X="30.0000" Y="17.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="81.3833" Y="53.1781" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
+                            <Position X="103.8747" Y="49.7196" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5426" Y="0.5318" />
+                            <PrePosition X="0.6925" Y="0.4972" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="498498635" Tag="558" RotationSkewX="38.0818" RotationSkewY="38.0810" IconVisible="False" LeftMargin="42.5932" RightMargin="78.4068" TopMargin="16.0119" BottomMargin="62.9881" ctype="SpriteObjectData">
+                          <AbstractNodeData Name="line3" ActionTag="-2142778140" Tag="548" RotationSkewX="-18.4743" RotationSkewY="-18.4734" IconVisible="False" LeftMargin="121.8359" RightMargin="-0.8359" TopMargin="16.5162" BottomMargin="62.4838" ctype="SpriteObjectData">
                             <Size X="29.0000" Y="21.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="57.0932" Y="73.4881" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3806" Y="0.7349" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint ScaleX="1.0000" />
-                        <Position X="463.0861" Y="3292.2034" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.7236" Y="0.6584" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line3_1" ActionTag="-1927407318" ZOrder="1" Tag="559" IconVisible="False" LeftMargin="340.7336" RightMargin="149.2664" TopMargin="1743.1887" BottomMargin="3156.8113" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="1663967485" Tag="560" IconVisible="False" LeftMargin="7.2206" RightMargin="156.7794" TopMargin="156.9581" BottomMargin="15.0419" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2206" Y="29.0419" />
+                            <Position X="136.3359" Y="72.9838" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1261" Y="0.1452" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="1768270401" Tag="561" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="543439900" Tag="562" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="747216592" Tag="563" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
+                            <PrePosition X="0.9089" Y="0.7298" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
                             <BlendFunc Src="770" Dst="771" />
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint />
-                        <Position X="340.7336" Y="3156.8113" />
+                        <Position X="350.5642" Y="3730.0815" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5324" Y="0.6314" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line0_0_0" ActionTag="1442536097" Tag="564" IconVisible="False" LeftMargin="121.7751" RightMargin="368.2249" TopMargin="1873.8972" BottomMargin="3026.1028" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-2015505469" Tag="565" IconVisible="False" LeftMargin="7.2205" RightMargin="106.7795" TopMargin="72.6826" BottomMargin="-0.6826" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2205" Y="13.3174" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1681" Y="0.1332" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="-744687464" Tag="566" RotationSkewX="-5.7057" RotationSkewY="-5.7056" IconVisible="False" LeftMargin="41.2287" RightMargin="74.7713" TopMargin="59.5652" BottomMargin="15.4348" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.2287" Y="27.9348" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3882" Y="0.2793" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="1693079433" Tag="567" RotationSkewX="-27.7060" RotationSkewY="-27.7068" IconVisible="False" LeftMargin="71.3636" RightMargin="43.6364" TopMargin="42.3744" BottomMargin="32.6256" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="88.8636" Y="45.1256" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5924" Y="0.4513" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-1897168427" Tag="568" RotationSkewX="-41.9815" RotationSkewY="-41.9815" IconVisible="False" LeftMargin="99.4492" RightMargin="21.5508" TopMargin="20.9111" BottomMargin="58.0889" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="113.9492" Y="68.5889" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.7597" Y="0.6859" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="121.7751" Y="3026.1028" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.1903" Y="0.6052" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line1_0_0" ActionTag="1080639870" Tag="569" IconVisible="False" LeftMargin="246.4644" RightMargin="243.5356" TopMargin="2019.3984" BottomMargin="2880.6016" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="519540582" Tag="570" RotationSkewX="-4.9598" RotationSkewY="-4.9598" IconVisible="False" LeftMargin="2.1685" RightMargin="111.8315" TopMargin="56.9580" BottomMargin="15.0420" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="20.1685" Y="29.0420" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1345" Y="0.2904" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="681668341" Tag="571" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-73346724" Tag="572" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="1490216967" Tag="573" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="246.4644" Y="2880.6016" />
-                        <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.3851" Y="0.5761" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line2_0_0" ActionTag="-126606745" Tag="574" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="296.9755" RightMargin="193.0245" TopMargin="2156.6707" BottomMargin="2743.3293" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-1494889995" Tag="575" RotationSkewX="10.6783" RotationSkewY="10.6783" IconVisible="False" LeftMargin="104.3008" RightMargin="9.6992" TopMargin="63.7949" BottomMargin="8.2051" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="122.3008" Y="22.2051" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.8153" Y="0.2221" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="1929541241" Tag="576" RotationSkewX="16.2920" RotationSkewY="16.2922" IconVisible="False" LeftMargin="85.3643" RightMargin="30.6357" TopMargin="49.6521" BottomMargin="25.3479" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="102.3643" Y="37.8479" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.6824" Y="0.3785" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="135192551" Tag="577" RotationSkewX="29.6987" RotationSkewY="29.6985" IconVisible="False" LeftMargin="63.8833" RightMargin="51.1167" TopMargin="34.3219" BottomMargin="40.6781" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="81.3833" Y="53.1781" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5426" Y="0.5318" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-1550679715" Tag="578" RotationSkewX="38.0818" RotationSkewY="38.0810" IconVisible="False" LeftMargin="42.5932" RightMargin="78.4068" TopMargin="16.0119" BottomMargin="62.9881" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="57.0932" Y="73.4881" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3806" Y="0.7349" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint ScaleX="1.0000" />
-                        <Position X="446.9755" Y="2743.3293" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.6984" Y="0.5487" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line3_0_0" ActionTag="-2050541387" ZOrder="1" Tag="579" IconVisible="False" LeftMargin="310.3911" RightMargin="179.6089" TopMargin="2306.2981" BottomMargin="2593.7019" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="753094114" Tag="580" IconVisible="False" LeftMargin="7.2206" RightMargin="156.7794" TopMargin="156.9581" BottomMargin="15.0419" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2206" Y="29.0419" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1261" Y="0.1452" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="802881998" Tag="581" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="1847508911" Tag="582" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-1267429032" Tag="583" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="310.3911" Y="2593.7019" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4850" Y="0.5187" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line0_1_0" ActionTag="1187144565" Tag="584" IconVisible="False" LeftMargin="166.8796" RightMargin="323.1204" TopMargin="2455.4854" BottomMargin="2444.5146" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-89917064" Tag="585" IconVisible="False" LeftMargin="7.2205" RightMargin="106.7795" TopMargin="72.6826" BottomMargin="-0.6826" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2205" Y="13.3174" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1681" Y="0.1332" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="2090975084" Tag="586" RotationSkewX="-5.7057" RotationSkewY="-5.7056" IconVisible="False" LeftMargin="41.2287" RightMargin="74.7713" TopMargin="59.5652" BottomMargin="15.4348" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.2287" Y="27.9348" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3882" Y="0.2793" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="1513971263" Tag="587" RotationSkewX="-27.7060" RotationSkewY="-27.7068" IconVisible="False" LeftMargin="71.3636" RightMargin="43.6364" TopMargin="42.3744" BottomMargin="32.6256" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="88.8636" Y="45.1256" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5924" Y="0.4513" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="599627826" Tag="588" RotationSkewX="-41.9815" RotationSkewY="-41.9815" IconVisible="False" LeftMargin="99.4492" RightMargin="21.5508" TopMargin="20.9111" BottomMargin="58.0889" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="113.9492" Y="68.5889" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.7597" Y="0.6859" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="166.8796" Y="2444.5146" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.2607" Y="0.4889" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line1_1_0" ActionTag="-874912220" Tag="589" IconVisible="False" LeftMargin="289.1950" RightMargin="200.8050" TopMargin="2622.3606" BottomMargin="2277.6394" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="499030535" Tag="590" RotationSkewX="-4.9598" RotationSkewY="-4.9598" IconVisible="False" LeftMargin="2.1685" RightMargin="111.8315" TopMargin="56.9580" BottomMargin="15.0420" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="20.1685" Y="29.0420" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1345" Y="0.2904" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="-1329853151" Tag="591" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="183599831" Tag="592" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-377676633" Tag="593" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="289.1950" Y="2277.6394" />
-                        <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4519" Y="0.4555" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line2_1_0" ActionTag="-1750219093" Tag="594" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="323.0860" RightMargin="166.9140" TopMargin="2759.6318" BottomMargin="2140.3682" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-1363210331" Tag="595" RotationSkewX="10.6783" RotationSkewY="10.6783" IconVisible="False" LeftMargin="104.3008" RightMargin="9.6992" TopMargin="63.7949" BottomMargin="8.2051" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="122.3008" Y="22.2051" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.8153" Y="0.2221" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="-1123355277" Tag="596" RotationSkewX="16.2920" RotationSkewY="16.2922" IconVisible="False" LeftMargin="85.3643" RightMargin="30.6357" TopMargin="49.6521" BottomMargin="25.3479" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="102.3643" Y="37.8479" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.6824" Y="0.3785" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="268990756" Tag="597" RotationSkewX="29.6987" RotationSkewY="29.6985" IconVisible="False" LeftMargin="63.8833" RightMargin="51.1167" TopMargin="34.3219" BottomMargin="40.6781" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="81.3833" Y="53.1781" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5426" Y="0.5318" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-1636330651" Tag="598" RotationSkewX="38.0818" RotationSkewY="38.0810" IconVisible="False" LeftMargin="42.5932" RightMargin="78.4068" TopMargin="16.0119" BottomMargin="62.9881" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="57.0932" Y="73.4881" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3806" Y="0.7349" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint ScaleX="1.0000" />
-                        <Position X="473.0860" Y="2140.3682" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.7392" Y="0.4281" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line3_1_0" ActionTag="-1887131274" ZOrder="1" Tag="599" IconVisible="False" LeftMargin="350.7343" RightMargin="139.2657" TopMargin="2895.0229" BottomMargin="2004.9769" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-75516345" Tag="600" IconVisible="False" LeftMargin="7.2206" RightMargin="156.7794" TopMargin="156.9581" BottomMargin="15.0419" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2206" Y="29.0419" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1261" Y="0.1452" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="86776298" Tag="601" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-1413321776" Tag="602" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="587707329" Tag="603" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="350.7343" Y="2004.9769" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5480" Y="0.4010" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line0_0_0_0" ActionTag="-1944431211" Tag="604" IconVisible="False" LeftMargin="131.7766" RightMargin="358.2234" TopMargin="3025.7314" BottomMargin="1874.2684" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="1265422151" Tag="605" IconVisible="False" LeftMargin="7.2205" RightMargin="106.7795" TopMargin="72.6826" BottomMargin="-0.6826" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2205" Y="13.3174" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1681" Y="0.1332" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="1706054264" Tag="606" RotationSkewX="-5.7057" RotationSkewY="-5.7056" IconVisible="False" LeftMargin="41.2287" RightMargin="74.7713" TopMargin="59.5652" BottomMargin="15.4348" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.2287" Y="27.9348" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3882" Y="0.2793" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="1204351411" Tag="607" RotationSkewX="-27.7060" RotationSkewY="-27.7068" IconVisible="False" LeftMargin="71.3636" RightMargin="43.6364" TopMargin="42.3744" BottomMargin="32.6256" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="88.8636" Y="45.1256" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5924" Y="0.4513" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="1818432354" Tag="608" RotationSkewX="-41.9815" RotationSkewY="-41.9815" IconVisible="False" LeftMargin="99.4492" RightMargin="21.5508" TopMargin="20.9111" BottomMargin="58.0889" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="113.9492" Y="68.5889" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.7597" Y="0.6859" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="131.7766" Y="1874.2684" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.2059" Y="0.3749" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line1_0_0_0" ActionTag="-1395404705" Tag="609" IconVisible="False" LeftMargin="256.4651" RightMargin="233.5349" TopMargin="3171.2329" BottomMargin="1728.7670" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-1083163341" Tag="610" RotationSkewX="-4.9598" RotationSkewY="-4.9598" IconVisible="False" LeftMargin="2.1685" RightMargin="111.8315" TopMargin="56.9580" BottomMargin="15.0420" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="20.1685" Y="29.0420" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1345" Y="0.2904" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="-1352882427" Tag="611" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-160606551" Tag="612" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-1418520504" Tag="613" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="256.4651" Y="1728.7670" />
-                        <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4007" Y="0.3458" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line2_0_0_0" ActionTag="1999125799" Tag="614" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="306.9759" RightMargin="183.0241" TopMargin="3308.5051" BottomMargin="1591.4949" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="666426143" Tag="615" RotationSkewX="10.6783" RotationSkewY="10.6783" IconVisible="False" LeftMargin="104.3008" RightMargin="9.6992" TopMargin="63.7949" BottomMargin="8.2051" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="122.3008" Y="22.2051" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.8153" Y="0.2221" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="1263915855" Tag="616" RotationSkewX="16.2920" RotationSkewY="16.2922" IconVisible="False" LeftMargin="85.3643" RightMargin="30.6357" TopMargin="49.6521" BottomMargin="25.3479" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="102.3643" Y="37.8479" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.6824" Y="0.3785" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="154966176" Tag="617" RotationSkewX="29.6987" RotationSkewY="29.6985" IconVisible="False" LeftMargin="63.8833" RightMargin="51.1167" TopMargin="34.3219" BottomMargin="40.6781" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="81.3833" Y="53.1781" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5426" Y="0.5318" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-1300279204" Tag="618" RotationSkewX="38.0818" RotationSkewY="38.0810" IconVisible="False" LeftMargin="42.5932" RightMargin="78.4068" TopMargin="16.0119" BottomMargin="62.9881" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="57.0932" Y="73.4881" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3806" Y="0.7349" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint ScaleX="1.0000" />
-                        <Position X="456.9759" Y="1591.4949" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.7140" Y="0.3183" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line3_0_0_0" ActionTag="-322031688" ZOrder="1" Tag="619" IconVisible="False" LeftMargin="339.3829" RightMargin="150.6171" TopMargin="3443.8926" BottomMargin="1456.1073" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-811071006" Tag="620" IconVisible="False" LeftMargin="7.2206" RightMargin="156.7794" TopMargin="156.9581" BottomMargin="15.0419" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2206" Y="29.0419" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1261" Y="0.1452" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="-634710904" Tag="621" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-1892076954" Tag="622" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-325786152" Tag="623" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="339.3829" Y="1456.1073" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5303" Y="0.2912" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line0_1_1" ActionTag="738771228" Tag="624" IconVisible="False" LeftMargin="164.5092" RightMargin="325.4908" TopMargin="3592.5681" BottomMargin="1307.4319" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-1761200745" Tag="625" IconVisible="False" LeftMargin="7.2205" RightMargin="106.7795" TopMargin="72.6826" BottomMargin="-0.6826" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2205" Y="13.3174" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1681" Y="0.1332" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="2098892531" Tag="626" RotationSkewX="-5.7057" RotationSkewY="-5.7056" IconVisible="False" LeftMargin="41.2287" RightMargin="74.7713" TopMargin="59.5652" BottomMargin="15.4348" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.2287" Y="27.9348" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3882" Y="0.2793" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="304975138" Tag="627" RotationSkewX="-27.7060" RotationSkewY="-27.7068" IconVisible="False" LeftMargin="71.3636" RightMargin="43.6364" TopMargin="42.3744" BottomMargin="32.6256" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="88.8636" Y="45.1256" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5924" Y="0.4513" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-2062955618" Tag="628" RotationSkewX="-41.9815" RotationSkewY="-41.9815" IconVisible="False" LeftMargin="99.4492" RightMargin="21.5508" TopMargin="20.9111" BottomMargin="58.0889" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="113.9492" Y="68.5889" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.7597" Y="0.6859" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="164.5092" Y="1307.4319" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.2570" Y="0.2615" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line1_1_1" ActionTag="-443358124" Tag="629" IconVisible="False" LeftMargin="286.8263" RightMargin="203.1737" TopMargin="3757.0642" BottomMargin="1142.9358" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-965670818" Tag="630" RotationSkewX="-4.9598" RotationSkewY="-4.9598" IconVisible="False" LeftMargin="2.1685" RightMargin="111.8315" TopMargin="56.9580" BottomMargin="15.0420" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="20.1685" Y="29.0420" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1345" Y="0.2904" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="1088281031" Tag="631" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-1845533591" Tag="632" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-1891916680" Tag="633" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="286.8263" Y="1142.9358" />
-                        <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4482" Y="0.2286" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line2_1_1" ActionTag="-1923235197" Tag="634" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="320.7158" RightMargin="169.2842" TopMargin="3894.3330" BottomMargin="1005.6670" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-842739289" Tag="635" RotationSkewX="10.6783" RotationSkewY="10.6783" IconVisible="False" LeftMargin="104.3008" RightMargin="9.6992" TopMargin="63.7949" BottomMargin="8.2051" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="122.3008" Y="22.2051" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.8153" Y="0.2221" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="110688822" Tag="636" RotationSkewX="16.2920" RotationSkewY="16.2922" IconVisible="False" LeftMargin="85.3643" RightMargin="30.6357" TopMargin="49.6521" BottomMargin="25.3479" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="102.3643" Y="37.8479" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.6824" Y="0.3785" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-428026233" Tag="637" RotationSkewX="29.6987" RotationSkewY="29.6985" IconVisible="False" LeftMargin="63.8833" RightMargin="51.1167" TopMargin="34.3219" BottomMargin="40.6781" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="81.3833" Y="53.1781" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5426" Y="0.5318" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="2125889460" Tag="638" RotationSkewX="38.0818" RotationSkewY="38.0810" IconVisible="False" LeftMargin="42.5932" RightMargin="78.4068" TopMargin="16.0119" BottomMargin="62.9881" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="57.0932" Y="73.4881" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3806" Y="0.7349" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint ScaleX="1.0000" />
-                        <Position X="470.7158" Y="1005.6670" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.7355" Y="0.2011" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line3_1_1" ActionTag="1400037400" ZOrder="1" Tag="639" IconVisible="False" LeftMargin="348.3653" RightMargin="141.6347" TopMargin="4029.7246" BottomMargin="870.2754" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-40404146" Tag="640" IconVisible="False" LeftMargin="7.2206" RightMargin="156.7794" TopMargin="156.9581" BottomMargin="15.0419" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2206" Y="29.0419" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1261" Y="0.1452" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="213261418" Tag="641" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-2031151212" Tag="642" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-819563339" Tag="643" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="348.3653" Y="870.2754" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5443" Y="0.1741" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line0_0_0_1" ActionTag="313516116" Tag="644" IconVisible="False" LeftMargin="129.4064" RightMargin="360.5936" TopMargin="4160.4355" BottomMargin="739.5646" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="1195832346" Tag="645" IconVisible="False" LeftMargin="7.2205" RightMargin="106.7795" TopMargin="72.6826" BottomMargin="-0.6826" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2205" Y="13.3174" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1681" Y="0.1332" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="-1646250175" Tag="646" RotationSkewX="-5.7057" RotationSkewY="-5.7056" IconVisible="False" LeftMargin="41.2287" RightMargin="74.7713" TopMargin="59.5652" BottomMargin="15.4348" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.2287" Y="27.9348" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3882" Y="0.2793" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-706224756" Tag="647" RotationSkewX="-27.7060" RotationSkewY="-27.7068" IconVisible="False" LeftMargin="71.3636" RightMargin="43.6364" TopMargin="42.3744" BottomMargin="32.6256" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="88.8636" Y="45.1256" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5924" Y="0.4513" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="664031257" Tag="648" RotationSkewX="-41.9815" RotationSkewY="-41.9815" IconVisible="False" LeftMargin="99.4492" RightMargin="21.5508" TopMargin="20.9111" BottomMargin="58.0889" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="113.9492" Y="68.5889" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.7597" Y="0.6859" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="129.4064" Y="739.5646" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.2022" Y="0.1479" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line1_0_0_1" ActionTag="1226522957" Tag="649" IconVisible="False" LeftMargin="254.0956" RightMargin="235.9044" TopMargin="4305.9370" BottomMargin="594.0632" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-373944256" Tag="650" RotationSkewX="-4.9598" RotationSkewY="-4.9598" IconVisible="False" LeftMargin="2.1685" RightMargin="111.8315" TopMargin="56.9580" BottomMargin="15.0420" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="20.1685" Y="29.0420" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1345" Y="0.2904" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="-1017091806" Tag="651" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="1499010410" Tag="652" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="74487670" Tag="653" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="254.0956" Y="594.0632" />
-                        <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.3970" Y="0.1188" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line2_0_0_1" ActionTag="183129927" Tag="654" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="304.6064" RightMargin="185.3936" TopMargin="4443.2085" BottomMargin="456.7915" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-381542994" Tag="655" RotationSkewX="10.6783" RotationSkewY="10.6783" IconVisible="False" LeftMargin="104.3008" RightMargin="9.6992" TopMargin="63.7949" BottomMargin="8.2051" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="122.3008" Y="22.2051" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.8153" Y="0.2221" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="1629628450" Tag="656" RotationSkewX="16.2920" RotationSkewY="16.2922" IconVisible="False" LeftMargin="85.3643" RightMargin="30.6357" TopMargin="49.6521" BottomMargin="25.3479" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="102.3643" Y="37.8479" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.6824" Y="0.3785" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="-1525972130" Tag="657" RotationSkewX="29.6987" RotationSkewY="29.6985" IconVisible="False" LeftMargin="63.8833" RightMargin="51.1167" TopMargin="34.3219" BottomMargin="40.6781" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="81.3833" Y="53.1781" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5426" Y="0.5318" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="-215022700" Tag="658" RotationSkewX="38.0818" RotationSkewY="38.0810" IconVisible="False" LeftMargin="42.5932" RightMargin="78.4068" TopMargin="16.0119" BottomMargin="62.9881" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="57.0932" Y="73.4881" />
-                            <Scale ScaleX="-1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.3806" Y="0.7349" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint ScaleX="1.0000" />
-                        <Position X="454.6064" Y="456.7915" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.7103" Y="0.0914" />
-                        <PreSize X="0.2344" Y="0.0200" />
-                        <SingleColor A="255" R="150" G="200" B="255" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="Line3_0_0_1" ActionTag="1636516353" ZOrder="1" VisibleForFrame="False" Tag="659" IconVisible="False" LeftMargin="303.7802" RightMargin="186.2198" TopMargin="4585.7144" BottomMargin="314.2856" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-                        <Size X="150.0000" Y="100.0000" />
-                        <Children>
-                          <AbstractNodeData Name="line0" ActionTag="-1880179067" Tag="660" IconVisible="False" LeftMargin="7.2206" RightMargin="156.7794" TopMargin="156.9581" BottomMargin="15.0419" ctype="SpriteObjectData">
-                            <Size X="36.0000" Y="28.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="25.2206" Y="29.0419" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.1261" Y="0.1452" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_1.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line1" ActionTag="-655116966" Tag="661" IconVisible="False" LeftMargin="40.9124" RightMargin="123.0876" TopMargin="140.9734" BottomMargin="31.0266" ctype="SpriteObjectData">
-                            <Size X="34.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="58.9124" Y="45.0266" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.2946" Y="0.2251" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_2.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line2" ActionTag="908613700" Tag="662" IconVisible="False" LeftMargin="72.5472" RightMargin="93.4528" TopMargin="128.0171" BottomMargin="46.9829" ctype="SpriteObjectData">
-                            <Size X="35.0000" Y="25.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="89.5472" Y="59.4829" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.4477" Y="0.2974" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_3.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                          <AbstractNodeData Name="line3" ActionTag="1653202903" Tag="663" IconVisible="False" LeftMargin="104.9179" RightMargin="66.0821" TopMargin="120.9108" BottomMargin="58.0892" ctype="SpriteObjectData">
-                            <Size X="29.0000" Y="21.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="119.4179" Y="68.5892" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5971" Y="0.3429" />
-                            <PreSize X="0.0000" Y="0.0000" />
-                            <FileData Type="MarkedSubImage" Path="images/levels/line_4.png" Plist="modules/main/PlistMain.plist" />
-                            <BlendFunc Src="770" Dst="771" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="303.7802" Y="314.2856" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.4747" Y="0.0629" />
+                        <PrePosition X="0.5478" Y="0.7460" />
                         <PreSize X="0.2344" Y="0.0200" />
                         <SingleColor A="255" R="150" G="200" B="255" />
                         <FirstColor A="255" R="150" G="200" B="255" />

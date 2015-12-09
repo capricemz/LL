@@ -34,14 +34,21 @@ private:
 	void createSkin();
 	void updateLayoutBtns();
 	void onTouchBtnMaid(Ref *ref, Widget::TouchEventType type);
+	void updateLayoutMaid();
+	void onTouchBtnPrev(Ref *ref, Widget::TouchEventType type);
+	void onTouchBtnNext(Ref *ref, Widget::TouchEventType type);
+	void onTouchBtnSkill(Ref *ref, Widget::TouchEventType type);
+	void switchMaidSkill();
 	void updateLayoutSkillItems();
 	void updateLayoutSKillItem(Layout *layoutSkillItem, const bool &isExsit, const DataSkillInfo &dataSkillInfo);
-	void onTouchBtnSkill(Ref *ref, Widget::TouchEventType type, const DataSkillInfo &dataSkillInfo);
+	void onTouchBtnSkillBuy(Ref *ref, Widget::TouchEventType type, const DataSkillInfo &dataSkillInfo);
 	
 private:
 	Layer *_skin;
 
 	int _idEntityCurrent;
+
+	vector<int> _vecShowIdEntity;
 	
 };
 

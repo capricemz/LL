@@ -89,6 +89,33 @@ void ManagerUI::runLayerAppearDisappear(ILayerAppearDisappear *layerNew)
 	layer->runAction(Sequence::create(actionMoveBy1, actionCallFunc, nullptr));
 }
 
+void ManagerUI::switchTwoNode(Node *node, Node *nodeNew, function<void()> funcOverNode /*= nullptr*/, function<void()> funcOverNodeNew /*= nullptr*/)
+{
+	//Òþ²Ø¾É²ã
+	auto actionMoveBy0 = EaseCircleActionIn::create(MoveBy::create(0.2f, Vec2(-640.0f, 0.0f)));
+	auto actionCallFunc0 = CallFunc::create([node, funcOverNode]()
+	{
+		node->setPosition(node->getPosition() + Vec2(640.0f, 0.0f));
+		if (funcOverNode != nullptr)
+		{
+			funcOverNode();
+		}
+	});
+	node->runAction(Sequence::create(actionMoveBy0, actionCallFunc0, nullptr));
+	//ÏÔÊ¾ÐÂ²ã
+	auto postion = nodeNew->getPosition() + Vec2(640.0f, 0.0f);
+	nodeNew->setPosition(postion);
+	auto actionMoveBy1 = EaseCircleActionIn::create(MoveBy::create(0.2f, Vec2(-640.0f, 0.0f)));
+	auto actionCallFunc1 = CallFunc::create([funcOverNodeNew]()
+	{
+		if (funcOverNodeNew != nullptr)
+		{
+			funcOverNodeNew();
+		}
+	});
+	nodeNew->runAction(Sequence::create(actionMoveBy1, actionCallFunc1, nullptr));
+}
+
 void ManagerUI::showWordsDrift(Node *parent, const Vec2 &postion, const string &words, const Color4B &color, const float &duration)
 {
 	auto uiWordsDrift = UIWordsDrift::create();

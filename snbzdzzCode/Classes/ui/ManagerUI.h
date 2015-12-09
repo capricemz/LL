@@ -22,6 +22,7 @@ public:
 	void addKeyEvent(Scene *scene);//添加返回及其他按键时间
 	void replaceScene(TypeScene type);
 	void runLayerAppearDisappear(ILayerAppearDisappear *layerNew);
+	void switchTwoNode(Node *node, Node *nodeNew, function<void()> funcOverNode = nullptr, function<void()> funcOverNodeNew = nullptr);
 	/*显示飘字
 	parent 父对象
 	postion 相对父对象原点位置

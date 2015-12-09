@@ -469,6 +469,8 @@ class HandleDataUnlock
 	
 		bool getIsUnlockMaid(const int &idEntity);
 		void setIsUnlockMaid(const int &idEntity);
+		bool getIsBuyMaid(const int &idEntity);
+		void setIsBuyMaid(const int &idEntity);
 		bool getIsUnlockSkill(const int &idSkill, const int &indexSkill);
 		void setIsUnlockSkill(const int &idSkill, const int &indexSkill);//indexSkill为-1时，解锁所有
 		bool getIsBuySkill(const int &idSkill, const int &indexSkill);
@@ -487,6 +489,7 @@ class HandleDataUnlock
 		bool _isDataFileInit;
 	
 		map<int, int> _dicTypeUnlockMaid;
+		map<int, int> _dicTypeBuyMaid;
 		map<int, map<int, int>> _dicDicTypeUnlockSkill;
 		map<int, map<int, int>> _dicDicTypeBuySkill;
 		map<int, int> _dicTypeUnlockLevel;

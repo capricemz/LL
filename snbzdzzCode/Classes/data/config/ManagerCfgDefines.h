@@ -59,6 +59,7 @@ struct CfgEntity
 	string attribute;//属性 101生命上限103能量上限104物理攻击105魔法攻击106金币收益
 	int idSkillGroup;//技能组id
 	int idTraining;//训练id
+	int cost;//购买消耗
 };
 typedef map<int32_t, CfgEntity> DicCfgEntity;
 //
