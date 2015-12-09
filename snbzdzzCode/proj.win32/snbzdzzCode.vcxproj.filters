@@ -252,6 +252,9 @@
     <ClCompile Include="..\Classes\ui\main\training\LayerTraining.cpp">
       <Filter>src\ui\main\training</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ui\common\UIBubble.cpp">
+      <Filter>src\ui\common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -409,6 +412,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ui\main\training\LayerTraining.h">
       <Filter>src\ui\main\training</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\common\UIBubble.h">
+      <Filter>src\ui\common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

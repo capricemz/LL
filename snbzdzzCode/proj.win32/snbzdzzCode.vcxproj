@@ -169,6 +169,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\data\data\ManagerData.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\ui\common\SpriteBlur.cpp" />
+    <ClCompile Include="..\Classes\ui\common\UIBubble.cpp" />
     <ClCompile Include="..\Classes\ui\common\UIConfirm.cpp" />
     <ClCompile Include="..\Classes\ui\common\UIGuide.cpp" />
     <ClCompile Include="..\Classes\ui\common\UIThingGet.cpp" />
@@ -223,6 +224,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\ui\common\ILayerAppearDisappear.h" />
     <ClInclude Include="..\Classes\ui\common\SpriteBlur.h" />
+    <ClInclude Include="..\Classes\ui\common\UIBubble.h" />
     <ClInclude Include="..\Classes\ui\common\UIConfirm.h" />
     <ClInclude Include="..\Classes\ui\common\UIGuide.h" />
     <ClInclude Include="..\Classes\ui\common\UIThingGet.h" />

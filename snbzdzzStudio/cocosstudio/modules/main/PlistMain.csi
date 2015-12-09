@@ -31,6 +31,6 @@
       <FilePathData Path="images/battle/rock.jpg" />
       <FilePathData Path="images/battle/scissors.jpg" />
     </ImageFiles>
-    <MaxSize Width="1024" Height="128" />
+    <MaxSize Width="1024" Height="512" />
   </Content>
 </PlistInfoProjectFile>

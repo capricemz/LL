@@ -29,6 +29,28 @@ public:
 	color 颜色
 	duration 持续时间*/
 	void showWordsDrift(Node *parent, const Vec2 &postion, const string &words, const Color4B &color, const float &duration);
+	/*显示气泡
+	parent 父对象
+	postion 相对父对象原点位置
+	anchor 对齐点
+	idPlot 剧情id
+	index 顺序
+	funcOverAppear 显示完成回调
+	funcOverDisappear 消失完成回调
+	isTxtShowImmediately 是否立即显示文本
+	isAppearImmediately 是否立即显示
+	isDisappearImmediately 是否立即消失*/
+	void showBubble(
+		Node *parent,
+		const Vec2 &postion,
+		const Vec2 &anchor,
+		const int &idPlot,
+		const int &index,
+		const function<void()> funcOverAppear,
+		const function<void()> funcOverDisappear,
+		const bool &isTxtShowImmediately = false,
+		const bool &isAppearImmediately = false,
+		const bool &isDisappearImmediately = false);
 
 public:
 	TYPE_OBSERVER_SCENE_MAIN getTypeLayerRunning() const { return _typeLayerRunning; }

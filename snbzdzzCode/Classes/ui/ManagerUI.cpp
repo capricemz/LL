@@ -6,6 +6,7 @@
 #include "data/config/ManagerCfg.h"
 #include "data/data/ManagerData.h"
 #include "common/UIWordsDrift.h"
+#include "common/UIBubble.h"
 
 static ManagerUI *_instance;
 
@@ -94,4 +95,23 @@ void ManagerUI::showWordsDrift(Node *parent, const Vec2 &postion, const string &
 	uiWordsDrift->setPosition(postion);
 	uiWordsDrift->driftWords(words, color, duration);
 	parent->addChild(uiWordsDrift);
+}
+
+void ManagerUI::showBubble(
+	Node *parent,
+	const Vec2 &postion,
+	const Vec2 &anchor,
+	const int &idPlot,
+	const int &index,
+	const function<void()> funcOverAppear,
+	const function<void()> funcOverDisappear,
+	const bool &isTxtShowImmediately /*= false*/,
+	const bool &isAppearImmediately /*= false*/,
+	const bool &isDisappearImmediately /*= false*/)
+{
+	auto uiBubble = UIBubble::create();
+	uiBubble->setPosition(postion);
+	uiBubble->setAnchorPoint(anchor);
+	uiBubble->show(idPlot, index, funcOverAppear, funcOverDisappear, isTxtShowImmediately, isAppearImmediately, isDisappearImmediately);
+	parent->addChild(uiBubble);
 }

@@ -417,12 +417,11 @@ void ManagerCfg::assignCfgPlot(const VectorString &vecItem)
 {
 	CfgPlot cfg;
 	cfg.id = Value(vecItem[0]).asInt();
-	cfg.sort = Value(vecItem[1]).asInt();
+	cfg.index = Value(vecItem[1]).asInt();
 	cfg.textPlot = vecItem[2];
 	cfg.urlPic = vecItem[3];
 	cfg.time = Value(vecItem[4]).asFloat();
-	cfg.pos = Value(vecItem[5]).asInt();
-	_dicDicCfgPlot[cfg.id][cfg.sort] = cfg;
+	_dicDicCfgPlot[cfg.id][cfg.index] = cfg;
 }
 
 void ManagerCfg::assignCfgTargetAward(const VectorString &vecItem)

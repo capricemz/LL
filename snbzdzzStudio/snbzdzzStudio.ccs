@@ -21,6 +21,7 @@
             <Image Name="typeJobTank.png" />
             <Image Name="typeJobWarrior.png" />
             <Image Name="add.png" />
+            <Image Name="bubble.png" />
           </Folder>
           <Folder Name="main">
             <Image Name="nemu_btn_1.png" />
@@ -32,6 +33,18 @@
             <Image Name="main_head.png" />
             <Image Name="main_role_bg.png" />
             <Image Name="main_zy_bg.png" />
+            <Folder Name="bg">
+              <Image Name="battle_bg1.png" />
+            </Folder>
+            <Folder Name="big_head">
+              <Image Name="big_head_2.png" />
+              <Image Name="big_head_3.png" />
+              <Image Name="big_head_31.png" />
+              <Image Name="big_head_32.png" />
+            </Folder>
+            <Folder Name="card_head">
+              <Image Name="baattle_fs.png" />
+            </Folder>
           </Folder>
           <Folder Name="battle">
             <Image Name="card_bar.png" />
@@ -91,11 +104,6 @@
             <Image Name="ch.png" />
             <Image Name="ab.png" />
           </Folder>
-          <Folder Name="girl">
-            <Image Name="cut1.png" />
-            <Image Name="cut2.png" />
-            <Image Name="skill_btn.png" />
-          </Folder>
           <Folder Name="levels">
             <Image Name="gk_xx.png" />
             <Image Name="line_1.png" />
@@ -107,6 +115,142 @@
             <Image Name="xing.png" />
             <Image Name="gk_btn.png" />
             <Image Name="xingKong.png" />
+            <Image Name="girl.png" />
+            <Image Name="gk_btn1.png" />
+            <Image Name="new.png" />
+          </Folder>
+          <Folder Name="girl">
+            <Image Name="bg.png" />
+            <Image Name="box1.png" />
+            <Image Name="box2.png" />
+            <Image Name="box3.png" />
+            <Image Name="can unlock.png" />
+            <Image Name="gold unlock.png" />
+            <Image Name="left.png" />
+            <Image Name="not unlock.png" />
+            <Image Name="right.png" />
+            <Image Name="role box1.png" />
+            <Image Name="role name.png" />
+            <Image Name="role.png" />
+            <Image Name="role2.png" />
+            <Image Name="silhouette.png" />
+            <Image Name="skill.png" />
+          </Folder>
+          <Folder Name="checkpoint">
+            <Folder Name="bottombar">
+              <Image Name="bottom1.png" />
+              <Image Name="bottom11.png" />
+              <Image Name="bottom2.png" />
+              <Image Name="bottom21.png" />
+              <Image Name="bottom3.png" />
+              <Image Name="button1.png" />
+              <Image Name="button2.png" />
+              <Image Name="button3.png" />
+              <Image Name="button4.png" />
+              <Image Name="guild.png" />
+              <Image Name="moon1.png" />
+              <Image Name="moon11.png" />
+              <Image Name="moon2.png" />
+              <Image Name="moon21.png" />
+            </Folder>
+            <Folder Name="character">
+              <Image Name="adventure.png" />
+              <Image Name="checkpoint.png" />
+              <Image Name="church.png" />
+              <Image Name="girls.png" />
+              <Image Name="guild.png" />
+              <Image Name="shop.png" />
+              <Image Name="teach.png" />
+            </Folder>
+            <Image Name="background.png" />
+            <Image Name="background1.png" />
+            <Image Name="bs.png" />
+            <Image Name="button.png" />
+            <Image Name="girl.png" />
+            <Image Name="Gold COINS.png" />
+            <Image Name="new.png" />
+            <Image Name="treasure.png" />
+            <Image Name="gift_bag.png" />
+          </Folder>
+          <Folder Name="formation">
+            <Image Name="back.png" />
+            <Image Name="Began to fight.png" />
+            <Image Name="Customs.png" />
+            <Image Name="formation.png" />
+            <Image Name="paper.png" />
+            <Image Name="role1.png" />
+            <Image Name="role2.png" />
+            <Image Name="role3.png" />
+            <Image Name="role4.png" />
+            <Image Name="role5.png" />
+            <Image Name="rolebox.png" />
+            <Image Name="rolebox1.png" />
+          </Folder>
+          <Folder Name="skills panel">
+            <Folder Name="Bskills">
+              <Image Name="skills1.png" />
+              <Image Name="skills2.png" />
+              <Image Name="skills3.png" />
+              <Image Name="skills4.png" />
+            </Folder>
+            <Folder Name="Sskills">
+              <Image Name="skills1.png" />
+              <Image Name="skills10.png" />
+              <Image Name="skills11.png" />
+              <Image Name="skills2.png" />
+              <Image Name="skills3.png" />
+              <Image Name="skills4.png" />
+              <Image Name="skills5.png" />
+              <Image Name="skills6.png" />
+              <Image Name="skills7.png" />
+              <Image Name="skills8.png" />
+              <Image Name="skills9.png" />
+              <Image Name="skillsbg.png" />
+            </Folder>
+            <Image Name="bg2.png" />
+            <Image Name="button1.png" />
+            <Image Name="button2.png" />
+            <Image Name="button3.png" />
+            <Image Name="button4.png" />
+            <Image Name="button5.png" />
+            <Image Name="button6.png" />
+            <Image Name="button7.png" />
+            <Image Name="button8.png" />
+            <Image Name="name button.png" />
+            <Image Name="professional button.png" />
+            <Image Name="Skills button.png" />
+          </Folder>
+          <Folder Name="teach">
+            <Image Name="bg.png" />
+            <Image Name="harem.png" />
+            <Image Name="heart.png" />
+            <Image Name="heartbg.png" />
+            <Image Name="role.png" />
+            <Image Name="rolename.png" />
+            <Image Name="sell.png" />
+            <Image Name="teach button.png" />
+            <Image Name="teach1.png" />
+          </Folder>
+          <Folder Name="teaching">
+            <Image Name="80_100.png" />
+            <Image Name="bg.png" />
+            <Image Name="change.png" />
+            <Image Name="changebutton.png" />
+            <Image Name="close.png" />
+            <Image Name="gift.png" />
+            <Image Name="heart1.png" />
+            <Image Name="heart2.png" />
+            <Image Name="heartbg.png" />
+            <Image Name="player.png" />
+            <Image Name="progress bar.png" />
+            <Image Name="role.png" />
+            <Image Name="scratching.png" />
+            <Image Name="scratchingbutton.png" />
+            <Image Name="servility.png" />
+            <Image Name="Speech bubbles.png" />
+            <Image Name="teach.png" />
+            <Image Name="toothbrush button.png" />
+            <Image Name="toothbrush.png" />
           </Folder>
         </Folder>
         <Folder Name="fonts">
@@ -115,6 +259,7 @@
         <Folder Name="modules">
           <Folder Name="common">
             <PlistInfo Name="PlistCommon.csi" Type="Plist" />
+            <Project Name="NodeBubble.csd" Type="Node" />
           </Folder>
           <Folder Name="main">
             <Project Name="LayerBattle.csd" Type="Layer" />

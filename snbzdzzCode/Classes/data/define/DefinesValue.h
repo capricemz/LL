@@ -31,6 +31,16 @@ static const vector<Vec2> vecPostionGridBattle =
 	Vec2(160.0f, 620.0f), Vec2(480.0f, 340.0f), Vec2(320.0f, 480.0f)
 };
 
+static const map<Vec2, Vec2> dicAnchorPoint2BubbleAnchorPoint = 
+{
+	{ Vec2::ANCHOR_BOTTOM_LEFT, Vec2(0.0f, 0.0f) }, { Vec2::ANCHOR_BOTTOM_RIGHT, Vec2(0.0f, 1.0f) }, { Vec2::ANCHOR_TOP_RIGHT, Vec2(1.0f, 0.0f) }, { Vec2::ANCHOR_TOP_LEFT, Vec2(1.0f, 1.0f) }
+};
+
+static const map<Vec2, Vec2> dicAnchorPoint2BubbleBgScale =
+{
+	{ Vec2::ANCHOR_BOTTOM_LEFT, Vec2(1.0f, -1.0f) }, { Vec2::ANCHOR_BOTTOM_RIGHT, Vec2(1.0f, 1.0f) }, { Vec2::ANCHOR_TOP_RIGHT, Vec2(-1.0f, -1.0f) }, { Vec2::ANCHOR_TOP_LEFT, Vec2(-1.0f, 1.0f) }
+};
+
 enum class TypeLoadState
 {
 	UNLOAD,//Œ¥º”‘ÿ

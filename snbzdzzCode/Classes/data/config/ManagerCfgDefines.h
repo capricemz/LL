@@ -119,11 +119,10 @@ typedef map<int32_t, CfgThing> DicCfgThing;
 struct CfgPlot
 {
 	int id;//标志
-	int sort;//排序
+	int index;//排序
 	string textPlot;//文字
 	string urlPic;//图片
-	float time;//时间（秒）
-	int pos;//位置（地图剧情时：0左，1右；战斗剧情时：0-4站位）
+	float time;//单字时间（毫秒）
 };
 typedef map<int32_t, map<int32_t, CfgPlot>> DicDicCfgPlot;
 //

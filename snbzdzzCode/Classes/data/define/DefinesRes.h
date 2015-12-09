@@ -10,6 +10,7 @@ using namespace std;
 static const string RES_FONTS_KTJT = "fonts/ktjt.ttf";
 
 static const string RES_MODULES_COMMON_PLIST_COMMON_PLIST = "modules/common/PlistCommon.plist";
+static const string RES_MODULES_COMMON_NODE_BUBBLE_CSB = "modules/common/NodeBubble.csb";
 
 static const string RES_MODULES_WELCOME_SCENE_WELCOME_CSB = "modules/welcome/SceneWelcome.csb";
 
