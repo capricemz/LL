@@ -7,7 +7,14 @@
 #include "NodeHead.h"
 #include "core/entity/ManagerEntity.h"
 
-HandleHead::HandleHead() : _skin(nullptr), _vecNodeHeadMst({}), _vecNodeHeadMaid({}), _xPostionMoveTouchLast(0.0f), _indexNodeHeadTemp(-1), _dictanceMoved(0.0f)
+HandleHead::HandleHead() :
+	_skin(nullptr),
+	_vecNodeHeadMst({}),
+	_vecNodeHeadMaid({}),
+	_xPostionMoveTouchLast(0.0f),
+	_dictanceMoved(0.0f),
+	_indexNodeHeadTempMst(-1),
+	_indexNodeHeadTempMaid(-1)
 {
 }
 
@@ -177,7 +184,8 @@ void HandleHead::switchNodeHeadTo(const bool &isMst, const int &indexTo)
 		return;
 	}
 	auto speed = 244.0f;
-	auto durationCallMove = 0.01f;
+	auto durationCallMove = Director::getInstance()->getAnimationInterval();
+	
 	auto duration = dictance / speed;
 	auto xOffset = dictance / (duration / durationCallMove);
 	xOffset = isMst ? -xOffset : xOffset;
@@ -199,6 +207,8 @@ void HandleHead::switchNodeHeadTo(const bool &isMst, const int &indexTo)
 	actionMoveNodeHead->setTag(1);
 	layout->runAction(actionMoveNodeHead);
 }
+
+
 
 void HandleHead::onTouchMoveHead(Ref *ref, Widget::TouchEventType type, const bool &isMst)
 {
@@ -369,24 +379,24 @@ void HandleHead::dealNodeHeadTemp(const bool &isMst, const bool &isLeft)
 		auto xBorder = nodeHead->getPositionX() - sizeNodeHead.width * nodeHead->getScaleX() * 0.5f;
 		isOut = xBorder > sizeParent.width;
 	}
-
-	if (isOut && _indexNodeHeadTemp != -1)
+	auto &indexNodeHeadTemp = isMst ? _indexNodeHeadTempMst : _indexNodeHeadTempMaid;
+	if (isOut && indexNodeHeadTemp != -1)
 	{
 		vecNodeHead.erase(index);
 		index = isPush && !isShift ? 0 : (int)vecNodeHead.size() - 1;
-		_indexNodeHeadTemp = -1;
+		indexNodeHeadTemp = -1;
 	}
 
-	if (_indexNodeHeadTemp == -1)
+	if (indexNodeHeadTemp == -1)
 	{
 		nodeHead = vecNodeHead.at(index);
 		auto nodeHeadTemp = nodeHead->clone();
 		nodeHead->getParent()->addChild(nodeHeadTemp);
 		isPush && !isShift ? vecNodeHead.pushBack(nodeHeadTemp) : vecNodeHead.insert(0, nodeHeadTemp);
 
-		_indexNodeHeadTemp = vecNodeHead.getIndex(nodeHeadTemp);
+		indexNodeHeadTemp = vecNodeHead.getIndex(nodeHeadTemp);
 
-		auto indexBefore = isPush && !isShift ? _indexNodeHeadTemp - 1 : _indexNodeHeadTemp + 1;
+		auto indexBefore = isPush && !isShift ? indexNodeHeadTemp - 1 : indexNodeHeadTemp + 1;
 		auto nodeHeadTempBefore = vecNodeHead.at(indexBefore);
 		auto scale = nodeHeadTempBefore->getScale();
 		auto postion = nodeHeadTempBefore->getPosition();
@@ -399,19 +409,20 @@ void HandleHead::dealNodeHeadTemp(const bool &isMst, const bool &isLeft)
 
 void HandleHead::dealOverMoveNodeHead(const bool &isMst, const bool &isActive)
 {
-	if (_indexNodeHeadTemp != -1)
+	auto &indexNodeHeadTemp = isMst ? _indexNodeHeadTempMst : _indexNodeHeadTempMaid;
+	if (indexNodeHeadTemp != -1)
 	{
 		auto &vecNodeHead = isMst ? _vecNodeHeadMst : _vecNodeHeadMaid;
-		auto nodeHeadTemp = vecNodeHead.at(_indexNodeHeadTemp);
+		auto nodeHeadTemp = vecNodeHead.at(indexNodeHeadTemp);
 		auto xPostion = nodeHeadTemp->getPositionX();
 		auto wSize = nodeHeadTemp->getParent()->getContentSize().width;
 		if (xPostion >= 0.0f && xPostion <= wSize)//tempÔÚÄÚ²¿
 		{
-			_indexNodeHeadTemp = vecNodeHead.size() - 1 - _indexNodeHeadTemp;
-			nodeHeadTemp = vecNodeHead.at(_indexNodeHeadTemp);
+			indexNodeHeadTemp = vecNodeHead.size() - 1 - indexNodeHeadTemp;
+			nodeHeadTemp = vecNodeHead.at(indexNodeHeadTemp);
 		}
-		vecNodeHead.erase(_indexNodeHeadTemp);
-		_indexNodeHeadTemp = -1;
+		vecNodeHead.erase(indexNodeHeadTemp);
+		indexNodeHeadTemp = -1;
 		nodeHeadTemp->removeFromParent();
 
 		auto length = (int)vecNodeHead.size();

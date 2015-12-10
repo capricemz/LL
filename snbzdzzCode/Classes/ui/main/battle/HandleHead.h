@@ -51,9 +51,11 @@ private:
 	Vector<NodeHead *> _vecNodeHeadMaid;
 
 	float _xPostionMoveTouchLast;
-	int _indexNodeHeadTemp;
 	float _dictanceMoved;
 
+	int _indexNodeHeadTempMst;
+	int _indexNodeHeadTempMaid;
+	
 };
 
 #endif

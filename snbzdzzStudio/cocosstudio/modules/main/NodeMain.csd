@@ -355,7 +355,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_1.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_1.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_11_33" ActionTag="162989835" Tag="58" IconVisible="False" LeftMargin="-487.0000" RightMargin="-213.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -366,7 +366,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_11.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_11.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_12_34" ActionTag="-1272142193" Tag="59" IconVisible="False" LeftMargin="-487.0000" RightMargin="-213.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -377,7 +377,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_12.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_12.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_13_35" ActionTag="1719300460" Tag="60" IconVisible="False" LeftMargin="-487.0000" RightMargin="-213.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -388,7 +388,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_13.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_13.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_14_36" ActionTag="39636746" Tag="61" IconVisible="False" LeftMargin="-487.0000" RightMargin="-213.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -399,7 +399,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_14.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_14.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_15_37" ActionTag="-1999817691" Tag="62" IconVisible="False" LeftMargin="-487.0000" RightMargin="-213.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -410,7 +410,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_15.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_15.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_2_38" ActionTag="-672092846" Tag="63" IconVisible="False" LeftMargin="-637.0000" RightMargin="-363.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -421,7 +421,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_2.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_2.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_21_39" ActionTag="1738795813" Tag="64" IconVisible="False" LeftMargin="-537.0000" RightMargin="-263.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -432,7 +432,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_21.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_21.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_22_40" ActionTag="351653691" Tag="65" IconVisible="False" LeftMargin="-637.0000" RightMargin="-363.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -443,7 +443,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_22.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_22.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_23_41" ActionTag="-900822319" Tag="66" IconVisible="False" LeftMargin="-837.0000" RightMargin="-563.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -454,7 +454,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_23.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_23.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_24_42" ActionTag="1029193889" Tag="67" IconVisible="False" LeftMargin="-637.0000" RightMargin="-363.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -465,7 +465,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_24.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_24.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_25_43" ActionTag="-1602052762" Tag="68" IconVisible="False" LeftMargin="-512.0000" RightMargin="-238.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -476,7 +476,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_25.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_25.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_3_44" ActionTag="169355219" Tag="69" IconVisible="False" LeftMargin="-537.0000" RightMargin="-263.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -487,7 +487,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_3.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_3.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_31_45" ActionTag="323350328" Tag="70" IconVisible="False" LeftMargin="-587.0000" RightMargin="-313.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -498,7 +498,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_31.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_31.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_32_46" ActionTag="1012826485" Tag="71" IconVisible="False" LeftMargin="-362.0000" RightMargin="-88.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -509,7 +509,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_32.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_32.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_33_47" ActionTag="1036209359" Tag="72" IconVisible="False" LeftMargin="-637.0000" RightMargin="-363.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -520,7 +520,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_33.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_33.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_34_48" ActionTag="-1410883266" Tag="73" IconVisible="False" LeftMargin="-637.0000" RightMargin="-363.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -531,7 +531,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_34.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_34.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_35_49" ActionTag="1816555832" Tag="74" IconVisible="False" LeftMargin="-512.0000" RightMargin="-238.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -542,7 +542,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_35.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_35.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_4_50" ActionTag="-1913571305" Tag="75" IconVisible="False" LeftMargin="-537.0000" RightMargin="-263.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -553,7 +553,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_4.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_4.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_41_51" ActionTag="613539047" Tag="76" IconVisible="False" LeftMargin="-487.0000" RightMargin="-213.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -564,7 +564,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_41.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_41.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_42_52" ActionTag="2095165183" Tag="77" IconVisible="False" LeftMargin="-512.0000" RightMargin="-238.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -575,7 +575,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_42.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_42.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_43_53" ActionTag="1035913619" Tag="78" IconVisible="False" LeftMargin="-537.0000" RightMargin="-263.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -586,7 +586,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_43.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_43.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_44_54" ActionTag="209422455" Tag="79" IconVisible="False" LeftMargin="-487.0000" RightMargin="-213.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -597,7 +597,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_44.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_44.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_45_55" ActionTag="1791284470" Tag="80" IconVisible="False" LeftMargin="-637.0000" RightMargin="-363.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -608,7 +608,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_45.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_45.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_5_56" ActionTag="-907134058" Tag="81" IconVisible="False" LeftMargin="-537.0000" RightMargin="-263.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -619,7 +619,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_5.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_5.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_51_57" ActionTag="-533456582" Tag="82" IconVisible="False" LeftMargin="-637.0000" RightMargin="-363.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -630,7 +630,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_51.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_51.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_52_58" ActionTag="-636722239" Tag="83" IconVisible="False" LeftMargin="-487.0000" RightMargin="-213.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -641,7 +641,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_52.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_52.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_53_59" ActionTag="553056182" Tag="84" IconVisible="False" LeftMargin="-487.0000" RightMargin="-213.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -652,7 +652,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_53.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_53.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_54_60" ActionTag="-566934904" Tag="85" IconVisible="False" LeftMargin="-462.0000" RightMargin="-188.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -663,7 +663,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_54.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_54.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_55_61" ActionTag="-357211366" Tag="86" IconVisible="False" LeftMargin="-587.0000" RightMargin="-313.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -674,7 +674,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_55.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_55.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="big_head_61_62" ActionTag="1727432515" Tag="87" IconVisible="False" LeftMargin="-562.0000" RightMargin="-288.0000" TopMargin="-427.0000" BottomMargin="-773.0000" ctype="SpriteObjectData">
@@ -685,7 +685,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_image/big_head_61.png" Plist="" />
+            <FileData Type="Normal" Path="images/role_image/role_image_61.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="role_name_1_63" ActionTag="-2072144311" Tag="88" IconVisible="False" LeftMargin="-227.0000" RightMargin="55.0000" TopMargin="117.0000" BottomMargin="-181.0000" ctype="SpriteObjectData">
