@@ -25,9 +25,14 @@ public:
 private:
 	void createSkin();
 	void onTouchBtn(Ref *ref, Widget::TouchEventType type);
+	void switchVisibleLayoutTop(const bool &isVisibe);
+	void switchVisibleLayoutBottom(const bool &isVisibe);
 	
 private:
 	Scene *_skin;
+
+	bool _isLayoutTopVisible;
+	bool _isLayoutBottomVisible;
 
 };
 

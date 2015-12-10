@@ -7,7 +7,7 @@
 #include "guild/LayerGuild.h"
 #include "training/LayerTraining.h"
 
-SceneMain::SceneMain() : _skin(nullptr)
+SceneMain::SceneMain() : _skin(nullptr), _isLayoutTopVisible(true), _isLayoutBottomVisible(true)
 {
 }
 
@@ -54,17 +54,9 @@ void SceneMain::updateBySubject(va_list values)
 		auto layerGuild = LayerGuild::create();
 		layoutContent->addChild(layerGuild);
 		layer = layerGuild;
-	}
-	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_TRAINING)
-	{
-		auto index = va_arg(values, int);
-		auto layerTraining = LayerTraining::create();
-		if (index != INT32_MIN)
-		{
-			layerTraining->updateSkin(index);
-		}
-		layoutContent->addChild(layerTraining);
-		layer = layerTraining;
+
+		switchVisibleLayoutTop(true);
+		switchVisibleLayoutBottom(true);
 	}
 	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS)
 	{
@@ -76,18 +68,47 @@ void SceneMain::updateBySubject(va_list values)
 		}
 		layoutContent->addChild(layerSkills);
 		layer = layerSkills;
+
+		switchVisibleLayoutTop(false);
+		switchVisibleLayoutBottom(true);
+	}
+	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_SHOP)
+	{
+
+		switchVisibleLayoutTop(true);
+		switchVisibleLayoutBottom(true);
+	}
+	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_TRAINING)
+	{
+		auto index = va_arg(values, int);
+		auto layerTraining = LayerTraining::create();
+		if (index != INT32_MIN)
+		{
+			layerTraining->updateSkin(index);
+		}
+		layoutContent->addChild(layerTraining);
+		layer = layerTraining;
+
+		switchVisibleLayoutTop(false);
+		switchVisibleLayoutBottom(true);
 	}
 	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS)
 	{
 		auto layerLevels = LayerLevels::create();
 		layoutContent->addChild(layerLevels);
 		layer = layerLevels;
+
+		switchVisibleLayoutTop(false);
+		switchVisibleLayoutBottom(true);
 	}
 	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_BATTLE)
 	{
 		auto layerBattle = LayerBattle::create();
 		layoutContent->addChild(layerBattle);
 		layer = layerBattle;
+
+		switchVisibleLayoutTop(false);
+		switchVisibleLayoutBottom(false);
 	}
 	managerUI->runLayerAppearDisappear(layer);
 }
@@ -115,19 +136,24 @@ void SceneMain::createSkin()
 	managerUI->setTypeLayerRunning(TYPE_OBSERVER_SCENE_MAIN::SHOW_BATTLE);
 	managerUI->setLayerRunning(layerBattle);*/
 
-	auto btn = (Button *)_skin->getChildByName("btnGuild");
+	auto layoutBottom = (Layout *)_skin->getChildByName("layoutBottom");
+	auto btn = (Button *)layoutBottom->getChildByName("btnGuild");
 	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
 	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_GUILD);
 
-	btn = (Button *)_skin->getChildByName("btnTraining");
-	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
-	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_TRAINING);
-
-	btn = (Button *)_skin->getChildByName("btnSkills");
+	btn = (Button *)layoutBottom->getChildByName("btnSkills");
 	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
 	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS);
 
-	btn = (Button *)_skin->getChildByName("btnLevels");
+	btn = (Button *)layoutBottom->getChildByName("btnShop");
+	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
+	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_SHOP);
+
+	btn = (Button *)layoutBottom->getChildByName("btnTraining");
+	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
+	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_TRAINING);
+
+	btn = (Button *)layoutBottom->getChildByName("btnLevels");
 	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
 	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
 }
@@ -140,4 +166,49 @@ void SceneMain::onTouchBtn(Ref *ref, Widget::TouchEventType type)
 		auto typeShow = (TYPE_OBSERVER_SCENE_MAIN)(int)btn->getUserData();
 		ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, typeShow, INT32_MIN);
 	}
+}
+
+void SceneMain::switchVisibleLayoutTop(const bool &isVisibe)
+{
+	if (_isLayoutTopVisible == isVisibe)
+	{
+		return;
+	}
+	_isLayoutTopVisible = isVisibe;
+	auto layoutTop = (Layout *)_skin->getChildByName("layoutTop");
+	auto size = layoutTop->getContentSize();
+	auto mask = Layout::create();
+	mask->setContentSize(size);
+	mask->setBackGroundColorType(Layout::BackGroundColorType::NONE);
+	mask->setAnchorPoint(Vec2::ANCHOR_BOTTOM_LEFT);
+	layoutTop->addChild(mask);
+	auto actionDeal = EaseCircleActionIn::create(MoveBy::create(0.2f, Vec2(0.0f, isVisibe ? -size.height : size.height)));
+	auto actionCallFunc = CallFunc::create([mask]()
+	{
+		mask->removeFromParent();
+	});
+	layoutTop->runAction(Sequence::createWithTwoActions(actionDeal, actionCallFunc));
+}
+
+void SceneMain::switchVisibleLayoutBottom(const bool &isVisibe)
+{
+	if (_isLayoutBottomVisible == isVisibe)
+	{
+		return;
+	}
+	_isLayoutBottomVisible = isVisibe;
+	auto layoutBottom = (Layout *)_skin->getChildByName("layoutBottom");
+	auto size = layoutBottom->getContentSize();
+	auto mask = Layout::create();
+	mask->setContentSize(size);
+	mask->setBackGroundColorType(Layout::BackGroundColorType::NONE);
+	mask->setAnchorPoint(Vec2::ANCHOR_BOTTOM_LEFT);
+	layoutBottom->addChild(mask);
+	auto actionDeal = EaseCircleActionIn::create(MoveBy::create(0.2f, Vec2(0.0f, isVisibe ? size.height : -size.height)));
+	auto actionCallFunc = CallFunc::create([mask]()
+	{
+		mask->removeFromParent();
+	});
+	layoutBottom->runAction(Sequence::createWithTwoActions(actionDeal, actionCallFunc));
+
 }
