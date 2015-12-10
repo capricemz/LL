@@ -154,14 +154,7 @@ void HandleDataIncome::addThing(const IdThing &idThing, const int &value)
 	{
 		return;
 	}
-	if (_dicThing.find(idThing) == _dicThing.end())
-	{
-		_dicThing.insert(std::make_pair(idThing, value));
-	}
-	else
-	{
-		_dicThing[idThing] += value;
-	}
+	setThing(idThing, getThing(idThing) + value);
 }
 
 DataTrainingInfo * HandleDataIncome::getDataTrainingInfo(const int &index)

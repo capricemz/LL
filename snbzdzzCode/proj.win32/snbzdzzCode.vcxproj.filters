@@ -246,13 +246,13 @@
     <ClCompile Include="..\Classes\ui\main\guild\LayerGuild.cpp">
       <Filter>src\ui\main\guild</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ui\main\guild\UIEntity.cpp">
-      <Filter>src\ui\main\guild</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\ui\main\training\LayerTraining.cpp">
       <Filter>src\ui\main\training</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\ui\common\UIBubble.cpp">
+      <Filter>src\ui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ui\common\UIEntity.cpp">
       <Filter>src\ui\common</Filter>
     </ClCompile>
   </ItemGroup>
@@ -407,13 +407,13 @@
     <ClInclude Include="..\Classes\ui\main\guild\LayerGuild.h">
       <Filter>src\ui\main\guild</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ui\main\guild\UIEntity.h">
-      <Filter>src\ui\main\guild</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\ui\main\training\LayerTraining.h">
       <Filter>src\ui\main\training</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ui\common\UIBubble.h">
+      <Filter>src\ui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\common\UIEntity.h">
       <Filter>src\ui\common</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,7 +1,7 @@
 #pragma execution_character_set("utf-8")
 
-#ifndef __UI_MAIN_GUILD_UI_ENTITY_H__
-#define __UI_MAIN_GUILD_UI_ENTITY_H__
+#ifndef __UI_COMMON_UI_ENTITY_H__
+#define __UI_COMMON_UI_ENTITY_H__
 
 #include "cocos2d.h"
 #include "cocostudio/CocoStudio.h"

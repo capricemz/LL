@@ -44,6 +44,7 @@ void UIEntity::updateSkin(const int &idEntity, const float &scale)
 	else
 	{
 		auto texture = Director::getInstance()->getTextureCache()->getTextureForKey(urlPic);
+		/*_skin->setContentSize(texture->getContentSize());*/
 		_skin->setTexture(texture);
 	}
 
@@ -55,5 +56,6 @@ void UIEntity::updateSkin(const int &idEntity, const float &scale)
 		_layoutBg->setTouchEnabled(true);
 		addChild(_layoutBg);
 	}
+
 	_layoutBg->setContentSize(_skin->getContentSize() * _skin->getScale());
 }

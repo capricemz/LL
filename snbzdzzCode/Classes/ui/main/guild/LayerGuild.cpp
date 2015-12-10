@@ -1,7 +1,7 @@
 #include "LayerGuild.h"
 #include "data/define/DefinesRes.h"
 #include "core/entity/subs/Entity.h"
-#include "UIEntity.h"
+#include "ui/common/UIEntity.h"
 #include "ui/ManagerUI.h"
 
 LayerGuild::LayerGuild() : _skin(nullptr)

@@ -8,6 +8,7 @@
 #include "ui/UIWidget.h"
 #include "ui/UILayout.h"
 #include "data/config/ManagerCfgDefines.h"
+#include "ui/common/UIEntity.h"
 
 USING_NS_CC;
 using namespace ui;
@@ -35,6 +36,7 @@ private:
 	void updateLayoutBtns();
 	void onTouchBtnMaid(Ref *ref, Widget::TouchEventType type);
 	void updateLayoutMaid();
+	void onTouchBtnMaidBuy(Ref *ref, Widget::TouchEventType type);
 	void onTouchBtnPrev(Ref *ref, Widget::TouchEventType type);
 	void onTouchBtnNext(Ref *ref, Widget::TouchEventType type);
 	void onTouchBtnSkill(Ref *ref, Widget::TouchEventType type);
@@ -45,6 +47,8 @@ private:
 	
 private:
 	Layer *_skin;
+
+	UIEntity *_uiEntity;
 
 	int _idEntityCurrent;
 

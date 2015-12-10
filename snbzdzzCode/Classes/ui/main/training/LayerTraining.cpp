@@ -2,7 +2,7 @@
 
 #include "LayerTraining.h"
 #include "data/define/DefinesRes.h"
-#include "../guild/UIEntity.h"
+#include "ui/common/UIEntity.h"
 #include "data/data/ManagerData.h"
 
 LayerTraining::LayerTraining() : _skin(nullptr), _indexCurrent(0)

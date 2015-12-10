@@ -171,6 +171,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\ui\common\SpriteBlur.cpp" />
     <ClCompile Include="..\Classes\ui\common\UIBubble.cpp" />
     <ClCompile Include="..\Classes\ui\common\UIConfirm.cpp" />
+    <ClCompile Include="..\Classes\ui\common\UIEntity.cpp" />
     <ClCompile Include="..\Classes\ui\common\UIGuide.cpp" />
     <ClCompile Include="..\Classes\ui\common\UIThingGet.cpp" />
     <ClCompile Include="..\Classes\ui\common\UITips.cpp" />
@@ -187,7 +188,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\ui\main\battle\NodeHead.cpp" />
     <ClCompile Include="..\Classes\ui\main\battle\result\LayerBattleResult.cpp" />
     <ClCompile Include="..\Classes\ui\main\guild\LayerGuild.cpp" />
-    <ClCompile Include="..\Classes\ui\main\guild\UIEntity.cpp" />
     <ClCompile Include="..\Classes\ui\main\levels\LayerLevels.cpp" />
     <ClCompile Include="..\Classes\ui\main\levels\LayerMaidSelect.cpp" />
     <ClCompile Include="..\Classes\ui\main\SceneMain.cpp" />
@@ -226,6 +226,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\ui\common\SpriteBlur.h" />
     <ClInclude Include="..\Classes\ui\common\UIBubble.h" />
     <ClInclude Include="..\Classes\ui\common\UIConfirm.h" />
+    <ClInclude Include="..\Classes\ui\common\UIEntity.h" />
     <ClInclude Include="..\Classes\ui\common\UIGuide.h" />
     <ClInclude Include="..\Classes\ui\common\UIThingGet.h" />
     <ClInclude Include="..\Classes\ui\common\UITips.h" />
@@ -242,7 +243,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\ui\main\battle\NodeHead.h" />
     <ClInclude Include="..\Classes\ui\main\battle\result\LayerBattleResult.h" />
     <ClInclude Include="..\Classes\ui\main\guild\LayerGuild.h" />
-    <ClInclude Include="..\Classes\ui\main\guild\UIEntity.h" />
     <ClInclude Include="..\Classes\ui\main\levels\LayerLevels.h" />
     <ClInclude Include="..\Classes\ui\main\levels\LayerMaidSelect.h" />
     <ClInclude Include="..\Classes\ui\main\SceneMain.h" />

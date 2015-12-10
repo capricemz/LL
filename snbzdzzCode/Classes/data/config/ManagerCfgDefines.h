@@ -53,13 +53,13 @@ struct CfgEntity
 	string name;//名称
 	TypeEntity type;//类型 1女仆2怪物
 	TypeJob typeJob;//职业 1盗贼2战士3法师4治疗5坦克6弓手
-	vector<string> vecUrlPic;//图片
-	int xPic;//图片x
-	int yPic;//图片y
 	string attribute;//属性 101生命上限103能量上限104物理攻击105魔法攻击106金币收益
 	int idSkillGroup;//技能组id
 	int idTraining;//训练id
 	int cost;//购买消耗
+	vector<string> vecUrlPic;//图片
+	int xPic;//图片x
+	int yPic;//图片y
 };
 typedef map<int32_t, CfgEntity> DicCfgEntity;
 //

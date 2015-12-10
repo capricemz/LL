@@ -261,10 +261,12 @@ void ManagerCfg::assignCfgEntity(const VectorString &vecItem)
 	cfg.idSkillGroup = Value(vecItem[5]).asInt();
 	cfg.idTraining = Value(vecItem[6]).asInt();
 	
-	auto vecUrlPic = UtilString::split(vecItem[7], ":");
+	cfg.cost = Value(vecItem[7]).asInt();
+
+	auto vecUrlPic = UtilString::split(vecItem[8], ":");
 	cfg.vecUrlPic = vecUrlPic;
 	
-	auto vecStr = UtilString::split(vecItem[8], ":");
+	auto vecStr = UtilString::split(vecItem[9], ":");
 	cfg.xPic = Value(vecStr[0]).asInt();
 	cfg.yPic = Value(vecStr[1]).asInt();
 	

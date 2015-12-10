@@ -31,7 +31,7 @@ void Maid::setDataEntity()
 
 void Maid::setMyScale()
 {
-	_skin->setScaleX(-0.7f);
+	_skin->setScaleX(0.7f);
 	_skin->setScaleY(0.7f);
 }
 

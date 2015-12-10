@@ -118,14 +118,7 @@ void DataGrid::addAttribute(const IdAttribute &idAttribute, const int &value)
 	{
 		return;
 	}
-	if (_dicAttribute.find(idAttribute) == _dicAttribute.end())
-	{
-		_dicAttribute.insert(std::make_pair(idAttribute, value));
-	}
-	else
-	{
-		_dicAttribute[idAttribute] += value;
-	}
+	setAttribute(idAttribute, getAttribute(idAttribute) + value);
 }
 
 std::string DataGrid::getAttributeCondition(const IdAttribute &idAttribute)

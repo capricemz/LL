@@ -9,11 +9,10 @@
 #include "data/data/ManagerData.h"
 #include "data/config/ManagerCfg.h"
 #include "data/define/DefinesString.h"
-#include "../guild/UIEntity.h"
 
 using namespace ui;
 
-LayerSkills::LayerSkills() : _skin(nullptr), _idEntityCurrent(DATA_UNLOCK_INIT_MAID), _vecShowIdEntity({})
+LayerSkills::LayerSkills() : _skin(nullptr), _uiEntity(nullptr), _idEntityCurrent(DATA_UNLOCK_INIT_MAID), _vecShowIdEntity({})
 {
 }
 
@@ -61,6 +60,8 @@ void LayerSkills::dealRemoveFromParent()
 void LayerSkills::updateSkin(const int &idEntity)
 {
 	_idEntityCurrent = idEntity;
+	updateLayoutBtns();
+	updateLayoutMaid();
 	updateLayoutSkillItems();
 }
 
@@ -138,24 +139,14 @@ void LayerSkills::updateLayoutMaid()
 	auto layoutMaid = (Layout *)_skin->getChildByName("layoutMaid");
 	auto size = layoutMaid->getContentSize();
 
-	auto uiEntity = UIEntity::create();
-	uiEntity->updateSkin(_idEntityCurrent, 1.0f);
-	uiEntity->setPosition(Vec2(size.width * 0.5f, size.height *0.5f));
-	uiEntity->getLayoutBg()->addTouchEventListener([this](Ref *ref, Widget::TouchEventType type)
+	if (_uiEntity == nullptr)
 	{
-		if (type == Widget::TouchEventType::ENDED)
-		{
-			auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[_idEntityCurrent];
-			auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
-			if (handleDataIncome->getThingEnough(IdThing::GOLD, cfgEntity.cost))
-			{
-				handleDataIncome->addThing(IdThing::GOLD, cfgEntity.cost);
-				auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
-				handleDataUnlock->setIsBuyMaid(_idEntityCurrent);
-			}
-		}
-	});
-	layoutMaid->addChild(uiEntity, -1);
+		_uiEntity = UIEntity::create();
+		_uiEntity->setPosition(Vec2(size.width * 0.5f, size.height *0.5f));
+		layoutMaid->addChild(_uiEntity, -1);
+	}
+	_uiEntity->updateSkin(_idEntityCurrent, 1.0f);
+	_uiEntity->getLayoutBg()->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnMaidBuy, this));
 
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
 	auto isBuy = handleDataUnlock->getIsBuyMaid(_idEntityCurrent);
@@ -181,6 +172,25 @@ void LayerSkills::updateLayoutMaid()
 	
 	btn = (Button *)layoutMaid->getChildByName("btnSkill");
 	btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkill, this));
+	btn->setBright(isBuy);
+	btn->setTouchEnabled(isBuy);
+}
+
+void LayerSkills::onTouchBtnMaidBuy(Ref *ref, Widget::TouchEventType type)
+{
+	if (type == Widget::TouchEventType::ENDED)
+	{
+		auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[_idEntityCurrent];
+		auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
+		if (handleDataIncome->getThingEnough(IdThing::GOLD, cfgEntity.cost))
+		{
+			handleDataIncome->addThing(IdThing::GOLD, cfgEntity.cost);
+			auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
+			handleDataUnlock->setIsBuyMaid(_idEntityCurrent);
+			handleDataUnlock->dataFileSet();
+			updateSkin(_idEntityCurrent);
+		}
+	}
 }
 
 void LayerSkills::onTouchBtnPrev(Ref *ref, Widget::TouchEventType type)
@@ -209,7 +219,7 @@ void LayerSkills::onTouchBtnNext(Ref *ref, Widget::TouchEventType type)
 	{
 		auto iter = find(_vecShowIdEntity.begin(), _vecShowIdEntity.end(), _idEntityCurrent);
 		auto index = 0;
-		if (iter != _vecShowIdEntity.end())
+		if (iter != _vecShowIdEntity.end() - 1)
 		{
 			index = (iter + 1) - _vecShowIdEntity.begin();
 		}
