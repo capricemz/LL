@@ -21,7 +21,7 @@ static const int ENTITY_BATTLE_MAX = 3;
 
 static const int ENERGY_SWITCH_ENTITY = 8;
 
-static const int BREAK_DAMAGE_TAKES = 2;
+static const int BREAK_DAMAGE_TAKES = 5;
 
 static const int LENGTH_INFO_THING = 2;
 static const int LENGTH_INFO_CATCH_MST = 3;
@@ -88,7 +88,7 @@ enum class IdAttribute
 	ENTITY_COST_HP_ALL,//全体消耗生命
 	ENTITY_DAMAGE_CASE_EXTRA,//额外造成伤害
 	ENTITY_DAMAGE_TAKES_EXTRA,//额外受到伤害
-	ENTITY_BREAK_CASE,//造成破衣
+	ENTITY_DAMAGE_BREAK_COUNT,//破衣伤害计数
 	ENTITY_BREAK_TAKES,//受到破衣
 
 	GRID_DAMAGE_PHYSICAL = 200,//物理伤害

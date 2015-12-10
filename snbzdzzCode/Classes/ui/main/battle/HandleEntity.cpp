@@ -198,7 +198,7 @@ void HandleEntity::dealTurnOver()
 	if (isTurnAll)
 	{
 		auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-		handleDataEntity->resetDataEntityAttributeTemp();
+		handleDataEntity->resetDataEntityAttributeTempTurnOver();
 		handleDataEntity->dealVecSkillActiveInUse2UseOverMaid();
 		auto isRoundOver = ManagerData::getInstance()->getHandleDataGrid()->isRoundOver();
 		if (!isRoundOver)
@@ -227,6 +227,7 @@ void HandleEntity::dealRoundOver(const bool &isForce /*= false*/)
 	handleDataGrid->resetIndexGridBattle();
 	
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	handleDataEntity->resetDataEntityAttributeTempRoundOver();
 	handleDataEntity->addRound();
 	handleDataEntity->dealDataEntitySkillSort(isForce);
 

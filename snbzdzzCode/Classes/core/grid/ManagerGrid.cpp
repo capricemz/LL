@@ -308,9 +308,11 @@ void ManagerGrid::dealDamage(DataGrid *dataGridCase, DataGrid *dataGridTakes, Da
 	dataEntityTakes->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES_EXTRA, valueDamageExtra);
 
 	auto damageTotal = damagePhysical + damagePhysicalExtra + damageMagic + damageMagicExtra;
-	if (damageTotal >= BREAK_DAMAGE_TAKES)
+	dataEntityTakes->addAttribute(IdAttribute::ENTITY_DAMAGE_BREAK_COUNT, damageTotal);
+	auto damageBreakCount = dataEntityTakes->getAttribute(IdAttribute::ENTITY_DAMAGE_BREAK_COUNT);
+	if (damageBreakCount >= BREAK_DAMAGE_TAKES)
 	{
-		dataEntityCase->setAttribute(IdAttribute::ENTITY_BREAK_CASE, 1);
+		dataEntityTakes->setAttribute(IdAttribute::ENTITY_DAMAGE_BREAK_COUNT, 0);
 		dataEntityCase->addAttribute(IdAttribute::ENTITY_BREAK_CASE_NUM, 1);
 		dataEntityTakes->setAttribute(IdAttribute::ENTITY_BREAK_TAKES, 1);
 		dataEntityTakes->addAttribute(IdAttribute::ENTITY_BREAK_TAKES_NUM, 1);

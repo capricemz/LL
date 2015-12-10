@@ -518,7 +518,7 @@ void HandleDataEntity::dealSkillRandom(const function<void()> &func /*= nullptr*
 	}
 }
 
-void HandleDataEntity::resetDataEntityAttributeTemp()
+void HandleDataEntity::resetDataEntityAttributeTempTurnOver()
 {
 	for (auto i = 0; i < 2; i++)
 	{
@@ -535,8 +535,17 @@ void HandleDataEntity::resetDataEntityAttributeTemp()
 		dataEntity->setAttribute(IdAttribute::ENTITY_COST_HP_ALL, 0);
 		dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_CASE_EXTRA, 0);
 		dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_TAKES_EXTRA, 0);
-		dataEntity->setAttribute(IdAttribute::ENTITY_BREAK_CASE, 0);
 		dataEntity->setAttribute(IdAttribute::ENTITY_BREAK_TAKES, 0);
+	}
+}
+
+void HandleDataEntity::resetDataEntityAttributeTempRoundOver()
+{
+	for (auto i = 0; i < 2; i++)
+	{
+		auto isMst = i < 1;
+		auto dataEntity = isMst ? getDataEntityMst() : getDataEntityMaid();
+		dataEntity->setAttribute(IdAttribute::ENTITY_DAMAGE_BREAK_COUNT, 0);
 	}
 }
 

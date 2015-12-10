@@ -34,7 +34,7 @@ void UIEntity::updateSkin(const int &idEntity, const float &scale)
 
 	auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[idEntity];
 
-	auto urlPic = cfgEntity.vecUrlPic[isUnlock && !isBuy ? 3 : 0];
+	auto urlPic = cfgEntity.vecUrlPic[0];
 	if (_skin == nullptr)
 	{
 		_skin = Sprite::create(urlPic);
@@ -47,6 +47,9 @@ void UIEntity::updateSkin(const int &idEntity, const float &scale)
 		/*_skin->setContentSize(texture->getContentSize());*/
 		_skin->setTexture(texture);
 	}
+	/*isUnlock = true;//for test
+	isBuy = false;//for test*/
+	_skin->setColor(isUnlock && !isBuy ? Color3B::BLACK : Color3B::WHITE);
 
 	if (_layoutBg == nullptr)
 	{

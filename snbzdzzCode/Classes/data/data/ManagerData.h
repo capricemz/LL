@@ -268,7 +268,8 @@ class HandleDataEntity
 
 		void dealSkillRandom(const function<void()> &func = nullptr);
 
-		void resetDataEntityAttributeTemp();//重置实体战斗结果临时属性
+		void resetDataEntityAttributeTempTurnOver();//重置实体战斗结果临时属性行动结束
+		void resetDataEntityAttributeTempRoundOver();//重置实体战斗结果临时属性回合结束
 
 		void dealVecSkillActiveInUse2UseOverMaid();//处理行动结束数据
 		void dealDataEntitySkillSort(const bool &isForce = false);//处理回合结束数据

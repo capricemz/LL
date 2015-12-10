@@ -88,7 +88,7 @@ void HandleImageLoad::imageAsyncLoad(const string &fileName)
 	{
 		UtilString::stringReplace(fileNamePic, ".plist", ".png");
 	}
-	auto fullpath = FileUtils::getInstance()->fullPathForFilename(fileName);
+	auto fullpath = FileUtils::getInstance()->fullPathForFilename(fileNamePic);
 	// check if file exists
 	if (fullpath.empty() || !FileUtils::getInstance()->isFileExist(fullpath))
 	{

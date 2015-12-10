@@ -62,7 +62,8 @@ void ManagerEntity::dealBattleOver()
 	handleDataGrid->resetIndexGridBattle();
 	
 	auto handleDataEntity = managerData->getHandleDataEntity();
-	handleDataEntity->resetDataEntityAttributeTemp();
+	handleDataEntity->resetDataEntityAttributeTempTurnOver();
+	handleDataEntity->resetDataEntityAttributeTempRoundOver();
 	handleDataEntity->dealBattleOver();
 
 	auto isAllMaidDead = handleDataEntity->isAllMaidDead();
