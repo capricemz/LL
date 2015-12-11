@@ -70,7 +70,7 @@ void ManagerEntity::dealBattleOver()
 
 	auto handleDataLevels = managerData->getHandleDataLevels();
 	auto dataLevelCurrent = handleDataLevels->getDataLevelCurrent();
-	if (!isBattleWin)//战斗胜利
+	if (isBattleWin)//战斗胜利
 	{
 		dataLevelCurrent->dealLevelTarget();
 		dataLevelCurrent->dealLevelPassed();//处理通关
