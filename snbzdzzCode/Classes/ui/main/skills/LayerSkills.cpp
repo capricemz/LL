@@ -156,7 +156,7 @@ void LayerSkills::updateLayoutMaid()
 	spriteBuyTip->setVisible(isUnlock && !isBuy);
 
 	auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[_idEntityCurrent];
-	auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(cfgEntity.vecUrlPic[2]);
+	auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(cfgEntity.urlPicName);
 	auto spriteNameBg = (Sprite *)layoutMaid->getChildByName("spriteNameBg");
 	spriteNameBg->setSpriteFrame(spriteFrame);
 

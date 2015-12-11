@@ -89,6 +89,8 @@
           </Folder>
           <Folder Name="bg">
             <Image Name="battle_bg1.png" />
+            <Image Name="bg.png" />
+            <Image Name="bg1.png" />
           </Folder>
           <Folder Name="role_image">
             <Image Name="role_image_2.png" />
@@ -189,7 +191,6 @@
             <Image Name="gift_bag.png" />
           </Folder>
           <Folder Name="girl">
-            <Image Name="bg.png" />
             <Image Name="box1.png" />
             <Image Name="box2.png" />
             <Image Name="left.png" />
@@ -254,42 +255,29 @@
             <Image Name="button4.png" />
             <Image Name="button5.png" />
             <Image Name="button6.png" />
-            <Image Name="button7.png" />
             <Image Name="button8.png" />
             <Image Name="name button.png" />
-            <Image Name="professional button.png" />
             <Image Name="Skills button.png" />
+            <Image Name="zhiye.png" />
+            <Image Name="jinengkuang.png" />
           </Folder>
           <Folder Name="teach">
-            <Image Name="bg.png" />
             <Image Name="harem.png" />
             <Image Name="heart.png" />
             <Image Name="heartbg.png" />
             <Image Name="rolename.png" />
             <Image Name="sell.png" />
-            <Image Name="teach button.png" />
-            <Image Name="teach1.png" />
-          </Folder>
-          <Folder Name="teaching">
-            <Image Name="80_100.png" />
-            <Image Name="bg.png" />
-            <Image Name="change.png" />
-            <Image Name="changebutton.png" />
-            <Image Name="close.png" />
-            <Image Name="gift.png" />
-            <Image Name="heart1.png" />
-            <Image Name="heart2.png" />
-            <Image Name="heartbg.png" />
-            <Image Name="player.png" />
-            <Image Name="progress bar.png" />
-            <Image Name="role.png" />
-            <Image Name="scratching.png" />
-            <Image Name="scratchingbutton.png" />
-            <Image Name="servility.png" />
-            <Image Name="Speech bubbles.png" />
+            <Image Name="tjtop.png" />
+            <Image Name="tjdd.png" />
             <Image Name="teach.png" />
+            <Image Name="heart2.png" />
+            <Image Name="changebutton.png" />
+            <Image Name="dhk.png" />
+            <Image Name="gift.png" />
+            <Image Name="progress bar.png" />
+            <Image Name="scratchingbutton.png" />
+            <Image Name="tjbg2.png" />
             <Image Name="toothbrush button.png" />
-            <Image Name="toothbrush.png" />
           </Folder>
           <Folder Name="role_name">
             <Image Name="role_name_1.png" />
@@ -351,6 +339,11 @@
             <Project Name="NodeMain.csd" Type="Node" />
             <PlistInfo Name="PlistMaidHead.csi" Type="Plist" />
             <PlistInfo Name="PlistMaidName.csi" Type="Plist" />
+            <Project Name="NodeMaidSelectStar.csd" Type="Node" />
+            <Project Name="LayerSkillbook.csd" Type="Layer" />
+            <Project Name="LayerTiaojiao.csd" Type="Layer" />
+            <Project Name="LayerTiaojiao2.csd" Type="Layer" />
+            <PlistInfo Name="PlistMaidHead1.csi" Type="Plist" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />

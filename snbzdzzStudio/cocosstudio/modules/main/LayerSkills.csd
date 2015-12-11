@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="images/girl/bg.png" Plist="" />
+            <FileData Type="Normal" Path="images/bg/bg.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="layoutBtns" ActionTag="-1487796346" Tag="198" IconVisible="False" BottomMargin="823.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">

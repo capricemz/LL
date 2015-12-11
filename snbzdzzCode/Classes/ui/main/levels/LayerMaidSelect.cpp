@@ -5,6 +5,8 @@
 #include "data/data/ManagerData.h"
 #include "data/define/DefinesString.h"
 #include "ui/ManagerUI.h"
+#include "data/config/ManagerCfg.h"
+#include "common/util/UtilString.h"
 
 LayerMaidSelect::LayerMaidSelect() : _skin(nullptr), _vecNodeHead({}), _postionDelta(Vec2::ZERO)
 {
@@ -24,11 +26,48 @@ bool LayerMaidSelect::init()
 	{
 		CC_BREAK_IF(!Layer::init());
 
+		createData();
+
 		createSkin();
 
 		isInit = true;
 	} while (0);
 	return isInit;
+}
+
+void LayerMaidSelect::runAppear(const function<void()> &funcOver)
+{
+	auto duration = 0.4f;
+	auto layoutContent = (Layout *)_skin->getChildByName("layoutContent");
+	layoutContent->setVisible(true);
+	layoutContent->stopActionsByFlags(1);
+
+	auto postion = layoutContent->getPosition();
+	layoutContent->setPosition(Vec2::ZERO);
+
+	Vector<FiniteTimeAction *> vecActions;
+
+	auto actionMove = EaseBackOut::create(MoveTo::create(duration, postion));
+	actionMove->setFlags(1);
+	vecActions.pushBack(actionMove);
+
+	if (funcOver != nullptr)
+	{
+		auto actionCallFunc = CallFunc::create([funcOver]()
+		{
+			funcOver();
+		});
+		actionCallFunc->setFlags(1);
+		vecActions.pushBack(actionCallFunc);
+	}
+
+	layoutContent->runAction(Sequence::create(vecActions));
+}
+
+void LayerMaidSelect::createData()
+{
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	handleDataEntity->createDataEntityMst();
 }
 
 void LayerMaidSelect::createSkin()
@@ -37,7 +76,7 @@ void LayerMaidSelect::createSkin()
 	addChild(_skin);
 
 	auto layoutBg = (Layout *)_skin->getChildByName("layoutBg");
-	layoutBg->addTouchEventListener(CC_CALLBACK_2(LayerMaidSelect::ontTouchLayoutBg, this));
+	layoutBg->addTouchEventListener(CC_CALLBACK_2(LayerMaidSelect::ontTouchBack, this));
 
 	auto layoutContent = (Layout *)_skin->getChildByName("layoutContent");
 	layoutContent->setVisible(false);
@@ -46,51 +85,81 @@ void LayerMaidSelect::createSkin()
 	auto dataLevel = handleDataLevels->getDataLevelCurrent();
 	auto cfgLevel = dataLevel->getCfgLevel();
 
-	auto txtLevel = (Text *)layoutContent->getChildByName("txtLevel");
-	txtLevel->setString(STR_LEVEL_0 + Value(dataLevel->getIndex() + 1).asString() + STR_LEVEL_1);
-
-	auto txtName = (Text *)layoutContent->getChildByName("txtName");
-	txtName->setString(cfgLevel.name);
-
 	auto levelTargetNum = dataLevel->levelTargetNumGet();
 	auto layoutStar = (Layout *)layoutContent->getChildByName("layoutStar");
 	auto sizeLayoutStar = layoutStar->getContentSize();
-	auto postion = Vec2(5.0f, sizeLayoutStar.height - 5.0f);
+	auto postion = Vec2(0.0f, sizeLayoutStar.height);
 	for (auto i = 0; i < levelTargetNum; i++)
 	{
-		auto isComolete = dataLevel->levelTargetIsComplete(i);
+		auto node = (Node *)CSLoader::createNode(RES_MODULES_MAIN_NODE_MAID_SELECT_STAR_CSB);
+		if (postion.x == 0.0f)
+		{
+			postion.x = (sizeLayoutStar.width - node->getChildByName("spriteBg")->getContentSize().width) * 0.5f;
+		}
+		
+		node->setPosition(postion);
+
 		auto text = dataLevel->getLevelTargetStr(i);
-		auto txtStar = Text::create(text, RES_FONTS_KTJT, 18);
-		txtStar->setAnchorPoint(Vec2::ANCHOR_TOP_LEFT);
-		txtStar->setName("txtStar" + Value(i).asInt());
-		txtStar->setPosition(postion);
-		layoutStar->addChild(txtStar);
-		postion += Vec2(0.0f, -(txtStar->getContentSize().height + 5.0f));
+		auto txt = (Text *)node->getChildByName("txt");
+		txt->setString(text);
+
+		auto isComolete = dataLevel->levelTargetIsComplete(i);
+		auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(isComolete ? RES_IMAGES_MAIN_LEVELS_XING_PNG : RES_IMAGES_MAIN_LEVELS_XING_KONG_PNG);
+		auto spriteStar = (Sprite *)node->getChildByName("spriteStar");
+		spriteStar->setSpriteFrame(spriteFrame);
+
+		layoutStar->addChild(node);
+		postion += Vec2(0.0f, -(node->getChildByName("spriteBg")->getContentSize().height));
 	}
 
 	auto btn = (Button *)layoutContent->getChildByName("btnEnter");
 	btn->addTouchEventListener(CC_CALLBACK_2(LayerMaidSelect::onTouchBtnEnter, this));
+
+	btn = (Button *)layoutContent->getChildByName("btnBack");
+	btn->addTouchEventListener(CC_CALLBACK_2(LayerMaidSelect::ontTouchBack, this));
 	//
-	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto vecDataEntityMaid = handleDataEntity->getVecDataEntityMaid();
+	auto vecIdDataEntityMst = UtilString::split(cfgLevel.msts, ":");
 
 	auto layoutNodeHead = (Layout *)layoutContent->getChildByName("layoutNodeHead");
 	auto index = 0;
 	while (true)
 	{
-		auto sprite = (Sprite *)layoutNodeHead->getChildByName("sprite" + Value(index).asString());
-		if (sprite == nullptr)
+		auto layout = (Layout *)layoutNodeHead->getChildByName("layoutHeadMst" + Value(index).asString());
+		if (layout == nullptr)
 		{
 			break;
 		}
-		sprite->setVisible(false);
+
+		if ((int)vecIdDataEntityMst.size() > index)
+		{
+			auto nodeHead = NodeHead::create();
+			nodeHead->updateSkin(false, true, index);
+			nodeHead->setPosition(layout->getPosition());
+			/*nodeHead->getLayoutBg()->setTouchEnabled(true);
+			nodeHead->getLayoutBg()->addTouchEventListener(CC_CALLBACK_2(LayerMaidSelect::onTouchNodeHead, this, nodeHead));*/
+			layoutNodeHead->addChild(nodeHead);
+			_vecNodeHead.pushBack(nodeHead);
+		}
+
+		index++;
+	}
+
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto vecDataEntityMaid = handleDataEntity->getVecDataEntityMaid();
+	index = 0;
+	while (true)
+	{
+		auto layout = (Layout *)layoutNodeHead->getChildByName("layoutHeadMaid" + Value(index).asString());
+		if (layout == nullptr)
+		{
+			break;
+		}
 
 		if ((int)vecDataEntityMaid.size() > index)
 		{
 			auto nodeHead = NodeHead::create();
-			nodeHead->setScale(0.8f);
-			nodeHead->setInfo(false, index);
-			nodeHead->setPosition(sprite->getPosition());
+			nodeHead->updateSkin(false, false, index);
+			nodeHead->setPosition(layout->getPosition());
 			nodeHead->getLayoutBg()->setTouchEnabled(true);
 			nodeHead->getLayoutBg()->addTouchEventListener(CC_CALLBACK_2(LayerMaidSelect::onTouchNodeHead, this, nodeHead));
 			layoutNodeHead->addChild(nodeHead);
@@ -101,7 +170,7 @@ void LayerMaidSelect::createSkin()
 	}
 }
 
-void LayerMaidSelect::ontTouchLayoutBg(Ref *ref, Widget::TouchEventType type)
+void LayerMaidSelect::ontTouchBack(Ref *ref, Widget::TouchEventType type)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
@@ -129,7 +198,6 @@ void LayerMaidSelect::onTouchNodeHead(Ref *ref, Widget::TouchEventType type, Nod
 	{
 		auto postionMove = layoutBg->getTouchMovePosition();
 		auto postion = postionMove - _postionDelta;
-		postion.y -= nodeHead->getLayoutBg()->getContentSize().height * 0.8f * 0.5f;
 		postion = nodeHead->getParent()->convertToNodeSpace(postion);
 		nodeHead->setPosition(postion);
 	}
@@ -139,7 +207,6 @@ void LayerMaidSelect::onTouchNodeHead(Ref *ref, Widget::TouchEventType type, Nod
 		
 		auto postionBegan = layoutBg->getTouchBeganPosition();
 		auto postion = postionBegan - _postionDelta;
-		postion.y -= nodeHead->getLayoutBg()->getContentSize().height * 0.8f * 0.5f;
 		postion = nodeHead->getParent()->convertToNodeSpace(postion);
 		nodeHead->setPosition(postion);
 		
@@ -175,35 +242,6 @@ bool LayerMaidSelect::isMoveOverNodeHead(const Vec2 &postionTouchMove, int &inde
 		}
 	}
 	return false;
-}
-
-void LayerMaidSelect::runAppear(const function<void()> &funcOver)
-{
-	auto duration = 0.4f;
-	auto layoutContent = (Layout *)_skin->getChildByName("layoutContent");
-	layoutContent->setVisible(true);
-	layoutContent->stopActionsByFlags(1);
-
-	auto postion = layoutContent->getPosition();
-	layoutContent->setPosition(Vec2::ZERO);
-
-	Vector<FiniteTimeAction *> vecActions;
-
-	auto actionMove = EaseBackOut::create(MoveTo::create(duration, postion));
-	actionMove->setFlags(1);
-	vecActions.pushBack(actionMove);
-
-	if (funcOver != nullptr)
-	{
-		auto actionCallFunc = CallFunc::create([funcOver]()
-		{
-			funcOver();
-		});
-		actionCallFunc->setFlags(1);
-		vecActions.pushBack(actionCallFunc);
-	}
-
-	layoutContent->runAction(Sequence::create(vecActions));
 }
 
 void LayerMaidSelect::runDisappear(const function<void()> &funcOver)

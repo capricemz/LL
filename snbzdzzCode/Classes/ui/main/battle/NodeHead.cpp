@@ -7,13 +7,14 @@
 
 using namespace ui;
 
-NodeHead::NodeHead() : _skin(nullptr), _isMst(false), _indexDataEntity(0)
+NodeHead::NodeHead() : _skin(nullptr), _layout(nullptr), _isLarge(false), _isMst(false), _indexDataEntity(0)
 {
 }
 
 NodeHead::~NodeHead()
 {
 	_skin = nullptr;
+	_layout = nullptr;
 }
 
 bool NodeHead::init()
@@ -34,54 +35,58 @@ void NodeHead::createSkin()
 {
 	_skin = (Node *)CSLoader::createNode(RES_MODULES_MAIN_NODE_HEAD_CSB);
 	addChild(_skin);
-
-	getLayoutBg()->setTouchEnabled(false);
 }
 
-void NodeHead::setInfo(const bool &isMst, const int &indexDataEntity)
+void NodeHead::updateSkin(const bool &isLarge, const bool &isMst, const int &indexDataEntity)
 {
+	_isLarge = isLarge;
 	_isMst = isMst;
 	_indexDataEntity = indexDataEntity;
 	
-	auto size = getLayoutBg()->getContentSize();
-	_isMst ? _skin->setPosition(0.0f, -size.height * 0.5f) : _skin->setPosition(0.0f, size.height * 0.5f);
+	/*auto size = getLayoutBg()->getContentSize();
+	_isMst ? _skin->setPosition(0.0f, -size.height * 0.5f) : _skin->setPosition(0.0f, size.height * 0.5f);*/
+	auto layoutLarge = (Layout *)_skin->getChildByName("layoutLarge");
+	layoutLarge->setVisible(_isLarge);
+	auto layoutSmall = (Layout *)_skin->getChildByName("layoutSmall");
+	layoutSmall->setVisible(!_isLarge);
+	_layout = _isLarge ? layoutLarge : layoutSmall;
+	_layout->setTouchEnabled(false);
+	_layout->setAnchorPoint(_isMst ? Vec2::ANCHOR_MIDDLE_TOP : Vec2::ANCHOR_MIDDLE_BOTTOM);
+	
+	updateAll();
 }
 
 void NodeHead::updateAll()
 {
-	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto length = handleDataEntity->getLengthVecDataEntity(_isMst);
-	if (length <= _indexDataEntity)
-	{
-		_skin->setVisible(false);
-	}
-	else
-	{
-		_skin->setVisible(true);
-		updateSpriteIcon();
-		updateBarHp();
-		updateSpriteJob();
-	}
+	updateSpriteIcon();
+	updateBarHp();
+	updateSpriteJob();
 }
 
 void NodeHead::updateSpriteIcon()
 {
 	auto dataEntity = getDataEntity();
 	auto cfgEntity = dataEntity->getCfgEntity();
-	auto urlPic = cfgEntity.vecUrlPic[1];
-	auto texture = Director::getInstance()->getTextureCache()->getTextureForKey(urlPic);
+	auto urlPic = _isLarge ? cfgEntity.urlPicHeadLarge : cfgEntity.urlPicHeadSmall;
+	/*auto texture = Director::getInstance()->getTextureCache()->getTextureForKey(urlPic);*/
+	auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(urlPic);
 
-	auto spriteIcon = (Sprite *)_skin->getChildByName("spriteIcon");
-	spriteIcon->setTexture(texture);
+	auto spriteIcon = (Sprite *)_layout->getChildByName("spriteIcon");
+	/*spriteIcon->setTexture(texture);*/
+	spriteIcon->setSpriteFrame(spriteFrame);
 }
 
 void NodeHead::updateBarHp()
 {
+	if (!_isLarge)
+	{
+		return;
+	}
 	auto dataEntity = getDataEntity();
 	auto hp = dataEntity->getAttribute(IdAttribute::ENTITY_HP);
 	auto hpMax = dataEntity->getAttribute(IdAttribute::ENTITY_HP_MAX);
 
-	auto bar = (LoadingBar *)_skin->getChildByName("spriteHpBg")->getChildByName("barHp");
+	auto bar = (LoadingBar *)_layout->getChildByName("spriteHpBg")->getChildByName("barHp");
 	bar->setPercent(((float)hp / (float)hpMax) * 100.0f);
 }
 
@@ -92,7 +97,7 @@ void NodeHead::updateSpriteJob()
 	auto urlPic = RES_IMAGES_COMMON_TYPE_JOB_PNG_VEC[(int)cfgEntity.typeJob];
 	auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(urlPic);
 
-	auto spriteIcon = (Sprite *)_skin->getChildByName("spriteJob");
+	auto spriteIcon = (Sprite *)_layout->getChildByName("spriteJob");
 	spriteIcon->setSpriteFrame(spriteFrame);
 }
 
@@ -180,8 +185,7 @@ void NodeHead::moveFrom(const Vec2 &postion, const bool &isBack, const float &sc
 NodeHead * NodeHead::clone()
 {
 	auto nodeHead = create();
-	nodeHead->setInfo(_isMst, _indexDataEntity);
-	nodeHead->updateAll();
+	nodeHead->updateSkin(true, _isMst, _indexDataEntity);
 	return nodeHead;
 }
 

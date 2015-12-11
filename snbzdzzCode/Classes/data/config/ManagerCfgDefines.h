@@ -57,9 +57,12 @@ struct CfgEntity
 	int idSkillGroup;//技能组id
 	int idTraining;//训练id
 	int cost;//购买消耗
-	vector<string> vecUrlPic;//图片
+	string urlPicEntity;//实体图片
 	int xPic;//图片x
 	int yPic;//图片y
+	string urlPicHeadLarge;//大头像图片
+	string urlPicHeadSmall;//小头像图片
+	string urlPicName;//名称图片
 };
 typedef map<int32_t, CfgEntity> DicCfgEntity;
 //

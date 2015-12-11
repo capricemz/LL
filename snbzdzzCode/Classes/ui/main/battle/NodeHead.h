@@ -21,8 +21,7 @@ public:
 
 	virtual bool init();
 
-	void setInfo(const bool &isMst, const int &indexDataEntity);
-
+	void updateSkin(const bool &isLarge, const bool &isMst, const int &indexDataEntity);
 	void updateAll();
 	void updateSpriteIcon();
 	void updateBarHp();
@@ -40,6 +39,10 @@ public:
 	NodeHead *clone();
 	
 public:
+	bool getIsLarge() const
+	{
+		return _isLarge;
+	}
 	bool getIsMst() const
 	{
 		return _isMst;
@@ -51,7 +54,7 @@ public:
 
 	Layout *getLayoutBg()
 	{
-		return (Layout *)_skin->getChildByName("layoutBg");
+		return _layout;
 	}
 
 	DataEntity *getDataEntity();
@@ -61,6 +64,8 @@ public:
 	
 private:
 	Node *_skin;
+	Layout *_layout;
+	bool _isLarge;
 	bool _isMst;
 	int _indexDataEntity;
 	

@@ -25,13 +25,16 @@ public:
 	void runAppear(const function<void()> &funcOver);
 	
 private:
+	void createData();
 	void createSkin();
-	void ontTouchLayoutBg(Ref *ref, Widget::TouchEventType type);
+
+	void ontTouchBack(Ref *ref, Widget::TouchEventType type);
 	void runDisappear(const function<void()> &funcOver);
+
 	void onTouchBtnEnter(Ref *ref, Widget::TouchEventType type);
 	void onTouchNodeHead(Ref *ref, Widget::TouchEventType type, NodeHead *nodeHead);
 	bool isMoveOverNodeHead(const Vec2 &postionTouchMove, int &indexDataEntityMoveOver);
-
+	
 private:
 	Layer *_skin;
 	Vector<NodeHead *> _vecNodeHead;

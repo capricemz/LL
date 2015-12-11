@@ -40,7 +40,7 @@ void Entity::updateSkin()
 	auto cfgEntity = _dataEntity->getCfgEntity();
 	setPosition(cfgEntity.xPic, cfgEntity.yPic);
 	
-	auto urlPic = cfgEntity.vecUrlPic[0];
+	auto urlPic = cfgEntity.urlPicEntity;
 	if (_skin == nullptr)
 	{
 		_skin = Sprite::create(urlPic);

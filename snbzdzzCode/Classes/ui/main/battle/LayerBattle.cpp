@@ -149,7 +149,6 @@ void LayerBattle::createData()
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
 	handleDataEntity->resetDataEntityMaid();
 	handleDataEntity->vecSkillActiveSortMaid();
-	handleDataEntity->createDataEntityMst();
 }
 
 void LayerBattle::createSkin()

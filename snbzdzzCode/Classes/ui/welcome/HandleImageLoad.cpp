@@ -34,6 +34,7 @@ void HandleImageLoad::loadImages()
 	imageAsyncLoad(RES_MODULES_COMMON_PLIST_COMMON_PLIST);
 	imageAsyncLoad(RES_MODULES_MAIN_PLIST_MAIN_PLIST);
 	imageAsyncLoad(RES_MODULES_MAIN_PLIST_MAID_HEAD_PLIST);
+	imageAsyncLoad(RES_MODULES_MAIN_PLIST_MAID_HEAD1_PLIST);
 	imageAsyncLoad(RES_MODULES_MAIN_PLIST_MAID_NAME_PLIST);
 	//¼ÓÔØ±³¾°Í¼Æ¬
 	auto dicCfgLevels = ManagerCfg::getInstance()->getDicCfgLevels();
@@ -63,11 +64,11 @@ void HandleImageLoad::loadImages()
 	for (auto var : dicCfgEntity)
 	{
 		auto cfgEntity = var.second;
-		auto vecUrlPic = cfgEntity.vecUrlPic;
-		if (vecUrlPic.size() == 0)
-		{
-			continue;
-		}
+		vector<string> vecUrlPic;
+		vecUrlPic.push_back(cfgEntity.urlPicEntity);
+		vecUrlPic.push_back(cfgEntity.urlPicHeadLarge);
+		vecUrlPic.push_back(cfgEntity.urlPicHeadSmall);
+		vecUrlPic.push_back(cfgEntity.urlPicName);
 		for (auto urlPic : vecUrlPic)
 		{
 			if (urlPic == "")
