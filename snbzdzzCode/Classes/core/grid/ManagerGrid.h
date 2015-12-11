@@ -60,7 +60,7 @@ public:
 private:
 	void dealQuick(DataGrid *dataGridCase, DataGrid *dataGridTakes, DataEntity *dataEntityCase, DataEntity *dataEntityTakes);
 	void dealDamage(DataGrid *dataGridCase, DataGrid *dataGridTakes, DataEntity *dataEntityCase, DataEntity *dataEntityTakes);
-	void dealRestoreCostHp(DataGrid *dataGrid, DataEntity *dataEntity);
+	void dealRestoreCostHp(DataGrid *dataGridCase, DataGrid *dataGridTakes, DataEntity *dataEntityCase, DataEntity *dataEntityTakes);
 	void dealRestoreCostEnergy(DataGrid *dataGrid, DataEntity *dataEntity);
 	void dealDamageAttributeCondition(DataGrid *dataGridCase, DataGrid *dataGridTakes, const int &damagePhysical, const int &damageMagic, DataEntity *dataEntityCase, DataEntity *dataEntityTakes);
 	void dealAttributeCondition(DataGrid *dataGridCase, const IdAttribute &idAttribute, DataGrid *dataGridTakes, DataEntity *dataEntity, const int &value2Count = -1, const int &value2Judge = -1);

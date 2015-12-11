@@ -218,11 +218,11 @@ void ManagerGrid::dealBattle()
 	dealQuick(dataGridMst, dataGridMaid, dataEntityMst, dataEntityMaid);
 	dealQuick(dataGridMaid, dataGridMst, dataEntityMaid, dataEntityMst);
 
+	dealRestoreCostHp(dataGridMst, dataGridMaid, dataEntityMst, dataEntityMaid);
+	dealRestoreCostHp(dataGridMaid, dataGridMst, dataEntityMaid, dataEntityMst);
+
 	dealDamage(dataGridMst, dataGridMaid, dataEntityMst, dataEntityMaid);//处理女仆受到伤害
 	dealDamage(dataGridMaid, dataGridMst, dataEntityMaid, dataEntityMst);//处理怪物受到伤害
-
-	dealRestoreCostHp(dataGridMst, dataEntityMst);
-	dealRestoreCostHp(dataGridMaid, dataEntityMaid);
 
 	dealRestoreCostEnergy(dataGridMst, dataEntityMst);
 	dealRestoreCostEnergy(dataGridMaid, dataEntityMaid);
@@ -396,30 +396,38 @@ void ManagerGrid::dealDamageAttributeCondition(DataGrid *dataGridCase, DataGrid 
 	dealAttributeCondition(dataGridTakes, idAttribute, dataGridCase, dataEntityTakes, value2Count, value2Count);
 }
 
-void ManagerGrid::dealRestoreCostHp(DataGrid *dataGrid, DataEntity *dataEntity)
+void ManagerGrid::dealRestoreCostHp(DataGrid *dataGridCase, DataGrid *dataGridTakes, DataEntity *dataEntityCase, DataEntity *dataEntityTakes)
 {
-	auto hpMax = dataEntity->getAttribute(IdAttribute::ENTITY_HP_MAX);
+	auto hpMax = dataEntityCase->getAttribute(IdAttribute::ENTITY_HP_MAX);
 
-	auto restoreHpCancel = dataGrid->getAttribute(IdAttribute::GRID_RESTORE_HP_CANCEL);
+	auto restoreHpCancel = dataGridCase->getAttribute(IdAttribute::GRID_RESTORE_HP_CANCEL);
 	if (restoreHpCancel == 0)//若无取消恢复生命
 	{
-		auto restoreHp = dataGrid->getAttribute(IdAttribute::GRID_RESTORE_HP);
+		auto restoreHp = dataGridCase->getAttribute(IdAttribute::GRID_RESTORE_HP);
 		auto valueRestore = restoreHp * hpMax * 0.1f;
-		dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_HP, valueRestore);
+		dataEntityCase->setAttribute(IdAttribute::ENTITY_RESTORE_HP, valueRestore);
+
+		auto idAttribute = restoreHp > 0 ? IdAttribute::GRID_OWN_RESTORE_HP : IdAttribute::GRID_N_ANY_BLOCK;//若拥有恢复生命
+		auto value2Count = restoreHp > 0 ? valueRestore : -1;//若拥有恢复生命，则传入恢复值
+		dealAttributeCondition(dataGridCase, idAttribute, dataGridTakes, dataEntityCase, value2Count);
 	}
-	auto costHpCancel = dataGrid->getAttribute(IdAttribute::GRID_COST_HP_CANCEL);
+	auto costHpCancel = dataGridCase->getAttribute(IdAttribute::GRID_COST_HP_CANCEL);
 	if (costHpCancel == 0)//若无取消消耗生命
 	{
-		auto costHp = dataGrid->getAttribute(IdAttribute::GRID_COST_HP);
+		auto costHp = dataGridCase->getAttribute(IdAttribute::GRID_COST_HP);
 		auto valueCost = costHp * hpMax * 0.1f;
-		dataEntity->setAttribute(IdAttribute::ENTITY_COST_HP, valueCost);
+		dataEntityCase->setAttribute(IdAttribute::ENTITY_COST_HP, valueCost);
+
+		auto idAttribute = costHp > 0 ? IdAttribute::GRID_OWN_COST_HP : IdAttribute::GRID_N_ANY_BLOCK;//若拥有消耗生命
+		auto value2Count = costHp > 0 ? costHp : -1;//若拥有消耗生命，则传入消耗值
+		dealAttributeCondition(dataGridCase, idAttribute, dataGridTakes, dataEntityCase, value2Count);
 	}
 
-	auto restoreHpAll = dataGrid->getAttribute(IdAttribute::GRID_RESTORE_HP_ALL);
-	dataEntity->setAttribute(IdAttribute::ENTITY_RESTORE_HP_ALL, restoreHpAll);
+	auto restoreHpAll = dataGridCase->getAttribute(IdAttribute::GRID_RESTORE_HP_ALL);
+	dataEntityCase->setAttribute(IdAttribute::ENTITY_RESTORE_HP_ALL, restoreHpAll);
 	
-	auto costHpAll = dataGrid->getAttribute(IdAttribute::GRID_COST_HP_ALL);
-	dataEntity->setAttribute(IdAttribute::ENTITY_COST_HP_ALL, costHpAll);
+	auto costHpAll = dataGridCase->getAttribute(IdAttribute::GRID_COST_HP_ALL);
+	dataEntityCase->setAttribute(IdAttribute::ENTITY_COST_HP_ALL, costHpAll);
 }
 
 void ManagerGrid::dealRestoreCostEnergy(DataGrid *dataGrid, DataEntity *dataEntity)

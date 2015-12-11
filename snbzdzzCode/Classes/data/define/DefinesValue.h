@@ -153,6 +153,8 @@ enum class IdAttribute
 	GRID_UNTAKEN_UNBLOCKABLE,//不受到不可抵挡
 	GRID_UNOWN_QUICK,//不拥有快速攻击
 	GRID_UNTAKEN_QUICK,//不受到快速攻击
+	GRID_OWN_RESTORE_HP,//拥有恢复生命
+	GRID_OWN_COST_HP,//拥有消耗生命
 
 	GRID_EFFECTIVE_ROUND = 400,//第n轮生效//n为0表示当前回合
 	GRID_EFFECTIVE_ROUND_COUNT,//持续n个轮
