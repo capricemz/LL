@@ -28,7 +28,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition Y="1.3700" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/checkpoint/bottombar/bottom3.png" Plist="" />
+                <FileData Type="Normal" Path="images/levels/bottom3.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="btn0" ActionTag="278364990" UserData="1000" Tag="193" IconVisible="False" LeftMargin="5.0000" RightMargin="537.0000" TopMargin="8.0000" BottomMargin="31.0000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="68" Scale9Height="76" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">

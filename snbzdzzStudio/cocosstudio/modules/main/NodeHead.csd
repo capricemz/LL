@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_card/role_card_4.png" Plist="" />
+            <FileData Type="MarkedSubImage" Path="images/role_card/role_card_4.png" Plist="modules/main/PlistMaidHead.plist" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
@@ -28,7 +28,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/role_card/role_card_4.png" Plist="" />
+            <FileData Type="MarkedSubImage" Path="images/role_card/role_card_4.png" Plist="modules/main/PlistMaidHead.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="spriteHpBg" ActionTag="-462967287" Tag="68" IconVisible="False" LeftMargin="-36.0000" RightMargin="-56.0000" TopMargin="55.0004" BottomMargin="-77.0004" ctype="SpriteObjectData">

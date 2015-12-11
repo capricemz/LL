@@ -18,7 +18,7 @@ DataEntity::DataEntity() :
 	_vecSkillActive({}),
 	_vecSkillPassive({}),
 	_vecSkillRandom({}),
-	_round(0)
+	_round(1)
 {
 
 }
@@ -204,9 +204,9 @@ bool DataEntity::getIsAlive()
 	return hp > 0;
 }
 
-DataSkillInfo & DataEntity::vecSkillActiveInfoGet()
+DataSkillInfo DataEntity::vecSkillActiveInfoGet()
 {
-	auto &dataSkillInfo = _vecSkillActive[0];
+	auto dataSkillInfo = _vecSkillActive[0];
 	_vecSkillActive.erase(_vecSkillActive.begin());
 	_vecSkillActiveInUse.push_back(dataSkillInfo);
 	return dataSkillInfo;
@@ -319,13 +319,18 @@ void DataEntity::vecSkillClear()
 	_vecSkillRandom.clear();
 }
 
+void DataEntity::addRound()
+{
+	_round++;
+}
+
 HandleDataEntity::HandleDataEntity() :
 	_isDataFileInit(false),
 	_vecDataEntityMst({}),
 	_vecDataEntityMaid({}),
 	_indexMst(0), 
 	_indexMaid(0),
-	_roundTotal(0)
+	_roundTotal(1)
 {
 }
 
@@ -627,6 +632,30 @@ bool HandleDataEntity::isAllMaidDead()
 	return isAllDead;
 }
 
+bool HandleDataEntity::isBattleOver()
+{
+	auto isAllMstDeadGet = isAllMstDead();
+	auto isAllMaidDeadGet = isAllMaidDead();
+	return isAllMstDeadGet || isAllMaidDeadGet;
+}
+
+bool HandleDataEntity::isRoundLimitOver()
+{
+	auto handleDataLevels = ManagerData::getInstance()->getHandleDataLevels();
+	auto cfgLevel = handleDataLevels->getDataLevelCurrent()->getCfgLevel();
+	return cfgLevel.roundLimit != 0 && cfgLevel.roundLimit <= _roundTotal;
+}
+
+bool HandleDataEntity::isBattleWin()
+{
+	auto isAllMstDeadGet = isAllMstDead();
+	auto isAllMaidDeadGet = isAllMaidDead();
+	auto isRoundLimitOverGet = isRoundLimitOver();
+	auto handleDataLevels = ManagerData::getInstance()->getHandleDataLevels();
+	auto cfgLevel = handleDataLevels->getDataLevelCurrent()->getCfgLevel();
+	return (isAllMstDeadGet && !isAllMaidDeadGet) || (isRoundLimitOverGet && cfgLevel.isRoundLimitWin);
+}
+
 void HandleDataEntity::addRound()
 {
 	_roundTotal++;
@@ -638,7 +667,7 @@ void HandleDataEntity::addRound()
 
 void HandleDataEntity::resetRound()
 {
-	_roundTotal = 0;
+	_roundTotal = 1;
 	auto dataEntityMst = getDataEntityMst();
 	dataEntityMst->resetRound();
 	auto dataEntityMaid = getDataEntityMaid();

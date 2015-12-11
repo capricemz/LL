@@ -33,6 +33,8 @@ void HandleImageLoad::loadImages()
 	_typeLoadState = TypeLoadState::LOADING;
 	imageAsyncLoad(RES_MODULES_COMMON_PLIST_COMMON_PLIST);
 	imageAsyncLoad(RES_MODULES_MAIN_PLIST_MAIN_PLIST);
+	imageAsyncLoad(RES_MODULES_MAIN_PLIST_MAID_HEAD_PLIST);
+	imageAsyncLoad(RES_MODULES_MAIN_PLIST_MAID_NAME_PLIST);
 	//¼ÓÔØ±³¾°Í¼Æ¬
 	auto dicCfgLevels = ManagerCfg::getInstance()->getDicCfgLevels();
 	for (auto var : dicCfgLevels)
@@ -94,7 +96,12 @@ void HandleImageLoad::imageAsyncLoad(const string &fileName)
 	{
 		return;
 	}
-	Director::getInstance()->getTextureCache()->addImageAsync(fileNamePic, CC_CALLBACK_1(HandleImageLoad::imageAsyncCallback, this, fileName));
+	auto textureCache = Director::getInstance()->getTextureCache();
+	if (textureCache->getTextureForKey(fullpath))
+	{
+		return;
+	}
+	textureCache->addImageAsync(fileNamePic, CC_CALLBACK_1(HandleImageLoad::imageAsyncCallback, this, fileName));
 	_numPlistNeedLoad++;
 }
 

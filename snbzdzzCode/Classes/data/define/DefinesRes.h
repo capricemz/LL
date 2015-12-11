@@ -17,6 +17,8 @@ static const string RES_MODULES_WELCOME_SCENE_WELCOME_CSB = "modules/welcome/Sce
 static const string RES_MODULES_PLOT_SCENE_PLOT_CSB = "modules/plot/ScenePlot.csb";
 
 static const string RES_MODULES_MAIN_PLIST_MAIN_PLIST = "modules/main/PlistMain.plist";
+static const string RES_MODULES_MAIN_PLIST_MAID_HEAD_PLIST = "modules/main/PlistMaidHead.plist";
+static const string RES_MODULES_MAIN_PLIST_MAID_NAME_PLIST = "modules/main/PlistMaidName.plist";
 static const string RES_MODULES_MAIN_SCENE_MAIN_CSB = "modules/main/SceneMain.csb";
 
 static const string RES_MODULES_MAIN_LAYER_GUILD_CSB = "modules/main/LayerGuild.csb";

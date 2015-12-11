@@ -284,7 +284,7 @@ void ManagerCfg::assignCfgLevels(const VectorString &vecItem)
 	cfg.vecUrlPic = vecUrlPic;
 	cfg.msts = vecItem[3];
 	cfg.roundLimit = Value(vecItem[4]).asInt();
-	cfg.isRoundLimitWin = Value(vecItem[5]).asBool();
+	cfg.isRoundLimitWin = Value(vecItem[5]).asInt() != 0;
 	strValue = vecItem[6];
 	if (strValue != "")
 	{

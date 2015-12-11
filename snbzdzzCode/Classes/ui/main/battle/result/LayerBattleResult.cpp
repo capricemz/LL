@@ -67,8 +67,8 @@ void LayerBattleResult::createSkin()
 	});
 	//
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto isWin = !handleDataEntity->isAllMaidDead();
+	auto isBattleWin = handleDataEntity->isBattleWin();
 
 	auto txt = (Text *)_skin->getChildByName("txt");
-	txt->setString(isWin ? STR_BATTLE_VICTORY : STR_BATTLE_DEFEAT);
+	txt->setString(isBattleWin ? STR_BATTLE_VICTORY : STR_BATTLE_DEFEAT);
 }

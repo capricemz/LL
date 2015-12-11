@@ -130,9 +130,7 @@ void DataLevel::dealLevelTarget()
 		else if (type == TypeLevelTarget::PASS)
 		{
 			auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-			auto isAllMstDead = handleDataEntity->isAllMstDead();
-			auto isAllMaidDead = handleDataEntity->isAllMaidDead();
-			isTargetComplete = isAllMstDead && !isAllMaidDead;
+			isTargetComplete = handleDataEntity->isBattleWin();
 		}
 		else
 		{

@@ -1,0 +1,39 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Type="Plist" Name="PlistMaidHead" ID="56122e71-29f2-417b-9758-99e8789f34a0" Version="2.3.2.3" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="1" AllowRotation="True" AllowAnySize="True" AllowTrim="True" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="images/role_card/role_card_1.png" />
+      <FilePathData Path="images/role_card/role_card_11.png" />
+      <FilePathData Path="images/role_card/role_card_12.png" />
+      <FilePathData Path="images/role_card/role_card_13.png" />
+      <FilePathData Path="images/role_card/role_card_14.png" />
+      <FilePathData Path="images/role_card/role_card_15.png" />
+      <FilePathData Path="images/role_card/role_card_2.png" />
+      <FilePathData Path="images/role_card/role_card_21.png" />
+      <FilePathData Path="images/role_card/role_card_22.png" />
+      <FilePathData Path="images/role_card/role_card_23.png" />
+      <FilePathData Path="images/role_card/role_card_24.png" />
+      <FilePathData Path="images/role_card/role_card_25.png" />
+      <FilePathData Path="images/role_card/role_card_3.png" />
+      <FilePathData Path="images/role_card/role_card_31.png" />
+      <FilePathData Path="images/role_card/role_card_32.png" />
+      <FilePathData Path="images/role_card/role_card_33.png" />
+      <FilePathData Path="images/role_card/role_card_34.png" />
+      <FilePathData Path="images/role_card/role_card_35.png" />
+      <FilePathData Path="images/role_card/role_card_4.png" />
+      <FilePathData Path="images/role_card/role_card_41.png" />
+      <FilePathData Path="images/role_card/role_card_42.png" />
+      <FilePathData Path="images/role_card/role_card_43.png" />
+      <FilePathData Path="images/role_card/role_card_44.png" />
+      <FilePathData Path="images/role_card/role_card_45.png" />
+      <FilePathData Path="images/role_card/role_card_5.png" />
+      <FilePathData Path="images/role_card/role_card_51.png" />
+      <FilePathData Path="images/role_card/role_card_52.png" />
+      <FilePathData Path="images/role_card/role_card_53.png" />
+      <FilePathData Path="images/role_card/role_card_54.png" />
+      <FilePathData Path="images/role_card/role_card_55.png" />
+      <FilePathData Path="images/role_card/role_card_61.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

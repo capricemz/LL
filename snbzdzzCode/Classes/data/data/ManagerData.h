@@ -195,7 +195,7 @@ class DataEntity : public Ref
 		void addAttribute(IdAttribute idAttribute, int value);//idAttribute 元素id, value 正值增加，负值减少
 		bool getIsAlive();
 
-		DataSkillInfo &vecSkillActiveInfoGet();//获取技能信息
+		DataSkillInfo vecSkillActiveInfoGet();//获取技能信息
 		void vecSkillActiveInUse2UseOver();//加使用的牌放入弃牌库
 		bool vecSkillActiveIsAllUse();//是否取完牌库
 		void vecSkillActiveSort(const bool &isAll = false);//洗牌
@@ -222,17 +222,10 @@ class DataEntity : public Ref
 		{
 			return _round;
 		}
-		void setRound(int val)//设置当前回合数
+		void addRound();
+		void resetRound()//设置当前回合数
 		{
-			_round = val;
-		}
-		void addRound()
-		{
-			_round++;
-		}
-		void resetRound()
-		{
-			_round = 0;
+			_round = 1;
 		}
 		
 	private:
@@ -336,6 +329,8 @@ class HandleDataEntity
 		}
 		bool isAllMaidDead();
 
+		bool isBattleOver();
+
 		int getRoundTotal() const//获取当前总回合数
 		{
 			return _roundTotal;
@@ -343,10 +338,14 @@ class HandleDataEntity
 		void addRound();
 		void resetRound();
 
+		bool isRoundLimitOver();//是否达到总回合数上限
+		
+		bool isBattleWin();//战斗是否胜利
+
 		bool getIsSkillNeedSwitchMst(int &indexTo);
-
+		
 		bool getIsAnyMstCanCatch();
-
+		
 	private:
 		DataEntity * createDataEntity(const int &idEntity);
 		

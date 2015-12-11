@@ -66,11 +66,11 @@ void ManagerEntity::dealBattleOver()
 	handleDataEntity->resetDataEntityAttributeTempRoundOver();
 	handleDataEntity->dealBattleOver();
 
-	auto isAllMaidDead = handleDataEntity->isAllMaidDead();
+	auto isBattleWin = handleDataEntity->isBattleWin();
 
 	auto handleDataLevels = managerData->getHandleDataLevels();
 	auto dataLevelCurrent = handleDataLevels->getDataLevelCurrent();
-	if (!isAllMaidDead)//战斗胜利
+	if (!isBattleWin)//战斗胜利
 	{
 		dataLevelCurrent->dealLevelTarget();
 		dataLevelCurrent->dealLevelPassed();//处理通关

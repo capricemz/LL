@@ -234,9 +234,17 @@ void HandleEntity::dealRoundOver(const bool &isForce /*= false*/)
 	auto handleDataLevels = ManagerData::getInstance()->getHandleDataLevels();
 	handleDataLevels->getDataLevelCurrent()->dealLevelTarget();
 
-	auto managerUI = ManagerUI::getInstance();
-	managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::RESET_SKIN);
-	managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_APPEAR_GRID_SELECTED_MST);
+	auto isRoundLimitOver = handleDataEntity->isRoundLimitOver();
+	if (isRoundLimitOver)
+	{
+		ManagerEntity::getInstance()->dealBattleOver();
+	}
+	else
+	{
+		auto managerUI = ManagerUI::getInstance();
+		managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::RESET_SKIN);
+		managerUI->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_APPEAR_GRID_SELECTED_MST);
+	}
 }
 
 void HandleEntity::updateTxtHpOrEnergy(const bool &isHp)

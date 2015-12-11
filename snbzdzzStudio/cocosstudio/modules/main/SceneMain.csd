@@ -30,7 +30,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition Y="1.0000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/checkpoint/bottombar/bottom11.png" Plist="" />
+                <FileData Type="Normal" Path="images/levels/bottom1.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteBg1" ActionTag="-1741407959" Tag="1024" IconVisible="False" LeftMargin="508.0000" BottomMargin="49.0000" ctype="SpriteObjectData">
@@ -41,7 +41,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="1.0000" Y="1.0000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/checkpoint/bottombar/moon2.png" Plist="" />
+                <FileData Type="Normal" Path="images/levels/moon2.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="layoutIncome" ActionTag="210909129" Tag="1025" IconVisible="False" LeftMargin="116.0004" RightMargin="-0.0004" TopMargin="15.0000" BottomMargin="72.0000" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
@@ -55,7 +55,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="1.0000" Y="1.0000" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/checkpoint/background1.png" Plist="" />
+                    <FileData Type="Normal" Path="images/levels/background1.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="spriteIcon0" ActionTag="-192284891" Tag="1027" IconVisible="False" LeftMargin="64.0000" RightMargin="419.0000" TopMargin="6.0000" BottomMargin="14.0000" ctype="SpriteObjectData">
@@ -66,7 +66,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.1221" Y="0.5690" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/checkpoint/bs.png" Plist="" />
+                    <FileData Type="Normal" Path="images/levels/bs.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="spriteIcon1" ActionTag="2034546436" Tag="1028" IconVisible="False" LeftMargin="204.0000" RightMargin="284.0000" TopMargin="7.0000" BottomMargin="15.0000" ctype="SpriteObjectData">
@@ -77,7 +77,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.3893" Y="0.5690" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/checkpoint/Gold COINS.png" Plist="" />
+                    <FileData Type="Normal" Path="images/levels/Gold COINS.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="spriteIcon2" ActionTag="1395165111" Tag="1029" IconVisible="False" LeftMargin="344.0000" RightMargin="140.0000" TopMargin="5.0000" BottomMargin="13.0000" ctype="SpriteObjectData">
@@ -88,7 +88,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.6565" Y="0.5690" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/checkpoint/treasure.png" Plist="" />
+                    <FileData Type="Normal" Path="images/levels/treasure.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="btnAdd0" ActionTag="1213345384" Tag="44" IconVisible="False" LeftMargin="164.0000" RightMargin="323.0000" TopMargin="6.5000" BottomMargin="14.5000" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="12" RightEage="12" TopEage="11" BottomEage="11" Scale9OriginX="12" Scale9OriginY="11" Scale9Width="13" Scale9Height="15" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -100,8 +100,8 @@
                     <PrePosition X="0.3130" Y="0.5690" />
                     <PreSize X="0.0706" Y="0.6379" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <PressedFileData Type="Normal" Path="images/checkpoint/button.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="images/checkpoint/button.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="images/levels/button.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="images/levels/button.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -114,8 +114,8 @@
                     <PrePosition X="0.5802" Y="0.5690" />
                     <PreSize X="0.0706" Y="0.6379" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <PressedFileData Type="Normal" Path="images/checkpoint/button.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="images/checkpoint/button.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="images/levels/button.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="images/levels/button.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -128,8 +128,8 @@
                     <PrePosition X="0.8473" Y="0.5690" />
                     <PreSize X="0.0706" Y="0.6379" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <PressedFileData Type="Normal" Path="images/checkpoint/button.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="images/checkpoint/button.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="images/levels/button.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="images/levels/button.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -153,7 +153,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition Y="1.0000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/checkpoint/bottombar/moon1.png" Plist="" />
+                <FileData Type="Normal" Path="images/levels/moon1.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteBg3" ActionTag="-219120119" Tag="1034" IconVisible="False" LeftMargin="18.5000" RightMargin="498.5000" TopMargin="43.5000" BottomMargin="18.5000" ctype="SpriteObjectData">
@@ -164,7 +164,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1250" Y="0.4138" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/checkpoint/character/checkpoint.png" Plist="" />
+                <FileData Type="Normal" Path="images/levels/checkpoint.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
             </Children>
@@ -190,11 +190,11 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/checkpoint/bottombar/bottom21.png" Plist="" />
+                <FileData Type="Normal" Path="images/levels/bottom2.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="btnGuild" ActionTag="1672612166" Tag="44" IconVisible="False" RightMargin="478.0000" TopMargin="-95.0000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="132" Scale9Height="193" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="162.0000" Y="215.0000" />
+              <AbstractNodeData Name="btnGuild" ActionTag="1672612166" Tag="44" IconVisible="False" RightMargin="478.0000" TopMargin="-0.5000" BottomMargin="-0.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="132" Scale9Height="194" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="162.0000" Y="216.0000" />
                 <Children>
                   <AbstractNodeData Name="sprite" ActionTag="649983741" Tag="1048" IconVisible="False" LeftMargin="18.0000" RightMargin="18.0000" TopMargin="138.0000" ctype="SpriteObjectData">
                     <Size X="126.0000" Y="77.0000" />
@@ -204,7 +204,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.1791" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/checkpoint/character/guild.png" Plist="" />
+                    <FileData Type="Normal" Path="images/levels/guild.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -212,16 +212,15 @@
                 <Position X="81.0000" Y="107.5000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1266" Y="0.8958" />
-                <PreSize X="0.2531" Y="1.7917" />
+                <PrePosition X="0.1266" Y="0.5000" />
+                <PreSize X="0.2531" Y="1.0047" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/checkpoint/bottombar/guild.png" Plist="" />
-                <NormalFileData Type="Normal" Path="images/checkpoint/bottombar/guild.png" Plist="" />
+                <NormalFileData Type="Normal" Path="images/levels/guild (2).png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="btnSkills" ActionTag="-61695289" Tag="531" IconVisible="False" LeftMargin="162.5000" RightMargin="362.5000" TopMargin="1.5000" BottomMargin="1.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="85" Scale9Height="95" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="btnSkills" ActionTag="-61695289" Tag="531" IconVisible="False" LeftMargin="162.5000" RightMargin="362.5000" TopMargin="96.5000" BottomMargin="1.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="85" Scale9Height="95" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="115.0000" Y="117.0000" />
                 <Children>
                   <AbstractNodeData Name="spriteIcon" ActionTag="1906530677" Tag="1044" IconVisible="False" LeftMargin="2.5000" RightMargin="2.5000" TopMargin="10.5000" BottomMargin="10.5000" ctype="SpriteObjectData">
@@ -243,7 +242,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.1667" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/checkpoint/character/girls.png" Plist="" />
+                    <FileData Type="Normal" Path="images/levels/girls.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -251,16 +250,16 @@
                 <Position X="220.0000" Y="60.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3438" Y="0.5000" />
-                <PreSize X="0.1797" Y="0.9750" />
+                <PrePosition X="0.3438" Y="0.2791" />
+                <PreSize X="0.1797" Y="0.5442" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/checkpoint/bottombar/button4.png" Plist="" />
-                <NormalFileData Type="Normal" Path="images/checkpoint/bottombar/button3.png" Plist="" />
+                <PressedFileData Type="Normal" Path="images/levels/button4.png" Plist="" />
+                <NormalFileData Type="Normal" Path="images/levels/button3.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="btnShop" ActionTag="-605160598" Tag="40" IconVisible="False" LeftMargin="282.5000" RightMargin="242.5000" TopMargin="1.5000" BottomMargin="1.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="85" Scale9Height="95" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="btnShop" ActionTag="-605160598" Tag="40" IconVisible="False" LeftMargin="282.5000" RightMargin="242.5000" TopMargin="96.5000" BottomMargin="1.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="85" Scale9Height="95" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="115.0000" Y="117.0000" />
                 <Children>
                   <AbstractNodeData Name="spriteIcon" ActionTag="1670671221" Tag="41" IconVisible="False" LeftMargin="2.5000" RightMargin="2.5000" TopMargin="10.5000" BottomMargin="10.5000" ctype="SpriteObjectData">
@@ -282,7 +281,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.1709" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/checkpoint/character/shop.png" Plist="" />
+                    <FileData Type="Normal" Path="images/levels/shop.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -290,16 +289,16 @@
                 <Position X="340.0000" Y="60.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5313" Y="0.5000" />
-                <PreSize X="0.1797" Y="0.9750" />
+                <PrePosition X="0.5313" Y="0.2791" />
+                <PreSize X="0.1797" Y="0.5442" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/checkpoint/bottombar/button4.png" Plist="" />
-                <NormalFileData Type="Normal" Path="images/checkpoint/bottombar/button3.png" Plist="" />
+                <PressedFileData Type="Normal" Path="images/levels/button4.png" Plist="" />
+                <NormalFileData Type="Normal" Path="images/levels/button3.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="btnTraining" ActionTag="-1661904953" Tag="532" IconVisible="False" LeftMargin="392.5000" RightMargin="132.5000" TopMargin="1.5000" BottomMargin="1.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="85" Scale9Height="95" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="btnTraining" ActionTag="-1661904953" Tag="532" IconVisible="False" LeftMargin="392.5000" RightMargin="132.5000" TopMargin="96.5000" BottomMargin="1.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="85" Scale9Height="95" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="115.0000" Y="117.0000" />
                 <Children>
                   <AbstractNodeData Name="spriteIcon" ActionTag="-1607922192" Tag="42" IconVisible="False" LeftMargin="2.5000" RightMargin="2.5000" TopMargin="10.5000" BottomMargin="10.5000" ctype="SpriteObjectData">
@@ -321,7 +320,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.1709" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/checkpoint/character/teach.png" Plist="" />
+                    <FileData Type="Normal" Path="images/levels/teach.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -329,16 +328,16 @@
                 <Position X="450.0000" Y="60.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.7031" Y="0.5000" />
-                <PreSize X="0.1797" Y="0.9750" />
+                <PrePosition X="0.7031" Y="0.2791" />
+                <PreSize X="0.1797" Y="0.5442" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/checkpoint/bottombar/button4.png" Plist="" />
-                <NormalFileData Type="Normal" Path="images/checkpoint/bottombar/button3.png" Plist="" />
+                <PressedFileData Type="Normal" Path="images/levels/button4.png" Plist="" />
+                <NormalFileData Type="Normal" Path="images/levels/button3.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="btnLevels" ActionTag="106178280" Tag="527" IconVisible="False" LeftMargin="512.5000" RightMargin="12.5000" TopMargin="1.5000" BottomMargin="1.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="85" Scale9Height="95" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="btnLevels" ActionTag="106178280" Tag="527" IconVisible="False" LeftMargin="512.5000" RightMargin="12.5000" TopMargin="96.5000" BottomMargin="1.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="85" Scale9Height="95" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="115.0000" Y="117.0000" />
                 <Children>
                   <AbstractNodeData Name="spriteIcon" ActionTag="1690943424" Tag="43" IconVisible="False" LeftMargin="2.5000" RightMargin="2.5000" TopMargin="10.5000" BottomMargin="10.5000" ctype="SpriteObjectData">
@@ -360,7 +359,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.1709" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/checkpoint/character/adventure.png" Plist="" />
+                    <FileData Type="Normal" Path="images/levels/adventure.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -368,12 +367,12 @@
                 <Position X="570.0000" Y="60.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8906" Y="0.5000" />
-                <PreSize X="0.1797" Y="0.9750" />
+                <PrePosition X="0.8906" Y="0.2791" />
+                <PreSize X="0.1797" Y="0.5442" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/checkpoint/bottombar/button4.png" Plist="" />
-                <NormalFileData Type="Normal" Path="images/checkpoint/bottombar/button3.png" Plist="" />
+                <PressedFileData Type="Normal" Path="images/levels/button4.png" Plist="" />
+                <NormalFileData Type="Normal" Path="images/levels/button3.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -400,7 +399,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/checkpoint/gift_bag.png" Plist="" />
+                <FileData Type="Normal" Path="images/levels/gift_bag.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
             </Children>

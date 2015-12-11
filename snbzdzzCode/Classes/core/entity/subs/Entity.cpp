@@ -287,19 +287,6 @@ void Entity::switchEntity(const int &indexSwitchTo, bool &isSwitchSuccess, const
 	});
 }
 
-bool Entity::dealIsBattleOver()
-{
-	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto isAllMstDead = handleDataEntity->isAllMstDead();
-	auto isAllMaidDead = handleDataEntity->isAllMaidDead();
-	if (isAllMstDead || isAllMaidDead)
-	{
-		ManagerEntity::getInstance()->dealBattleOver();
-		return true;
-	}
-	return false;
-}
-
 void Entity::dealResultValueChange(const IdAttribute &idAttributeGet, const bool &isPositive, const IdAttribute &idAttributeChange, const Color4B &color, const float &duration)
 {
 	//数据处理

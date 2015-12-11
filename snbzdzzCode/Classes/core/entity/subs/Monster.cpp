@@ -59,10 +59,15 @@ void Monster::dealDead()
 {
 	auto dataEntityMaid = ManagerData::getInstance()->getHandleDataEntity()->getDataEntityMaid();
 	dataEntityMaid->addAttribute(IdAttribute::ENTITY_KILL_NUM, 1);
-	auto isBattleOver = dealIsBattleOver();
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto isBattleOver = handleDataEntity->isBattleOver();
 	if (!isBattleOver)
 	{
-		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::SWITCH_NODE_HEAD_TO, true, ENTITY_BATTLE_MAX);//参数：不是怪物，切换下一个
+		ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::SWITCH_NODE_HEAD_TO, true, ENTITY_BATTLE_MAX);//参数：是怪物，切换下一个
+	}
+	else
+	{
+		ManagerEntity::getInstance()->dealBattleOver();
 	}
 }
 

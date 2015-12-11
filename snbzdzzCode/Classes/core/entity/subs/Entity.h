@@ -64,7 +64,6 @@ protected:
 	virtual Vec2 getPostionEndAttack() { return Vec2::ZERO; }
 	virtual void updateHp() {}
 	virtual void updateEnergy() {}
-	bool dealIsBattleOver();
 	virtual void dealDead() {}
 	virtual void switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess) {}
 	
