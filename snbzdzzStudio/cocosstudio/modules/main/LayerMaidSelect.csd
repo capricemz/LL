@@ -6,7 +6,7 @@
       <ObjectData Name="LayerMaidSelect" Tag="466" ctype="GameLayerObjectData">
         <Size X="640.0000" Y="960.0000" />
         <Children>
-          <AbstractNodeData Name="layoutBg" ActionTag="-16778371" Tag="2010" IconVisible="False" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutBg" ActionTag="-16778371" Tag="2010" IconVisible="False" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="640.0000" Y="960.0000" />
             <AnchorPoint />
             <Position />

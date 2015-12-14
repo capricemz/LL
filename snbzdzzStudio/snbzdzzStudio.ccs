@@ -227,7 +227,7 @@
             <Image Name="typeJobWarrior.png" />
             <Image Name="xin.png" />
           </Folder>
-          <Folder Name="skills panel">
+          <Folder Name="skills_panel">
             <Folder Name="Bskills">
               <Image Name="skills1.png" />
               <Image Name="skills2.png" />
@@ -344,6 +344,7 @@
             <Project Name="LayerTiaojiao.csd" Type="Layer" />
             <Project Name="LayerTiaojiao2.csd" Type="Layer" />
             <PlistInfo Name="PlistMaidHead1.csi" Type="Plist" />
+            <Project Name="NodeSkillItem.csd" Type="Node" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />

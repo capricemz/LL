@@ -25,7 +25,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.9419" Y="0.9628" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/skills panel/button8.png" Plist="" />
+            <FileData Type="Normal" Path="images/skills_panel/button8.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="Sprite_3" ActionTag="-1890541454" Tag="766" IconVisible="False" LeftMargin="100.5000" RightMargin="100.5000" TopMargin="14.5000" BottomMargin="894.5000" ctype="SpriteObjectData">

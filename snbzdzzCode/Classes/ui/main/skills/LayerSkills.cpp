@@ -70,14 +70,14 @@ void LayerSkills::createSkin()
 	_skin = (Layer *)CSLoader::createNode(RES_MODULES_MAIN_LAYER_SKILLS_CSB);
 	addChild(_skin);
 
-	updateLayoutBtns();
+	updateLayoutBtns(true);
 
-	updateLayoutMaid();
+	updateLayoutMaid(true);
 
-	updateLayoutSkillItems();
+	updateLayoutSkillItems(true);
 }
 
-void LayerSkills::updateLayoutBtns()
+void LayerSkills::updateLayoutBtns(const bool &isInit /*= false*/)
 {
 	auto isVecEmpty = _vecShowIdEntity.size() == 0;
 	auto layoutBtns = (Layout *)_skin->getChildByName("layoutBtns");
@@ -104,7 +104,11 @@ void LayerSkills::updateLayoutBtns()
 
 		btn->setBright(isUnlock);
 		btn->setTouchEnabled(isUnlock);
-		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnMaid, this));
+		
+		if (isInit)
+		{
+			btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnMaid, this));
+		}
 		
 		auto spriteLockState = (Sprite *)btn->getChildByName("spriteLockState");
 		auto name = !isUnlock ? RES_IMAGES_MAIN_MAID_UNLOCK_PNG : (!isBuy ? RES_IMAGES_MAIN_MAID_BUY_PNG : "");
@@ -134,7 +138,7 @@ void LayerSkills::onTouchBtnMaid(Ref *ref, Widget::TouchEventType type)
 	}
 }
 
-void LayerSkills::updateLayoutMaid()
+void LayerSkills::updateLayoutMaid(const bool &isInit /*= false*/)
 {
 	auto layoutMaid = (Layout *)_skin->getChildByName("layoutMaid");
 	auto size = layoutMaid->getContentSize();
@@ -161,17 +165,26 @@ void LayerSkills::updateLayoutMaid()
 	spriteNameBg->setSpriteFrame(spriteFrame);
 
 	auto btn = (Button *)layoutMaid->getChildByName("btnPrev");
-	btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnPrev, this));
+	if (isInit)
+	{
+		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnPrev, this));
+	}
 	btn->setBright(_vecShowIdEntity.size() > 1);
 	btn->setTouchEnabled(_vecShowIdEntity.size() > 1);
 	
 	btn = (Button *)layoutMaid->getChildByName("btnNext");
-	btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnNext, this));
+	if (isInit)
+	{
+		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnNext, this));
+	}
 	btn->setBright(_vecShowIdEntity.size() > 1);
 	btn->setTouchEnabled(_vecShowIdEntity.size() > 1);
 	
 	btn = (Button *)layoutMaid->getChildByName("btnSkill");
-	btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkill, this));
+	if (isInit)
+	{
+		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkill, this));
+	}
 	btn->setBright(isBuy);
 	btn->setTouchEnabled(isBuy);
 }
@@ -256,7 +269,7 @@ void LayerSkills::switchMaidSkill()
 	ManagerUI::getInstance()->switchTwoNode(node, nodeNew, funcOverNode);
 }
 
-void LayerSkills::updateLayoutSkillItems()
+void LayerSkills::updateLayoutSkillItems(const bool &isInit /*= false*/)
 {
 	auto layoutSkillItems = (Layout *)_skin->getChildByName("layoutSkillItems");
 	auto vecdataEntityMaid = ManagerData::getInstance()->getHandleDataEntity()->getVecDataEntityMaid();
@@ -302,11 +315,14 @@ void LayerSkills::updateLayoutSkillItems()
 	}
 }
 
-void LayerSkills::updateLayoutSKillItem(Layout *layoutSkillItem, const bool &isExsit, const DataSkillInfo &dataSkillInfo)
+void LayerSkills::updateLayoutSKillItem(Layout *layoutSkillItem, const bool &isExsit, const DataSkillInfo &dataSkillInfo, const bool &isInit /*= false*/)
 {
 	auto txt = (Text *)layoutSkillItem->getChildByName("txt");
 	auto btn = (Button *)layoutSkillItem->getChildByName("btn");
-	btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkillBuy, this, dataSkillInfo));
+	if (isInit)
+	{
+		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkillBuy, this, dataSkillInfo));
+	}
 
 	if (isExsit)
 	{

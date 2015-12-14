@@ -33,16 +33,16 @@ public:
 	
 private:
 	void createSkin();
-	void updateLayoutBtns();
+	void updateLayoutBtns(const bool &isInit = false);
 	void onTouchBtnMaid(Ref *ref, Widget::TouchEventType type);
-	void updateLayoutMaid();
+	void updateLayoutMaid(const bool &isInit = false);
 	void onTouchBtnMaidBuy(Ref *ref, Widget::TouchEventType type);
 	void onTouchBtnPrev(Ref *ref, Widget::TouchEventType type);
 	void onTouchBtnNext(Ref *ref, Widget::TouchEventType type);
 	void onTouchBtnSkill(Ref *ref, Widget::TouchEventType type);
 	void switchMaidSkill();
-	void updateLayoutSkillItems();
-	void updateLayoutSKillItem(Layout *layoutSkillItem, const bool &isExsit, const DataSkillInfo &dataSkillInfo);
+	void updateLayoutSkillItems(const bool &isInit = false);
+	void updateLayoutSKillItem(Layout *layoutSkillItem, const bool &isExsit, const DataSkillInfo &dataSkillInfo, const bool &isInit = false);
 	void onTouchBtnSkillBuy(Ref *ref, Widget::TouchEventType type, const DataSkillInfo &dataSkillInfo);
 	
 private:
