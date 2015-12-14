@@ -312,6 +312,25 @@
             <Image Name="role_name_55.png" />
             <Image Name="role_name_61.png" />
           </Folder>
+          <Folder Name="fight">
+            <Image Name="diwen1.png" />
+            <Image Name="diwen3.png" />
+            <Image Name="Exp.png" />
+            <Image Name="fengetiao.png" />
+            <Image Name="jiangli.png" />
+            <Image Name="jiantou.png" />
+            <Image Name="jingyantiao.png" />
+            <Image Name="jixu.png" />
+            <Image Name="jixudiwen.png" />
+            <Image Name="shengli.png" />
+            <Image Name="shibai.png" />
+            <Image Name="taoxin.png" />
+            <Image Name="taoxin2.png" />
+            <Image Name="tukuang.png" />
+            <Image Name="tukuang2.png" />
+            <Image Name="tukuang3.png" />
+            <Image Name="xiaodw.png" />
+          </Folder>
         </Folder>
         <Folder Name="fonts">
           <TTF Name="ktjt.ttf" />
@@ -345,6 +364,7 @@
             <Project Name="LayerTiaojiao2.csd" Type="Layer" />
             <PlistInfo Name="PlistMaidHead1.csi" Type="Plist" />
             <Project Name="NodeSkillItem.csd" Type="Node" />
+            <Project Name="LayerZhandou.csd" Type="Layer" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />
