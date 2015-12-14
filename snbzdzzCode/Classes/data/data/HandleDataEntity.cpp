@@ -134,8 +134,9 @@ void DataEntity::updateAttributeSkillPassive()
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
 	for (auto dataSkillInfo : _vecSkillPassive)
 	{
+		auto isExist = handleDataUnlock->getIsBuySkillExist(dataSkillInfo.id, dataSkillInfo.index);
 		auto isBuy = handleDataUnlock->getIsBuySkill(dataSkillInfo.id, dataSkillInfo.index);
-		auto indexSkill = dataSkillInfo.index + (!isBuy ? -1 : 0);
+		auto indexSkill = dataSkillInfo.index + (isExist && !isBuy ? -1 : 0);
 		if (indexSkill < 0)
 		{
 			continue;
@@ -274,8 +275,17 @@ void DataEntity::setSkill(DataSkillInfo &dataSkillInfo)
 			{
 				_vecSkillEnergy.push_back(dataSkillInfo);
 			}
+			
+			auto isExist = handleDataUnlock->getIsUnlockSkillExist(idSkill, indexSkill);
+			auto isUnlock = handleDataUnlock->getIsUnlockSkill(idSkill, indexSkill);
+			if (isExist && !isUnlock)
+			{
+				return;
+			}
+
+			isExist = handleDataUnlock->getIsBuySkillExist(idSkill, indexSkill);
 			auto isBuy = handleDataUnlock->getIsBuySkill(idSkill, indexSkill);
-			if (cfgSkill.buyCost != 0 && !isBuy)//若技能需要购买且未购买
+			if (isExist && !isBuy)//若技能需要购买且未购买
 			{
 				return;
 			}
@@ -288,7 +298,8 @@ void DataEntity::setSkill(DataSkillInfo &dataSkillInfo)
 	}
 	else if (cfgSkill.type == TypeSkill::PASSIVE)
 	{
-		if (getCfgEntity().type == TypeEntity::MAID && cfgSkill.buyCost != 0)//若技能需要购买
+		auto isExist = handleDataUnlock->getIsBuySkillExist(idSkill, indexSkill);
+		if (isExist/*getCfgEntity().type == TypeEntity::MAID && cfgSkill.buyCost != 0*/)//若技能需要购买
 		{
 			auto indexSkillUnbuyMin = INT32_MAX;
 			auto indexSkillMax = 0;

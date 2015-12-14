@@ -145,9 +145,14 @@ void HandleDataUnlock::createTypeUnlockOther()
 	}
 }
 
+bool HandleDataUnlock::getIsUnlockMaidExist(const int &idEntity)
+{
+	return _dicTypeUnlockMaid.find(idEntity) != _dicTypeUnlockMaid.end();
+}
+
 bool HandleDataUnlock::getIsUnlockMaid(const int &idEntity)
 {
-	if (_dicTypeUnlockMaid.find(idEntity) == _dicTypeUnlockMaid.end())
+	if (!getIsUnlockMaidExist(idEntity))
 	{
 		return false;
 	}
@@ -157,7 +162,7 @@ bool HandleDataUnlock::getIsUnlockMaid(const int &idEntity)
 
 void HandleDataUnlock::setIsUnlockMaid(const int &idEntity)
 {
-	if (_dicTypeUnlockMaid.find(idEntity) == _dicTypeUnlockMaid.end())
+	if (!getIsUnlockMaidExist(idEntity))
 	{
 		return;
 	}
@@ -165,9 +170,14 @@ void HandleDataUnlock::setIsUnlockMaid(const int &idEntity)
 	setIsUnlock(index);
 }
 
+bool HandleDataUnlock::getIsBuyMaidExist(const int &idEntity)
+{
+	return _dicTypeBuyMaid.find(idEntity) != _dicTypeBuyMaid.end();
+}
+
 bool HandleDataUnlock::getIsBuyMaid(const int &idEntity)
 {
-	if (_dicTypeBuyMaid.find(idEntity) == _dicTypeBuyMaid.end())
+	if (!getIsBuyMaidExist(idEntity))
 	{
 		return false;
 	}
@@ -177,7 +187,7 @@ bool HandleDataUnlock::getIsBuyMaid(const int &idEntity)
 
 void HandleDataUnlock::setIsBuyMaid(const int &idEntity)
 {
-	if (_dicTypeBuyMaid.find(idEntity) == _dicTypeBuyMaid.end())
+	if (!getIsBuyMaidExist(idEntity))
 	{
 		return;
 	}
@@ -185,13 +195,14 @@ void HandleDataUnlock::setIsBuyMaid(const int &idEntity)
 	setIsUnlock(index);
 }
 
+bool HandleDataUnlock::getIsUnlockSkillExist(const int &idSkill, const int &indexSkill)
+{
+	return _dicDicTypeUnlockSkill.find(idSkill) != _dicDicTypeUnlockSkill.end() && _dicDicTypeUnlockSkill[idSkill].find(indexSkill) != _dicDicTypeUnlockSkill[idSkill].end();
+}
+
 bool HandleDataUnlock::getIsUnlockSkill(const int &idSkill, const int &indexSkill)
 {
-	if (_dicDicTypeUnlockSkill.find(idSkill) == _dicDicTypeUnlockSkill.end())
-	{
-		return false;
-	}
-	if (_dicDicTypeUnlockSkill[idSkill].find(indexSkill) == _dicDicTypeUnlockSkill[idSkill].end())
+	if (!getIsUnlockSkillExist(idSkill, indexSkill))
 	{
 		return false;
 	}
@@ -201,11 +212,7 @@ bool HandleDataUnlock::getIsUnlockSkill(const int &idSkill, const int &indexSkil
 
 void HandleDataUnlock::setIsUnlockSkill(const int &idSkill, const int &indexSkill)
 {
-	if (_dicDicTypeUnlockSkill.find(idSkill) == _dicDicTypeUnlockSkill.end())
-	{
-		return;
-	}
-	if (_dicDicTypeUnlockSkill[idSkill].find(indexSkill) == _dicDicTypeUnlockSkill[idSkill].end())
+	if (!getIsUnlockSkillExist(idSkill, indexSkill))
 	{
 		return;
 	}
@@ -225,13 +232,14 @@ void HandleDataUnlock::setIsUnlockSkill(const int &idSkill, const int &indexSkil
 	}
 }
 
+bool HandleDataUnlock::getIsBuySkillExist(const int &idSkill, const int &indexSkill)
+{
+	return _dicDicTypeBuySkill.find(idSkill) != _dicDicTypeBuySkill.end() && _dicDicTypeBuySkill[idSkill].find(indexSkill) != _dicDicTypeBuySkill[idSkill].end();
+}
+
 bool HandleDataUnlock::getIsBuySkill(const int &idSkill, const int &indexSkill)
 {
-	if (_dicDicTypeBuySkill.find(idSkill) == _dicDicTypeBuySkill.end())
-	{
-		return false;
-	}
-	if (_dicDicTypeBuySkill[idSkill].find(indexSkill) == _dicDicTypeBuySkill[idSkill].end())
+	if (!getIsBuySkillExist(idSkill, indexSkill))
 	{
 		return false;
 	}
@@ -241,11 +249,7 @@ bool HandleDataUnlock::getIsBuySkill(const int &idSkill, const int &indexSkill)
 
 void HandleDataUnlock::setIsBuySkill(const int &idSkill, const int &indexSkill)
 {
-	if (_dicDicTypeBuySkill.find(idSkill) == _dicDicTypeBuySkill.end())
-	{
-		return;
-	}
-	if (_dicDicTypeBuySkill[idSkill].find(indexSkill) == _dicDicTypeBuySkill[idSkill].end())
+	if (!getIsBuySkillExist(idSkill, indexSkill))
 	{
 		return;
 	}
@@ -253,9 +257,14 @@ void HandleDataUnlock::setIsBuySkill(const int &idSkill, const int &indexSkill)
 	setIsUnlock(index);
 }
 
+bool HandleDataUnlock::getIsUnlockLevelExist(const int &idLevel)
+{
+	return _dicTypeUnlockLevel.find(idLevel) != _dicTypeUnlockLevel.end();
+}
+
 bool HandleDataUnlock::getIsUnlockLevel(const int &idLevel)
 {
-	if (_dicTypeUnlockLevel.find(idLevel) == _dicTypeUnlockLevel.end())
+	if (!getIsUnlockLevelExist(idLevel))
 	{
 		return false;
 	}
@@ -265,7 +274,7 @@ bool HandleDataUnlock::getIsUnlockLevel(const int &idLevel)
 
 void HandleDataUnlock::setIsUnlockLevel(const int &idLevel)
 {
-	if (_dicTypeUnlockLevel.find(idLevel) == _dicTypeUnlockLevel.end())
+	if (!getIsUnlockLevelExist(idLevel))
 	{
 		return;
 	}
@@ -273,9 +282,14 @@ void HandleDataUnlock::setIsUnlockLevel(const int &idLevel)
 	setIsUnlock(index);
 }
 
+bool HandleDataUnlock::getIsPassedLevelExist(const int &idLevel)
+{
+	return _dicTypePassedLevel.find(idLevel) != _dicTypePassedLevel.end();
+}
+
 bool HandleDataUnlock::getIsPassedLevel(const int &idLevel)
 {
-	if (_dicTypePassedLevel.find(idLevel) == _dicTypePassedLevel.end())
+	if (!getIsPassedLevelExist(idLevel))
 	{
 		return false;
 	}
@@ -285,7 +299,7 @@ bool HandleDataUnlock::getIsPassedLevel(const int &idLevel)
 
 void HandleDataUnlock::setIsPassedLevel(const int &idLevel)
 {
-	if (_dicTypePassedLevel.find(idLevel) == _dicTypePassedLevel.end())
+	if (!getIsPassedLevelExist(idLevel))
 	{
 		return;
 	}
@@ -293,13 +307,14 @@ void HandleDataUnlock::setIsPassedLevel(const int &idLevel)
 	setIsUnlock(index);
 }
 
+bool HandleDataUnlock::getIsCompleteLevelTargetExist(const int &idLevel, const int &idLevelTarget)
+{
+	return _dicDicTypeCompleteLevelTarget.find(idLevel) != _dicDicTypeCompleteLevelTarget.end() && _dicDicTypeCompleteLevelTarget[idLevel].find(idLevelTarget) != _dicDicTypeCompleteLevelTarget[idLevel].end();
+}
+
 bool HandleDataUnlock::getIsCompleteLevelTarget(const int &idLevel, const int &idLevelTarget)
 {
-	if (_dicDicTypeCompleteLevelTarget.find(idLevel) == _dicDicTypeCompleteLevelTarget.end())
-	{
-		return false;
-	}
-	if (_dicDicTypeCompleteLevelTarget[idLevel].find(idLevelTarget) == _dicDicTypeCompleteLevelTarget[idLevel].end())
+	if (!getIsCompleteLevelTargetExist(idLevel, idLevelTarget))
 	{
 		return false;
 	}
@@ -309,11 +324,7 @@ bool HandleDataUnlock::getIsCompleteLevelTarget(const int &idLevel, const int &i
 
 void HandleDataUnlock::setIsCompleteLevelTarget(const int &idLevel, const int &idLevelTarget)
 {
-	if (_dicDicTypeCompleteLevelTarget.find(idLevel) == _dicDicTypeCompleteLevelTarget.end())
-	{
-		return;
-	}
-	if (_dicDicTypeCompleteLevelTarget[idLevel].find(idLevelTarget) == _dicDicTypeCompleteLevelTarget[idLevel].end())
+	if (!getIsCompleteLevelTargetExist(idLevel, idLevelTarget))
 	{
 		return;
 	}

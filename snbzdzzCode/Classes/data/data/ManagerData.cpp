@@ -87,4 +87,3 @@ void ManagerData::initHandleDatas()
 	_handleDataLevels = new HandleDataLevels();
 	_handleDataIncome = new HandleDataIncome();
 }
-

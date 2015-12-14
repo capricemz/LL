@@ -199,6 +199,10 @@ class DataEntity : public Ref
 		void vecSkillActiveInUse2UseOver();//加使用的牌放入弃牌库
 		bool vecSkillActiveIsAllUse();//是否取完牌库
 		void vecSkillActiveSort(const bool &isAll = false);//洗牌
+		int getlengthVecSkillActive()
+		{
+			return _vecSkillActive.size();
+		}
 		vector<DataSkillInfo> &getVecSkillBase()
 		{
 			return _vecSkillBase;
@@ -476,21 +480,35 @@ class HandleDataUnlock
 		void dataFileGet();
 		void dataFileSet();
 		void createTypeUnlockOther();
-	
+		
+		bool getIsUnlockMaidExist(const int &idEntity);
 		bool getIsUnlockMaid(const int &idEntity);
 		void setIsUnlockMaid(const int &idEntity);
+		
+		bool getIsBuyMaidExist(const int &idEntity);
 		bool getIsBuyMaid(const int &idEntity);
 		void setIsBuyMaid(const int &idEntity);
+		
+		bool getIsUnlockSkillExist(const int &idSkill, const int &indexSkill);
 		bool getIsUnlockSkill(const int &idSkill, const int &indexSkill);
 		void setIsUnlockSkill(const int &idSkill, const int &indexSkill);//indexSkill为-1时，解锁所有
+		
+		bool getIsBuySkillExist(const int &idSkill, const int &indexSkill);
 		bool getIsBuySkill(const int &idSkill, const int &indexSkill);
 		void setIsBuySkill(const int &idSkill, const int &indexSkill);
+		
+		bool getIsUnlockLevelExist(const int &idLevel);
 		bool getIsUnlockLevel(const int &idLevel);
 		void setIsUnlockLevel(const int &idLevel);
+		
+		bool getIsPassedLevelExist(const int &idLevel);
 		bool getIsPassedLevel(const int &idLevel);
 		void setIsPassedLevel(const int &idLevel);
+		
+		bool getIsCompleteLevelTargetExist(const int &idLevel, const int &idLevelTarget);
 		bool getIsCompleteLevelTarget(const int &idLevel, const int &idLevelTarget);
 		void setIsCompleteLevelTarget(const int &idLevel, const int &idLevelTarget);
+		
 		bool getIsUnlock(int index);
 		void setIsUnlock(int index);
 	

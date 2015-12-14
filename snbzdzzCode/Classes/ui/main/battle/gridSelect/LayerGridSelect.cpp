@@ -253,6 +253,9 @@ void LayerGridSelect::onGridLayoutTouch(Ref *ref, Widget::TouchEventType type, c
 
 void LayerGridSelect::runActionGridSelectMaidMoveFrom(const Vec2 &postion, const function<void()> &funcOneOver /*= nullptr*/, const function<void()> &funcAllOver /*= nullptr*/)
 {
+	auto dataEntity = ManagerData::getInstance()->getHandleDataEntity()->getDataEntityMaid();
+	auto lengthVecSkillActive = dataEntity->getlengthVecSkillActive();
+
 	auto total = 0;//总需要移动数
 	for (int i = 0; i < GRID_SELECT_MAX; i++)
 	{
@@ -261,6 +264,11 @@ void LayerGridSelect::runActionGridSelectMaidMoveFrom(const Vec2 &postion, const
 		if (grid->isVisible())
 		{
 			continue;
+		}
+
+		if (i > lengthVecSkillActive)
+		{
+			break;
 		}
 
 		total++;
@@ -282,6 +290,11 @@ void LayerGridSelect::runActionGridSelectMaidMoveFrom(const Vec2 &postion, const
 		}
 
 		auto isLast = ++index == total;
+		
+		if (index > total)
+		{
+			break;
+		}
 
 		auto actionDelay = DelayTime::create(0.2f);
 		vecActions.pushBack(actionDelay);
