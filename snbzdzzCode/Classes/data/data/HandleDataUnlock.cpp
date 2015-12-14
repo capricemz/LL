@@ -78,14 +78,18 @@ void HandleDataUnlock::dataFileSet()
 void HandleDataUnlock::createTypeUnlockOther()
 {
 	auto indexUnlockCurrent = (int)TypeUnlock::LAST_NEXT;
+	//默认解锁数据
+	_dicTypeUnlockMaid[DATA_UNLOCK_INIT_MAID] = indexUnlockCurrent++;
+	_dicTypeBuyMaid[DATA_UNLOCK_INIT_MAID] = indexUnlockCurrent++;
+	//
 	auto managerCfg = ManagerCfg::getInstance();
 	auto dicCfgEntity = managerCfg->getDicCfgEntity();
+	
 	for (auto var : dicCfgEntity)
 	{
 		auto cfgEntity = var.second;
-		if (cfgEntity.type == TypeEntity::MAID)
+		if (cfgEntity.type == TypeEntity::MAID && cfgEntity.cost != 0)
 		{
-			_dicTypeUnlockMaid[cfgEntity.id] = indexUnlockCurrent++;
 			_dicTypeBuyMaid[cfgEntity.id] = indexUnlockCurrent++;
 		}
 	}
@@ -98,7 +102,6 @@ void HandleDataUnlock::createTypeUnlockOther()
 			auto cfgSkill = var1.second;
 			if (cfgSkill.buyCost != 0)
 			{
-				_dicDicTypeUnlockSkill[cfgSkill.id][cfgSkill.index] = indexUnlockCurrent++;
 				_dicDicTypeBuySkill[cfgSkill.id][cfgSkill.index] = indexUnlockCurrent++;
 			}
 		}
@@ -107,47 +110,105 @@ void HandleDataUnlock::createTypeUnlockOther()
 	for (auto var : dicCfgLevels)
 	{
 		auto idLevel = var.second.id;
+		auto cfgLevel = var.second;
+
 		_dicTypeUnlockLevel[idLevel] = indexUnlockCurrent++;
 		_dicTypePassedLevel[idLevel] = indexUnlockCurrent++;
-		for (auto var1 : var.second.targets)
+		for (auto idLevelTarget : cfgLevel.targets)
 		{
-			_dicDicTypeCompleteLevelTarget[idLevel][var1] = indexUnlockCurrent++;
+			_dicDicTypeCompleteLevelTarget[idLevel][idLevelTarget] = indexUnlockCurrent++;
+		}
+
+		for (auto var1 : cfgLevel.unlockSkills)
+		{
+			auto idSkill = var1[0];
+			auto index = var1[1];
+			if (index == -1)
+			{
+				auto dicDicCfgSkill = managerCfg->getDicDicCfgSkill();
+				for (auto var2 : dicDicCfgSkill[idSkill])
+				{
+					auto cfgSkill = var2.second;
+					_dicDicTypeUnlockSkill[cfgSkill.id][cfgSkill.index] = indexUnlockCurrent++;
+				}
+			}
+			else
+			{
+				_dicDicTypeUnlockSkill[idSkill][index] = indexUnlockCurrent++;
+			}
+		}
+		
+		for (auto idEntity : cfgLevel.unlockMaids)
+		{
+			_dicTypeUnlockMaid[idEntity] = indexUnlockCurrent++;
 		}
 	}
 }
 
 bool HandleDataUnlock::getIsUnlockMaid(const int &idEntity)
 {
+	if (_dicTypeUnlockMaid.find(idEntity) == _dicTypeUnlockMaid.end())
+	{
+		return false;
+	}
 	auto index = _dicTypeUnlockMaid[idEntity];
 	return getIsUnlock(index);
 }
 
 void HandleDataUnlock::setIsUnlockMaid(const int &idEntity)
 {
+	if (_dicTypeUnlockMaid.find(idEntity) == _dicTypeUnlockMaid.end())
+	{
+		return;
+	}
 	auto index = _dicTypeUnlockMaid[idEntity];
 	setIsUnlock(index);
 }
 
 bool HandleDataUnlock::getIsBuyMaid(const int &idEntity)
 {
+	if (_dicTypeBuyMaid.find(idEntity) == _dicTypeBuyMaid.end())
+	{
+		return false;
+	}
 	auto index = _dicTypeBuyMaid[idEntity];
 	return getIsUnlock(index);
 }
 
 void HandleDataUnlock::setIsBuyMaid(const int &idEntity)
 {
+	if (_dicTypeBuyMaid.find(idEntity) == _dicTypeBuyMaid.end())
+	{
+		return;
+	}
 	auto index = _dicTypeBuyMaid[idEntity];
 	setIsUnlock(index);
 }
 
 bool HandleDataUnlock::getIsUnlockSkill(const int &idSkill, const int &indexSkill)
 {
+	if (_dicDicTypeUnlockSkill.find(idSkill) == _dicDicTypeUnlockSkill.end())
+	{
+		return false;
+	}
+	if (_dicDicTypeUnlockSkill[idSkill].find(indexSkill) == _dicDicTypeUnlockSkill[idSkill].end())
+	{
+		return false;
+	}
 	auto index = _dicDicTypeUnlockSkill[idSkill][indexSkill];
 	return getIsUnlock(index);
 }
 
 void HandleDataUnlock::setIsUnlockSkill(const int &idSkill, const int &indexSkill)
 {
+	if (_dicDicTypeUnlockSkill.find(idSkill) == _dicDicTypeUnlockSkill.end())
+	{
+		return;
+	}
+	if (_dicDicTypeUnlockSkill[idSkill].find(indexSkill) == _dicDicTypeUnlockSkill[idSkill].end())
+	{
+		return;
+	}
 	if (indexSkill == -1)
 	{
 		auto dicTypeUnlockSkill = _dicDicTypeUnlockSkill[idSkill];
@@ -166,48 +227,96 @@ void HandleDataUnlock::setIsUnlockSkill(const int &idSkill, const int &indexSkil
 
 bool HandleDataUnlock::getIsBuySkill(const int &idSkill, const int &indexSkill)
 {
+	if (_dicDicTypeBuySkill.find(idSkill) == _dicDicTypeBuySkill.end())
+	{
+		return false;
+	}
+	if (_dicDicTypeBuySkill[idSkill].find(indexSkill) == _dicDicTypeBuySkill[idSkill].end())
+	{
+		return false;
+	}
 	auto index = _dicDicTypeBuySkill[idSkill][indexSkill];
 	return getIsUnlock(index);
 }
 
 void HandleDataUnlock::setIsBuySkill(const int &idSkill, const int &indexSkill)
 {
+	if (_dicDicTypeBuySkill.find(idSkill) == _dicDicTypeBuySkill.end())
+	{
+		return;
+	}
+	if (_dicDicTypeBuySkill[idSkill].find(indexSkill) == _dicDicTypeBuySkill[idSkill].end())
+	{
+		return;
+	}
 	auto index = _dicDicTypeBuySkill[idSkill][indexSkill];
 	setIsUnlock(index);
 }
 
 bool HandleDataUnlock::getIsUnlockLevel(const int &idLevel)
 {
+	if (_dicTypeUnlockLevel.find(idLevel) == _dicTypeUnlockLevel.end())
+	{
+		return false;
+	}
 	auto index = _dicTypeUnlockLevel[idLevel];
 	return getIsUnlock(index);
 }
 
 void HandleDataUnlock::setIsUnlockLevel(const int &idLevel)
 {
+	if (_dicTypeUnlockLevel.find(idLevel) == _dicTypeUnlockLevel.end())
+	{
+		return;
+	}
 	auto index = _dicTypeUnlockLevel[idLevel];
 	setIsUnlock(index);
 }
 
 bool HandleDataUnlock::getIsPassedLevel(const int &idLevel)
 {
+	if (_dicTypePassedLevel.find(idLevel) == _dicTypePassedLevel.end())
+	{
+		return false;
+	}
 	auto index = _dicTypePassedLevel[idLevel];
 	return getIsUnlock(index);
 }
 
 void HandleDataUnlock::setIsPassedLevel(const int &idLevel)
 {
+	if (_dicTypePassedLevel.find(idLevel) == _dicTypePassedLevel.end())
+	{
+		return;
+	}
 	auto index = _dicTypePassedLevel[idLevel];
 	setIsUnlock(index);
 }
 
 bool HandleDataUnlock::getIsCompleteLevelTarget(const int &idLevel, const int &idLevelTarget)
 {
+	if (_dicDicTypeCompleteLevelTarget.find(idLevel) == _dicDicTypeCompleteLevelTarget.end())
+	{
+		return false;
+	}
+	if (_dicDicTypeCompleteLevelTarget[idLevel].find(idLevelTarget) == _dicDicTypeCompleteLevelTarget[idLevel].end())
+	{
+		return false;
+	}
 	auto index = _dicDicTypeCompleteLevelTarget[idLevel][idLevelTarget];
 	return getIsUnlock(index);
 }
 
 void HandleDataUnlock::setIsCompleteLevelTarget(const int &idLevel, const int &idLevelTarget)
 {
+	if (_dicDicTypeCompleteLevelTarget.find(idLevel) == _dicDicTypeCompleteLevelTarget.end())
+	{
+		return;
+	}
+	if (_dicDicTypeCompleteLevelTarget[idLevel].find(idLevelTarget) == _dicDicTypeCompleteLevelTarget[idLevel].end())
+	{
+		return;
+	}
 	auto index = _dicDicTypeCompleteLevelTarget[idLevel][idLevelTarget];
 	setIsUnlock(index);
 }
