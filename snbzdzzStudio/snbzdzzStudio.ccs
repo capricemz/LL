@@ -331,6 +331,71 @@
             <Image Name="tukuang3.png" />
             <Image Name="xiaodw.png" />
           </Folder>
+          <Folder Name="skill">
+            <Image Name="skill_1100.jpg" />
+            <Image Name="skill_1101.jpg" />
+            <Image Name="skill_1102.jpg" />
+            <Image Name="skill_1103.jpg" />
+            <Image Name="skill_1104.jpg" />
+            <Image Name="skill_1105.jpg" />
+            <Image Name="skill_1106.jpg" />
+            <Image Name="skill_1107.jpg" />
+            <Image Name="skill_1108.jpg" />
+            <Image Name="skill_1200.jpg" />
+            <Image Name="skill_1201.jpg" />
+            <Image Name="skill_1203.jpg" />
+            <Image Name="skill_1204.jpg" />
+            <Image Name="skill_1205.jpg" />
+            <Image Name="skill_1206.jpg" />
+            <Image Name="skill_1207.jpg" />
+            <Image Name="skill_1208.jpg" />
+            <Image Name="skill_1300.jpg" />
+            <Image Name="skill_1301.jpg" />
+            <Image Name="skill_1302.jpg" />
+            <Image Name="skill_1303.jpg" />
+            <Image Name="skill_1304.jpg" />
+            <Image Name="skill_1305.jpg" />
+            <Image Name="skill_1306.jpg" />
+            <Image Name="skill_1307.jpg" />
+            <Image Name="skill_1308.jpg" />
+            <Image Name="skill_1400.jpg" />
+            <Image Name="skill_1401.jpg" />
+            <Image Name="skill_1402.jpg" />
+            <Image Name="skill_1403.jpg" />
+            <Image Name="skill_1404.jpg" />
+            <Image Name="skill_1405.jpg" />
+            <Image Name="skill_1406.jpg" />
+            <Image Name="skill_1407.jpg" />
+            <Image Name="skill_1408.jpg" />
+            <Image Name="skill_1500.jpg" />
+            <Image Name="skill_1501.jpg" />
+            <Image Name="skill_1502.jpg" />
+            <Image Name="skill_1503.jpg" />
+            <Image Name="skill_1504.jpg" />
+            <Image Name="skill_1505.jpg" />
+            <Image Name="skill_1506.jpg" />
+            <Image Name="skill_1507.jpg" />
+            <Image Name="skill_1508.jpg" />
+            <Image Name="skill_1600.jpg" />
+            <Image Name="skill_1601.jpg" />
+            <Image Name="skill_1602.jpg" />
+            <Image Name="skill_1603.jpg" />
+            <Image Name="skill_1604.jpg" />
+            <Image Name="skill_1605.jpg" />
+            <Image Name="skill_1606.jpg" />
+            <Image Name="skill_1607.jpg" />
+            <Image Name="skill_1608.jpg" />
+            <Image Name="skill_2000.jpg" />
+            <Image Name="skill_2001.jpg" />
+            <Image Name="skill_2002.jpg" />
+            <Image Name="skill_2003.jpg" />
+            <Image Name="skill_2004.jpg" />
+            <Image Name="skill_2005.jpg" />
+            <Image Name="skill_2006.jpg" />
+            <Image Name="skill_2007.jpg" />
+            <Image Name="skill_2008.jpg" />
+            <Image Name="skill_2009.jpg" />
+          </Folder>
         </Folder>
         <Folder Name="fonts">
           <TTF Name="ktjt.ttf" />
@@ -365,6 +430,7 @@
             <PlistInfo Name="PlistMaidHead1.csi" Type="Plist" />
             <Project Name="NodeSkillItem.csd" Type="Node" />
             <Project Name="LayerZhandou.csd" Type="Layer" />
+            <PlistInfo Name="PlistSkill.csi" Type="Plist" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />

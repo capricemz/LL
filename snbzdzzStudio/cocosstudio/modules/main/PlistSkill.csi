@@ -1,0 +1,71 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Type="Plist" Name="PlistSkill" ID="f91db9b4-aa3a-4f51-919f-cd278fb39755" Version="2.3.2.3" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="1" AllowRotation="True" AllowAnySize="True" AllowTrim="True" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="images/skill/skill_1100.jpg" />
+      <FilePathData Path="images/skill/skill_1101.jpg" />
+      <FilePathData Path="images/skill/skill_1102.jpg" />
+      <FilePathData Path="images/skill/skill_1103.jpg" />
+      <FilePathData Path="images/skill/skill_1104.jpg" />
+      <FilePathData Path="images/skill/skill_1105.jpg" />
+      <FilePathData Path="images/skill/skill_1106.jpg" />
+      <FilePathData Path="images/skill/skill_1107.jpg" />
+      <FilePathData Path="images/skill/skill_1108.jpg" />
+      <FilePathData Path="images/skill/skill_1200.jpg" />
+      <FilePathData Path="images/skill/skill_1201.jpg" />
+      <FilePathData Path="images/skill/skill_1203.jpg" />
+      <FilePathData Path="images/skill/skill_1204.jpg" />
+      <FilePathData Path="images/skill/skill_1205.jpg" />
+      <FilePathData Path="images/skill/skill_1206.jpg" />
+      <FilePathData Path="images/skill/skill_1207.jpg" />
+      <FilePathData Path="images/skill/skill_1208.jpg" />
+      <FilePathData Path="images/skill/skill_1300.jpg" />
+      <FilePathData Path="images/skill/skill_1301.jpg" />
+      <FilePathData Path="images/skill/skill_1302.jpg" />
+      <FilePathData Path="images/skill/skill_1303.jpg" />
+      <FilePathData Path="images/skill/skill_1304.jpg" />
+      <FilePathData Path="images/skill/skill_1305.jpg" />
+      <FilePathData Path="images/skill/skill_1306.jpg" />
+      <FilePathData Path="images/skill/skill_1307.jpg" />
+      <FilePathData Path="images/skill/skill_1308.jpg" />
+      <FilePathData Path="images/skill/skill_1400.jpg" />
+      <FilePathData Path="images/skill/skill_1401.jpg" />
+      <FilePathData Path="images/skill/skill_1402.jpg" />
+      <FilePathData Path="images/skill/skill_1403.jpg" />
+      <FilePathData Path="images/skill/skill_1404.jpg" />
+      <FilePathData Path="images/skill/skill_1405.jpg" />
+      <FilePathData Path="images/skill/skill_1406.jpg" />
+      <FilePathData Path="images/skill/skill_1407.jpg" />
+      <FilePathData Path="images/skill/skill_1408.jpg" />
+      <FilePathData Path="images/skill/skill_1500.jpg" />
+      <FilePathData Path="images/skill/skill_1501.jpg" />
+      <FilePathData Path="images/skill/skill_1502.jpg" />
+      <FilePathData Path="images/skill/skill_1503.jpg" />
+      <FilePathData Path="images/skill/skill_1504.jpg" />
+      <FilePathData Path="images/skill/skill_1505.jpg" />
+      <FilePathData Path="images/skill/skill_1506.jpg" />
+      <FilePathData Path="images/skill/skill_1507.jpg" />
+      <FilePathData Path="images/skill/skill_1508.jpg" />
+      <FilePathData Path="images/skill/skill_1600.jpg" />
+      <FilePathData Path="images/skill/skill_1601.jpg" />
+      <FilePathData Path="images/skill/skill_1602.jpg" />
+      <FilePathData Path="images/skill/skill_1603.jpg" />
+      <FilePathData Path="images/skill/skill_1604.jpg" />
+      <FilePathData Path="images/skill/skill_1605.jpg" />
+      <FilePathData Path="images/skill/skill_1606.jpg" />
+      <FilePathData Path="images/skill/skill_1607.jpg" />
+      <FilePathData Path="images/skill/skill_1608.jpg" />
+      <FilePathData Path="images/skill/skill_2000.jpg" />
+      <FilePathData Path="images/skill/skill_2001.jpg" />
+      <FilePathData Path="images/skill/skill_2002.jpg" />
+      <FilePathData Path="images/skill/skill_2003.jpg" />
+      <FilePathData Path="images/skill/skill_2004.jpg" />
+      <FilePathData Path="images/skill/skill_2005.jpg" />
+      <FilePathData Path="images/skill/skill_2006.jpg" />
+      <FilePathData Path="images/skill/skill_2007.jpg" />
+      <FilePathData Path="images/skill/skill_2008.jpg" />
+      <FilePathData Path="images/skill/skill_2009.jpg" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>
