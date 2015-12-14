@@ -12,10 +12,12 @@ DataEntity::DataEntity() :
 	_idEntity(0),
 	_index(0),
 	_dicAttribute({}),
-	_vecSkillActiveNeedBuy({}),
+	_vecSkillActive({}),
 	_vecSkillActiveInUse({}),
 	_vecSkillActiveUseOver({}),
-	_vecSkillActive({}),
+	_vecSkillBase({}),
+	_vecSkillSpecial({}),
+	_vecSkillEnergy({}),
 	_vecSkillPassive({}),
 	_vecSkillRandom({}),
 	_round(1)
@@ -256,13 +258,24 @@ void DataEntity::setSkill(DataSkillInfo &dataSkillInfo)
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
 	auto dicCfgSkill = ManagerCfg::getInstance()->getDicDicCfgSkill()[idSkill];
 	auto cfgSkill = dicCfgSkill[indexSkill];
-	if (cfgSkill.type == TypeSkill::ACTIVE)
+	if (cfgSkill.type == TypeSkill::BASE || cfgSkill.type == TypeSkill::SPECIAL || cfgSkill.type == TypeSkill::ENERGY)
 	{
-		if (getCfgEntity().type == TypeEntity::MAID && cfgSkill.buyCost != 0)//若技能需要购买
+		if (getCfgEntity().type == TypeEntity::MAID)
 		{
-			_vecSkillActiveNeedBuy.push_back(dataSkillInfo);
+			if (cfgSkill.type == TypeSkill::BASE)
+			{
+				_vecSkillBase.push_back(dataSkillInfo);
+			}
+			else if (cfgSkill.type == TypeSkill::SPECIAL)
+			{
+				_vecSkillSpecial.push_back(dataSkillInfo);
+			}
+			else if (cfgSkill.type == TypeSkill::ENERGY)
+			{
+				_vecSkillEnergy.push_back(dataSkillInfo);
+			}
 			auto isBuy = handleDataUnlock->getIsBuySkill(idSkill, indexSkill);
-			if (!isBuy)//若未购买
+			if (cfgSkill.buyCost != 0 && !isBuy)//若技能需要购买且未购买
 			{
 				return;
 			}
@@ -311,7 +324,7 @@ void DataEntity::setSkill(DataSkillInfo &dataSkillInfo)
 
 void DataEntity::vecSkillClear()
 {
-	_vecSkillActiveNeedBuy.clear();
+	_vecSkillSpecial.clear();
 	_vecSkillActive.clear();
 	_vecSkillActiveInUse.clear();
 	_vecSkillActiveUseOver.clear();

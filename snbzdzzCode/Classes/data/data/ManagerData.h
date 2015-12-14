@@ -199,6 +199,18 @@ class DataEntity : public Ref
 		void vecSkillActiveInUse2UseOver();//加使用的牌放入弃牌库
 		bool vecSkillActiveIsAllUse();//是否取完牌库
 		void vecSkillActiveSort(const bool &isAll = false);//洗牌
+		vector<DataSkillInfo> &getVecSkillBase()
+		{
+			return _vecSkillBase;
+		}
+		vector<DataSkillInfo> &getVecSkillSpecial()
+		{
+			return _vecSkillSpecial;
+		}
+		vector<DataSkillInfo> &getVecSkillEnergy()
+		{
+			return _vecSkillEnergy;
+		}
 		vector<DataSkillInfo> &getVecSkillPassive()
 		{
 			return _vecSkillPassive;
@@ -206,10 +218,6 @@ class DataEntity : public Ref
 		vector<DataSkillInfo> &getVecSkillRandom()//
 		{
 			return _vecSkillRandom;
-		}
-		vector<DataSkillInfo> &getVecSkillActiveNeedBuy()
-		{
-			return _vecSkillActiveNeedBuy;
 		}
 		/*设置技能
 		idSkill 技能表id
@@ -232,10 +240,12 @@ class DataEntity : public Ref
 		int _idEntity;//idEntity
 		int _index;
 		map<IdAttribute, int> _dicAttribute;//idAttribute value
-		vector<DataSkillInfo> _vecSkillActiveNeedBuy;
 		vector<DataSkillInfo> _vecSkillActive;
 		vector<DataSkillInfo> _vecSkillActiveInUse;
 		vector<DataSkillInfo> _vecSkillActiveUseOver;
+		vector<DataSkillInfo> _vecSkillBase;
+		vector<DataSkillInfo> _vecSkillSpecial;
+		vector<DataSkillInfo> _vecSkillEnergy;
 		vector<DataSkillInfo> _vecSkillPassive;
 		vector<DataSkillInfo> _vecSkillRandom;
 

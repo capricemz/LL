@@ -26,6 +26,7 @@ struct CfgSkill//指令
 	TypeSkill type;//类型
 	string effect;//效果
 	int buyCost;//购买花费
+	string urlPic;//图片
 	string desc;//描述
 };
 typedef map<int32_t, map<int32_t, CfgSkill>> DicDicCfgSkill;

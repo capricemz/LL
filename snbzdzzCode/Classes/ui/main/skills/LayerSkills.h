@@ -34,15 +34,16 @@ public:
 private:
 	void createSkin();
 	void updateLayoutBtns(const bool &isInit = false);
-	void onTouchBtnMaid(Ref *ref, Widget::TouchEventType type);
 	void updateLayoutMaid(const bool &isInit = false);
+	void updateLayoutSkillItems(const bool &isInit = false);
+	void updateLayoutSKillItem(Node *nodeSkillItem, const bool &isExsit, const DataSkillInfo &dataSkillInfo, const bool &isInit = false);
+
+	void onTouchBtnMaid(Ref *ref, Widget::TouchEventType type);
 	void onTouchBtnMaidBuy(Ref *ref, Widget::TouchEventType type);
 	void onTouchBtnPrev(Ref *ref, Widget::TouchEventType type);
 	void onTouchBtnNext(Ref *ref, Widget::TouchEventType type);
-	void onTouchBtnSkill(Ref *ref, Widget::TouchEventType type);
-	void switchMaidSkill();
-	void updateLayoutSkillItems(const bool &isInit = false);
-	void updateLayoutSKillItem(Layout *layoutSkillItem, const bool &isExsit, const DataSkillInfo &dataSkillInfo, const bool &isInit = false);
+	void onTouchSwitchMaidSkill(Ref *ref, Widget::TouchEventType type);
+	void onTouchBtnSkill(Ref *ref, Widget::TouchEventType type, const TypeSkill &typeSkill);
 	void onTouchBtnSkillBuy(Ref *ref, Widget::TouchEventType type, const DataSkillInfo &dataSkillInfo);
 	
 private:
@@ -53,6 +54,8 @@ private:
 	int _idEntityCurrent;
 
 	vector<int> _vecShowIdEntity;
+
+	TypeSkill _typeSkill;
 	
 };
 

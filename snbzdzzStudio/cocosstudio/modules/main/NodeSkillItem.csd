@@ -28,14 +28,28 @@
             <FileData Type="Normal" Path="images/skills_panel/Bskills/skills2.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="txt" ActionTag="1771399479" Tag="912" IconVisible="False" LeftMargin="-147.2839" RightMargin="-202.7161" TopMargin="22.2103" BottomMargin="-42.2103" FontSize="20" LabelText="物伤3，攻击成功，后续所有行动物伤+1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="350.0000" Y="20.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="27.7161" Y="-32.2103" />
+          <AbstractNodeData Name="layoutAttribute" ActionTag="-1171554197" Tag="225" IconVisible="False" LeftMargin="-147.0000" RightMargin="-135.0000" TopMargin="-55.0000" BottomMargin="5.0000" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="282.0000" Y="50.0000" />
+            <AnchorPoint ScaleY="1.0000" />
+            <Position X="-147.0000" Y="55.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="txt" ActionTag="1771399479" Tag="912" IconVisible="False" LeftMargin="-147.0000" RightMargin="-253.0000" TopMargin="10.0000" BottomMargin="-58.0000" IsCustomSize="True" FontSize="20" LabelText="" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="400.0000" Y="48.0000" />
+            <AnchorPoint ScaleY="1.0000" />
+            <Position X="-147.0000" Y="-10.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -52,61 +66,6 @@
             <NormalFileData Type="Normal" Path="images/skills_panel/button6.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Sprite_15_0_0_0_0" ActionTag="1650064008" Tag="910" IconVisible="False" LeftMargin="84.8944" RightMargin="-134.8943" TopMargin="-53.7889" BottomMargin="3.7889" ctype="SpriteObjectData">
-            <Size X="50.0000" Y="50.0000" />
-            <AnchorPoint ScaleX="0.4964" ScaleY="1.0000" />
-            <Position X="109.7144" Y="53.7889" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/skills_panel/Sskills/skills1.png" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Sprite_15_0_0_0" ActionTag="2065545155" Tag="909" IconVisible="False" LeftMargin="26.8948" RightMargin="-76.8948" TopMargin="-53.7889" BottomMargin="3.7889" ctype="SpriteObjectData">
-            <Size X="50.0000" Y="50.0000" />
-            <AnchorPoint ScaleX="0.4964" ScaleY="1.0000" />
-            <Position X="51.7148" Y="53.7889" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/skills_panel/Sskills/skills1.png" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Sprite_15_0_0" ActionTag="96946214" Tag="908" IconVisible="False" LeftMargin="-31.1033" RightMargin="-18.8967" TopMargin="-53.7889" BottomMargin="3.7889" ctype="SpriteObjectData">
-            <Size X="50.0000" Y="50.0000" />
-            <AnchorPoint ScaleX="0.4964" ScaleY="1.0000" />
-            <Position X="-6.2833" Y="53.7889" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/skills_panel/Sskills/skills1.png" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Sprite_15_0" ActionTag="-1362966250" Tag="907" IconVisible="False" LeftMargin="-89.1032" RightMargin="39.1032" TopMargin="-53.7889" BottomMargin="3.7889" ctype="SpriteObjectData">
-            <Size X="50.0000" Y="50.0000" />
-            <AnchorPoint ScaleX="0.4964" ScaleY="1.0000" />
-            <Position X="-64.2832" Y="53.7889" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/skills_panel/Sskills/skills1.png" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Sprite_15" ActionTag="1068738379" Tag="906" IconVisible="False" LeftMargin="-147.1031" RightMargin="97.1031" TopMargin="-53.7889" BottomMargin="3.7889" ctype="SpriteObjectData">
-            <Size X="50.0000" Y="50.0000" />
-            <AnchorPoint ScaleX="0.4964" ScaleY="1.0000" />
-            <Position X="-122.2831" Y="53.7889" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/skills_panel/Sskills/skills1.png" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

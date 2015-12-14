@@ -160,7 +160,8 @@ void ManagerCfg::assignCfgSkill(const VectorString &vecItem)
 	cfg.type = (TypeSkill)Value(vecItem[3]).asInt();
 	cfg.effect = vecItem[4];
 	cfg.buyCost = Value(vecItem[5]).asInt();
-	cfg.desc = vecItem[6];
+	cfg.urlPic = vecItem[6];
+	cfg.desc = vecItem[7];
 	_dicDicCfgSkill[cfg.id][cfg.index] = cfg;
 }
 

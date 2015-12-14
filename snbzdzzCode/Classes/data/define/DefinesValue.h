@@ -5,6 +5,7 @@
 
 #include <vector>
 #include "math/Vec2.h"
+#include "math/CCGeometry.h"
 
 USING_NS_CC;
 using namespace std;
@@ -40,6 +41,9 @@ static const map<Vec2, Vec2> dicAnchorPoint2BubbleBgScale =
 {
 	{ Vec2::ANCHOR_BOTTOM_LEFT, Vec2(1.0f, -1.0f) }, { Vec2::ANCHOR_BOTTOM_RIGHT, Vec2(1.0f, 1.0f) }, { Vec2::ANCHOR_TOP_RIGHT, Vec2(-1.0f, -1.0f) }, { Vec2::ANCHOR_TOP_LEFT, Vec2(-1.0f, 1.0f) }
 };
+
+static const Size sizeSkillIcon = Size(100.0f, 100.0f);
+static const Size sizeSkillAttribute = Size(50.0f, 50.0f);
 
 enum class TypeLoadState
 {
@@ -192,7 +196,9 @@ enum class TypeJob
 enum class TypeSkill
 {
 	NONE,
-	ACTIVE,//主动
+	BASE,
+	SPECIAL,
+	ENERGY,
 	PASSIVE,//被动
 	RANDOM//随机
 };
