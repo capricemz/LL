@@ -722,7 +722,7 @@ bool HandleDataEntity::isRoundLimitOver()
 {
 	auto handleDataLevels = ManagerData::getInstance()->getHandleDataLevels();
 	auto cfgLevel = handleDataLevels->getDataLevelCurrent()->getCfgLevel();
-	return cfgLevel.roundLimit != 0 && cfgLevel.roundLimit <= _roundTotal;
+	return cfgLevel.roundLimit != 0 && cfgLevel.roundLimit < _roundTotal;
 }
 
 bool HandleDataEntity::isBattleWin()
