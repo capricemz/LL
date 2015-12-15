@@ -354,7 +354,7 @@ void LayerSkills::onTouchBtnMaidBuy(Ref *ref, Widget::TouchEventType type)
 		auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
 		if (handleDataIncome->getThingEnough(IdThing::GOLD, cfgEntity.cost))
 		{
-			handleDataIncome->addThing(IdThing::GOLD, cfgEntity.cost);
+			handleDataIncome->addThing(IdThing::GOLD, -cfgEntity.cost);
 			auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
 			handleDataUnlock->setIsBuyMaid(_idEntityCurrent);
 			handleDataUnlock->dataFileSet();

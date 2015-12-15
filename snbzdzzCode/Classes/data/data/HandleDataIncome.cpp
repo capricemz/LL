@@ -155,6 +155,16 @@ void HandleDataIncome::addThing(const IdThing &idThing, const int &value)
 		return;
 	}
 	setThing(idThing, getThing(idThing) + value);
+	addThingDeal(idThing, value);
+}
+
+void HandleDataIncome::addThingDeal(const IdThing &idThing, const int &value)
+{
+	if (idThing == IdThing::EXP)
+	{
+		auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+		handleDataEntity->updateAttributeGrade();
+	}
 }
 
 DataTrainingInfo * HandleDataIncome::getDataTrainingInfo(const int &index)

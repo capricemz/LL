@@ -96,6 +96,15 @@ struct CfgLevelTarget
 };
 typedef map<int32_t, CfgLevelTarget> DicCfgLevelTargets;
 //
+struct CfgGrade
+{
+	int id;//标志
+	int index;//顺序(等级)
+	int exp;//升级需要总经验
+	string effect;//等级总属性
+};
+typedef map<int32_t, CfgGrade> DicCfgGrade;
+//
 struct CfgTraining
 {
 	int id;//标志

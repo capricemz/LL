@@ -260,9 +260,12 @@ enum class IdThing
 	THING_NONE,
 
 	GOLD = 100,//金币
-	ITEM,//道具
-	CLOTH,//时装
-	DIAMOND//钻石
+	DIAMOND,//道具
+	EXP,//经验
+
+	TOOTHBRUSH = 200,//牙刷
+
+	CLOTH = 300,//时装
 };
 
 enum class TypeConfirms

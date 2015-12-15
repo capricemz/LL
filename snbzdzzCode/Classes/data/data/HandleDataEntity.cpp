@@ -401,6 +401,63 @@ void HandleDataEntity::dataFileSet()
 	userDefault->flush();
 }
 
+void HandleDataEntity::updateAttributeGrade()
+{
+	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
+	auto value = handleDataIncome->getThing(IdThing::EXP);//当前经验
+
+	auto managerCfg = ManagerCfg::getInstance();
+	auto dicCfgGrade = managerCfg->getDicCfgGrade();
+	auto id = 1000;
+	string effect = "";
+	while (true)
+	{
+		if (dicCfgGrade.find(id) == dicCfgGrade.end())
+		{
+			break;
+		}
+
+		auto cfgGradeTemp = dicCfgGrade[id];
+
+		if (value < cfgGradeTemp.exp)
+		{
+			break;
+		}
+
+		effect = cfgGradeTemp.effect;
+
+		id++;
+	}//获取当前等级配置
+
+	if (effect == "")
+	{
+		return;
+	}
+
+	auto vecAttrItem = UtilString::split(effect, "|");
+	for (auto strAttrItem : vecAttrItem)
+	{
+		auto vecAttr = UtilString::split(strAttrItem, ":");
+		auto idEntity = Value(vecAttr[0]).asInt();
+		auto length = (int)_vecDataEntityMaid.size();
+		for (auto i = 0; i < length; i++)
+		{
+			auto dataEntity = _vecDataEntityMaid.at(i);
+			if (dataEntity->getIdEntity() == idEntity)
+			{
+				auto idAttribute = (IdAttribute)Value(vecAttr[1]).asInt();
+				auto value = Value(vecAttr[2]).asInt();
+				auto cfgAttribute = managerCfg->getDicCfgAttribute()[(int)idAttribute];
+				if (cfgAttribute.type == TypeAttribute::ENTITY)
+				{
+					dataEntity->setAttribute(idAttribute, value);
+				}
+				break;
+			}
+		}
+	}
+}
+
 void HandleDataEntity::resetDataEntityMaid()
 {
 	for (auto var : _vecDataEntityMaid)
@@ -451,6 +508,7 @@ void HandleDataEntity::createDataEntityMaid()
 			}
 		}
 	}
+	updateAttributeGrade();
 }
 
 void HandleDataEntity::createDataEntityMaid(const int &idEntity)

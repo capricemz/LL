@@ -71,7 +71,7 @@
               <AbstractNodeData Name="layoutNodeHead" ActionTag="-617030565" Tag="2291" IconVisible="False" TopMargin="360.0000" BottomMargin="160.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="640.0000" Y="440.0000" />
                 <Children>
-                  <AbstractNodeData Name="layoutHeadMst0" ActionTag="1505830182" VisibleForFrame="False" Tag="651" IconVisible="False" LeftMargin="128.0000" RightMargin="388.0000" BottomMargin="316.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="layoutHeadMst0" ActionTag="1505830182" Tag="651" IconVisible="False" LeftMargin="128.0000" RightMargin="388.0000" BottomMargin="316.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                     <Size X="124.0000" Y="124.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
                     <Position X="190.0000" Y="440.0000" />
@@ -79,12 +79,13 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.2969" Y="1.0000" />
                     <PreSize X="0.1937" Y="0.2818" />
+                    <FileData Type="Normal" Path="images/formation/rolebox1.png" Plist="" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="layoutHeadMst1" ActionTag="1274789936" VisibleForFrame="False" Tag="655" IconVisible="False" LeftMargin="258.0000" RightMargin="258.0000" BottomMargin="316.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="layoutHeadMst1" ActionTag="1274789936" Tag="655" IconVisible="False" LeftMargin="258.0000" RightMargin="258.0000" BottomMargin="316.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                     <Size X="124.0000" Y="124.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
                     <Position X="320.0000" Y="440.0000" />
@@ -92,12 +93,13 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="1.0000" />
                     <PreSize X="0.1937" Y="0.2818" />
+                    <FileData Type="Normal" Path="images/formation/rolebox1.png" Plist="" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="layoutHeadMst2" ActionTag="2018832593" VisibleForFrame="False" Tag="659" IconVisible="False" LeftMargin="388.0000" RightMargin="128.0000" BottomMargin="316.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="layoutHeadMst2" ActionTag="2018832593" Tag="659" IconVisible="False" LeftMargin="388.0000" RightMargin="128.0000" BottomMargin="316.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                     <Size X="124.0000" Y="124.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
                     <Position X="450.0000" Y="440.0000" />
@@ -105,12 +107,13 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.7031" Y="1.0000" />
                     <PreSize X="0.1937" Y="0.2818" />
+                    <FileData Type="Normal" Path="images/formation/rolebox1.png" Plist="" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="layoutHeadMaid0" ActionTag="-1466932914" VisibleForFrame="False" Tag="663" IconVisible="False" LeftMargin="128.0000" RightMargin="388.0000" TopMargin="190.0000" BottomMargin="126.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="layoutHeadMaid0" ActionTag="-1466932914" CallBackType="Click" Tag="663" IconVisible="False" LeftMargin="128.0000" RightMargin="388.0000" TopMargin="190.0000" BottomMargin="126.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                     <Size X="124.0000" Y="124.0000" />
                     <AnchorPoint ScaleX="0.5000" />
                     <Position X="190.0000" Y="126.0000" />
@@ -118,12 +121,13 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.2969" Y="0.2864" />
                     <PreSize X="0.1937" Y="0.2818" />
+                    <FileData Type="Normal" Path="images/formation/rolebox1.png" Plist="" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="layoutHeadMaid1" ActionTag="-701796727" VisibleForFrame="False" Tag="667" IconVisible="False" LeftMargin="258.0000" RightMargin="258.0000" TopMargin="190.0000" BottomMargin="126.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="layoutHeadMaid1" ActionTag="-701796727" Tag="667" IconVisible="False" LeftMargin="258.0000" RightMargin="258.0000" TopMargin="190.0000" BottomMargin="126.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                     <Size X="124.0000" Y="124.0000" />
                     <AnchorPoint ScaleX="0.5000" />
                     <Position X="320.0000" Y="126.0000" />
@@ -131,12 +135,13 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.2864" />
                     <PreSize X="0.1937" Y="0.2818" />
+                    <FileData Type="Normal" Path="images/formation/rolebox1.png" Plist="" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="layoutHeadMaid2" ActionTag="-2028183759" VisibleForFrame="False" Tag="671" IconVisible="False" LeftMargin="388.0000" RightMargin="128.0000" TopMargin="190.0000" BottomMargin="126.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="layoutHeadMaid2" ActionTag="-2028183759" Tag="671" IconVisible="False" LeftMargin="388.0000" RightMargin="128.0000" TopMargin="190.0000" BottomMargin="126.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                     <Size X="124.0000" Y="124.0000" />
                     <AnchorPoint ScaleX="0.5000" />
                     <Position X="450.0000" Y="126.0000" />
@@ -144,12 +149,13 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.7031" Y="0.2864" />
                     <PreSize X="0.1937" Y="0.2818" />
+                    <FileData Type="Normal" Path="images/formation/rolebox1.png" Plist="" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="layoutHeadMaid3" ActionTag="234358396" VisibleForFrame="False" Tag="675" IconVisible="False" LeftMargin="128.0000" RightMargin="388.0000" TopMargin="320.0000" BottomMargin="-4.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="layoutHeadMaid3" ActionTag="234358396" Tag="675" IconVisible="False" LeftMargin="128.0000" RightMargin="388.0000" TopMargin="320.0000" BottomMargin="-4.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                     <Size X="124.0000" Y="124.0000" />
                     <AnchorPoint ScaleX="0.5000" />
                     <Position X="190.0000" Y="-4.0000" />
@@ -157,12 +163,13 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.2969" Y="-0.0091" />
                     <PreSize X="0.1937" Y="0.2818" />
+                    <FileData Type="Normal" Path="images/formation/rolebox.png" Plist="" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="layoutHeadMaid4" ActionTag="284638594" VisibleForFrame="False" Tag="679" IconVisible="False" LeftMargin="258.0000" RightMargin="258.0000" TopMargin="320.0000" BottomMargin="-4.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="layoutHeadMaid4" ActionTag="284638594" Tag="679" IconVisible="False" LeftMargin="258.0000" RightMargin="258.0000" TopMargin="320.0000" BottomMargin="-4.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                     <Size X="124.0000" Y="124.0000" />
                     <AnchorPoint ScaleX="0.5000" />
                     <Position X="320.0000" Y="-4.0000" />
@@ -170,12 +177,13 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="-0.0091" />
                     <PreSize X="0.1937" Y="0.2818" />
+                    <FileData Type="Normal" Path="images/formation/rolebox.png" Plist="" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="layoutHeadMaid5" ActionTag="-2084045947" VisibleForFrame="False" Tag="683" IconVisible="False" LeftMargin="388.0000" RightMargin="128.0000" TopMargin="320.0000" BottomMargin="-4.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="layoutHeadMaid5" ActionTag="-2084045947" Tag="683" IconVisible="False" LeftMargin="388.0000" RightMargin="128.0000" TopMargin="320.0000" BottomMargin="-4.0000" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                     <Size X="124.0000" Y="124.0000" />
                     <AnchorPoint ScaleX="0.5000" />
                     <Position X="450.0000" Y="-4.0000" />
@@ -183,6 +191,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.7031" Y="-0.0091" />
                     <PreSize X="0.1937" Y="0.2818" />
+                    <FileData Type="Normal" Path="images/formation/rolebox.png" Plist="" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />

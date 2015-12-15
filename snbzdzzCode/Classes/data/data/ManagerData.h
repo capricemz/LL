@@ -165,8 +165,8 @@ class DataEntity : public Ref
 
 		void updateAttribute();
 		void updateSkillGroup();
-		void updateAttributeSkillPassive();
-
+		void updateAttributeSkillPassive();//刷新被动技能属性
+		
 	public:
 		int getIdEntity() const
 		{
@@ -267,6 +267,8 @@ class HandleDataEntity
 		void dataFileGet();
 		void dataFileSet();
 		
+		void updateAttributeGrade();//刷新等级属性数据
+
 		void resetDataEntityMaid();//开始关卡时，重置女仆数据，如将女仆血量补满等
 		void createDataEntityMaid();
 		void createDataEntityMaid(const int &idEntity);
@@ -572,6 +574,7 @@ class HandleDataIncome
 		bool getThingEnough(const IdThing &idThing, const int &valueNeed);
 		void setThing(const IdThing &idThing, const int &value);//idAttribute 元素id, value 新值
 		void addThing(const IdThing &idThing, const int &value);//idAttribute 元素id, value 正值增加，负值减少
+		void addThingDeal(const IdThing &idThing, const int &value);//添加物品额外处理，idAttribute 元素id, value 正值增加，负值减少
 
 		Vector<DataTrainingInfo *> &getVecDataTrainingInfo()
 		{

@@ -26,7 +26,10 @@ ManagerCfg::ManagerCfg() :
 	_dicVecCfgSkillGroupTypeArgs({}),
 	_dicCfgEntity({}),
 	_dicCfgLevels({}),
+	_dicCfgLevelTargets({}),
+	_dicCfgGrade({}),
 	_dicCfgTraining({}),
+	_dicCfgThing({}),
 	_dicDicCfgPlot({}),
 	_dicDicCfgTargetAward({}),
 	_dicDicCfgGuide({})
@@ -41,7 +44,10 @@ ManagerCfg::~ManagerCfg()
 	_dicVecCfgSkillGroupTypeArgs.clear();
 	_dicCfgEntity.clear();
 	_dicCfgLevels.clear();
+	_dicCfgLevelTargets.clear();
+	_dicCfgGrade.clear();
 	_dicCfgTraining.clear();
+	_dicCfgThing.clear();
 	_dicDicCfgPlot.clear();
 	_dicDicCfgTargetAward.clear();
 	_dicDicCfgGuide.clear();
@@ -67,6 +73,7 @@ void ManagerCfg::threadDeal()
 	doLoad("entity.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgEntity,this));
 	doLoad("levels.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgLevels, this));
 	doLoad("levelTargets.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgLevelTargets, this));
+	doLoad("grade.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgGrade, this));
 	doLoad("training.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgTraining, this));
 	doLoad("thing.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgThing, this));
 	doLoad("plot.cfg", CC_CALLBACK_1(ManagerCfg::assignCfgPlot, this));
@@ -371,6 +378,16 @@ void ManagerCfg::assignCfgLevelTargets(const VectorString &vecItem)
 		}
 	}
 	_dicCfgLevelTargets.insert(make_pair(cfg.id, cfg));
+}
+
+void ManagerCfg::assignCfgGrade(const VectorString &vecItem)
+{
+	CfgGrade cfg;
+	cfg.id = Value(vecItem[0]).asInt();
+	cfg.index = Value(vecItem[1]).asInt();
+	cfg.exp = Value(vecItem[2]).asInt();
+	cfg.effect = vecItem[3];
+	_dicCfgGrade.insert(make_pair(cfg.id, cfg));
 }
 
 void ManagerCfg::assignCfgTraining(const VectorString &vecItem)
