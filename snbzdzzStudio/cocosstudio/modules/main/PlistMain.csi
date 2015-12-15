@@ -40,6 +40,12 @@
       <FilePathData Path="images/girl/role_name.png" />
       <FilePathData Path="images/girl/role2.png" />
       <FilePathData Path="images/girl/skill.png" />
+      <FilePathData Path="images/common/typeJobArcher.png" />
+      <FilePathData Path="images/common/typeJobMage.png" />
+      <FilePathData Path="images/common/typeJobRogue.png" />
+      <FilePathData Path="images/common/typeJobTank.png" />
+      <FilePathData Path="images/common/typeJobTreat.png" />
+      <FilePathData Path="images/common/typeJobWarrior.png" />
     </ImageFiles>
     <MaxSize Width="512" Height="512" />
   </Content>

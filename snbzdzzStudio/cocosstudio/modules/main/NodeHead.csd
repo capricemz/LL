@@ -62,7 +62,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2869" Y="0.1756" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="MarkedSubImage" Path="images/common/typeJobRogue.png" Plist="modules/common/PlistCommon.plist" />
+                <FileData Type="MarkedSubImage" Path="images/common/typeJobRogue.png" Plist="modules/main/PlistMain.plist" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
             </Children>
