@@ -154,7 +154,7 @@ bool HandleDataUnlock::getIsUnlockMaid(const int &idEntity)
 {
 	if (!getIsUnlockMaidExist(idEntity))
 	{
-		return false;
+		return true;
 	}
 	auto index = _dicTypeUnlockMaid[idEntity];
 	return getIsUnlock(index);
@@ -179,7 +179,7 @@ bool HandleDataUnlock::getIsBuyMaid(const int &idEntity)
 {
 	if (!getIsBuyMaidExist(idEntity))
 	{
-		return false;
+		return true;
 	}
 	auto index = _dicTypeBuyMaid[idEntity];
 	return getIsUnlock(index);
@@ -204,7 +204,7 @@ bool HandleDataUnlock::getIsUnlockSkill(const int &idSkill, const int &indexSkil
 {
 	if (!getIsUnlockSkillExist(idSkill, indexSkill))
 	{
-		return false;
+		return true;
 	}
 	auto index = _dicDicTypeUnlockSkill[idSkill][indexSkill];
 	return getIsUnlock(index);
@@ -241,7 +241,7 @@ bool HandleDataUnlock::getIsBuySkill(const int &idSkill, const int &indexSkill)
 {
 	if (!getIsBuySkillExist(idSkill, indexSkill))
 	{
-		return false;
+		return true;
 	}
 	auto index = _dicDicTypeBuySkill[idSkill][indexSkill];
 	return getIsUnlock(index);
@@ -266,7 +266,7 @@ bool HandleDataUnlock::getIsUnlockLevel(const int &idLevel)
 {
 	if (!getIsUnlockLevelExist(idLevel))
 	{
-		return false;
+		return true;
 	}
 	auto index = _dicTypeUnlockLevel[idLevel];
 	return getIsUnlock(index);
@@ -291,7 +291,7 @@ bool HandleDataUnlock::getIsPassedLevel(const int &idLevel)
 {
 	if (!getIsPassedLevelExist(idLevel))
 	{
-		return false;
+		return true;
 	}
 	auto index = _dicTypePassedLevel[idLevel];
 	return getIsUnlock(index);
@@ -316,7 +316,7 @@ bool HandleDataUnlock::getIsCompleteLevelTarget(const int &idLevel, const int &i
 {
 	if (!getIsCompleteLevelTargetExist(idLevel, idLevelTarget))
 	{
-		return false;
+		return true;
 	}
 	auto index = _dicDicTypeCompleteLevelTarget[idLevel][idLevelTarget];
 	return getIsUnlock(index);

@@ -83,6 +83,11 @@ public:
 		return _dataGrid;
 	}
 
+	bool isDataGridExist() const
+	{
+		return _dataGrid != nullptr;
+	}
+
 	void setIsCanMoveOver(bool val)
 	{
 		_isCanMoveOver = val;

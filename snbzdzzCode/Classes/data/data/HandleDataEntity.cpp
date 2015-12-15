@@ -134,9 +134,8 @@ void DataEntity::updateAttributeSkillPassive()
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
 	for (auto dataSkillInfo : _vecSkillPassive)
 	{
-		auto isExist = handleDataUnlock->getIsBuySkillExist(dataSkillInfo.id, dataSkillInfo.index);
 		auto isBuy = handleDataUnlock->getIsBuySkill(dataSkillInfo.id, dataSkillInfo.index);
-		auto indexSkill = dataSkillInfo.index + (isExist && !isBuy ? -1 : 0);
+		auto indexSkill = dataSkillInfo.index + (!isBuy ? -1 : 0);
 		if (indexSkill < 0)
 		{
 			continue;
@@ -276,16 +275,14 @@ void DataEntity::setSkill(DataSkillInfo &dataSkillInfo)
 				_vecSkillEnergy.push_back(dataSkillInfo);
 			}
 			
-			auto isExist = handleDataUnlock->getIsUnlockSkillExist(idSkill, indexSkill);
 			auto isUnlock = handleDataUnlock->getIsUnlockSkill(idSkill, indexSkill);
-			if (isExist && !isUnlock)
+			if (!isUnlock)//若未解锁
 			{
 				return;
 			}
 
-			isExist = handleDataUnlock->getIsBuySkillExist(idSkill, indexSkill);
 			auto isBuy = handleDataUnlock->getIsBuySkill(idSkill, indexSkill);
-			if (isExist && !isBuy)//若技能需要购买且未购买
+			if (!isBuy)//若未购买
 			{
 				return;
 			}

@@ -98,25 +98,23 @@ void LayerSkills::updateLayoutBtns(const bool &isInit /*= false*/)
 		auto idEntity = Value(data->getCustomProperty()).asInt();
 		
 		auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
-		auto isBuyExist = handleDataUnlock->getIsBuyMaidExist(idEntity);
 		auto isBuy = handleDataUnlock->getIsBuyMaid(idEntity);
-		auto isUnlockExist = handleDataUnlock->getIsUnlockMaidExist(idEntity);
 		auto isUnlock = handleDataUnlock->getIsUnlockMaid(idEntity);
 		
 		if (isInit)
 		{
-			if ((isBuy || (isUnlock && !isBuy)))//若需购买且已购买或需解锁且解锁且未购买
+			if ((isBuy || (isUnlock && !isBuy)))//若已购买或解锁且未购买
 			{
 				_vecShowIdEntity.push_back(idEntity);
 			}
 			btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnMaid, this));
 		}
 
-		btn->setBright(!isUnlockExist || isUnlock);
-		btn->setTouchEnabled(!isUnlockExist || isUnlock);
+		btn->setBright(isUnlock);
+		btn->setTouchEnabled(isUnlock);
 		
 		auto spriteLockState = (Sprite *)btn->getChildByName("spriteLockState");
-		auto name = isUnlockExist && !isUnlock ? RES_IMAGES_MAIN_MAID_UNLOCK_PNG : (isBuyExist && !isBuy ? RES_IMAGES_MAIN_MAID_BUY_PNG : "");
+		auto name = !isUnlock ? RES_IMAGES_MAIN_MAID_UNLOCK_PNG : (!isBuy ? RES_IMAGES_MAIN_MAID_BUY_PNG : "");
 		if (name != "")
 		{
 			auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(name);
@@ -146,13 +144,11 @@ void LayerSkills::updateLayoutMaid(const bool &isInit /*= false*/)
 	_uiEntity->getLayoutBg()->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnMaidBuy, this));
 
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
-	auto isBuyExist = handleDataUnlock->getIsBuyMaidExist(_idEntityCurrent);
 	auto isBuy = handleDataUnlock->getIsBuyMaid(_idEntityCurrent);
-	auto isUnlockExist = handleDataUnlock->getIsUnlockMaidExist(_idEntityCurrent);
 	auto isUnlock = handleDataUnlock->getIsUnlockMaid(_idEntityCurrent);
 
 	auto spriteBuyTip = (Sprite *)layoutMaid->getChildByName("spriteBuyTip");
-	spriteBuyTip->setVisible(isUnlock && (isBuyExist && !isBuy));
+	spriteBuyTip->setVisible(isUnlock && !isBuy);
 
 	auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[_idEntityCurrent];
 	auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(cfgEntity.urlPicName);
@@ -180,8 +176,8 @@ void LayerSkills::updateLayoutMaid(const bool &isInit /*= false*/)
 	{
 		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchSwitchMaidSkill, this));
 	}
-	btn->setBright(!isBuyExist || isBuy);
-	btn->setTouchEnabled(!isBuyExist || isBuy);
+	btn->setBright(isBuy);
+	btn->setTouchEnabled(isBuy);
 }
 
 void LayerSkills::updateLayoutSkillItems(const bool &isInit /*= false*/)
@@ -324,18 +320,16 @@ void LayerSkills::updateLayoutSKillItem(Node *nodeSkillItem, const bool &isExsit
 	if (isSpecialOrPassive)
 	{
 		auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
-		auto isExsit = handleDataUnlock->getIsUnlockSkillExist(dataSkillInfo.id, dataSkillInfo.index);
 		auto isUnlock = handleDataUnlock->getIsUnlockSkill(dataSkillInfo.id, dataSkillInfo.index);
-		if (isExsit && !isUnlock)//若需解锁且未解锁
+		if (!isUnlock)//若未解锁
 		{
 			btn->setBright(false);
 		}
 		else
 		{
 			btn->setBright(true);
-			auto isExsit = handleDataUnlock->getIsBuySkillExist(dataSkillInfo.id, dataSkillInfo.index);
 			auto isBuy = handleDataUnlock->getIsBuySkill(dataSkillInfo.id, dataSkillInfo.index);
-			btn->setVisible(isExsit && !isBuy);//若需购买且未购买，则显示按钮
+			btn->setVisible(!isBuy);//若为购买，则显示按钮
 		}
 	}
 }

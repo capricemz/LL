@@ -204,7 +204,6 @@ void LayerGridSelect::createSkin()
 
 		auto grid = Grid::create();
 		grid->setIndexGrid(i);
-		grid->createDataGrid();
 		grid->setPosition(postion);
 		grid->setName("gridSelect" + Value(i).asString());
 		grid->setVisible(false);
@@ -260,15 +259,16 @@ void LayerGridSelect::runActionGridSelectMaidMoveFrom(const Vec2 &postion, const
 	for (int i = 0; i < GRID_SELECT_MAX; i++)
 	{
 		Grid *grid = (Grid *)_skin->getChildByName("gridSelect" + Value(i).asString());
-
+		grid->setIsCanMoveOver(false);
+		
 		if (grid->isVisible())
 		{
 			continue;
 		}
 
-		if (i > lengthVecSkillActive)
+		if (i >= lengthVecSkillActive)
 		{
-			break;
+			continue;
 		}
 
 		total++;
@@ -360,6 +360,7 @@ void LayerGridSelect::runActionGridSelectMaidTurn(const function<void()> &funcOn
 
 		auto actionCallFunc = CallFunc::create([grid, funcOneOver, isLast, funcAllOver]()
 		{
+			grid->setIsCanMoveOver(true);
 			grid->turn([funcOneOver, isLast, funcAllOver]()
 			{
 				if (funcOneOver != nullptr)

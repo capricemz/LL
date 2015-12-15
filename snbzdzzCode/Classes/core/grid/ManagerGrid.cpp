@@ -31,6 +31,12 @@ void ManagerGrid::setAroundGridCanMoveOver(const int &indexGrid)
 	for (auto var : _dicGridMaidSelect)
 	{
 		auto grid = (Grid *)var.second;
+		if (!grid->isDataGridExist())
+		{
+			grid->setIsCanMoveOver(false);
+			continue;
+		}
+		
 		auto indexGridTemp = grid->getIndexGrid();
 		if (isFull)
 		{
