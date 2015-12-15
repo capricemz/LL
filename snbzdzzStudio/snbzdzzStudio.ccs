@@ -91,6 +91,7 @@
             <Image Name="battle_bg1.png" />
             <Image Name="bg.png" />
             <Image Name="bg1.png" />
+            <Image Name="gril_bg.png" />
           </Folder>
           <Folder Name="role_image">
             <Image Name="role_image_2.png" />
@@ -203,6 +204,8 @@
             <Image Name="buy1.png" />
             <Image Name="role_name.png" />
             <Image Name="not_unlock.png" />
+            <Image Name="role_head_box.png" />
+            <Image Name="role_head_top.png" />
           </Folder>
           <Folder Name="formation">
             <Image Name="back.png" />
@@ -395,6 +398,15 @@
             <Image Name="skill_2007.jpg" />
             <Image Name="skill_2008.jpg" />
             <Image Name="skill_2009.jpg" />
+          </Folder>
+          <Folder Name="role_head">
+            <Image Name="role_head_bg_6.png" />
+            <Image Name="role_head_41.png" />
+            <Image Name="role_head_bg_1.png" />
+            <Image Name="role_head_bg_2.png" />
+            <Image Name="role_head_bg_3.png" />
+            <Image Name="role_head_bg_4.png" />
+            <Image Name="role_head_bg_5.png" />
           </Folder>
         </Folder>
         <Folder Name="fonts">

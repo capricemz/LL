@@ -4,6 +4,7 @@
 #include "data/define/DefinesRes.h"
 #include "ui/common/UIEntity.h"
 #include "data/data/ManagerData.h"
+#include "data/config/ManagerCfg.h"
 
 LayerTraining::LayerTraining() : _skin(nullptr), _indexCurrent(0)
 {
@@ -61,13 +62,10 @@ void LayerTraining::updateSkin(const int &index)
 		return;
 	}
 
-	auto layout = (Layout *)_skin->getChildByName("layoutContent");
-	auto size = layout->getContentSize();
-
-	auto uiEntity = UIEntity::create();
-	uiEntity->updateSkin(dt->getIdEntity(), 1.0f);
-	uiEntity->setPosition(Vec2(size.width * 0.5f, size.height *0.5f));
-	layout->addChild(uiEntity);
+	updateLayoutSelect();
+	updateLayoutTraining();
+	updateLayoutEntity();
+	updateLayoutCount();
 }
 
 void LayerTraining::createSkin()
@@ -77,20 +75,102 @@ void LayerTraining::createSkin()
 
 	updateSkin(0);
 
-	auto btn = (Button *)_skin->getChildByName("btn0");
-	btn->addTouchEventListener(CC_CALLBACK_2(LayerTraining::onTouchBtn, this));
-	btn->setUserData((void *)TypeTrianing::WAY0);
+	updateLayoutBtns();
+}
+
+void LayerTraining::updateLayoutSelect()
+{
+
+}
+
+void LayerTraining::updateLayoutTraining()
+{
+	
+}
+
+void LayerTraining::updateLayoutEntity()
+{
+	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
+	auto dt = handleDataIncome->getDataTrainingInfo(_indexCurrent);
+
+	auto idEntity = dt->getIdEntity();
+
+	auto layout = (Layout *)_skin->getChildByName("layoutEntity");
+	auto size = layout->getContentSize();
+
+	auto uiEntity = UIEntity::create();
+	uiEntity->updateSkin(idEntity, 1.0f);
+	uiEntity->setPosition(Vec2(size.width * 0.5f, size.height *0.5f));
+	layout->addChild(uiEntity);
+
+	auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[idEntity];
+	auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(cfgEntity.urlPicName);
+	auto spriteName = (Sprite *)layout->getChildByName("spriteName");
+	spriteName->setSpriteFrame(spriteFrame);
+}
+
+void LayerTraining::updateLayoutCount()
+{
+
+}
+
+void LayerTraining::updateLayoutBtns()
+{
+	auto layout = (Layout *)_skin->getChildByName("layoutBtn0");//后宫出售调教
+
+	auto btn = (Button *)layout->getChildByName("btn0");
+	btn->addTouchEventListener(CC_CALLBACK_2(LayerTraining::onTouchBtnSelect, this));
+	btn->setUserData((void *)TypeTrianingSelect::STORE);
 
 	btn = (Button *)_skin->getChildByName("btn1");
-	btn->addTouchEventListener(CC_CALLBACK_2(LayerTraining::onTouchBtn, this));
+	btn->addTouchEventListener(CC_CALLBACK_2(LayerTraining::onTouchBtnSelect, this));
+	btn->setUserData((void *)TypeTrianingSelect::SELL);
+
+	btn = (Button *)_skin->getChildByName("btn2");
+	btn->addTouchEventListener(CC_CALLBACK_2(LayerTraining::onTouchBtnSelect, this));
+	btn->setUserData((void *)TypeTrianingSelect::TRIANING);
+
+	layout = (Layout *)_skin->getChildByName("layoutBtn0");//后宫出售调教
+
+	auto btn = (Button *)layout->getChildByName("btn0");
+	btn->addTouchEventListener(CC_CALLBACK_2(LayerTraining::onTouchBtnWay, this));
+	btn->setUserData((void *)TypeTrianing::WAY2);
+
+	btn = (Button *)_skin->getChildByName("btn1");
+	btn->addTouchEventListener(CC_CALLBACK_2(LayerTraining::onTouchBtnWay, this));
 	btn->setUserData((void *)TypeTrianing::WAY1);
 
 	btn = (Button *)_skin->getChildByName("btn2");
-	btn->addTouchEventListener(CC_CALLBACK_2(LayerTraining::onTouchBtn, this));
-	btn->setUserData((void *)TypeTrianing::WAY2);
+	btn->addTouchEventListener(CC_CALLBACK_2(LayerTraining::onTouchBtnWay, this));
+	btn->setUserData((void *)TypeTrianing::WAY0);
 }
 
-void LayerTraining::onTouchBtn(Ref *ref, Widget::TouchEventType type)
+void LayerTraining::onTouchBtnSelect(Ref *ref, Widget::TouchEventType type)
+{
+	if (type == Widget::TouchEventType::ENDED)
+	{
+		auto btn = (Button *)ref;
+		auto typeTrianingSelect = (TypeTrianingSelect)(int)btn->getUserData();
+
+		auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
+		auto dt = handleDataIncome->getDataTrainingInfo(_indexCurrent);
+
+		if (typeTrianingSelect == TypeTrianingSelect::TRIANING)
+		{
+
+		}
+		else if (typeTrianingSelect == TypeTrianingSelect::SELL)
+		{
+
+		}
+		else if (typeTrianingSelect == TypeTrianingSelect::STORE)
+		{
+
+		}
+	}
+}
+
+void LayerTraining::onTouchBtnWay(Ref *ref, Widget::TouchEventType type)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{

@@ -402,27 +402,8 @@ void ManagerCfg::assignCfgTraining(const VectorString &vecItem)
 	cfg.costWay0 = Value(vecItem[6]).asInt();
 	cfg.costWay1 = Value(vecItem[7]).asInt();
 	cfg.costWay2 = Value(vecItem[8]).asInt();
-	auto strValue = vecItem[9];
-	if (strValue != "")
-	{
-		auto vec = UtilString::split(strValue, "|");
-		for (auto var : vec)
-		{
-			auto vec1 = UtilString::split(var, ":");
-			cfg.vecVecDesc.push_back(vec1);
-		}
-	}
-	strValue = vecItem[10];
-	if (strValue != "")
-	{
-		auto vec = UtilString::split(strValue, "|");
-		for (auto var : vec)
-		{
-			auto vec1 = UtilString::split(var, ":");
-			cfg.vecVecAnimation.push_back(vec1);
-		}
-	}
-	cfg.urlPic = vecItem[11];
+	cfg.urlPic = vecItem[9];
+	cfg.idPlot = Value(vecItem[10]).asInt();
 	_dicCfgTraining.insert(make_pair(cfg.id, cfg));
 }
 

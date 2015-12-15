@@ -117,8 +117,7 @@ struct CfgTraining
 	int costWay1;//刷牙消耗(道具)
 	int costWay2;//换装消耗(道具)
 	string urlPic;//换装图片
-	vector<vector<string>> vecVecDesc;//文本
-	vector<vector<string>> vecVecAnimation;//动画
+	int idPlot;//剧情id
 };
 typedef map<int32_t, CfgTraining> DicCfgTraining;
 struct CfgThing

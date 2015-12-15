@@ -247,6 +247,14 @@ enum class TypeSRP
 	PAPER
 };
 
+enum class TypeTrianingSelect
+{
+	NONE,
+	STORE,
+	SELL,
+	TRIANING
+};
+
 enum class TypeTrianing
 {
 	NONE,

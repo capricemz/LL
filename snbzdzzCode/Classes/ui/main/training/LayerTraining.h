@@ -31,7 +31,13 @@ public:
 	
 private:
 	void createSkin();
-	void onTouchBtn(Ref *ref, Widget::TouchEventType type);
+	void updateLayoutSelect();
+	void updateLayoutTraining();
+	void updateLayoutCount();
+	void updateLayoutEntity();
+	void updateLayoutBtns();
+	void onTouchBtnSelect(Ref *ref, Widget::TouchEventType type);//后宫出售调教
+	void onTouchBtnWay(Ref *ref, Widget::TouchEventType type);
 	
 private:
 	Layer *_skin;

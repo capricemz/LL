@@ -125,6 +125,65 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
+          <AbstractNodeData Name="layoutMiddle" ActionTag="1472159648" Tag="1366" IconVisible="False" LeftMargin="-49.5000" RightMargin="-49.5000" TopMargin="-74.0000" BottomMargin="-74.0000" TouchEnable="True" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="99.0000" Y="148.0000" />
+            <Children>
+              <AbstractNodeData Name="spriteBg" ActionTag="-1718925818" Tag="1367" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="3.0000" RightMargin="3.0000" TopMargin="3.0000" BottomMargin="3.0000" ctype="SpriteObjectData">
+                <Size X="93.0000" Y="142.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="49.5000" Y="74.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="0.7500" Y="1.1452" />
+                <FileData Type="MarkedSubImage" Path="images/role_head/role_head_bg_6.png" Plist="modules/main/PlistMaidHead1.plist" />
+                <BlendFunc Src="770" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="spriteIcon" ActionTag="-1291416840" Tag="1368" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="3.0000" RightMargin="3.0000" TopMargin="3.0000" BottomMargin="3.0000" ctype="SpriteObjectData">
+                <Size X="93.0000" Y="142.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="49.5000" Y="74.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="MarkedSubImage" Path="images/role_head/role_head_41.png" Plist="modules/main/PlistMaidHead1.plist" />
+                <BlendFunc Src="770" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="spriteTop" ActionTag="-66093707" Tag="1369" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" ctype="SpriteObjectData">
+                <Size X="99.0000" Y="148.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="49.5000" Y="74.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="Normal" Path="images/girl/role_head_box.png" Plist="" />
+                <BlendFunc Src="770" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="spriteUnlock" ActionTag="-1025335904" Tag="81" IconVisible="False" HorizontalEdge="BothEdge" LeftMargin="19.5000" RightMargin="19.5000" TopMargin="64.5000" BottomMargin="16.5000" ctype="SpriteObjectData">
+                <Size X="60.0000" Y="67.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="49.5000" Y="50.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.3378" />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="MarkedSubImage" Path="images/girl/not_unlock.png" Plist="modules/main/PlistMain.plist" />
+                <BlendFunc Src="770" Dst="771" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

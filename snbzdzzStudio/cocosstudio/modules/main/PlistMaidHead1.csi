@@ -7,6 +7,13 @@
       <FilePathData Path="images/formation/role3.png" />
       <FilePathData Path="images/formation/role4.png" />
       <FilePathData Path="images/formation/role5.png" />
+      <FilePathData Path="images/role_head/role_head_bg_1.png" />
+      <FilePathData Path="images/role_head/role_head_bg_2.png" />
+      <FilePathData Path="images/role_head/role_head_bg_3.png" />
+      <FilePathData Path="images/role_head/role_head_bg_4.png" />
+      <FilePathData Path="images/role_head/role_head_bg_5.png" />
+      <FilePathData Path="images/role_head/role_head_bg_6.png" />
+      <FilePathData Path="images/role_head/role_head_41.png" />
     </ImageFiles>
     <MaxSize Width="1024" Height="1024" />
   </Content>
