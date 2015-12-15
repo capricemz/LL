@@ -36,6 +36,7 @@ void HandleImageLoad::loadImages()
 	imageAsyncLoad(RES_MODULES_MAIN_PLIST_MAID_HEAD_PLIST);
 	imageAsyncLoad(RES_MODULES_MAIN_PLIST_MAID_HEAD1_PLIST);
 	imageAsyncLoad(RES_MODULES_MAIN_PLIST_MAID_NAME_PLIST);
+	imageAsyncLoad(RES_MODULES_MAIN_PLIST_SKILL_PLIST);
 	//¼ÓÔØ±³¾°Í¼Æ¬
 	auto dicCfgLevels = ManagerCfg::getInstance()->getDicCfgLevels();
 	for (auto var : dicCfgLevels)

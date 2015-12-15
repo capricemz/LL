@@ -20,6 +20,7 @@ static const string RES_MODULES_MAIN_PLIST_MAIN_PLIST = "modules/main/PlistMain.
 static const string RES_MODULES_MAIN_PLIST_MAID_HEAD_PLIST = "modules/main/PlistMaidHead.plist";
 static const string RES_MODULES_MAIN_PLIST_MAID_HEAD1_PLIST = "modules/main/PlistMaidHead1.plist";
 static const string RES_MODULES_MAIN_PLIST_MAID_NAME_PLIST = "modules/main/PlistMaidName.plist";
+static const string RES_MODULES_MAIN_PLIST_SKILL_PLIST = "modules/main/PlistSkill.plist";
 static const string RES_MODULES_MAIN_SCENE_MAIN_CSB = "modules/main/SceneMain.csb";
 
 static const string RES_MODULES_MAIN_LAYER_GUILD_CSB = "modules/main/LayerGuild.csb";

@@ -425,11 +425,8 @@
             <PlistInfo Name="PlistMaidName.csi" Type="Plist" />
             <Project Name="NodeMaidSelectStar.csd" Type="Node" />
             <Project Name="LayerSkillbook.csd" Type="Layer" />
-            <Project Name="LayerTiaojiao.csd" Type="Layer" />
-            <Project Name="LayerTiaojiao2.csd" Type="Layer" />
             <PlistInfo Name="PlistMaidHead1.csi" Type="Plist" />
             <Project Name="NodeSkillItem.csd" Type="Node" />
-            <Project Name="LayerZhandou.csd" Type="Layer" />
             <PlistInfo Name="PlistSkill.csi" Type="Plist" />
           </Folder>
           <Folder Name="welcome">
