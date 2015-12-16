@@ -12,6 +12,8 @@ using namespace std;
 
 static const int TIME_LAST_SAVE_INTERVAL = 300;
 static const int TIME_OFF_LINE_MAX = 172800;
+static const int TRAINING_NUM_RST_INTERVAL = 3600;
+static const int TRAINING_NUM_RST_VALUE = 1;
 
 static const int DATA_UNLOCK_INIT_MAID = 1000;//初始化时默认解锁的女仆
 static const int DATA_UNLOCK_INIT_LEVEL = 1000;//初始化时默认解锁的关卡

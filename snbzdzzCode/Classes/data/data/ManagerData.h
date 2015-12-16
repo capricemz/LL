@@ -14,7 +14,7 @@ using namespace std;
 class HandleDataTime
 {
 	public:
-		HandleDataTime() : _isDataFileInit(false), _timeLast(0), _timeNow(0) {}
+		HandleDataTime() : _isDataFileInit(false), _timeLast(0), _timeNow(0), _timeTrainingNumRst(0) {}
 		~HandleDataTime();
 
 		void dataFileInit();
@@ -29,6 +29,9 @@ class HandleDataTime
 
 		bool isTimeLastNeedReset() const { return _timeNow - _timeLast >= TIME_LAST_SAVE_INTERVAL; }
 
+		double getTimeTrainingNumRst() const { return _timeTrainingNumRst; }
+		void setTimeTrainingNumRst(double val) { _timeTrainingNumRst = val; }
+		
 	private:
 		const string USER_DEFAULT_KEY_DT = "dataTime";//时刻数据,上一时刻，行动力恢复时刻，饱食度消耗时刻
 		bool _isDataFileInit;
@@ -36,6 +39,8 @@ class HandleDataTime
 		double _timeLast;//上一时刻
 		double _timeNow;//当前时刻
 
+		double _timeTrainingNumRst;//调教次数恢复时刻
+		
 };
 //格子数据类
 class DataGrid : public Ref
@@ -567,6 +572,8 @@ class HandleDataIncome
 		void dataFileInit();
 		void dataFileGet();
 		void dataFileSet();
+
+		void addTrainingNum(const int &value);
 		
 	public:
 		map<IdThing, int> getDicThing() const

@@ -50,6 +50,7 @@ void ManagerTimer::timerBackgroundDeal()
 void ManagerTimer::dataTimeOffLineDeal()
 {
 	auto handleDataTime = ManagerData::getInstance()->getHandleDataTime();
+	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
 	//
 	auto timeNow = UtilDate::getSecond();
 	handleDataTime->timeNowSet(timeNow);
@@ -65,11 +66,12 @@ void ManagerTimer::dataTimeOffLineDeal()
 		{
 			timeOffLine = timeOffLine > TIME_OFF_LINE_MAX ? TIME_OFF_LINE_MAX : timeOffLine;
 
-			/*auto count = int(timeOffLine / ACTION_POINT_RST_INTERVAL);
-			managerData->onActionPointChange(count * ACTION_POINT_RST_VALUE);//离线行动力
-			timeOffLineModifyActionPoint = (timeOffLine - Value(ACTION_POINT_RST_INTERVAL * count).asDouble());
+			auto count = int(timeOffLine / TRAINING_NUM_RST_INTERVAL);
+			handleDataIncome->addTrainingNum(TRAINING_NUM_RST_VALUE * count);
 
-			count = int(timeOffLine / FEED_COST_INTERVAL);
+			timeOffLineModifyActionPoint = (timeOffLine - Value(TRAINING_NUM_RST_INTERVAL * count).asDouble());
+
+			/*count = int(timeOffLine / FEED_COST_INTERVAL);
 			managerData->onAllEntityFeedChange(count * FEED_COST_VALUE);//离线饱食度
 			timeOffLineModifyFeedCost = (timeOffLine - Value(FEED_COST_INTERVAL * count).asDouble());
 
@@ -89,6 +91,7 @@ void ManagerTimer::dataTimeOffLineDeal()
 void ManagerTimer::updateCustom(float dt)
 {
 	auto handleDataTime = ManagerData::getInstance()->getHandleDataTime();
+	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
 
 	auto second = UtilDate::getSecond();
 	/*log("``````````````````````_timeNow:%e,second:%e,d:%e", _timeNow, second, _timeNow - second);*/
@@ -102,14 +105,13 @@ void ManagerTimer::updateCustom(float dt)
 		ManagerData::getInstance()->dataFileAllSet();
 	}
 	//
-	/*auto managerData = ManagerData::getInstance();
-	if (timeNow > managerData->timeApRstGet())
+	if (timeNow > handleDataTime->getTimeTrainingNumRst())
 	{
-		managerData->timeApRstSet(timeNow + ACTION_POINT_RST_INTERVAL);
-		managerData->dataTimeDataFileSet();
-		managerData->onActionPointChange(ACTION_POINT_RST_VALUE);
+		handleDataTime->setTimeTrainingNumRst(timeNow + TRAINING_NUM_RST_INTERVAL);
+		handleDataTime->dataFileSet();
+		handleDataIncome->addTrainingNum(TRAINING_NUM_RST_VALUE);
 	}
-	if (timeNow > managerData->timeFeedCostGet())
+	/*if (timeNow > managerData->timeFeedCostGet())
 	{
 		managerData->timeFeedCostSet(timeNow + FEED_COST_INTERVAL);
 		managerData->dataTimeDataFileSet();

@@ -115,6 +115,17 @@ void HandleDataIncome::dataFileSet()
 	userDefault->flush();
 }
 
+void HandleDataIncome::addTrainingNum(const int &value)
+{
+	addThing(IdThing::TRAINING, value);
+	auto valueTemp = getThing(IdThing::TRAINING);
+	if (valueTemp > TRAINING_NUM_MAX)
+	{
+		setThing(IdThing::TRAINING, TRAINING_NUM_MAX);
+	}
+	dataFileSet();
+}
+
 int HandleDataIncome::getThing(const IdThing &idThing)
 {
 	if (_dicThing.find(idThing) == _dicThing.end())
