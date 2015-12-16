@@ -21,11 +21,12 @@ public:
 
 	virtual bool init();
 
-	void updateSkin(const bool &isLarge, const bool &isMst, const int &indexDataEntity);
+	void updateSkin(const TypeNodeHead &type, const bool &isMst, const int &idEntity);
 	void updateAll();
 	void updateSpriteIcon();
 	void updateBarHp();
 	void updateSpriteJob();
+	void updateSpriteState();
 
 	/*移动
 	postion 其实位置 全局坐标
@@ -39,18 +40,15 @@ public:
 	NodeHead *clone();
 	
 public:
-	bool getIsLarge() const
+	TypeNodeHead getType() const
 	{
-		return _isLarge;
+		return _type;
 	}
 	bool getIsMst() const
 	{
 		return _isMst;
 	}
-	int getIndexDataEntity() const
-	{
-		return _indexDataEntity;
-	}
+	int getIndexDataEntity() const;
 
 	Layout *getLayoutBg()
 	{
@@ -65,9 +63,9 @@ public:
 private:
 	Node *_skin;
 	Layout *_layout;
-	bool _isLarge;
+	TypeNodeHead _type;
 	bool _isMst;
-	int _indexDataEntity;
+	int _idEntity;
 	
 };
 

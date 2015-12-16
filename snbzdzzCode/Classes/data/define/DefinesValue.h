@@ -239,6 +239,14 @@ enum class TypeUnlock
 	LAST_NEXT
 };
 
+enum class TypeNodeHead
+{
+	NONE,
+	LARGE,
+	MIDDLE,
+	SMALL
+};
+
 enum class TypeSRP
 {
 	NONE,

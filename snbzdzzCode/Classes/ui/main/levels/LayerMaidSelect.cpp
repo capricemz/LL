@@ -132,8 +132,9 @@ void LayerMaidSelect::createSkin()
 
 		if ((int)vecIdDataEntityMst.size() > index)
 		{
+			auto idEntity = Value(vecIdDataEntityMst.at(index)).asInt();
 			auto nodeHead = NodeHead::create();
-			nodeHead->updateSkin(false, true, index);
+			nodeHead->updateSkin(TypeNodeHead::SMALL, true, idEntity);
 			nodeHead->setPosition(layout->getPosition());
 			/*nodeHead->getLayoutBg()->setTouchEnabled(true);
 			nodeHead->getLayoutBg()->addTouchEventListener(CC_CALLBACK_2(LayerMaidSelect::onTouchNodeHead, this, nodeHead));*/
@@ -157,8 +158,9 @@ void LayerMaidSelect::createSkin()
 
 		if ((int)vecDataEntityMaid.size() > index)
 		{
+			auto idEntity = vecDataEntityMaid.at(index)->getIdEntity();
 			auto nodeHead = NodeHead::create();
-			nodeHead->updateSkin(false, false, index);
+			nodeHead->updateSkin(TypeNodeHead::SMALL, false, idEntity);
 			nodeHead->setPosition(layout->getPosition());
 			nodeHead->getLayoutBg()->setTouchEnabled(true);
 			nodeHead->getLayoutBg()->addTouchEventListener(CC_CALLBACK_2(LayerMaidSelect::onTouchNodeHead, this, nodeHead));

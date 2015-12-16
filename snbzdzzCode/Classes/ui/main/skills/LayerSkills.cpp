@@ -9,8 +9,10 @@
 #include "data/data/ManagerData.h"
 #include "data/config/ManagerCfg.h"
 #include "data/define/DefinesString.h"
+#include "../battle/NodeHead.h"
 
 using namespace ui;
+using namespace cocostudio::timeline;
 
 LayerSkills::LayerSkills() :
 	_skin(nullptr),
@@ -75,6 +77,10 @@ void LayerSkills::createSkin()
 	_skin = (Layer *)CSLoader::createNode(RES_MODULES_MAIN_LAYER_SKILLS_CSB);
 	addChild(_skin);
 
+	auto actionTimeline = CSLoader::createTimeline(RES_MODULES_MAIN_LAYER_SKILLS_CSB);
+	actionTimeline->play(animationHided, false);
+	_skin->runAction(actionTimeline);
+
 	updateLayoutBtns(true);
 
 	updateLayoutMaid(true);
@@ -88,13 +94,13 @@ void LayerSkills::updateLayoutBtns(const bool &isInit /*= false*/)
 	auto index = 0;
 	while (true)
 	{
-		auto btn = (Button *)layoutBtns->getChildByName("btn" + Value(index).asString());
-		if (btn == nullptr)
+		auto layout = (Layout *)layoutBtns->getChildByName("layout" + Value(index).asString());
+		if (layout == nullptr)
 		{
 			break;
 		}
 		//在代码里面先获取到button，getComponent()，并把获取的对象强转为Cocos Studio::ComExtensionData* 指针，再调用getCustomProperty()
-		cocostudio::ComExtensionData* data = dynamic_cast<cocostudio::ComExtensionData*>(btn->getComponent("ComExtensionData"));
+		cocostudio::ComExtensionData* data = dynamic_cast<cocostudio::ComExtensionData*>(layout->getComponent("ComExtensionData"));
 		auto idEntity = Value(data->getCustomProperty()).asInt();
 		
 		auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
@@ -107,23 +113,20 @@ void LayerSkills::updateLayoutBtns(const bool &isInit /*= false*/)
 			{
 				_vecShowIdEntity.push_back(idEntity);
 			}
-			btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnMaid, this));
+
+			auto nodeHead = NodeHead::create();
+			nodeHead->setName("nodeHead" + Value(index).asString());
+			nodeHead->updateSkin(TypeNodeHead::MIDDLE, false, idEntity);
+			nodeHead->setPosition(layout->getPosition());
+			nodeHead->getLayoutBg()->setTouchEnabled(true);
+			nodeHead->getLayoutBg()->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnMaid, this));
+			nodeHead->getLayoutBg()->setUserData((void *)idEntity);
+			layoutBtns->addChild(nodeHead);
 		}
 
-		btn->setBright(isUnlock);
-		btn->setTouchEnabled(isUnlock);
-		
-		auto spriteLockState = (Sprite *)btn->getChildByName("spriteLockState");
-		auto name = !isUnlock ? RES_IMAGES_MAIN_MAID_UNLOCK_PNG : (!isBuy ? RES_IMAGES_MAIN_MAID_BUY_PNG : "");
-		if (name != "")
-		{
-			auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(name);
-			spriteLockState->setSpriteFrame(spriteFrame);
-		}
-		else
-		{
-			spriteLockState->setVisible(false);
-		}
+		auto nodeHead = (NodeHead *)layoutBtns->getChildByName("nodeHead" + Value(index).asString());
+		nodeHead->updateSpriteIcon();
+		nodeHead->updateSpriteState();
 		
 		index++;
 	}
@@ -136,8 +139,9 @@ void LayerSkills::updateLayoutMaid(const bool &isInit /*= false*/)
 
 	if (_uiEntity == nullptr)
 	{
+		auto spriteIcon = (Sprite *)layoutMaid->getChildByName("spriteIcon");
 		_uiEntity = UIEntity::create();
-		_uiEntity->setPosition(Vec2(size.width * 0.5f, size.height *0.5f));
+		_uiEntity->setPosition(spriteIcon->getPosition());
 		layoutMaid->addChild(_uiEntity, -1);
 	}
 	_uiEntity->updateSkin(_idEntityCurrent, 1.0f);
@@ -152,8 +156,8 @@ void LayerSkills::updateLayoutMaid(const bool &isInit /*= false*/)
 
 	auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[_idEntityCurrent];
 	auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(cfgEntity.urlPicName);
-	auto spriteNameBg = (Sprite *)layoutMaid->getChildByName("spriteNameBg");
-	spriteNameBg->setSpriteFrame(spriteFrame);
+	auto spriteName = (Sprite *)layoutMaid->getChildByName("spriteName");
+	spriteName->setSpriteFrame(spriteFrame);
 
 	auto btn = (Button *)layoutMaid->getChildByName("btnPrev");
 	if (isInit)
@@ -195,20 +199,23 @@ void LayerSkills::updateLayoutSkillItems(const bool &isInit /*= false*/)
 	CCASSERT(dataEntity != nullptr, "LayerSkills::updateLayoutSkillItems _idEntityCurrent wrong");
 
 	auto layoutSkillItems = (Layout *)_skin->getChildByName("layoutSkillItems");
+	auto layout = (Layout *)layoutSkillItems->getChildByName("layout");
 	if (isInit)
 	{
-		layoutSkillItems->setTouchEnabled(true);
-		layoutSkillItems->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchSwitchMaidSkill, this));
-		auto btn = (Button *)layoutSkillItems->getChildByName("btnBase");
+		/*layoutSkillItems->setTouchEnabled(true);
+		layoutSkillItems->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchSwitchMaidSkill, this));*/
+		auto btn = (Button *)layout->getChildByName("btnClose");
+		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchSwitchMaidSkill, this));
+
+		btn = (Button *)layout->getChildByName("btnBase");
 		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkill, this, TypeSkill::BASE));
-		btn = (Button *)layoutSkillItems->getChildByName("btnSpecial");
+		btn = (Button *)layout->getChildByName("btnSpecial");
 		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkill, this, TypeSkill::SPECIAL));
-		btn = (Button *)layoutSkillItems->getChildByName("btnEnergy");
+		btn = (Button *)layout->getChildByName("btnEnergy");
 		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkill, this, TypeSkill::ENERGY));
-		btn = (Button *)layoutSkillItems->getChildByName("btnPassive");
+		btn = (Button *)layout->getChildByName("btnPassive");
 		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkill, this, TypeSkill::PASSIVE));
 	}
-
 
 	vector<DataSkillInfo> vecDataSkillInfo;
 	if (_typeSkill == TypeSkill::BASE)
@@ -227,11 +234,12 @@ void LayerSkills::updateLayoutSkillItems(const bool &isInit /*= false*/)
 	{
 		vecDataSkillInfo = dataEntity->getVecSkillPassive();
 	}
+	layout = (Layout *)layout->getChildByName("list")->getChildByName("layout");
 	auto lengthVec = (int)vecDataSkillInfo.size();
 	auto index = 0;
 	while (true)
 	{
-		auto nodeSkillItem = (Layout *)layoutSkillItems->getChildByName("nodeSkillItem" + Value(index).asString());
+		auto nodeSkillItem = (Layout *)layout->getChildByName("nodeSkillItem" + Value(index).asString());
 		if (nodeSkillItem == nullptr)
 		{
 			break;
@@ -261,11 +269,14 @@ void LayerSkills::updateLayoutSKillItem(Node *nodeSkillItem, const bool &isExsit
 	}
 	auto cfgSkill = ManagerCfg::getInstance()->getDicDicCfgSkill()[dataSkillInfo.id][dataSkillInfo.index];
 
+	auto layoutBg = (Layout *)nodeSkillItem->getChildByName("layoutBg");
+	layoutBg->setTouchEnabled(false);
+
 	auto spriteIcon = (Sprite *)nodeSkillItem->getChildByName("spriteIcon");
 	auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(cfgSkill.urlPic);
 	spriteIcon->setSpriteFrame(spriteFrame);
-	auto sizeOriginal = spriteFrame->getOriginalSizeInPixels();
-	auto scale = sizeOriginal.width > sizeOriginal.height ? sizeSkillIcon.width / sizeOriginal.width : sizeSkillIcon.height / sizeOriginal.height;
+	auto size = spriteFrame->getOriginalSizeInPixels();
+	auto scale = size.width > size.height ? sizeSkillIcon.width / size.width : sizeSkillIcon.height / size.height;
 	spriteIcon->setScale(scale);
 
 	auto layoutAttribute = (Layout *)nodeSkillItem->getChildByName("layoutAttribute");
@@ -283,8 +294,8 @@ void LayerSkills::updateLayoutSKillItem(Node *nodeSkillItem, const bool &isExsit
 		if (cfgAttribute.urlPic != "")
 		{
 			auto sprite = Sprite::createWithSpriteFrameName(cfgAttribute.urlPic);
-			auto sizeOriginal = spriteFrame->getOriginalSizeInPixels();
-			auto scale = sizeOriginal.width > sizeOriginal.height ? sizeSkillAttribute.width / sizeOriginal.width : sizeSkillAttribute.height / sizeOriginal.height;
+			auto size = sprite->getContentSize();
+			auto scale = size.width > size.height ? sizeSkillAttribute.width / size.width : sizeSkillAttribute.height / size.height;
 			sprite->setScale(scale);
 			
 			auto postion = Vec2(sizeSkillAttribute.width * 0.5f, sizeSkillAttribute.height * 0.5f);
@@ -338,9 +349,13 @@ void LayerSkills::onTouchBtnMaid(Ref *ref, Widget::TouchEventType type)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
-		auto btn = (Button *)ref;
-		cocostudio::ComExtensionData* data = dynamic_cast<cocostudio::ComExtensionData*>(btn->getComponent("ComExtensionData"));
-		_idEntityCurrent = Value(data->getCustomProperty()).asInt();
+		auto layout = (Layout *)ref;
+		auto idEntity = (int)layout->getUserData();
+		if (_idEntityCurrent == idEntity)
+		{
+			return;
+		}
+		_idEntityCurrent = idEntity;
 		updateLayoutMaid();
 		updateLayoutSkillItems();
 	}
@@ -408,7 +423,7 @@ void LayerSkills::onTouchSwitchMaidSkill(Ref *ref, Widget::TouchEventType type)
 	if (type == Widget::TouchEventType::ENDED)
 	{
 		//显示动画
-		auto layoutMaid = (Layout *)_skin->getChildByName("layoutMaid");
+		/*auto layoutMaid = (Layout *)_skin->getChildByName("layoutMaid");
 		auto layoutSkillItems = (Layout *)_skin->getChildByName("layoutSkillItems");
 		auto node = layoutMaid->isVisible() ? layoutMaid : layoutSkillItems;
 		auto nodeNew = layoutMaid->isVisible() ? layoutSkillItems : layoutMaid;
@@ -417,7 +432,27 @@ void LayerSkills::onTouchSwitchMaidSkill(Ref *ref, Widget::TouchEventType type)
 		{
 			node->setVisible(false);
 		};
-		ManagerUI::getInstance()->switchTwoNode(node, nodeNew, funcOverNode);
+		ManagerUI::getInstance()->switchTwoNode(node, nodeNew, funcOverNode);*/
+		auto actionTimeline = (ActionTimeline *)_skin->getActionByTag(_skin->getTag());
+		auto currentFrame = actionTimeline->getCurrentFrame();
+		if (currentFrame == actionTimeline->getAnimationInfo(animationHided).startIndex)
+		{
+			actionTimeline->play(animationShow, false);
+			actionTimeline->setLastFrameCallFunc([actionTimeline, this]()
+			{
+				actionTimeline->play(animationShowed, false);
+				actionTimeline->setLastFrameCallFunc(nullptr);
+			});
+		}
+		else if (currentFrame == actionTimeline->getAnimationInfo(animationShowed).startIndex)
+		{
+			actionTimeline->play(animationHide, false);
+			actionTimeline->setLastFrameCallFunc([actionTimeline, this]()
+			{
+				actionTimeline->play(animationHided, false);
+				actionTimeline->setLastFrameCallFunc(nullptr);
+			});
+		}
 	}
 }
 

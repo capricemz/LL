@@ -30,15 +30,11 @@
       <FilePathData Path="images/battle/paper.jpg" />
       <FilePathData Path="images/battle/rock.jpg" />
       <FilePathData Path="images/battle/scissors.jpg" />
-      <FilePathData Path="images/girl/box1.png" />
-      <FilePathData Path="images/girl/box2.png" />
       <FilePathData Path="images/girl/buy.png" />
       <FilePathData Path="images/girl/buy1.png" />
-      <FilePathData Path="images/girl/left.png" />
+      <FilePathData Path="images/girl/cut.png" />
       <FilePathData Path="images/girl/not_unlock.png" />
-      <FilePathData Path="images/girl/right.png" />
       <FilePathData Path="images/girl/role_name.png" />
-      <FilePathData Path="images/girl/role2.png" />
       <FilePathData Path="images/girl/skill.png" />
       <FilePathData Path="images/common/typeJobArcher.png" />
       <FilePathData Path="images/common/typeJobMage.png" />

@@ -22,6 +22,7 @@
             <Image Name="typeJobWarrior.png" />
             <Image Name="add.png" />
             <Image Name="bubble.png" />
+            <Image Name="btn1.png" />
           </Folder>
           <Folder Name="main">
             <Image Name="nemu_btn_1.png" />
@@ -192,13 +193,7 @@
             <Image Name="gift_bag.png" />
           </Folder>
           <Folder Name="girl">
-            <Image Name="box1.png" />
-            <Image Name="box2.png" />
-            <Image Name="left.png" />
-            <Image Name="right.png" />
-            <Image Name="role.png" />
-            <Image Name="role2.png" />
-            <Image Name="silhouette.png" />
+            <Image Name="cut.png" />
             <Image Name="skill.png" />
             <Image Name="buy.png" />
             <Image Name="buy1.png" />
@@ -231,38 +226,18 @@
             <Image Name="xin.png" />
           </Folder>
           <Folder Name="skills_panel">
-            <Folder Name="Bskills">
-              <Image Name="skills1.png" />
-              <Image Name="skills2.png" />
-              <Image Name="skills3.png" />
-              <Image Name="skills4.png" />
-            </Folder>
-            <Folder Name="Sskills">
-              <Image Name="skills1.png" />
-              <Image Name="skills10.png" />
-              <Image Name="skills11.png" />
-              <Image Name="skills2.png" />
-              <Image Name="skills3.png" />
-              <Image Name="skills4.png" />
-              <Image Name="skills5.png" />
-              <Image Name="skills6.png" />
-              <Image Name="skills7.png" />
-              <Image Name="skills8.png" />
-              <Image Name="skills9.png" />
-              <Image Name="skillsbg.png" />
-            </Folder>
-            <Image Name="bg2.png" />
-            <Image Name="button1.png" />
-            <Image Name="button2.png" />
-            <Image Name="button3.png" />
-            <Image Name="button4.png" />
-            <Image Name="button5.png" />
-            <Image Name="button6.png" />
             <Image Name="button8.png" />
-            <Image Name="name button.png" />
-            <Image Name="Skills button.png" />
             <Image Name="zhiye.png" />
-            <Image Name="jinengkuang.png" />
+            <Image Name="paper.png" />
+            <Image Name="paper_bg.png" />
+            <Image Name="skill_btn1.png" />
+            <Image Name="skill_btn2.png" />
+            <Image Name="skill_btn3.png" />
+            <Image Name="skill_btn4.png" />
+            <Image Name="skill_icon_top1.png" />
+            <Image Name="skill_icon_top2.png" />
+            <Image Name="skill_new_bg.png" />
+            <Image Name="paper_top.png" />
           </Folder>
           <Folder Name="teach">
             <Image Name="harem.png" />
@@ -398,6 +373,20 @@
             <Image Name="skill_2007.jpg" />
             <Image Name="skill_2008.jpg" />
             <Image Name="skill_2009.jpg" />
+            <Image Name="skill_ls1.png" />
+            <Image Name="jnk.png" />
+            <Image Name="jnk2.png" />
+            <Image Name="jnk3.png" />
+            <Image Name="skill_fls3.png" />
+            <Image Name="skill_ls3.png" />
+            <Image Name="skill_ls2.png" />
+            <Image Name="skill_fls2.png" />
+            <Image Name="skill_fls1.png" />
+            <Image Name="skill_zs2.png" />
+            <Image Name="skill_zs1.png" />
+            <Image Name="skill_hs1.png" />
+            <Image Name="skill_hs2.png" />
+            <Image Name="skill_hs3.png" />
           </Folder>
           <Folder Name="role_head">
             <Image Name="role_head_bg_6.png" />
@@ -436,10 +425,10 @@
             <PlistInfo Name="PlistMaidHead.csi" Type="Plist" />
             <PlistInfo Name="PlistMaidName.csi" Type="Plist" />
             <Project Name="NodeMaidSelectStar.csd" Type="Node" />
-            <Project Name="LayerSkillbook.csd" Type="Layer" />
             <PlistInfo Name="PlistMaidHead1.csi" Type="Plist" />
             <Project Name="NodeSkillItem.csd" Type="Node" />
             <PlistInfo Name="PlistSkill.csi" Type="Plist" />
+            <Project Name="NodeJinengpai.csd" Type="Node" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />

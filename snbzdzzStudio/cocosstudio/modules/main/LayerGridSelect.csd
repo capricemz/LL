@@ -114,7 +114,7 @@
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="0.5938" Y="0.5208" />
+            <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="77" G="77" B="77" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />

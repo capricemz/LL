@@ -4,10 +4,16 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "data/define/DefinesRes.h"
+#include "data/config/ManagerCfg.h"
 
 using namespace ui;
 
-NodeHead::NodeHead() : _skin(nullptr), _layout(nullptr), _isLarge(false), _isMst(false), _indexDataEntity(0)
+NodeHead::NodeHead() :
+	_skin(nullptr),
+	_layout(nullptr),
+	_type(TypeNodeHead::NONE),
+	_isMst(false),
+	_idEntity(0)
 {
 }
 
@@ -37,19 +43,19 @@ void NodeHead::createSkin()
 	addChild(_skin);
 }
 
-void NodeHead::updateSkin(const bool &isLarge, const bool &isMst, const int &indexDataEntity)
+void NodeHead::updateSkin(const TypeNodeHead &type, const bool &isMst, const int &idEntity)
 {
-	_isLarge = isLarge;
+	_type = type;
 	_isMst = isMst;
-	_indexDataEntity = indexDataEntity;
+	_idEntity = idEntity;
 	
-	/*auto size = getLayoutBg()->getContentSize();
-	_isMst ? _skin->setPosition(0.0f, -size.height * 0.5f) : _skin->setPosition(0.0f, size.height * 0.5f);*/
 	auto layoutLarge = (Layout *)_skin->getChildByName("layoutLarge");
-	layoutLarge->setVisible(_isLarge);
+	layoutLarge->setVisible(_type == TypeNodeHead::LARGE);
+	auto layoutMiddle = (Layout *)_skin->getChildByName("layoutMiddle");
+	layoutMiddle->setVisible(_type == TypeNodeHead::MIDDLE);
 	auto layoutSmall = (Layout *)_skin->getChildByName("layoutSmall");
-	layoutSmall->setVisible(!_isLarge);
-	_layout = _isLarge ? layoutLarge : layoutSmall;
+	layoutSmall->setVisible(_type == TypeNodeHead::SMALL);
+	_layout = _type == TypeNodeHead::LARGE ? layoutLarge : (_type == TypeNodeHead::MIDDLE ? layoutMiddle : layoutSmall);
 	_layout->setTouchEnabled(false);
 	_layout->setAnchorPoint(_isMst ? Vec2::ANCHOR_MIDDLE_TOP : Vec2::ANCHOR_MIDDLE_BOTTOM);
 	
@@ -61,28 +67,31 @@ void NodeHead::updateAll()
 	updateSpriteIcon();
 	updateBarHp();
 	updateSpriteJob();
+	updateSpriteState();
 }
 
 void NodeHead::updateSpriteIcon()
 {
-	auto dataEntity = getDataEntity();
-	auto cfgEntity = dataEntity->getCfgEntity();
-	auto urlPic = _isLarge ? cfgEntity.urlPicHeadLarge : cfgEntity.urlPicHeadSmall;
-	/*auto texture = Director::getInstance()->getTextureCache()->getTextureForKey(urlPic);*/
+	auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity().at(_idEntity);
+
+	auto urlPic = _type == TypeNodeHead::LARGE ? cfgEntity.urlPicHeadLarge : (_type == TypeNodeHead::MIDDLE ? cfgEntity.urlPicHeadMiddle : cfgEntity.urlPicHeadSmall);
 	auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(urlPic);
 
 	auto spriteIcon = (Sprite *)_layout->getChildByName("spriteIcon");
-	/*spriteIcon->setTexture(texture);*/
 	spriteIcon->setSpriteFrame(spriteFrame);
 }
 
 void NodeHead::updateBarHp()
 {
-	if (!_isLarge)
+	if (_type != TypeNodeHead::LARGE)
 	{
 		return;
 	}
 	auto dataEntity = getDataEntity();
+	if (dataEntity == nullptr)
+	{
+		return;
+	}
 	auto hp = dataEntity->getAttribute(IdAttribute::ENTITY_HP);
 	auto hpMax = dataEntity->getAttribute(IdAttribute::ENTITY_HP_MAX);
 
@@ -92,13 +101,49 @@ void NodeHead::updateBarHp()
 
 void NodeHead::updateSpriteJob()
 {
-	auto dataEntity = getDataEntity();
-	auto cfgEntity = dataEntity->getCfgEntity();
+	if (_type != TypeNodeHead::LARGE && _type != TypeNodeHead::SMALL)
+	{
+		return;
+	}
+	auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity().at(_idEntity);
 	auto urlPic = RES_IMAGES_COMMON_TYPE_JOB_PNG_VEC[(int)cfgEntity.typeJob];
 	auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(urlPic);
 
 	auto spriteIcon = (Sprite *)_layout->getChildByName("spriteJob");
 	spriteIcon->setSpriteFrame(spriteFrame);
+}
+
+void NodeHead::updateSpriteState()
+{
+	if (_type != TypeNodeHead::MIDDLE)
+	{
+		return;
+	}
+
+	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
+	auto isUnlock = handleDataUnlock->getIsUnlockMaid(_idEntity);
+	auto isBuy = handleDataUnlock->getIsBuyMaid(_idEntity);
+
+	auto spriteState = (Sprite *)_layout->getChildByName("spriteState");
+	auto name = !isUnlock ? RES_IMAGES_MAIN_MAID_UNLOCK_PNG : (!isBuy ? RES_IMAGES_MAIN_MAID_BUY_PNG : "");
+	if (name != "")
+	{
+		auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(name);
+		spriteState->setSpriteFrame(spriteFrame);
+	}
+	else
+	{
+		spriteState->setVisible(false);
+	}
+
+	if (!isUnlock)
+	{
+		GLProgramState *glState = GLProgramState::getOrCreateWithGLProgramName(GLProgram::SHADER_NAME_POSITION_GRAYSCALE);
+		auto spriteIcon = (Sprite *)_layout->getChildByName("spriteIcon");
+		spriteIcon->setGLProgramState(glState);
+	}
+
+	_layout->setTouchEnabled(isUnlock);
 }
 
 void NodeHead::moveFrom(const Vec2 &postion, const bool &isBack, const float &scaleBegan, const float &scaleEnd, const Vec2 & offsetEnd, const function<void()> &func /*= nullptr*/)
@@ -185,13 +230,35 @@ void NodeHead::moveFrom(const Vec2 &postion, const bool &isBack, const float &sc
 NodeHead * NodeHead::clone()
 {
 	auto nodeHead = create();
-	nodeHead->updateSkin(true, _isMst, _indexDataEntity);
+	nodeHead->updateSkin(_type, _isMst, _idEntity);
 	return nodeHead;
+}
+
+int NodeHead::getIndexDataEntity() const
+{
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto vecDataEntity = _isMst ? handleDataEntity->getVecDataEntityMst() : handleDataEntity->getVecDataEntityMaid();
+	auto length = (int)vecDataEntity.size();
+	for (auto i = 0; i < length; i++)
+	{
+		if (vecDataEntity.at(i)->getIdEntity() == _idEntity)
+		{
+			return i;
+		}
+	}
+	return 0;
 }
 
 DataEntity * NodeHead::getDataEntity()
 {
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto dataEntity = _isMst ? handleDataEntity->getVecDataEntityMst().at(_indexDataEntity) : handleDataEntity->getVecDataEntityMaid().at(_indexDataEntity);
-	return dataEntity;
+	auto vecDataEntity = _isMst ? handleDataEntity->getVecDataEntityMst() : handleDataEntity->getVecDataEntityMaid();
+	for (auto var : vecDataEntity)
+	{
+		if (var->getIdEntity() == _idEntity)
+		{
+			return var;
+		}
+	}
+	return nullptr;
 }

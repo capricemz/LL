@@ -280,9 +280,8 @@ void ManagerCfg::assignCfgEntity(const VectorString &vecItem)
 	
 	cfg.urlPicHeadLarge = vecItem[11];
 	cfg.urlPicHeadMiddle = vecItem[12];
-	cfg.urlPicHeadMiddleBg = vecItem[13];
-	cfg.urlPicHeadSmall = vecItem[14];
-	cfg.urlPicName = vecItem[15];
+	cfg.urlPicHeadSmall = vecItem[13];
+	cfg.urlPicName = vecItem[14];
 
 	_dicCfgEntity.insert(make_pair(cfg.id, cfg));
 }

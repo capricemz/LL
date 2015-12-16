@@ -64,7 +64,6 @@ struct CfgEntity
 	int yPic;//图片y
 	string urlPicHeadLarge;//大头像图片
 	string urlPicHeadMiddle;//中头像图片
-	string urlPicHeadMiddleBg;//中头像图片背景
 	string urlPicHeadSmall;//小头像图片
 	string urlPicName;//名称图片
 };

@@ -47,14 +47,20 @@ private:
 	void onTouchBtnSkillBuy(Ref *ref, Widget::TouchEventType type, const DataSkillInfo &dataSkillInfo);
 	
 private:
+	const string animationHided = "animationHided";
+	const string animationShow = "animationShow";
+	const string animationShowed = "animationShowed";
+	const string animationHide = "animationHide";
+	
+private:
 	Layer *_skin;
-
+	
 	UIEntity *_uiEntity;
-
+	
 	int _idEntityCurrent;
-
+	
 	vector<int> _vecShowIdEntity;
-
+	
 	TypeSkill _typeSkill;
 	
 };

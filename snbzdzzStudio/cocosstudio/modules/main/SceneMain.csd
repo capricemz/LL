@@ -224,14 +224,14 @@
                 <Size X="115.0000" Y="117.0000" />
                 <Children>
                   <AbstractNodeData Name="spriteIcon" ActionTag="1906530677" Tag="1044" IconVisible="False" LeftMargin="2.5000" RightMargin="2.5000" TopMargin="10.5000" BottomMargin="10.5000" ctype="SpriteObjectData">
-                    <Size X="110.0000" Y="96.0000" />
+                    <Size X="46.0000" Y="46.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="57.5000" Y="58.5000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="MarkedSubImage" Path="images/girl/role2.png" Plist="modules/main/PlistMain.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="sprite" ActionTag="1226793962" Tag="1049" IconVisible="False" LeftMargin="24.0000" RightMargin="24.0000" TopMargin="80.5000" BottomMargin="0.5000" ctype="SpriteObjectData">
@@ -263,14 +263,14 @@
                 <Size X="115.0000" Y="117.0000" />
                 <Children>
                   <AbstractNodeData Name="spriteIcon" ActionTag="1670671221" Tag="41" IconVisible="False" LeftMargin="2.5000" RightMargin="2.5000" TopMargin="10.5000" BottomMargin="10.5000" ctype="SpriteObjectData">
-                    <Size X="110.0000" Y="96.0000" />
+                    <Size X="46.0000" Y="46.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="57.5000" Y="58.5000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="MarkedSubImage" Path="images/girl/role2.png" Plist="modules/main/PlistMain.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="sprite" ActionTag="-1479637133" Tag="1050" IconVisible="False" LeftMargin="24.0000" RightMargin="24.0000" TopMargin="78.0000" BottomMargin="1.0000" ctype="SpriteObjectData">
@@ -302,14 +302,14 @@
                 <Size X="115.0000" Y="117.0000" />
                 <Children>
                   <AbstractNodeData Name="spriteIcon" ActionTag="-1607922192" Tag="42" IconVisible="False" LeftMargin="2.5000" RightMargin="2.5000" TopMargin="10.5000" BottomMargin="10.5000" ctype="SpriteObjectData">
-                    <Size X="110.0000" Y="96.0000" />
+                    <Size X="46.0000" Y="46.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="57.5000" Y="58.5000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="MarkedSubImage" Path="images/girl/role2.png" Plist="modules/main/PlistMain.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="sprite" ActionTag="1022314212" Tag="1051" IconVisible="False" LeftMargin="24.0000" RightMargin="24.0000" TopMargin="79.0000" BottomMargin="2.0000" ctype="SpriteObjectData">
@@ -341,14 +341,14 @@
                 <Size X="115.0000" Y="117.0000" />
                 <Children>
                   <AbstractNodeData Name="spriteIcon" ActionTag="1690943424" Tag="43" IconVisible="False" LeftMargin="2.5000" RightMargin="2.5000" TopMargin="10.5000" BottomMargin="10.5000" ctype="SpriteObjectData">
-                    <Size X="110.0000" Y="96.0000" />
+                    <Size X="46.0000" Y="46.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="57.5000" Y="58.5000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="MarkedSubImage" Path="images/girl/role2.png" Plist="modules/main/PlistMain.plist" />
+                    <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="sprite" ActionTag="-2115350919" Tag="1052" IconVisible="False" LeftMargin="24.5000" RightMargin="24.5000" TopMargin="79.0000" BottomMargin="2.0000" ctype="SpriteObjectData">

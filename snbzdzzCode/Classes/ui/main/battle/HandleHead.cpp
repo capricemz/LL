@@ -101,8 +101,9 @@ void HandleHead::setSkin(Layout *skin)
 
 		if (index < lengthVecDataEntity)
 		{
+			auto idEntity = (isMst ? handleDataEntity->getVecDataEntityMst() : handleDataEntity->getVecDataEntityMaid()).at(index)->getIdEntity();
 			auto nodeHead = NodeHead::create();
-			nodeHead->updateSkin(true, isMst, index);
+			nodeHead->updateSkin(TypeNodeHead::LARGE, isMst, idEntity);
 			/*nodeHead->setName("nodeHead" + Value(i).asString());*/
 			layout->addChild(nodeHead);
 
