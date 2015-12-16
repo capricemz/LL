@@ -272,14 +272,17 @@ void ManagerCfg::assignCfgEntity(const VectorString &vecItem)
 	cfg.cost = Value(vecItem[7]).asInt();
 
 	cfg.urlPicEntity = vecItem[8];
+	cfg.urlPicEntityBreak = vecItem[9];
 	
-	auto vecStr = UtilString::split(vecItem[9], ":");
+	auto vecStr = UtilString::split(vecItem[10], ":");
 	cfg.xPic = Value(vecStr[0]).asInt();
 	cfg.yPic = Value(vecStr[1]).asInt();
 	
-	cfg.urlPicHeadLarge = vecItem[10];
-	cfg.urlPicHeadSmall = vecItem[11];
-	cfg.urlPicName = vecItem[12];
+	cfg.urlPicHeadLarge = vecItem[11];
+	cfg.urlPicHeadMiddle = vecItem[12];
+	cfg.urlPicHeadMiddleBg = vecItem[13];
+	cfg.urlPicHeadSmall = vecItem[14];
+	cfg.urlPicName = vecItem[15];
 
 	_dicCfgEntity.insert(make_pair(cfg.id, cfg));
 }

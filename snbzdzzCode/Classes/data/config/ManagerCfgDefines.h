@@ -59,9 +59,12 @@ struct CfgEntity
 	int idTraining;//训练id
 	int cost;//购买消耗
 	string urlPicEntity;//实体图片
+	string urlPicEntityBreak;//破衣图片
 	int xPic;//图片x
 	int yPic;//图片y
 	string urlPicHeadLarge;//大头像图片
+	string urlPicHeadMiddle;//中头像图片
+	string urlPicHeadMiddleBg;//中头像图片背景
 	string urlPicHeadSmall;//小头像图片
 	string urlPicName;//名称图片
 };
