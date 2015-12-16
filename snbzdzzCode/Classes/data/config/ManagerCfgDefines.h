@@ -115,9 +115,15 @@ struct CfgTraining
 	int valueLvAdd;//每星加价
 	int valueLvFull;//满星加价
 	int valueOther;//换装加价
-	int costWay0;//扰痒消耗(金币)
-	int costWay1;//刷牙消耗(道具)
-	int costWay2;//换装消耗(道具)
+	int way0CostIdThing;//扰痒消耗物品id(金币)
+	int way0CostValue;//扰痒消耗值
+	int way0AddPrecent;//扰痒增加比例
+	int way1CostIdThing;//刷牙消耗物品id(牙具)
+	int way1CostValue;//刷牙消耗值
+	int way1AddPrecent;//刷牙增加比例
+	int way2CostIdThing;//换装消耗物品id(钻石)
+	int way2CostValue;//换装消耗值
+	int way2AddPrecent;//换装增加比例
 	string urlPic;//换装图片
 	int idPlot;//剧情id
 };

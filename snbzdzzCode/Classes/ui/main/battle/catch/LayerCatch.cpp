@@ -171,7 +171,7 @@ void LayerCatch::showResult()
 		auto dataEntity = handleDataEntity->getVecDataEntityMst().at(_index);
 		auto idEntity = dataEntity->getIdEntity();
 		auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
-		handleDataIncome->pushVecDataTrainingInfo(idEntity, 0, 0);
+		handleDataIncome->pushVecDataTrainingInfo(idEntity, 0, 0, false);
 		handleDataIncome->dataFileSet();
 	}
 

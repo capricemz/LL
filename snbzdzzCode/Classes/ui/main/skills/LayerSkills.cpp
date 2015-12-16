@@ -145,6 +145,7 @@ void LayerSkills::updateLayoutMaid(const bool &isInit /*= false*/)
 		layoutMaid->addChild(_uiEntity, -1);
 	}
 	_uiEntity->updateSkin(_idEntityCurrent, 1.0f);
+	_uiEntity->getLayoutBg()->setTouchEnabled(true);
 	_uiEntity->getLayoutBg()->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnMaidBuy, this));
 
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();

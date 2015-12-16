@@ -98,7 +98,7 @@ void SceneMain::updateBySubject(va_list values)
 		layoutContent->addChild(layerLevels);
 		layer = layerLevels;
 
-		switchVisibleLayoutTop(false);
+		switchVisibleLayoutTop(true);
 		switchVisibleLayoutBottom(true);
 	}
 	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_BATTLE)
@@ -125,16 +125,6 @@ void SceneMain::createSkin()
 	layoutContent->addChild(layerGuild);
 	managerUI->setTypeLayerRunning(TYPE_OBSERVER_SCENE_MAIN::SHOW_GUILD);
 	managerUI->setLayerRunning(layerGuild);
-
-	/*auto layerLevels = LayerLevels::create();
-	layoutContent->addChild(layerLevels);
-	managerUI->setTypeLayerRunning(TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
-	managerUI->setLayerRunning(layerLevels);*/
-
-	/*auto layerBattle = LayerBattle::create();
-	addChild(layerBattle);
-	managerUI->setTypeLayerRunning(TYPE_OBSERVER_SCENE_MAIN::SHOW_BATTLE);
-	managerUI->setLayerRunning(layerBattle);*/
 
 	auto layoutBottom = (Layout *)_skin->getChildByName("layoutBottom");
 	auto btn = (Button *)layoutBottom->getChildByName("btnGuild");
@@ -210,5 +200,4 @@ void SceneMain::switchVisibleLayoutBottom(const bool &isVisibe)
 		mask->removeFromParent();
 	});
 	layoutBottom->runAction(Sequence::createWithTwoActions(actionDeal, actionCallFunc));
-
 }

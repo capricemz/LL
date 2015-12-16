@@ -53,13 +53,13 @@
                 <PreSize X="0.6859" Y="0.0531" />
                 <ImageFileData Type="Normal" Path="images/teach/progress bar.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="txtPrecentValue" ActionTag="-1861815491" Tag="135" IconVisible="False" VerticalEdge="TopEdge" LeftMargin="441.0128" RightMargin="120.9872" TopMargin="15.4989" BottomMargin="285.5011" FontSize="28" LabelText="80/100" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="txtPrecentValue" ActionTag="-1861815491" Tag="135" IconVisible="False" VerticalEdge="TopEdge" LeftMargin="441.0000" RightMargin="121.0000" TopMargin="15.4989" BottomMargin="909.5011" FontSize="28" LabelText="80/100" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="78.0000" Y="35.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="480.0128" Y="927.0011" />
+                <Position X="480.0000" Y="927.0011" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="165" B="0" />
-                <PrePosition X="0.7500" Y="0.9018" />
+                <PrePosition X="0.7500" Y="0.9656" />
                 <PreSize X="0.1187" Y="0.0344" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <OutlineColor A="255" R="0" G="0" B="0" />
@@ -74,7 +74,6 @@
                 <PrePosition X="0.9422" Y="0.8988" />
                 <PreSize X="0.0969" Y="0.0635" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/skills_panel/button8.png" Plist="" />
                 <NormalFileData Type="Normal" Path="images/skills_panel/button8.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -104,13 +103,13 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="btnAward" ActionTag="786774116" Tag="139" IconVisible="False" VerticalEdge="TopEdge" LeftMargin="23.0000" RightMargin="527.0000" TopMargin="243.0074" BottomMargin="2.9926" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="68" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="btnAward" ActionTag="786774116" Tag="139" IconVisible="False" VerticalEdge="TopEdge" LeftMargin="23.0000" RightMargin="527.0000" TopMargin="165.0000" BottomMargin="705.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="68" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="90.0000" Y="90.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="68.0000" Y="671.9926" />
+                <Position X="68.0000" Y="750.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1063" Y="0.1428" />
+                <PrePosition X="0.1063" Y="0.7813" />
                 <PreSize X="0.1406" Y="0.0938" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <PressedFileData Type="Normal" Path="images/teach/gift.png" Plist="" />
@@ -144,43 +143,7 @@
                 <FileData Type="Normal" Path="images/bg/bg1.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="layoutLv" ActionTag="1104845004" Tag="297" IconVisible="False" LeftMargin="33.3284" RightMargin="406.6716" TopMargin="236.7210" BottomMargin="687.2790" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
-                <Size X="200.0000" Y="36.0000" />
-                <AnchorPoint />
-                <Position X="33.3284" Y="687.2790" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0521" Y="0.7159" />
-                <PreSize X="0.3125" Y="0.0375" />
-                <SingleColor A="255" R="150" G="200" B="255" />
-                <FirstColor A="255" R="150" G="200" B="255" />
-                <EndColor A="255" R="255" G="255" B="255" />
-                <ColorVector ScaleY="1.0000" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="spriteBgPrecent" ActionTag="669511187" Tag="144" IconVisible="False" LeftMargin="-1.6722" RightMargin="439.6722" TopMargin="299.7188" BottomMargin="618.2812" ctype="SpriteObjectData">
-                <Size X="202.0000" Y="42.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="99.3278" Y="639.2812" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1552" Y="0.6659" />
-                <PreSize X="0.3156" Y="0.0437" />
-                <FileData Type="Normal" Path="images/teach/tjdd.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="txtPrecent" ActionTag="1922160011" Tag="145" IconVisible="False" LeftMargin="19.3279" RightMargin="524.6721" TopMargin="304.7209" BottomMargin="625.2791" FontSize="24" LabelText="调教度：" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="96.0000" Y="30.0000" />
-                <AnchorPoint />
-                <Position X="19.3279" Y="625.2791" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0302" Y="0.6513" />
-                <PreSize X="0.3564" Y="0.6667" />
-                <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
-                <OutlineColor A="255" R="0" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="listBtns" ActionTag="-1302133048" Tag="345" IconVisible="False" LeftMargin="-0.0002" RightMargin="0.0002" BottomMargin="812.0000" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="0" ItemMargin="5" ctype="ListViewObjectData">
+              <AbstractNodeData Name="listBtns" ActionTag="-1302133048" Tag="345" IconVisible="False" LeftMargin="-0.0002" RightMargin="0.0002" BottomMargin="812.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="0" ItemMargin="5" ctype="ListViewObjectData">
                 <Size X="640.0000" Y="148.0000" />
                 <AnchorPoint ScaleY="1.0000" />
                 <Position X="-0.0002" Y="960.0000" />
@@ -193,18 +156,53 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="listBtns" ActionTag="-1302133048" Tag="345" IconVisible="False" LeftMargin="-0.0002" RightMargin="0.0002" BottomMargin="812.0000" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="0" ItemMargin="5" ctype="ListViewObjectData">
-                <Size X="640.0000" Y="148.0000" />
-                <AnchorPoint ScaleY="1.0000" />
-                <Position X="-0.0002" Y="960.0000" />
+              <AbstractNodeData Name="layoutLv" ActionTag="1104845004" Tag="297" IconVisible="False" LeftMargin="30.0000" RightMargin="410.0000" TopMargin="154.0000" BottomMargin="770.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                <Size X="200.0000" Y="36.0000" />
+                <AnchorPoint />
+                <Position X="30.0000" Y="770.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition Y="1.0000" />
-                <PreSize X="1.0000" Y="0.1542" />
-                <SingleColor A="255" R="150" G="150" B="255" />
-                <FirstColor A="255" R="150" G="150" B="255" />
+                <PrePosition X="0.0469" Y="0.8021" />
+                <PreSize X="0.3125" Y="0.0375" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="spriteBgPrecent" ActionTag="669511187" Tag="144" IconVisible="False" LeftMargin="-1.0000" RightMargin="439.0000" TopMargin="199.0000" BottomMargin="719.0000" ctype="SpriteObjectData">
+                <Size X="202.0000" Y="42.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="100.0000" Y="740.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1563" Y="0.7708" />
+                <PreSize X="0.3156" Y="0.0437" />
+                <FileData Type="Normal" Path="images/teach/tjdd.png" Plist="" />
+                <BlendFunc Src="770" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="txtPrecent" ActionTag="1922160011" Tag="145" IconVisible="False" LeftMargin="19.0000" RightMargin="525.0000" TopMargin="205.0000" BottomMargin="725.0000" FontSize="24" LabelText="调教度：" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="96.0000" Y="30.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="67.0000" Y="740.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1047" Y="0.7708" />
+                <PreSize X="0.3564" Y="0.6667" />
+                <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
+                <OutlineColor A="255" R="0" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="txtPrecentValue" ActionTag="334567859" Tag="242" IconVisible="False" LeftMargin="109.0000" RightMargin="453.0000" TopMargin="202.5000" BottomMargin="722.5000" FontSize="28" LabelText="80/100" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="78.0000" Y="35.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="148.0000" Y="740.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="165" B="0" />
+                <PrePosition X="0.2313" Y="0.7708" />
+                <PreSize X="0.1187" Y="0.0344" />
+                <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
+                <OutlineColor A="255" R="0" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
@@ -218,7 +216,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutEntity" ActionTag="255920567" Tag="59" IconVisible="False" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutEntity" ActionTag="255920567" Tag="59" IconVisible="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="640.0000" Y="960.0000" />
             <Children>
               <AbstractNodeData Name="spriteName" ActionTag="-771280286" Tag="140" IconVisible="False" LeftMargin="219.0000" RightMargin="219.0000" TopMargin="159.0000" BottomMargin="759.0000" ctype="SpriteObjectData">
@@ -244,7 +242,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutCount" ActionTag="1288711141" Tag="128" IconVisible="False" LeftMargin="50.0000" RightMargin="411.0000" TopMargin="863.0000" BottomMargin="50.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutCount" ActionTag="1288711141" Tag="128" IconVisible="False" LeftMargin="50.0000" RightMargin="411.0000" TopMargin="713.0000" BottomMargin="200.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="179.0000" Y="47.0000" />
             <Children>
               <AbstractNodeData Name="spriteBgCount" ActionTag="-2139100429" Tag="147" IconVisible="False" LeftMargin="0.2017" RightMargin="-0.2017" TopMargin="-0.5088" BottomMargin="0.5088" ctype="SpriteObjectData">
@@ -284,10 +282,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="50.0000" Y="50.0000" />
+            <Position X="50.0000" Y="200.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0781" Y="0.0521" />
+            <PrePosition X="0.0781" Y="0.2083" />
             <PreSize X="0.2797" Y="0.0490" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
@@ -306,7 +304,6 @@
                 <PrePosition X="0.0688" Y="0.2333" />
                 <PreSize X="0.1375" Y="0.0917" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/teach/harem.png" Plist="" />
                 <NormalFileData Type="Normal" Path="images/teach/harem.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -320,7 +317,6 @@
                 <PrePosition X="0.0688" Y="0.1396" />
                 <PreSize X="0.1375" Y="0.0917" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/teach/sell.png" Plist="" />
                 <NormalFileData Type="Normal" Path="images/teach/sell.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -334,7 +330,6 @@
                 <PrePosition X="0.0688" Y="0.0458" />
                 <PreSize X="0.1375" Y="0.0917" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/teach/teach.png" Plist="" />
                 <NormalFileData Type="Normal" Path="images/teach/teach.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -351,7 +346,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutBtn1" ActionTag="1198595159" VisibleForFrame="False" Tag="38" IconVisible="False" LeftMargin="314.9973" RightMargin="13.0027" TopMargin="776.9995" BottomMargin="58.0005" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutBtn1" ActionTag="1198595159" VisibleForFrame="False" Tag="38" IconVisible="False" LeftMargin="314.9973" RightMargin="13.0027" TopMargin="705.0000" BottomMargin="130.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="312.0000" Y="125.0000" />
             <Children>
               <AbstractNodeData Name="btn0" ActionTag="-44846584" Tag="304" IconVisible="False" RightMargin="222.0000" TopMargin="35.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="68" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -389,7 +384,6 @@
                 <PrePosition X="0.1442" Y="0.3600" />
                 <PreSize X="0.2885" Y="0.7200" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/teach/changebutton.png" Plist="" />
                 <NormalFileData Type="Normal" Path="images/teach/changebutton.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -429,7 +423,6 @@
                 <PrePosition X="0.4968" Y="0.3600" />
                 <PreSize X="0.2885" Y="0.7200" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/teach/toothbrush button.png" Plist="" />
                 <NormalFileData Type="Normal" Path="images/teach/toothbrush button.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -437,7 +430,7 @@
               <AbstractNodeData Name="btn2" ActionTag="-40834837" Tag="306" IconVisible="False" LeftMargin="220.0000" RightMargin="2.0000" TopMargin="35.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="68" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="90.0000" Y="90.0000" />
                 <Children>
-                  <AbstractNodeData Name="txtWayName_1" ActionTag="-1358187425" Tag="308" IconVisible="False" LeftMargin="17.0000" RightMargin="17.0000" TopMargin="-35.5000" BottomMargin="90.5000" FontSize="28" LabelText="挠痒" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="txtWayName" ActionTag="-1358187425" Tag="308" IconVisible="False" LeftMargin="17.0000" RightMargin="17.0000" TopMargin="-35.5000" BottomMargin="90.5000" FontSize="28" LabelText="挠痒" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="56.0000" Y="35.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="45.0000" Y="108.0000" />
@@ -449,7 +442,7 @@
                     <OutlineColor A="255" R="0" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="txtCount_0" ActionTag="468554714" Tag="310" IconVisible="False" LeftMargin="49.0000" TopMargin="60.0000" FontSize="24" LabelText="X10" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Bottom" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="txtCount" ActionTag="468554714" Tag="310" IconVisible="False" LeftMargin="49.0000" TopMargin="60.0000" FontSize="24" LabelText="X10" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Bottom" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="41.0000" Y="30.0000" />
                     <AnchorPoint ScaleX="1.0000" />
                     <Position X="90.0000" />
@@ -469,17 +462,16 @@
                 <PrePosition X="0.8494" Y="0.3600" />
                 <PreSize X="0.2885" Y="0.7200" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="images/teach/scratchingbutton.png" Plist="" />
                 <NormalFileData Type="Normal" Path="images/teach/scratchingbutton.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="314.9973" Y="58.0005" />
+            <Position X="314.9973" Y="130.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4922" Y="0.0604" />
+            <PrePosition X="0.4922" Y="0.1354" />
             <PreSize X="0.4875" Y="0.1302" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />

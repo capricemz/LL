@@ -56,7 +56,7 @@ void UIEntity::updateSkin(const int &idEntity, const float &scale)
 		_layoutBg = Layout::create();
 		_layoutBg->setBackGroundColorType(Layout::BackGroundColorType::NONE);
 		_layoutBg->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
-		_layoutBg->setTouchEnabled(true);
+		_layoutBg->setTouchEnabled(false);
 		addChild(_layoutBg);
 	}
 

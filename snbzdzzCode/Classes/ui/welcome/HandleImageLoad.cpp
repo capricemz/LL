@@ -67,9 +67,7 @@ void HandleImageLoad::loadImages()
 		auto cfgEntity = var.second;
 		vector<string> vecUrlPic;
 		vecUrlPic.push_back(cfgEntity.urlPicEntity);
-		vecUrlPic.push_back(cfgEntity.urlPicHeadLarge);
-		vecUrlPic.push_back(cfgEntity.urlPicHeadSmall);
-		vecUrlPic.push_back(cfgEntity.urlPicName);
+		vecUrlPic.push_back(cfgEntity.urlPicEntityBreak);
 		for (auto urlPic : vecUrlPic)
 		{
 			if (urlPic == "")

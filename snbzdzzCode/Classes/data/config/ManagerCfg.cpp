@@ -401,9 +401,22 @@ void ManagerCfg::assignCfgTraining(const VectorString &vecItem)
 	cfg.valueLvAdd = Value(vecItem[3]).asInt();
 	cfg.valueLvFull = Value(vecItem[4]).asInt();
 	cfg.valueOther = Value(vecItem[5]).asInt();
-	cfg.costWay0 = Value(vecItem[6]).asInt();
-	cfg.costWay1 = Value(vecItem[7]).asInt();
-	cfg.costWay2 = Value(vecItem[8]).asInt();
+	
+	auto vecInfo = UtilString::split(vecItem[6], ":");
+	cfg.way0CostIdThing = Value(vecInfo[0]).asInt();
+	cfg.way0CostValue = Value(vecInfo[1]).asInt();
+	cfg.way0AddPrecent = Value(vecInfo[2]).asInt();
+	
+	vecInfo = UtilString::split(vecItem[7], ":");
+	cfg.way1CostIdThing = Value(vecInfo[0]).asInt();
+	cfg.way1CostValue = Value(vecInfo[1]).asInt();
+	cfg.way1AddPrecent = Value(vecInfo[2]).asInt();
+	
+	vecInfo = UtilString::split(vecItem[8], ":");
+	cfg.way2CostIdThing = Value(vecInfo[0]).asInt();
+	cfg.way2CostValue = Value(vecInfo[1]).asInt();
+	cfg.way2AddPrecent = Value(vecInfo[2]).asInt();
+	
 	cfg.urlPic = vecItem[9];
 	cfg.idPlot = Value(vecItem[10]).asInt();
 	_dicCfgTraining.insert(make_pair(cfg.id, cfg));

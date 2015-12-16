@@ -545,12 +545,15 @@ class DataTrainingInfo : public Ref
 		int getValueLv() const { return _valueLv; }
 		void setValueLv(int val) { _valueLv = val; }
 		int getValuePrecent() const { return _valuePrecent; }
-		void setValuePrecent(int val) { _valuePrecent = val; }	
+		void setValuePrecent(int val) { _valuePrecent = val; }
+		bool getIsClothed() const { return _isClothed; }
+		void setIsClothed(bool val) { _isClothed = val; }
 		
 	private:
 		int _idEntity;
 		int _valueLv;
 		int _valuePrecent;
+		bool _isClothed;//是否装备时装
 		
 };
 
@@ -581,7 +584,7 @@ class HandleDataIncome
 			return _vecDataTrainingInfo;
 		}
 		DataTrainingInfo *getDataTrainingInfo(const int &index);
-		void pushVecDataTrainingInfo(const int &idEntity, const int &valueLv, const int &valuePrecent);
+		void pushVecDataTrainingInfo(const int &idEntity, const int &valueLv, const int &valuePrecent, const bool &isClothed);
 		void earseVecDataTrainingInfo(int index);
 		
 	private:

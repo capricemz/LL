@@ -25,7 +25,9 @@ static const int ENERGY_SWITCH_ENTITY = 8;
 static const int BREAK_DAMAGE_TAKES = 5;
 
 static const int LENGTH_INFO_THING = 2;
-static const int LENGTH_INFO_CATCH_MST = 3;
+static const int LENGTH_INFO_CATCH_MST = 4;
+
+static const int TRAINING_NUM_MAX = 3;
 
 static const vector<Vec2> vecPostionGridBattle =
 {
@@ -44,6 +46,7 @@ static const map<Vec2, Vec2> dicAnchorPoint2BubbleBgScale =
 
 static const Size sizeSkillIcon = Size(100.0f, 100.0f);
 static const Size sizeSkillAttribute = Size(50.0f, 50.0f);
+static const Size sizeTrainingLv = Size(50.0f, 50.0f);
 
 enum class TypeLoadState
 {
@@ -255,20 +258,12 @@ enum class TypeSRP
 	PAPER
 };
 
-enum class TypeTrianingSelect
-{
-	NONE,
-	STORE,
-	SELL,
-	TRIANING
-};
-
 enum class TypeTrianing
 {
 	NONE,
-	WAY0,
-	WAY1,
-	WAY2,
+	WAY0,//挠痒
+	WAY1,//牙刷
+	WAY2,//换装
 };
 
 enum class IdThing
@@ -276,8 +271,9 @@ enum class IdThing
 	THING_NONE,
 
 	GOLD = 100,//金币
-	DIAMOND,//道具
+	DIAMOND,//钻石
 	EXP,//经验
+	TRAINING,//调教
 
 	TOOTHBRUSH = 200,//牙刷
 

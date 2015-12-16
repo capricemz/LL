@@ -7,6 +7,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "ui/common/ILayerAppearDisappear.h"
+#include "ui/common/UIEntity.h"
 
 USING_NS_CC;
 using namespace ui;
@@ -35,13 +36,17 @@ private:
 	void updateLayoutTraining();
 	void updateLayoutCount();
 	void updateLayoutEntity();
+	void initLayoutBtns();
 	void updateLayoutBtns();
-	void onTouchBtnSelect(Ref *ref, Widget::TouchEventType type);//后宫出售调教
+	void onTouchNodeHead(Ref *ref, Widget::TouchEventType type);
+	void onTouchBtnTrainingSelect(Ref *ref, Widget::TouchEventType type);
+	void onTouchBtnSell(Ref *ref, Widget::TouchEventType type);//后宫出售调教
 	void onTouchBtnWay(Ref *ref, Widget::TouchEventType type);
 	
 private:
 	Layer *_skin;
 	int _indexCurrent;
+	UIEntity *_uiEntity;
 	
 };
 

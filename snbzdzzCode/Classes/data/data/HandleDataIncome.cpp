@@ -1,7 +1,7 @@
 #include "ManagerData.h"
 #include "common\util\UtilString.h"
 
-DataTrainingInfo::DataTrainingInfo() : _idEntity(0), _valueLv(0), _valuePrecent(0)
+DataTrainingInfo::DataTrainingInfo() : _idEntity(0), _valueLv(0), _valuePrecent(0), _isClothed(false)
 {
 }
 
@@ -35,10 +35,12 @@ void HandleDataIncome::dataFileInit()
 	if (!_isDataFileInit)
 	{
 		_isDataFileInit = true;
-		auto userDefault = UserDefault::getInstance();
+		/*auto userDefault = UserDefault::getInstance();
 		auto key = ManagerData::getInstance()->getUserDefaultKey(USER_DEFAULT_KEY_DI);
 		userDefault->setStringForKey(key.c_str(), "");//写入初始数据
-		userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io
+		userDefault->flush();//设置完一定要调用flush，才能从缓冲写入io*/
+		setThing(IdThing::TRAINING, TRAINING_NUM_MAX);
+		dataFileSet();
 	}
 }
 
@@ -76,11 +78,12 @@ void HandleDataIncome::dataFileGet()
 	{
 		if (i % LENGTH_INFO_CATCH_MST == LENGTH_INFO_CATCH_MST - 1)
 		{
-			auto idEntity = Value(vecInfoCatchMst[i - 2]).asInt();
-			auto valueLv = Value(vecInfoCatchMst[i - 1]).asInt();
-			auto valuePrecent = Value(vecInfoCatchMst[i]).asInt();
+			auto idEntity = Value(vecInfoCatchMst[i - 3]).asInt();
+			auto valueLv = Value(vecInfoCatchMst[i - 2]).asInt();
+			auto valuePrecent = Value(vecInfoCatchMst[i - 1]).asInt();
+			auto isClothed = Value(vecInfoCatchMst[i]).asInt() != 0;
 
-			pushVecDataTrainingInfo(idEntity, valueLv, valuePrecent);
+			pushVecDataTrainingInfo(idEntity, valueLv, valuePrecent, isClothed);
 		}
 	}
 }
@@ -99,7 +102,11 @@ void HandleDataIncome::dataFileSet()
 	for (auto i = 0; i < length; i++)
 	{
 		auto dt = _vecDataTrainingInfo.at(i);
-		strData += (i == 0 ? (strData == "" ? "" : "|") : ":") + Value(dt->getIdEntity()).asString() + ":" + Value(dt->getValueLv()).asString() + ":" + Value(dt->getValuePrecent()).asString();
+		strData += (i == 0 ? (strData == "" ? "" : "|") : ":") + 
+			Value(dt->getIdEntity()).asString() + ":" + 
+			Value(dt->getValueLv()).asString() + ":" + 
+			Value(dt->getValuePrecent()).asString() + ":" + 
+			Value(dt->getIsClothed() ? 1 : 0).asString();
 	}
 	
 	auto userDefault = UserDefault::getInstance();
@@ -176,12 +183,13 @@ DataTrainingInfo * HandleDataIncome::getDataTrainingInfo(const int &index)
 	return nullptr;
 }
 
-void HandleDataIncome::pushVecDataTrainingInfo(const int &idEntity, const int &valueLv, const int &valuePrecent)
+void HandleDataIncome::pushVecDataTrainingInfo(const int &idEntity, const int &valueLv, const int &valuePrecent, const bool &isClothed)
 {
 	auto dt = DataTrainingInfo::create();
 	dt->setIdEntity(idEntity);
 	dt->setValueLv(valueLv);
 	dt->setValuePrecent(valuePrecent);
+	dt->setIsClothed(isClothed);
 	_vecDataTrainingInfo.pushBack(dt);
 }
 
