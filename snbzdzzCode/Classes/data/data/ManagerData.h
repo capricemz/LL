@@ -198,6 +198,7 @@ class DataEntity : public Ref
 		int getAttribute(IdAttribute idAttribute);
 		void setAttribute(IdAttribute idAttribute, int value);//idAttribute 元素id, value 新值
 		void addAttribute(IdAttribute idAttribute, int value);//idAttribute 元素id, value 正值增加，负值减少
+		void addAttributeLimit(const IdAttribute &idAttribute, const int &value);
 		bool getIsAlive();
 
 		DataSkillInfo vecSkillActiveInfoGet();//获取技能信息

@@ -63,12 +63,15 @@ protected:
 	virtual Vec2 getPostionAppearDisAppear() { return Vec2::ZERO; }
 	virtual Vec2 getPostionEndAttack() { return Vec2::ZERO; }
 	virtual void updateHp() {}
+	virtual void updateHpAll() {}
 	virtual void updateEnergy() {}
 	virtual void dealDead() {}
 	virtual void switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess) {}
+	virtual Vector<DataEntity *> getVecDataEntity() { Vector<DataEntity *> vec({}); return vec; }
 	
 private:
-	void dealResultValueChange(const IdAttribute &idAttributeGet, const bool &isPositive, const IdAttribute &idAttributeChange, const Color4B &color, const float &duration);
+	void dealResultValueChange(const IdAttribute &idAttributeChange, const bool &isPositive, const IdAttribute &idAttributeBeChange, const Color4B &color, const float &duration);
+	void dealResultValueChangeAll(const IdAttribute &idAttributeChange, const bool &isPositive, const IdAttribute &idAttributeBeChange, const Color4B &color, const float &duration);
 	void dealBreakEffect(const float &duration);
 	void dealBreak();
 	void dealDeadEffect(const float &duration);

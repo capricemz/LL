@@ -1,6 +1,7 @@
 #include "Monster.h"
-#include "..\ManagerEntity.h"
-#include "ui\ManagerUI.h"
+#include "../ManagerEntity.h"
+#include "ui/ManagerUI.h"
+#include "data/define/DefinesString.h"
 
 Monster::Monster()
 {
@@ -48,6 +49,11 @@ cocos2d::Vec2 Monster::getPostionEndAttack()
 void Monster::updateHp()
 {
 	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::UPDATE_HP, true);//界面刷新
+}
+
+void Monster::updateHpAll()
+{
+	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::UPDATE_HP_ALL, true);//界面刷新
 }
 
 void Monster::updateEnergy()
@@ -109,4 +115,11 @@ void Monster::switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess)
 		handleDataEntity->setIndexMst(indexSwitchTo);
 		isSwitchSuccess = true;
 	}
+}
+
+Vector<DataEntity *> Monster::getVecDataEntity()
+{
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto vecDataEntityMst = handleDataEntity->getVecDataEntityMst();
+	return vecDataEntityMst;
 }

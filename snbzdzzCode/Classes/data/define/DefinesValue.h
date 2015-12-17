@@ -368,6 +368,8 @@ enum class TYPE_OBSERVER_HANDLE_HEAD
 {
 	UPDATE_HP,//参数：是否为怪物
 	UPDATE_HP_ALL,//参数：是否为怪物
+	SHOW_WORDS_DRIFT,//const bool &isMst, const int &indexNodeHead, const int &valueChange, const IdAttribute &idAttributeBeChange, const Color4B &color, const double &duration
+	SHOW_WORDS_DRIFT_ALL,//const bool &isMst, const int &valueChange, const IdAttribute &idAttributeBeChange, const Color4B &color, const double &duration
 	UPDATE_ENERGY,//参数：是否为怪物
 	SWITCH_NODE_HEAD_TO,//参数：是否为怪物，切换目标index
 	SWITCH_LAYOUT_HEAD_MAID_TOUCHABLE//参数：是否可触摸

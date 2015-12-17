@@ -200,6 +200,29 @@ void DataEntity::addAttribute(IdAttribute idAttribute, int value)
 	setAttribute(idAttribute, getAttribute(idAttribute) + value);
 }
 
+void DataEntity::addAttributeLimit(const IdAttribute &idAttribute, const int &value)
+{
+	addAttribute(idAttribute, value);
+	auto valueMax = INT32_MAX;
+	if (idAttribute == IdAttribute::ENTITY_HP)
+	{
+		valueMax = getAttribute(IdAttribute::ENTITY_HP_MAX);
+	}
+	else if (idAttribute == IdAttribute::ENTITY_ENERGY)
+	{
+		valueMax = getAttribute(IdAttribute::ENTITY_ENERGY_MAX);
+	}
+	auto valueNew = getAttribute(idAttribute);
+	if (valueNew < 0)
+	{
+		setAttribute(idAttribute, 0);
+	}
+	else if (valueNew > valueMax)
+	{
+		setAttribute(idAttribute, valueMax);
+	}
+}
+
 bool DataEntity::getIsAlive()
 {
 	auto hp = getAttribute(IdAttribute::ENTITY_HP);

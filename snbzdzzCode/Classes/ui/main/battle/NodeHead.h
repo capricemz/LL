@@ -29,6 +29,8 @@ public:
 	void updateSpriteJob();
 	void updateSpriteState();
 
+	void showWordsDrift(const int &valueChange, const IdAttribute &idAttributeBeChange, const Color4B &color, const float &duration);
+
 	/*移动
 	postion 其实位置 全局坐标
 	isBack 是否为显示背面

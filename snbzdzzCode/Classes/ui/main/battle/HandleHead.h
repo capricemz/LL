@@ -44,7 +44,8 @@ private:
 	void moveNodeHead(const bool &isMst, const float &xOffset);//移动NodeHead位置
 	void dealNodeHeadTemp(const bool &isMst, const bool &isLeft);
 	void dealOverMoveNodeHead(const bool &isMst, const bool &isActive);//移动NodeHead结束时处理判断
-	
+	void showWordsDrift(const bool &isMst, const int &indexNodeHead, const int &valueChange, const IdAttribute &idAttributeBeChange, const Color4B &color, const float &duration);
+
 private:
 	Layout *_skin;
 	Vector<NodeHead *> _vecNodeHeadMst;

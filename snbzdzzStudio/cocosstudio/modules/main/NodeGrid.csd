@@ -557,7 +557,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="spriteBgpTop" ActionTag="346134984" Tag="28" IconVisible="False" ctype="SpriteObjectData">
+              <AbstractNodeData Name="spriteBgpTop" ActionTag="346134984" VisibleForFrame="False" Tag="28" IconVisible="False" ctype="SpriteObjectData">
                 <Size X="120.0000" Y="160.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="60.0000" Y="80.0000" />

@@ -20,9 +20,11 @@ protected:
 	virtual Vec2 getPostionAppearDisAppear();
 	virtual Vec2 getPostionEndAttack();
 	virtual void updateHp();
+	virtual void updateHpAll();
 	virtual void updateEnergy();
 	virtual void dealDead();
 	virtual void switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess);
+	virtual Vector<DataEntity *> getVecDataEntity();
 	
 private:
 

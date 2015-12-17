@@ -5,6 +5,8 @@
 #include "ui/CocosGUI.h"
 #include "data/define/DefinesRes.h"
 #include "data/config/ManagerCfg.h"
+#include "ui/ManagerUI.h"
+#include "data/define/DefinesString.h"
 
 using namespace ui;
 
@@ -165,6 +167,35 @@ void NodeHead::updateSpriteState()
 	}
 
 	_layout->setTouchEnabled(isUnlock);
+}
+
+void NodeHead::showWordsDrift(const int &valueChange, const IdAttribute &idAttributeBeChange, const Color4B &color, const float &duration)
+{
+	if (_type != TypeNodeHead::LARGE)
+	{
+		return;
+	}
+	auto dataEntity = getDataEntity();
+	if (dataEntity == nullptr)
+	{
+		return;
+	}
+	if (valueChange == 0)
+	{
+		return;
+	}
+	auto words = Value(valueChange).asString();
+	if (idAttributeBeChange == IdAttribute::ENTITY_HP)
+	{
+		words = STR_HP + words;
+	}
+	else if (idAttributeBeChange == IdAttribute::ENTITY_ENERGY)
+	{
+		words = STR_EP + words;
+	}
+	auto managerUI = ManagerUI::getInstance();
+	auto halfHeight = _skin->getContentSize().height * 0.5f;
+	managerUI->showWordsDrift(this, _skin->getPosition(), words, color, duration);
 }
 
 void NodeHead::moveFrom(const Vec2 &postion, const bool &isBack, const float &scaleBegan, const float &scaleEnd, const Vec2 & offsetEnd, const function<void()> &func /*= nullptr*/)

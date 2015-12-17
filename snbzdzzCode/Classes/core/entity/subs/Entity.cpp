@@ -150,13 +150,21 @@ void Entity::doAction(const function<void()> &func /*= nullptr*/)
 	auto costHpAll = _dataEntity->getAttribute(IdAttribute::ENTITY_COST_HP_ALL);
 	if (costHpAll != 0)//若全体消耗生命
 	{
-		ManagerEntity::getInstance();
+		auto duration = 0.6f;
+		auto actionDeal = CallFunc::create(CC_CALLBACK_0(Entity::dealResultValueChangeAll, this, IdAttribute::ENTITY_COST_HP_ALL, false, IdAttribute::ENTITY_HP, Color4B::RED, duration));
+		vecActions.pushBack(actionDeal);
+		auto actionDelay = DelayTime::create(duration + 0.1f);
+		vecActions.pushBack(actionDelay);
 	}
 
 	auto restoreHpAll = _dataEntity->getAttribute(IdAttribute::ENTITY_RESTORE_HP_ALL);
 	if (restoreHpAll != 0)//若全体恢复生命
 	{
-		ManagerEntity::getInstance();
+		auto duration = 0.6f;
+		auto actionDeal = CallFunc::create(CC_CALLBACK_0(Entity::dealResultValueChangeAll, this, IdAttribute::ENTITY_RESTORE_HP_ALL, true, IdAttribute::ENTITY_HP, Color4B::GREEN, duration));
+		vecActions.pushBack(actionDeal);
+		auto actionDelay = DelayTime::create(duration + 0.1f);
+		vecActions.pushBack(actionDelay);
 	}
 
 	auto costEnergy = _dataEntity->getAttribute(IdAttribute::ENTITY_COST_ENERGY);
@@ -290,44 +298,71 @@ void Entity::switchEntity(const int &indexSwitchTo, bool &isSwitchSuccess, const
 	});
 }
 
-void Entity::dealResultValueChange(const IdAttribute &idAttributeGet, const bool &isPositive, const IdAttribute &idAttributeChange, const Color4B &color, const float &duration)
+void Entity::dealResultValueChange(const IdAttribute &idAttributeChange, const bool &isPositive, const IdAttribute &idAttributeBeChange, const Color4B &color, const float &duration)
 {
 	//数据处理
-	auto valueChange = _dataEntity->getAttribute(idAttributeGet);
+	auto valueChange = _dataEntity->getAttribute(idAttributeChange);
 	valueChange = isPositive ? valueChange : -valueChange;
-	_dataEntity->addAttribute(idAttributeChange, valueChange);
-	auto valueMax = INT32_MAX;
-	if (idAttributeChange == IdAttribute::ENTITY_HP)
-	{
-		valueMax = _dataEntity->getAttribute(IdAttribute::ENTITY_HP_MAX);
-	}
-	else if (idAttributeChange == IdAttribute::ENTITY_ENERGY)
-	{
-		valueMax = _dataEntity->getAttribute(IdAttribute::ENTITY_ENERGY_MAX);
-	}
-	auto valueNew = _dataEntity->getAttribute(idAttributeChange);
-	if (valueNew < 0)
-	{
-		_dataEntity->setAttribute(idAttributeChange, 0);
-	}
-	else if (valueNew > valueMax)
-	{
-		_dataEntity->setAttribute(idAttributeChange, valueMax);
-	}
+	_dataEntity->addAttributeLimit(idAttributeBeChange, valueChange);
 	//界面处理
-	auto managerUI = ManagerUI::getInstance();
 	auto words = Value(valueChange).asString();
-	if (idAttributeChange == IdAttribute::ENTITY_HP)
+	if (idAttributeBeChange == IdAttribute::ENTITY_HP)
 	{
 		words = STR_HP + words;
 		updateHp();//界面刷新
 	}
-	else if (idAttributeChange == IdAttribute::ENTITY_ENERGY)
+	else if (idAttributeBeChange == IdAttribute::ENTITY_ENERGY)
 	{
 		words = STR_EP + words;
 		updateEnergy();//界面刷新
 	}
+	auto managerUI = ManagerUI::getInstance();
 	managerUI->showWordsDrift(getParent(), getPosition() + Vec2(0.0f, 100.0f), words, color, duration);
+}
+
+void Entity::dealResultValueChangeAll(const IdAttribute &idAttributeChange, const bool &isPositive, const IdAttribute &idAttributeBeChange, const Color4B &color, const float &duration)
+{
+	auto managerUI = ManagerUI::getInstance();
+
+	auto valueChange = _dataEntity->getAttribute(idAttributeChange);
+
+	auto vecDataEntityMaid = getVecDataEntity();
+	auto length = (int)vecDataEntityMaid.size();
+	for (auto i = 0; i < length; i++)
+	{
+		auto dataEntity = vecDataEntityMaid.at(i);
+		auto valueMax = 0;
+		if (idAttributeBeChange == IdAttribute::ENTITY_HP)
+		{
+			valueMax = dataEntity->getAttribute(IdAttribute::ENTITY_HP_MAX);
+		}
+		else if (idAttributeBeChange == IdAttribute::ENTITY_ENERGY)
+		{
+			valueMax = dataEntity->getAttribute(IdAttribute::ENTITY_ENERGY_MAX);
+		}
+		valueChange = valueChange * valueMax * 0.1f;
+		valueChange = isPositive ? valueChange : -valueChange;
+		dataEntity->addAttributeLimit(idAttributeBeChange, valueChange);
+		//界面处理
+		if (dataEntity == _dataEntity && valueChange != 0)
+		{
+			auto words = Value(valueChange).asString();
+			if (idAttributeBeChange == IdAttribute::ENTITY_HP)
+			{
+				words = STR_HP + words;
+			}
+			else if (idAttributeBeChange == IdAttribute::ENTITY_ENERGY)
+			{
+				words = STR_EP + words;
+			}
+			managerUI->showWordsDrift(getParent(), getPosition() + Vec2(0.0f, 100.0f), words, color, duration);
+		}
+		managerUI->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::SHOW_WORDS_DRIFT, false, i, valueChange, idAttributeBeChange, color, (double)duration);//界面刷新
+	}
+	if (idAttributeBeChange == IdAttribute::ENTITY_HP)
+	{
+		updateHpAll();
+	}
 }
 
 void Entity::dealBreakEffect(const float &duration)

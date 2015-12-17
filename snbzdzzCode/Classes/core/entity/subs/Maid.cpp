@@ -2,6 +2,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "../ManagerEntity.h"
 #include "ui/ManagerUI.h"
+#include "data/define/DefinesString.h"
 
 Maid::Maid()
 {
@@ -50,6 +51,11 @@ cocos2d::Vec2 Maid::getPostionEndAttack()
 void Maid::updateHp()
 {
 	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::UPDATE_HP, false);//界面刷新
+}
+
+void Maid::updateHpAll()
+{
+	ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::UPDATE_HP_ALL, false);//界面刷新
 }
 
 void Maid::updateEnergy()
@@ -110,4 +116,11 @@ void Maid::switchDataEntity(const int &indexSwitchTo, bool &isSwitchSuccess)
 		handleDataEntity->setIndexMaid(indexSwitchTo);
 		isSwitchSuccess = true;
 	}
+}
+
+Vector<DataEntity *> Maid::getVecDataEntity()
+{
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto vecDataEntityMaid = handleDataEntity->getVecDataEntityMaid();
+	return vecDataEntityMaid;
 }

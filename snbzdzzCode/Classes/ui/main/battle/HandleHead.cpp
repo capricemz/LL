@@ -71,6 +71,28 @@ void HandleHead::updateBySubject(va_list values)
 		auto isTouchEnabled = va_arg(values, bool);
 		switchLayoutHeadMaidTouchable(isTouchEnabled);
 	}
+	else if (type == TYPE_OBSERVER_HANDLE_HEAD::SHOW_WORDS_DRIFT)
+	{
+		auto isMst = va_arg(values, bool);
+		auto index = va_arg(values, int);
+		auto valueChange = va_arg(values, int);
+		auto idAttributeBeChange = va_arg(values, IdAttribute);
+		auto color = va_arg(values, Color4B);
+		auto duration = va_arg(values, double);
+		showWordsDrift(isMst, index, valueChange, idAttributeBeChange, color, (float)duration);
+	}
+	else if (type == TYPE_OBSERVER_HANDLE_HEAD::SHOW_WORDS_DRIFT_ALL)
+	{
+		auto isMst = va_arg(values, bool);
+		auto valueChange = va_arg(values, int);
+		auto idAttributeBeChange = va_arg(values, IdAttribute);
+		auto color = va_arg(values, Color4B);
+		auto duration = va_arg(values, double);
+		for (auto i = 0; i < ENTITY_BATTLE_MAX; i++)
+		{
+			showWordsDrift(isMst, i, valueChange, idAttributeBeChange, color, (float)duration);
+		}
+	}
 }
 
 void HandleHead::setSkin(Layout *skin)
@@ -249,6 +271,16 @@ void HandleHead::updateNodeHeadHp(const bool &isMst, const int &indexNodeHead)
 		auto nodeHead = vecNodeHead.at(indexNodeHead);
 		nodeHead->updateBarHp();
 		nodeHead->updateTxtHp();
+	}
+}
+
+void HandleHead::showWordsDrift(const bool &isMst, const int &indexNodeHead, const int &valueChange, const IdAttribute &idAttributeBeChange, const Color4B &color, const float &duration)
+{
+	auto vecNodeHead = isMst ? _vecNodeHeadMst : _vecNodeHeadMaid;
+	if (vecNodeHead.size() > indexNodeHead)
+	{
+		auto nodeHead = vecNodeHead.at(indexNodeHead);
+		nodeHead->showWordsDrift(valueChange, idAttributeBeChange, color, duration);
 	}
 }
 

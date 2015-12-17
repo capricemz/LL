@@ -58,7 +58,8 @@ void HandleDataUnlock::dataFileGet()
 	{
 		_vecDataUnlock.push_back(Value(vecData[i]).asInt());
 	}
-	/*setIsUnlockMaid(1001);//for test*/
+	/*setIsUnlockMaid(1001);//for test
+	setIsBuyMaid(1001);//for test*/
 }
 
 void HandleDataUnlock::dataFileSet()
