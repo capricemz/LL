@@ -29,6 +29,7 @@ void HandleDataTime::dataFileGet()
 	{
 		auto vec = UtilString::split(strData, ":");
 		_timeLast = Value(vec[0]).asDouble();
+		_timeTrainingNumRst = Value(vec[1]).asDouble();
 	}
 }
 
@@ -36,7 +37,7 @@ void HandleDataTime::dataFileSet()
 {
 	auto userDefault = UserDefault::getInstance();
 	/*log("`````````````````````ManagerData::dataTimeDataFileSet timeLast:%s", Value(timeLast).asString().c_str());*/
-	string strData = Value(_timeLast).asString()/* + ":" + Value(_timeApRst).asString() + ":" + Value(_timeFeedCost).asString()*/;
+	string strData = Value(_timeLast).asString() + ":" + Value(_timeTrainingNumRst).asString()/* + ":" + Value(_timeFeedCost).asString()*/;
 	auto key = ManagerData::getInstance()->getUserDefaultKey(USER_DEFAULT_KEY_DT);
 	userDefault->setStringForKey(key.c_str(), strData);//�޸Ĵ浵
 	userDefault->flush();
