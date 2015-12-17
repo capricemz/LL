@@ -185,8 +185,8 @@ void ManagerCfg::assignCfgSkillGroup(const VectorString &vecItem)
 	{
 		auto vecSkillInfo = UtilString::split(var, ":");
 		DataSkillInfo dt;
-		dt.id = Value(vecSkillInfo[0]).asInt();
-		dt.index = Value(vecSkillInfo[1]).asInt();
+		dt.idSkill = Value(vecSkillInfo[0]).asInt();
+		dt.indexSkill = Value(vecSkillInfo[1]).asInt();
 		dt.num = Value(vecSkillInfo[2]).asInt();
 		dt.odds = Value(vecSkillInfo[3]).asInt();
 		cfg.skills.push_back(dt);

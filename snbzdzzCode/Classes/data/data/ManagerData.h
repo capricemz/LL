@@ -250,7 +250,7 @@ class DataEntity : public Ref
 		int _index;
 		map<IdAttribute, int> _dicAttribute;//idAttribute value
 		vector<DataSkillInfo> _vecSkillActive;
-		vector<DataSkillInfo> _vecSkillActiveInUse;
+		map<int, DataSkillInfo> _dicSkillActiveInUse;
 		vector<DataSkillInfo> _vecSkillActiveUseOver;
 		vector<DataSkillInfo> _vecSkillBase;
 		vector<DataSkillInfo> _vecSkillSpecial;

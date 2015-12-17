@@ -266,17 +266,18 @@ void LayerGridSelect::runActionGridSelectMaidMoveFrom(const Vec2 &postion, const
 			continue;
 		}
 
-		if (i >= lengthVecSkillActive)
-		{
-			continue;
-		}
-
 		total++;
+	}
+
+	if (total > lengthVecSkillActive)
+	{
+		total = lengthVecSkillActive;
 	}
 
 	if (total == 0 && funcAllOver != nullptr)
 	{
 		funcAllOver();
+		return;
 	}
 	
 	auto index = 0;//当前移动数
@@ -340,6 +341,7 @@ void LayerGridSelect::runActionGridSelectMaidTurn(const function<void()> &funcOn
 	if (total == 0 && funcAllOver != nullptr)
 	{
 		funcAllOver();
+		return;
 	}
 
 	auto index = 0;//当前翻转数

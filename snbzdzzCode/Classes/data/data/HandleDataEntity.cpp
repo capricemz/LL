@@ -13,7 +13,7 @@ DataEntity::DataEntity() :
 	_index(0),
 	_dicAttribute({}),
 	_vecSkillActive({}),
-	_vecSkillActiveInUse({}),
+	_dicSkillActiveInUse({}),
 	_vecSkillActiveUseOver({}),
 	_vecSkillBase({}),
 	_vecSkillSpecial({}),
@@ -134,14 +134,14 @@ void DataEntity::updateAttributeSkillPassive()
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
 	for (auto dataSkillInfo : _vecSkillPassive)
 	{
-		auto isBuy = handleDataUnlock->getIsBuySkill(dataSkillInfo.id, dataSkillInfo.index);
-		auto indexSkill = dataSkillInfo.index + (!isBuy ? -1 : 0);
+		auto isBuy = handleDataUnlock->getIsBuySkill(dataSkillInfo.idSkill, dataSkillInfo.indexSkill);
+		auto indexSkill = dataSkillInfo.indexSkill + (!isBuy ? -1 : 0);
 		if (indexSkill < 0)
 		{
 			continue;
 		}
 		
-		auto cfgSkill = managerCfg->getDicDicCfgSkill()[dataSkillInfo.id][indexSkill];
+		auto cfgSkill = managerCfg->getDicDicCfgSkill()[dataSkillInfo.idSkill][indexSkill];
 		auto vecAttrItem = UtilString::split(cfgSkill.effect, "|");
 		for (auto strAttrItem : vecAttrItem)
 		{
@@ -210,14 +210,27 @@ DataSkillInfo DataEntity::vecSkillActiveInfoGet()
 {
 	auto dataSkillInfo = _vecSkillActive[0];
 	_vecSkillActive.erase(_vecSkillActive.begin());
-	_vecSkillActiveInUse.push_back(dataSkillInfo);
+	for (auto i = 0; i < GRID_SELECT_MAX; i++)
+	{
+		if (_dicSkillActiveInUse.find(i) == _dicSkillActiveInUse.end())
+		{
+			_dicSkillActiveInUse.insert(make_pair(i, dataSkillInfo));
+			break;
+		}
+	}
 	return dataSkillInfo;
 }
 
 void DataEntity::vecSkillActiveInUse2UseOver()
 {
-	auto dataSkillInfo = _vecSkillActiveInUse[0];
-	_vecSkillActiveInUse.erase(_vecSkillActiveInUse.begin());
+	auto dicGridBattle = ManagerGrid::getInstance()->getDicGridBattle();
+	auto grid = dicGridBattle.at(1);
+	auto index = grid->getDataGrid()->getIndexGrid();
+
+	/*auto dataSkillInfo = _dicSkillActiveInUse[0];
+	_dicSkillActiveInUse.erase(_dicSkillActiveInUse.begin());*/
+	auto dataSkillInfo = _dicSkillActiveInUse[index];
+	_dicSkillActiveInUse.erase(index);
 	_vecSkillActiveUseOver.push_back(dataSkillInfo);
 }
 
@@ -230,11 +243,12 @@ void DataEntity::vecSkillActiveSort(const bool &isAll /*= false*/)
 {
 	if (isAll)
 	{
-		for (auto dataSkillInfo : _vecSkillActiveInUse)
+		for (auto var : _dicSkillActiveInUse)
 		{
+			auto dataSkillInfo = var.second;
 			_vecSkillActive.push_back(dataSkillInfo);
 		}
-		_vecSkillActiveInUse.clear();
+		_dicSkillActiveInUse.clear();
 	}
 	for (auto dataSkillInfo : _vecSkillActiveUseOver)
 	{
@@ -251,8 +265,8 @@ void DataEntity::vecSkillActiveSort(const bool &isAll /*= false*/)
 
 void DataEntity::setSkill(DataSkillInfo &dataSkillInfo)
 {
-	auto idSkill = dataSkillInfo.id;
-	auto indexSkill = dataSkillInfo.index;
+	auto idSkill = dataSkillInfo.idSkill;
+	auto indexSkill = dataSkillInfo.indexSkill;
 	auto num = dataSkillInfo.num;
 	auto odds = dataSkillInfo.odds;
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
@@ -315,11 +329,11 @@ void DataEntity::setSkill(DataSkillInfo &dataSkillInfo)
 			}
 			if (indexSkillUnbuyMin != INT32_MAX)//若获取到最小未购买index
 			{
-				dataSkillInfo.index = indexSkillUnbuyMin;
+				dataSkillInfo.indexSkill = indexSkillUnbuyMin;
 			}
 			else
 			{
-				dataSkillInfo.index = indexSkillMax;
+				dataSkillInfo.indexSkill = indexSkillMax;
 			}
 		}
 		_vecSkillPassive.push_back(dataSkillInfo);
@@ -334,7 +348,7 @@ void DataEntity::vecSkillClear()
 {
 	_vecSkillSpecial.clear();
 	_vecSkillActive.clear();
-	_vecSkillActiveInUse.clear();
+	_dicSkillActiveInUse.clear();
 	_vecSkillActiveUseOver.clear();
 	_vecSkillPassive.clear();
 	_vecSkillRandom.clear();
@@ -567,8 +581,8 @@ void HandleDataEntity::dealSkillRandom(const function<void()> &func /*= nullptr*
 	auto vecSkillRandom = getDataEntityMst()->getVecSkillRandom();
 	for (auto dataSkillInfo : vecSkillRandom)
 	{
-		auto idSkill = dataSkillInfo.id;
-		auto indexSkill = dataSkillInfo.index;
+		auto idSkill = dataSkillInfo.idSkill;
+		auto indexSkill = dataSkillInfo.indexSkill;
 		auto num = dataSkillInfo.num;
 		auto odds = dataSkillInfo.odds;
 		auto random = UtilRandom::randomBewteen(0.0f, 100.0f);
@@ -758,8 +772,8 @@ bool HandleDataEntity::getIsSkillNeedSwitchMst(int &indexTo)
 	auto vecSkillRandom = getDataEntityMst()->getVecSkillRandom();
 	for (auto dataSkillInfo : vecSkillRandom)
 	{
-		auto idSkill = dataSkillInfo.id;
-		auto indexSkill = dataSkillInfo.index;
+		auto idSkill = dataSkillInfo.idSkill;
+		auto indexSkill = dataSkillInfo.indexSkill;
 		auto num = dataSkillInfo.num;
 		auto odds = dataSkillInfo.odds;
 		auto random = UtilRandom::randomBewteen(0.0f, 100.0f);

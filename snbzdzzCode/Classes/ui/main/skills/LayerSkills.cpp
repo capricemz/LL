@@ -268,7 +268,7 @@ void LayerSkills::updateLayoutSKillItem(Node *nodeSkillItem, const bool &isExsit
 	{
 		return;
 	}
-	auto cfgSkill = ManagerCfg::getInstance()->getDicDicCfgSkill()[dataSkillInfo.id][dataSkillInfo.index];
+	auto cfgSkill = ManagerCfg::getInstance()->getDicDicCfgSkill()[dataSkillInfo.idSkill][dataSkillInfo.indexSkill];
 
 	auto layoutBg = (Layout *)nodeSkillItem->getChildByName("layoutBg");
 	layoutBg->setTouchEnabled(false);
@@ -332,7 +332,7 @@ void LayerSkills::updateLayoutSKillItem(Node *nodeSkillItem, const bool &isExsit
 	if (isSpecialOrPassive)
 	{
 		auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
-		auto isUnlock = handleDataUnlock->getIsUnlockSkill(dataSkillInfo.id, dataSkillInfo.index);
+		auto isUnlock = handleDataUnlock->getIsUnlockSkill(dataSkillInfo.idSkill, dataSkillInfo.indexSkill);
 		if (!isUnlock)//ÈôÎ´½âËø
 		{
 			btn->setBright(false);
@@ -340,7 +340,7 @@ void LayerSkills::updateLayoutSKillItem(Node *nodeSkillItem, const bool &isExsit
 		else
 		{
 			btn->setBright(true);
-			auto isBuy = handleDataUnlock->getIsBuySkill(dataSkillInfo.id, dataSkillInfo.index);
+			auto isBuy = handleDataUnlock->getIsBuySkill(dataSkillInfo.idSkill, dataSkillInfo.indexSkill);
 			btn->setVisible(!isBuy);//ÈôÎª¹ºÂò£¬ÔòÏÔÊ¾°´Å¥
 		}
 	}
@@ -470,8 +470,8 @@ void LayerSkills::onTouchBtnSkillBuy(Ref *ref, Widget::TouchEventType type, cons
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
-		auto id = dataSkillInfo.id;
-		auto index = dataSkillInfo.index;
+		auto id = dataSkillInfo.idSkill;
+		auto index = dataSkillInfo.indexSkill;
 
 		auto managerData = ManagerData::getInstance();
 		auto handleDataIncome = managerData->getHandleDataIncome();

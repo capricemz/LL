@@ -33,8 +33,8 @@ typedef map<int32_t, map<int32_t, CfgSkill>> DicDicCfgSkill;
 //
 struct DataSkillInfo
 {
-	int id;
-	int index;
+	int idSkill;
+	int indexSkill;
 	int num;
 	int odds;
 };
