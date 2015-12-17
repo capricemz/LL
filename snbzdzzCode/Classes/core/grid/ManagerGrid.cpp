@@ -184,7 +184,7 @@ void ManagerGrid::dealSpecialSth()
 	if (valueGold != 0)
 	{
 		//调用获得物品处理
-		dataGridMaid->setAttribute(IdAttribute::GRID_GOLD_GET, 1);
+		dataGridMaid->setAttribute(IdAttribute::GRID_GOLD_GET, valueGold + valueGoldIncome);
 		dataEntityMaid->addAttribute(IdAttribute::ENTITY_GOLD_INCOME_NUM, 1);
 	}
 	else if (valueStone != 0 && valueStoneCrushed >= valueStone)

@@ -444,22 +444,32 @@ void Grid::playSpecialSthBeUse(const function<void()> &func /*= nullptr*/)
 	if (_dataGrid->getAttribute(IdAttribute::GRID_GOLD_GET) != 0)
 	{
 		actionTimeline->play("animationGoldGet", false);
+		_dataGrid->setAttribute(IdAttribute::GRID_GOLD, 0);
+		auto value = _dataGrid->getAttribute(IdAttribute::GRID_GOLD_GET);
+		auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
+		handleDataIncome->addThing(IdThing::GOLD, value);
 	}
 	else if (_dataGrid->getAttribute(IdAttribute::GRID_STONE_CRUSHED) != 0)
 	{
 		actionTimeline->play("animationStoneCrushed", false);
+		_dataGrid->setAttribute(IdAttribute::GRID_STONE, 0);
 	}
 	else if (_dataGrid->getAttribute(IdAttribute::GRID_ICE_MELTING) != 0)
 	{
 		actionTimeline->play("animationIceMelting", false);
+		_dataGrid->setAttribute(IdAttribute::GRID_ICE, 0);
 	}
 	else if (_dataGrid->getAttribute(IdAttribute::GRID_TRAP_TRIGGER) != 0)
 	{
 		actionTimeline->play("animationTrapTrigger", false);
+		_dataGrid->setAttribute(IdAttribute::GRID_TRAP, 0);
+		_dataGrid->setAttribute(IdAttribute::GRID_COST_HP_ALL, 1);
 	}
 	else if (_dataGrid->getAttribute(IdAttribute::GRID_TRAP_DISARM) != 0)
 	{
 		actionTimeline->play("animationTrapDisarm", false);
+		_dataGrid->setAttribute(IdAttribute::GRID_TRAP, 0);
+		_dataGrid->setAttribute(IdAttribute::GRID_RESTORE_HP_ALL, 1);
 	}
 	actionTimeline->setLastFrameCallFunc([this, func, actionTimeline]()
 	{
@@ -542,10 +552,10 @@ void Grid::resetSpecialSth()
 	{
 		return;
 	}
-	_dataGrid->setAttribute(IdAttribute::GRID_GOLD, 0);
+	/*_dataGrid->setAttribute(IdAttribute::GRID_GOLD, 0);
 	_dataGrid->setAttribute(IdAttribute::GRID_STONE, 0);
 	_dataGrid->setAttribute(IdAttribute::GRID_ICE, 0);
-	_dataGrid->setAttribute(IdAttribute::GRID_TRAP, 0);
+	_dataGrid->setAttribute(IdAttribute::GRID_TRAP, 0);*/
 	_dataGrid->setAttribute(IdAttribute::GRID_GOLD_GET, 0);
 	_dataGrid->setAttribute(IdAttribute::GRID_STONE_CRUSHED, 0);
 	_dataGrid->setAttribute(IdAttribute::GRID_ICE_MELTING, 0);
