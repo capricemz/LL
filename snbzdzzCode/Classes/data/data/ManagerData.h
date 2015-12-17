@@ -432,6 +432,19 @@ class DataLevel : public Ref
 			}
 			return _vecTargetComplete[index];
 		}
+		int levelTargetCompleteNum() const
+		{
+			auto num = 0;
+			auto length = levelTargetNumGet();
+			for (auto i = 0; i < length; i++)
+			{
+				if (levelTargetIsComplete(i))
+				{
+					num++;
+				}
+			}
+			return num;
+		}
 		string getLevelTargetStr(const int &index) const;
 		
 	private:

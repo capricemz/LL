@@ -51,4 +51,12 @@ static const map<TypeLevelTarget, string> DIC_STR_BY_LEVEL_TARGET_TYPE =
 	{ TypeLevelTarget::TRAP, "解除陷阱&x次" }
 };
 
+static const vector<string> STR_LEVEL_TARGET_AWARD_TIP = 
+{
+	"",
+	"一星奖励",
+	"二星奖励",
+	"三星奖励"
+};
+
 #endif

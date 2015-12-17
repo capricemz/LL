@@ -49,6 +49,7 @@ static const map<Vec2, Vec2> dicAnchorPoint2BubbleBgScale =
 static const Size sizeSkillIcon = Size(100.0f, 100.0f);
 static const Size sizeSkillAttribute = Size(50.0f, 50.0f);
 static const Size sizeTrainingLv = Size(50.0f, 50.0f);
+static const Size sizeBattleResultStar = Size(80.0f, 80.0f);
 
 enum class TypeLoadState
 {

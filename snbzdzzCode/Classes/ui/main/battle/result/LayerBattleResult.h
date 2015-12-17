@@ -4,9 +4,12 @@
 #define __UI_MAIN_BATTLE_RESULT_LAYER_BATTLE_RESULT_H__
 
 #include "cocos2d.h"
+#include "ui/CocosGUI.h"
+#include "cocostudio/CocoStudio.h"
 
-USING_NS_CC;
 using namespace std;
+USING_NS_CC;
+using namespace ui;
 
 class LayerBattleResult : public Layer
 {
@@ -23,9 +26,13 @@ public:
 
 private:
 	void createSkin();
-
+	void updateLayoutVictory();
+	void updateLayoutDefeat();
+	void onTouchContinue(Ref *ref, Widget::TouchEventType type);
+	
 private:
 	Layer *_skin;
+	bool _isActionRunning;
 
 };
 
