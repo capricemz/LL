@@ -54,6 +54,42 @@
                 <FileData Type="Normal" Path="images/battle/card_bar_bg.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
+              <AbstractNodeData Name="txtHp" ActionTag="1383328860" CallBackType="Click" Tag="45" IconVisible="False" LeftMargin="80.5000" RightMargin="34.5000" TopMargin="163.0000" BottomMargin="28.0000" FontSize="15" LabelText="/" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="9.0000" Y="20.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="84.0000" Y="35.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.6885" Y="0.1707" />
+                <PreSize X="0.9344" Y="0.1171" />
+                <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
+                <OutlineColor A="255" R="0" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="txtHp0" ActionTag="-550579819" CallBackType="Click" Tag="44" IconVisible="False" LeftMargin="56.9997" RightMargin="30.0003" TopMargin="144.9999" BottomMargin="37.0001" FontSize="18" LabelText="6666" VerticalAlignmentType="VT_Bottom" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="35.0000" Y="23.0000" />
+                <AnchorPoint />
+                <Position X="56.9997" Y="37.0001" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4672" Y="0.1805" />
+                <PreSize X="0.9344" Y="0.1171" />
+                <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
+                <OutlineColor A="255" R="0" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="txtHp1" ActionTag="-1080050604" CallBackType="Click" Tag="46" IconVisible="False" LeftMargin="78.0001" RightMargin="11.9999" TopMargin="167.9999" BottomMargin="14.0001" FontSize="18" LabelText="5555&#xA;" HorizontalAlignmentType="HT_Right" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="32.0000" Y="23.0000" />
+                <AnchorPoint ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="110.0001" Y="37.0001" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.9016" Y="0.1805" />
+                <PreSize X="0.9344" Y="0.1171" />
+                <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
+                <OutlineColor A="255" R="0" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
               <AbstractNodeData Name="spriteJob" ActionTag="-454030132" Tag="70" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="BottomEdge" LeftMargin="10.4999" RightMargin="62.5001" TopMargin="144.5000" BottomMargin="11.5000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="49.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -77,7 +113,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutSmall" ActionTag="1068088110" Tag="92" IconVisible="False" LeftMargin="-62.0000" RightMargin="-62.0000" TopMargin="-62.0000" BottomMargin="-62.0000" TouchEnable="True" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutSmall" Visible="False" ActionTag="1068088110" Tag="92" IconVisible="False" LeftMargin="-62.0000" RightMargin="-62.0000" TopMargin="-62.0000" BottomMargin="-62.0000" TouchEnable="True" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="124.0000" Y="124.0000" />
             <Children>
               <AbstractNodeData Name="spriteBg" ActionTag="-76425701" Tag="93" IconVisible="False" ctype="SpriteObjectData">
@@ -125,7 +161,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutMiddle" ActionTag="1472159648" Tag="1366" IconVisible="False" LeftMargin="-49.5000" RightMargin="-49.5000" TopMargin="-74.0000" BottomMargin="-74.0000" TouchEnable="True" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutMiddle" Visible="False" ActionTag="1472159648" Tag="1366" IconVisible="False" LeftMargin="-49.5000" RightMargin="-49.5000" TopMargin="-74.0000" BottomMargin="-74.0000" TouchEnable="True" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="99.0000" Y="148.0000" />
             <Children>
               <AbstractNodeData Name="spriteIcon" ActionTag="-1291416840" Tag="1368" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="3.0000" RightMargin="3.0000" TopMargin="3.0000" BottomMargin="3.0000" ctype="SpriteObjectData">

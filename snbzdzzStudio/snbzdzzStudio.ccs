@@ -428,7 +428,6 @@
             <PlistInfo Name="PlistMaidHead1.csi" Type="Plist" />
             <Project Name="NodeSkillItem.csd" Type="Node" />
             <PlistInfo Name="PlistSkill.csi" Type="Plist" />
-            <Project Name="NodeJinengpai.csd" Type="Node" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />

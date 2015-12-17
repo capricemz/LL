@@ -66,6 +66,7 @@ void NodeHead::updateAll()
 {
 	updateSpriteIcon();
 	updateBarHp();
+	updateTxtHp();
 	updateSpriteJob();
 	updateSpriteState();
 }
@@ -97,6 +98,26 @@ void NodeHead::updateBarHp()
 
 	auto bar = (LoadingBar *)_layout->getChildByName("spriteHpBg")->getChildByName("barHp");
 	bar->setPercent(((float)hp / (float)hpMax) * 100.0f);
+}
+
+void NodeHead::updateTxtHp()
+{
+	if (_type != TypeNodeHead::LARGE)
+	{
+		return;
+	}
+	auto dataEntity = getDataEntity();
+	if (dataEntity == nullptr)
+	{
+		return;
+	}
+	auto hp = dataEntity->getAttribute(IdAttribute::ENTITY_HP);
+	auto hpMax = dataEntity->getAttribute(IdAttribute::ENTITY_HP_MAX);
+
+	auto txtHp0 = (Text *)_layout->getChildByName("txtHp0");
+	txtHp0->setString(Value(hp).asString());
+	auto txtHp1 = (Text *)_layout->getChildByName("txtHp1");
+	txtHp1->setString(Value(hpMax).asString());
 }
 
 void NodeHead::updateSpriteJob()

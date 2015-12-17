@@ -45,14 +45,14 @@ void HandleHead::updateBySubject(va_list values)
 	if (type == TYPE_OBSERVER_HANDLE_HEAD::UPDATE_HP)
 	{
 		auto isMst = va_arg(values, bool);
-		updateBarHp(isMst, 0);
+		updateNodeHeadHp(isMst, 0);
 	}
 	else if (type == TYPE_OBSERVER_HANDLE_HEAD::UPDATE_HP_ALL)
 	{
 		auto isMst = va_arg(values, bool);
 		for (auto i = 0; i < ENTITY_BATTLE_MAX; i++)
 		{
-			updateBarHp(isMst, i);
+			updateNodeHeadHp(isMst, i);
 		}
 	}
 	else if (type == TYPE_OBSERVER_HANDLE_HEAD::UPDATE_ENERGY)
@@ -241,13 +241,14 @@ void HandleHead::resetSkin()
 	}
 }
 
-void HandleHead::updateBarHp(const bool &isMst, const int &indexNodeHead)
+void HandleHead::updateNodeHeadHp(const bool &isMst, const int &indexNodeHead)
 {
 	auto vecNodeHead = isMst ? _vecNodeHeadMst : _vecNodeHeadMaid;
 	if (vecNodeHead.size() > indexNodeHead)
 	{
 		auto nodeHead = vecNodeHead.at(indexNodeHead);
 		nodeHead->updateBarHp();
+		nodeHead->updateTxtHp();
 	}
 }
 

@@ -36,7 +36,7 @@ public:
 	void resetSkin();
 
 private:
-	void updateBarHp(const bool &isMst, const int &indexNodeHead);
+	void updateNodeHeadHp(const bool &isMst, const int &indexNodeHead);
 	void updateBarEnergy(const bool &isMst);
 	
 	void switchLayoutHeadMaidTouchable(const bool &isTouchEnabled);

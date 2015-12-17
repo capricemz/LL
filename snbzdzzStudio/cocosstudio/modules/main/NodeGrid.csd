@@ -2,7 +2,7 @@
   <PropertyGroup Type="Node" Name="NodeGrid" ID="e2dd582d-85e7-4f16-b64a-8ea85dda59e0" Version="2.3.2.3" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="143" Speed="1.0000" ActivedAnimationName="animationTrapDisarm">
+      <Animation Duration="143" Speed="1.0000" ActivedAnimationName="animationTurn">
         <Timeline ActionTag="-894527357" Property="Position">
           <PointFrame FrameIndex="0" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
@@ -535,48 +535,59 @@
           <RenderColor A="255" R="173" G="255" B="47" />
         </AnimationInfo>
         <AnimationInfo Name="animationTrapTrigger" StartIndex="131" EndIndex="143">
-          <RenderColor A="150" R="224" G="255" B="255" />
+          <RenderColor A="255" R="224" G="255" B="255" />
         </AnimationInfo>
       </AnimationList>
       <ObjectData Name="NodeGrid" Tag="71" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="spriteBgp" ActionTag="-894527357" VisibleForFrame="False" Tag="72" IconVisible="False" LeftMargin="-60.5000" RightMargin="-60.5000" TopMargin="-82.5000" BottomMargin="-82.5000" ctype="SpriteObjectData">
-            <Size X="121.0000" Y="165.0000" />
+          <AbstractNodeData Name="spriteBgp" ActionTag="-894527357" Tag="72" IconVisible="False" LeftMargin="-60.0000" RightMargin="-60.0000" TopMargin="-80.0000" BottomMargin="-80.0000" ctype="SpriteObjectData">
+            <Size X="120.0000" Y="160.0000" />
             <Children>
-              <AbstractNodeData Name="layoutGridBase1" ActionTag="-634455372" Tag="102" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="7.0000" BottomMargin="130.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
-                <Size X="107.0000" Y="28.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                <Position X="60.5000" Y="158.0000" />
+              <AbstractNodeData Name="layoutGridComplex" ActionTag="-2107413498" Tag="103" IconVisible="False" HorizontalEdge="BothEdge" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="11.0000" BottomMargin="49.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                <Size X="110.0000" Y="100.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="60.0000" Y="99.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.9576" />
+                <PrePosition X="0.5000" Y="0.6187" />
+                <PreSize X="0.9167" Y="0.6250" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="spriteBgpTop" ActionTag="346134984" Tag="28" IconVisible="False" ctype="SpriteObjectData">
+                <Size X="120.0000" Y="160.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="60.0000" Y="80.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="Normal" Path="images/skill/jnk3.png" Plist="" />
+                <BlendFunc Src="770" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="layoutGridBase1" ActionTag="-634455372" Tag="102" IconVisible="False" LeftMargin="7.0000" RightMargin="6.0000" TopMargin="10.0000" BottomMargin="122.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                <Size X="107.0000" Y="28.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
+                <Position X="60.5000" Y="150.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5042" Y="0.9375" />
                 <PreSize X="0.8843" Y="0.1697" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="layoutGridComplex" ActionTag="-2107413498" Tag="103" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="35.0000" BottomMargin="40.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
-                <Size X="107.0000" Y="90.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="60.5000" Y="85.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.5152" />
-                <PreSize X="0.8843" Y="0.5455" />
-                <SingleColor A="255" R="150" G="200" B="255" />
-                <FirstColor A="255" R="150" G="200" B="255" />
-                <EndColor A="255" R="255" G="255" B="255" />
-                <ColorVector ScaleY="1.0000" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="layoutGridBase0" ActionTag="835119385" Tag="104" IconVisible="False" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="130.0000" BottomMargin="7.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+              <AbstractNodeData Name="layoutGridBase0" ActionTag="835119385" Tag="104" IconVisible="False" LeftMargin="7.0000" RightMargin="6.0000" TopMargin="122.0000" BottomMargin="10.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="107.0000" Y="28.0000" />
                 <AnchorPoint ScaleX="0.5000" />
-                <Position X="60.5000" Y="7.0000" />
+                <Position X="60.5000" Y="10.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.0424" />
+                <PrePosition X="0.5042" Y="0.0625" />
                 <PreSize X="0.8843" Y="0.1697" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
@@ -590,10 +601,10 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/battle/gold_card_bg.png" Plist="" />
+            <FileData Type="Normal" Path="images/skill/jnk3.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spriteBgn" CanEdit="False" ActionTag="1596804542" VisibleForFrame="False" Alpha="0" Tag="73" IconVisible="False" LeftMargin="-60.0000" RightMargin="-64.0000" TopMargin="-74.5000" BottomMargin="-80.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteBgn" CanEdit="False" ActionTag="1596804542" Alpha="0" Tag="73" IconVisible="False" LeftMargin="-60.0000" RightMargin="-64.0000" TopMargin="-74.5000" BottomMargin="-80.5000" ctype="SpriteObjectData">
             <Size X="124.0000" Y="155.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="2.0000" Y="-3.0000" />
@@ -604,7 +615,7 @@
             <FileData Type="MarkedSubImage" Path="images/battle/zl.png" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spriteGold" Visible="False" ActionTag="-1395104190" Alpha="0" Tag="91" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteGold" Visible="False" ActionTag="-1395104190" VisibleForFrame="False" Alpha="0" Tag="91" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
             <Size X="40.0000" Y="40.0000" />
             <Children>
               <AbstractNodeData Name="txt" ActionTag="797327923" Tag="95" IconVisible="False" LeftMargin="2.0000" RightMargin="2.0000" TopMargin="8.5000" BottomMargin="8.5000" FontSize="18" LabelText="金币" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -629,7 +640,7 @@
             <FileData Type="MarkedSubImage" Path="images/icon/jb.png" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spriteStone" Visible="False" ActionTag="-2104448362" Alpha="0" Tag="92" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteStone" Visible="False" ActionTag="-2104448362" VisibleForFrame="False" Alpha="0" Tag="92" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
             <Size X="40.0000" Y="40.0000" />
             <Children>
               <AbstractNodeData Name="txt" ActionTag="963964973" Tag="96" IconVisible="False" LeftMargin="2.0000" RightMargin="2.0000" TopMargin="8.5000" BottomMargin="8.5000" FontSize="18" LabelText="石头" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -654,7 +665,7 @@
             <FileData Type="MarkedSubImage" Path="images/icon/jb.png" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spriteIce" Visible="False" ActionTag="588232590" Alpha="0" Tag="93" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteIce" Visible="False" ActionTag="588232590" VisibleForFrame="False" Alpha="0" Tag="93" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
             <Size X="40.0000" Y="40.0000" />
             <Children>
               <AbstractNodeData Name="txt" ActionTag="-1458949742" Tag="97" IconVisible="False" LeftMargin="2.0000" RightMargin="2.0000" TopMargin="8.5000" BottomMargin="8.5000" FontSize="18" LabelText="冰块" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -679,7 +690,7 @@
             <FileData Type="MarkedSubImage" Path="images/icon/jb.png" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="spriteTrap" ActionTag="173631201" Alpha="0" Tag="94" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="spriteTrap" ActionTag="173631201" VisibleForFrame="False" Alpha="0" Tag="94" IconVisible="False" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="-20.0000" BottomMargin="-20.0000" ctype="SpriteObjectData">
             <Size X="40.0000" Y="40.0000" />
             <Children>
               <AbstractNodeData Name="txt" ActionTag="1161872025" Tag="98" IconVisible="False" RightMargin="4.0000" TopMargin="5.5000" BottomMargin="11.5000" FontSize="18" LabelText="陷阱" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

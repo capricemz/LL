@@ -25,6 +25,7 @@ public:
 	void updateAll();
 	void updateSpriteIcon();
 	void updateBarHp();
+	void updateTxtHp();
 	void updateSpriteJob();
 	void updateSpriteState();
 
