@@ -38,12 +38,12 @@ static const vector<Vec2> vecPostionGridBattle =
 
 static const map<Vec2, Vec2> dicAnchorPoint2BubbleAnchorPoint = 
 {
-	{ Vec2::ANCHOR_BOTTOM_LEFT, Vec2(0.0f, 0.0f) }, { Vec2::ANCHOR_BOTTOM_RIGHT, Vec2(0.0f, 1.0f) }, { Vec2::ANCHOR_TOP_RIGHT, Vec2(1.0f, 0.0f) }, { Vec2::ANCHOR_TOP_LEFT, Vec2(1.0f, 1.0f) }
+	{ Vec2::ANCHOR_BOTTOM_LEFT, Vec2(1.0f, 1.0f) }, { Vec2::ANCHOR_BOTTOM_RIGHT, Vec2(0.0f, 1.0f) }, { Vec2::ANCHOR_TOP_RIGHT, Vec2(0.0f, 0.0f) }, { Vec2::ANCHOR_TOP_LEFT, Vec2(1.0f, 0.0f) }
 };
 
 static const map<Vec2, Vec2> dicAnchorPoint2BubbleBgScale =
 {
-	{ Vec2::ANCHOR_BOTTOM_LEFT, Vec2(1.0f, -1.0f) }, { Vec2::ANCHOR_BOTTOM_RIGHT, Vec2(1.0f, 1.0f) }, { Vec2::ANCHOR_TOP_RIGHT, Vec2(-1.0f, -1.0f) }, { Vec2::ANCHOR_TOP_LEFT, Vec2(-1.0f, 1.0f) }
+	{ Vec2::ANCHOR_BOTTOM_LEFT, Vec2(1.0f, 1.0f) }, { Vec2::ANCHOR_BOTTOM_RIGHT, Vec2(-1.0f, 1.0f) }, { Vec2::ANCHOR_TOP_RIGHT, Vec2(-1.0f, -1.0f) }, { Vec2::ANCHOR_TOP_LEFT, Vec2(1.0f, -1.0f) }
 };
 
 static const Size sizeSkillIcon = Size(100.0f, 100.0f);
@@ -324,8 +324,8 @@ enum class TYPE_OBSERVER_SCENE_MAIN
 	UPDATE_LAYOUT_TOP,
 	SWITCH_LAYER,
 
-	
-	SHOW_GUILD = 10,
+	SHOW_NONE = 10,
+	SHOW_GUILD,
 	SHOW_SKILLS,
 	SHOW_SHOP,
 	SHOW_TRAINING,

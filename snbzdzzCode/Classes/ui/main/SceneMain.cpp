@@ -114,6 +114,8 @@ void SceneMain::createSkin()
 	btn = (Button *)layoutBottom->getChildByName("btnLevels");
 	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBottomBtn, this));
 	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
+
+	ManagerUI::getInstance()->createLayout(this);
 }
 
 void SceneMain::switchLayer(const TYPE_OBSERVER_SCENE_MAIN &type)

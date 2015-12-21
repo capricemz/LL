@@ -105,11 +105,17 @@ void HandleEntity::runEntityAppear()
 		auto isMst = i < 1;
 		auto managerEntity = ManagerEntity::getInstance();
 		auto entity = isMst ? (Entity *)managerEntity->getMonster() : (Entity *)managerEntity->getMaid();
-		entity->runAppear([]()
+		entity->runAppear([entity]()
 		{
 			auto isAppearAll = ManagerEntity::getInstance()->isRunAppearOverAll();
 			if (isAppearAll)
 			{
+				/*auto anchor = Vec2::ANCHOR_BOTTOM_RIGHT;
+				auto postion = entity->getParent()->convertToWorldSpace(entity->getPosition() + Vec2(0.0f, 200.0f));
+				ManagerUI::getInstance()->showPlot(entity, anchor, postion, 1000, 0, nullptr, []()
+				{
+					ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_APPEAR_GRID_SELECTED_MST);
+				});//for test*/
 				ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_APPEAR_GRID_SELECTED_MST);
 			}
 		});

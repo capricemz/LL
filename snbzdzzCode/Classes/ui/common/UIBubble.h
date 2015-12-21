@@ -22,7 +22,7 @@ public:
 	
 	virtual bool init();
 	/*根据对齐点刷新背景*/
-	virtual void setAnchorPoint(const Vec2& point);
+	void setAnchorPointSkin(const Vec2& point);
 	/*响应点击处理*/
 	void show(
 		const int &idPlot,

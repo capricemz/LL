@@ -7,8 +7,10 @@
 #include "data/define/DefinesValue.h"
 #include "common/observer/Observer.h"
 #include "common/ILayerAppearDisappear.h"
+#include "ui/UILayout.h"
 
 USING_NS_CC;
+using namespace ui;
 
 class ManagerUI : public Subject
 {
@@ -18,6 +20,7 @@ public:
 
 public:
 	~ManagerUI();
+	void createLayout(Scene *scene);
 
 	void addKeyEvent(Scene *scene);//添加返回及其他按键时间
 	void replaceScene(TypeScene type);
@@ -43,8 +46,29 @@ public:
 	isDisappearImmediately 是否立即消失*/
 	void showBubble(
 		Node *parent,
-		const Vec2 &postion,
 		const Vec2 &anchor,
+		const Vec2 &postion,
+		const int &idPlot,
+		const int &index,
+		const function<void()> funcOverAppear,
+		const function<void()> funcOverDisappear,
+		const bool &isTxtShowImmediately = false,
+		const bool &isAppearImmediately = false,
+		const bool &isDisappearImmediately = false);
+	/*显示剧情
+	target 目标对象
+	anchor 对齐点
+	postion 目标对象世界位置
+	idPlot 剧情id
+	index 顺序
+	funcOverAppear 显示完成回调
+	funcOverDisappear 消失完成回调
+	isTxtShowImmediately 是否立即显示文本
+	isAppearImmediately 是否立即显示
+	isDisappearImmediately 是否立即消失*/
+	void showPlot(Node *target,
+		const Vec2 &anchor,
+		const Vec2 &postion,
 		const int &idPlot,
 		const int &index,
 		const function<void()> funcOverAppear,
@@ -66,6 +90,8 @@ private:
 	TypeScene _typeSceneRunning;
 	TYPE_OBSERVER_SCENE_MAIN _typeLayerRunning;
 	ILayerAppearDisappear *_layerRunning;
+
+	Layout *_layoutPlot;
 
 };
 

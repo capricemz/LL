@@ -41,14 +41,17 @@ bool UIBubble::init()
 	return isInit;
 }
 
-void UIBubble::setAnchorPoint(const Vec2& point)
+void UIBubble::setAnchorPointSkin(const Vec2& point)
 {
 	CCASSERT(dicAnchorPoint2BubbleAnchorPoint.find(point) != dicAnchorPoint2BubbleAnchorPoint.end(), "`````````` UIBubble::setAnchorPoint error point");
 	CCASSERT(dicAnchorPoint2BubbleBgScale.find(point) != dicAnchorPoint2BubbleBgScale.end(), "`````````` UIBubble::setAnchorPoint error point");
 
-	auto anchor = dicAnchorPoint2BubbleAnchorPoint.at(point);
-	Node::setAnchorPoint(anchor);
 	auto spriteBg = (Sprite *)_skin->getChildByName("spriteBg");
+	auto anchor = dicAnchorPoint2BubbleAnchorPoint.at(point);
+	anchor = Vec2(0.5f, 0.5f) - anchor;
+	auto size = spriteBg->getContentSize();
+	auto postion = Vec2(size.width * anchor.x, size.height * anchor.y);
+	_skin->setPosition(postion);
 	auto scale = dicAnchorPoint2BubbleBgScale.at(point);
 	spriteBg->setScaleX(scale.x);
 	spriteBg->setScaleY(scale.y);
@@ -87,7 +90,9 @@ void UIBubble::runAppear()
 	if (!_isAppearImmediately)//非立即显示
 	{
 		_skin->setScale(0.0f);
-		auto actionAppear = EaseCircleActionIn::create(ScaleTo::create(0.2f, 1.0f));
+		auto postion = _skin->getPosition();
+		_skin->setPosition(Vec2::ZERO);
+		auto actionAppear = Spawn::createWithTwoActions(EaseCircleActionIn::create(MoveBy::create(0.4f, postion)), EaseCircleActionIn::create(ScaleTo::create(0.4f, 1.0f)));
 		auto actionCallFunc = CallFunc::create([this]()
 		{
 			if (_funcOverAppear != nullptr)
@@ -112,7 +117,8 @@ void UIBubble::runDisappear()
 {
 	if (!_isDisappearImmediately)//非立即消失
 	{
-		auto actionAppear = EaseCircleActionIn::create(ScaleTo::create(0.2f, 0.0f));
+		auto postion = _skin->getPosition() * -1.0f;
+		auto actionAppear = Spawn::createWithTwoActions(EaseCircleActionIn::create(MoveBy::create(0.2f, postion)), EaseCircleActionIn::create(ScaleTo::create(0.2f, 0.0f)));
 		auto actionCallFunc = CallFunc::create([this]()
 		{
 			if (_funcOverDisappear != nullptr)
