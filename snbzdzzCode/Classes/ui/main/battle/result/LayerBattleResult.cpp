@@ -78,6 +78,53 @@ void LayerBattleResult::updateLayoutVictory()
 	
 	layout->addTouchEventListener(CC_CALLBACK_2(LayerBattleResult::onTouchContinue, this));
 	
+	updateLayoutStar();
+	updateLayoutDrop();
+
+	auto txtContinue = (Text *)layout->getChildByName("txtContinue");
+	txtContinue->runAction(RepeatForever::create(Sequence::create(FadeOut::create(1.0f), FadeIn::create(1.0f), nullptr)));
+
+	playAnimationVictory();
+}
+
+void LayerBattleResult::updateLayoutDefeat()
+{
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto isBattleWin = handleDataEntity->isBattleWin();
+
+	auto layout = (Layout *)_skin->getChildByName("layoutDefeat");
+	layout->setVisible(!isBattleWin);
+
+	if (isBattleWin)
+	{
+		return;
+	}
+
+	layout->addTouchEventListener(CC_CALLBACK_2(LayerBattleResult::onTouchContinue, this));
+
+	auto spriteContinue = (Sprite *)layout->getChildByName("spriteContinue");
+	spriteContinue->runAction(RepeatForever::create(Sequence::create(FadeOut::create(1.0f), FadeIn::create(1.0f), nullptr)));
+}
+
+void LayerBattleResult::onTouchContinue(Ref *ref, Widget::TouchEventType type)
+{
+	if (type == Widget::TouchEventType::ENDED)
+	{
+		if (_isActionRunning)
+		{
+			return;
+		}
+		ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SWITCH_LAYER, TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
+	}
+}
+
+void LayerBattleResult::updateLayoutStar()
+{
+	auto handleDataLevels = ManagerData::getInstance()->getHandleDataLevels();
+	auto dataLevel = handleDataLevels->getDataLevelCurrent();
+
+	auto layout = (Layout *)_skin->getChildByName("layoutVictory");
+
 	auto levelTargetNum = dataLevel->levelTargetNumGet();
 	auto layoutStar = (Layout *)layout->getChildByName("layoutStar");
 	auto isSpriteNullptr = false;
@@ -118,42 +165,14 @@ void LayerBattleResult::updateLayoutVictory()
 			postion += Vec2(widthSpriteStar, 0.0f);
 		}
 	}
-
-	auto numComplete = dataLevel->levelTargetCompleteNum();
-	auto txtStar = (Text *)layout->getChildByName("txtStar");
-	txtStar->setString(STR_LEVEL_TARGET_AWARD_TIP[numComplete]);
-
-	auto spriteContinue = (Sprite *)layout->getChildByName("spriteContinue");
-	spriteContinue->runAction(RepeatForever::create(Sequence::create(FadeOut::create(1.0f), FadeIn::create(1.0f), nullptr)));
 }
 
-void LayerBattleResult::updateLayoutDefeat()
+void LayerBattleResult::updateLayoutDrop()
 {
-	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto isBattleWin = handleDataEntity->isBattleWin();
 
-	auto layout = (Layout *)_skin->getChildByName("layoutDefeat");
-	layout->setVisible(!isBattleWin);
-
-	if (isBattleWin)
-	{
-		return;
-	}
-
-	layout->addTouchEventListener(CC_CALLBACK_2(LayerBattleResult::onTouchContinue, this));
-
-	auto spriteContinue = (Sprite *)layout->getChildByName("spriteContinue");
-	spriteContinue->runAction(RepeatForever::create(Sequence::create(FadeOut::create(1.0f), FadeIn::create(1.0f), nullptr)));
 }
 
-void LayerBattleResult::onTouchContinue(Ref *ref, Widget::TouchEventType type)
+void LayerBattleResult::playAnimationVictory()
 {
-	if (type == Widget::TouchEventType::ENDED)
-	{
-		if (_isActionRunning)
-		{
-			return;
-		}
-		ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SWITCH_LAYER, TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
-	}
+
 }

@@ -26,10 +26,16 @@ public:
 
 private:
 	void createSkin();
+	
 	void updateLayoutVictory();
 	void updateLayoutDefeat();
+
 	void onTouchContinue(Ref *ref, Widget::TouchEventType type);
-	
+
+	void updateLayoutStar();
+	void updateLayoutDrop();
+	void playAnimationVictory();
+
 private:
 	Layer *_skin;
 	bool _isActionRunning;
