@@ -4,7 +4,8 @@
 #define __UI_MAIN_BATTLE_HANDLE_BG_H__
 
 #include "cocos2d.h"
-#include "ui/UILayout.h"
+#include "cocostudio/CocoStudio.h"
+#include "ui/CocosGUI.h"
 
 USING_NS_CC;
 using namespace ui;
@@ -21,7 +22,8 @@ public:
 	virtual bool init();
 
 	void setSkin(Layout *skin);
-
+	void updateTxtRound();
+	
 private:
 	Layout *_skin;
 	

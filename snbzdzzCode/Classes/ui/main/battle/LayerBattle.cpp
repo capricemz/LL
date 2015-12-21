@@ -81,6 +81,10 @@ void LayerBattle::updateBySubject(va_list values)
 			_layerGridSelect->runDisappearAction();
 		}
 	}
+	else if (type == TYPE_OBSERVER_LAYER_BATTLE::UPDATE_TXT_ROUND)
+	{
+		_handleBg->updateTxtRound();
+	}
 	else if (type == TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_CATCH)
 	{
 		auto layerCatch = LayerCatch::create();

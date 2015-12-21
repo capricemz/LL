@@ -87,6 +87,12 @@
             <Image Name="role_card_54.png" />
             <Image Name="role_card_55.png" />
             <Image Name="role_card_61.png" />
+            <Image Name="role_card_16.png" />
+            <Image Name="role_card_26.png" />
+            <Image Name="role_card_36.png" />
+            <Image Name="role_card_46.png" />
+            <Image Name="role_card_56.png" />
+            <Image Name="role_card_6.png" />
           </Folder>
           <Folder Name="bg">
             <Image Name="battle_bg1.png" />
@@ -126,6 +132,12 @@
             <Image Name="role_image_4.png" />
             <Image Name="role_image_44.png" />
             <Image Name="role_image_5.png" />
+            <Image Name="role_image_16.png" />
+            <Image Name="role_image_26.png" />
+            <Image Name="role_image_36.png" />
+            <Image Name="role_image_46.png" />
+            <Image Name="role_image_56.png" />
+            <Image Name="role_image_6.png" />
           </Folder>
           <Folder Name="icon">
             <Image Name="mb.png" />

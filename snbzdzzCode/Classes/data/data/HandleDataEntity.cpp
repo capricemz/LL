@@ -779,6 +779,7 @@ void HandleDataEntity::addRound()
 	dataEntityMst->addRound();
 	auto dataEntityMaid = getDataEntityMaid();
 	dataEntityMaid->addRound();
+	ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::UPDATE_TXT_ROUND);
 }
 
 void HandleDataEntity::resetRound()

@@ -33,6 +33,12 @@
       <FilePathData Path="images/role_card/role_card_54.png" />
       <FilePathData Path="images/role_card/role_card_55.png" />
       <FilePathData Path="images/role_card/role_card_61.png" />
+      <FilePathData Path="images/role_card/role_card_16.png" />
+      <FilePathData Path="images/role_card/role_card_26.png" />
+      <FilePathData Path="images/role_card/role_card_36.png" />
+      <FilePathData Path="images/role_card/role_card_46.png" />
+      <FilePathData Path="images/role_card/role_card_56.png" />
+      <FilePathData Path="images/role_card/role_card_6.png" />
     </ImageFiles>
     <MaxSize Width="1024" Height="1024" />
   </Content>

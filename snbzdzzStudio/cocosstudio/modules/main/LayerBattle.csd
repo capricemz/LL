@@ -158,6 +158,42 @@
                 <FileData Type="Normal" Path="images/battle/vs.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
+              <AbstractNodeData Name="txtRound0" ActionTag="1488054802" Tag="264" IconVisible="False" LeftMargin="274.0000" RightMargin="330.0000" TopMargin="455.5000" BottomMargin="455.5000" FontSize="40" LabelText="10&#xA;" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="36.0000" Y="49.0000" />
+                <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
+                <Position X="310.0000" Y="480.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4844" Y="0.5000" />
+                <PreSize X="0.1781" Y="0.0250" />
+                <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
+                <OutlineColor A="255" R="0" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="txtRound1" ActionTag="1848885361" Tag="265" IconVisible="False" LeftMargin="330.0000" RightMargin="274.0000" TopMargin="455.5000" BottomMargin="455.5000" FontSize="40" LabelText="10&#xA;" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="36.0000" Y="49.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="330.0000" Y="480.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5156" Y="0.5000" />
+                <PreSize X="0.1781" Y="0.0250" />
+                <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
+                <OutlineColor A="255" R="0" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="txtRound" ActionTag="-2077411399" Tag="266" IconVisible="False" LeftMargin="311.5000" RightMargin="311.5000" TopMargin="455.5000" BottomMargin="455.5000" FontSize="40" LabelText="/" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="19.0000" Y="49.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="320.0000" Y="480.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="0.1781" Y="0.0250" />
+                <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
+                <OutlineColor A="255" R="0" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="320.0000" Y="480.0000" />
