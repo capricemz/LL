@@ -135,7 +135,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="MarkedSubImage" Path="images/formation/role1.png" Plist="modules/main/PlistMaidHead1.plist" />
+                <FileData Type="Normal" Path="images/formation/role1.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteJob" ActionTag="2065945203" Tag="95" IconVisible="False" RightMargin="78.0000" TopMargin="78.0000" ctype="SpriteObjectData">

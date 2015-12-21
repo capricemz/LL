@@ -1,12 +1,7 @@
 <PlistInfoProjectFile>
   <PropertyGroup Type="Plist" Name="PlistMaidHead1" ID="8cf2a9c1-9aa9-4ab5-9e4d-c3d4cc3ea669" Version="2.3.2.3" />
-  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="1" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
     <ImageFiles>
-      <FilePathData Path="images/formation/role1.png" />
-      <FilePathData Path="images/formation/role2.png" />
-      <FilePathData Path="images/formation/role3.png" />
-      <FilePathData Path="images/formation/role4.png" />
-      <FilePathData Path="images/formation/role5.png" />
       <FilePathData Path="images/role_head/role_head_bg_1.png" />
       <FilePathData Path="images/role_head/role_head_bg_2.png" />
       <FilePathData Path="images/role_head/role_head_bg_3.png" />
@@ -14,6 +9,41 @@
       <FilePathData Path="images/role_head/role_head_bg_5.png" />
       <FilePathData Path="images/role_head/role_head_bg_6.png" />
       <FilePathData Path="images/role_head/role_head_41.png" />
+      <FilePathData Path="images/role_head/role_head_1.png" />
+      <FilePathData Path="images/role_head/role_head_11.png" />
+      <FilePathData Path="images/role_head/role_head_12.png" />
+      <FilePathData Path="images/role_head/role_head_13.png" />
+      <FilePathData Path="images/role_head/role_head_14.png" />
+      <FilePathData Path="images/role_head/role_head_15.png" />
+      <FilePathData Path="images/role_head/role_head_16.png" />
+      <FilePathData Path="images/role_head/role_head_2.png" />
+      <FilePathData Path="images/role_head/role_head_21.png" />
+      <FilePathData Path="images/role_head/role_head_22.png" />
+      <FilePathData Path="images/role_head/role_head_23.png" />
+      <FilePathData Path="images/role_head/role_head_24.png" />
+      <FilePathData Path="images/role_head/role_head_25.png" />
+      <FilePathData Path="images/role_head/role_head_26.png" />
+      <FilePathData Path="images/role_head/role_head_3.png" />
+      <FilePathData Path="images/role_head/role_head_31.png" />
+      <FilePathData Path="images/role_head/role_head_32.png" />
+      <FilePathData Path="images/role_head/role_head_33.png" />
+      <FilePathData Path="images/role_head/role_head_34.png" />
+      <FilePathData Path="images/role_head/role_head_35.png" />
+      <FilePathData Path="images/role_head/role_head_36.png" />
+      <FilePathData Path="images/role_head/role_head_4.png" />
+      <FilePathData Path="images/role_head/role_head_42.png" />
+      <FilePathData Path="images/role_head/role_head_43.png" />
+      <FilePathData Path="images/role_head/role_head_44.png" />
+      <FilePathData Path="images/role_head/role_head_45.png" />
+      <FilePathData Path="images/role_head/role_head_46.png" />
+      <FilePathData Path="images/role_head/role_head_5.png" />
+      <FilePathData Path="images/role_head/role_head_51.png" />
+      <FilePathData Path="images/role_head/role_head_52.png" />
+      <FilePathData Path="images/role_head/role_head_53.png" />
+      <FilePathData Path="images/role_head/role_head_54.png" />
+      <FilePathData Path="images/role_head/role_head_55.png" />
+      <FilePathData Path="images/role_head/role_head_56.png" />
+      <FilePathData Path="images/role_head/role_head_6.png" />
     </ImageFiles>
     <MaxSize Width="1024" Height="1024" />
   </Content>

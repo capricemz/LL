@@ -9,220 +9,131 @@
           <AbstractNodeData Name="layoutVictory" ActionTag="947186020" Tag="249" IconVisible="False" TouchEnable="True" BackColorAlpha="87" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="640.0000" Y="960.0000" />
             <Children>
-              <AbstractNodeData Name="spriteBg" ActionTag="-1496896911" Tag="250" IconVisible="False" LeftMargin="25.0000" RightMargin="25.0000" TopMargin="106.0000" BottomMargin="346.0000" ctype="SpriteObjectData">
-                <Size X="590.0000" Y="508.0000" />
+              <AbstractNodeData Name="spriteBg" ActionTag="-1724630517" Tag="62" IconVisible="False" LeftMargin="108.0000" RightMargin="108.0000" TopMargin="-78.0000" BottomMargin="612.0000" ctype="SpriteObjectData">
+                <Size X="424.0000" Y="426.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="320.0000" Y="600.0000" />
+                <Position X="320.0000" Y="825.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.6250" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/diwen1.png" Plist="" />
+                <PrePosition X="0.5000" Y="0.8594" />
+                <PreSize X="0.6625" Y="0.4437" />
+                <FileData Type="Normal" Path="images/battle/battle_result/win_effect.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="spriteBg1" ActionTag="-173642827" Tag="251" IconVisible="False" LeftMargin="203.0000" RightMargin="203.0000" TopMargin="84.0000" BottomMargin="824.0000" ctype="SpriteObjectData">
-                <Size X="234.0000" Y="52.0000" />
+              <AbstractNodeData Name="spriteVictoryBg" ActionTag="1216956146" Tag="63" IconVisible="False" LeftMargin="141.5000" RightMargin="141.5000" TopMargin="8.5000" BottomMargin="752.5000" ctype="SpriteObjectData">
+                <Size X="357.0000" Y="199.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="320.0000" Y="850.0000" />
+                <Position X="320.0000" Y="852.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.8854" />
+                <PrePosition X="0.5000" Y="0.8875" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/shengli.png" Plist="" />
+                <FileData Type="Normal" Path="images/battle/battle_result/win.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="spriteBg2" ActionTag="2130489499" Tag="252" IconVisible="False" LeftMargin="87.0000" RightMargin="87.0000" TopMargin="148.0000" BottomMargin="808.0000" ctype="SpriteObjectData">
-                <Size X="466.0000" Y="4.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="320.0000" Y="810.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.8438" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/fengetiao.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="layoutStar" ActionTag="-1554153730" Tag="45" IconVisible="False" LeftMargin="160.0000" RightMargin="160.0000" TopMargin="155.0000" BottomMargin="725.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
-                <Size X="320.0000" Y="80.0000" />
+              <AbstractNodeData Name="spriteMaidBg2" ActionTag="82237116" Tag="66" IconVisible="False" LeftMargin="285.0000" RightMargin="-95.0000" TopMargin="-448.0000" BottomMargin="208.0000" ctype="SpriteObjectData">
+                <Size X="450.0000" Y="1200.0000" />
                 <AnchorPoint ScaleX="0.5000" />
-                <Position X="320.0000" Y="725.0000" />
+                <Position X="510.0000" Y="208.0000" />
+                <Scale ScaleX="0.3800" ScaleY="0.3800" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.7969" Y="0.2167" />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="Normal" Path="images/role_image/role_image_32.png" Plist="" />
+                <BlendFunc Src="770" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="spriteMaidBg1" ActionTag="1620513415" Tag="65" IconVisible="False" LeftMargin="-220.0000" RightMargin="160.0000" TopMargin="-448.0000" BottomMargin="208.0000" FlipX="True" ctype="SpriteObjectData">
+                <Size X="700.0000" Y="1200.0000" />
+                <AnchorPoint ScaleX="0.5000" />
+                <Position X="130.0000" Y="208.0000" />
+                <Scale ScaleX="0.3800" ScaleY="0.3800" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.2031" Y="0.2167" />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="Normal" Path="images/role_image/role_image_52.png" Plist="" />
+                <BlendFunc Src="770" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="spriteMaidBg0" ActionTag="-2104324679" Tag="64" IconVisible="False" LeftMargin="-5.0000" RightMargin="-5.0000" TopMargin="-515.0000" BottomMargin="275.0000" ctype="SpriteObjectData">
+                <Size X="650.0000" Y="1200.0000" />
+                <AnchorPoint ScaleX="0.5000" />
+                <Position X="320.0000" Y="275.0000" />
+                <Scale ScaleX="0.3800" ScaleY="0.3800" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.2865" />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="Normal" Path="images/role_image/role_image_54.png" Plist="" />
+                <BlendFunc Src="770" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="layoutStar" ActionTag="-1554153730" Tag="45" IconVisible="False" LeftMargin="95.0000" RightMargin="95.0000" TopMargin="190.0000" BottomMargin="660.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                <Size X="450.0000" Y="110.0000" />
+                <AnchorPoint ScaleX="0.5000" />
+                <Position X="320.0000" Y="660.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.7552" />
-                <PreSize X="0.5000" Y="0.0833" />
+                <PrePosition X="0.5000" Y="0.6875" />
+                <PreSize X="0.7031" Y="0.1146" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="txtStar" ActionTag="-2080496821" Tag="256" IconVisible="False" LeftMargin="140.0000" RightMargin="140.0000" TopMargin="252.5000" BottomMargin="672.5000" FontSize="30" LabelText="三颗爱心，获得完整奖励！" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="360.0000" Y="35.0000" />
+              <AbstractNodeData Name="layoutDrop" ActionTag="586599588" Tag="67" IconVisible="False" LeftMargin="120.0000" RightMargin="120.0000" TopMargin="665.0000" BottomMargin="95.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                <Size X="400.0000" Y="200.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="320.0000" Y="690.0000" />
+                <Position X="320.0000" Y="195.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.7188" />
-                <PreSize X="0.5625" Y="0.0365" />
+                <PrePosition X="0.5000" Y="0.2031" />
+                <PreSize X="0.6250" Y="0.2083" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="spriteExpBg" ActionTag="329809384" Tag="68" IconVisible="False" LeftMargin="167.0000" RightMargin="167.0000" TopMargin="866.0000" BottomMargin="76.0000" ctype="SpriteObjectData">
+                <Size X="306.0000" Y="18.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="320.0000" Y="85.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.0885" />
+                <PreSize X="0.4781" Y="0.0188" />
+                <FileData Type="Normal" Path="images/battle/battle_result/exp_bg.png" Plist="" />
+                <BlendFunc Src="770" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="barExp" ActionTag="-1012976599" Tag="69" IconVisible="False" LeftMargin="169.0000" RightMargin="169.0000" TopMargin="868.5000" BottomMargin="78.5000" ProgressInfo="10" ctype="LoadingBarObjectData">
+                <Size X="302.0000" Y="13.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="320.0000" Y="85.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.0885" />
+                <PreSize X="0.9869" Y="0.7222" />
+                <ImageFileData Type="Normal" Path="images/battle/battle_result/exp_bar.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="txtGrade" ActionTag="146244514" Tag="70" IconVisible="False" LeftMargin="135.5000" RightMargin="475.5000" TopMargin="863.0000" BottomMargin="73.0000" FontSize="20" LabelText="5级" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="29.0000" Y="24.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="150.0000" Y="85.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="146" G="255" B="4" />
+                <PrePosition X="0.2344" Y="0.0885" />
+                <PreSize X="0.3725" Y="1.3333" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="spriteAwardBg" ActionTag="1275778692" Tag="257" IconVisible="False" LeftMargin="65.0000" RightMargin="485.0000" TopMargin="303.0000" BottomMargin="615.0000" ctype="SpriteObjectData">
-                <Size X="90.0000" Y="42.0000" />
-                <AnchorPoint ScaleY="0.5000" />
-                <Position X="65.0000" Y="636.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1016" Y="0.6625" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/jiangli.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="spriteAward0" ActionTag="1774473114" Tag="259" IconVisible="False" LeftMargin="155.0000" RightMargin="395.0000" TopMargin="359.0000" BottomMargin="511.0000" ctype="SpriteObjectData">
-                <Size X="90.0000" Y="90.0000" />
+              <AbstractNodeData Name="txtContinue" ActionTag="-1639320446" Tag="71" IconVisible="False" LeftMargin="508.5000" RightMargin="10.5000" TopMargin="923.0000" BottomMargin="9.0000" FontSize="20" LabelText="点击屏幕继续" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="121.0000" Y="28.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="200.0000" Y="556.0000" />
+                <Position X="569.0000" Y="23.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3125" Y="0.5792" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/tukuang.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="txtAward0" ActionTag="-654537723" Tag="261" IconVisible="False" LeftMargin="182.5000" RightMargin="422.5000" TopMargin="448.5000" BottomMargin="476.5000" FontSize="30" LabelText="X1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="35.0000" Y="35.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="200.0000" Y="494.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3125" Y="0.5146" />
-                <PreSize X="0.0547" Y="0.0365" />
+                <PrePosition X="0.8891" Y="0.0240" />
+                <PreSize X="0.1875" Y="0.0250" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
+                <OutlineColor A="255" R="61" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="spriteAward1" ActionTag="607142123" Tag="258" IconVisible="False" LeftMargin="275.0000" RightMargin="275.0000" TopMargin="359.0000" BottomMargin="511.0000" ctype="SpriteObjectData">
-                <Size X="90.0000" Y="90.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="320.0000" Y="556.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.5792" />
-                <PreSize X="0.1406" Y="0.0938" />
-                <FileData Type="Normal" Path="images/fight/tukuang2.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="txtAward1" ActionTag="2091093798" Tag="262" IconVisible="False" LeftMargin="302.0000" RightMargin="302.0000" TopMargin="448.5000" BottomMargin="476.5000" FontSize="30" LabelText="X2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="36.0000" Y="35.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="320.0000" Y="494.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.5146" />
-                <PreSize X="0.0562" Y="0.0365" />
-                <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="spriteAward2" ActionTag="-2117935917" Tag="260" IconVisible="False" LeftMargin="394.9999" RightMargin="155.0001" TopMargin="359.0000" BottomMargin="511.0000" ctype="SpriteObjectData">
-                <Size X="90.0000" Y="90.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="439.9999" Y="556.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6875" Y="0.5792" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/tukuang3.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="txtAward2" ActionTag="-871375271" Tag="263" IconVisible="False" LeftMargin="421.9999" RightMargin="182.0001" TopMargin="448.5000" BottomMargin="476.5000" FontSize="30" LabelText="X2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="36.0000" Y="35.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="439.9999" Y="494.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6875" Y="0.5146" />
-                <PreSize X="0.0562" Y="0.0365" />
-                <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="spriteExpBg" ActionTag="-484406097" Tag="264" IconVisible="False" LeftMargin="65.0000" RightMargin="479.0000" TopMargin="481.0000" BottomMargin="441.0000" ctype="SpriteObjectData">
-                <Size X="96.0000" Y="38.0000" />
-                <AnchorPoint ScaleY="0.5000" />
-                <Position X="65.0000" Y="460.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1016" Y="0.4792" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/Exp.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="spriteBarExpBg" ActionTag="1287269941" Tag="265" IconVisible="False" LeftMargin="101.9999" RightMargin="102.0001" TopMargin="516.0000" BottomMargin="396.0000" ctype="SpriteObjectData">
-                <Size X="436.0000" Y="48.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="319.9999" Y="420.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.4375" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/jingyantiao.png" Plist="" />
-                <BlendFunc Src="0" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="barExp" ActionTag="-2080768518" Tag="47" IconVisible="False" LeftMargin="100.5000" RightMargin="100.5000" TopMargin="514.5000" BottomMargin="394.5000" ProgressInfo="70" ctype="LoadingBarObjectData">
-                <Size X="439.0000" Y="51.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="320.0000" Y="420.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.4375" />
-                <PreSize X="0.6859" Y="0.0531" />
-                <ImageFileData Type="Normal" Path="images/teach/progress bar.png" Plist="" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="spriteUp" ActionTag="49032885" Tag="266" IconVisible="False" LeftMargin="521.8458" RightMargin="54.1542" TopMargin="481.2860" BottomMargin="394.7140" ctype="SpriteObjectData">
-                <Size X="64.0000" Y="84.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="553.8458" Y="436.7140" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8654" Y="0.4549" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/jiantou.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="txtExp" ActionTag="207709962" Tag="267" IconVisible="False" LeftMargin="400.7291" RightMargin="141.2709" TopMargin="536.7612" BottomMargin="395.2388" FontSize="24" LabelText="3394/5000" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="98.0000" Y="28.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="449.7291" Y="409.2388" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.7027" Y="0.4263" />
-                <PreSize X="0.1531" Y="0.0292" />
-                <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="spriteContinueBg" ActionTag="1450352709" Tag="268" IconVisible="False" LeftMargin="141.0000" RightMargin="141.0000" TopMargin="639.0000" BottomMargin="279.0000" ctype="SpriteObjectData">
-                <Size X="358.0000" Y="42.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="320.0000" Y="300.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.3125" />
-                <PreSize X="0.2750" Y="0.0375" />
-                <FileData Type="Normal" Path="images/fight/jixudiwen.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="spriteContinue" ActionTag="-778991568" Tag="269" IconVisible="False" LeftMargin="230.0000" RightMargin="230.0000" TopMargin="646.0000" BottomMargin="286.0000" ctype="SpriteObjectData">
-                <Size X="180.0000" Y="28.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="320.0000" Y="300.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.3125" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/jixu.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
