@@ -293,7 +293,7 @@
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="role_image_44_32" ActionTag="1481892016" Tag="359" IconVisible="False" LeftMargin="-432.5051" RightMargin="-267.4949" TopMargin="-523.3882" BottomMargin="-676.6118" ctype="SpriteObjectData">
-            <Size X="700.0000" Y="1200.0000" />
+            <Size X="1400.0000" Y="1200.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-82.5051" Y="-76.6118" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -422,6 +422,17 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="images/role_image/role_image_61.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_44_1" ActionTag="-761317907" Tag="59" IconVisible="False" LeftMargin="-783.9150" RightMargin="-616.0850" TopMargin="-499.9475" BottomMargin="-700.0525" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-83.9150" Y="-100.0525" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_44.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
         </Children>

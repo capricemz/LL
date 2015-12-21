@@ -594,6 +594,19 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
+              <AbstractNodeData Name="layoutGridBase2" ActionTag="-304551566" Tag="217" IconVisible="False" LeftMargin="6.5000" RightMargin="6.5000" TopMargin="85.0000" BottomMargin="47.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                <Size X="107.0000" Y="28.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
+                <Position X="60.0000" Y="75.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.4688" />
+                <PreSize X="0.8843" Y="0.1697" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />

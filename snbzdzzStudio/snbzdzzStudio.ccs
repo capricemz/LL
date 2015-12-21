@@ -54,6 +54,16 @@
             <Image Name="paper.jpg" />
             <Image Name="rock.jpg" />
             <Image Name="scissors.jpg" />
+            <Folder Name="battle_result">
+              <Image Name="exp_bar.png" />
+              <Image Name="exp_bg.png" />
+              <Image Name="star.png" />
+              <Image Name="star_an.png" />
+              <Image Name="win.png" />
+              <Image Name="win_effect.png" />
+              <Image Name="23.png" />
+              <Image Name="item.png" />
+            </Folder>
           </Folder>
           <Folder Name="role_card">
             <Image Name="role_card_4.png" />
@@ -409,6 +419,9 @@
             <Image Name="role_head_bg_4.png" />
             <Image Name="role_head_bg_5.png" />
           </Folder>
+          <Folder Name="role_duds">
+            <Image Name="role_duds_44.png" />
+          </Folder>
         </Folder>
         <Folder Name="fonts">
           <TTF Name="ktjt.ttf" />
@@ -440,6 +453,7 @@
             <PlistInfo Name="PlistMaidHead1.csi" Type="Plist" />
             <Project Name="NodeSkillItem.csd" Type="Node" />
             <PlistInfo Name="PlistSkill.csi" Type="Plist" />
+            <Project Name="BattleResult.csd" Type="Layer" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />
