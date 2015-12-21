@@ -435,6 +435,402 @@
             <FileData Type="Normal" Path="images/role_duds/role_duds_44.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_1_1" ActionTag="-788218335" Tag="41" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_1.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_11_2" ActionTag="270472218" Tag="42" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_11.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_12_3" ActionTag="-1477555458" Tag="43" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_12.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_13_4" ActionTag="899324973" Tag="44" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_13.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_14_5" ActionTag="-1716112451" Tag="45" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_14.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_15_6" ActionTag="-1273112508" Tag="46" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_15.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_16_7" ActionTag="-951081605" Tag="47" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_16.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_2_8" ActionTag="1576808586" Tag="48" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_2.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_21_9" ActionTag="-1440644807" Tag="49" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_21.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_22_10" ActionTag="-2033452350" Tag="50" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_22.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_23_11" ActionTag="1953318962" Tag="51" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_23.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_24_12" ActionTag="-231899569" Tag="52" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_24.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_25_13" ActionTag="1778083730" Tag="53" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_25.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_26_14" ActionTag="-1812915286" Tag="54" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_26.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_3_15" ActionTag="584799917" Tag="55" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_3.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_31_16" ActionTag="-1831328919" Tag="56" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_31.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_32_17" ActionTag="-1997535719" Tag="57" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_32.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_33_18" ActionTag="-1535750067" Tag="58" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_33.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_34_19" ActionTag="-1196679356" Tag="59" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_34.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_35_20" ActionTag="-180842318" Tag="60" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_35.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_36_21" ActionTag="-931111037" Tag="61" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_36.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_4_22" ActionTag="1844076096" Tag="62" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_4.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_41_23" ActionTag="1781952870" Tag="63" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_41.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_42_24" ActionTag="1096756924" Tag="64" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_42.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_43_25" ActionTag="-843924491" Tag="65" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_43.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_44_26" ActionTag="89614559" Tag="66" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_44.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_45_27" ActionTag="-612114037" Tag="67" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_45.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_46_28" ActionTag="-577809368" Tag="68" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_46.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_5_29" ActionTag="261179242" Tag="69" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_5.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_51_30" ActionTag="-148565721" Tag="70" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_51.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_52_31" ActionTag="-774344569" Tag="71" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_52.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_53_32" ActionTag="-100974940" Tag="72" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_53.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_54_33" ActionTag="-313868752" Tag="73" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_54.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_55_34" ActionTag="1349553347" Tag="74" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_55.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_56_35" ActionTag="2035391175" Tag="75" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_56.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="role_duds_6_36" ActionTag="1560608363" Tag="76" IconVisible="False" LeftMargin="-710.0000" RightMargin="-690.0000" TopMargin="-575.0000" BottomMargin="-625.0000" ctype="SpriteObjectData">
+            <Size X="1400.0000" Y="1200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="-25.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/role_duds/role_duds_6.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

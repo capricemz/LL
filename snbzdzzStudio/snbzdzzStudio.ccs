@@ -421,6 +421,41 @@
           </Folder>
           <Folder Name="role_duds">
             <Image Name="role_duds_44.png" />
+            <Image Name="role_duds_1.png" />
+            <Image Name="role_duds_11.png" />
+            <Image Name="role_duds_12.png" />
+            <Image Name="role_duds_13.png" />
+            <Image Name="role_duds_14.png" />
+            <Image Name="role_duds_15.png" />
+            <Image Name="role_duds_16.png" />
+            <Image Name="role_duds_2.png" />
+            <Image Name="role_duds_21.png" />
+            <Image Name="role_duds_22.png" />
+            <Image Name="role_duds_23.png" />
+            <Image Name="role_duds_24.png" />
+            <Image Name="role_duds_25.png" />
+            <Image Name="role_duds_26.png" />
+            <Image Name="role_duds_3.png" />
+            <Image Name="role_duds_31.png" />
+            <Image Name="role_duds_32.png" />
+            <Image Name="role_duds_33.png" />
+            <Image Name="role_duds_34.png" />
+            <Image Name="role_duds_35.png" />
+            <Image Name="role_duds_36.png" />
+            <Image Name="role_duds_4.png" />
+            <Image Name="role_duds_41.png" />
+            <Image Name="role_duds_42.png" />
+            <Image Name="role_duds_43.png" />
+            <Image Name="role_duds_45.png" />
+            <Image Name="role_duds_46.png" />
+            <Image Name="role_duds_5.png" />
+            <Image Name="role_duds_51.png" />
+            <Image Name="role_duds_52.png" />
+            <Image Name="role_duds_53.png" />
+            <Image Name="role_duds_54.png" />
+            <Image Name="role_duds_55.png" />
+            <Image Name="role_duds_56.png" />
+            <Image Name="role_duds_6.png" />
           </Folder>
         </Folder>
         <Folder Name="fonts">
