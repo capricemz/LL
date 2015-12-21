@@ -255,6 +255,12 @@
     <ClCompile Include="..\Classes\ui\common\UIEntity.cpp">
       <Filter>src\ui\common</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\data\data\HandleDataSkill.cpp">
+      <Filter>src\data\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\data\data\HandleDataTraining.cpp">
+      <Filter>src\data\data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

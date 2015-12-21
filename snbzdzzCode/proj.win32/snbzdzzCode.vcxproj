@@ -164,7 +164,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\data\data\HandleDataGrid.cpp" />
     <ClCompile Include="..\Classes\data\data\HandleDataIncome.cpp" />
     <ClCompile Include="..\Classes\data\data\HandleDataLevels.cpp" />
+    <ClCompile Include="..\Classes\data\data\HandleDataSkill.cpp" />
     <ClCompile Include="..\Classes\data\data\HandleDataTime.cpp" />
+    <ClCompile Include="..\Classes\data\data\HandleDataTraining.cpp" />
     <ClCompile Include="..\Classes\data\data\HandleDataUnlock.cpp" />
     <ClCompile Include="..\Classes\data\data\ManagerData.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />

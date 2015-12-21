@@ -83,7 +83,9 @@ void LayerGuild::createEntityMst()
 		{
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_TRAINING, i);
+				auto handleDataTraining = ManagerData::getInstance()->getHandleDataTraining();
+				handleDataTraining->setIndexCurrent(i);
+				ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SWITCH_LAYER, TYPE_OBSERVER_SCENE_MAIN::SHOW_TRAINING);
 			}
 		});
 		layout->addChild(uiEntity);
@@ -117,7 +119,9 @@ void LayerGuild::createEntityMaid()
 		{
 			if (type == Widget::TouchEventType::ENDED)
 			{
-				ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS, idEntity);
+				auto handleDataSkill = ManagerData::getInstance()->getHandleDataSkill();
+				handleDataSkill->setIdEntityCurrent(idEntity);
+				ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SWITCH_LAYER, TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS);
 			}
 		});
 		layout->addChild(uiEntity);

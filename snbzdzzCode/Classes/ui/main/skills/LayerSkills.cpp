@@ -17,7 +17,6 @@ using namespace cocostudio::timeline;
 LayerSkills::LayerSkills() :
 	_skin(nullptr),
 	_uiEntity(nullptr),
-	_idEntityCurrent(DATA_UNLOCK_INIT_MAID),
 	_vecShowIdEntity({}),
 	_typeSkill(TypeSkill::BASE)
 {
@@ -64,9 +63,8 @@ void LayerSkills::dealRemoveFromParent()
 	}
 }
 
-void LayerSkills::updateSkin(const int &idEntity)
+void LayerSkills::updateSkin()
 {
-	_idEntityCurrent = idEntity;
 	updateLayoutBtns();
 	updateLayoutMaid();
 	updateLayoutSkillItems();
@@ -134,6 +132,9 @@ void LayerSkills::updateLayoutBtns(const bool &isInit /*= false*/)
 
 void LayerSkills::updateLayoutMaid(const bool &isInit /*= false*/)
 {
+	auto handleDataSkill = ManagerData::getInstance()->getHandleDataSkill();
+	auto idEntityCurrent = handleDataSkill->getIdEntityCurrent();
+
 	auto layoutMaid = (Layout *)_skin->getChildByName("layoutMaid");
 	auto size = layoutMaid->getContentSize();
 
@@ -144,18 +145,18 @@ void LayerSkills::updateLayoutMaid(const bool &isInit /*= false*/)
 		_uiEntity->setPosition(spriteIcon->getPosition());
 		layoutMaid->addChild(_uiEntity, -1);
 	}
-	_uiEntity->updateSkin(_idEntityCurrent, 1.0f);
+	_uiEntity->updateSkin(idEntityCurrent, 1.0f);
 	_uiEntity->getLayoutBg()->setTouchEnabled(true);
 	_uiEntity->getLayoutBg()->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnMaidBuy, this));
 
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
-	auto isBuy = handleDataUnlock->getIsBuyMaid(_idEntityCurrent);
-	auto isUnlock = handleDataUnlock->getIsUnlockMaid(_idEntityCurrent);
+	auto isBuy = handleDataUnlock->getIsBuyMaid(idEntityCurrent);
+	auto isUnlock = handleDataUnlock->getIsUnlockMaid(idEntityCurrent);
 
 	auto spriteBuyTip = (Sprite *)layoutMaid->getChildByName("spriteBuyTip");
 	spriteBuyTip->setVisible(isUnlock && !isBuy);
 
-	auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[_idEntityCurrent];
+	auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[idEntityCurrent];
 	auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(cfgEntity.urlPicName);
 	auto spriteName = (Sprite *)layoutMaid->getChildByName("spriteName");
 	spriteName->setSpriteFrame(spriteFrame);
@@ -187,17 +188,20 @@ void LayerSkills::updateLayoutMaid(const bool &isInit /*= false*/)
 
 void LayerSkills::updateLayoutSkillItems(const bool &isInit /*= false*/)
 {
+	auto handleDataSkill = ManagerData::getInstance()->getHandleDataSkill();
+	auto idEntityCurrent = handleDataSkill->getIdEntityCurrent();
+
 	auto vecdataEntityMaid = ManagerData::getInstance()->getHandleDataEntity()->getVecDataEntityMaid();
 	DataEntity *dataEntity = nullptr;
 	for (auto var : vecdataEntityMaid)
 	{
-		if (var->getIdEntity() == _idEntityCurrent)
+		if (var->getIdEntity() == idEntityCurrent)
 		{
 			dataEntity = var;
 			break;
 		}
 	}
-	CCASSERT(dataEntity != nullptr, "LayerSkills::updateLayoutSkillItems _idEntityCurrent wrong");
+	CCASSERT(dataEntity != nullptr, "LayerSkills::updateLayoutSkillItems idEntityCurrent wrong");
 
 	auto layoutSkillItems = (Layout *)_skin->getChildByName("layoutSkillItems");
 	auto layout = (Layout *)layoutSkillItems->getChildByName("layout");
@@ -352,11 +356,14 @@ void LayerSkills::onTouchBtnMaid(Ref *ref, Widget::TouchEventType type)
 	{
 		auto layout = (Layout *)ref;
 		auto idEntity = (int)layout->getUserData();
-		if (_idEntityCurrent == idEntity)
+		auto handleDataSkill = ManagerData::getInstance()->getHandleDataSkill();
+		auto idEntityCurrent = handleDataSkill->getIdEntityCurrent();
+
+		if (idEntityCurrent == idEntity)
 		{
 			return;
 		}
-		_idEntityCurrent = idEntity;
+		handleDataSkill->setIdEntityCurrent(idEntity);
 		updateLayoutMaid();
 		updateLayoutSkillItems();
 	}
@@ -366,15 +373,18 @@ void LayerSkills::onTouchBtnMaidBuy(Ref *ref, Widget::TouchEventType type)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
-		auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[_idEntityCurrent];
+		auto handleDataSkill = ManagerData::getInstance()->getHandleDataSkill();
+		auto idEntityCurrent = handleDataSkill->getIdEntityCurrent();
+
+		auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[idEntityCurrent];
 		auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
 		if (handleDataIncome->getThingEnough(IdThing::GOLD, cfgEntity.cost))
 		{
 			handleDataIncome->addThing(IdThing::GOLD, -cfgEntity.cost);
 			auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
-			handleDataUnlock->setIsBuyMaid(_idEntityCurrent);
+			handleDataUnlock->setIsBuyMaid(idEntityCurrent);
 			handleDataUnlock->dataFileSet();
-			updateSkin(_idEntityCurrent);
+			updateSkin();
 		}
 	}
 }
@@ -383,7 +393,10 @@ void LayerSkills::onTouchBtnPrev(Ref *ref, Widget::TouchEventType type)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
-		auto iter = find(_vecShowIdEntity.begin(), _vecShowIdEntity.end(), _idEntityCurrent);
+		auto handleDataSkill = ManagerData::getInstance()->getHandleDataSkill();
+		auto idEntityCurrent = handleDataSkill->getIdEntityCurrent();
+
+		auto iter = find(_vecShowIdEntity.begin(), _vecShowIdEntity.end(), idEntityCurrent);
 		auto index = 0;
 		if (iter != _vecShowIdEntity.begin())
 		{
@@ -393,7 +406,7 @@ void LayerSkills::onTouchBtnPrev(Ref *ref, Widget::TouchEventType type)
 		{
 			index = _vecShowIdEntity.size() - 1;
 		}
-		_idEntityCurrent = _vecShowIdEntity[index];
+		handleDataSkill->setIdEntityCurrent(_vecShowIdEntity[index]);
 		updateLayoutMaid();
 		updateLayoutSkillItems();
 	}
@@ -403,7 +416,10 @@ void LayerSkills::onTouchBtnNext(Ref *ref, Widget::TouchEventType type)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
-		auto iter = find(_vecShowIdEntity.begin(), _vecShowIdEntity.end(), _idEntityCurrent);
+		auto handleDataSkill = ManagerData::getInstance()->getHandleDataSkill();
+		auto idEntityCurrent = handleDataSkill->getIdEntityCurrent();
+
+		auto iter = find(_vecShowIdEntity.begin(), _vecShowIdEntity.end(), idEntityCurrent);
 		auto index = 0;
 		if (iter != _vecShowIdEntity.end() - 1)
 		{
@@ -413,7 +429,7 @@ void LayerSkills::onTouchBtnNext(Ref *ref, Widget::TouchEventType type)
 		{
 			index = 0;
 		}
-		_idEntityCurrent = _vecShowIdEntity[index];
+		idEntityCurrent = _vecShowIdEntity[index];
 		updateLayoutMaid();
 		updateLayoutSkillItems();
 	}

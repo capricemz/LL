@@ -39,8 +39,87 @@ bool SceneMain::init()
 void SceneMain::updateBySubject(va_list values)
 {
 	auto type = va_arg(values, TYPE_OBSERVER_SCENE_MAIN);
+	if (type == TYPE_OBSERVER_SCENE_MAIN::UPDATE_LAYOUT_TOP)
+	{
+		updateLayoutTop();
+	}
+	else if (type == TYPE_OBSERVER_SCENE_MAIN::SWITCH_LAYER)
+	{
+		auto typeShow = va_arg(values, TYPE_OBSERVER_SCENE_MAIN);
+		switchLayer(typeShow);
+	}
+}
+
+void SceneMain::updateLayoutTop()
+{
+	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
+	auto valueDimond = handleDataIncome->getThing(IdThing::DIAMOND);
+	auto valueGold = handleDataIncome->getThing(IdThing::GOLD);
+	auto valueExp = handleDataIncome->getThing(IdThing::EXP);
+
+	auto layoutTop = (Layout *)_skin->getChildByName("layoutTop");
+	auto layoutIncome = (Layout *)layoutTop->getChildByName("layoutIncome");
+	auto txt = (Text *)layoutIncome->getChildByName("txt0");
+	txt->setString(Value(valueDimond).asString());
+	txt = (Text *)layoutIncome->getChildByName("txt1");
+	txt->setString(Value(valueGold).asString());
+	txt = (Text *)layoutIncome->getChildByName("txt2");
+	txt->setString(Value(valueExp).asString());
+}
+
+void SceneMain::createSkin()
+{
+	_skin = (Scene *)CSLoader::createNode(RES_MODULES_MAIN_SCENE_MAIN_CSB);
+	addChild(_skin);
+
+	auto layoutTop = (Layout *)_skin->getChildByName("layoutTop");
+	auto layoutIncome = (Layout *)layoutTop->getChildByName("layoutIncome");
+	auto btn = (Button *)layoutIncome->getChildByName("btnAdd0");
+	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchTopBtn, this));
+	btn->setUserData((void *)IdThing::DIAMOND);
+	btn = (Button *)layoutIncome->getChildByName("btnAdd1");
+	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchTopBtn, this));
+	btn->setUserData((void *)IdThing::GOLD);
+	btn = (Button *)layoutIncome->getChildByName("btnAdd2");
+	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchTopBtn, this));
+	btn->setUserData((void *)IdThing::EXP);
+
+	updateLayoutTop();
+
+	auto layoutContent = (Layout *)_skin->getChildByName("layoutContent");
 	auto managerUI = ManagerUI::getInstance();
-	
+
+	auto layerGuild = LayerGuild::create();
+	layoutContent->addChild(layerGuild);
+	managerUI->setTypeLayerRunning(TYPE_OBSERVER_SCENE_MAIN::SHOW_GUILD);
+	managerUI->setLayerRunning(layerGuild);
+
+	auto layoutBottom = (Layout *)_skin->getChildByName("layoutBottom");
+	btn = (Button *)layoutBottom->getChildByName("btnGuild");
+	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBottomBtn, this));
+	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_GUILD);
+
+	btn = (Button *)layoutBottom->getChildByName("btnSkills");
+	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBottomBtn, this));
+	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS);
+
+	btn = (Button *)layoutBottom->getChildByName("btnShop");
+	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBottomBtn, this));
+	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_SHOP);
+
+	btn = (Button *)layoutBottom->getChildByName("btnTraining");
+	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBottomBtn, this));
+	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_TRAINING);
+
+	btn = (Button *)layoutBottom->getChildByName("btnLevels");
+	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBottomBtn, this));
+	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
+}
+
+void SceneMain::switchLayer(const TYPE_OBSERVER_SCENE_MAIN &type)
+{
+	auto managerUI = ManagerUI::getInstance();
+
 	if (managerUI->getTypeLayerRunning() == type)
 	{
 		return;
@@ -60,12 +139,7 @@ void SceneMain::updateBySubject(va_list values)
 	}
 	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS)
 	{
-		auto idEntity = va_arg(values, int);
 		auto layerSkills = LayerSkills::create();
-		if (idEntity != INT32_MIN)
-		{
-			layerSkills->updateSkin(idEntity);
-		}
 		layoutContent->addChild(layerSkills);
 		layer = layerSkills;
 
@@ -80,12 +154,7 @@ void SceneMain::updateBySubject(va_list values)
 	}
 	else if (type == TYPE_OBSERVER_SCENE_MAIN::SHOW_TRAINING)
 	{
-		auto index = va_arg(values, int);
 		auto layerTraining = LayerTraining::create();
-		if (index != INT32_MIN)
-		{
-			layerTraining->updateSkin(index);
-		}
 		layoutContent->addChild(layerTraining);
 		layer = layerTraining;
 
@@ -113,48 +182,22 @@ void SceneMain::updateBySubject(va_list values)
 	managerUI->runLayerAppearDisappear(layer);
 }
 
-void SceneMain::createSkin()
+void SceneMain::onTouchTopBtn(Ref *ref, Widget::TouchEventType type)
 {
-	_skin = (Scene *)CSLoader::createNode(RES_MODULES_MAIN_SCENE_MAIN_CSB);
-	addChild(_skin);
-
-	auto layoutContent = (Layout *)_skin->getChildByName("layoutContent");
-	auto managerUI = ManagerUI::getInstance();
-
-	auto layerGuild = LayerGuild::create();
-	layoutContent->addChild(layerGuild);
-	managerUI->setTypeLayerRunning(TYPE_OBSERVER_SCENE_MAIN::SHOW_GUILD);
-	managerUI->setLayerRunning(layerGuild);
-
-	auto layoutBottom = (Layout *)_skin->getChildByName("layoutBottom");
-	auto btn = (Button *)layoutBottom->getChildByName("btnGuild");
-	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
-	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_GUILD);
-
-	btn = (Button *)layoutBottom->getChildByName("btnSkills");
-	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
-	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS);
-
-	btn = (Button *)layoutBottom->getChildByName("btnShop");
-	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
-	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_SHOP);
-
-	btn = (Button *)layoutBottom->getChildByName("btnTraining");
-	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
-	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_TRAINING);
-
-	btn = (Button *)layoutBottom->getChildByName("btnLevels");
-	btn->addTouchEventListener(CC_CALLBACK_2(SceneMain::onTouchBtn, this));
-	btn->setUserData((void *)TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
+	if (type == Widget::TouchEventType::ENDED)
+	{
+		log("`````````` SceneMain::onTouchTopBtn");
+	}
 }
 
-void SceneMain::onTouchBtn(Ref *ref, Widget::TouchEventType type)
+void SceneMain::onTouchBottomBtn(Ref *ref, Widget::TouchEventType type)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
 		auto btn = (Button *)ref;
 		auto typeShow = (TYPE_OBSERVER_SCENE_MAIN)(int)btn->getUserData();
-		ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, typeShow, INT32_MIN);
+		/*ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, typeShow, INT32_MIN);*/
+		switchLayer(typeShow);
 	}
 }
 

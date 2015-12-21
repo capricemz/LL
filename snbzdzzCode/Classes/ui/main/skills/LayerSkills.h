@@ -29,7 +29,7 @@ public:
 	virtual void afterRunDisappear();
 	virtual void dealRemoveFromParent();
 	
-	void updateSkin(const int &idEntity);
+	void updateSkin();
 	
 private:
 	void createSkin();
@@ -56,8 +56,6 @@ private:
 	Layer *_skin;
 	
 	UIEntity *_uiEntity;
-	
-	int _idEntityCurrent;
 	
 	vector<int> _vecShowIdEntity;
 	

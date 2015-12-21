@@ -28,7 +28,7 @@ public:
 	virtual void afterRunDisappear();
 	virtual void dealRemoveFromParent();
 	
-	void updateSkin(const int &index);
+	void updateSkin();
 	
 private:
 	void createSkin();
@@ -45,7 +45,6 @@ private:
 	
 private:
 	Layer *_skin;
-	int _indexCurrent;
 	UIEntity *_uiEntity;
 	
 };

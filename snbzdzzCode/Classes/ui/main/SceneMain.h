@@ -21,10 +21,13 @@ public:
 	virtual bool init();
 
 	virtual void updateBySubject(va_list values);
-
+	void updateLayoutTop();
+	
 private:
 	void createSkin();
-	void onTouchBtn(Ref *ref, Widget::TouchEventType type);
+	void switchLayer(const TYPE_OBSERVER_SCENE_MAIN &type);
+	void onTouchTopBtn(Ref *ref, Widget::TouchEventType type);
+	void onTouchBottomBtn(Ref *ref, Widget::TouchEventType type);
 	void switchVisibleLayoutTop(const bool &isVisibe);
 	void switchVisibleLayoutBottom(const bool &isVisibe);
 	

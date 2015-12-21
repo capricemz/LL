@@ -8,7 +8,7 @@
 #include "ui/ManagerUI.h"
 #include "common/util/UtilRandom.h"
 
-LayerTraining::LayerTraining() : _skin(nullptr), _indexCurrent(0), _uiEntity(nullptr)
+LayerTraining::LayerTraining() : _skin(nullptr), _uiEntity(nullptr)
 {
 }
 
@@ -53,10 +53,8 @@ void LayerTraining::dealRemoveFromParent()
 	}
 }
 
-void LayerTraining::updateSkin(const int &index)
+void LayerTraining::updateSkin()
 {
-	_indexCurrent = index;
-	
 	updateLayoutTraining();
 	updateLayoutSelect();
 	updateLayoutEntity();
@@ -69,20 +67,23 @@ void LayerTraining::createSkin()
 	_skin = (Layer *)CSLoader::createNode(RES_MODULES_MAIN_LAYER_TRAINING_CSB);
 	addChild(_skin);
 
-	updateSkin(0);
+	updateSkin();
 
 	initLayoutBtns();
 }
 
 void LayerTraining::updateLayoutTraining()
 {
+	auto handleDataTraining = ManagerData::getInstance()->getHandleDataTraining();
+	auto indexCurrent = handleDataTraining->getIndexCurrent();
+
 	auto layout = (Layout *)_skin->getChildByName("layoutTraining");
 	auto barPrecent = (LoadingBar *)layout->getChildByName("barPrecent");
 	auto txtPrecentValue = (Text *)layout->getChildByName("txtPrecentValue");
 	auto layoutLv = (Layout *)layout->getChildByName("layoutLv");
 
 	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
-	auto dt = handleDataIncome->getDataTrainingInfo(_indexCurrent);
+	auto dt = handleDataIncome->getDataTrainingInfo(indexCurrent);
 
 	if (dt == nullptr)
 	{
@@ -130,6 +131,9 @@ void LayerTraining::updateLayoutTraining()
 
 void LayerTraining::updateLayoutSelect()
 {
+	auto handleDataTraining = ManagerData::getInstance()->getHandleDataTraining();
+	auto indexCurrent = handleDataTraining->getIndexCurrent();
+
 	auto layout = (Layout *)_skin->getChildByName("layoutSelect");
 	auto listBtns = (ListView *)layout->getChildByName("listBtns");
 	auto layoutLv = (Layout *)layout->getChildByName("layoutLv");
@@ -137,7 +141,7 @@ void LayerTraining::updateLayoutSelect()
 
 	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
 	auto vecDt = handleDataIncome->getVecDataTrainingInfo();
-	auto dt = handleDataIncome->getDataTrainingInfo(_indexCurrent);
+	auto dt = handleDataIncome->getDataTrainingInfo(indexCurrent);
 
 	if (dt == nullptr)
 	{
@@ -208,11 +212,14 @@ void LayerTraining::updateLayoutSelect()
 
 void LayerTraining::updateLayoutEntity()
 {
+	auto handleDataTraining = ManagerData::getInstance()->getHandleDataTraining();
+	auto indexCurrent = handleDataTraining->getIndexCurrent();
+
 	auto layout = (Layout *)_skin->getChildByName("layoutEntity");
 	auto spriteName = (Sprite *)layout->getChildByName("spriteName");
 
 	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
-	auto dt = handleDataIncome->getDataTrainingInfo(_indexCurrent);
+	auto dt = handleDataIncome->getDataTrainingInfo(indexCurrent);
 
 	if (dt == nullptr)
 	{
@@ -302,13 +309,16 @@ void LayerTraining::initLayoutBtns()
 
 void LayerTraining::updateLayoutBtns()
 {
+	auto handleDataTraining = ManagerData::getInstance()->getHandleDataTraining();
+	auto indexCurrent = handleDataTraining->getIndexCurrent();
+
 	auto layoutTraining = (Layout *)_skin->getChildByName("layoutTraining");
 	auto layoutBtn0 = (Layout *)_skin->getChildByName("layoutBtn0");//后宫出售调教按钮容器
 	auto layoutBtn1 = (Layout *)_skin->getChildByName("layoutBtn1");//调教方式按钮容器
 
 	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
 	auto vecDt = handleDataIncome->getVecDataTrainingInfo();
-	auto dt = handleDataIncome->getDataTrainingInfo(_indexCurrent);
+	auto dt = handleDataIncome->getDataTrainingInfo(indexCurrent);
 
 	if (dt == nullptr)
 	{
@@ -369,12 +379,15 @@ void LayerTraining::onTouchNodeHead(Ref *ref, Widget::TouchEventType type)
 	{
 		auto btn = (Button *)ref;
 		auto index = (int)btn->getUserData();
-		if (_indexCurrent != index)
+		auto handleDataTraining = ManagerData::getInstance()->getHandleDataTraining();
+		auto indexCurrent = handleDataTraining->getIndexCurrent();
+
+		if (indexCurrent != index)
 		{
 			return;
 		}
-
-		updateSkin(index);
+		handleDataTraining->setIndexCurrent(index);
+		updateSkin();
 	}
 }
 
@@ -402,9 +415,11 @@ void LayerTraining::onTouchBtnSell(Ref *ref, Widget::TouchEventType type)
 	{
 		auto btn = (Button *)ref;
 
+		auto handleDataTraining = ManagerData::getInstance()->getHandleDataTraining();
+		auto indexCurrent = handleDataTraining->getIndexCurrent();
 		auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
 		auto vecDt = handleDataIncome->getVecDataTrainingInfo();
-		auto dt = handleDataIncome->getDataTrainingInfo(_indexCurrent);
+		auto dt = handleDataIncome->getDataTrainingInfo(indexCurrent);
 		auto idEntity = dt->getIdEntity();
 		auto valueLv = dt->getValueLv();
 		auto isClothed = dt->getIsClothed();
@@ -419,9 +434,9 @@ void LayerTraining::onTouchBtnSell(Ref *ref, Widget::TouchEventType type)
 		value += isClothed ? cfgTraining.valueOther : 0;
 
 		handleDataIncome->addThing(IdThing::GOLD, value);
-		handleDataIncome->earseVecDataTrainingInfo(_indexCurrent);
+		handleDataIncome->earseVecDataTrainingInfo(indexCurrent);
 		handleDataIncome->dataFileSet();
-		updateSkin(_indexCurrent);
+		updateSkin();
 	}
 }
 
@@ -432,8 +447,10 @@ void LayerTraining::onTouchBtnWay(Ref *ref, Widget::TouchEventType type)
 		auto btn = (Button *)ref;
 		auto typeTrianing = (TypeTrianing)(int)btn->getUserData();
 
+		auto handleDataTraining = ManagerData::getInstance()->getHandleDataTraining();
+		auto indexCurrent = handleDataTraining->getIndexCurrent();
 		auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
-		auto dt = handleDataIncome->getDataTrainingInfo(_indexCurrent);
+		auto dt = handleDataIncome->getDataTrainingInfo(indexCurrent);
 		auto idEntity = dt->getIdEntity();
 
 		auto managerCfg = ManagerCfg::getInstance();
@@ -491,6 +508,6 @@ void LayerTraining::onTouchBtnWay(Ref *ref, Widget::TouchEventType type)
 		}
 		handleDataIncome->addThing(IdThing::TRAINING, -1);
 		handleDataIncome->dataFileSet();
-		updateSkin(_indexCurrent);
+		updateSkin();
 	}
 }

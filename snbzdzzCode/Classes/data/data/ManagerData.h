@@ -575,7 +575,6 @@ class DataTrainingInfo : public Ref
 		bool _isClothed;//是否装备时装
 		
 };
-
 //处理收益数据类
 class HandleDataIncome
 {
@@ -616,6 +615,37 @@ class HandleDataIncome
 		Vector<DataTrainingInfo *> _vecDataTrainingInfo;
 		
 };
+//处理技能数据类
+class HandleDataSkill
+{
+public:
+	HandleDataSkill();
+	~HandleDataSkill();
+
+public:
+	int getIdEntityCurrent() const { return _idEntityCurrent; }
+	void setIdEntityCurrent(int val) { _idEntityCurrent = val; }
+
+private:
+	int _idEntityCurrent;
+	
+};
+//处理训练数据类
+class HandleDataTraining
+{
+public:
+	HandleDataTraining();
+	~HandleDataTraining();
+
+public:
+	int getIndexCurrent() const { return _indexCurrent; }
+	void setIndexCurrent(int val) { _indexCurrent = val; }
+
+private:
+	int _indexCurrent;
+	
+};
+
 //数据类
 class ManagerData
 {
@@ -646,6 +676,8 @@ class ManagerData
 		HandleDataEntity * getHandleDataEntity() { return _handleDataEntity; }
 		HandleDataLevels * getHandleDataLevels() { return _handleDataLevels; }
 		HandleDataIncome * getHandleDataIncome() { return _handleDataIncome; }
+		HandleDataSkill * getHandleDataSkill() { return _handleDataSkill; }
+		HandleDataTraining * getHandleDataTraining() { return _handleDataTraining; }
 
 	private:
 		const string USER_DEFAULT_KEY_ISFE = "isSaveFileExist";//储存文件是否存在
@@ -658,6 +690,8 @@ class ManagerData
 		HandleDataEntity *_handleDataEntity;//实体数据处理
 		HandleDataLevels *_handleDataLevels;//关卡数据处理
 		HandleDataIncome *_handleDataIncome;//收益数据处理
+		HandleDataSkill *_handleDataSkill;//技能数据处理
+		HandleDataTraining *_handleDataTraining;//训练数据处理
 
 };
 

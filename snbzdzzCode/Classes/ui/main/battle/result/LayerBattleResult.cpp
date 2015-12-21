@@ -154,6 +154,6 @@ void LayerBattleResult::onTouchContinue(Ref *ref, Widget::TouchEventType type)
 		{
 			return;
 		}
-		ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
+		ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SWITCH_LAYER, TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
 	}
 }

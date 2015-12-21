@@ -91,7 +91,7 @@
                     <FileData Type="Normal" Path="images/levels/treasure.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="btnAdd0" ActionTag="1213345384" Tag="44" IconVisible="False" LeftMargin="164.0000" RightMargin="323.0000" TopMargin="6.5000" BottomMargin="14.5000" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="12" RightEage="12" TopEage="11" BottomEage="11" Scale9OriginX="12" Scale9OriginY="11" Scale9Width="13" Scale9Height="15" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="btnAdd0" ActionTag="1213345384" Tag="44" IconVisible="False" LeftMargin="164.0000" RightMargin="323.0000" TopMargin="6.5000" BottomMargin="14.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="12" RightEage="12" TopEage="11" BottomEage="11" Scale9OriginX="12" Scale9OriginY="11" Scale9Width="13" Scale9Height="15" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="37.0000" Y="37.0000" />
                     <AnchorPoint ScaleY="0.5000" />
                     <Position X="164.0000" Y="33.0000" />
@@ -100,12 +100,11 @@
                     <PrePosition X="0.3130" Y="0.5690" />
                     <PreSize X="0.0706" Y="0.6379" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <PressedFileData Type="Normal" Path="images/levels/button.png" Plist="" />
                     <NormalFileData Type="Normal" Path="images/levels/button.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="btnAdd1" ActionTag="-1479176550" Tag="45" IconVisible="False" LeftMargin="304.0000" RightMargin="183.0000" TopMargin="6.5000" BottomMargin="14.5000" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="12" RightEage="12" TopEage="11" BottomEage="11" Scale9OriginX="12" Scale9OriginY="11" Scale9Width="13" Scale9Height="15" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="btnAdd1" ActionTag="-1479176550" Tag="45" IconVisible="False" LeftMargin="304.0000" RightMargin="183.0000" TopMargin="6.5000" BottomMargin="14.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="12" RightEage="12" TopEage="11" BottomEage="11" Scale9OriginX="12" Scale9OriginY="11" Scale9Width="13" Scale9Height="15" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="37.0000" Y="37.0000" />
                     <AnchorPoint ScaleY="0.5000" />
                     <Position X="304.0000" Y="33.0000" />
@@ -114,12 +113,11 @@
                     <PrePosition X="0.5802" Y="0.5690" />
                     <PreSize X="0.0706" Y="0.6379" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <PressedFileData Type="Normal" Path="images/levels/button.png" Plist="" />
                     <NormalFileData Type="Normal" Path="images/levels/button.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="btnAdd2" ActionTag="1557526357" Tag="46" IconVisible="False" LeftMargin="444.0000" RightMargin="43.0000" TopMargin="6.5000" BottomMargin="14.5000" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="12" RightEage="12" TopEage="11" BottomEage="11" Scale9OriginX="12" Scale9OriginY="11" Scale9Width="13" Scale9Height="15" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="btnAdd2" ActionTag="1557526357" Tag="46" IconVisible="False" LeftMargin="444.0000" RightMargin="43.0000" TopMargin="6.5000" BottomMargin="14.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="12" RightEage="12" TopEage="11" BottomEage="11" Scale9OriginX="12" Scale9OriginY="11" Scale9Width="13" Scale9Height="15" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="37.0000" Y="37.0000" />
                     <AnchorPoint ScaleY="0.5000" />
                     <Position X="444.0000" Y="33.0000" />
@@ -128,8 +126,43 @@
                     <PrePosition X="0.8473" Y="0.5690" />
                     <PreSize X="0.0706" Y="0.6379" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <PressedFileData Type="Normal" Path="images/levels/button.png" Plist="" />
                     <NormalFileData Type="Normal" Path="images/levels/button.png" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="txt0" ActionTag="-1894714228" Tag="34" IconVisible="False" LeftMargin="104.0000" RightMargin="364.0000" TopMargin="10.5000" BottomMargin="12.5000" FontSize="30" LabelText="4444&#xA;" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="56.0000" Y="35.0000" />
+                    <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
+                    <Position X="160.0000" Y="30.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.3053" Y="0.5172" />
+                    <PreSize X="0.2176" Y="0.4138" />
+                    <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="txt1" ActionTag="1328654556" Tag="35" IconVisible="False" LeftMargin="244.0000" RightMargin="224.0000" TopMargin="10.5000" BottomMargin="12.5000" FontSize="30" LabelText="4444&#xA;" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="56.0000" Y="35.0000" />
+                    <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
+                    <Position X="300.0000" Y="30.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5725" Y="0.5172" />
+                    <PreSize X="0.2176" Y="0.4138" />
+                    <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="txt2" ActionTag="-1006563735" Tag="36" IconVisible="False" LeftMargin="384.0000" RightMargin="84.0000" TopMargin="10.5000" BottomMargin="12.5000" FontSize="30" LabelText="4444&#xA;" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                    <Size X="56.0000" Y="35.0000" />
+                    <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
+                    <Position X="440.0000" Y="30.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.8397" Y="0.5172" />
+                    <PreSize X="0.2176" Y="0.4138" />
+                    <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>

@@ -217,10 +217,7 @@ void LayerGridSelect::createSkin()
 		switch (type)
 		{
 		case Widget::TouchEventType::ENDED:
-			/*ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::RESET_SKIN);//for test
-			ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::START);//for test*/
-			/*ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_ENTITY);//for test*/
-			ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);//for test
+			ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SWITCH_LAYER, TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);//for test
 			break;
 		default:
 			break;
