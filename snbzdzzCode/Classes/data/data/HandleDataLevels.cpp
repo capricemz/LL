@@ -58,11 +58,15 @@ void DataLevel::dealLevelPassed()
 		auto dataLevelUnlock = handleDataLevels->getDicDataLevel().at(var);
 		dataLevelUnlock->setState();
 	}
+	auto handleDataEntity = managerData->getHandleDataEntity();
 	for (auto var : cfgLevel.unlockSkills)
 	{
 		handleDataUnlock->setIsUnlockSkill(var[0], var[1]);
 	}
-	auto handleDataEntity = managerData->getHandleDataEntity();
+	if (cfgLevel.unlockSkills.size() != 0)
+	{
+		handleDataEntity->getDataEntityMaid()->updateSkillGroup();
+	}
 	for (auto var : cfgLevel.unlockMaids)
 	{
 		handleDataUnlock->setIsUnlockMaid(var);//½âËøÅ®ÆÍ
