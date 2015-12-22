@@ -403,6 +403,8 @@ class DataLevel : public Ref
 		void setState();//设置状态
 		void setVecTargetComplete();//根据完成数据设置完成状态
 		
+		vector<vector<int>> getVecIdThingAward(const bool &isGetNew = false);//获取奖励数组
+
 	public:
 		int getId() const
 		{
@@ -449,13 +451,14 @@ class DataLevel : public Ref
 		string getLevelTargetStr(const int &index) const;
 		
 	private:
-		void dealPassedIncome(const map<IdThing, int> &award);
+		void dealPassedIncome(const vector<vector<int>> &award);
 		
 	private:
 		int _id;
 		int _index;
 		TypeLevelState _state;
 		vector<bool> _vecTargetComplete;
+		vector<vector<int>> _vecVecAward;
 		
 };
 //关卡数据处理类
@@ -598,6 +601,12 @@ class HandleDataIncome
 		void setThing(const IdThing &idThing, const int &value);//idAttribute 元素id, value 新值
 		void addThing(const IdThing &idThing, const int &value);//idAttribute 元素id, value 正值增加，负值减少
 		void addThingDeal(const IdThing &idThing, const int &value);//添加物品额外处理，idAttribute 元素id, value 正值增加，负值减少
+
+		bool getIsGradeMax();//等级是否已满
+		int getGrade();//当前等级
+		string getGradeEffect();//当前等级属性
+		int getGradeExpNow();//当前等级经验
+		int getGradeExpNeed();//升级需要的经验
 
 		Vector<DataTrainingInfo *> &getVecDataTrainingInfo()
 		{

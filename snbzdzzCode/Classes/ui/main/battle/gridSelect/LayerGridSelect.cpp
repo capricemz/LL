@@ -114,6 +114,7 @@ void LayerGridSelect::showAppearGridSelectMaid(const Vec2 &postion)
 		{
 			ManagerUI::getInstance()->notify(ID_OBSERVER::HANDLE_HEAD, TYPE_OBSERVER_HANDLE_HEAD::SWITCH_LAYOUT_HEAD_MAID_TOUCHABLE, true);
 		}
+		/*ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_BATTLE_RESULT);//for test*/
 	}));
 }
 

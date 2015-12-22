@@ -61,8 +61,13 @@
               <Image Name="star_an.png" />
               <Image Name="win.png" />
               <Image Name="win_effect.png" />
-              <Image Name="23.png" />
               <Image Name="item.png" />
+              <Image Name="failed.png" />
+              <Image Name="lvup.png" />
+              <Image Name="lvup_bg1.png" />
+              <Image Name="lvup_bg2.png" />
+              <Image Name="lvup_bg3.png" />
+              <Image Name="up.png" />
             </Folder>
           </Folder>
           <Folder Name="role_card">
@@ -190,7 +195,7 @@
             <Image Name="gk_btn1.png" />
             <Image Name="new.png" />
             <Image Name="treasure.png" />
-            <Image Name="Gold COINS.png" />
+            <Image Name="gold.png" />
             <Image Name="button.png" />
             <Image Name="bs.png" />
             <Image Name="background1.png" />
@@ -523,7 +528,7 @@
             <PlistInfo Name="PlistMaidHead1.csi" Type="Plist" />
             <Project Name="NodeSkillItem.csd" Type="Node" />
             <PlistInfo Name="PlistSkill.csi" Type="Plist" />
-            <Project Name="BattleResult.csd" Type="Layer" />
+            <Project Name="LayerGradeUp.csd" Type="Layer" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />

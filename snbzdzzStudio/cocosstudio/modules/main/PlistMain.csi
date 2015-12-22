@@ -42,7 +42,14 @@
       <FilePathData Path="images/common/typeJobTank.png" />
       <FilePathData Path="images/common/typeJobTreat.png" />
       <FilePathData Path="images/common/typeJobWarrior.png" />
+      <FilePathData Path="images/battle/battle_result/failed.png" />
+      <FilePathData Path="images/battle/battle_result/star.png" />
+      <FilePathData Path="images/battle/battle_result/star_an.png" />
+      <FilePathData Path="images/battle/battle_result/win.png" />
+      <FilePathData Path="images/levels/bs.png" />
+      <FilePathData Path="images/levels/gold.png" />
+      <FilePathData Path="images/levels/treasure.png" />
     </ImageFiles>
-    <MaxSize Width="512" Height="512" />
+    <MaxSize Width="1024" Height="1024" />
   </Content>
 </PlistInfoProjectFile>

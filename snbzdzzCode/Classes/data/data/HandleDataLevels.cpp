@@ -4,13 +4,16 @@
 #include "common/util/UtilString.h"
 #include "../config/ManagerCfg.h"
 #include "../define/DefinesString.h"
+#include "common/util/UtilRandom.h"
 
-DataLevel::DataLevel() : _id(0), _index(0), _state(TypeLevelState::NONE), _vecTargetComplete({})
+DataLevel::DataLevel() : _id(0), _index(0), _state(TypeLevelState::NONE), _vecTargetComplete({}), _vecVecAward({})
 {
 }
 
 DataLevel::~DataLevel()
 {
+	_vecTargetComplete.clear();
+	_vecVecAward.clear();
 }
 
 bool DataLevel::init()
@@ -46,8 +49,6 @@ void DataLevel::dealLevelPassed()
 		if (_vecTargetComplete[i])//若额外目标完成
 		{
 			handleDataUnlock->setIsCompleteLevelTarget(cfgLevel.id, idLevelTarget);
-			auto cfgLevelTarget = ManagerCfg::getInstance()->getDicCfgLevelTargets().at(idLevelTarget);
-			dealPassedIncome(cfgLevelTarget.award);
 		}
 	}
 	//处理解锁关卡数据
@@ -74,7 +75,8 @@ void DataLevel::dealLevelPassed()
 	}
 	handleDataUnlock->dataFileSet();//保存数据
 	//处理收益数据
-	dealPassedIncome(cfgLevel.award);
+	auto award = getVecIdThingAward(true);
+	dealPassedIncome(award);
 	auto handleDataIncome = managerData->getHandleDataIncome();
 	handleDataIncome->dataFileSet();
 }
@@ -180,6 +182,76 @@ void DataLevel::setVecTargetComplete()
 	}
 }
 
+vector<vector<int>> DataLevel::getVecIdThingAward(const bool &isGetNew /*= false*/)
+{
+	if (_vecVecAward.size() != 0 && !isGetNew)
+	{
+		return _vecVecAward;
+	}
+	auto cfgLevel = getCfgLevel();
+	for (auto var : cfgLevel.award)
+	{
+		auto idThing = (int)var.first;
+		auto value = var.second[0];
+		auto odds = var.second[1];
+		auto random = UtilRandom::randomBewteen(0.0f, 1000.0f);
+		if (random < odds)
+		{
+			auto isFind = false;
+			for (auto &var1 : _vecVecAward)
+			{
+				if (var1[0] == idThing)
+				{
+					var1[1] += value;
+					isFind = true;
+					break;
+				}
+			}
+			if (!isFind)
+			{
+				_vecVecAward.push_back({ (int)idThing, value });
+			}
+		}
+	}
+
+	auto targets = cfgLevel.targets;
+	auto length = (int)targets.size();
+	for (auto i = 0; i < length; i++)
+	{
+		auto idLevelTarget = targets[i];
+		if (_vecTargetComplete[i])//若额外目标完成
+		{
+			auto cfgLevelTarget = ManagerCfg::getInstance()->getDicCfgLevelTargets().at(idLevelTarget);
+			for (auto var : cfgLevelTarget.award)
+			{
+				auto idThing = (int)var.first;
+				auto value = var.second[0];
+				auto odds = var.second[1];
+				auto random = UtilRandom::randomBewteen(0.0f, 1000.0f);
+				if (random < odds)
+				{
+					auto isFind = false;
+					for (auto &var1 : _vecVecAward)
+					{
+						if (var1[0] == idThing)
+						{
+							var1[1] += value;
+							isFind = true;
+							break;
+						}
+					}
+					if (!isFind)
+					{
+						_vecVecAward.push_back({ (int)idThing, value });
+					}
+				}
+			}
+		}
+	}
+
+	return _vecVecAward;
+}
+
 CfgLevel DataLevel::getCfgLevel() const
 {
 	auto cfgLevel = ManagerCfg::getInstance()->getDicCfgLevels()[_id];
@@ -226,12 +298,14 @@ std::string DataLevel::getLevelTargetStr(const int &index) const
 	return text;
 }
 
-void DataLevel::dealPassedIncome(const map<IdThing, int>& award)
+void DataLevel::dealPassedIncome(const vector<vector<int>> &award)
 {
 	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
 	for (auto var : award)
 	{
-		handleDataIncome->addThing(var.first, var.second);
+		auto idThing = (IdThing)var[0];
+		auto value = var[1];
+		handleDataIncome->addThing(idThing, value);
 	}
 }
 

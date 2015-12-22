@@ -189,6 +189,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\ui\main\battle\LayerBattle.cpp" />
     <ClCompile Include="..\Classes\ui\main\battle\NodeHead.cpp" />
     <ClCompile Include="..\Classes\ui\main\battle\result\LayerBattleResult.cpp" />
+    <ClCompile Include="..\Classes\ui\main\battle\result\LayerGradeUp.cpp" />
     <ClCompile Include="..\Classes\ui\main\guild\LayerGuild.cpp" />
     <ClCompile Include="..\Classes\ui\main\levels\LayerLevels.cpp" />
     <ClCompile Include="..\Classes\ui\main\levels\LayerMaidSelect.cpp" />
@@ -244,6 +245,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\ui\main\battle\LayerBattle.h" />
     <ClInclude Include="..\Classes\ui\main\battle\NodeHead.h" />
     <ClInclude Include="..\Classes\ui\main\battle\result\LayerBattleResult.h" />
+    <ClInclude Include="..\Classes\ui\main\battle\result\LayerGradeUp.h" />
     <ClInclude Include="..\Classes\ui\main\guild\LayerGuild.h" />
     <ClInclude Include="..\Classes\ui\main\levels\LayerLevels.h" />
     <ClInclude Include="..\Classes\ui\main\levels\LayerMaidSelect.h" />

@@ -48,8 +48,15 @@ static const map<Vec2, Vec2> dicAnchorPoint2BubbleBgScale =
 
 static const Size sizeSkillIcon = Size(100.0f, 100.0f);
 static const Size sizeSkillAttribute = Size(50.0f, 50.0f);
-static const Size sizeTrainingLv = Size(50.0f, 50.0f);
-static const Size sizeBattleResultStar = Size(80.0f, 80.0f);
+static const Size sizeStarLevels = Size(20.0f, 20.0f);
+static const Size sizeStarTrainingLv = Size(50.0f, 50.0f);
+static const Size sizeStarBattleResult = Size(114.0f, 110.0f);
+
+static const Vec2 moveDistanceVictoryDefeat = Vec2(0.0f, 345.0f);
+static const vector<Vec2> vecMoveDistanceSpriteMaid = 
+{
+	Vec2(470.0f, 0.0f), Vec2(280.0f, 0.0f), Vec2(-240.0f, 0.0f)
+};
 
 enum class TypeLoadState
 {

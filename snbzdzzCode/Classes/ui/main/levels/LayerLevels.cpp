@@ -112,10 +112,13 @@ void LayerLevels::updateNodeLevel(Node *nodeLevel, DataLevel *dataLevel)
 		}
 		
 		auto isComolete = dataLevel->levelTargetIsComplete(i);
-		auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(isComolete ? RES_IMAGES_MAIN_LEVELS_XING_PNG : RES_IMAGES_MAIN_LEVELS_XING_KONG_PNG);
+		auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(isComolete ? RES_IMAGES_MAIN_COMMON_STAR_PNG : RES_IMAGES_MAIN__COMMON_STAR_DARK_PNG);
 		spriteStar->setSpriteFrame(spriteFrame);
+		auto size = spriteStar->getContentSize();
+		auto scale = size.width > size.height ? sizeStarLevels.width / size.width : sizeStarLevels.height / size.height;
+		spriteStar->setScale(scale);
 
-		auto width = spriteStar->getContentSize().width;
+		auto width = sizeStarLevels.width;
 		if (isSpriteNullptr && (widthSpriteStar == 0.0f || width > widthSpriteStar))
 		{
 			widthSpriteStar = width;

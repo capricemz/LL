@@ -440,32 +440,9 @@ void HandleDataEntity::dataFileSet()
 
 void HandleDataEntity::updateAttributeGrade()
 {
-	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
-	auto value = handleDataIncome->getThing(IdThing::EXP);//当前经验
-
 	auto managerCfg = ManagerCfg::getInstance();
-	auto dicCfgGrade = managerCfg->getDicCfgGrade();
-	auto id = 1000;
-	string effect = "";
-	while (true)
-	{
-		if (dicCfgGrade.find(id) == dicCfgGrade.end())
-		{
-			break;
-		}
-
-		auto cfgGradeTemp = dicCfgGrade[id];
-
-		if (value < cfgGradeTemp.exp)
-		{
-			break;
-		}
-
-		effect = cfgGradeTemp.effect;
-
-		id++;
-	}//获取当前等级配置
-
+	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
+	string effect = handleDataIncome->getGradeEffect();
 	if (effect == "")
 	{
 		return;

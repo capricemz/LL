@@ -1,5 +1,6 @@
 #include "ManagerData.h"
-#include "common\util\UtilString.h"
+#include "common/util/UtilString.h"
+#include "../config/ManagerCfg.h"
 
 DataTrainingInfo::DataTrainingInfo() : _idEntity(0), _valueLv(0), _valuePrecent(0), _isClothed(false)
 {
@@ -183,6 +184,147 @@ void HandleDataIncome::addThingDeal(const IdThing &idThing, const int &value)
 		auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
 		handleDataEntity->updateAttributeGrade();
 	}
+}
+
+bool HandleDataIncome::getIsGradeMax()
+{
+	auto value = getThing(IdThing::EXP);//当前经验
+	auto managerCfg = ManagerCfg::getInstance();
+	auto dicCfgGrade = managerCfg->getDicCfgGrade();
+	auto id = 1000;
+	auto isMax = false;
+	while (true)
+	{
+		if (dicCfgGrade.find(id) == dicCfgGrade.end())
+		{
+			isMax = true;
+			break;
+		}
+
+		auto cfgGradeTemp = dicCfgGrade[id];
+
+		if (value < cfgGradeTemp.exp)
+		{
+			break;
+		}
+
+		id++;
+	}//获取当前等级配置
+	return isMax;
+}
+
+int HandleDataIncome::getGrade()
+{
+	auto value = getThing(IdThing::EXP);//当前经验
+	auto managerCfg = ManagerCfg::getInstance();
+	auto dicCfgGrade = managerCfg->getDicCfgGrade();
+	auto id = 1000;
+	auto grade = 1;
+	while (true)
+	{
+		if (dicCfgGrade.find(id) == dicCfgGrade.end())
+		{
+			break;
+		}
+
+		auto cfgGradeTemp = dicCfgGrade[id];
+
+		if (value < cfgGradeTemp.exp)
+		{
+			break;
+		}
+
+		grade = cfgGradeTemp.index;
+
+		id++;
+	}//获取当前等级配置
+	return grade;
+}
+
+string HandleDataIncome::getGradeEffect()
+{
+	auto value = getThing(IdThing::EXP);//当前经验
+	auto managerCfg = ManagerCfg::getInstance();
+	auto dicCfgGrade = managerCfg->getDicCfgGrade();
+	auto id = 1000;
+	string effect = "";
+	while (true)
+	{
+		if (dicCfgGrade.find(id) == dicCfgGrade.end())
+		{
+			break;
+		}
+
+		auto cfgGradeTemp = dicCfgGrade[id];
+
+		if (value < cfgGradeTemp.exp)
+		{
+			break;
+		}
+
+		effect = cfgGradeTemp.effect;
+
+		id++;
+	}//获取当前等级配置
+	return effect;
+}
+
+int HandleDataIncome::getGradeExpNow()
+{
+	auto value = getThing(IdThing::EXP);//当前经验
+	auto managerCfg = ManagerCfg::getInstance();
+	auto dicCfgGrade = managerCfg->getDicCfgGrade();
+	auto id = 1000;
+	auto exp = 0;
+	while (true)
+	{
+		if (dicCfgGrade.find(id) == dicCfgGrade.end())
+		{
+			break;
+		}
+
+		auto cfgGradeTemp = dicCfgGrade[id];
+
+		if (value < cfgGradeTemp.exp)
+		{
+			break;
+		}
+
+		exp = value - cfgGradeTemp.exp;
+
+		id++;
+	}//获取当前等级配置
+	return exp;
+}
+
+int HandleDataIncome::getGradeExpNeed()
+{
+	auto value = getThing(IdThing::EXP);//当前经验
+	auto managerCfg = ManagerCfg::getInstance();
+	auto dicCfgGrade = managerCfg->getDicCfgGrade();
+	auto id = 1000;
+	auto exp = 0;
+	while (true)
+	{
+		if (dicCfgGrade.find(id) == dicCfgGrade.end())
+		{
+			exp = 0;
+			break;
+		}
+
+		auto cfgGradeTemp = dicCfgGrade[id];
+
+		if (value < cfgGradeTemp.exp)
+		{
+			exp = cfgGradeTemp.exp - exp;
+			break;
+		}
+
+		exp = cfgGradeTemp.exp;
+
+		id++;
+	}//获取当前等级配置
+	return exp;
 }
 
 DataTrainingInfo * HandleDataIncome::getDataTrainingInfo(const int &index)

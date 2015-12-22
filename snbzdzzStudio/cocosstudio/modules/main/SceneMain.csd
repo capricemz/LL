@@ -66,7 +66,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.1221" Y="0.5690" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/levels/bs.png" Plist="" />
+                    <FileData Type="MarkedSubImage" Path="images/levels/bs.png" Plist="modules/main/PlistMain.plist" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="spriteIcon1" ActionTag="2034546436" Tag="1028" IconVisible="False" LeftMargin="204.0000" RightMargin="284.0000" TopMargin="7.0000" BottomMargin="15.0000" ctype="SpriteObjectData">
@@ -77,7 +77,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.3893" Y="0.5690" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/levels/Gold COINS.png" Plist="" />
+                    <FileData Type="MarkedSubImage" Path="images/levels/gold.png" Plist="modules/main/PlistMain.plist" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="spriteIcon2" ActionTag="1395165111" Tag="1029" IconVisible="False" LeftMargin="344.0000" RightMargin="140.0000" TopMargin="5.0000" BottomMargin="13.0000" ctype="SpriteObjectData">
@@ -88,7 +88,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.6565" Y="0.5690" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/levels/treasure.png" Plist="" />
+                    <FileData Type="MarkedSubImage" Path="images/levels/treasure.png" Plist="modules/main/PlistMain.plist" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="btnAdd0" ActionTag="1213345384" Tag="44" IconVisible="False" LeftMargin="164.0000" RightMargin="323.0000" TopMargin="6.5000" BottomMargin="14.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="12" RightEage="12" TopEage="11" BottomEage="11" Scale9OriginX="12" Scale9OriginY="11" Scale9Width="13" Scale9Height="15" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">

@@ -349,7 +349,11 @@ void ManagerCfg::assignCfgLevels(const VectorString &vecItem)
 			auto vec1 = UtilString::split(var, ":");
 			auto idThing = (IdThing)Value(vec1[0]).asInt();
 			auto value = Value(vec1[1]).asInt();
-			cfg.award.insert(make_pair(idThing, value));
+			auto odds = Value(vec1[2]).asInt();
+			vector <int> vec;
+			vec.push_back(value);
+			vec.push_back(odds);
+			cfg.award.insert(make_pair(idThing, vec));
 		}
 	}
 	_dicCfgLevels.insert(make_pair(cfg.id, cfg));
@@ -376,7 +380,11 @@ void ManagerCfg::assignCfgLevelTargets(const VectorString &vecItem)
 			auto vec1 = UtilString::split(var, ":");
 			auto idThing = (IdThing)Value(vec1[0]).asInt();
 			auto value = Value(vec1[1]).asInt();
-			cfg.award.insert(make_pair(idThing, value));
+			auto odds = Value(vec1[2]).asInt();
+			vector <int> vec;
+			vec.push_back(value);
+			vec.push_back(odds);
+			cfg.award.insert(make_pair(idThing, vec));
 		}
 	}
 	_dicCfgLevelTargets.insert(make_pair(cfg.id, cfg));

@@ -261,6 +261,9 @@
     <ClCompile Include="..\Classes\data\data\HandleDataTraining.cpp">
       <Filter>src\data\data</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ui\main\battle\result\LayerGradeUp.cpp">
+      <Filter>src\ui\main\battle\result</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -421,6 +424,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ui\common\UIEntity.h">
       <Filter>src\ui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ui\main\battle\result\LayerGradeUp.h">
+      <Filter>src\ui\main\battle\result</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
-      <ObjectData Name="Node" Tag="903" ctype="GameNodeObjectData">
+      <ObjectData Name="NodeSkillItem" Tag="903" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
           <AbstractNodeData Name="layoutBg" ActionTag="-1076495302" Tag="74" IconVisible="False" LeftMargin="-253.0000" RightMargin="-253.0000" TopMargin="-65.5000" BottomMargin="-65.5000" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">

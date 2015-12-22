@@ -53,8 +53,8 @@ static const vector<string> RES_IMAGES_MAIN_SRP_PNG_VEC =
 	"images/battle/paper.jpg"
 };
 
-static const string RES_IMAGES_MAIN_LEVELS_XING_PNG = "images/levels/xing.png";
-static const string RES_IMAGES_MAIN_LEVELS_XING_KONG_PNG = "images/levels/xingKong.png";
+static const string RES_IMAGES_MAIN_COMMON_STAR_PNG = "images/battle/battle_result/star.png";
+static const string RES_IMAGES_MAIN__COMMON_STAR_DARK_PNG = "images/battle/battle_result/star_an.png";
 
 static const vector<string> RES_IMAGES_COMMON_TYPE_JOB_PNG_VEC = 
 { 
@@ -66,6 +66,9 @@ static const vector<string> RES_IMAGES_COMMON_TYPE_JOB_PNG_VEC =
 	"images/common/typeJobTank.png", 
 	"images/common/typeJobArcher.png" 
 };
+
+static const string RES_IMAGES_BATTLE_RESULT_VICTORY = "images/battle/battle_result/win.png";
+static const string RES_IMAGES_BATTLE_RESULT_DEFEAT = "images/battle/battle_result/failed.png";
 
 static const string SOUND_EFFECT_SYSTEM_BTN_0_MP3 = "effect/systemBtn0.mp3";//音效系统按钮0
 static const string SOUND_EFFECT_SYSTEM_BTN_1_MP3 = "effect/systemBtn1.mp3";//音效系统按钮1

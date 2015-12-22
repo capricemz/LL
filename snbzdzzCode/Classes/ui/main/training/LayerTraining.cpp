@@ -109,12 +109,12 @@ void LayerTraining::updateLayoutTraining()
 	{
 		auto isFull = i < dt->getValueLv();
 
-		auto sprite = Sprite::createWithSpriteFrameName(isFull ? RES_IMAGES_MAIN_LEVELS_XING_PNG : RES_IMAGES_MAIN_LEVELS_XING_KONG_PNG);
+		auto sprite = Sprite::createWithSpriteFrameName(isFull ? RES_IMAGES_MAIN_COMMON_STAR_PNG : RES_IMAGES_MAIN__COMMON_STAR_DARK_PNG);
 		auto size = sprite->getContentSize();
-		auto scale = size.width > size.height ? sizeTrainingLv.width / size.width : sizeTrainingLv.height / size.height;
+		auto scale = size.width > size.height ? sizeStarTrainingLv.width / size.width : sizeStarTrainingLv.height / size.height;
 		sprite->setScale(scale);
 
-		auto postion = Vec2(sizeTrainingLv.width * 0.5f, sizeTrainingLv.height * 0.5f);
+		auto postion = Vec2(sizeStarTrainingLv.width * 0.5f, sizeStarTrainingLv.height * 0.5f);
 
 
 		auto children = layoutLv->getChildren();
@@ -122,7 +122,7 @@ void LayerTraining::updateLayoutTraining()
 		{
 			auto spriteLast = children.at(children.size() - 1);
 			postion = spriteLast->getPosition();
-			postion = Vec2(postion.x + sizeTrainingLv.width + interval, postion.y);
+			postion = Vec2(postion.x + sizeStarTrainingLv.width + interval, postion.y);
 		}
 		sprite->setPosition(postion);
 		layoutLv->addChild(sprite);
@@ -189,19 +189,19 @@ void LayerTraining::updateLayoutSelect()
 	{
 		auto isFull = i < dt->getValueLv();
 
-		auto sprite = Sprite::createWithSpriteFrameName(isFull ? RES_IMAGES_MAIN_LEVELS_XING_PNG : RES_IMAGES_MAIN_LEVELS_XING_KONG_PNG);
+		auto sprite = Sprite::createWithSpriteFrameName(isFull ? RES_IMAGES_MAIN_COMMON_STAR_PNG : RES_IMAGES_MAIN__COMMON_STAR_DARK_PNG);
 		auto size = sprite->getContentSize();
-		auto scale = size.width > size.height ? sizeTrainingLv.width / size.width : sizeTrainingLv.height / size.height;
+		auto scale = size.width > size.height ? sizeStarTrainingLv.width / size.width : sizeStarTrainingLv.height / size.height;
 		sprite->setScale(scale);
 
-		auto postion = Vec2(sizeTrainingLv.width * 0.5f, sizeTrainingLv.height * 0.5f);
+		auto postion = Vec2(sizeStarTrainingLv.width * 0.5f, sizeStarTrainingLv.height * 0.5f);
 
 		auto children = layoutLv->getChildren();
 		if (children.size() > 0)
 		{
 			auto spriteLast = children.at(children.size() - 1);
 			postion = spriteLast->getPosition();
-			postion = Vec2(postion.x + sizeTrainingLv.width + interval, postion.y);
+			postion = Vec2(postion.x + sizeStarTrainingLv.width + interval, postion.y);
 		}
 		sprite->setPosition(postion);
 		layoutLv->addChild(sprite);

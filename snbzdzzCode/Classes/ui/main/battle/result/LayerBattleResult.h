@@ -27,18 +27,18 @@ public:
 private:
 	void createSkin();
 	
-	void updateLayoutVictory();
-	void updateLayoutDefeat();
+	void updateVictoryDefeat();
+	void updateLayoutStar();
+	void updateSpriteMaid();
+	void updateLayoutAward();
+	void updateLayoutBtns();
 
 	void onTouchContinue(Ref *ref, Widget::TouchEventType type);
-
-	void updateLayoutStar();
-	void updateLayoutDrop();
-	void playAnimationVictory();
-
+	void onTouchBtnTo(Ref *ref, Widget::TouchEventType type);
+	
 private:
 	Layer *_skin;
-	bool _isActionRunning;
+	bool _isAppearing;
 
 };
 

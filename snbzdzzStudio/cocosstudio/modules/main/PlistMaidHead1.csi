@@ -44,6 +44,11 @@
       <FilePathData Path="images/role_head/role_head_55.png" />
       <FilePathData Path="images/role_head/role_head_56.png" />
       <FilePathData Path="images/role_head/role_head_6.png" />
+      <FilePathData Path="images/formation/role1.png" />
+      <FilePathData Path="images/formation/role2.png" />
+      <FilePathData Path="images/formation/role3.png" />
+      <FilePathData Path="images/formation/role4.png" />
+      <FilePathData Path="images/formation/role5.png" />
     </ImageFiles>
     <MaxSize Width="1024" Height="1024" />
   </Content>
