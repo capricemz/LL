@@ -57,6 +57,7 @@ static const vector<Vec2> vecMoveDistanceSpriteMaid =
 {
 	Vec2(470.0f, 0.0f), Vec2(280.0f, 0.0f), Vec2(-240.0f, 0.0f)
 };
+static const Vec2 moveDistanceGradeUp = Vec2(0.0f, 345.0f);
 
 enum class TypeLoadState
 {
@@ -349,6 +350,7 @@ enum class TYPE_OBSERVER_LAYER_BATTLE
 	UPDATE_TXT_ROUND,
 	SHOW_LAYER_CATCH,
 	SHOW_LAYER_BATTLE_RESULT,
+	SHOW_LAYER_GRADE_UP,
 	RESET_SKIN
 };
 

@@ -32,6 +32,7 @@ static const string RES_MODULES_MAIN_LAYER_BATTLE_CSB = "modules/main/LayerBattl
 static const string RES_MODULES_MAIN_LAYER_GRID_SELECT_CSB = "modules/main/LayerGridSelect.csb";
 static const string RES_MODULES_MAIN_LAYER_GRID_SHOW_CSB = "modules/main/LayerGridShow.csb";
 static const string RES_MODULES_MAIN_LAYER_BATTLE_RESULT_CSB = "modules/main/LayerBattleResult.csb";
+static const string RES_MODULES_MAIN_LAYER_GRADE_UP_CSB = "modules/main/LayerGradeUp.csb";
 static const string RES_MODULES_MAIN_LAYER_CATCH_CSB = "modules/main/LayerCatch.csb";
 
 static const string RES_MODULES_MAIN_NODE_GRID_CSB = "modules/main/NodeGrid.csb";

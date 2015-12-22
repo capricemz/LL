@@ -28,6 +28,7 @@ public:
 	void updateTxtHp();
 	void updateSpriteJob();
 	void updateSpriteState();
+	void updateTxtGrade();
 
 	void showWordsDrift(const int &valueChange, const IdAttribute &idAttributeBeChange, const Color4B &color, const float &duration);
 

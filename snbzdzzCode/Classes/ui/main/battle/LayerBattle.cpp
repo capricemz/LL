@@ -9,6 +9,7 @@
 #include "core/entity/ManagerEntity.h"
 #include "result/LayerBattleResult.h"
 #include "catch/LayerCatch.h"
+#include "result/LayerGradeUp.h"
 
 LayerBattle::LayerBattle() : 
 	_skin(nullptr),
@@ -96,6 +97,12 @@ void LayerBattle::updateBySubject(va_list values)
 		auto layerBattleResult = LayerBattleResult::create();
 		addChild(layerBattleResult);
 		layerBattleResult->runAppearAction(nullptr);
+	}
+	else if (type == TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_GRADE_UP)
+	{
+		auto layerGradeUp = LayerGradeUp::create();
+		addChild(layerGradeUp);
+		layerGradeUp->runAppearAction(nullptr);
 	}
 	else if(type == TYPE_OBSERVER_LAYER_BATTLE::RESET_SKIN)
 	{

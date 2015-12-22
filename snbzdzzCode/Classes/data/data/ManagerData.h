@@ -599,14 +599,9 @@ class HandleDataIncome
 		int getThing(const IdThing &idThing);
 		bool getThingEnough(const IdThing &idThing, const int &valueNeed);
 		void setThing(const IdThing &idThing, const int &value);//idAttribute 元素id, value 新值
+		void addThingBefore(const IdThing &idThing, const int &value);//添加物品处理前额外处理，idAttribute 元素id, value 正值增加，负值减少
 		void addThing(const IdThing &idThing, const int &value);//idAttribute 元素id, value 正值增加，负值减少
-		void addThingDeal(const IdThing &idThing, const int &value);//添加物品额外处理，idAttribute 元素id, value 正值增加，负值减少
-
-		bool getIsGradeMax();//等级是否已满
-		int getGrade();//当前等级
-		string getGradeEffect();//当前等级属性
-		int getGradeExpNow();//当前等级经验
-		int getGradeExpNeed();//升级需要的经验
+		void addThingAfter(const IdThing &idThing, const int &value);//添加物品处理后额外处理，idAttribute 元素id, value 正值增加，负值减少
 
 		Vector<DataTrainingInfo *> &getVecDataTrainingInfo()
 		{
@@ -627,34 +622,62 @@ class HandleDataIncome
 //处理技能数据类
 class HandleDataSkill
 {
-public:
-	HandleDataSkill();
-	~HandleDataSkill();
+	public:
+		HandleDataSkill();
+		~HandleDataSkill();
 
-public:
-	int getIdEntityCurrent() const { return _idEntityCurrent; }
-	void setIdEntityCurrent(int val) { _idEntityCurrent = val; }
+	public:
+		int getIdEntityCurrent() const { return _idEntityCurrent; }
+		void setIdEntityCurrent(int val) { _idEntityCurrent = val; }
 
-private:
-	int _idEntityCurrent;
+	private:
+		int _idEntityCurrent;
 	
 };
 //处理训练数据类
 class HandleDataTraining
 {
-public:
-	HandleDataTraining();
-	~HandleDataTraining();
+	public:
+		HandleDataTraining();
+		~HandleDataTraining();
 
-public:
-	int getIndexCurrent() const { return _indexCurrent; }
-	void setIndexCurrent(int val) { _indexCurrent = val; }
+	public:
+		int getIndexCurrent() const { return _indexCurrent; }
+		void setIndexCurrent(int val) { _indexCurrent = val; }
 
-private:
-	int _indexCurrent;
+	private:
+		int _indexCurrent;
 	
 };
+//等级数据处理类
+class HandleDataGrade
+{
+	public:
+		HandleDataGrade();
+		~HandleDataGrade();
 
+		void setIdGradeLast();
+		CfgGrade getCfgGradeLast();
+
+		bool getIsGradeUp();//获取是否等级提升
+
+		bool getIsGradeMax();//等级是否已满
+		int getIdGrade();
+		int getGrade();//当前等级
+		string getGradeEffect();//当前等级属性
+		int getGradeExpNow();//当前等级经验
+		int getGradeExpNeed();//升级需要的经验
+
+	public:
+		int getIdGradeLast() const
+		{
+			return _idGradeLast;
+		}
+
+	private:
+		int _idGradeLast;//上次的等级的id
+		
+};
 //数据类
 class ManagerData
 {
@@ -687,6 +710,7 @@ class ManagerData
 		HandleDataIncome * getHandleDataIncome() { return _handleDataIncome; }
 		HandleDataSkill * getHandleDataSkill() { return _handleDataSkill; }
 		HandleDataTraining * getHandleDataTraining() { return _handleDataTraining; }
+		HandleDataGrade * getHandleDataGrade() { return _handleDataGrade; }
 
 	private:
 		const string USER_DEFAULT_KEY_ISFE = "isSaveFileExist";//储存文件是否存在
@@ -701,6 +725,7 @@ class ManagerData
 		HandleDataIncome *_handleDataIncome;//收益数据处理
 		HandleDataSkill *_handleDataSkill;//技能数据处理
 		HandleDataTraining *_handleDataTraining;//训练数据处理
+		HandleDataGrade *_handleDataGrade;//等级数据处理
 
 };
 

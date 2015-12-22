@@ -114,6 +114,7 @@ void SceneWelcome::handleLoading(Sprite *spriteLoading)
 		ManagerData::getInstance()->dataFileGet();
 		ManagerData::getInstance()->getHandleDataEntity()->createDataEntityMaid();
 		ManagerData::getInstance()->getHandleDataLevels()->createDicDataLevel();
+		ManagerData::getInstance()->getHandleDataGrade()->setIdGradeLast();
 		time = UtilDate::getSecond();
 		log("```````````````LayerWelcome::handleLoading loaded time:%s", Value(time).asString().c_str());
 		//

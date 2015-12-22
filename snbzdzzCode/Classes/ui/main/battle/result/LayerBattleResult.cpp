@@ -34,20 +34,6 @@ bool LayerBattleResult::init()
 void LayerBattleResult::runAppearAction(const function<void()> &func /*= nullptr*/)
 {
 	_isAppearing = true;
-	/*auto d = 0.4f;
-	_skin->setOpacity(0.0f);
-	_skin->setScale(10.0f);
-	
-	auto actionSpawn = Spawn::createWithTwoActions(EaseCubicActionIn::create(FadeIn::create(d)), EaseCubicActionIn::create(ScaleTo::create(d, 1.0f)));
-	auto actionCallFunc = CallFunc::create([func, this]()
-	{
-		_isAppearing = false;
-		if (func != nullptr)
-		{
-			func();
-		}
-	});
-	_skin->runAction(Sequence::create(actionSpawn, actionCallFunc, nullptr));*/
 
 	auto txtContinue = (Text *)_skin->getChildByName("txtContinue");
 	txtContinue->setVisible(false);
@@ -166,7 +152,7 @@ void LayerBattleResult::runAppearAction(const function<void()> &func /*= nullptr
 	});
 	vecAction.pushBack(actionCallFunc);
 
-	spriteVictoryDefeatBg->runAction(Sequence::create(vecAction));
+	_skin->runAction(Sequence::create(vecAction));
 }
 
 void LayerBattleResult::createSkin()
@@ -286,10 +272,10 @@ void LayerBattleResult::updateLayoutAward()
 {
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
 	auto isBattleWin = handleDataEntity->isBattleWin();
-	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
-	auto grade = handleDataIncome->getGrade();
-	auto gradeExpNow = handleDataIncome->getGradeExpNow();
-	auto gradeExpNeed = handleDataIncome->getGradeExpNeed();
+	auto handleDataGrade = ManagerData::getInstance()->getHandleDataGrade();
+	auto grade = handleDataGrade->getGrade();
+	auto gradeExpNow = handleDataGrade->getGradeExpNow();
+	auto gradeExpNeed = handleDataGrade->getGradeExpNeed();
 
 	auto layout = (Layout *)_skin->getChildByName("layoutAward");
 	if (!isBattleWin)
@@ -375,7 +361,16 @@ void LayerBattleResult::onTouchContinue(Ref *ref, Widget::TouchEventType type)
 		{
 			return;
 		}
-		ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SWITCH_LAYER, TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
+		auto handleDataGrade = ManagerData::getInstance()->getHandleDataGrade();
+		auto isGradeUp = handleDataGrade->getIsGradeUp();
+		if (isGradeUp)
+		{
+			ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_GRADE_UP);
+		}
+		else
+		{
+			ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SWITCH_LAYER, TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
+		}
 	}
 }
 

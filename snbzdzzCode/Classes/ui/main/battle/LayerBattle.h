@@ -55,7 +55,7 @@ private:
 
 	LayerGridSelect *_layerGridSelect;
 	/*LayerGridShow *_layerGridShow;*/
-
+	
 };
 
 #endif

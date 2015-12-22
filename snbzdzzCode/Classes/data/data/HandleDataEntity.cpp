@@ -441,8 +441,8 @@ void HandleDataEntity::dataFileSet()
 void HandleDataEntity::updateAttributeGrade()
 {
 	auto managerCfg = ManagerCfg::getInstance();
-	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
-	string effect = handleDataIncome->getGradeEffect();
+	auto handleDataGrade = ManagerData::getInstance()->getHandleDataGrade();
+	string effect = handleDataGrade->getGradeEffect();
 	if (effect == "")
 	{
 		return;

@@ -264,6 +264,9 @@
     <ClCompile Include="..\Classes\ui\main\battle\result\LayerGradeUp.cpp">
       <Filter>src\ui\main\battle\result</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\data\data\HandleDataGrade.cpp">
+      <Filter>src\data\data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

@@ -161,6 +161,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\core\timer\ManagerTimer.cpp" />
     <ClCompile Include="..\Classes\data\config\ManagerCfg.cpp" />
     <ClCompile Include="..\Classes\data\data\HandleDataEntity.cpp" />
+    <ClCompile Include="..\Classes\data\data\HandleDataGrade.cpp" />
     <ClCompile Include="..\Classes\data\data\HandleDataGrid.cpp" />
     <ClCompile Include="..\Classes\data\data\HandleDataIncome.cpp" />
     <ClCompile Include="..\Classes\data\data\HandleDataLevels.cpp" />

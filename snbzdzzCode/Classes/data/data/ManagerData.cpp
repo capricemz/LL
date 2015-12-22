@@ -29,6 +29,7 @@ ManagerData::~ManagerData()
 	CC_SAFE_DELETE(_handleDataIncome);
 	CC_SAFE_DELETE(_handleDataSkill);
 	CC_SAFE_DELETE(_handleDataTraining);
+	CC_SAFE_DELETE(_handleDataGrade);
 }
 
 void ManagerData::setSaveFileExist()
@@ -90,4 +91,5 @@ void ManagerData::initHandleDatas()
 	_handleDataIncome = new HandleDataIncome();
 	_handleDataSkill = new HandleDataSkill();
 	_handleDataTraining = new HandleDataTraining();
+	_handleDataGrade = new HandleDataGrade();
 }

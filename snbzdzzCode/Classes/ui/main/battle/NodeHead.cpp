@@ -71,6 +71,7 @@ void NodeHead::updateAll()
 	updateTxtHp();
 	updateSpriteJob();
 	updateSpriteState();
+	updateTxtGrade();
 }
 
 void NodeHead::updateSpriteIcon()
@@ -167,6 +168,68 @@ void NodeHead::updateSpriteState()
 	}
 
 	_layout->setTouchEnabled(isUnlock);
+}
+
+void NodeHead::updateTxtGrade()
+{
+	auto layoutGrade = (Layout *)_layout->getChildByName("layoutGrade");
+	if (layoutGrade == nullptr)
+	{
+		return;
+	}
+
+	if (_type != TypeNodeHead::SMALL)
+	{
+		layoutGrade->setVisible(false);
+		return;
+	}
+
+	auto handleDataGrade = ManagerData::getInstance()->getHandleDataGrade();
+	auto isGradeUp = handleDataGrade->getIsGradeUp();
+
+	if (!isGradeUp)
+	{
+		layoutGrade->setVisible(false);
+		return;
+	}
+
+	auto idGradeLast = handleDataGrade->getIdGradeLast();
+	if (idGradeLast == 0)
+	{
+		layoutGrade->setVisible(false);
+		return;
+	}
+	auto cfgGrade = ManagerCfg::getInstance()->getDicCfgGrade()[idGradeLast];
+	auto vecEffect = UtilString::split(cfgGrade.effect, "|");
+	for (auto var : vecEffect)
+	{
+		auto vecInfo = UtilString::split(var, ":");
+		auto idEntity = Value(vecInfo[0]).asInt();
+		auto idAttribute = Value(vecInfo[1]).asInt();
+		auto value = Value(vecInfo[2]).asInt();
+		if (idEntity == _idEntity)
+		{
+			auto txtHpLast = (Text *)layoutGrade->getChildByName("txtHpLast");
+			txtHpLast->setString(Value(value).asString());
+			break;
+		}
+	}
+	
+	auto effect = handleDataGrade->getGradeEffect();
+	vecEffect = UtilString::split(effect, "|");
+	for (auto var : vecEffect)
+	{
+		auto vecInfo = UtilString::split(var, ":");
+		auto idEntity = Value(vecInfo[0]).asInt();
+		auto idAttribute = Value(vecInfo[1]).asInt();
+		auto value = Value(vecInfo[2]).asInt();
+		if (idEntity == _idEntity)
+		{
+			auto txtHpNow = (Text *)layoutGrade->getChildByName("txtHpNow");
+			txtHpNow->setString(Value(value).asString());
+			break;
+		}
+	}
 }
 
 void NodeHead::showWordsDrift(const int &valueChange, const IdAttribute &idAttributeBeChange, const Color4B &color, const float &duration)

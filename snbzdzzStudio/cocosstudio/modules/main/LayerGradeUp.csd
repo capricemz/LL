@@ -52,7 +52,7 @@
             <FileData Type="Normal" Path="images/battle/battle_result/lvup.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutInfoMaid" ActionTag="787909248" Tag="932" IconVisible="False" LeftMargin="154.0000" RightMargin="154.0000" TopMargin="305.0000" BottomMargin="605.0000" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutInfoGrade" ActionTag="787909248" Tag="932" IconVisible="False" LeftMargin="154.0000" RightMargin="154.0000" TopMargin="305.0000" BottomMargin="605.0000" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="332.0000" Y="50.0000" />
             <Children>
               <AbstractNodeData Name="spriteBg" ActionTag="1908451145" Tag="51" IconVisible="False" ctype="SpriteObjectData">
@@ -206,7 +206,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutInfoGrade" ActionTag="1782119983" Tag="931" IconVisible="False" LeftMargin="114.5000" RightMargin="114.5000" TopMargin="634.5000" BottomMargin="214.5000" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutInfoMaid" ActionTag="1782119983" Tag="931" IconVisible="False" LeftMargin="114.5000" RightMargin="114.5000" TopMargin="634.5000" BottomMargin="214.5000" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="411.0000" Y="111.0000" />
             <Children>
               <AbstractNodeData Name="spriteBg" ActionTag="1011315262" Tag="66" IconVisible="False" ctype="SpriteObjectData">
