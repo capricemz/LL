@@ -163,7 +163,11 @@ Vec2 LayerBattle::getPostionHeadIcon(const int &type, const int &index)
 
 void LayerBattle::createData()
 {
+	auto handleDataGrid = ManagerData::getInstance()->getHandleDataGrid();
+	handleDataGrid->resetIndexGridBattle();
+
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	handleDataEntity->dealBattleOver();
 	handleDataEntity->resetDataEntityMaid();
 	handleDataEntity->vecSkillActiveSortMaid();
 }

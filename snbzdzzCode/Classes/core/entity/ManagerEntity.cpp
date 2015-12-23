@@ -58,13 +58,9 @@ void ManagerEntity::dealBattleOver()
 	
 	auto managerData = ManagerData::getInstance();
 
-	auto handleDataGrid = managerData->getHandleDataGrid();
-	handleDataGrid->resetIndexGridBattle();
-	
 	auto handleDataEntity = managerData->getHandleDataEntity();
 	handleDataEntity->resetDataEntityAttributeTempTurnOver();
 	handleDataEntity->resetDataEntityAttributeTempRoundOver();
-	handleDataEntity->dealBattleOver();
 
 	auto isBattleWin = handleDataEntity->isBattleWin();
 
