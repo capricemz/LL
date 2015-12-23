@@ -632,6 +632,7 @@
             <Project Name="NodeJinengpai.csd" Type="Node" />
             <Project Name="LayerTraining_1.csd" Type="Layer" />
             <Project Name="NodeJichuxx.csd" Type="Node" />
+            <Project Name="LayerTraining.csd" Type="Layer" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />
