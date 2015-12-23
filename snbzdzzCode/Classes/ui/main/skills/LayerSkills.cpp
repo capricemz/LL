@@ -153,6 +153,47 @@ void LayerSkills::updateLayoutMaid(const bool &isInit /*= false*/)
 	auto isBuy = handleDataUnlock->getIsBuyMaid(idEntityCurrent);
 	auto isUnlock = handleDataUnlock->getIsUnlockMaid(idEntityCurrent);
 
+	auto layoutInfo = (Layout *)layoutMaid->getChildByName("layoutInfo");
+	if (isUnlock && !isBuy)
+	{
+		layoutInfo->setVisible(false);
+	}
+	else
+	{
+		layoutInfo->setVisible(true);
+		auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+		auto vecDataEntityMaid = handleDataEntity->getVecDataEntityMaid();
+		for (auto dataEntity : vecDataEntityMaid)
+		{
+			if (dataEntity->getIdEntity() == idEntityCurrent)
+			{
+				auto text = ManagerCfg::getInstance()->getDicCfgAttribute()[(int)IdAttribute::ENTITY_HP_MAX].desc;
+				auto value = dataEntity->getAttribute(IdAttribute::ENTITY_HP_MAX);
+				text += Value(value).asString();
+				auto txt = (Text *)layoutInfo->getChildByName("txtAttribute0");
+				txt->setString(text);
+
+				text = "";
+				txt = (Text *)layoutInfo->getChildByName("txtAttribute1");
+				txt->setString(text);
+
+				text = ManagerCfg::getInstance()->getDicCfgAttribute()[(int)IdAttribute::ENTITY_PHYSICAL_ATTACK].desc;
+				value = dataEntity->getAttribute(IdAttribute::ENTITY_PHYSICAL_ATTACK);
+				text += Value(value).asString();
+				txt = (Text *)layoutInfo->getChildByName("txtAttribute2");
+				txt->setString(text);
+
+				text = ManagerCfg::getInstance()->getDicCfgAttribute()[(int)IdAttribute::ENTITY_MAGIC_ATTACK].desc;
+				value = dataEntity->getAttribute(IdAttribute::ENTITY_MAGIC_ATTACK);
+				text += Value(value).asString();
+				txt = (Text *)layoutInfo->getChildByName("txtAttribute3");
+				txt->setString(text);
+				break;
+			}
+		}
+	}
+	
+
 	auto spriteBuyTip = (Sprite *)layoutMaid->getChildByName("spriteBuyTip");
 	spriteBuyTip->setVisible(isUnlock && !isBuy);
 
@@ -181,6 +222,14 @@ void LayerSkills::updateLayoutMaid(const bool &isInit /*= false*/)
 	if (isInit)
 	{
 		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchSwitchMaidSkill, this));
+	}
+	btn->setBright(isBuy);
+	btn->setTouchEnabled(isBuy);
+
+	btn = (Button *)layoutMaid->getChildByName("btnLove");
+	if (isInit)
+	{
+		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchSwitchMaidLove, this));
 	}
 	btn->setBright(isBuy);
 	btn->setTouchEnabled(isBuy);
@@ -214,12 +263,16 @@ void LayerSkills::updateLayoutSkillItems(const bool &isInit /*= false*/)
 
 		btn = (Button *)layout->getChildByName("btnBase");
 		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkill, this, TypeSkill::BASE));
+		btn->setTouchEnabled(false);
 		btn = (Button *)layout->getChildByName("btnSpecial");
 		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkill, this, TypeSkill::SPECIAL));
+		btn->setTouchEnabled(false);
 		btn = (Button *)layout->getChildByName("btnEnergy");
 		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkill, this, TypeSkill::ENERGY));
+		btn->setTouchEnabled(false);
 		btn = (Button *)layout->getChildByName("btnPassive");
 		btn->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnSkill, this, TypeSkill::PASSIVE));
+		btn->setTouchEnabled(false);
 	}
 
 	vector<DataSkillInfo> vecDataSkillInfo;
@@ -440,16 +493,6 @@ void LayerSkills::onTouchSwitchMaidSkill(Ref *ref, Widget::TouchEventType type)
 	if (type == Widget::TouchEventType::ENDED)
 	{
 		//ÏÔÊ¾¶¯»­
-		/*auto layoutMaid = (Layout *)_skin->getChildByName("layoutMaid");
-		auto layoutSkillItems = (Layout *)_skin->getChildByName("layoutSkillItems");
-		auto node = layoutMaid->isVisible() ? layoutMaid : layoutSkillItems;
-		auto nodeNew = layoutMaid->isVisible() ? layoutSkillItems : layoutMaid;
-		nodeNew->setVisible(true);
-		auto funcOverNode = [node]()
-		{
-			node->setVisible(false);
-		};
-		ManagerUI::getInstance()->switchTwoNode(node, nodeNew, funcOverNode);*/
 		auto actionTimeline = (ActionTimeline *)_skin->getActionByTag(_skin->getTag());
 		auto currentFrame = actionTimeline->getCurrentFrame();
 		if (currentFrame == actionTimeline->getAnimationInfo(animationHided).startIndex)
@@ -457,6 +500,17 @@ void LayerSkills::onTouchSwitchMaidSkill(Ref *ref, Widget::TouchEventType type)
 			actionTimeline->play(animationShow, false);
 			actionTimeline->setLastFrameCallFunc([actionTimeline, this]()
 			{
+				auto layoutSkillItems = (Layout *)_skin->getChildByName("layoutSkillItems");
+				auto layout = (Layout *)layoutSkillItems->getChildByName("layout");
+				auto btn = (Button *)layout->getChildByName("btnBase");
+				btn->setTouchEnabled(true);
+				btn = (Button *)layout->getChildByName("btnSpecial");
+				btn->setTouchEnabled(true);
+				btn = (Button *)layout->getChildByName("btnEnergy");
+				btn->setTouchEnabled(true);
+				btn = (Button *)layout->getChildByName("btnPassive");
+				btn->setTouchEnabled(true);
+
 				actionTimeline->play(animationShowed, false);
 				actionTimeline->setLastFrameCallFunc(nullptr);
 			});
@@ -466,10 +520,29 @@ void LayerSkills::onTouchSwitchMaidSkill(Ref *ref, Widget::TouchEventType type)
 			actionTimeline->play(animationHide, false);
 			actionTimeline->setLastFrameCallFunc([actionTimeline, this]()
 			{
+				auto layoutSkillItems = (Layout *)_skin->getChildByName("layoutSkillItems");
+				auto layout = (Layout *)layoutSkillItems->getChildByName("layout");
+				auto btn = (Button *)layout->getChildByName("btnBase");
+				btn->setTouchEnabled(false);
+				btn = (Button *)layout->getChildByName("btnSpecial");
+				btn->setTouchEnabled(false);
+				btn = (Button *)layout->getChildByName("btnEnergy");
+				btn->setTouchEnabled(false);
+				btn = (Button *)layout->getChildByName("btnPassive");
+				btn->setTouchEnabled(false);
+
 				actionTimeline->play(animationHided, false);
 				actionTimeline->setLastFrameCallFunc(nullptr);
 			});
 		}
+	}
+}
+
+void LayerSkills::onTouchSwitchMaidLove(Ref *ref, Widget::TouchEventType type)
+{
+	if (type == Widget::TouchEventType::ENDED)
+	{
+
 	}
 }
 

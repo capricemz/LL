@@ -23,6 +23,13 @@
             <Image Name="add.png" />
             <Image Name="bubble.png" />
             <Image Name="btn1.png" />
+            <Image Name="element_af.png" />
+            <Image Name="element_ak.png" />
+            <Image Name="element_hp.png" />
+            <Image Name="element_hpj.png" />
+            <Image Name="element_hps.png" />
+            <Image Name="element_jh.png" />
+            <Image Name="element_nf.png" />
           </Folder>
           <Folder Name="main">
             <Image Name="nemu_btn_1.png" />
@@ -631,8 +638,9 @@
             <Project Name="LayerSkillbook.csd" Type="Layer" />
             <Project Name="NodeJinengpai.csd" Type="Node" />
             <Project Name="LayerTraining_1.csd" Type="Layer" />
-            <Project Name="NodeJichuxx.csd" Type="Node" />
             <Project Name="LayerTraining.csd" Type="Layer" />
+            <Project Name="LayerSkills.csd" Type="Layer" />
+            <Project Name="LayerSkills_1.csd" Type="Layer" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />

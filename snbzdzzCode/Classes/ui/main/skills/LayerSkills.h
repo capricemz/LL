@@ -43,6 +43,7 @@ private:
 	void onTouchBtnPrev(Ref *ref, Widget::TouchEventType type);
 	void onTouchBtnNext(Ref *ref, Widget::TouchEventType type);
 	void onTouchSwitchMaidSkill(Ref *ref, Widget::TouchEventType type);
+	void onTouchSwitchMaidLove(Ref *ref, Widget::TouchEventType type);
 	void onTouchBtnSkill(Ref *ref, Widget::TouchEventType type, const TypeSkill &typeSkill);
 	void onTouchBtnSkillBuy(Ref *ref, Widget::TouchEventType type, const DataSkillInfo &dataSkillInfo);
 	

@@ -200,7 +200,7 @@ void NodeHead::updateTxtGrade()
 		return;
 	}
 
-	auto cfgGrade = ManagerCfg::getInstance()->getDicCfgGrade()[idGradeLast];
+	auto cfgGrade = handleDataGrade->getCfgGradeLast();
 	auto vecEffect = UtilString::split(cfgGrade.effect, "|");
 	for (auto var : vecEffect)
 	{

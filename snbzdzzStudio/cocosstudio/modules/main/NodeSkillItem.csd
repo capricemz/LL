@@ -24,7 +24,7 @@
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="67" G="0" B="0" />
+            <CColor A="255" R="131" G="65" B="65" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="images/skills_panel/skill_new_bg.png" Plist="" />
@@ -34,7 +34,7 @@
             <Size X="110.0000" Y="110.0000" />
             <Children>
               <AbstractNodeData Name="skill_result0" ActionTag="-482480687" Tag="73" IconVisible="False" LeftMargin="74.5507" RightMargin="1.4493" TopMargin="74.6898" BottomMargin="1.3102" ctype="SpriteObjectData">
-                <Size X="34.0000" Y="34.0000" />
+                <Size X="55.0000" Y="55.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="91.5507" Y="18.3102" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -56,7 +56,7 @@
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="skill_state" ActionTag="-1434922285" Tag="75" IconVisible="False" LeftMargin="0.9776" RightMargin="75.0224" TopMargin="2.6426" BottomMargin="73.3574" ctype="SpriteObjectData">
-                <Size X="24.0000" Y="30.0000" />
+                <Size X="32.0000" Y="32.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="17.9776" Y="90.3574" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -77,24 +77,24 @@
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="spriteIconBg" ActionTag="-2087345382" Tag="73" IconVisible="False" LeftMargin="-238.5000" RightMargin="135.5000" TopMargin="-54.5000" BottomMargin="-50.5000" ctype="SpriteObjectData">
-            <Size X="103.0000" Y="105.0000" />
+            <Size X="100.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-187.0000" Y="2.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="67" G="0" B="0" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/skills_panel/skill_icon_top1.png" Plist="" />
+            <FileData Type="Normal" Path="images/skills_panel/kuang2.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutAttribute" ActionTag="-1171554197" Tag="225" IconVisible="False" LeftMargin="-128.9981" RightMargin="-121.0019" TopMargin="-51.0000" BottomMargin="1.0000" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
-            <Size X="250.0000" Y="50.0000" />
+          <AbstractNodeData Name="layoutAttribute" ActionTag="-1171554197" Tag="225" IconVisible="False" LeftMargin="-128.9981" RightMargin="-121.0019" TopMargin="-51.0000" BottomMargin="-4.0000" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="250.0000" Y="55.0000" />
             <AnchorPoint ScaleY="1.0000" />
             <Position X="-128.9981" Y="51.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
-            <PreSize X="0.4941" Y="0.3817" />
+            <PreSize X="0.0000" Y="0.0000" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
@@ -105,24 +105,24 @@
             <AnchorPoint ScaleY="1.0000" />
             <Position X="-128.9981" Y="-6.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="44" B="153" />
+            <CColor A="255" R="222" G="90" B="90" />
             <PrePosition />
             <PreSize X="0.7115" Y="0.3664" />
             <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btn" ActionTag="1242001513" Tag="913" IconVisible="False" LeftMargin="124.0000" RightMargin="-242.0000" TopMargin="-52.5000" BottomMargin="-0.5000" TouchEnable="True" FontSize="24" ButtonText="学习" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="88" Scale9Height="31" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="118.0000" Y="53.0000" />
+          <AbstractNodeData Name="btn" ActionTag="1242001513" Tag="913" IconVisible="False" LeftMargin="125.0000" RightMargin="-241.0000" TopMargin="-52.0000" TouchEnable="True" FontSize="24" ButtonText="学习" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="86" Scale9Height="30" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="116.0000" Y="52.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="183.0000" Y="26.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
-            <PreSize X="0.2332" Y="0.4046" />
+            <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
-            <TextColor A="255" R="32" G="0" B="0" />
-            <NormalFileData Type="Normal" Path="images/common/btn1.png" Plist="" />
+            <TextColor A="255" R="64" G="34" B="34" />
+            <NormalFileData Type="Normal" Path="images/skills_panel/anniu.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

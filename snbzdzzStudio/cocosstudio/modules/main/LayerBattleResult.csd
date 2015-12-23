@@ -31,14 +31,14 @@
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="spriteVictoryDefeat" ActionTag="1216956146" Tag="63" IconVisible="False" LeftMargin="141.5000" RightMargin="141.5000" TopMargin="8.5000" BottomMargin="752.5000" ctype="SpriteObjectData">
-            <Size X="46.0000" Y="46.0000" />
+            <Size X="357.0000" Y="199.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="320.0000" Y="852.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.8875" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <FileData Type="MarkedSubImage" Path="images/battle/battle_result/win.png" Plist="modules/main/PlistMain.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="layoutStar" ActionTag="-1554153730" Tag="45" IconVisible="False" LeftMargin="95.0000" RightMargin="95.0000" TopMargin="190.0000" BottomMargin="660.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">

@@ -49,7 +49,7 @@ static const map<Vec2, Vec2> dicAnchorPoint2BubbleBgScale =
 };
 
 static const Size sizeSkillIcon = Size(100.0f, 100.0f);
-static const Size sizeSkillAttribute = Size(50.0f, 50.0f);
+static const Size sizeSkillAttribute = Size(55.0f, 55.0f);
 static const Size sizeStarLevels = Size(20.0f, 20.0f);
 static const Size sizeStarTrainingLv = Size(50.0f, 50.0f);
 static const Size sizeStarBattleResult = Size(114.0f, 110.0f);
