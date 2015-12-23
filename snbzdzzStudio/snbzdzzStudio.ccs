@@ -116,6 +116,7 @@
             <Image Name="role_card_46.png" />
             <Image Name="role_card_56.png" />
             <Image Name="role_card_6.png" />
+            <Image Name="role_card_0.png" />
           </Folder>
           <Folder Name="bg">
             <Image Name="battle_bg1.png" />

@@ -117,7 +117,7 @@
               <AbstractNodeData Name="spriteMst1" ActionTag="-1010833670" Tag="188" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="TopEdge" LeftMargin="398.9998" RightMargin="120.0001" TopMargin="-4.0000" BottomMargin="797.0000" ctype="SpriteObjectData">
                 <Size X="121.0000" Y="167.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="459.4998" Y="880.5000" />
+                <Position X="459.4999" Y="880.5000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.7180" Y="0.9172" />
@@ -209,6 +209,39 @@
           <AbstractNodeData Name="layoutHead" CanEdit="False" ActionTag="1116761913" Tag="160" IconVisible="False" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="640.0000" Y="960.0000" />
             <Children>
+              <AbstractNodeData Name="Sprite_role0" ActionTag="1646958519" Tag="773" IconVisible="False" LeftMargin="531.5004" RightMargin="1.4996" TopMargin="756.0000" BottomMargin="-6.0000" ctype="SpriteObjectData">
+                <Size X="107.0000" Y="210.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="585.0004" Y="99.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.9141" Y="0.1031" />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="Normal" Path="images/role_card/role_card_0.png" Plist="" />
+                <BlendFunc Src="770" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Sprite_role1" ActionTag="812945493" Tag="774" IconVisible="False" LeftMargin="435.4998" RightMargin="97.5001" TopMargin="781.0000" BottomMargin="-31.0000" ctype="SpriteObjectData">
+                <Size X="107.0000" Y="210.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="488.9998" Y="74.0000" />
+                <Scale ScaleX="0.7500" ScaleY="0.7500" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.7641" Y="0.0771" />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="Normal" Path="images/role_card/role_card_0.png" Plist="" />
+                <BlendFunc Src="770" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Sprite_role2" ActionTag="-1106534215" Tag="775" IconVisible="False" LeftMargin="352.4996" RightMargin="180.5004" TopMargin="781.0000" BottomMargin="-31.0000" ctype="SpriteObjectData">
+                <Size X="107.0000" Y="210.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="405.9996" Y="74.0000" />
+                <Scale ScaleX="0.7500" ScaleY="0.7500" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.6344" Y="0.0771" />
+                <PreSize X="0.1672" Y="0.2188" />
+                <FileData Type="Normal" Path="images/role_card/role_card_0.png" Plist="" />
+                <BlendFunc Src="770" Dst="771" />
+              </AbstractNodeData>
               <AbstractNodeData Name="layoutHeadMaid" ActionTag="1751947810" Tag="192" IconVisible="False" LeftMargin="365.0000" TopMargin="754.9993" BottomMargin="0.0007" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="275.0000" Y="205.0000" />
                 <AnchorPoint ScaleX="1.0000" />
@@ -221,39 +254,6 @@
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="Sprite_role0" ActionTag="1646958519" Tag="773" IconVisible="False" LeftMargin="531.5004" RightMargin="1.4996" TopMargin="756.0000" BottomMargin="-6.0000" ctype="SpriteObjectData">
-                <Size X="107.0000" Y="210.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="585.0004" Y="99.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9141" Y="0.1031" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/battle/role_head_bg.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="Sprite_role1" ActionTag="812945493" Tag="774" IconVisible="False" LeftMargin="435.4998" RightMargin="97.5001" TopMargin="781.0000" BottomMargin="-31.0000" ctype="SpriteObjectData">
-                <Size X="107.0000" Y="210.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="488.9998" Y="74.0000" />
-                <Scale ScaleX="0.7500" ScaleY="0.7500" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.7641" Y="0.0771" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/battle/role_head_bg.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="Sprite_role2" ActionTag="-1106534215" Tag="775" IconVisible="False" LeftMargin="352.4996" RightMargin="180.5004" TopMargin="781.0000" BottomMargin="-31.0000" ctype="SpriteObjectData">
-                <Size X="107.0000" Y="210.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="405.9996" Y="74.0000" />
-                <Scale ScaleX="0.7500" ScaleY="0.7500" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6344" Y="0.0771" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/battle/role_head_bg.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="layoutEnergyMaid" ActionTag="1136608063" Tag="156" IconVisible="False" LeftMargin="365.0000" RightMargin="110.0000" TopMargin="780.0000" BottomMargin="155.0000" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="165.0000" Y="25.0000" />
@@ -339,7 +339,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="layoutEnergyMst" ActionTag="561136449" Tag="184" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="TopEdge" LeftMargin="110.0000" RightMargin="365.0000" TopMargin="155.0000" BottomMargin="757.0000" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+              <AbstractNodeData Name="layoutEnergyMst" ActionTag="561136449" Tag="184" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="TopEdge" LeftMargin="110.0000" RightMargin="365.0000" TopMargin="155.0000" BottomMargin="780.0000" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="165.0000" Y="25.0000" />
                 <Children>
                   <AbstractNodeData Name="barEnergy" ActionTag="1295506750" Tag="185" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="3.0000" RightMargin="3.0000" TopMargin="2.5000" BottomMargin="2.5000" ProgressInfo="100" ctype="LoadingBarObjectData">
@@ -368,7 +368,7 @@
                 <Position X="110.0000" Y="780.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1719" Y="0.7885" />
+                <PrePosition X="0.1719" Y="0.8125" />
                 <PreSize X="0.2578" Y="0.0260" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />

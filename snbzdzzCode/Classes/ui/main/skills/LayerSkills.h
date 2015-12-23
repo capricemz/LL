@@ -37,6 +37,7 @@ private:
 	void updateLayoutMaid(const bool &isInit = false);
 	void updateLayoutSkillItems(const bool &isInit = false);
 	void updateLayoutSKillItem(Node *nodeSkillItem, const bool &isExsit, const DataSkillInfo &dataSkillInfo, const bool &isInit = false);
+	void updateSkinAttribute(Node *nodeSkillItem, const CfgSkill &cfgSkill);
 
 	void onTouchBtnMaid(Ref *ref, Widget::TouchEventType type);
 	void onTouchBtnMaidBuy(Ref *ref, Widget::TouchEventType type);

@@ -32,41 +32,6 @@
           </AbstractNodeData>
           <AbstractNodeData Name="spriteIcon" ActionTag="-1254469849" Tag="905" IconVisible="False" LeftMargin="-242.0000" RightMargin="132.0000" TopMargin="-57.0000" BottomMargin="-53.0000" ctype="SpriteObjectData">
             <Size X="110.0000" Y="110.0000" />
-            <Children>
-              <AbstractNodeData Name="skill_result0" ActionTag="-482480687" Tag="73" IconVisible="False" LeftMargin="74.5507" RightMargin="1.4493" TopMargin="74.6898" BottomMargin="1.3102" ctype="SpriteObjectData">
-                <Size X="55.0000" Y="55.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="91.5507" Y="18.3102" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8323" Y="0.1665" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/common/element_wg.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="skill_result1" ActionTag="-814208488" Tag="74" IconVisible="False" LeftMargin="62.1372" RightMargin="37.8628" TopMargin="85.5044" BottomMargin="4.4956" FontSize="20" LabelText="+" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="10.0000" Y="20.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="67.1372" Y="14.4956" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6103" Y="0.1318" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="skill_state" ActionTag="-1434922285" Tag="75" IconVisible="False" LeftMargin="0.9776" RightMargin="75.0224" TopMargin="2.6426" BottomMargin="73.3574" ctype="SpriteObjectData">
-                <Size X="32.0000" Y="32.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="17.9776" Y="90.3574" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1634" Y="0.8214" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/common/element_kg.png" Plist="" />
-                <BlendFunc Src="770" Dst="771" />
-              </AbstractNodeData>
-            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-187.0000" Y="2.0000" />
             <Scale ScaleX="0.9000" ScaleY="0.9000" />
@@ -75,6 +40,32 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="images/skill/skill_1101.jpg" Plist="modules/main/PlistSkill.plist" />
             <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="layoutGridBase1" ActionTag="373661668" Tag="30" IconVisible="False" LeftMargin="-240.5000" RightMargin="133.5000" TopMargin="-50.0000" BottomMargin="22.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="107.0000" Y="28.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
+            <Position X="-187.0000" Y="50.0000" />
+            <Scale ScaleX="0.9000" ScaleY="0.9000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.8843" Y="0.1697" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="layoutGridComplex" ActionTag="-1335751508" Tag="29" IconVisible="False" LeftMargin="-242.0000" RightMargin="132.0000" TopMargin="-52.0000" BottomMargin="-48.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="110.0000" Y="100.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-187.0000" Y="2.0000" />
+            <Scale ScaleX="0.9000" ScaleY="0.9000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
           <AbstractNodeData Name="spriteIconBg" ActionTag="-2087345382" Tag="73" IconVisible="False" LeftMargin="-238.5000" RightMargin="135.5000" TopMargin="-54.5000" BottomMargin="-50.5000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="100.0000" />

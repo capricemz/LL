@@ -73,9 +73,13 @@ void Grid::setDataGrid(DataGrid *dataGrid)
 void Grid::updateSkinAttribute()
 {
 	auto spriteBgp = (Sprite *)_skin->getChildByName("spriteBgp");
-	spriteBgp->getChildByName("layoutGridComplex")->removeAllChildren();
+	auto layoutGridComplex = (Layout *)spriteBgp->getChildByName("layoutGridComplex");
+	layoutGridComplex->removeAllChildren();
 	spriteBgp->getChildByName("layoutGridBase0")->removeAllChildren();
 	spriteBgp->getChildByName("layoutGridBase1")->removeAllChildren();
+
+	auto urlPic = _dataGrid->getCfgSkill().urlPic;
+	layoutGridComplex->setBackGroundImage(urlPic, Widget::TextureResType::PLIST);
 	//
 	auto count = 0;
 	vector<int> countLineBefores = {};//到当前行为止的总数
@@ -170,6 +174,8 @@ void Grid::updateSkinAttribute()
 		}
 	}
 	//
+	auto isMiddle = false;
+	auto isBottomRight = true;
 	auto xPostion = 0.0f;
 	auto yPostion = 0.0f;
 	count = 0;
@@ -183,14 +189,34 @@ void Grid::updateSkinAttribute()
 			{
 				line++;
 			}
-			xPostion = spriteBgp->getChildByName("layoutGridComplex")->getContentSize().width / 2.0f - lineWidths[line] / 2.0f;//行居中行起始x位置
-			yPostion = spriteBgp->getChildByName("layoutGridComplex")->getContentSize().height / 2.0f + lineBottom[lineBottom.size() - 1] / 2.0f - (line > 0 ? lineBottom[line - 1] : 0.0f);//行居中对齐行y位置
+			if (isMiddle)
+			{
+				xPostion = spriteBgp->getChildByName("layoutGridComplex")->getContentSize().width / 2.0f - lineWidths[line] / 2.0f;//行居中行起始x位置
+				yPostion = spriteBgp->getChildByName("layoutGridComplex")->getContentSize().height / 2.0f + lineBottom[lineBottom.size() - 1] / 2.0f - (line > 0 ? lineBottom[line - 1] : 0.0f);//行居中对齐行y位置
+			}
+			else if (isBottomRight)
+			{
+				xPostion = spriteBgp->getChildByName("layoutGridComplex")->getContentSize().width;//行右对齐行起始x位置
+				yPostion = lineBottom[lineBottom.size() - 1] / 2.0f - (line > 0 ? lineBottom[line - 1] : 0.0f);//行右对齐行y位置
+			}
 		}
-		auto node = (Node *)children.at(count);
-		xPostion += node->getContentSize().width / 2.0f;
-		node->setPositionX(xPostion);
-		xPostion += node->getContentSize().width / 2.0f;
-		node->setPositionY(yPostion - node->getContentSize().height / 2.0f);
+		if (isMiddle)
+		{
+			auto node = (Node *)children.at(count);
+			xPostion += node->getContentSize().width / 2.0f;
+			node->setPositionX(xPostion);
+			xPostion += node->getContentSize().width / 2.0f;
+			node->setPositionY(yPostion + node->getContentSize().height / 2.0f);
+		}
+		else if (isBottomRight)
+		{
+			auto node = (Node *)children.at(count);
+			xPostion -= node->getContentSize().width / 2.0f;
+			node->setPositionX(xPostion);
+			xPostion -= node->getContentSize().width / 2.0f;
+			node->setPositionY(yPostion/* + node->getContentSize().height / 2.0f*/);
+		}
+		
 		count++;
 		if (count >= (int)children.size())
 		{

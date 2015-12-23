@@ -337,47 +337,7 @@ void LayerSkills::updateLayoutSKillItem(Node *nodeSkillItem, const bool &isExsit
 	auto scale = size.width > size.height ? sizeSkillIcon.width / size.width : sizeSkillIcon.height / size.height;
 	spriteIcon->setScale(scale);
 
-	auto layoutAttribute = (Layout *)nodeSkillItem->getChildByName("layoutAttribute");
-	layoutAttribute->setTouchEnabled(false);
-	layoutAttribute->removeAllChildren();
-	auto vec = UtilString::split(cfgSkill.effect, "|");
-	auto interval = 8.0f;
-	for (auto var : vec)
-	{
-		auto vecInfo = UtilString::split(var, ":");
-		auto idAttribute = Value(vecInfo[0]).asInt();
-		auto value = Value(vecInfo[1]).asInt();
-
-		auto cfgAttribute = ManagerCfg::getInstance()->getDicCfgAttribute()[(int)idAttribute];
-		if (cfgAttribute.urlPic != "")
-		{
-			auto sprite = Sprite::createWithSpriteFrameName(cfgAttribute.urlPic);
-			auto size = sprite->getContentSize();
-			auto scale = size.width > size.height ? sizeSkillAttribute.width / size.width : sizeSkillAttribute.height / size.height;
-			sprite->setScale(scale);
-			
-			auto postion = Vec2(sizeSkillAttribute.width * 0.5f, sizeSkillAttribute.height * 0.5f);
-
-			auto children = layoutAttribute->getChildren();
-			if (children.size() > 0)
-			{
-				auto spriteLast = children.at(children.size() - 1);
-				postion = spriteLast->getPosition();
-				postion = Vec2(postion.x + sizeSkillAttribute.width + interval, postion.y);
-			}
-			sprite->setPosition(postion);
-			layoutAttribute->addChild(sprite);
-
-			auto isUnblockableOrQuick = cfgAttribute.id == (int)IdAttribute::GRID_UNBLOCKABLE || cfgAttribute.id == (int)IdAttribute::GRID_QUICK;
-			if (!isUnblockableOrQuick)
-			{
-				auto txt = Text::create(Value(value).asString(), RES_FONTS_KTJT, 30);
-				txt->enableOutline(Color4B::BLACK);
-				txt->setPosition(Vec2(postion.x, postion.y));
-				layoutAttribute->addChild(txt);
-			}
-		}
-	}
+	updateSkinAttribute(nodeSkillItem, cfgSkill);
 
 	auto txt = (Text *)nodeSkillItem->getChildByName("txt");
 	txt->setString(cfgSkill.desc);
@@ -399,6 +359,195 @@ void LayerSkills::updateLayoutSKillItem(Node *nodeSkillItem, const bool &isExsit
 			btn->setBright(true);
 			auto isBuy = handleDataUnlock->getIsBuySkill(dataSkillInfo.idSkill, dataSkillInfo.indexSkill);
 			btn->setVisible(!isBuy);//若为购买，则显示按钮
+		}
+	}
+}
+
+void LayerSkills::updateSkinAttribute(Node *nodeSkillItem, const CfgSkill &cfgSkill)
+{
+	nodeSkillItem->getChildByName("layoutGridComplex")->removeAllChildren();
+	nodeSkillItem->getChildByName("layoutGridBase1")->removeAllChildren();
+	//
+	auto count = 0;
+	vector<int> countLineBefores = {};//到当前行为止的总数
+	vector<float> lineWidths = {};
+	vector<float> lineBottom = {};
+	float widthChildrenLayoutGridBase0 = 0.0f;
+	float interval = 20.0f;
+	auto idAttributeLast = IdAttribute::GRID_DAMAGE_PHYSICAL;
+	auto vec = UtilString::split(cfgSkill.effect, "|");
+	for (auto var : vec)
+	{
+		auto vecInfo = UtilString::split(var, ":");
+		auto idAttribute = (IdAttribute)Value(vecInfo[0]).asInt();
+		auto value = Value(vecInfo[1]).asInt();
+
+		auto cfgAttribute = ManagerCfg::getInstance()->getDicCfgAttribute()[(int)idAttribute];
+		if (cfgAttribute.urlPic != "")
+		{
+			if (cfgAttribute.type == TypeAttribute::GRID_COMPLEX)
+			{
+				auto remainder = count % 3;
+				if (remainder != 0 && value && idAttributeLast != idAttribute)//若余数不为0且有属性值且与之前属性不同
+				{
+					count += 3 - remainder;//换行显示
+				}
+				idAttributeLast = idAttribute;
+				while (value--)
+				{
+					auto sprite = Sprite::createWithSpriteFrameName(cfgAttribute.urlPic);
+					nodeSkillItem->getChildByName("layoutGridComplex")->addChild(sprite);
+					auto line = count / 3;
+					auto nodeHeight = sprite->getContentSize().height;
+					auto nodeWidth = sprite->getContentSize().width;
+					auto countLineBeforeLast = line > 0 ? countLineBefores[line - 1] : 0;
+					if ((int)countLineBefores.size() < line + 1)
+					{
+						countLineBefores.push_back(1 + countLineBeforeLast);
+					}
+					else
+					{
+						countLineBefores[line]++;
+					}
+					auto lineTopLast = line > 0 ? lineBottom[line - 1] : 0.0f;
+					if ((int)lineBottom.size() < line + 1)
+					{
+						lineBottom.push_back(nodeHeight + lineTopLast);
+					}
+					else if (lineBottom[line] < nodeHeight + lineTopLast)
+					{
+						lineBottom[line] = nodeHeight;
+					}
+					if ((int)lineWidths.size() < line + 1)
+					{
+						lineWidths.push_back(nodeWidth);
+					}
+					else
+					{
+						lineWidths[line] += nodeWidth;
+					}
+					count++;
+				}
+			}
+			else if (cfgAttribute.type == TypeAttribute::GRID_BASE)
+			{
+				auto sprite = Sprite::createWithSpriteFrameName(cfgAttribute.urlPic);
+				Layout *layoutGridBase = nullptr;
+				auto isUnblockableOrQuick = cfgAttribute.id == (int)IdAttribute::GRID_UNBLOCKABLE || cfgAttribute.id == (int)IdAttribute::GRID_QUICK;
+				if (isUnblockableOrQuick)
+				{
+					layoutGridBase = (Layout *)nodeSkillItem->getChildByName("layoutGridBase1");
+					auto children = layoutGridBase->getChildren();
+					auto size = sprite->getContentSize();
+					auto postion = Vec2(size.width * 0.5f, size.height * 0.5f);
+					if (children.size() > 0)
+					{
+						auto spriteLast = children.at(children.size() - 1);
+						postion = spriteLast->getPosition();
+						postion = Vec2(postion.x + spriteLast->getContentSize().width + interval, postion.y);
+						if (!isUnblockableOrQuick)
+						{
+							widthChildrenLayoutGridBase0 += interval;
+						}
+					}
+					sprite->setPosition(postion);
+					layoutGridBase->addChild(sprite);
+				}
+			}
+		}
+	}
+	//
+	auto isMiddle = false;
+	auto isBottomRight = true;
+	auto xPostion = 0.0f;
+	auto yPostion = 0.0f;
+	count = 0;
+	auto children = nodeSkillItem->getChildByName("layoutGridComplex")->getChildren();
+	for (auto line = 0; line < (int)countLineBefores.size();)
+	{
+		auto countLineBefore = countLineBefores[line];
+		if (count == 0 || count == countLineBefore)
+		{
+			if (count != 0)
+			{
+				line++;
+			}
+			if (isMiddle)
+			{
+				xPostion = nodeSkillItem->getChildByName("layoutGridComplex")->getContentSize().width / 2.0f - lineWidths[line] / 2.0f;//行居中行起始x位置
+				yPostion = nodeSkillItem->getChildByName("layoutGridComplex")->getContentSize().height / 2.0f + lineBottom[lineBottom.size() - 1] / 2.0f - (line > 0 ? lineBottom[line - 1] : 0.0f);//行居中对齐行y位置
+			}
+			else if (isBottomRight)
+			{
+				xPostion = nodeSkillItem->getChildByName("layoutGridComplex")->getContentSize().width;//行右对齐行起始x位置
+				yPostion = lineBottom[lineBottom.size() - 1] / 2.0f - (line > 0 ? lineBottom[line - 1] : 0.0f);//行右对齐行y位置
+			}
+		}
+		if (isMiddle)
+		{
+			auto node = (Node *)children.at(count);
+			xPostion += node->getContentSize().width / 2.0f;
+			node->setPositionX(xPostion);
+			xPostion += node->getContentSize().width / 2.0f;
+			node->setPositionY(yPostion + node->getContentSize().height / 2.0f);
+		}
+		else if (isBottomRight)
+		{
+			auto node = (Node *)children.at(count);
+			xPostion -= node->getContentSize().width / 2.0f;
+			node->setPositionX(xPostion);
+			xPostion -= node->getContentSize().width / 2.0f;
+			node->setPositionY(yPostion/* + node->getContentSize().height / 2.0f*/);
+		}
+
+		count++;
+		if (count >= (int)children.size())
+		{
+			break;
+		}
+	}
+	//
+	auto layoutAttribute = (Layout *)nodeSkillItem->getChildByName("layoutAttribute");
+	layoutAttribute->setTouchEnabled(false);
+	layoutAttribute->removeAllChildren();
+	interval = 8.0f;
+	for (auto var : vec)
+	{
+		auto vecInfo = UtilString::split(var, ":");
+		auto idAttribute = Value(vecInfo[0]).asInt();
+		auto value = Value(vecInfo[1]).asInt();
+
+		auto cfgAttribute = ManagerCfg::getInstance()->getDicCfgAttribute()[(int)idAttribute];
+		if (cfgAttribute.urlPic != "")
+		{
+			if (cfgAttribute.type == TypeAttribute::GRID_BASE)
+			{
+				auto isUnblockableOrQuick = cfgAttribute.id == (int)IdAttribute::GRID_UNBLOCKABLE || cfgAttribute.id == (int)IdAttribute::GRID_QUICK;
+				if (!isUnblockableOrQuick)
+				{
+					auto sprite = Sprite::createWithSpriteFrameName(cfgAttribute.urlPic);
+					auto size = sprite->getContentSize();
+					auto scale = size.width > size.height ? sizeSkillAttribute.width / size.width : sizeSkillAttribute.height / size.height;
+					sprite->setScale(scale);
+
+					auto postion = Vec2(sizeSkillAttribute.width * 0.5f, sizeSkillAttribute.height * 0.5f);
+
+					auto children = layoutAttribute->getChildren();
+					if (children.size() > 0)
+					{
+						auto spriteLast = children.at(children.size() - 1);
+						postion = spriteLast->getPosition();
+						postion = Vec2(postion.x + sizeSkillAttribute.width + interval, postion.y);
+					}
+					sprite->setPosition(postion);
+					layoutAttribute->addChild(sprite);
+
+					auto txt = Text::create(Value(value).asString(), RES_FONTS_KTJT, 30);
+					txt->enableOutline(Color4B::BLACK);
+					txt->setPosition(Vec2(postion.x, postion.y));
+					layoutAttribute->addChild(txt);
+				}
+			}
 		}
 	}
 }
