@@ -95,11 +95,17 @@ void LayerBattle::updateBySubject(va_list values)
 	else if (type == TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_BATTLE_RESULT)
 	{
 		auto layerBattleResult = LayerBattleResult::create();
+		layerBattleResult->setName("layerBattleResult");
 		addChild(layerBattleResult);
 		layerBattleResult->runAppearAction(nullptr);
 	}
 	else if (type == TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_GRADE_UP)
 	{
+		auto layerBattleResult = getChildByName("layerBattleResult");
+		if (layerBattleResult != nullptr)
+		{
+			layerBattleResult->removeFromParent();
+		}
 		auto layerGradeUp = LayerGradeUp::create();
 		addChild(layerGradeUp);
 		layerGradeUp->runAppearAction(nullptr);

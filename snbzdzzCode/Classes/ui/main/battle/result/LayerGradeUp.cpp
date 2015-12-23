@@ -46,7 +46,7 @@ void LayerGradeUp::runAppearAction(const function<void()> &func /*= nullptr*/)
 		spriteGradeUpBg->runAction(FadeIn::create(duration));
 	});
 	vecAction.pushBack(actionCallFunc);
-	auto actionDelay = DelayTime::create(duration);
+	auto actionDelay = DelayTime::create(duration + 1.0f / 60.0f);
 	vecAction.pushBack(actionDelay);
 
 	duration = 10.0f / 60.0f;
@@ -79,6 +79,7 @@ void LayerGradeUp::runAppearAction(const function<void()> &func /*= nullptr*/)
 	vecAction.pushBack(actionDelay);
 
 	auto layoutNodeHead = (Layout *)_skin->getChildByName("layoutNodeHead");
+	
 	for (auto node : layoutNodeHead->getChildren())
 	{
 		if (node->isVisible())
@@ -86,7 +87,7 @@ void LayerGradeUp::runAppearAction(const function<void()> &func /*= nullptr*/)
 			duration = 10.0f / 60.0f;
 			actionCallFunc = CallFunc::create([node, duration]()
 			{
-				node->runAction(FadeIn::create(duration));
+				((NodeHead *)node)->getLayoutBg()->runAction(FadeIn::create(duration));
 			});
 			vecAction.pushBack(actionCallFunc);
 			actionDelay = DelayTime::create(duration + 1.0f / 60.0f);
@@ -126,12 +127,24 @@ void LayerGradeUp::createSkin()
 	auto layout = (Layout *)_skin->getChildByName("layoutBg");
 	layout->addTouchEventListener(CC_CALLBACK_2(LayerGradeUp::onTouchContinue, this));
 
+	updateSpriteGradeUp();
 	updateLayoutInfoGrade();
 	updateNodeHead();
 	updateLayoutInfoMaid();
 
 	auto txtContinue = (Text *)_skin->getChildByName("txtContinue");
 	txtContinue->runAction(RepeatForever::create(Sequence::create(FadeOut::create(1.0f), FadeIn::create(1.0f), nullptr)));
+}
+
+void LayerGradeUp::updateSpriteGradeUp()
+{
+	auto spriteGradeUpBg = (Sprite *)_skin->getChildByName("spriteGradeUpBg");
+	spriteGradeUpBg->setPosition(spriteGradeUpBg->getPosition() - moveDistanceGradeUp);
+	spriteGradeUpBg->setOpacity(0.0f);
+
+	auto spriteGradeUp = (Sprite *)_skin->getChildByName("spriteGradeUp");
+	spriteGradeUp->setPosition(spriteGradeUp->getPosition() - moveDistanceGradeUp);
+	spriteGradeUp->setOpacity(0.0f);
 }
 
 void LayerGradeUp::updateLayoutInfoGrade()
@@ -171,6 +184,7 @@ void LayerGradeUp::updateNodeHead()
 		if (index < length)
 		{
 			auto postion = spriteIcon->getPosition();
+			auto sizeSprite = spriteIcon->getContentSize();
 			auto dataEntity = vecDataEntity.at(index);
 			auto idEntity = dataEntity->getIdEntity();
 
@@ -178,9 +192,13 @@ void LayerGradeUp::updateNodeHead()
 			nodeHead->updateSkin(TypeNodeHead::SMALL, false, idEntity);
 			nodeHead->updateTxtGrade();
 			nodeHead->setPosition(postion);
-			nodeHead->setOpacity(0.0f);
+			auto size = nodeHead->getLayoutBg()->getContentSize();
+			auto scale = size.width > size.height ? sizeSprite.width / size.width : sizeSprite.height / size.height;
+			nodeHead->setScale(scale);
 			layoutNodeHead->addChild(nodeHead);
+			nodeHead->getLayoutBg()->setOpacity(0.0f);
 		}
+		index++;
 	}
 }
 
@@ -188,7 +206,6 @@ void LayerGradeUp::updateLayoutInfoMaid()
 {
 	auto layoutInfoMaid = (Layout *)_skin->getChildByName("layoutInfoMaid");
 	layoutInfoMaid->setOpacity(0.0f);
-
 }
 
 void LayerGradeUp::onTouchContinue(Ref *ref, Widget::TouchEventType type)
@@ -200,5 +217,7 @@ void LayerGradeUp::onTouchContinue(Ref *ref, Widget::TouchEventType type)
 			return;
 		}
 		ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SWITCH_LAYER, TYPE_OBSERVER_SCENE_MAIN::SHOW_LEVELS);
+		auto handleDataGrade = ManagerData::getInstance()->getHandleDataGrade();
+		handleDataGrade->setIdGradeLast();
 	}
 }

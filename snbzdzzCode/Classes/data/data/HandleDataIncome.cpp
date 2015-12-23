@@ -193,8 +193,6 @@ void HandleDataIncome::addThingAfter(const IdThing &idThing, const int &value)
 		auto isGradeUp = handleDataGrade->getIsGradeUp();
 		if (isGradeUp)
 		{
-			handleDataGrade->setIdGradeLast();
-
 			auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
 			handleDataEntity->updateAttributeGrade();
 		}

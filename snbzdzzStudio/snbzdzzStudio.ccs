@@ -69,6 +69,8 @@
               <Image Name="lvup_bg3.png" />
               <Image Name="up.png" />
             </Folder>
+            <Image Name="jinengka.png" />
+            <Image Name="role_head_bg.png" />
           </Folder>
           <Folder Name="role_card">
             <Image Name="role_card_4.png" />
@@ -101,7 +103,6 @@
             <Image Name="role_card_53.png" />
             <Image Name="role_card_54.png" />
             <Image Name="role_card_55.png" />
-            <Image Name="role_card_61.png" />
             <Image Name="role_card_16.png" />
             <Image Name="role_card_26.png" />
             <Image Name="role_card_36.png" />
@@ -114,6 +115,7 @@
             <Image Name="bg.png" />
             <Image Name="bg1.png" />
             <Image Name="gril_bg.png" />
+            <Image Name="bg5.png" />
           </Folder>
           <Folder Name="role_image">
             <Image Name="role_image_2.png" />
@@ -179,6 +181,40 @@
             <Image Name="zs.png" />
             <Image Name="ch.png" />
             <Image Name="ab.png" />
+            <Image Name="guanbi.png" />
+            <Image Name="skill1.png" />
+            <Image Name="skill2.png" />
+            <Image Name="skill3.png" />
+            <Image Name="skill4.png" />
+            <Image Name="sx1.png" />
+            <Image Name="sx1_1.png" />
+            <Image Name="sx1_11.png" />
+            <Image Name="sx2.png" />
+            <Image Name="sx2_1.png" />
+            <Image Name="sx2_11.png" />
+            <Image Name="sx3.png" />
+            <Image Name="sx3_1.png" />
+            <Image Name="sx3_11.png" />
+            <Image Name="sx4.png" />
+            <Image Name="sx4_1.png" />
+            <Image Name="sx4_11.png" />
+            <Image Name="sx5.png" />
+            <Image Name="sx5_1.png" />
+            <Image Name="sx5_11.png" />
+            <Image Name="sx6.png" />
+            <Image Name="sx6_1.png" />
+            <Image Name="sx6_11.png" />
+            <Image Name="sx7.png" />
+            <Image Name="sx7_1.png" />
+            <Image Name="sx7_11.png" />
+            <Image Name="sx_1.png" />
+            <Image Name="sx_11.png" />
+            <Image Name="sx_2.png" />
+            <Image Name="sx_22.png" />
+            <Image Name="sx_3.png" />
+            <Image Name="sx_33.png" />
+            <Image Name="taox1.png" />
+            <Image Name="jh_1.png" />
           </Folder>
           <Folder Name="levels">
             <Image Name="gk_xx.png" />
@@ -251,6 +287,11 @@
             <Image Name="typeJobRogue.png" />
             <Image Name="typeJobWarrior.png" />
             <Image Name="xin.png" />
+            <Image Name="dibubg.png" />
+            <Image Name="dingbg.png" />
+            <Image Name="ghzd.png" />
+            <Image Name="maoxian.png" />
+            <Image Name="sn.png" />
           </Folder>
           <Folder Name="skills_panel">
             <Image Name="button8.png" />
@@ -265,16 +306,30 @@
             <Image Name="skill_icon_top2.png" />
             <Image Name="skill_new_bg.png" />
             <Image Name="paper_top.png" />
+            <Image Name="anniu.png" />
+            <Image Name="anniu2.png" />
+            <Image Name="anniu3.png" />
+            <Image Name="anniu4.png" />
+            <Image Name="btbg.png" />
+            <Image Name="diwen4.png" />
+            <Image Name="jndw.png" />
+            <Image Name="kuang1.png" />
+            <Image Name="kuang2.png" />
+            <Image Name="latiao.png" />
+            <Image Name="lovewz.png" />
+            <Image Name="name.png" />
+            <Image Name="namediwen.png" />
+            <Image Name="jcxxbg.png" />
+            <Image Name="wzbg4.png" />
+            <Image Name="wzjcxx.png" />
+            <Image Name="guanbi.png" />
           </Folder>
           <Folder Name="teach">
-            <Image Name="harem.png" />
             <Image Name="heart.png" />
             <Image Name="heartbg.png" />
             <Image Name="rolename.png" />
-            <Image Name="sell.png" />
             <Image Name="tjtop.png" />
             <Image Name="tjdd.png" />
-            <Image Name="teach.png" />
             <Image Name="heart2.png" />
             <Image Name="changebutton.png" />
             <Image Name="dhk.png" />
@@ -283,6 +338,15 @@
             <Image Name="scratchingbutton.png" />
             <Image Name="tjbg2.png" />
             <Image Name="toothbrush button.png" />
+            <Image Name="back.png" />
+            <Image Name="buy2.png" />
+            <Image Name="houg.png" />
+            <Image Name="tiaoj.png" />
+            <Image Name="tipsbg.png" />
+            <Image Name="tishi.png" />
+            <Image Name="zhuanq.png" />
+            <Image Name="taox1.png" />
+            <Image Name="teach1.png" />
           </Folder>
           <Folder Name="role_name">
             <Image Name="role_name_1.png" />
@@ -335,6 +399,21 @@
             <Image Name="tukuang2.png" />
             <Image Name="tukuang3.png" />
             <Image Name="xiaodw.png" />
+            <Image Name="aniu1.png" />
+            <Image Name="anniu1.png" />
+            <Image Name="bcz.png" />
+            <Image Name="bhcg.png" />
+            <Image Name="bjd.png" />
+            <Image Name="bu.png" />
+            <Image Name="cqdw1.png" />
+            <Image Name="cqdw2.png" />
+            <Image Name="ditu.png" />
+            <Image Name="dw2.png" />
+            <Image Name="jiandao.png" />
+            <Image Name="quantou.png" />
+            <Image Name="srhg.png" />
+            <Image Name="WIN.png" />
+            <Image Name="wenzi.png" />
           </Folder>
           <Folder Name="skill">
             <Image Name="skill_1100.jpg" />
@@ -497,6 +576,27 @@
             <Image Name="role_duds_56.png" />
             <Image Name="role_duds_6.png" />
           </Folder>
+          <Folder Name="teaching">
+            <Image Name="80_100.png" />
+            <Image Name="bg.png" />
+            <Image Name="change.png" />
+            <Image Name="changebutton.png" />
+            <Image Name="close.png" />
+            <Image Name="gift.png" />
+            <Image Name="heart1.png" />
+            <Image Name="heart2.png" />
+            <Image Name="heartbg.png" />
+            <Image Name="player.png" />
+            <Image Name="progress bar.png" />
+            <Image Name="role.png" />
+            <Image Name="scratching.png" />
+            <Image Name="scratchingbutton.png" />
+            <Image Name="servility.png" />
+            <Image Name="Speech bubbles.png" />
+            <Image Name="teach.png" />
+            <Image Name="toothbrush button.png" />
+            <Image Name="toothbrush.png" />
+          </Folder>
         </Folder>
         <Folder Name="fonts">
           <TTF Name="ktjt.ttf" />
@@ -513,14 +613,12 @@
             <Project Name="NodeGrid.csd" Type="Node" />
             <Project Name="LayerLevels.csd" Type="Layer" />
             <Project Name="LayerBattleResult.csd" Type="Layer" />
-            <Project Name="LayerSkills.csd" Type="Layer" />
             <Project Name="LayerGridSelect.csd" Type="Layer" />
             <Project Name="NodeHead.csd" Type="Node" />
             <Project Name="NodeLevel.csd" Type="Node" />
             <Project Name="LayerMaidSelect.csd" Type="Layer" />
             <Project Name="LayerCatch.csd" Type="Layer" />
             <Project Name="LayerGuild.csd" Type="Layer" />
-            <Project Name="LayerTraining.csd" Type="Layer" />
             <Project Name="NodeMain.csd" Type="Node" />
             <PlistInfo Name="PlistMaidHead.csi" Type="Plist" />
             <PlistInfo Name="PlistMaidName.csi" Type="Plist" />
@@ -529,6 +627,11 @@
             <Project Name="NodeSkillItem.csd" Type="Node" />
             <PlistInfo Name="PlistSkill.csi" Type="Plist" />
             <Project Name="LayerGradeUp.csd" Type="Layer" />
+            <Project Name="LayerCaiquan.csd" Type="Layer" />
+            <Project Name="LayerSkillbook.csd" Type="Layer" />
+            <Project Name="NodeJinengpai.csd" Type="Node" />
+            <Project Name="LayerTraining_1.csd" Type="Layer" />
+            <Project Name="NodeJichuxx.csd" Type="Node" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />

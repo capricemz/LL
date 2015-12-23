@@ -6,32 +6,32 @@
       <ObjectData Name="NodeHead" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="layoutLarge" Visible="False" ActionTag="1085597621" Tag="65" IconVisible="False" LeftMargin="-61.0000" RightMargin="-61.0000" TopMargin="-102.5000" BottomMargin="-102.5000" TouchEnable="True" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
-            <Size X="122.0000" Y="205.0000" />
+          <AbstractNodeData Name="layoutLarge" Visible="False" ActionTag="1085597621" Tag="65" IconVisible="False" LeftMargin="-53.5000" RightMargin="-53.5000" TopMargin="-105.0000" BottomMargin="-105.0000" TouchEnable="True" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="107.0000" Y="210.0000" />
             <Children>
-              <AbstractNodeData Name="spriteBg" ActionTag="-1677283309" Tag="96" IconVisible="False" ctype="SpriteObjectData">
-                <Size X="122.0000" Y="205.0000" />
+              <AbstractNodeData Name="spriteBg" ActionTag="-1677283309" Tag="96" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" ctype="SpriteObjectData">
+                <Size X="107.0000" Y="210.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="61.0000" Y="102.5000" />
+                <Position X="53.5000" Y="105.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="MarkedSubImage" Path="images/role_card/role_card_4.png" Plist="modules/main/PlistMaidHead.plist" />
+                <FileData Type="MarkedSubImage" Path="images/role_card/role_card_24.png" Plist="modules/main/PlistMaidHead.plist" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="spriteIcon" ActionTag="2099731518" Tag="67" IconVisible="False" ctype="SpriteObjectData">
-                <Size X="122.0000" Y="205.0000" />
+              <AbstractNodeData Name="spriteIcon" ActionTag="2099731518" Tag="67" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" ctype="SpriteObjectData">
+                <Size X="107.0000" Y="210.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="61.0000" Y="102.5000" />
+                <Position X="53.5000" Y="105.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="MarkedSubImage" Path="images/role_card/role_card_4.png" Plist="modules/main/PlistMaidHead.plist" />
+                <FileData Type="MarkedSubImage" Path="images/role_card/role_card_24.png" Plist="modules/main/PlistMaidHead.plist" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="spriteHpBg" ActionTag="-462967287" Tag="68" IconVisible="False" LeftMargin="24.9996" RightMargin="5.0004" TopMargin="158.0004" BottomMargin="24.9996" ctype="SpriteObjectData">
+              <AbstractNodeData Name="spriteHpBg" ActionTag="-462967287" Tag="68" IconVisible="False" LeftMargin="10.0001" RightMargin="4.9999" TopMargin="168.0004" BottomMargin="19.9996" ctype="SpriteObjectData">
                 <Size X="92.0000" Y="22.0000" />
                 <Children>
                   <AbstractNodeData Name="barHp" ActionTag="252187688" Tag="69" IconVisible="False" LeftMargin="31.0000" RightMargin="7.0000" TopMargin="7.4373" BottomMargin="6.5627" ProgressInfo="100" ctype="LoadingBarObjectData">
@@ -46,57 +46,57 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="70.9996" Y="35.9996" />
+                <Position X="56.0001" Y="30.9996" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5820" Y="0.1756" />
+                <PrePosition X="0.5234" Y="0.1476" />
                 <PreSize X="0.7541" Y="0.1073" />
                 <FileData Type="Normal" Path="images/battle/card_bar_bg.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="txtHp" ActionTag="1383328860" CallBackType="Click" Tag="45" IconVisible="False" LeftMargin="80.5000" RightMargin="34.5000" TopMargin="163.0000" BottomMargin="28.0000" FontSize="15" LabelText="/" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="txtHp" ActionTag="1383328860" CallBackType="Click" Tag="45" IconVisible="False" LeftMargin="47.8699" RightMargin="50.1301" TopMargin="186.0985" BottomMargin="3.9015" FontSize="15" LabelText="/" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="9.0000" Y="20.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="84.0000" Y="35.0000" />
+                <Position X="52.3699" Y="13.9015" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6885" Y="0.1707" />
+                <PrePosition X="0.4894" Y="0.0662" />
                 <PreSize X="0.9344" Y="0.1171" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <OutlineColor A="255" R="0" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="txtHp0" ActionTag="-550579819" CallBackType="Click" Tag="44" IconVisible="False" LeftMargin="56.9997" RightMargin="30.0003" TopMargin="144.9999" BottomMargin="37.0001" FontSize="18" LabelText="6666" VerticalAlignmentType="VT_Bottom" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="txtHp0" ActionTag="-550579819" CallBackType="Click" Tag="44" IconVisible="False" LeftMargin="63.0002" RightMargin="8.9998" TopMargin="152.9997" BottomMargin="34.0003" FontSize="18" LabelText="6666" VerticalAlignmentType="VT_Bottom" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="35.0000" Y="23.0000" />
                 <AnchorPoint />
-                <Position X="56.9997" Y="37.0001" />
+                <Position X="63.0002" Y="34.0003" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4672" Y="0.1805" />
+                <PrePosition X="0.5888" Y="0.1619" />
                 <PreSize X="0.9344" Y="0.1171" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <OutlineColor A="255" R="0" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="txtHp1" ActionTag="-1080050604" CallBackType="Click" Tag="46" IconVisible="False" LeftMargin="78.0001" RightMargin="11.9999" TopMargin="167.9999" BottomMargin="14.0001" FontSize="18" LabelText="5555&#xA;" HorizontalAlignmentType="HT_Right" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="txtHp1" ActionTag="-1080050604" CallBackType="Click" Tag="46" IconVisible="False" LeftMargin="63.0006" RightMargin="11.9994" TopMargin="181.9997" BottomMargin="5.0003" FontSize="18" LabelText="5555&#xA;" HorizontalAlignmentType="HT_Right" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="32.0000" Y="23.0000" />
                 <AnchorPoint ScaleX="1.0000" ScaleY="1.0000" />
-                <Position X="110.0001" Y="37.0001" />
+                <Position X="95.0006" Y="28.0003" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9016" Y="0.1805" />
+                <PrePosition X="0.8879" Y="0.1333" />
                 <PreSize X="0.9344" Y="0.1171" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <OutlineColor A="255" R="0" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="spriteJob" ActionTag="-454030132" Tag="70" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="BottomEdge" LeftMargin="10.4999" RightMargin="62.5001" TopMargin="144.5000" BottomMargin="11.5000" ctype="SpriteObjectData">
+              <AbstractNodeData Name="spriteJob" ActionTag="-454030132" Tag="70" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="BottomEdge" LeftMargin="4.5002" RightMargin="53.4998" TopMargin="151.5000" BottomMargin="9.5000" ctype="SpriteObjectData">
                 <Size X="49.0000" Y="49.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="34.9999" Y="36.0000" />
+                <Position X="29.0002" Y="34.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2869" Y="0.1756" />
+                <PrePosition X="0.2710" Y="0.1619" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="MarkedSubImage" Path="images/common/typeJobRogue.png" Plist="modules/main/PlistMain.plist" />
                 <BlendFunc Src="770" Dst="771" />

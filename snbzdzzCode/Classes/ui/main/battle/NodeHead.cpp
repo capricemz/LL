@@ -199,6 +199,7 @@ void NodeHead::updateTxtGrade()
 		layoutGrade->setVisible(false);
 		return;
 	}
+
 	auto cfgGrade = ManagerCfg::getInstance()->getDicCfgGrade()[idGradeLast];
 	auto vecEffect = UtilString::split(cfgGrade.effect, "|");
 	for (auto var : vecEffect)

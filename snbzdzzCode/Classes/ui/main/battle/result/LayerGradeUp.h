@@ -27,6 +27,7 @@ public:
 private:
 	void createSkin();
 	
+	void updateSpriteGradeUp();
 	void updateLayoutInfoGrade();
 	void updateNodeHead();
 	void updateLayoutInfoMaid();

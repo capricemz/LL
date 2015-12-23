@@ -5,6 +5,7 @@
 #include "../config/ManagerCfg.h"
 #include "../define/DefinesString.h"
 #include "common/util/UtilRandom.h"
+#include "ui/ManagerUI.h"
 
 DataLevel::DataLevel() : _id(0), _index(0), _state(TypeLevelState::NONE), _vecTargetComplete({}), _vecVecAward({})
 {
@@ -77,8 +78,6 @@ void DataLevel::dealLevelPassed()
 	//处理收益数据
 	auto award = getVecIdThingAward(true);
 	dealPassedIncome(award);
-	auto handleDataIncome = managerData->getHandleDataIncome();
-	handleDataIncome->dataFileSet();
 }
 
 void DataLevel::dealLevelTarget()
@@ -307,6 +306,8 @@ void DataLevel::dealPassedIncome(const vector<vector<int>> &award)
 		auto value = var[1];
 		handleDataIncome->addThing(idThing, value);
 	}
+	handleDataIncome->dataFileSet();
+	ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::UPDATE_LAYOUT_TOP);
 }
 
 HandleDataLevels::HandleDataLevels() : _dicDataLevel({}), _levelCurrent(0)

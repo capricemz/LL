@@ -3,7 +3,7 @@
 #include "ManagerData.h"
 #include "../config/ManagerCfg.h"
 
-HandleDataGrade::HandleDataGrade() : _idGradeLast(0)
+HandleDataGrade::HandleDataGrade() : _idGradeLast(ID_GRADE_FIRST)
 {
 }
 
@@ -13,7 +13,7 @@ HandleDataGrade::~HandleDataGrade()
 
 void HandleDataGrade::setIdGradeLast()
 {
-	_idGradeLast = getIdGrade() - 1;
+	_idGradeLast = getIdGrade();
 }
 
 CfgGrade HandleDataGrade::getCfgGradeLast()
@@ -25,7 +25,7 @@ CfgGrade HandleDataGrade::getCfgGradeLast()
 bool HandleDataGrade::getIsGradeUp()//获取是否等级提升
 {
 	auto idGrade = getIdGrade();
-	return idGrade > _idGradeLast + 1;
+	return idGrade > _idGradeLast;
 }
 
 bool HandleDataGrade::getIsGradeMax()
@@ -34,7 +34,7 @@ bool HandleDataGrade::getIsGradeMax()
 	auto value = handleDatIncome->getThing(IdThing::EXP);//当前经验
 	auto managerCfg = ManagerCfg::getInstance();
 	auto dicCfgGrade = managerCfg->getDicCfgGrade();
-	auto id = 1000;
+	auto id = ID_GRADE_FIRST;
 	auto isMax = false;
 	while (true)
 	{
@@ -62,7 +62,8 @@ int HandleDataGrade::getIdGrade()
 	auto value = handleDatIncome->getThing(IdThing::EXP);//当前经验
 	auto managerCfg = ManagerCfg::getInstance();
 	auto dicCfgGrade = managerCfg->getDicCfgGrade();
-	auto id = 1000;
+	auto id = ID_GRADE_FIRST;
+	auto idGrade = 0;
 	while (true)
 	{
 		if (dicCfgGrade.find(id) == dicCfgGrade.end())
@@ -76,10 +77,10 @@ int HandleDataGrade::getIdGrade()
 		{
 			break;
 		}
-
+		idGrade = cfgGradeTemp.id;
 		id++;
 	}//获取当前等级配置
-	return id;
+	return idGrade;
 }
 
 int HandleDataGrade::getGrade()
@@ -88,7 +89,7 @@ int HandleDataGrade::getGrade()
 	auto value = handleDatIncome->getThing(IdThing::EXP);//当前经验
 	auto managerCfg = ManagerCfg::getInstance();
 	auto dicCfgGrade = managerCfg->getDicCfgGrade();
-	auto id = 1000;
+	auto id = ID_GRADE_FIRST;
 	auto grade = 1;
 	while (true)
 	{
@@ -117,7 +118,7 @@ string HandleDataGrade::getGradeEffect()
 	auto value = handleDatIncome->getThing(IdThing::EXP);//当前经验
 	auto managerCfg = ManagerCfg::getInstance();
 	auto dicCfgGrade = managerCfg->getDicCfgGrade();
-	auto id = 1000;
+	auto id = ID_GRADE_FIRST;
 	string effect = "";
 	while (true)
 	{
@@ -146,7 +147,7 @@ int HandleDataGrade::getGradeExpNow()
 	auto value = handleDatIncome->getThing(IdThing::EXP);//当前经验
 	auto managerCfg = ManagerCfg::getInstance();
 	auto dicCfgGrade = managerCfg->getDicCfgGrade();
-	auto id = 1000;
+	auto id = ID_GRADE_FIRST;
 	auto exp = 0;
 	while (true)
 	{
@@ -175,7 +176,7 @@ int HandleDataGrade::getGradeExpNeed()
 	auto value = handleDatIncome->getThing(IdThing::EXP);//当前经验
 	auto managerCfg = ManagerCfg::getInstance();
 	auto dicCfgGrade = managerCfg->getDicCfgGrade();
-	auto id = 1000;
+	auto id = ID_GRADE_FIRST;
 	auto exp = 0;
 	while (true)
 	{

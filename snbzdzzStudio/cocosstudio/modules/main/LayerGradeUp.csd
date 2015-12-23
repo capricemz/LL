@@ -130,66 +130,66 @@
             <Children>
               <AbstractNodeData Name="spriteIcon0" ActionTag="-1246274964" Tag="56" IconVisible="False" LeftMargin="12.0000" RightMargin="254.0000" TopMargin="3.0000" BottomMargin="113.0000" ctype="SpriteObjectData">
                 <Size X="84.0000" Y="84.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="54.0000" Y="155.0000" />
+                <AnchorPoint ScaleX="0.5000" />
+                <Position X="54.0000" Y="113.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1543" Y="0.7750" />
+                <PrePosition X="0.1543" Y="0.5650" />
                 <PreSize X="0.2400" Y="0.4200" />
                 <FileData Type="Normal" Path="images/battle/battle_result/item.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteIcon1" ActionTag="996497015" Tag="61" IconVisible="False" LeftMargin="135.0000" RightMargin="131.0000" TopMargin="3.0000" BottomMargin="113.0000" ctype="SpriteObjectData">
                 <Size X="84.0000" Y="84.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="177.0000" Y="155.0000" />
+                <AnchorPoint ScaleX="0.5000" />
+                <Position X="177.0000" Y="113.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5057" Y="0.7750" />
+                <PrePosition X="0.5057" Y="0.5650" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="images/battle/battle_result/item.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteIcon2" ActionTag="1139062335" Tag="62" IconVisible="False" LeftMargin="258.0000" RightMargin="8.0000" TopMargin="3.0000" BottomMargin="113.0000" ctype="SpriteObjectData">
                 <Size X="84.0000" Y="84.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="300.0000" Y="155.0000" />
+                <AnchorPoint ScaleX="0.5000" />
+                <Position X="300.0000" Y="113.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8571" Y="0.7750" />
+                <PrePosition X="0.8571" Y="0.5650" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="images/battle/battle_result/item.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteIcon3" ActionTag="1194913170" Tag="63" IconVisible="False" LeftMargin="12.0000" RightMargin="254.0000" TopMargin="113.0000" BottomMargin="3.0000" ctype="SpriteObjectData">
                 <Size X="84.0000" Y="84.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="54.0000" Y="45.0000" />
+                <AnchorPoint ScaleX="0.5000" />
+                <Position X="54.0000" Y="3.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1543" Y="0.2250" />
+                <PrePosition X="0.1543" Y="0.0150" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="images/battle/battle_result/item.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteIcon4" ActionTag="-2131980636" Tag="64" IconVisible="False" LeftMargin="135.0000" RightMargin="131.0000" TopMargin="113.0000" BottomMargin="3.0000" ctype="SpriteObjectData">
                 <Size X="84.0000" Y="84.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="177.0000" Y="45.0000" />
+                <AnchorPoint ScaleX="0.5000" />
+                <Position X="177.0000" Y="3.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5057" Y="0.2250" />
+                <PrePosition X="0.5057" Y="0.0150" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="images/battle/battle_result/item.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteIcon5" ActionTag="2047767813" Tag="65" IconVisible="False" LeftMargin="258.0000" RightMargin="8.0000" TopMargin="113.0000" BottomMargin="3.0000" ctype="SpriteObjectData">
                 <Size X="84.0000" Y="84.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="300.0000" Y="45.0000" />
+                <AnchorPoint ScaleX="0.5000" />
+                <Position X="300.0000" Y="3.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8571" Y="0.2250" />
+                <PrePosition X="0.8571" Y="0.0150" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="images/battle/battle_result/item.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />

@@ -18,6 +18,8 @@ static const int TRAINING_NUM_RST_VALUE = 1;
 static const int DATA_UNLOCK_INIT_MAID = 1000;//初始化时默认解锁的女仆
 static const int DATA_UNLOCK_INIT_LEVEL = 1000;//初始化时默认解锁的关卡
 
+static const int ID_GRADE_FIRST = 1000;//第一个等级id
+
 static const int GRID_SELECT_MAX = 9;
 static const int GRID_SELECTED_MAX = 3;
 static const int ENTITY_BATTLE_MAX = 3;
@@ -57,7 +59,7 @@ static const vector<Vec2> vecMoveDistanceSpriteMaid =
 {
 	Vec2(470.0f, 0.0f), Vec2(280.0f, 0.0f), Vec2(-240.0f, 0.0f)
 };
-static const Vec2 moveDistanceGradeUp = Vec2(0.0f, 345.0f);
+static const Vec2 moveDistanceGradeUp = Vec2(0.0f, 255.0f);
 
 enum class TypeLoadState
 {

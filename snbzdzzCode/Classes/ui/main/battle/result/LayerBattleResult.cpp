@@ -48,7 +48,7 @@ void LayerBattleResult::runAppearAction(const function<void()> &func /*= nullptr
 		spriteVictoryDefeatBg->runAction(FadeIn::create(duration));
 	});
 	vecAction.pushBack(actionCallFunc);
-	auto actionDelay = DelayTime::create(duration);
+	auto actionDelay = DelayTime::create(duration + 1.0f / 60.0f);
 	vecAction.pushBack(actionDelay);
 	
 	duration = 10.0f / 60.0f;

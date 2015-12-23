@@ -144,7 +144,7 @@ class HandleDataGrid
 		int getIndexGridBattle();
 		void resetIndexGridBattle(){ _indexGridBattle = 0; }
 		bool isRoundOver() { return _indexGridBattle == GRID_SELECTED_MAX; }//回合是否结束
-		
+
 	private:
 		vector<Vec2> _vecPostionGridSelectedMaid;
 		vector<Vec2> _vecPostionGridSelectedMst;
@@ -673,7 +673,7 @@ class HandleDataGrade
 		{
 			return _idGradeLast;
 		}
-
+		
 	private:
 		int _idGradeLast;//上次的等级的id
 		
