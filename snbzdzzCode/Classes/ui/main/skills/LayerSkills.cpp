@@ -146,8 +146,6 @@ void LayerSkills::updateLayoutMaid(const bool &isInit /*= false*/)
 		layoutMaid->addChild(_uiEntity, -1);
 	}
 	_uiEntity->updateSkin(idEntityCurrent, 1.0f);
-	_uiEntity->getLayoutBg()->setTouchEnabled(true);
-	_uiEntity->getLayoutBg()->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnMaidBuy, this));
 
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
 	auto isBuy = handleDataUnlock->getIsBuyMaid(idEntityCurrent);
@@ -192,10 +190,17 @@ void LayerSkills::updateLayoutMaid(const bool &isInit /*= false*/)
 			}
 		}
 	}
-	
 
-	auto spriteBuyTip = (Sprite *)layoutMaid->getChildByName("spriteBuyTip");
-	spriteBuyTip->setVisible(isUnlock && !isBuy);
+	auto btnGoldBuy = (Button *)layoutMaid->getChildByName("btnGoldBuy");
+	btnGoldBuy->setVisible(isUnlock && !isBuy);
+	if (btnGoldBuy->isVisible())
+	{
+		btnGoldBuy->addTouchEventListener(CC_CALLBACK_2(LayerSkills::onTouchBtnMaidBuy, this));
+	}
+	else
+	{
+		btnGoldBuy->addTouchEventListener(nullptr);
+	}
 
 	auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[idEntityCurrent];
 	auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(cfgEntity.urlPicName);
@@ -250,7 +255,10 @@ void LayerSkills::updateLayoutSkillItems(const bool &isInit /*= false*/)
 			break;
 		}
 	}
-	CCASSERT(dataEntity != nullptr, "LayerSkills::updateLayoutSkillItems idEntityCurrent wrong");
+	if (dataEntity == nullptr)
+	{
+		return;
+	}
 
 	auto layoutSkillItems = (Layout *)_skin->getChildByName("layoutSkillItems");
 	auto layout = (Layout *)layoutSkillItems->getChildByName("layout");
@@ -586,6 +594,8 @@ void LayerSkills::onTouchBtnMaidBuy(Ref *ref, Widget::TouchEventType type)
 			auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
 			handleDataUnlock->setIsBuyMaid(idEntityCurrent);
 			handleDataUnlock->dataFileSet();
+			auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+			handleDataEntity->createDataEntityMaid(idEntityCurrent);//构建女仆数据
 			updateSkin();
 		}
 	}
@@ -623,7 +633,7 @@ void LayerSkills::onTouchBtnNext(Ref *ref, Widget::TouchEventType type)
 
 		auto iter = find(_vecShowIdEntity.begin(), _vecShowIdEntity.end(), idEntityCurrent);
 		auto index = 0;
-		if (iter != _vecShowIdEntity.end() - 1)
+		if (iter != _vecShowIdEntity.begin() + _vecShowIdEntity.size() - 1)
 		{
 			index = (iter + 1) - _vecShowIdEntity.begin();
 		}
@@ -631,7 +641,7 @@ void LayerSkills::onTouchBtnNext(Ref *ref, Widget::TouchEventType type)
 		{
 			index = 0;
 		}
-		idEntityCurrent = _vecShowIdEntity[index];
+		handleDataSkill->setIdEntityCurrent(_vecShowIdEntity[index]);
 		updateLayoutMaid();
 		updateLayoutSkillItems();
 	}

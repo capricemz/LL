@@ -65,6 +65,7 @@
       <FilePathData Path="images/skill/skill_2007.jpg" />
       <FilePathData Path="images/skill/skill_2008.jpg" />
       <FilePathData Path="images/skill/skill_2009.jpg" />
+      <FilePathData Path="images/skill/skill_1202.jpg" />
     </ImageFiles>
     <MaxSize Width="1024" Height="1024" />
   </Content>

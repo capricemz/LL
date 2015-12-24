@@ -500,7 +500,7 @@ void HandleDataEntity::createDataEntityMaid()
 		{
 			auto cfgEntity = var.second;
 			auto idEntity = cfgEntity.id;
-			if (cfgEntity.type == TypeEntity::MAID && handleDataUnlock->getIsUnlockMaid(idEntity))
+			if (cfgEntity.type == TypeEntity::MAID && handleDataUnlock->getIsBuyMaid(idEntity))
 			{
 				auto dataEntity = createDataEntity(Value(idEntity).asInt());
 				_vecDataEntityMaid.pushBack(dataEntity);
@@ -517,7 +517,7 @@ void HandleDataEntity::createDataEntityMaid()
 		}
 		for (auto var : vecTemp)
 		{
-			if (handleDataUnlock->getIsUnlockMaid(var->getIdEntity()))
+			if (handleDataUnlock->getIsBuyMaid(var->getIdEntity()))
 			{
 				_vecDataEntityMaid.pushBack(var);
 			}
@@ -537,7 +537,7 @@ void HandleDataEntity::createDataEntityMaid(const int &idEntity)
 		}
 	}
 	auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
-	if (handleDataUnlock->getIsUnlockMaid(idEntity))
+	if (handleDataUnlock->getIsBuyMaid(idEntity))
 	{
 		auto dataEntity = createDataEntity(Value(idEntity).asInt());
 		_vecDataEntityMaid.pushBack(dataEntity);
@@ -666,7 +666,7 @@ void HandleDataEntity::dealDataEntitySkillSort(const bool &isForce /*= false*/)
 	}
 }
 
-void HandleDataEntity::dealBattleOver()
+void HandleDataEntity::resetIndexRound()
 {
 	resetIndexMst();
 	resetIndexMaid();

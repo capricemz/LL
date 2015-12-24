@@ -161,7 +161,7 @@ void LayerBattle::createData()
 	handleDataGrid->resetIndexGridBattle();
 
 	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	handleDataEntity->dealBattleOver();
+	handleDataEntity->resetIndexRound();
 	handleDataEntity->resetDataEntityMaid();
 	handleDataEntity->vecSkillActiveSortMaid();
 }

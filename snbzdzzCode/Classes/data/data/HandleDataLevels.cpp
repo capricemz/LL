@@ -72,7 +72,6 @@ void DataLevel::dealLevelPassed()
 	for (auto var : cfgLevel.unlockMaids)
 	{
 		handleDataUnlock->setIsUnlockMaid(var);//解锁女仆
-		handleDataEntity->createDataEntityMaid(var);//构建女仆数据
 	}
 	handleDataUnlock->dataFileSet();//保存数据
 	//处理收益数据

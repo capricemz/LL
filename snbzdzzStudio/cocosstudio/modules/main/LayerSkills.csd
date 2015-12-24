@@ -329,6 +329,34 @@
             <EasingData Type="0" />
           </IntFrame>
         </Timeline>
+        <Timeline ActionTag="-573801320" Property="Position">
+          <PointFrame FrameIndex="0" X="0.0001" Y="0.0000">
+            <EasingData Type="0" />
+          </PointFrame>
+          <PointFrame FrameIndex="1" X="0.0001" Y="0.0000">
+            <EasingData Type="0" />
+          </PointFrame>
+        </Timeline>
+        <Timeline ActionTag="-573801320" Property="Scale">
+          <ScaleFrame FrameIndex="0" X="1.0000" Y="1.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="1" X="1.0000" Y="1.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+        </Timeline>
+        <Timeline ActionTag="-573801320" Property="RotationSkew">
+          <ScaleFrame FrameIndex="0" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="1" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+        </Timeline>
+        <Timeline ActionTag="-573801320" Property="VisibleForFrame">
+          <BoolFrame FrameIndex="0" Tween="False" Value="False" />
+          <BoolFrame FrameIndex="1" Tween="False" Value="True" />
+        </Timeline>
       </Animation>
       <AnimationList>
         <AnimationInfo Name="animationHided" StartIndex="0" EndIndex="0">
@@ -468,16 +496,18 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="spriteBuyTip" ActionTag="1310964043" Tag="54" IconVisible="False" LeftMargin="239.5001" RightMargin="239.4999" TopMargin="473.4973" BottomMargin="433.5027" ctype="SpriteObjectData">
+              <AbstractNodeData Name="btnGoldBuy" ActionTag="-1707975472" Tag="172" IconVisible="False" LeftMargin="239.5000" RightMargin="239.5000" TopMargin="473.5000" BottomMargin="433.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="131" Scale9Height="31" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="161.0000" Y="53.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="320.0001" Y="460.0027" />
+                <Position X="320.0000" Y="460.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.4792" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="MarkedSubImage" Path="images/girl/buy1.png" Plist="modules/main/PlistMain.plist" />
-                <BlendFunc Src="770" Dst="771" />
+                <PreSize X="0.2516" Y="0.0552" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <NormalFileData Type="MarkedSubImage" Path="images/girl/buy1.png" Plist="modules/main/PlistMain.plist" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteNameBg" ActionTag="1881748643" Tag="57" IconVisible="False" LeftMargin="1.5000" RightMargin="391.5000" TopMargin="172.5000" BottomMargin="732.5000" ctype="SpriteObjectData">
                 <Size X="247.0000" Y="55.0000" />
@@ -565,14 +595,14 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutSkillItems" ActionTag="-573801320" Tag="998" IconVisible="False" LeftMargin="0.0001" RightMargin="-0.0001" ClipAble="True" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutSkillItems" ActionTag="-573801320" VisibleForFrame="False" Tag="998" IconVisible="False" LeftMargin="0.0001" RightMargin="-0.0001" ClipAble="True" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="640.0000" Y="960.0000" />
             <Children>
               <AbstractNodeData Name="spriteBg" ActionTag="458124559" Tag="665" IconVisible="False" LeftMargin="-11.9998" RightMargin="-12.0002" TopMargin="219.5006" BottomMargin="219.4994" ctype="SpriteObjectData">
                 <Size X="664.0000" Y="521.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="-11.9998" Y="479.9994" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Scale ScaleX="0.0100" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="-0.0187" Y="0.5000" />
                 <PreSize X="0.0000" Y="0.0000" />
@@ -583,14 +613,14 @@
                 <Size X="724.0000" Y="525.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="-35.2258" Y="457.6399" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Scale ScaleX="0.0100" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="-0.0550" Y="0.4767" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="images/girl/paper.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="layout" ActionTag="-1726291939" Tag="118" IconVisible="False" TopMargin="220.0000" BottomMargin="240.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+              <AbstractNodeData Name="layout" ActionTag="-1726291939" Alpha="0" Tag="118" IconVisible="False" TopMargin="220.0000" BottomMargin="240.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="640.0000" Y="500.0000" />
                 <Children>
                   <AbstractNodeData Name="btnBase" ActionTag="-1365711335" Tag="597" IconVisible="False" LeftMargin="-0.4991" RightMargin="565.4991" TopMargin="33.5003" BottomMargin="353.4997" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="45" Scale9Height="91" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">

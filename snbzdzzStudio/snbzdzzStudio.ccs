@@ -409,6 +409,7 @@
             <Image Name="skill_2007.jpg" />
             <Image Name="skill_2008.jpg" />
             <Image Name="skill_2009.jpg" />
+            <Image Name="skill_1202.jpg" />
           </Folder>
           <Folder Name="role_head">
             <Image Name="role_head_bg_6.png" />

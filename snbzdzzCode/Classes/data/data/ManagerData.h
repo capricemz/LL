@@ -288,7 +288,7 @@ class HandleDataEntity
 
 		void dealVecSkillActiveInUse2UseOverMaid();//处理行动结束数据
 		void dealDataEntitySkillSort(const bool &isForce = false);//处理回合结束数据
-		void dealBattleOver();//处理战斗结束数据
+		void resetIndexRound();//处理战斗结束数据
 		
 	public:
 		Vector<DataEntity *> &getVecDataEntityMst()
