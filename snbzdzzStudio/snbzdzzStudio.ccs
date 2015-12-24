@@ -6,41 +6,36 @@
         <Folder Name="images">
           <Folder Name="common">
             <Image Name="loading.png" />
-            <Image Name="element_ct.png" />
-            <Image Name="element_ff.png" />
-            <Image Name="element_kg.png" />
-            <Image Name="element_mf.png" />
-            <Image Name="element_qf.png" />
-            <Image Name="element_sm.png" />
-            <Image Name="element_wf.png" />
-            <Image Name="element_wg.png" />
             <Image Name="typeJobRogue.png" />
             <Image Name="typeJobMage.png" />
             <Image Name="typeJobArcher.png" />
             <Image Name="typeJobTreat.png" />
             <Image Name="typeJobTank.png" />
             <Image Name="typeJobWarrior.png" />
-            <Image Name="add.png" />
-            <Image Name="bubble.png" />
             <Image Name="btn1.png" />
-            <Image Name="element_af.png" />
-            <Image Name="element_ak.png" />
-            <Image Name="element_hp.png" />
-            <Image Name="element_hpj.png" />
-            <Image Name="element_hps.png" />
-            <Image Name="element_jh.png" />
-            <Image Name="element_nf.png" />
+            <Image Name="bs.png" />
+            <Image Name="button.png" />
+            <Image Name="gold.png" />
+            <Image Name="treasure.png" />
+            <Image Name="back1.png" />
+            <Image Name="xiaobiao.png" />
+            <Image Name="xiaobiao2.png" />
+            <Image Name="guanbi.png" />
+            <Image Name="taox1.png" />
+            <Image Name="hp.png" />
+            <Image Name="jb.png" />
+            <Image Name="zs.png" />
           </Folder>
           <Folder Name="main">
-            <Image Name="nemu_btn_1.png" />
-            <Image Name="nemu_btn_2.png" />
-            <Image Name="nemu_btn_3.png" />
-            <Image Name="nemu_btn_4.png" />
-            <Image Name="nemu_btn_5.png" />
-            <Image Name="nemu_btn_xuanzhong.png" />
-            <Image Name="main_head.png" />
-            <Image Name="main_role_bg.png" />
-            <Image Name="main_zy_bg.png" />
+            <Image Name="maoxian.png" />
+            <Image Name="checkpoint.png" />
+            <Image Name="dibubg.png" />
+            <Image Name="dingbg.png" />
+            <Image Name="ghzd.png" />
+            <Image Name="guild (2).png" />
+            <Image Name="zyd.png" />
+            <Image Name="menuBtn2.png" />
+            <Image Name="sn_icon.png" />
           </Folder>
           <Folder Name="battle">
             <Image Name="card_bar.png" />
@@ -51,16 +46,11 @@
             <Image Name="nl_bg.png" />
             <Image Name="ordinary_card_bg.png" />
             <Image Name="role_bg.png" />
-            <Image Name="skill_card_bg.png" />
             <Image Name="line.png" />
             <Image Name="vs.png" />
             <Image Name="lianxian_dian.png" />
             <Image Name="lianxian_quan.png" />
             <Image Name="lianxian_xian.png" />
-            <Image Name="zl.png" />
-            <Image Name="paper.jpg" />
-            <Image Name="rock.jpg" />
-            <Image Name="scissors.jpg" />
             <Folder Name="battle_result">
               <Image Name="exp_bar.png" />
               <Image Name="exp_bg.png" />
@@ -79,25 +69,17 @@
             <Image Name="jinengka.png" />
             <Image Name="role_head_bg.png" />
             <Image Name="anniu1.png" />
-            <Image Name="bbu.png" />
-            <Image Name="bcz.png" />
             <Image Name="bhcg.png" />
-            <Image Name="bjd.png" />
-            <Image Name="bu.png" />
             <Image Name="cqdw1.png" />
             <Image Name="cqdw2.png" />
             <Image Name="ditu.png" />
             <Image Name="dw2.png" />
             <Image Name="Exp.png" />
-            <Image Name="jiandao.png" />
             <Image Name="jiangli.png" />
             <Image Name="jiantou.png" />
             <Image Name="jingyantiao.png" />
             <Image Name="jixu.png" />
             <Image Name="jixudiwen.png" />
-            <Image Name="quantou.png" />
-            <Image Name="shengli.png" />
-            <Image Name="shibai.png" />
             <Image Name="srhg.png" />
             <Image Name="taoxin.png" />
             <Image Name="taoxin2.png" />
@@ -107,6 +89,13 @@
             <Image Name="wenzi.png" />
             <Image Name="WIN.png" />
             <Image Name="xiaodw.png" />
+            <Image Name="catchBtnPaper.png" />
+            <Image Name="catchBtnRock.png" />
+            <Image Name="catchBtnScissors.png" />
+            <Image Name="catchPaper.png" />
+            <Image Name="catchRock.png" />
+            <Image Name="catchScissors.png" />
+            <Image Name="bhsb.png" />
           </Folder>
           <Folder Name="role_card">
             <Image Name="role_card_4.png" />
@@ -194,37 +183,22 @@
             <Image Name="role_image_6.png" />
           </Folder>
           <Folder Name="icon">
+            <Image Name="ab.png" />
+            <Image Name="ch.png" />
+            <Image Name="heart.png" />
+            <Image Name="heart2.png" />
+            <Image Name="hp.png" />
+            <Image Name="jh_1.png" />
             <Image Name="mb.png" />
             <Image Name="md.png" />
             <Image Name="pb.png" />
             <Image Name="pd.png" />
+            <Image Name="rf.png" />
             <Image Name="rh.png" />
             <Image Name="rn.png" />
             <Image Name="sd.png" />
             <Image Name="ub.png" />
-            <Image Name="ax.png" />
-            <Image Name="bgn.png" />
-            <Image Name="bgp.png" />
-            <Image Name="hp_1.png" />
-            <Image Name="hp_2.png" />
-            <Image Name="hp_3.png" />
-            <Image Name="hp_4.png" />
-            <Image Name="hp_5.png" />
-            <Image Name="hp_6.png" />
-            <Image Name="hp_7.png" />
-            <Image Name="hp_bg.png" />
-            <Image Name="jb.png" />
             <Image Name="zd.png" />
-            <Image Name="zs.png" />
-            <Image Name="ch.png" />
-            <Image Name="ab.png" />
-            <Image Name="guanbi.png" />
-            <Image Name="skill1.png" />
-            <Image Name="skill2.png" />
-            <Image Name="skill3.png" />
-            <Image Name="skill4.png" />
-            <Image Name="taox1.png" />
-            <Image Name="jh_1.png" />
           </Folder>
           <Folder Name="levels">
             <Image Name="gk_xx.png" />
@@ -237,26 +211,14 @@
             <Image Name="xing.png" />
             <Image Name="gk_btn.png" />
             <Image Name="xingKong.png" />
-            <Image Name="girl.png" />
             <Image Name="gk_btn1.png" />
             <Image Name="new.png" />
-            <Image Name="treasure.png" />
-            <Image Name="gold.png" />
-            <Image Name="button.png" />
-            <Image Name="bs.png" />
-            <Image Name="background1.png" />
-            <Image Name="background.png" />
-            <Image Name="adventure.png" />
-            <Image Name="checkpoint.png" />
-            <Image Name="church.png" />
-            <Image Name="girls.png" />
             <Image Name="guild.png" />
-            <Image Name="shop.png" />
-            <Image Name="teach.png" />
-            <Image Name="button4.png" />
-            <Image Name="button3.png" />
-            <Image Name="guild (2).png" />
             <Image Name="gift_bag.png" />
+            <Image Name="moon1.png" />
+            <Image Name="moon11.png" />
+            <Image Name="moon2.png" />
+            <Image Name="moon21.png" />
           </Folder>
           <Folder Name="girl">
             <Image Name="cut.png" />
@@ -287,15 +249,16 @@
             <Image Name="paper.png" />
             <Image Name="paper_bg.png" />
             <Image Name="paper_top.png" />
-            <Image Name="skill_btn1.png" />
-            <Image Name="skill_btn2.png" />
-            <Image Name="skill_btn3.png" />
-            <Image Name="skill_btn4.png" />
             <Image Name="skill_icon_top1.png" />
             <Image Name="skill_icon_top2.png" />
             <Image Name="skill_new_bg.png" />
             <Image Name="wzbg4.png" />
             <Image Name="wzjcxx.png" />
+            <Image Name="skill1.png" />
+            <Image Name="skill2.png" />
+            <Image Name="skill3.png" />
+            <Image Name="skill4.png" />
+            <Image Name="loveb.png" />
           </Folder>
           <Folder Name="formation">
             <Image Name="formation.png" />
@@ -307,18 +270,7 @@
             <Image Name="role5.png" />
             <Image Name="rolebox.png" />
             <Image Name="diwen.png" />
-            <Image Name="need1.png" />
-            <Image Name="need2.png" />
-            <Image Name="need3.png" />
-            <Image Name="typeJobMage.png" />
-            <Image Name="typeJobRogue.png" />
-            <Image Name="typeJobWarrior.png" />
             <Image Name="xin.png" />
-            <Image Name="dibubg.png" />
-            <Image Name="dingbg.png" />
-            <Image Name="ghzd.png" />
-            <Image Name="maoxian.png" />
-            <Image Name="sn.png" />
             <Image Name="dhk1.png" />
             <Image Name="dhk2.png" />
             <Image Name="dhk3.png" />
@@ -328,10 +280,11 @@
             <Image Name="rwxk.png" />
             <Image Name="rwxk2.png" />
             <Image Name="tgtjb.png" />
-            <Image Name="back1.png" />
-            <Image Name="xiaobiao.png" />
-            <Image Name="xiaobiao2.png" />
-            <Image Name="zyd.png" />
+            <Image Name="back.png" />
+            <Image Name="Began to fight.png" />
+            <Image Name="begFight.png" />
+            <Image Name="Customs.png" />
+            <Image Name="rolebox1.png" />
           </Folder>
           <Folder Name="teach">
             <Image Name="heart.png" />
@@ -340,7 +293,6 @@
             <Image Name="tjdd.png" />
             <Image Name="heart2.png" />
             <Image Name="changebutton.png" />
-            <Image Name="dhk.png" />
             <Image Name="gift.png" />
             <Image Name="progress bar.png" />
             <Image Name="scratchingbutton.png" />
@@ -355,6 +307,10 @@
             <Image Name="zhuanq.png" />
             <Image Name="taox1.png" />
             <Image Name="teach1.png" />
+            <Image Name="harem.png" />
+            <Image Name="sell.png" />
+            <Image Name="teach button.png" />
+            <Image Name="teach.png" />
           </Folder>
           <Folder Name="role_name">
             <Image Name="role_name_1.png" />
@@ -566,13 +522,9 @@
             <Project Name="NodeSkillItem.csd" Type="Node" />
             <PlistInfo Name="PlistSkill.csi" Type="Plist" />
             <Project Name="LayerGradeUp.csd" Type="Layer" />
-            <Project Name="LayerCaiquan.csd" Type="Layer" />
-            <Project Name="LayerSkillbook.csd" Type="Layer" />
-            <Project Name="NodeJinengpai.csd" Type="Node" />
             <Project Name="LayerTraining_1.csd" Type="Layer" />
             <Project Name="LayerTraining.csd" Type="Layer" />
             <Project Name="LayerSkills.csd" Type="Layer" />
-            <Project Name="LayerSkills_1.csd" Type="Layer" />
             <Project Name="LayerLove.csd" Type="Layer" />
           </Folder>
           <Folder Name="welcome">

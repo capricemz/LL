@@ -49,9 +49,9 @@ static const string RES_IMAGES_MAIN_CIRCLE_LINE_LINE_PNG = "images/battle/lianxi
 static const vector<string> RES_IMAGES_MAIN_SRP_PNG_VEC =
 {
 	"",
-	"images/battle/scissors.jpg",
-	"images/battle/rock.jpg",
-	"images/battle/paper.jpg"
+	"images/battle/catchScissors.png",
+	"images/battle/catchRock.png",
+	"images/battle/catchPaper.png"
 };
 
 static const string RES_IMAGES_MAIN_COMMON_STAR_PNG = "images/battle/battle_result/star.png";

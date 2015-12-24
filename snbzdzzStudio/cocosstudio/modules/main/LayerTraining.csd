@@ -74,7 +74,7 @@
                 <PrePosition X="0.9422" Y="0.8988" />
                 <PreSize X="0.0969" Y="0.0635" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <NormalFileData Type="Normal" Path="images/skills_panel/button8.png" Plist="" />
+                <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -149,7 +149,7 @@
                 <Position X="-0.0002" Y="960.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0000" Y="1.0000" />
+                <PrePosition Y="1.0000" />
                 <PreSize X="1.0000" Y="0.1542" />
                 <SingleColor A="255" R="150" G="150" B="255" />
                 <FirstColor A="255" R="150" G="150" B="255" />

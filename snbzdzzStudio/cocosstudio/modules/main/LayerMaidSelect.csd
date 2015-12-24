@@ -102,13 +102,55 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
+                  <AbstractNodeData Name="layoutHeadMaid0" ActionTag="780263861" Tag="616" IconVisible="False" LeftMargin="128.0000" RightMargin="388.0000" TopMargin="167.9204" BottomMargin="148.0796" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
+                    <Size X="124.0000" Y="124.0000" />
+                    <AnchorPoint ScaleX="0.5000" />
+                    <Position X="190.0000" Y="148.0796" />
+                    <Scale ScaleX="0.9671" ScaleY="0.9671" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.2969" Y="0.3365" />
+                    <PreSize X="0.1937" Y="0.2818" />
+                    <FileData Type="Normal" Path="images/formation/rwxk.png" Plist="" />
+                    <SingleColor A="255" R="150" G="200" B="255" />
+                    <FirstColor A="255" R="150" G="200" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="layoutHeadMaid1" ActionTag="-602085298" Tag="617" IconVisible="False" LeftMargin="258.0000" RightMargin="258.0000" TopMargin="167.9204" BottomMargin="148.0796" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
+                    <Size X="124.0000" Y="124.0000" />
+                    <AnchorPoint ScaleX="0.5000" />
+                    <Position X="320.0000" Y="148.0796" />
+                    <Scale ScaleX="0.9671" ScaleY="0.9671" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.3365" />
+                    <PreSize X="0.1937" Y="0.2818" />
+                    <FileData Type="Normal" Path="images/formation/rwxk.png" Plist="" />
+                    <SingleColor A="255" R="150" G="200" B="255" />
+                    <FirstColor A="255" R="150" G="200" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="layoutHeadMaid2" ActionTag="380187812" Tag="618" IconVisible="False" LeftMargin="388.0000" RightMargin="128.0000" TopMargin="167.9204" BottomMargin="148.0796" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
+                    <Size X="124.0000" Y="124.0000" />
+                    <AnchorPoint ScaleX="0.5000" />
+                    <Position X="450.0000" Y="148.0796" />
+                    <Scale ScaleX="0.9671" ScaleY="0.9671" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.7031" Y="0.3365" />
+                    <PreSize X="0.1937" Y="0.2818" />
+                    <FileData Type="Normal" Path="images/formation/rwxk.png" Plist="" />
+                    <SingleColor A="255" R="150" G="200" B="255" />
+                    <FirstColor A="255" R="150" G="200" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
+                  </AbstractNodeData>
                   <AbstractNodeData Name="layoutHeadMaid3" ActionTag="234358396" Tag="675" IconVisible="False" LeftMargin="128.0000" RightMargin="388.0000" TopMargin="300.0000" BottomMargin="16.0000" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
                     <Size X="124.0000" Y="124.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                    <Position X="190.0000" Y="140.0000" />
+                    <AnchorPoint ScaleX="0.5000" />
+                    <Position X="190.0000" Y="16.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.2969" Y="0.3182" />
+                    <PrePosition X="0.2969" Y="0.0364" />
                     <PreSize X="0.1937" Y="0.2818" />
                     <FileData Type="Normal" Path="images/formation/rolebox.png" Plist="" />
                     <SingleColor A="255" R="150" G="200" B="255" />
@@ -118,11 +160,11 @@
                   </AbstractNodeData>
                   <AbstractNodeData Name="layoutHeadMaid4" ActionTag="284638594" Tag="679" IconVisible="False" LeftMargin="257.9999" RightMargin="258.0001" TopMargin="300.0000" BottomMargin="16.0000" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
                     <Size X="124.0000" Y="124.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                    <Position X="319.9999" Y="140.0000" />
+                    <AnchorPoint ScaleX="0.5000" />
+                    <Position X="319.9999" Y="16.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5000" Y="0.3182" />
+                    <PrePosition X="0.5000" Y="0.0364" />
                     <PreSize X="0.1937" Y="0.2818" />
                     <FileData Type="Normal" Path="images/formation/rolebox.png" Plist="" />
                     <SingleColor A="255" R="150" G="200" B="255" />
@@ -132,55 +174,13 @@
                   </AbstractNodeData>
                   <AbstractNodeData Name="layoutHeadMaid5" ActionTag="-2084045947" Tag="683" IconVisible="False" LeftMargin="388.0000" RightMargin="128.0000" TopMargin="300.0000" BottomMargin="16.0000" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
                     <Size X="124.0000" Y="124.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                    <Position X="450.0000" Y="140.0000" />
+                    <AnchorPoint ScaleX="0.5000" />
+                    <Position X="450.0000" Y="16.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.7031" Y="0.3182" />
+                    <PrePosition X="0.7031" Y="0.0364" />
                     <PreSize X="0.1937" Y="0.2818" />
                     <FileData Type="Normal" Path="images/formation/rolebox.png" Plist="" />
-                    <SingleColor A="255" R="150" G="200" B="255" />
-                    <FirstColor A="255" R="150" G="200" B="255" />
-                    <EndColor A="255" R="255" G="255" B="255" />
-                    <ColorVector ScaleY="1.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="layoutHeadMst0_0" ActionTag="780263861" Tag="616" IconVisible="False" LeftMargin="128.0000" RightMargin="388.0000" TopMargin="172.0000" BottomMargin="144.0000" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
-                    <Size X="124.0000" Y="124.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                    <Position X="190.0000" Y="268.0000" />
-                    <Scale ScaleX="0.9671" ScaleY="0.9671" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.2969" Y="0.6091" />
-                    <PreSize X="0.1937" Y="0.2818" />
-                    <FileData Type="Normal" Path="images/formation/rwxk.png" Plist="" />
-                    <SingleColor A="255" R="150" G="200" B="255" />
-                    <FirstColor A="255" R="150" G="200" B="255" />
-                    <EndColor A="255" R="255" G="255" B="255" />
-                    <ColorVector ScaleY="1.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="layoutHeadMst1_0" ActionTag="-602085298" Tag="617" IconVisible="False" LeftMargin="258.0000" RightMargin="258.0000" TopMargin="172.0000" BottomMargin="144.0000" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
-                    <Size X="124.0000" Y="124.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                    <Position X="320.0000" Y="268.0000" />
-                    <Scale ScaleX="0.9671" ScaleY="0.9671" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5000" Y="0.6091" />
-                    <PreSize X="0.1937" Y="0.2818" />
-                    <FileData Type="Normal" Path="images/formation/rwxk.png" Plist="" />
-                    <SingleColor A="255" R="150" G="200" B="255" />
-                    <FirstColor A="255" R="150" G="200" B="255" />
-                    <EndColor A="255" R="255" G="255" B="255" />
-                    <ColorVector ScaleY="1.0000" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="layoutHeadMst2_0" ActionTag="380187812" Tag="618" IconVisible="False" LeftMargin="388.0000" RightMargin="128.0000" TopMargin="172.0000" BottomMargin="144.0000" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
-                    <Size X="124.0000" Y="124.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                    <Position X="450.0000" Y="268.0000" />
-                    <Scale ScaleX="0.9671" ScaleY="0.9671" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.7031" Y="0.6091" />
-                    <PreSize X="0.1937" Y="0.2818" />
-                    <FileData Type="Normal" Path="images/formation/rwxk.png" Plist="" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
@@ -218,7 +218,7 @@
                 <PrePosition X="0.8125" Y="0.8438" />
                 <PreSize X="0.2406" Y="0.0698" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <NormalFileData Type="Normal" Path="images/formation/back1.png" Plist="" />
+                <NormalFileData Type="Normal" Path="images/common/back1.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

@@ -26,20 +26,30 @@ public:
 	
 private:
 	void createSkin();
-	void onTouchBtn(Ref *ref, Widget::TouchEventType type);
+	void addTouchEvent();
+
+	void updateIndexRemain();//更新数据
+	void getTypeSelectedMst();
+
 	void doWait();//执行等待动画
 	void doReach();//执行出动画
 	void showResult();
-	void updateIndexRemain();//更新数据
-	void updateInfo();//刷新显示信息
-	void setBtnVisible(const bool &value);
+
+	void onTouchBtnSelect(Ref *ref, Widget::TouchEventType type);
+	void onTouchBtnResult(Ref *ref, Widget::TouchEventType type);
+	
+private:
+	const string ANIMATION_WAIT = "animationWait";
+	const string ANIMATION_RECH = "animationRech";
+	const string ANIMATION_RESULT = "animationResult";
 
 private:
 	Layer *_skin;
 	int _index;//第几个怪
 	int _remain;//剩余捕获次数
-	int _typeSelectedMst;
 	int _typeSelectedMaid;
+	int _typeSelectedMst;
+	bool _isSuccess;
 	
 };
 

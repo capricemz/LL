@@ -42,7 +42,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.3370" Y="0.4801" />
                     <PreSize X="0.5870" Y="0.3636" />
-                    <ImageFileData Type="Normal" Path="images/battle/card_bar.png" Plist="" />
+                    <ImageFileData Type="MarkedSubImage" Path="images/battle/card_bar.png" Plist="modules/main/PlistMain.plist" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -50,8 +50,8 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5234" Y="0.1476" />
-                <PreSize X="0.7541" Y="0.1073" />
-                <FileData Type="Normal" Path="images/battle/card_bar_bg.png" Plist="" />
+                <PreSize X="0.8598" Y="0.1048" />
+                <FileData Type="MarkedSubImage" Path="images/battle/card_bar_bg.png" Plist="modules/main/PlistMain.plist" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="txtHp" ActionTag="1383328860" CallBackType="Click" Tag="45" IconVisible="False" LeftMargin="47.8699" RightMargin="50.1301" TopMargin="186.0985" BottomMargin="3.9015" FontSize="15" LabelText="/" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -139,14 +139,14 @@
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteJob" ActionTag="2065945203" Tag="95" IconVisible="False" RightMargin="78.0000" TopMargin="78.0000" ctype="SpriteObjectData">
-                <Size X="46.0000" Y="46.0000" />
+                <Size X="49.0000" Y="49.0000" />
                 <AnchorPoint />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/formation/typeJobWarrior.png" Plist="" />
+                <FileData Type="MarkedSubImage" Path="images/common/typeJobArcher.png" Plist="modules/main/PlistMain.plist" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="layoutGrade" ActionTag="-1562796759" Tag="982" IconVisible="False" LeftMargin="29.0000" TopMargin="99.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">

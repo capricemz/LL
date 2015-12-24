@@ -3,6 +3,8 @@
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
+#include "base/ccMacros.h"
+#include "base/CCValue.h"
 
 using namespace std;
 
@@ -50,8 +52,7 @@ float UtilRandom::randomWave( float value, float wave )
 float UtilRandom::randomBewteen( float valueMin, float valueMax )
 {
 	auto r = random();
-	r = valueMin + (valueMax - valueMin) * r;
-	return r == valueMax ? r - 0.0001f : r;
+	return valueMin + (valueMax - valueMin) * r;
 }
 /*
 根据probabilityDistribution数组中的概率分布获得随机值
@@ -60,7 +61,7 @@ float UtilRandom::randomBewteen( float valueMin, float valueMax )
 */
 int UtilRandom::randomPitchUpon( vector<float> probabilityDistribution )
 {
-	/*int i,l = probabilityDistribution.size();
+	int i,l = probabilityDistribution.size();
 	for (i=0;i<l;i++) 
 	{
 		if(i > 0)
@@ -68,17 +69,9 @@ int UtilRandom::randomPitchUpon( vector<float> probabilityDistribution )
 			probabilityDistribution[i] = probabilityDistribution[i] + probabilityDistribution[i-1];
 		}
 	}
-	try
-	{
-		if(probabilityDistribution[i-1] != 1)
-		{
-			log("total probability is not one");
-		}
-	}
-	catch (exception * ex)
-	{
-		delete ex;
-	}
+
+	CCASSERT(probabilityDistribution[i - 1] != 1.0f, "`````````` UtilRandom::randomPitchUpon total probability is not one");
+
 	for (i=0;i<l;i++) 
 	{
 		auto r = random();
@@ -87,6 +80,5 @@ int UtilRandom::randomPitchUpon( vector<float> probabilityDistribution )
 			break;
 		}
 	}
-	return i;*/
-	return 0;
+	return i;
 }

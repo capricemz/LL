@@ -1,23 +1,10 @@
 <PlistInfoProjectFile>
   <PropertyGroup Type="Plist" Name="PlistMain" ID="702d397f-e71b-4232-b679-4d23e1875598" Version="2.3.2.3" />
-  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="1" AllowRotation="True" AllowAnySize="True" AllowTrim="True" ctype="PlistInfoData">
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="1" AllowRotation="False" AllowAnySize="True" AllowTrim="True" ctype="PlistInfoData">
     <ImageFiles>
-      <FilePathData Path="images/icon/mb.png" />
-      <FilePathData Path="images/icon/md.png" />
-      <FilePathData Path="images/icon/pb.png" />
-      <FilePathData Path="images/icon/pd.png" />
-      <FilePathData Path="images/icon/rh.png" />
-      <FilePathData Path="images/icon/rn.png" />
-      <FilePathData Path="images/icon/sd.png" />
-      <FilePathData Path="images/icon/ub.png" />
-      <FilePathData Path="images/battle/zl.png" />
       <FilePathData Path="images/battle/lianxian_dian.png" />
       <FilePathData Path="images/battle/lianxian_quan.png" />
       <FilePathData Path="images/battle/lianxian_xian.png" />
-      <FilePathData Path="images/icon/ch.png" />
-      <FilePathData Path="images/icon/zd.png" />
-      <FilePathData Path="images/icon/ab.png" />
-      <FilePathData Path="images/icon/jb.png" />
       <FilePathData Path="images/levels/gk_btn.png" />
       <FilePathData Path="images/levels/gk_xx.png" />
       <FilePathData Path="images/levels/line_1.png" />
@@ -27,9 +14,6 @@
       <FilePathData Path="images/levels/ok_txt.png" />
       <FilePathData Path="images/levels/xing.png" />
       <FilePathData Path="images/levels/xingKong.png" />
-      <FilePathData Path="images/battle/paper.jpg" />
-      <FilePathData Path="images/battle/rock.jpg" />
-      <FilePathData Path="images/battle/scissors.jpg" />
       <FilePathData Path="images/girl/buy.png" />
       <FilePathData Path="images/girl/buy1.png" />
       <FilePathData Path="images/girl/cut.png" />
@@ -46,9 +30,53 @@
       <FilePathData Path="images/battle/battle_result/star.png" />
       <FilePathData Path="images/battle/battle_result/star_an.png" />
       <FilePathData Path="images/battle/battle_result/win.png" />
-      <FilePathData Path="images/levels/bs.png" />
-      <FilePathData Path="images/levels/gold.png" />
-      <FilePathData Path="images/levels/treasure.png" />
+      <FilePathData Path="images/common/bs.png" />
+      <FilePathData Path="images/common/gold.png" />
+      <FilePathData Path="images/common/treasure.png" />
+      <FilePathData Path="images/battle/catchBtnRock.png" />
+      <FilePathData Path="images/battle/taoxin.png" />
+      <FilePathData Path="images/battle/taoxin2.png" />
+      <FilePathData Path="images/battle/vs.png" />
+      <FilePathData Path="images/battle/wenzi.png" />
+      <FilePathData Path="images/battle/xiaodw.png" />
+      <FilePathData Path="images/battle/nl_bg.png" />
+      <FilePathData Path="images/battle/nl_bar.png" />
+      <FilePathData Path="images/battle/line.png" />
+      <FilePathData Path="images/battle/catchBtnScissors.png" />
+      <FilePathData Path="images/battle/catchRock.png" />
+      <FilePathData Path="images/battle/catchPaper.png" />
+      <FilePathData Path="images/battle/bhcg.png" />
+      <FilePathData Path="images/battle/catchScissors.png" />
+      <FilePathData Path="images/battle/catchBtnPaper.png" />
+      <FilePathData Path="images/battle/card_bar.png" />
+      <FilePathData Path="images/battle/card_bar_bg.png" />
+      <FilePathData Path="images/battle/card_box.png" />
+      <FilePathData Path="images/battle/cqdw1.png" />
+      <FilePathData Path="images/battle/cqdw2.png" />
+      <FilePathData Path="images/battle/gold_card_bg.png" />
+      <FilePathData Path="images/battle/jinengka.png" />
+      <FilePathData Path="images/battle/jixudiwen.png" />
+      <FilePathData Path="images/battle/ordinary_card_bg.png" />
+      <FilePathData Path="images/battle/jixu.png" />
+      <FilePathData Path="images/battle/bhsb.png" />
+      <FilePathData Path="images/icon/ab.png" />
+      <FilePathData Path="images/icon/ch.png" />
+      <FilePathData Path="images/icon/heart.png" />
+      <FilePathData Path="images/icon/heart2.png" />
+      <FilePathData Path="images/icon/hp.png" />
+      <FilePathData Path="images/common/jb.png" />
+      <FilePathData Path="images/icon/jh_1.png" />
+      <FilePathData Path="images/icon/mb.png" />
+      <FilePathData Path="images/icon/md.png" />
+      <FilePathData Path="images/icon/pb.png" />
+      <FilePathData Path="images/icon/pd.png" />
+      <FilePathData Path="images/icon/rf.png" />
+      <FilePathData Path="images/icon/rh.png" />
+      <FilePathData Path="images/icon/rn.png" />
+      <FilePathData Path="images/icon/sd.png" />
+      <FilePathData Path="images/icon/ub.png" />
+      <FilePathData Path="images/icon/zd.png" />
+      <FilePathData Path="images/common/zs.png" />
     </ImageFiles>
     <MaxSize Width="1024" Height="1024" />
   </Content>

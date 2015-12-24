@@ -366,6 +366,7 @@ void LayerBattleResult::onTouchContinue(Ref *ref, Widget::TouchEventType type)
 		if (isGradeUp)
 		{
 			ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_GRADE_UP);
+			removeFromParent();
 		}
 		else
 		{

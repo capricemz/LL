@@ -58,6 +58,7 @@ struct CfgEntity
 	int idSkillGroup;//技能组id
 	int idTraining;//训练id
 	int cost;//购买消耗
+	int oddsCatch;//捕获几率
 	string urlPicEntity;//实体图片
 	string urlPicEntityBreak;//破衣图片
 	int xPic;//图片x

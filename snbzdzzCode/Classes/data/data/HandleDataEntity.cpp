@@ -282,6 +282,7 @@ void DataEntity::vecSkillActiveSort(const bool &isAll /*= false*/)
 	for (auto i = 0; i < size; i++)
 	{
 		int random = UtilRandom::randomBewteen(0.0f, (float)size);
+		random -= random == size ? 1 : 0;
 		swap(_vecSkillActive[i], _vecSkillActive[random]);
 	}
 }
@@ -795,8 +796,18 @@ bool HandleDataEntity::getIsSkillNeedSwitchMst(int &indexTo)
 
 bool HandleDataEntity::getIsAnyMstCanCatch()
 {
+	/*for (auto var : _vecDataEntityMst)
+	{
+		var->setAttribute(IdAttribute::ENTITY_BREAK_TAKES_NUM, 1);
+	}//for test*/
 	for (auto var : _vecDataEntityMst)
 	{
+		auto idEntity = var->getIdEntity();
+		auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[idEntity];
+		if (cfgEntity.oddsCatch == 0)
+		{
+			continue;
+		}
 		auto value = var->getAttribute(IdAttribute::ENTITY_BREAK_TAKES_NUM);
 		if (value > 0)
 		{

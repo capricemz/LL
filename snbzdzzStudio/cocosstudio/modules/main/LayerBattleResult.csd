@@ -6,7 +6,7 @@
       <ObjectData Name="LayerBattleResult" Tag="3" ctype="GameLayerObjectData">
         <Size X="640.0000" Y="960.0000" />
         <Children>
-          <AbstractNodeData Name="layoutBg" ActionTag="947186020" Tag="249" IconVisible="False" TouchEnable="True" BackColorAlpha="87" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="layoutBg" ActionTag="947186020" Tag="249" IconVisible="False" TouchEnable="True" BackColorAlpha="178" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="640.0000" Y="960.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="320.0000" Y="480.0000" />

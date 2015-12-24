@@ -6,8 +6,9 @@
 #include "ui/ManagerUI.h"
 #include "data/data/ManagerData.h"
 #include "data/define/DefinesString.h"
+#include "data/config/ManagerCfg.h"
 
-LayerCatch::LayerCatch() : _skin(nullptr), _index(-1), _remain(0), _typeSelectedMst(0), _typeSelectedMaid(0)
+LayerCatch::LayerCatch() : _skin(nullptr), _index(-1), _remain(0), _typeSelectedMaid(0), _typeSelectedMst(0), _isSuccess(false)
 {
 }
 
@@ -32,11 +33,11 @@ bool LayerCatch::init()
 
 void LayerCatch::runAppearAction(const function<void()> &func /*= nullptr*/)
 {
-	auto d = 0.4f;
-	_skin->setOpacity(0.0f);
-	_skin->setScale(10.0f);
+	auto d = 0.6f;
 
-	auto actionSpawn = Spawn::createWithTwoActions(EaseCubicActionIn::create(FadeIn::create(d)), EaseCubicActionIn::create(ScaleTo::create(d, 1.0f)));
+	auto layoutSelect = (Layout *)_skin->getChildByName("layoutSelect");
+	layoutSelect->setScale(0.0f);
+	auto actionScale = EaseBackOut::create(ScaleTo::create(d, 1.0f));
 	auto actionCallFunc = CallFunc::create([func]()
 	{
 		if (func != nullptr)
@@ -44,38 +45,83 @@ void LayerCatch::runAppearAction(const function<void()> &func /*= nullptr*/)
 			func();
 		}
 	});
-	_skin->runAction(Sequence::create(actionSpawn, actionCallFunc, nullptr));
+	layoutSelect->runAction(Sequence::create(actionScale, actionCallFunc, nullptr));
 }
 
 void LayerCatch::createSkin()
 {
+	auto size = Director::getInstance()->getWinSize();
 	_skin = (Layer *)CSLoader::createNode(RES_MODULES_MAIN_LAYER_CATCH_CSB);
 	_skin->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
-	_skin->setPosition(320.0f, 725.0f);
+	_skin->setPosition(size.width * 0.5f, size.height * 0.5f);
 	addChild(_skin);
 
-	auto btn = (Button *)_skin->getChildByName("btnScissors");
-	btn->setUserData((void *)TypeSRP::SCISSORS);
-	btn->addTouchEventListener(CC_CALLBACK_2(LayerCatch::onTouchBtn, this));
-	
-	btn = (Button *)_skin->getChildByName("btnRock");
-	btn->setUserData((void *)TypeSRP::ROCK);
-	btn->addTouchEventListener(CC_CALLBACK_2(LayerCatch::onTouchBtn, this));
+	auto actionTimeline = CSLoader::createTimeline(RES_MODULES_MAIN_LAYER_CATCH_CSB);
+	_skin->runAction(actionTimeline);
 
-	btn = (Button *)_skin->getChildByName("btnPaper");
-	btn->setUserData((void *)TypeSRP::PAPER);
-	btn->addTouchEventListener(CC_CALLBACK_2(LayerCatch::onTouchBtn, this));
+	addTouchEvent();
 
 	updateIndexRemain();
-
-	updateInfo();
 
 	doWait();
 }
 
+void LayerCatch::addTouchEvent()
+{
+	auto layoutSelect = (Layout *)_skin->getChildByName("layoutSelect");
+
+	auto btn = (Button *)layoutSelect->getChildByName("btnScissors");
+	btn->setUserData((void *)TypeSRP::SCISSORS);
+	btn->addTouchEventListener(CC_CALLBACK_2(LayerCatch::onTouchBtnSelect, this));
+
+	btn = (Button *)layoutSelect->getChildByName("btnRock");
+	btn->setUserData((void *)TypeSRP::ROCK);
+	btn->addTouchEventListener(CC_CALLBACK_2(LayerCatch::onTouchBtnSelect, this));
+
+	btn = (Button *)layoutSelect->getChildByName("btnPaper");
+	btn->setUserData((void *)TypeSRP::PAPER);
+	btn->addTouchEventListener(CC_CALLBACK_2(LayerCatch::onTouchBtnSelect, this));
+
+	auto layoutResult = (Layout *)_skin->getChildByName("layoutResult");
+	layoutResult->addTouchEventListener(CC_CALLBACK_2(LayerCatch::onTouchBtnResult, this));
+}
+
+void LayerCatch::updateIndexRemain()
+{
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto vecDataEntity = handleDataEntity->getVecDataEntityMst();
+	auto length = (int)vecDataEntity.size();
+	for (auto i = _index + 1; i < length; i++)
+	{
+		auto numTakes = vecDataEntity.at(i)->getAttribute(IdAttribute::ENTITY_BREAK_TAKES_NUM);
+		if (numTakes > 0)
+		{
+			_index = i;
+			_remain = /*numTakes*/1;
+			return;
+		}
+	}
+	_index = -1;
+	_remain = 0;
+}
+
+void LayerCatch::getTypeSelectedMst()
+{
+	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+	auto dataEntity = handleDataEntity->getVecDataEntityMst().at(_index);
+	auto idEntity = dataEntity->getIdEntity();
+	auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[idEntity];
+	auto random = UtilRandom::randomBewteen(0.0f, 1000.0f);
+	_isSuccess = random < cfgEntity.oddsCatch;
+	log("`````````` LayerCatch::getTypeSelectedMst _isSuccess%s", Value(_isSuccess).asString().c_str());
+	auto subValue = _isSuccess ? 1 : (UtilRandom::random() < 0.5f ? 2 : 3);//若捕捉成功则为1，否则为2或3
+	_typeSelectedMst = _typeSelectedMaid - subValue;
+	_typeSelectedMst = _typeSelectedMst == (int)TypeSRP::NONE ? (int)TypeSRP::PAPER : _typeSelectedMst;
+}
+
 void LayerCatch::doWait()
 {
-	for (auto i = 0; i < 2; i++)
+	/*for (auto i = 0; i < 2; i++)
 	{
 		auto isMst = i < 1;
 		auto rotationBegan = isMst ? -20.0f : 20.0f;
@@ -92,28 +138,19 @@ void LayerCatch::doWait()
 		auto actionWait = RepeatForever::create(Sequence::createWithTwoActions(actionRotateTo, actionRotateBack));
 		actionWait->setTag(1);
 		sprite->runAction(actionWait);
-	}
-}
+	}*/
+	auto layoutResult = (Layout *)_skin->getChildByName("layoutResult");
+	layoutResult->setTouchEnabled(false);
+	auto txtContinue = (Text *)_skin->getChildByName("layoutResult");
+	txtContinue->stopAllActions();
 
-void LayerCatch::onTouchBtn(Ref *ref, Widget::TouchEventType type)
-{
-	if (type == Widget::TouchEventType::ENDED)
-	{
-		auto btn = (Button *)ref;
-		_typeSelectedMaid = (int)btn->getUserData();
-		_remain--;
-
-		updateInfo();
-		
-		setBtnVisible(false);
-
-		doReach();
-	}
+	auto actionTimeline = (cocostudio::timeline::ActionTimeline *)_skin->getActionByTag(_skin->getTag());
+	actionTimeline->play(ANIMATION_WAIT, false);
 }
 
 void LayerCatch::doReach()
 {
-	for (auto i = 0; i < 2; i++)
+	/*for (auto i = 0; i < 2; i++)
 	{
 		auto isMst = i < 1;
 		auto rotationBegan = isMst ? -30.0f : 30.0f;
@@ -155,17 +192,42 @@ void LayerCatch::doReach()
 		auto actionReach = Sequence::create(actionRotateReset, actionRotateTo0, actionRotateBack0, actionRotateTo1, actionRotateBack1, actionReachOut, actionRotateTo2, actionOver, nullptr);
 		actionReach->setTag(1);
 		sprite->runAction(actionReach);
-	}
+	}*/
+	auto actionTimeline = (cocostudio::timeline::ActionTimeline *)_skin->getActionByTag(_skin->getTag());
+	actionTimeline->setLastFrameCallFunc([this, actionTimeline]()
+	{
+		actionTimeline->setLastFrameCallFunc(nullptr);
+		showResult();
+	});
+	actionTimeline->play(ANIMATION_RECH, false);
 }
 
 void LayerCatch::showResult()
 {
-	auto isWin = _typeSelectedMst % 3 + 1 == _typeSelectedMaid;
-	
-	auto txtResult = (Text *)_skin->getChildByName("txtResult");
-	txtResult->setString(isWin ? "catch" : "missed");
+	getTypeSelectedMst();
 
-	if (isWin)
+	auto actionTimeline = (cocostudio::timeline::ActionTimeline *)_skin->getActionByTag(_skin->getTag());
+	actionTimeline->play(ANIMATION_RESULT, false);
+
+	auto layoutResult = (Layout *)_skin->getChildByName("layoutResult");
+	layoutResult->setTouchEnabled(true);
+	
+	auto name = RES_IMAGES_MAIN_SRP_PNG_VEC[_typeSelectedMst];
+	auto spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(name);
+	auto sprite = (Sprite *)layoutResult->getChildByName("spriteMst");
+	sprite->setSpriteFrame(spriteFrame);
+
+	name = RES_IMAGES_MAIN_SRP_PNG_VEC[_typeSelectedMaid];
+	spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(name);
+	sprite = (Sprite *)layoutResult->getChildByName("spriteMaid");
+	sprite->setSpriteFrame(spriteFrame);
+
+	auto spriteSuccess = (Sprite *)layoutResult->getChildByName("spriteSuccess");
+	spriteSuccess->setVisible(_isSuccess);
+	auto spriteFailure = (Sprite *)layoutResult->getChildByName("spriteFailure");
+	spriteFailure->setVisible(!_isSuccess);
+	
+	if (_isSuccess)
 	{
 		auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
 		auto dataEntity = handleDataEntity->getVecDataEntityMst().at(_index);
@@ -175,70 +237,39 @@ void LayerCatch::showResult()
 		handleDataIncome->dataFileSet();
 	}
 
-	auto layout = (Layout *)_skin->getChildByName("layout");
-	layout->addTouchEventListener([this, isWin](Ref *ref, Widget::TouchEventType type)
-	{
-		if (type == Widget::TouchEventType::ENDED)
-		{
-			if (isWin || _remain == 0)//若捕获成功或剩余0次
-			{
-				updateIndexRemain();
-			}
-
-			if (_index != -1)//若有下一个
-			{
-				updateInfo();
-				setBtnVisible(true);
-				doWait();
-			}
-			else
-			{
-				ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_BATTLE_RESULT);
-				removeFromParent();
-			}
-		}
-	});
+	auto txtContinue = (Text *)layoutResult->getChildByName("txtContinue");
+	txtContinue->runAction(RepeatForever::create(Sequence::create(FadeOut::create(1.0f), FadeIn::create(1.0f), nullptr)));
 }
 
-void LayerCatch::updateIndexRemain()
+void LayerCatch::onTouchBtnSelect(Ref *ref, Widget::TouchEventType type)
 {
-	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto vecDataEntity = handleDataEntity->getVecDataEntityMst();
-	auto length = (int)vecDataEntity.size();
-	for (auto i = _index + 1; i < length; i++)
+	if (type == Widget::TouchEventType::ENDED)
 	{
-		auto numTakes = vecDataEntity.at(i)->getAttribute(IdAttribute::ENTITY_BREAK_TAKES_NUM);
-		if (numTakes > 0)
+		auto btn = (Button *)ref;
+		_typeSelectedMaid = (int)btn->getUserData();
+		_remain--;
+
+		doReach();
+	}
+}
+
+void LayerCatch::onTouchBtnResult(Ref *ref, Widget::TouchEventType type)
+{
+	if (type == Widget::TouchEventType::ENDED)
+	{
+		if (_isSuccess || _remain == 0)//若捕获成功或剩余0次
 		{
-			_index = i;
-			_remain = numTakes;
-			return;
+			updateIndexRemain();
+		}
+
+		if (_index != -1)//若有下一个
+		{
+			doWait();
+		}
+		else
+		{
+			ManagerUI::getInstance()->notify(ID_OBSERVER::LAYER_BATTLE, TYPE_OBSERVER_LAYER_BATTLE::SHOW_LAYER_BATTLE_RESULT);
+			removeFromParent();
 		}
 	}
-	_index = -1;
-	_remain = 0;
-}
-
-void LayerCatch::updateInfo()
-{
-	auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-	auto text = handleDataEntity->getVecDataEntityMst().at(_index)->getCfgEntity().name;
-	auto txtName = (Text *)_skin->getChildByName("txtName");
-	txtName->setString(text);
-
-	auto txtRemain = (Text *)_skin->getChildByName("txtRemain");
-	txtRemain->setString(STR_REMAIN + Value(_remain).asString() + STR_COUNT);
-
-	auto txtResult = (Text *)_skin->getChildByName("txtResult");
-	txtResult->setString("");
-}
-
-void LayerCatch::setBtnVisible(const bool &value)
-{
-	auto btn = (Button *)_skin->getChildByName("btnScissors");
-	btn->setVisible(value);
-	btn = (Button *)_skin->getChildByName("btnRock");
-	btn->setVisible(value);
-	btn = (Button *)_skin->getChildByName("btnPaper");
-	btn->setVisible(value);
 }

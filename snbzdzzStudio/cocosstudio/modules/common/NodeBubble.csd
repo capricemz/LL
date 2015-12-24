@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/common/bubble.png" Plist="" />
+            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="txt" ActionTag="1867375280" Tag="3" IconVisible="False" LeftMargin="-130.0000" RightMargin="-130.0000" TopMargin="-50.0000" BottomMargin="-50.0000" IsCustomSize="True" FontSize="24" LabelText="Text Label" TouchScaleChangeAble="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

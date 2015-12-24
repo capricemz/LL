@@ -268,20 +268,20 @@ void ManagerCfg::assignCfgEntity(const VectorString &vecItem)
 	cfg.attribute = vecItem[4];
 	cfg.idSkillGroup = Value(vecItem[5]).asInt();
 	cfg.idTraining = Value(vecItem[6]).asInt();
-	
 	cfg.cost = Value(vecItem[7]).asInt();
+	cfg.oddsCatch = Value(vecItem[8]).asInt();
 
-	cfg.urlPicEntity = vecItem[8];
-	cfg.urlPicEntityBreak = vecItem[9];
+	cfg.urlPicEntity = vecItem[9];
+	cfg.urlPicEntityBreak = vecItem[10];
 	
-	auto vecStr = UtilString::split(vecItem[10], ":");
+	auto vecStr = UtilString::split(vecItem[11], ":");
 	cfg.xPic = Value(vecStr[0]).asInt();
 	cfg.yPic = Value(vecStr[1]).asInt();
 	
-	cfg.urlPicHeadLarge = vecItem[11];
-	cfg.urlPicHeadMiddle = vecItem[12];
-	cfg.urlPicHeadSmall = vecItem[13];
-	cfg.urlPicName = vecItem[14];
+	cfg.urlPicHeadLarge = vecItem[12];
+	cfg.urlPicHeadMiddle = vecItem[13];
+	cfg.urlPicHeadSmall = vecItem[14];
+	cfg.urlPicName = vecItem[15];
 
 	_dicCfgEntity.insert(make_pair(cfg.id, cfg));
 }
