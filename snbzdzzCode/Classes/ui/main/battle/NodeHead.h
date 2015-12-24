@@ -59,6 +59,14 @@ public:
 		return _layout;
 	}
 
+	int getIdEntity() const
+	{
+		return _idEntity;
+	}
+	void setIdEntity(int val)
+	{
+		_idEntity = val;
+	}
 	DataEntity *getDataEntity();
 	
 public:

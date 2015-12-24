@@ -142,7 +142,7 @@ void LayerMaidSelect::createSkin()
 			/*nodeHead->getLayoutBg()->setTouchEnabled(true);
 			nodeHead->getLayoutBg()->addTouchEventListener(CC_CALLBACK_2(LayerMaidSelect::onTouchNodeHead, this, nodeHead));*/
 			layoutNodeHead->addChild(nodeHead);
-			_vecNodeHead.pushBack(nodeHead);
+			/*_vecNodeHead.pushBack(nodeHead);*/
 		}
 
 		index++;
@@ -224,9 +224,13 @@ void LayerMaidSelect::onTouchNodeHead(Ref *ref, Widget::TouchEventType type, Nod
 		{
 			auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
 			handleDataEntity->swapVecDataEntityMaid(indexDataEntity, indexDataEntityMoveOver);
+			auto idEntity = handleDataEntity->getVecDataEntityMaid().at(indexDataEntity)->getIdEntity();
+			auto idEntityOver = handleDataEntity->getVecDataEntityMaid().at(indexDataEntityMoveOver)->getIdEntity();
 			auto nodeHeadMoveOver = _vecNodeHead.at(indexDataEntityMoveOver);
+			nodeHeadMoveOver->setIdEntity(idEntityOver);
 			nodeHeadMoveOver->updateAll();
 
+			nodeHead->setIdEntity(idEntity);
 			nodeHead->updateAll();
 		}
 	}
@@ -240,6 +244,14 @@ bool LayerMaidSelect::isMoveOverNodeHead(const Vec2 &postionTouchMove, int &inde
 		auto rect = layoutBg->getBoundingBox();
 		auto postionIn = var->convertToNodeSpace(postionTouchMove);
 		auto isMoverOver = rect.containsPoint(postionIn);
+		/*log("`````````` LayerMaidSelect::isMoveOverNodeHead rect.x:%s,rect.y:%s,rect.w:%s,rect.h:%s,postionIn.x%s,postionIn.y:%s,isMoverOver:%s", 
+			Value(rect.origin.x).asString().c_str(),
+			Value(rect.origin.y).asString().c_str(),
+			Value(rect.size.width).asString().c_str(),
+			Value(rect.size.height).asString().c_str(),
+			Value(postionIn.x).asString().c_str(),
+			Value(postionIn.y).asString().c_str(),
+			Value(isMoverOver).asString().c_str());*/
 		if (isMoverOver)
 		{
 			indexDataEntityMoveOver = var->getIndexDataEntity();
