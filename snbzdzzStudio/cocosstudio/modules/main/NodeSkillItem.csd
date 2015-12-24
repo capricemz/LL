@@ -41,23 +41,23 @@
             <FileData Type="MarkedSubImage" Path="images/skill/skill_1101.jpg" Plist="modules/main/PlistSkill.plist" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutGridBase1" ActionTag="373661668" Tag="30" IconVisible="False" LeftMargin="-240.5000" RightMargin="133.5000" TopMargin="-50.0000" BottomMargin="22.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
-            <Size X="107.0000" Y="28.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-            <Position X="-187.0000" Y="50.0000" />
+          <AbstractNodeData Name="layoutGridComplex" ActionTag="-1335751508" Tag="29" IconVisible="False" LeftMargin="-242.0000" RightMargin="132.0000" TopMargin="-57.0000" BottomMargin="-53.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="110.0000" Y="110.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-187.0000" Y="2.0000" />
             <Scale ScaleX="0.9000" ScaleY="0.9000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
-            <PreSize X="0.8843" Y="0.1697" />
+            <PreSize X="0.0000" Y="0.0000" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="layoutGridComplex" ActionTag="-1335751508" Tag="29" IconVisible="False" LeftMargin="-242.0000" RightMargin="132.0000" TopMargin="-52.0000" BottomMargin="-48.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
-            <Size X="110.0000" Y="100.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-187.0000" Y="2.0000" />
+          <AbstractNodeData Name="layoutGridBase1" ActionTag="373661668" Tag="30" IconVisible="False" LeftMargin="-240.5000" RightMargin="133.5000" TopMargin="-50.0000" BottomMargin="10.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="107.0000" Y="40.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
+            <Position X="-187.0000" Y="50.0000" />
             <Scale ScaleX="0.9000" ScaleY="0.9000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
