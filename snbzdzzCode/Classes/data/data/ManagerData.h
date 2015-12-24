@@ -589,8 +589,6 @@ class HandleDataIncome
 		void dataFileGet();
 		void dataFileSet();
 
-		void addTrainingNum(const int &value);
-		
 	public:
 		map<IdThing, int> getDicThing() const
 		{

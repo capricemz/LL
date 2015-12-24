@@ -67,7 +67,8 @@ void ManagerTimer::dataTimeOffLineDeal()
 			timeOffLine = timeOffLine > TIME_OFF_LINE_MAX ? TIME_OFF_LINE_MAX : timeOffLine;
 
 			auto count = int(timeOffLine / TRAINING_NUM_RST_INTERVAL);
-			handleDataIncome->addTrainingNum(TRAINING_NUM_RST_VALUE * count);
+			handleDataIncome->addThing(IdThing::TRAINING, TRAINING_NUM_RST_VALUE * count);
+			handleDataIncome->dataFileSet();
 
 			timeOffLineModifyActionPoint = (timeOffLine - Value(TRAINING_NUM_RST_INTERVAL * count).asDouble());
 
@@ -109,7 +110,8 @@ void ManagerTimer::updateCustom(float dt)
 	{
 		handleDataTime->setTimeTrainingNumRst(timeNow + TRAINING_NUM_RST_INTERVAL);
 		handleDataTime->dataFileSet();
-		handleDataIncome->addTrainingNum(TRAINING_NUM_RST_VALUE);
+		handleDataIncome->addThing(IdThing::TRAINING, TRAINING_NUM_RST_VALUE);
+		handleDataIncome->dataFileSet();
 	}
 	/*if (timeNow > managerData->timeFeedCostGet())
 	{

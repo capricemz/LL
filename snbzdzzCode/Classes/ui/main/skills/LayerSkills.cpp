@@ -588,16 +588,22 @@ void LayerSkills::onTouchBtnMaidBuy(Ref *ref, Widget::TouchEventType type)
 
 		auto cfgEntity = ManagerCfg::getInstance()->getDicCfgEntity()[idEntityCurrent];
 		auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
-		if (handleDataIncome->getThingEnough(IdThing::GOLD, cfgEntity.cost))
+		auto isThingEnough = handleDataIncome->getThingEnough(IdThing::GOLD, cfgEntity.cost);
+		if (!isThingEnough)
 		{
-			handleDataIncome->addThing(IdThing::GOLD, -cfgEntity.cost);
-			auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
-			handleDataUnlock->setIsBuyMaid(idEntityCurrent);
-			handleDataUnlock->dataFileSet();
-			auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
-			handleDataEntity->createDataEntityMaid(idEntityCurrent);//构建女仆数据
-			updateSkin();
+			log("`````````` LayerSkills::onTouchBtnMaidBuy gold is not enough");
+			return;
 		}
+
+		handleDataIncome->addThing(IdThing::GOLD, -cfgEntity.cost);
+		handleDataIncome->dataFileSet();
+		log("`````````` LayerSkills::onTouchBtnMaidBuy cost:%d,remain:%d", cfgEntity.cost, handleDataIncome->getThing(IdThing::GOLD));
+		auto handleDataUnlock = ManagerData::getInstance()->getHandleDataUnlock();
+		handleDataUnlock->setIsBuyMaid(idEntityCurrent);
+		handleDataUnlock->dataFileSet();
+		auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
+		handleDataEntity->createDataEntityMaid(idEntityCurrent);//构建女仆数据
+		updateSkin();
 	}
 }
 
@@ -732,6 +738,7 @@ void LayerSkills::onTouchBtnSkillBuy(Ref *ref, Widget::TouchEventType type, cons
 		}
 
 		handleDataIncome->addThing(IdThing::GOLD, -cfgSkill.buyCost);
+		handleDataIncome->dataFileSet();
 		log("`````````` LayerSkills::onTouchBtnSkill cost:%d,remain:%d", cfgSkill.buyCost, handleDataIncome->getThing(IdThing::GOLD));
 
 		auto handleDataUnlock = managerData->getHandleDataUnlock();

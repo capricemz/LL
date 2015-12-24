@@ -474,6 +474,7 @@ void Grid::playSpecialSthBeUse(const function<void()> &func /*= nullptr*/)
 		auto value = _dataGrid->getAttribute(IdAttribute::GRID_GOLD_GET);
 		auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
 		handleDataIncome->addThing(IdThing::GOLD, value);
+		handleDataIncome->dataFileSet();
 	}
 	else if (_dataGrid->getAttribute(IdAttribute::GRID_STONE_CRUSHED) != 0)
 	{

@@ -116,17 +116,6 @@ void HandleDataIncome::dataFileSet()
 	userDefault->flush();
 }
 
-void HandleDataIncome::addTrainingNum(const int &value)
-{
-	addThing(IdThing::TRAINING, value);
-	auto valueTemp = getThing(IdThing::TRAINING);
-	if (valueTemp > TRAINING_NUM_MAX)
-	{
-		setThing(IdThing::TRAINING, TRAINING_NUM_MAX);
-	}
-	dataFileSet();
-}
-
 int HandleDataIncome::getThing(const IdThing &idThing)
 {
 	if (_dicThing.find(idThing) == _dicThing.end())
@@ -195,6 +184,14 @@ void HandleDataIncome::addThingAfter(const IdThing &idThing, const int &value)
 		{
 			auto handleDataEntity = ManagerData::getInstance()->getHandleDataEntity();
 			handleDataEntity->updateAttributeGrade();
+		}
+	}
+	else if (idThing == IdThing::TRAINING)
+	{
+		auto valueTemp = getThing(IdThing::TRAINING);
+		if (valueTemp > TRAINING_NUM_MAX)
+		{
+			setThing(IdThing::TRAINING, TRAINING_NUM_MAX);
 		}
 	}
 }
