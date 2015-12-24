@@ -23,25 +23,25 @@
             <Size X="640.0000" Y="145.0000" />
             <Children>
               <AbstractNodeData Name="spriteBg" ActionTag="-1798450213" Tag="1023" IconVisible="False" BottomMargin="8.0000" ctype="SpriteObjectData">
-                <Size X="640.0000" Y="145.0000" />
+                <Size X="46.0000" Y="46.0000" />
                 <AnchorPoint ScaleY="1.0000" />
                 <Position Y="145.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition Y="1.0000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/levels/bottom1.png" Plist="" />
+                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteBg1" ActionTag="-1741407959" Tag="1024" IconVisible="False" LeftMargin="508.0000" BottomMargin="49.0000" ctype="SpriteObjectData">
-                <Size X="132.0000" Y="96.0000" />
+                <Size X="46.0000" Y="46.0000" />
                 <AnchorPoint ScaleX="1.0000" ScaleY="1.0000" />
                 <Position X="640.0000" Y="145.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="1.0000" Y="1.0000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/levels/moon2.png" Plist="" />
+                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="layoutIncome" ActionTag="210909129" Tag="1025" IconVisible="False" LeftMargin="116.0004" RightMargin="-0.0004" TopMargin="15.0000" BottomMargin="72.0000" BackColorAlpha="0" ColorAngle="90.0000" ctype="PanelObjectData">
@@ -179,14 +179,14 @@
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteBg2" ActionTag="-775542877" Tag="1033" IconVisible="False" RightMargin="389.0000" ctype="SpriteObjectData">
-                <Size X="201.0000" Y="135.0000" />
+                <Size X="46.0000" Y="46.0000" />
                 <AnchorPoint ScaleY="1.0000" />
                 <Position Y="145.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition Y="1.0000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/levels/moon1.png" Plist="" />
+                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteBg3" ActionTag="-219120119" Tag="1034" IconVisible="False" LeftMargin="18.5000" RightMargin="498.5000" TopMargin="43.5000" BottomMargin="18.5000" ctype="SpriteObjectData">
@@ -216,14 +216,14 @@
             <Size X="640.0000" Y="215.0000" />
             <Children>
               <AbstractNodeData Name="spriteBg" ActionTag="1748982202" Alpha="253" Tag="1036" IconVisible="False" TopMargin="54.0000" ctype="SpriteObjectData">
-                <Size X="640.0000" Y="146.0000" />
+                <Size X="46.0000" Y="46.0000" />
                 <AnchorPoint ScaleX="0.5000" />
                 <Position X="320.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/levels/bottom2.png" Plist="" />
+                <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="btnGuild" ActionTag="1672612166" Tag="44" IconVisible="False" RightMargin="478.0000" TopMargin="-0.5000" BottomMargin="-0.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="132" Scale9Height="194" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">

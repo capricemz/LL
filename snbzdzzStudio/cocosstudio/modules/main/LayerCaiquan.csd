@@ -20,7 +20,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5076" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/fight/jiandao.png" Plist="" />
+                    <FileData Type="Normal" Path="images/battle/jiandao.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_4_0" ActionTag="-581815090" Tag="2358" IconVisible="False" LeftMargin="430.5000" RightMargin="70.5000" TopMargin="125.5000" BottomMargin="131.5000" ctype="SpriteObjectData">
@@ -31,7 +31,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.7813" Y="0.5076" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/fight/bu.png" Plist="" />
+                    <FileData Type="Normal" Path="images/battle/bu.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_4_1" ActionTag="665225099" Tag="2359" IconVisible="False" LeftMargin="70.5000" RightMargin="430.5000" TopMargin="125.5000" BottomMargin="131.5000" ctype="SpriteObjectData">
@@ -42,7 +42,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.2188" Y="0.5076" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/fight/quantou.png" Plist="" />
+                    <FileData Type="Normal" Path="images/battle/quantou.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -52,7 +52,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="1.0000" Y="0.4104" />
-                <FileData Type="Normal" Path="images/fight/ditu.png" Plist="" />
+                <FileData Type="Normal" Path="images/battle/ditu.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="Sprite_2" ActionTag="449796881" Tag="2355" IconVisible="False" LeftMargin="196.5000" RightMargin="196.5000" TopMargin="211.0000" BottomMargin="651.0000" ctype="SpriteObjectData">
@@ -63,7 +63,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.7292" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/wenzi.png" Plist="" />
+                <FileData Type="Normal" Path="images/battle/wenzi.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="Sprite_7" ActionTag="1190110537" Tag="2360" IconVisible="False" LeftMargin="232.5000" RightMargin="232.5000" TopMargin="598.0000" BottomMargin="278.0000" ctype="SpriteObjectData">
@@ -74,7 +74,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.3333" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/anniu1.png" Plist="" />
+                <FileData Type="Normal" Path="images/battle/anniu1.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
             </Children>
@@ -100,7 +100,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="1.0000" Y="0.7292" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/cqdw1.png" Plist="" />
+                <FileData Type="Normal" Path="images/battle/cqdw1.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="Sprite_15" ActionTag="-724431508" Tag="2371" IconVisible="False" RightMargin="277.0000" TopMargin="471.5000" BottomMargin="311.5000" ctype="SpriteObjectData">
@@ -111,7 +111,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition Y="0.4167" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/cqdw2.png" Plist="" />
+                <FileData Type="Normal" Path="images/battle/cqdw2.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="Sprite_16" ActionTag="-1979931180" Tag="2372" IconVisible="False" LeftMargin="437.1778" RightMargin="64.8222" TopMargin="128.9645" BottomMargin="637.0355" ctype="SpriteObjectData">
@@ -122,7 +122,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.7909" Y="0.7646" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/bjd.png" Plist="" />
+                <FileData Type="Normal" Path="images/battle/bjd.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="Sprite_17" ActionTag="1737210610" Tag="2373" IconVisible="False" LeftMargin="75.6207" RightMargin="406.3793" TopMargin="460.0746" BottomMargin="352.9254" ctype="SpriteObjectData">
@@ -133,7 +133,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2416" Y="0.4442" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/bcz.png" Plist="" />
+                <FileData Type="Normal" Path="images/battle/bcz.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
             </Children>
@@ -159,7 +159,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/dw2.png" Plist="" />
+                <FileData Type="Normal" Path="images/battle/dw2.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="Sprite_9" ActionTag="1602579221" Tag="2364" IconVisible="False" LeftMargin="486.0035" RightMargin="15.9965" TopMargin="213.0000" BottomMargin="553.0000" ctype="SpriteObjectData">
@@ -170,7 +170,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8672" Y="0.6771" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/bjd.png" Plist="" />
+                <FileData Type="Normal" Path="images/battle/bjd.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="Sprite_10" ActionTag="146770756" Tag="2365" IconVisible="False" LeftMargin="19.0000" RightMargin="463.0000" TopMargin="520.5000" BottomMargin="292.5000" ctype="SpriteObjectData">
@@ -181,7 +181,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1531" Y="0.3812" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/bcz.png" Plist="" />
+                <FileData Type="Normal" Path="images/battle/bcz.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="Sprite_11" ActionTag="122903231" Tag="2366" IconVisible="False" LeftMargin="204.0000" RightMargin="204.0000" TopMargin="287.5000" BottomMargin="547.5000" ctype="SpriteObjectData">
@@ -192,7 +192,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.6354" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/WIN.png" Plist="" />
+                <FileData Type="Normal" Path="images/battle/WIN.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="Sprite_12" ActionTag="-1739986277" Tag="2367" IconVisible="False" LeftMargin="163.5000" RightMargin="163.5000" TopMargin="415.5000" BottomMargin="455.5000" ctype="SpriteObjectData">
@@ -203,7 +203,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5208" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/bhcg.png" Plist="" />
+                <FileData Type="Normal" Path="images/battle/bhcg.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="Sprite_13" ActionTag="-907937488" Tag="2368" IconVisible="False" LeftMargin="232.5000" RightMargin="232.5000" TopMargin="568.5000" BottomMargin="308.5000" ctype="SpriteObjectData">
@@ -214,7 +214,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.3646" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/fight/srhg.png" Plist="" />
+                <FileData Type="Normal" Path="images/battle/srhg.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
             </Children>

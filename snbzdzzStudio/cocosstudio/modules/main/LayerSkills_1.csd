@@ -349,7 +349,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="-0.0187" Y="0.5000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/skills_panel/paper_bg.png" Plist="" />
+                <FileData Type="Normal" Path="images/girl/paper_bg.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteBg1" ActionTag="-440280192" Tag="860" RotationSkewX="-4.0004" RotationSkewY="-4.0004" IconVisible="False" LeftMargin="-35.2258" RightMargin="-48.7742" TopMargin="239.8601" BottomMargin="195.1399" ctype="SpriteObjectData">
@@ -360,7 +360,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="-0.0550" Y="0.4767" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/skills_panel/paper.png" Plist="" />
+                <FileData Type="Normal" Path="images/girl/paper.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="layout" ActionTag="-1157774037" Tag="861" IconVisible="False" TopMargin="220.0000" BottomMargin="240.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
@@ -479,7 +479,7 @@
                     <PrePosition X="0.9375" Y="1.0200" />
                     <PreSize X="0.1250" Y="0.1600" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <NormalFileData Type="Normal" Path="images/skills_panel/guanbi.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="images/girl/guanbi.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -491,7 +491,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.1700" Y="1.0003" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/skills_panel/namediwen.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/namediwen.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_46" ActionTag="671385834" Tag="924" IconVisible="False" LeftMargin="21.0396" RightMargin="478.9604" TopMargin="-26.9534" BottomMargin="470.9534" ctype="SpriteObjectData">
@@ -502,7 +502,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.1422" Y="0.9979" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/skills_panel/name.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/name.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -528,7 +528,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4970" Y="0.8111" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/skills_panel/skill_new_bg.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/skill_new_bg.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_44" ActionTag="1738905492" Tag="922" IconVisible="False" LeftMargin="81.2391" RightMargin="458.7609" TopMargin="42.5438" BottomMargin="357.4562" ctype="SpriteObjectData">
@@ -539,7 +539,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.2051" Y="0.8149" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/skills_panel/kuang2.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/kuang2.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_47" ActionTag="1391403916" Tag="925" IconVisible="False" LeftMargin="182.5000" RightMargin="402.5000" TopMargin="42.5000" BottomMargin="402.5000" ctype="SpriteObjectData">
@@ -618,7 +618,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.7815" Y="0.8560" />
                     <PreSize X="0.1813" Y="0.1040" />
-                    <FileData Type="Normal" Path="images/skills_panel/anniu.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/anniu.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Text_21" ActionTag="-1441209075" Tag="932" IconVisible="False" LeftMargin="185.3473" RightMargin="94.6527" TopMargin="101.6490" BottomMargin="358.3510" FontSize="20" LabelText="3物理攻击，2物理防御，攻击成功，后续&#xA;所有行动获得1物理攻击" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -640,7 +640,7 @@
                     <CColor A="255" R="131" G="65" B="65" />
                     <PrePosition X="0.4951" Y="0.5353" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/skills_panel/skill_new_bg.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/skill_new_bg.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_44_0" ActionTag="1600705795" Tag="936" IconVisible="False" LeftMargin="80.0568" RightMargin="459.9432" TopMargin="180.4593" BottomMargin="219.5407" ctype="SpriteObjectData">
@@ -651,7 +651,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.2032" Y="0.5391" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/skills_panel/kuang2.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/kuang2.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_47_1" ActionTag="1568025267" Tag="937" IconVisible="False" LeftMargin="181.3177" RightMargin="403.6823" TopMargin="180.4154" BottomMargin="264.5846" ctype="SpriteObjectData">
@@ -730,7 +730,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.7796" Y="0.5802" />
                     <PreSize X="0.1813" Y="0.1040" />
-                    <FileData Type="Normal" Path="images/skills_panel/anniu.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/anniu.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Text_21_0" ActionTag="1164679147" Tag="944" IconVisible="False" LeftMargin="184.1648" RightMargin="95.8352" TopMargin="239.5641" BottomMargin="220.4358" FontSize="20" LabelText="3物理攻击，2物理防御，攻击成功，后续&#xA;所有行动获得1物理攻击" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -752,7 +752,7 @@
                     <CColor A="255" R="131" G="65" B="65" />
                     <PrePosition X="0.4972" Y="0.2552" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/skills_panel/skill_new_bg.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/skill_new_bg.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_44_0_0" ActionTag="-736970829" Tag="946" IconVisible="False" LeftMargin="81.3887" RightMargin="458.6113" TopMargin="320.4867" BottomMargin="79.5133" ctype="SpriteObjectData">
@@ -763,7 +763,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.2053" Y="0.2590" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/skills_panel/kuang2.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/kuang2.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_47_1_0" ActionTag="-1141289028" Tag="947" IconVisible="False" LeftMargin="182.6496" RightMargin="402.3504" TopMargin="320.4420" BottomMargin="124.5580" ctype="SpriteObjectData">
@@ -842,7 +842,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.7817" Y="0.3001" />
                     <PreSize X="0.1813" Y="0.1040" />
-                    <FileData Type="Normal" Path="images/skills_panel/anniu.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/anniu.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Text_21_0_0" ActionTag="318097286" Tag="954" IconVisible="False" LeftMargin="185.4969" RightMargin="94.5032" TopMargin="379.5917" BottomMargin="80.4083" FontSize="20" LabelText="3物理攻击，2物理防御，攻击成功，后续&#xA;所有行动获得1物理攻击" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -864,7 +864,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.9287" Y="0.5466" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/skills_panel/latiao.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/latiao.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Sprite_71" ActionTag="320827260" Tag="958" IconVisible="False" LeftMargin="582.1805" RightMargin="35.8195" TopMargin="32.7220" BottomMargin="407.2780" ctype="SpriteObjectData">
@@ -875,7 +875,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.9268" Y="0.8746" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/skills_panel/anniu2.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/anniu2.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -895,7 +895,7 @@
             <Position X="0.0001" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0000" />
+            <PrePosition />
             <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />

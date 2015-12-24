@@ -27,7 +27,7 @@
             <CColor A="255" R="131" G="65" B="65" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/skills_panel/skill_new_bg.png" Plist="" />
+            <FileData Type="Normal" Path="images/girl/skill_new_bg.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="spriteIcon" ActionTag="-1254469849" Tag="905" IconVisible="False" LeftMargin="-242.0000" RightMargin="132.0000" TopMargin="-57.0000" BottomMargin="-53.0000" ctype="SpriteObjectData">
@@ -75,7 +75,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/skills_panel/kuang2.png" Plist="" />
+            <FileData Type="Normal" Path="images/girl/kuang2.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="layoutAttribute" ActionTag="-1171554197" Tag="225" IconVisible="False" LeftMargin="-128.9981" RightMargin="-121.0019" TopMargin="-51.0000" BottomMargin="-4.0000" TouchEnable="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
@@ -113,7 +113,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
             <TextColor A="255" R="64" G="34" B="34" />
-            <NormalFileData Type="Normal" Path="images/skills_panel/anniu.png" Plist="" />
+            <NormalFileData Type="Normal" Path="images/girl/anniu.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

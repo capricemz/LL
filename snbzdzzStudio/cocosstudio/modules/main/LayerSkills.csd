@@ -383,7 +383,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.8000" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/skills_panel/jcxxbg.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/jcxxbg.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="spriteBg1" ActionTag="-867686069" Tag="763" IconVisible="False" LeftMargin="206.0000" RightMargin="206.0000" TopMargin="15.0000" BottomMargin="125.0000" ctype="SpriteObjectData">
@@ -394,7 +394,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.7619" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/skills_panel/wzbg4.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/wzbg4.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="spriteBg2" ActionTag="2079897213" Tag="764" IconVisible="False" LeftMargin="227.0000" RightMargin="227.0000" TopMargin="21.5000" BottomMargin="131.5000" ctype="SpriteObjectData">
@@ -405,7 +405,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.7619" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/skills_panel/wzjcxx.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/wzjcxx.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="txtAttribute0" ActionTag="777759381" Tag="765" IconVisible="False" LeftMargin="110.0000" RightMargin="412.0000" TopMargin="77.5000" BottomMargin="97.5000" FontSize="30" LabelText="生命：20" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -572,25 +572,25 @@
                 <Size X="664.0000" Y="521.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="-11.9998" Y="479.9994" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Scale ScaleX="0.0100" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="-0.0187" Y="0.5000" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/skills_panel/paper_bg.png" Plist="" />
+                <FileData Type="Normal" Path="images/girl/paper_bg.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="spriteBg1" ActionTag="-379684048" Tag="666" RotationSkewX="-4.0004" RotationSkewY="-4.0004" IconVisible="False" LeftMargin="-35.2258" RightMargin="-48.7742" TopMargin="239.8601" BottomMargin="195.1399" ctype="SpriteObjectData">
                 <Size X="724.0000" Y="525.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="-35.2258" Y="457.6399" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Scale ScaleX="0.0100" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="-0.0550" Y="0.4767" />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Normal" Path="images/skills_panel/paper.png" Plist="" />
+                <FileData Type="Normal" Path="images/girl/paper.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="layout" ActionTag="-1726291939" Tag="118" IconVisible="False" TopMargin="220.0000" BottomMargin="240.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+              <AbstractNodeData Name="layout" ActionTag="-1726291939" Alpha="0" Tag="118" IconVisible="False" TopMargin="220.0000" BottomMargin="240.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                 <Size X="640.0000" Y="500.0000" />
                 <Children>
                   <AbstractNodeData Name="btnBase" ActionTag="-1365711335" Tag="597" IconVisible="False" LeftMargin="3.0009" RightMargin="576.9991" TopMargin="136.0003" BottomMargin="355.9997" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="30" Scale9Height="86" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -602,7 +602,7 @@
                     <PrePosition X="0.0516" Y="0.6833" />
                     <PreSize X="0.0938" Y="0.1125" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <NormalFileData Type="Normal" Path="images/skills_panel/skill_btn1.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="images/girl/skill_btn1.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -615,7 +615,7 @@
                     <PrePosition X="0.0516" Y="0.4833" />
                     <PreSize X="0.0906" Y="0.1135" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <NormalFileData Type="Normal" Path="images/skills_panel/skill_btn2.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="images/girl/skill_btn2.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -628,7 +628,7 @@
                     <PrePosition X="0.0516" Y="0.2833" />
                     <PreSize X="0.0938" Y="0.1125" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <NormalFileData Type="Normal" Path="images/skills_panel/skill_btn3.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="images/girl/skill_btn3.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -641,7 +641,7 @@
                     <PrePosition X="0.0516" Y="0.0833" />
                     <PreSize X="0.0953" Y="0.1125" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <NormalFileData Type="Normal" Path="images/skills_panel/skill_btn4.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="images/girl/skill_btn4.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -654,7 +654,7 @@
                     <PrePosition X="0.9297" Y="1.0300" />
                     <PreSize X="0.1250" Y="0.1600" />
                     <TextColor A="255" R="65" G="65" B="70" />
-                    <NormalFileData Type="Normal" Path="images/skills_panel/guanbi.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="images/girl/guanbi.png" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
@@ -723,7 +723,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.1047" Y="0.0020" />
                     <PreSize X="0.8344" Y="0.9780" />
-                    <FileData Type="Normal" Path="images/skills_panel/paper_top.png" Plist="" />
+                    <FileData Type="Normal" Path="images/girl/paper_top.png" Plist="" />
                     <SingleColor A="255" R="150" G="150" B="255" />
                     <FirstColor A="255" R="150" G="150" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
