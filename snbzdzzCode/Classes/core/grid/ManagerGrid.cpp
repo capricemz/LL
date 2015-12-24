@@ -60,8 +60,8 @@ void ManagerGrid::setAroundGridCanMoveOver(const int &indexGrid)
 		{
 			auto postoinBasicDelta = _dicGridMaidSelect.at(4)->getPosition() - _dicGridMaidSelect.at(0)->getPosition();
 			auto psotionDelta = _dicGridMaidSelect.at(indexGridTemp)->getPosition() - _dicGridMaidSelect.at(indexGrid)->getPosition();
-			auto xCount = psotionDelta.x / postoinBasicDelta.x;
-			auto yCount = psotionDelta.y / postoinBasicDelta.y;
+			auto xCount = (int)(psotionDelta.x / postoinBasicDelta.x + 0.0001f);
+			auto yCount = (int)(psotionDelta.y / postoinBasicDelta.y + 0.0001f);
 			grid->setIsCanMoveOver((xCount <= 1 && xCount >= -1) && (yCount <= 1 && yCount >= -1));
 		}
 	}
