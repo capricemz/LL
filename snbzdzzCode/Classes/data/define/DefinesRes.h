@@ -24,6 +24,7 @@ static const string RES_MODULES_MAIN_PLIST_SKILL_PLIST = "modules/main/PlistSkil
 static const string RES_MODULES_MAIN_SCENE_MAIN_CSB = "modules/main/SceneMain.csb";
 
 static const string RES_MODULES_MAIN_LAYER_GUILD_CSB = "modules/main/LayerGuild.csb";
+static const string RES_MODULES_MAIN_LAYER_GUILD_SELECT_ITEM_CSB = "modules/main/LayerGuildSelectItem.csb";
 static const string RES_MODULES_MAIN_LAYER_TRAINING_CSB = "modules/main/LayerTraining.csb";
 static const string RES_MODULES_MAIN_LAYER_LEVELS_CSB = "modules/main/LayerLevels.csb";
 static const string RES_MODULES_MAIN_LAYER_MAID_SELECT_CSB = "modules/main/LayerMaidSelect.csb";

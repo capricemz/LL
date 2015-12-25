@@ -36,10 +36,10 @@
             <Image Name="zyd.png" />
             <Image Name="menuBtn2.png" />
             <Image Name="sn_icon.png" />
+            <Image Name="sc_icon.png" />
+            <Image Name="tj_icon.png" />
           </Folder>
           <Folder Name="battle">
-            <Image Name="card_bar.png" />
-            <Image Name="card_bar_bg.png" />
             <Image Name="card_box.png" />
             <Image Name="gold_card_bg.png" />
             <Image Name="nl_bar.png" />
@@ -515,6 +515,24 @@
             <Image Name="role_duds_56.png" />
             <Image Name="role_duds_6.png" />
           </Folder>
+          <Folder Name="battle1">
+            <Image Name="battle_bg.png" />
+            <Image Name="mst_head.png" />
+            <Image Name="mst_hp.png" />
+            <Image Name="mst_hp_bg.png" />
+            <Image Name="name.png" />
+            <Image Name="role_state1.png" />
+            <Image Name="role_state2.png" />
+            <Image Name="round_bg.png" />
+            <Image Name="skill_card_back.png" />
+            <Image Name="skill_card_correct.png" />
+            <Image Name="card_bar.png" />
+            <Image Name="card_bar_bg.png" />
+            <Image Name="d_01.png" />
+            <Image Name="dd.png" />
+            <Image Name="gg.png" />
+            <Image Name="xx.png" />
+          </Folder>
         </Folder>
         <Folder Name="fonts">
           <TTF Name="ktjt.ttf" />
@@ -549,15 +567,20 @@
             <Project Name="LayerTraining.csd" Type="Layer" />
             <Project Name="LayerSkills.csd" Type="Layer" />
             <Project Name="LayerLove.csd" Type="Layer" />
-            <Project Name="LayerGonghui.csd" Type="Layer" />
-            <Project Name="LayerGonghui_1.csd" Type="Layer" />
-            <Project Name="LayerGonghui_2.csd" Type="Layer" />
+            <Project Name="LayerGuildSelectItem.csd" Type="Layer" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />
           </Folder>
           <Folder Name="plot">
             <Project Name="ScenePlot.csd" Type="Scene" />
+          </Folder>
+          <Folder Name="battle">
+            <Project Name="LayerBattle.csd" Type="Layer" />
+            <Project Name="LayerBattle_0.csd" Type="Layer" />
+            <Project Name="BattleAction.csd" Type="Layer" />
+            <Project Name="ShooterAction.csd" Type="Node" />
+            <Project Name="BattleDuds.csd" Type="Node" />
           </Folder>
         </Folder>
       </RootFolder>

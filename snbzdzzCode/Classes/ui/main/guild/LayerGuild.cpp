@@ -1,16 +1,29 @@
 #include "LayerGuild.h"
 #include "data/define/DefinesRes.h"
-#include "core/entity/subs/Entity.h"
-#include "ui/common/UIEntity.h"
 #include "ui/ManagerUI.h"
 
-LayerGuild::LayerGuild() : _skin(nullptr)
+LayerGuild::LayerGuild() : _skin(nullptr), _nodeNow(nullptr), _handleSelect(nullptr), _handleDating(nullptr), _handleResult(nullptr)
 {
 }
 
 LayerGuild::~LayerGuild()
 {
+	ManagerUI::getInstance()->detach(this);
 	_skin = nullptr;
+	_nodeNow = nullptr;
+	CC_SAFE_RELEASE_NULL(_handleSelect);
+	CC_SAFE_RELEASE_NULL(_handleDating);
+	CC_SAFE_RELEASE_NULL(_handleResult);
+}
+
+void LayerGuild::updateBySubject(va_list values)
+{
+	auto type = va_arg(values, TYPE_OBSERVER_LAYER_GUILD);
+	if (type == TYPE_OBSERVER_LAYER_GUILD::SWITCH_LAYOUT)
+	{
+		auto typeLayout = va_arg(values, TYPE_OBSERVER_LAYER_GUILD);
+		switchLayout(typeLayout);
+	}
 }
 
 bool LayerGuild::init()
@@ -20,6 +33,9 @@ bool LayerGuild::init()
 	{
 		CC_BREAK_IF(!Layer::init());
 		
+		idObserverSet(ID_OBSERVER::LAYER_GUILD);
+		ManagerUI::getInstance()->attach(this);
+
 		createSkin();
 
 		isInit = true;
@@ -53,89 +69,45 @@ void LayerGuild::createSkin()
 	_skin = (Layer *)CSLoader::createNode(RES_MODULES_MAIN_LAYER_GUILD_CSB);
 	addChild(_skin);
 
-	for (int i = 0; i < 2; i++)
-	{
-		auto isMst = i < 1;
-		//
-		if (isMst)
-		{
-			createEntityMst();
-		}
-		else
-		{
-			createEntityMaid();
-		}
-	}
+	auto layoutSelect = (Layout *)_skin->getChildByName("layoutSelect");
+	layoutSelect->setVisible(true);
+	_nodeNow = layoutSelect;
+	_handleSelect = HandleSelect::create();
+	_handleSelect->retain();
+	_handleSelect->setSkin(layoutSelect);
+
+	auto layoutDating = (Layout *)_skin->getChildByName("layoutDating");
+	layoutDating->setVisible(false);
+	_handleDating = HandleDating::create();
+	_handleDating->retain();
+	_handleDating->setSkin(layoutDating);
+
+	auto layoutResult = (Layout *)_skin->getChildByName("layoutResult");
+	layoutResult->setVisible(false);
+	_handleResult = HandleResult::create();
+	_handleResult->retain();
+	_handleResult->setSkin(layoutResult);
 }
 
-void LayerGuild::createEntityMst()
+void LayerGuild::switchLayout(const TYPE_OBSERVER_LAYER_GUILD &typeLayout)
 {
-	auto layout = (Layout *)_skin->getChildByName("layoutEntity");
-	auto handleDataIncome = ManagerData::getInstance()->getHandleDataIncome();
-	auto postion = Vec2::ZERO;
-	auto length = (int)handleDataIncome->getVecDataTrainingInfo().size();
-	for (auto i = 0; i < length; i++)
+	Node *nodeNew = nullptr;
+	if (typeLayout == TYPE_OBSERVER_LAYER_GUILD::LAYOUT_SELECT)
 	{
-		auto dt = handleDataIncome->getDataTrainingInfo(i);
-		auto uiEntity = UIEntity::create();
-		uiEntity->updateSkin(dt->getIdEntity(), 0.15f);
-		uiEntity->getLayoutBg()->addTouchEventListener([i](Ref *ref, Widget::TouchEventType type)
-		{
-			if (type == Widget::TouchEventType::ENDED)
-			{
-				auto handleDataTraining = ManagerData::getInstance()->getHandleDataTraining();
-				handleDataTraining->setIndexCurrent(i);
-				ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SWITCH_LAYER, TYPE_OBSERVER_SCENE_MAIN::SHOW_TRAINING);
-			}
-		});
-		layout->addChild(uiEntity);
-
-		auto size = uiEntity->getLayoutBg()->getContentSize();
-		if (postion == Vec2::ZERO)
-		{
-			postion = Vec2(size.width * 0.5f + 50.0f, size.height * 0.5f + 500.0f);
-			uiEntity->setPosition(postion);
-		}
-		else
-		{
-			uiEntity->setPosition(postion);
-		}
-		postion += Vec2(size.width + 10.0f, 0.0f);
+		nodeNew = _handleSelect->getSkin();
 	}
-}
-
-void LayerGuild::createEntityMaid()
-{
-	auto layout = (Layout *)_skin->getChildByName("layoutEntity");
-	auto vecDataEntity = ManagerData::getInstance()->getHandleDataEntity()->getVecDataEntityMaid();
-	auto postion = Vec2::ZERO;
-	for (auto var : vecDataEntity)
+	else if (typeLayout == TYPE_OBSERVER_LAYER_GUILD::LAYOUT_DATING)
 	{
-		auto idEntity = var->getIdEntity();
-
-		auto uiEntity = UIEntity::create();
-		uiEntity->updateSkin(idEntity, 0.15f);
-		uiEntity->getLayoutBg()->addTouchEventListener([idEntity](Ref *ref, Widget::TouchEventType type)
-		{
-			if (type == Widget::TouchEventType::ENDED)
-			{
-				auto handleDataSkill = ManagerData::getInstance()->getHandleDataSkill();
-				handleDataSkill->setIdEntityCurrent(idEntity);
-				ManagerUI::getInstance()->notify(ID_OBSERVER::SCENE_MAIN, TYPE_OBSERVER_SCENE_MAIN::SWITCH_LAYER, TYPE_OBSERVER_SCENE_MAIN::SHOW_SKILLS);
-			}
-		});
-		layout->addChild(uiEntity);
-
-		auto size = uiEntity->getLayoutBg()->getContentSize();
-		if (postion == Vec2::ZERO)
-		{
-			postion = Vec2(size.width * 0.5f + 50.0f, size.height * 0.5f + 100.0f);
-			uiEntity->setPosition(postion);
-		}
-		else
-		{
-			uiEntity->setPosition(postion);
-		}
-		postion += Vec2(size.width + 10.0f, 0.0f);
+		nodeNew = _handleDating->getSkin();
 	}
+	else if (typeLayout == TYPE_OBSERVER_LAYER_GUILD::LAYOUT_RESULT)
+	{
+		nodeNew = _handleResult->getSkin();
+	}
+	ManagerUI::getInstance()->switchTwoNode(_nodeNow, nodeNew, nullptr, [this, nodeNew]()
+	{
+		_nodeNow->setVisible(false);
+		_nodeNow = nodeNew;
+		nodeNew->setVisible(true);
+	});
 }

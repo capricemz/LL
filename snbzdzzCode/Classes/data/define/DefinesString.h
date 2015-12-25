@@ -30,6 +30,8 @@ static const string STR_DEAD = "角色死亡";
 static const string STR_LEVEL_0 = "第";
 static const string STR_LEVEL_1 = "关";
 
+static const string STR_DATING_COUNT = "剩余约会次数：";
+
 /*static const string STR_UNLOCK = "未解锁";
 static const string STR_BUY = "购买";
 static const string STR_FILLED = "已满";*/

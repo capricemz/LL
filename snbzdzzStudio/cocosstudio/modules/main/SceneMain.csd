@@ -412,11 +412,11 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="btnSkills" ActionTag="-61695289" Tag="531" IconVisible="False" LeftMargin="309.5000" RightMargin="229.5000" TopMargin="114.5000" BottomMargin="-0.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="71" Scale9Height="79" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="btnSkills" ActionTag="-61695289" Tag="531" IconVisible="False" LeftMargin="308.1991" RightMargin="230.8009" TopMargin="113.1990" BottomMargin="0.8010" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="71" Scale9Height="79" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="101.0000" Y="101.0000" />
                 <Children>
                   <AbstractNodeData Name="spriteIcon" CanEdit="False" ActionTag="1906530677" Tag="1044" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="-0.5000" RightMargin="-0.5000" TopMargin="0.5000" BottomMargin="0.5000" ctype="SpriteObjectData">
-                    <Size X="102.0000" Y="100.0000" />
+                    <Size X="104.0000" Y="101.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="50.5000" Y="50.5000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -428,10 +428,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="360.0000" Y="50.0000" />
+                <Position X="358.6991" Y="51.3010" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5625" Y="0.2326" />
+                <PrePosition X="0.5605" Y="0.2386" />
                 <PreSize X="0.1578" Y="0.4698" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
@@ -443,14 +443,14 @@
                 <Size X="101.0000" Y="101.0000" />
                 <Children>
                   <AbstractNodeData Name="spriteIcon" ActionTag="1670671221" Tag="41" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="2.5000" RightMargin="2.5000" TopMargin="10.5000" BottomMargin="10.5000" ctype="SpriteObjectData">
-                    <Size X="102.0000" Y="100.0000" />
+                    <Size X="101.0000" Y="102.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="50.5000" Y="50.5000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/main/sn_icon.png" Plist="" />
+                    <FileData Type="Normal" Path="images/main/sc_icon.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -470,14 +470,14 @@
                 <Size X="101.0000" Y="101.0000" />
                 <Children>
                   <AbstractNodeData Name="spriteIcon" ActionTag="-1607922192" Tag="42" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="2.5000" RightMargin="2.5000" TopMargin="10.5000" BottomMargin="10.5000" ctype="SpriteObjectData">
-                    <Size X="102.0000" Y="100.0000" />
+                    <Size X="101.0000" Y="101.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="50.5000" Y="50.5000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.5000" />
                     <PreSize X="0.0000" Y="0.0000" />
-                    <FileData Type="Normal" Path="images/main/sn_icon.png" Plist="" />
+                    <FileData Type="Normal" Path="images/main/tj_icon.png" Plist="" />
                     <BlendFunc Src="770" Dst="771" />
                   </AbstractNodeData>
                 </Children>

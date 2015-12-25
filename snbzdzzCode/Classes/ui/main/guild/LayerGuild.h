@@ -5,11 +5,15 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "ui/common/ILayerAppearDisappear.h"
+#include "HandleSelect.h"
+#include "HandleDating.h"
+#include "HandleResult.h"
+#include "common/observer/Observer.h"
 
 USING_NS_CC;
 using namespace ui;
 
-class LayerGuild : public Layer, public ILayerAppearDisappear
+class LayerGuild : public Layer, public ILayerAppearDisappear, public Observer
 {
 public:
 	CREATE_FUNC(LayerGuild);
@@ -18,6 +22,8 @@ public:
 	LayerGuild();
 	~LayerGuild();
 	
+	virtual void updateBySubject(va_list values);
+
 	virtual bool init();
 	
 	virtual Layer *getThis();
@@ -27,11 +33,16 @@ public:
 	
 private:
 	void createSkin();
-	void createEntityMst();
-	void createEntityMaid();
+
+	void switchLayout(const TYPE_OBSERVER_LAYER_GUILD &typeLayout);
 
 private:
 	Layer *_skin;
+
+	Node *_nodeNow;
+	HandleSelect *_handleSelect;
+	HandleDating *_handleDating;
+	HandleResult *_handleResult;
 	
 };
 
