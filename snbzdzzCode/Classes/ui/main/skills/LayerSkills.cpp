@@ -380,8 +380,7 @@ void LayerSkills::updateSkinAttribute(Node *nodeSkillItem, const CfgSkill &cfgSk
 	vector<int> countLineBefores = {};//到当前行为止的总数
 	vector<float> lineWidths = {};
 	vector<float> lineBottom = {};
-	float widthChildrenLayoutGridBase0 = 0.0f;
-	float interval = 20.0f;
+	float interval = 1.0f;
 	auto idAttributeLast = IdAttribute::GRID_DAMAGE_PHYSICAL;
 	auto vec = UtilString::split(cfgSkill.effect, "|");
 	for (auto var : vec)
@@ -453,10 +452,6 @@ void LayerSkills::updateSkinAttribute(Node *nodeSkillItem, const CfgSkill &cfgSk
 						auto spriteLast = children.at(children.size() - 1);
 						postion = spriteLast->getPosition();
 						postion = Vec2(postion.x + spriteLast->getContentSize().width + interval, postion.y);
-						if (!isUnblockableOrQuick)
-						{
-							widthChildrenLayoutGridBase0 += interval;
-						}
 					}
 					sprite->setPosition(postion);
 					layoutGridBase->addChild(sprite);

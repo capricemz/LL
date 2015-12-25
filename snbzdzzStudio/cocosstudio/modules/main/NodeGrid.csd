@@ -544,14 +544,14 @@
           <AbstractNodeData Name="spriteBgp" ActionTag="-894527357" Tag="72" IconVisible="False" LeftMargin="-60.5000" RightMargin="-60.5000" TopMargin="-83.5000" BottomMargin="-83.5000" ctype="SpriteObjectData">
             <Size X="121.0000" Y="167.0000" />
             <Children>
-              <AbstractNodeData Name="layoutGridComplex" ActionTag="-2107413498" Tag="103" IconVisible="False" HorizontalEdge="BothEdge" LeftMargin="5.5000" RightMargin="5.5000" TopMargin="7.0000" BottomMargin="60.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
-                <Size X="110.0000" Y="100.0000" />
+              <AbstractNodeData Name="layoutGridComplex" ActionTag="-2107413498" Tag="103" IconVisible="False" HorizontalEdge="BothEdge" LeftMargin="5.5000" RightMargin="5.5000" TopMargin="3.0000" BottomMargin="54.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                <Size X="110.0000" Y="110.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="60.5000" Y="110.0000" />
+                <Position X="60.5000" Y="109.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.6587" />
-                <PreSize X="0.9167" Y="0.6250" />
+                <PrePosition X="0.5000" Y="0.6527" />
+                <PreSize X="0.9091" Y="0.6587" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
@@ -581,14 +581,14 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="layoutGridBase0" ActionTag="835119385" Tag="104" IconVisible="False" HorizontalEdge="BothEdge" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="119.0000" BottomMargin="8.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
-                <Size X="107.0000" Y="40.0000" />
+              <AbstractNodeData Name="layoutGridBase0" ActionTag="835119385" Tag="104" IconVisible="False" HorizontalEdge="BothEdge" TopMargin="112.0000" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                <Size X="121.0000" Y="55.0000" />
                 <AnchorPoint ScaleX="0.5000" />
-                <Position X="60.5000" Y="8.0000" />
+                <Position X="60.5000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.0479" />
-                <PreSize X="0.8843" Y="0.2395" />
+                <PrePosition X="0.5000" />
+                <PreSize X="1.0000" Y="0.3293" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />

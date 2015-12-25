@@ -285,6 +285,28 @@
             <Image Name="begFight.png" />
             <Image Name="Customs.png" />
             <Image Name="rolebox1.png" />
+            <Image Name="bangzhu.png" />
+            <Image Name="baoxiang.png" />
+            <Image Name="biaopan.png" />
+            <Image Name="canting.png" />
+            <Image Name="dakuang1.png" />
+            <Image Name="duihuakuang.png" />
+            <Image Name="fangzi.png" />
+            <Image Name="fanhui.png" />
+            <Image Name="guangjie.png" />
+            <Image Name="hongxinanniu.png" />
+            <Image Name="jindutiao.png" />
+            <Image Name="lx1.png" />
+            <Image Name="lx2.png" />
+            <Image Name="lx3.png" />
+            <Image Name="lx4.png" />
+            <Image Name="lx5.png" />
+            <Image Name="mingzidi.png" />
+            <Image Name="renwu.png" />
+            <Image Name="xiuxi.png" />
+            <Image Name="youxicheng.png" />
+            <Image Name="ounijiang.png" />
+            <Image Name="wenzineirong.png" />
           </Folder>
           <Folder Name="teach">
             <Image Name="heart.png" />
@@ -527,6 +549,9 @@
             <Project Name="LayerTraining.csd" Type="Layer" />
             <Project Name="LayerSkills.csd" Type="Layer" />
             <Project Name="LayerLove.csd" Type="Layer" />
+            <Project Name="LayerGonghui.csd" Type="Layer" />
+            <Project Name="LayerGonghui_1.csd" Type="Layer" />
+            <Project Name="LayerGonghui_2.csd" Type="Layer" />
           </Folder>
           <Folder Name="welcome">
             <Project Name="SceneWelcome.csd" Type="Scene" />

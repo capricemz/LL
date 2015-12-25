@@ -86,7 +86,7 @@ void Grid::updateSkinAttribute()
 	vector<float> lineWidths = {};
 	vector<float> lineBottom = {};
 	float widthChildrenLayoutGridBase0 = 0.0f;
-	float interval = 20.0f;
+	float interval = 1.0f;
 	auto idAttributeLast = IdAttribute::GRID_DAMAGE_PHYSICAL;
 	auto dic = _dataGrid->getDicAttribute();
 	for (auto var : dic)
@@ -152,7 +152,7 @@ void Grid::updateSkinAttribute()
 				auto postion = Vec2(size.width * 0.5f, size.height * 0.5f);
 				if (children.size() > 0)
 				{
-					auto spriteLast = children.at(children.size() - 1);
+					auto spriteLast = children.at(children.size() - 2);
 					postion = spriteLast->getPosition();
 					postion = Vec2(postion.x + spriteLast->getContentSize().width + interval, postion.y);
 					if (!isUnblockableOrQuick)
