@@ -385,8 +385,8 @@
                 <FileData Type="Normal" Path="images/main/dibubg.png" Plist="" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="btnGuild" ActionTag="1672612166" Tag="44" IconVisible="False" RightMargin="478.0000" TopMargin="-0.5000" BottomMargin="-0.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="132" Scale9Height="194" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="162.0000" Y="216.0000" />
+              <AbstractNodeData Name="btnGuild" ActionTag="1672612166" Tag="44" IconVisible="False" LeftMargin="-40.5000" RightMargin="437.5000" TopMargin="-28.0000" BottomMargin="-28.0000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="213" Scale9Height="249" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="243.0000" Y="271.0000" />
                 <Children>
                   <AbstractNodeData Name="sprite" ActionTag="649983741" Tag="1048" IconVisible="False" LeftMargin="18.0000" RightMargin="18.0000" TopMargin="138.0000" ctype="SpriteObjectData">
                     <Size X="126.0000" Y="77.0000" />
@@ -405,10 +405,10 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1266" Y="0.5000" />
-                <PreSize X="0.2531" Y="1.0047" />
+                <PreSize X="0.3797" Y="1.2605" />
                 <FontResource Type="Normal" Path="fonts/ktjt.ttf" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <NormalFileData Type="Normal" Path="images/main/guild (2).png" Plist="" />
+                <NormalFileData Type="Normal" Path="images/main/guild.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
